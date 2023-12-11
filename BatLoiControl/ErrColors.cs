@@ -34,6 +34,9 @@ public class ErrColors
 
     public Color err_lv_listview_back_color = ColorTranslator.FromHtml("#aa0906");// "red brown"
     public Color Transparent = Color.Transparent;
-    public Color primaryGreen = ColorTranslator.FromHtml("#9159E2");
+    public Color primaryGreen = ColorTranslator.FromHtml("#008348");
+    public Color primaryPink = ColorTranslator.FromHtml("#FFA9A9");
+    public Color secondaryPink = ColorTranslator.FromHtml("#F08C8C");
+
 }
 

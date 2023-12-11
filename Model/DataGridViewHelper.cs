@@ -12,6 +12,7 @@ public static class DataGridViewHelper
         dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         dgv.MultiSelect = false;
         dgv.Dock = DockStyle.Fill;
+        dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
     }
 }
 

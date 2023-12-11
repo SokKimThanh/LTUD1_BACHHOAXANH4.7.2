@@ -19,6 +19,8 @@ namespace LTUD1_BACHHOAXANH472
             spConn = new SanPhamController(Utils.ConnectionString);
             ctConn = new ChiTietHoaDonController(Utils.ConnectionString);
             //DataGridViewHelper.ConfigureDataGridView(dgvCTHoaDon);
+            ButtonStateManager buttonStateManager = new ButtonStateManager();
+            buttonStateManager.SetButtonProperties(btnThemHD);
         }
 
         private void btnEditSanPham_Click(object sender, EventArgs e)
@@ -39,6 +41,11 @@ namespace LTUD1_BACHHOAXANH472
         private void cboHoaDon_SelectedIndexChanged(object sender, EventArgs e)
         {
             // hiển thị danh sách sản phẩm theo hóa đơn, nhóm các sản phẩm theo loại
+
+        }
+
+        private void btnThemHD_Click(object sender, EventArgs e)
+        {
 
         }
     }

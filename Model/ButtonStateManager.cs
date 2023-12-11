@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using iTextSharp.text;
+using System.Drawing;
+using System.Windows.Forms;
 
 
 public class ButtonStateManager
@@ -7,6 +9,23 @@ public class ButtonStateManager
     public Button btnEdit { get; set; }
     public Button btnDelete { get; set; }
     public Button btnRefresh { get; set; }
+
+    public void SetButtonProperties(Button flatButton)
+    {
+        ErrColors o = new ErrColors();
+
+        Color backColor = o.Transparent;
+        FlatStyle flatStyle = FlatStyle.Flat;
+        Color borderColor = o.mes_white;
+        int borderSize = 1;
+        flatButton.BackColor = backColor;
+        flatButton.FlatStyle = flatStyle;
+        flatButton.FlatAppearance.BorderColor = borderColor;
+        flatButton.FlatAppearance.BorderSize = borderSize;
+        flatButton.FlatAppearance.MouseOverBackColor = o.primaryPink;
+        flatButton.ForeColor = Color.White;
+
+    }
 
     public void UpdateButtonStates(string state)
     {
