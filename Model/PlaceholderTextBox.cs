@@ -9,11 +9,15 @@ using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.model
 {
 
-    public class PlaceholderTextBox : TextBox
+    public class PlaceholderTextBox
     {
         private bool isPlaceholder = true;
         private string placeholderText;
+        private TextBox textbox;
 
+        /// <summary>
+        /// Thêm chữ cho placeholder
+        /// </summary>
         public string PlaceholderText
         {
             get { return placeholderText; }
@@ -24,39 +28,44 @@ namespace LTUD1_BACHHOAXANH472.model
             }
         }
 
+        public TextBox Textbox { get => textbox; set => textbox = value; }
+
+
         private void SetPlaceholder()
         {
-            if (string.IsNullOrEmpty(this.Text))
+            if (string.IsNullOrEmpty(textbox.Text))
             {
-                this.Text = PlaceholderText;
-                this.ForeColor = Color.Gray;
-                this.isPlaceholder = true;
+                textbox.Text = PlaceholderText;
+                textbox.ForeColor = Color.Gray;
+                isPlaceholder = true;
             }
         }
-
-        public PlaceholderTextBox()
+        /// <summary>
+        /// Sự kiện placeholder
+        /// </summary>
+        public void SettingPlaceholderTextBox()
         {
-            GotFocus += RemovePlaceholder;
-            LostFocus += AddPlaceholder;
+            textbox.GotFocus += RemovePlaceholder;
+            textbox.LostFocus += AddPlaceholder;
         }
 
         private void RemovePlaceholder(object sender, EventArgs e)
         {
             if (isPlaceholder)
             {
-                this.Text = "";
-                this.ForeColor = Color.Black;
-                this.isPlaceholder = false;
+                textbox.Text = "";
+                textbox.ForeColor = Color.Black;
+                isPlaceholder = false;
             }
         }
 
         private void AddPlaceholder(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(this.Text))
+            if (string.IsNullOrEmpty(this.textbox.Text))
             {
-                this.Text = PlaceholderText;
-                this.ForeColor = Color.Gray;
-                this.isPlaceholder = true;
+                textbox.Text = PlaceholderText;
+                textbox.ForeColor = Color.Gray;
+                isPlaceholder = true;
             }
         }
     }
