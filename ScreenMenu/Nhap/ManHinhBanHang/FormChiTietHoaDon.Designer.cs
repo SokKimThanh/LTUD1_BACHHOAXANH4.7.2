@@ -63,6 +63,10 @@ namespace LTUD1_BACHHOAXANH472
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -169,7 +173,11 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.button6);
             this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.label23);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label19);
@@ -180,7 +188,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(38, 446);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1234, 173);
+            this.groupBox3.Size = new System.Drawing.Size(1234, 271);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Bước 3: Thanh Toán";
@@ -208,11 +216,11 @@ namespace LTUD1_BACHHOAXANH472
             // button3
             // 
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(914, 56);
+            this.button3.Location = new System.Drawing.Point(876, 168);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(180, 55);
+            this.button3.Size = new System.Drawing.Size(218, 55);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Thanh toán";
+            this.button3.Text = "In Phiếu hóa đơn";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // label8
@@ -279,7 +287,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(392, 79);
+            this.label13.Location = new System.Drawing.Point(393, 67);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(245, 32);
             this.label13.TabIndex = 2;
@@ -339,7 +347,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(24, 79);
+            this.label18.Location = new System.Drawing.Point(24, 71);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(319, 32);
             this.label18.TabIndex = 2;
@@ -349,7 +357,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(24, 123);
+            this.label19.Location = new System.Drawing.Point(24, 106);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(264, 32);
             this.label19.TabIndex = 2;
@@ -359,7 +367,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(392, 35);
+            this.label20.Location = new System.Drawing.Point(393, 25);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(195, 32);
             this.label20.TabIndex = 2;
@@ -369,7 +377,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(392, 123);
+            this.label21.Location = new System.Drawing.Point(393, 106);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(200, 32);
             this.label21.TabIndex = 2;
@@ -381,9 +389,9 @@ namespace LTUD1_BACHHOAXANH472
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(171, 226);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(278, 32);
+            this.label22.Size = new System.Drawing.Size(363, 32);
             this.label22.TabIndex = 2;
-            this.label22.Text = "Tổng tiền tất cả sản phẩm";
+            this.label22.Text = "Hiển thị Tổng tiền tất cả sản phẩm";
             // 
             // button5
             // 
@@ -394,6 +402,46 @@ namespace LTUD1_BACHHOAXANH472
             this.button5.TabIndex = 3;
             this.button5.Text = "Cập nhật SL mua";
             this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(24, 168);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(747, 32);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Hệ thống ghi nhận thông tin sản phẩm, số lượng mua theo mã hóa đơn ";
+            // 
+            // button6
+            // 
+            this.button6.ForeColor = System.Drawing.Color.Black;
+            this.button6.Location = new System.Drawing.Point(876, 56);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(218, 55);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Thanh toán";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(24, 201);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(583, 32);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Hệ thống cập nhật số lượng tồn kho cho từng sản phẩm";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(24, 233);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(434, 32);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Hệ thống cho phép tạo report in hóa đơn";
             // 
             // FormChiTietHoaDon
             // 
@@ -412,7 +460,7 @@ namespace LTUD1_BACHHOAXANH472
             this.Font = new System.Drawing.Font("Segoe UI Light", 18F);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormChiTietHoaDon";
-            this.Text = "Xử lý đơn hàng(Hóa đơn chi tiết)";
+            this.Text = "Màn hình bán hàng(Hóa đơn chi tiết)";
             this.Load += new System.EventHandler(this.FormChiTietHoaDon_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -458,5 +506,9 @@ namespace LTUD1_BACHHOAXANH472
         private Label label16;
         private Label label22;
         private Button button5;
+        private Button button6;
+        private Label label23;
+        private Label label25;
+        private Label label24;
     }
 }
