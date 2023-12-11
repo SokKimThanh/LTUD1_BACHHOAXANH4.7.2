@@ -1,22 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
-    internal static class Program
+    internal class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
-        static void Main()
+        public static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain472());
+            try
+            {
+                //FormDangNhap logon = new FormDangNhap();
+                FormMain logon = new FormMain();
+                //FormHoaDon logon =  new FormHoaDon();
+                //FormKhachHang logon = new FormKhachHang(); 
+                //FormNhanVienAddEdit logon = new FormNhanVienAddEdit();
+                Application.Run(logon);
+
+                //Trần Minh Tuấn
+
+                //gi change
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

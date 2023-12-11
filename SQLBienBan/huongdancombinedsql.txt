@@ -1,0 +1,5 @@
+﻿#--sok thanh pc
+FOR /R "F:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH\ScreenMenu\" %G IN (*.sql) DO type "%G" >> F:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH\SQLBIENBAN\PROJECT_STOREPROCEDURE_BHX.sql
+
+#--sok thanh laptop
+FOR /R "D:\TDC_HK3\LTUD1_LETHO\ltud1_bachhoaxanh\ScreenMenu\" %G IN (*.sql) DO type "%G" >> D:\TDC_HK3\LTUD1_LETHO\ltud1_bachhoaxanh\SQLBIENBAN\PROJECT_STOREPROCEDURE_BHX.sql
