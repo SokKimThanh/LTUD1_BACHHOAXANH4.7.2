@@ -1,5 +1,4 @@
-﻿using LTUD1_MF_BHX.connection;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTUD1_BACHHOAXANH4._7._2.Properties
+namespace LTUD1_BACHHOAXANH472._7._2.Properties
 {
 
 

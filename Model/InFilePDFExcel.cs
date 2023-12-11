@@ -72,8 +72,8 @@ public class InFilePDFExcel
                         string systemFontsPath = Environment.GetFolderPath(Environment.SpecialFolder.Fonts);
 
                         // Tạo một font chữ từ file font trên hệ thống của bạn
-                        BaseFont bf = BaseFont.CreateFont(Path.Combine(systemFontsPath, "segoeui.ttf"), BaseFont.IDENTITY_H, BaseFont.EMBEDDED)!;
-                        Font font = new Font(bf!, 8, Font.NORMAL);
+                        BaseFont bf = BaseFont.CreateFont(Path.Combine(systemFontsPath, "segoeui.ttf"), BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+                        Font font = new Font(bf, 8, Font.NORMAL);
 
                         // Sử dụng font chữ này khi tạo các cell cho PdfPTable
                         foreach (DataGridViewColumn column in dgv.Columns)

@@ -19,7 +19,7 @@ public class DatabaseConnection
         {
             conn.Open();
         }
-        return conn!;
+        return conn;
     }
 
     public void CloseConnection()

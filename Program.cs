@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH4._7._2
+namespace LTUD1_BACHHOAXANH472
 {
     internal static class Program
     {
@@ -16,7 +16,7 @@ namespace LTUD1_BACHHOAXANH4._7._2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormMain472());
         }
     }
 }
