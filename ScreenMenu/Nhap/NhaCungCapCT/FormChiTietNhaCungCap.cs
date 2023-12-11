@@ -14,6 +14,6 @@ namespace LTUD1_BACHHOAXANH472
         private void FormChiTietNhaCungCap_Load(object sender, EventArgs e)
         {
               
-        }
+        } 
     }
 }

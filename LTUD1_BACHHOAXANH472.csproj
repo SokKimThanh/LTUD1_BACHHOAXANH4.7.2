@@ -111,18 +111,18 @@
     <Compile Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.Designer.cs">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\ChiTietHoaDon\ChiTietHoaDon.cs" />
-    <Compile Include="ScreenMenu\Nhap\ChiTietHoaDon\ChiTietHoaDonController.cs" />
-    <Compile Include="ScreenMenu\Nhap\ChiTietHoaDon\ChiTietHoaDonThongKe.cs">
+    <Compile Include="ScreenMenu\Nhap\ManHinhBanHang\ChiTietHoaDon.cs" />
+    <Compile Include="ScreenMenu\Nhap\ManHinhBanHang\ChiTietHoaDonController.cs" />
+    <Compile Include="ScreenMenu\Nhap\ManHinhBanHang\ChiTietHoaDonThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\ChiTietHoaDon\ChiTietHoaDonThongKe.Designer.cs">
+    <Compile Include="ScreenMenu\Nhap\ManHinhBanHang\ChiTietHoaDonThongKe.Designer.cs">
       <DependentUpon>ChiTietHoaDonThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\ChiTietHoaDon\FormChiTietHoaDon.cs">
+    <Compile Include="ScreenMenu\Nhap\ManHinhBanHang\FormChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\ChiTietHoaDon\FormChiTietHoaDon.Designer.cs">
+    <Compile Include="ScreenMenu\Nhap\ManHinhBanHang\FormChiTietHoaDon.Designer.cs">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\DanhMuc\DanhMuc.cs" />
@@ -240,10 +240,10 @@
     <EmbeddedResource Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\ChiTietHoaDon\ChiTietHoaDonThongKe.resx">
+    <EmbeddedResource Include="ScreenMenu\Nhap\ManHinhBanHang\ChiTietHoaDonThongKe.resx">
       <DependentUpon>ChiTietHoaDonThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\ChiTietHoaDon\FormChiTietHoaDon.resx">
+    <EmbeddedResource Include="ScreenMenu\Nhap\ManHinhBanHang\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\DanhMuc\FormLoaiSP.resx">
@@ -327,15 +327,15 @@
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_select_all.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_select_one.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_update.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_delete.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_insert.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_KTSanPhamTrung.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_KTTonKho.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_select_all.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_select_one.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_TimKiem.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_tongtien.sql" />
-    <Content Include="ScreenMenu\Nhap\ChiTietHoaDon\sp_chitiethoadon_update.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_delete.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_insert.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_KTSanPhamTrung.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_KTTonKho.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_select_all.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_select_one.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_TimKiem.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_tongtien.sql" />
+    <Content Include="ScreenMenu\Nhap\ManHinhBanHang\sp_chitiethoadon_update.sql" />
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_delete.sql" />
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_insert.sql" />
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_select_all.sql" />
