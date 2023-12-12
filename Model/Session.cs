@@ -8,7 +8,7 @@ public class Session
     //public string MatKhau { get; set; }
     //private static bool rememberMe = false;// chưa nhớ matkhau tentk
 
-    private Dictionary<string, object> _lst = new Dictionary<string, object>();
+    private readonly Dictionary<string, object> _lst = new Dictionary<string, object>();
 
     //public bool RememberMe { get => rememberMe; set => rememberMe = value; }
 
