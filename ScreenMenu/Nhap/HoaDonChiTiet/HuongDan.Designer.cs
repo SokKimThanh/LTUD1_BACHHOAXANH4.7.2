@@ -68,19 +68,14 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
-            this.cboKhuyenmai = new System.Windows.Forms.ComboBox();
             this.cboHoaDon = new System.Windows.Forms.ComboBox();
-            this.cboHinhThucKhuyenMai = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboSanPham = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.cboDanhMucSP = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvHoaDonChiTiet = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.cboCheckSoLuongTonKho = new System.Windows.Forms.CheckBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
@@ -101,6 +96,9 @@ namespace LTUD1_BACHHOAXANH472
             this.label13 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.gbStep1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -123,6 +121,7 @@ namespace LTUD1_BACHHOAXANH472
             this.gbStep3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -531,24 +530,20 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.cboKhuyenmai, 1, 4);
             this.tableLayoutPanel3.Controls.Add(this.cboHoaDon, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.cboHinhThucKhuyenMai, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.label11, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.cboSanPham, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label12, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.cboDanhMucSP, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 5;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(488, 250);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
@@ -559,18 +554,9 @@ namespace LTUD1_BACHHOAXANH472
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(3, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(238, 50);
+            this.label14.Size = new System.Drawing.Size(238, 83);
             this.label14.TabIndex = 6;
             this.label14.Text = "Mã số hóa đơn";
-            // 
-            // cboKhuyenmai
-            // 
-            this.cboKhuyenmai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboKhuyenmai.FormattingEnabled = true;
-            this.cboKhuyenmai.Location = new System.Drawing.Point(247, 203);
-            this.cboKhuyenmai.Name = "cboKhuyenmai";
-            this.cboKhuyenmai.Size = new System.Drawing.Size(238, 38);
-            this.cboKhuyenmai.TabIndex = 12;
             // 
             // cboHoaDon
             // 
@@ -581,34 +567,14 @@ namespace LTUD1_BACHHOAXANH472
             this.cboHoaDon.Size = new System.Drawing.Size(238, 38);
             this.cboHoaDon.TabIndex = 16;
             // 
-            // cboHinhThucKhuyenMai
-            // 
-            this.cboHinhThucKhuyenMai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboHinhThucKhuyenMai.FormattingEnabled = true;
-            this.cboHinhThucKhuyenMai.Location = new System.Drawing.Point(247, 153);
-            this.cboHinhThucKhuyenMai.Name = "cboHinhThucKhuyenMai";
-            this.cboHinhThucKhuyenMai.Size = new System.Drawing.Size(238, 38);
-            this.cboHinhThucKhuyenMai.TabIndex = 13;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(3, 200);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(238, 50);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Chọn 1n Khuyến mãi cho SP";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 50);
+            this.label4.Location = new System.Drawing.Point(3, 83);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(238, 50);
+            this.label4.Size = new System.Drawing.Size(238, 83);
             this.label4.TabIndex = 7;
             this.label4.Text = "sản phẩm theo danh mục";
             // 
@@ -616,27 +582,16 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.cboSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboSanPham.FormattingEnabled = true;
-            this.cboSanPham.Location = new System.Drawing.Point(247, 103);
+            this.cboSanPham.Location = new System.Drawing.Point(247, 169);
             this.cboSanPham.Name = "cboSanPham";
             this.cboSanPham.Size = new System.Drawing.Size(238, 38);
             this.cboSanPham.TabIndex = 14;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(3, 150);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(238, 50);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "khuyến mãi theo hình thức";
             // 
             // cboDanhMucSP
             // 
             this.cboDanhMucSP.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboDanhMucSP.FormattingEnabled = true;
-            this.cboDanhMucSP.Location = new System.Drawing.Point(247, 53);
+            this.cboDanhMucSP.Location = new System.Drawing.Point(247, 86);
             this.cboDanhMucSP.Name = "cboDanhMucSP";
             this.cboDanhMucSP.Size = new System.Drawing.Size(238, 38);
             this.cboDanhMucSP.TabIndex = 15;
@@ -646,9 +601,9 @@ namespace LTUD1_BACHHOAXANH472
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(3, 100);
+            this.label3.Location = new System.Drawing.Point(3, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(238, 50);
+            this.label3.Size = new System.Drawing.Size(238, 84);
             this.label3.TabIndex = 10;
             this.label3.Text = "Chọn 1n sản phẩm cho HD";
             // 
@@ -675,40 +630,30 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // tableLayoutPanel8
             // 
-            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.88382F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.11618F));
-            this.tableLayoutPanel8.Controls.Add(this.cboCheckSoLuongTonKho, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.numericUpDown1, 1, 0);
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
+            this.tableLayoutPanel8.Controls.Add(this.numericUpDown1, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(482, 73);
             this.tableLayoutPanel8.TabIndex = 21;
-            // 
-            // cboCheckSoLuongTonKho
-            // 
-            this.cboCheckSoLuongTonKho.AutoSize = true;
-            this.cboCheckSoLuongTonKho.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboCheckSoLuongTonKho.ForeColor = System.Drawing.Color.White;
-            this.cboCheckSoLuongTonKho.Location = new System.Drawing.Point(3, 3);
-            this.cboCheckSoLuongTonKho.Name = "cboCheckSoLuongTonKho";
-            this.cboCheckSoLuongTonKho.Size = new System.Drawing.Size(273, 30);
-            this.cboCheckSoLuongTonKho.TabIndex = 21;
-            this.cboCheckSoLuongTonKho.Text = "Tự kiểm tra SL tồn kho";
-            this.cboCheckSoLuongTonKho.UseVisualStyleBackColor = true;
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI Light", 20F);
             this.numericUpDown1.ForeColor = System.Drawing.Color.Red;
-            this.numericUpDown1.Location = new System.Drawing.Point(282, 3);
+            this.numericUpDown1.Location = new System.Drawing.Point(246, 3);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(197, 43);
+            this.numericUpDown1.Size = new System.Drawing.Size(233, 43);
             this.numericUpDown1.TabIndex = 17;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -931,6 +876,36 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1473, 709);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(132, 60);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "Số lượng tồn còn lại:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(144, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(96, 67);
+            this.panel1.TabIndex = 19;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Light", 16F, System.Drawing.FontStyle.Bold);
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(22, 13);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 30);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "1000";
+            // 
             // FormChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 30F);
@@ -972,6 +947,8 @@ namespace LTUD1_BACHHOAXANH472
             this.gbStep3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1000,15 +977,11 @@ namespace LTUD1_BACHHOAXANH472
         private Label label24;
         private Button btnLamMoiHD;
         private GroupBox groupBox4;
-        private ComboBox cboKhuyenmai;
-        private ComboBox cboHinhThucKhuyenMai;
         private ComboBox cboSanPham;
         private ComboBox cboDanhMucSP;
         private ComboBox cboHoaDon;
         private Label label14;
         private Label label4;
-        private Label label12;
-        private Label label11;
         private Label label3;
         private GroupBox groupBox5;
         private GroupBox groupBox6;
@@ -1039,11 +1012,13 @@ namespace LTUD1_BACHHOAXANH472
         private TableLayoutPanel tableLayoutPanel9;
         private Button btnThemHD;
         private Button btnXoaHD;
-        private CheckBox cboCheckSoLuongTonKho;
         private TableLayoutPanel tableLayoutPanel10;
         private Button btnThemSP;
         private Button btnCapNhatSoLuongMua;
         private Button btnXoaSP;
         private Button btnCapNhatHD;
+        private Label label11;
+        private Panel panel1;
+        private Label label12;
     }
 }

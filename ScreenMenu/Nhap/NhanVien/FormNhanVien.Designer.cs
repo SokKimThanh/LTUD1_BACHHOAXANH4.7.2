@@ -57,9 +57,12 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tsmInFilePDF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmXuatFileExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.tabReport = new System.Windows.Forms.TabPage();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnTimKiemThongKe = new System.Windows.Forms.Button();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -82,9 +85,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTimKiemThongKe = new System.Windows.Forms.Button();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox20.SuspendLayout();
@@ -98,6 +98,8 @@ namespace LTUD1_BACHHOAXANH472.Screen
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.cmsNhanVien.SuspendLayout();
             this.tabReport.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -109,8 +111,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox18
@@ -429,6 +429,68 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tabReport.TabIndex = 1;
             this.tabReport.Text = "Report";
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.crystalReportViewer1, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.86364F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.13636F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(873, 440);
+            this.tableLayoutPanel4.TabIndex = 3;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.53344F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.46656F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnTimKiemThongKe, 2, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(867, 55);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 55);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tên NV";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(135, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(475, 49);
+            this.textBox1.TabIndex = 0;
+            // 
+            // btnTimKiemThongKe
+            // 
+            this.btnTimKiemThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimKiemThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnTimKiemThongKe.Location = new System.Drawing.Point(616, 3);
+            this.btnTimKiemThongKe.Name = "btnTimKiemThongKe";
+            this.btnTimKiemThongKe.Size = new System.Drawing.Size(248, 49);
+            this.btnTimKiemThongKe.TabIndex = 2;
+            this.btnTimKiemThongKe.Text = "Tìm kiếm";
+            this.btnTimKiemThongKe.UseVisualStyleBackColor = true;
+            // 
             // crystalReportViewer1
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
@@ -440,25 +502,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(867, 373);
             this.crystalReportViewer1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 55);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(83, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(528, 49);
-            this.textBox1.TabIndex = 0;
             // 
             // tableLayoutPanel3
             // 
@@ -706,49 +749,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.Column2.Name = "Column2";
             this.Column2.Width = 125;
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.crystalReportViewer1, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.86364F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.13636F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(873, 440);
-            this.tableLayoutPanel4.TabIndex = 3;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.02932F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.97068F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 252F));
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.btnTimKiemThongKe, 2, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(867, 55);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // btnTimKiemThongKe
-            // 
-            this.btnTimKiemThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTimKiemThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiemThongKe.Location = new System.Drawing.Point(617, 3);
-            this.btnTimKiemThongKe.Name = "btnTimKiemThongKe";
-            this.btnTimKiemThongKe.Size = new System.Drawing.Size(247, 49);
-            this.btnTimKiemThongKe.TabIndex = 2;
-            this.btnTimKiemThongKe.Text = "Tìm kiếm";
-            this.btnTimKiemThongKe.UseVisualStyleBackColor = true;
-            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
@@ -778,6 +778,9 @@ namespace LTUD1_BACHHOAXANH472.Screen
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.cmsNhanVien.ResumeLayout(false);
             this.tabReport.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -794,9 +797,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
