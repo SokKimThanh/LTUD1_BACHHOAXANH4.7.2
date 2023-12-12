@@ -1,4 +1,5 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.ChiTietHoaDon;
+﻿using LTUD1_BACHHOAXANH472.model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.ChiTietHoaDon;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
 using System;
 using System.Data;
@@ -8,9 +9,9 @@ namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormChiTietHoaDon : Form
     {
-        readonly HoaDonController hdConn;
-        readonly SanPhamController spConn;
-        readonly ChiTietHoaDonController ctConn;
+        private readonly HoaDonController hdConn;
+        private readonly SanPhamController spConn;
+        private readonly ChiTietHoaDonController ctConn;
 
         public FormChiTietHoaDon()
         {
@@ -21,6 +22,14 @@ namespace LTUD1_BACHHOAXANH472
             //DataGridViewHelper.ConfigureDataGridView(dgvCTHoaDon);
             ButtonStateManager buttonStateManager = new ButtonStateManager();
             buttonStateManager.SetButtonProperties(btnThemHD);
+
+            //txt tong thanh tien place holder
+            PlaceholderTextBox df = new PlaceholderTextBox();
+            df.Textbox = txtTongThanhTien;
+            df.PlaceholderText = "Tổng thành tiền";
+            
+            df.SettingPlaceholderTextBox();
+
         }
 
         private void btnEditSanPham_Click(object sender, EventArgs e)
@@ -35,6 +44,7 @@ namespace LTUD1_BACHHOAXANH472
 
         private void FormChiTietHoaDon_Load(object sender, EventArgs e)
         {
+
 
         }
 
