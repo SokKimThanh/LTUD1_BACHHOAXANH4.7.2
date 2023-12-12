@@ -708,7 +708,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
         private GroupBox groupBox6;
         private RichTextBox rtbDiaChi;
         private GroupBox groupBox4;
-        private ComboBox cboPB;
         private DateTimePicker dtpNgaySinh;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;

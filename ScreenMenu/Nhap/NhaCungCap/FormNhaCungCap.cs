@@ -13,10 +13,10 @@ namespace LTUD1_BACHHOAXANH472
             InitializeComponent();
             nccController = new NhaCungCapController(Utils.ConnectionString);
             buttonStateManager = new ButtonStateManager();
-            buttonStateManager.btnAdd = this.btnAdd;
-            buttonStateManager.btnDelete = this.btnDelete;
-            buttonStateManager.btnEdit = this.btnEdit;
-            buttonStateManager.btnRefresh = this.btnRefresh;
+            buttonStateManager.BtnAdd = this.btnAdd;
+            buttonStateManager.BtnDelete = this.btnDelete;
+            buttonStateManager.BtnEdit = this.btnEdit;
+            buttonStateManager.BtnRefresh = this.btnRefresh;
         }
 
         private void FormNhaCungCap_Load(object sender, EventArgs e)

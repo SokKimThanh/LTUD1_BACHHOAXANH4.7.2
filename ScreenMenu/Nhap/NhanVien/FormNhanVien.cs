@@ -23,10 +23,10 @@ namespace LTUD1_BACHHOAXANH472.Screen
             dgvNhanVien.Click += dgvNhanVien_Click;
 
             rbNam.Checked = true;
-            buttonStateManager.btnAdd = this.btnAdd;
-            buttonStateManager.btnEdit = this.btnEdit;
-            buttonStateManager.btnDelete = this.btnDelete;
-            buttonStateManager.btnRefresh = this.btnRefresh;
+            buttonStateManager.BtnAdd = this.btnAdd;
+            buttonStateManager.BtnEdit = this.btnEdit;
+            buttonStateManager.BtnDelete = this.btnDelete;
+            buttonStateManager.BtnRefresh = this.btnRefresh;
         }
 
         private void FormNhanVien_Load(object sender, EventArgs e)

@@ -558,7 +558,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private RichTextBox rtbSL;
         private GroupBox groupBox5;
         private GroupBox groupBox4;
-        private ComboBox comboBox1;
         private TableLayoutPanel tableLayoutPanel5;
         private GroupBox groupBox15;
         private GroupBox groupBox14;

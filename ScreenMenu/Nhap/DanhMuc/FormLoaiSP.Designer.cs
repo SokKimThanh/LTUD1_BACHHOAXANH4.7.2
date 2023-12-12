@@ -368,7 +368,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
         private TableLayoutPanel tableLayoutPanel2;
         private GroupBox groupBox7;
         private TextBox txtGhiChu;
-        private GroupBox txt;
         private TextBox txtMaLoai;
         private GroupBox groupBox5;
         private TextBox txtTenMaLoai;
