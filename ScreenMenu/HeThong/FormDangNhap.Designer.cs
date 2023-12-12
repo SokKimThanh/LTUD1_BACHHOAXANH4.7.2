@@ -1,7 +1,5 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-using Properties = LTUD1_BACHHOAXANH4._7._2.Properties;
-namespace LTUD1_BACHHOAXANH472.Screen
+﻿using System.Windows.Forms;
+namespace LTUD1_BACHHOAXANH472
 {
     partial class FormDangNhap
     {

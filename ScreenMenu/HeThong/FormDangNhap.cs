@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.Screen
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormDangNhap : Form
     {

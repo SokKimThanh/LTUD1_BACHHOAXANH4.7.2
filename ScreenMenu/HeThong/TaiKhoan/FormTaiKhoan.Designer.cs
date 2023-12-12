@@ -2,35 +2,36 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-
-partial class FormTaiKhoan
+namespace LTUD1_BACHHOAXANH472
 {
-    /// <summary>
-    /// Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
-
-    /// <summary>
-    /// Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing)
+    partial class FormTaiKhoan
     {
-        if (disposing && (components != null))
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
         {
-            components.Dispose();
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
-        base.Dispose(disposing);
-    }
 
-    #region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-    /// <summary>
-    /// Required method for Designer support - do not modify
-    /// the contents of this method with the code editor.
-    /// </summary>
-    private void InitializeComponent()
-    {
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -432,32 +433,33 @@ partial class FormTaiKhoan
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
             this.ResumeLayout(false);
 
-    }
+        }
 
-    #endregion
-    private GroupBox groupBox1;
-    private TextBox txtTenTaiKhoan;
-    private TableLayoutPanel tableLayoutPanel2;
-    private TableLayoutPanel tableLayoutPanel3;
-    private TableLayoutPanel tableLayoutPanel4;
-    private GroupBox groupBox2;
-    private TableLayoutPanel tableLayoutPanel1;
-    private Button btnSua;
-    private Button btnAdd;
-    private Button btnXoa;
-    private DataGridView dgvTaiKhoan;
-    private TableLayoutPanel tableLayoutPanel5;
-    private TextBox txtMK;
-    private Label label3;
-    private Label label7;
-    private DateTimePicker dtpCreatedDate;
-    private Label label2;
-    private TextBox txtEmail;
-    private TextBox txtSDT;
-    private Label label4;
-    private TextBox txtNhapLaiMK;
-    private Label label8;
-    private Label label5;
-    private Label label6;
-    private TextBox txtCCCD;
+        #endregion
+        private GroupBox groupBox1;
+        private TextBox txtTenTaiKhoan;
+        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tableLayoutPanel3;
+        private TableLayoutPanel tableLayoutPanel4;
+        private GroupBox groupBox2;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Button btnSua;
+        private Button btnAdd;
+        private Button btnXoa;
+        private DataGridView dgvTaiKhoan;
+        private TableLayoutPanel tableLayoutPanel5;
+        private TextBox txtMK;
+        private Label label3;
+        private Label label7;
+        private DateTimePicker dtpCreatedDate;
+        private Label label2;
+        private TextBox txtEmail;
+        private TextBox txtSDT;
+        private Label label4;
+        private TextBox txtNhapLaiMK;
+        private Label label8;
+        private Label label5;
+        private Label label6;
+        private TextBox txtCCCD;
+    }
 }

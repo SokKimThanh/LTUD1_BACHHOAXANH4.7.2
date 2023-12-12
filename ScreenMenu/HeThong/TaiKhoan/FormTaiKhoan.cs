@@ -1,10 +1,8 @@
-﻿using LTUD1_BACHHOAXANH472.Model;
-using System;
-using System.ComponentModel.Design.Serialization;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
 
-
+namespace LTUD1_BACHHOAXANH472 { 
 public partial class FormTaiKhoan : Form
 {
     readonly AccountController controller;
@@ -114,4 +112,5 @@ public partial class FormTaiKhoan : Form
             txtMK.Text = o.MatKhau;
         }
     }
+}
 }
