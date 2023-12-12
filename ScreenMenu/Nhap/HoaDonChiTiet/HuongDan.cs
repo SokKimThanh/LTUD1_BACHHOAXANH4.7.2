@@ -19,17 +19,18 @@ namespace LTUD1_BACHHOAXANH472
             hdConn = new HoaDonController(Utils.ConnectionString);
             spConn = new SanPhamController(Utils.ConnectionString);
             ctConn = new ChiTietHoaDonController(Utils.ConnectionString);
-            //DataGridViewHelper.ConfigureDataGridView(dgvCTHoaDon);
-            ButtonStateManager buttonStateManager = new ButtonStateManager();
-            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
-            buttonStateManager.SetProperties(btnThem);
+            DataGridViewHelper.ConfigureDataGridView(dgvHoaDonChiTiet);
+                DataGridViewHelper.ConfigureDataGridView(dgvhoa);
+            //ButtonStateManager buttonStateManager = new ButtonStateManager();
+            //buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+            //buttonStateManager.SetProperties(btnThemHD);
 
             //txt tong thanh tien place holder
-            PlaceholderTextBox df = new PlaceholderTextBox();
-            df.Textbox = txtTongThanhTien;
-            df.PlaceholderText = "Tổng thành tiền";
+            //PlaceholderTextBox df = new PlaceholderTextBox();
+            //df.Textbox = txtTongThanhTien;
+            //df.PlaceholderText = "Tổng thành tiền";
 
-            df.SettingPlaceholderTextBox();
+            //df.SettingPlaceholderTextBox();
 
         }
 
