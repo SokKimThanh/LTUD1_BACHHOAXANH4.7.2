@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.Screen
+namespace LTUD1_BACHHOAXANH472
 {
     partial class FormNhanVien
     {
@@ -427,7 +427,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tabReport.Padding = new System.Windows.Forms.Padding(3);
             this.tabReport.Size = new System.Drawing.Size(879, 446);
             this.tabReport.TabIndex = 1;
-            this.tabReport.Text = "Report";
+            this.tabReport.Text = "Báo cáo thống kê";
             // 
             // tableLayoutPanel4
             // 
@@ -449,7 +449,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tableLayoutPanel5.ColumnCount = 3;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.53344F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.46656F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 253F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 255F));
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnTimKiemThongKe, 2, 0);
@@ -467,26 +467,26 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 55);
+            this.label1.Size = new System.Drawing.Size(125, 55);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên NV";
             // 
             // textBox1
             // 
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(135, 3);
+            this.textBox1.Location = new System.Drawing.Point(134, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(475, 49);
+            this.textBox1.Size = new System.Drawing.Size(474, 49);
             this.textBox1.TabIndex = 0;
             // 
             // btnTimKiemThongKe
             // 
             this.btnTimKiemThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiemThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiemThongKe.Location = new System.Drawing.Point(616, 3);
+            this.btnTimKiemThongKe.Location = new System.Drawing.Point(614, 3);
             this.btnTimKiemThongKe.Name = "btnTimKiemThongKe";
-            this.btnTimKiemThongKe.Size = new System.Drawing.Size(248, 49);
+            this.btnTimKiemThongKe.Size = new System.Drawing.Size(250, 49);
             this.btnTimKiemThongKe.TabIndex = 2;
             this.btnTimKiemThongKe.Text = "Tìm kiếm";
             this.btnTimKiemThongKe.UseVisualStyleBackColor = true;
@@ -497,11 +497,11 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.ForeColor = System.Drawing.Color.Black;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 64);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(867, 373);
-            this.crystalReportViewer1.TabIndex = 2;
+            this.crystalReportViewer1.TabIndex = 1;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // tableLayoutPanel3
             // 
@@ -852,10 +852,10 @@ namespace LTUD1_BACHHOAXANH472.Screen
         private TextBox textBox1;
         private GroupBox groupBox3;
         private DataGridView dgvNhanVien;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel5;
         private Button btnTimKiemThongKe;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

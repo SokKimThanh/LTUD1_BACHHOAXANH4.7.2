@@ -1687,18 +1687,27 @@ go
 drop procedure if exists sp_nhanvien_danhsach_theophongban_chinhanh
 go
 CREATE PROCEDURE sp_nhanvien_danhsach_theophongban_chinhanh
-	-- Add the parameters for the stored procedure here
-	 
+		@MaChiNhanh char(4) = '', 
+		@MaPhongBan char(4) = ''
 AS
 BEGIN 
-    -- Insert statements for procedure here
-	SELECT  cn.TENCN as 'Tên Chi Nhánh', pb.TENPHG as 'Phòng ban',
-	STUFF((SELECT ', ' + nv.HOTENNV FROM nhanvien nv WHERE pb.MAPB = nv.MAPB AND cn.MACN = pb.MACN FOR XML PATH('')), 1, 2, '') as 'Danh sách nhân viên'
+	SELECT  cn.TENCN as 'Tên Chi Nhánh', pb.TENPHG as 'Phòng ban', STUFF((SELECT ', ' + nv.HOTENNV 
+	FROM nhanvien nv 
+	WHERE pb.MAPB = nv.MAPB AND cn.MACN = pb.MACN FOR XML PATH('')), 1, 2, '') as 'Danh sách nhân viên' 
 	FROM PHONGBAN pb, CHINHANH cn 
-	GROUP BY pb.TENPHG, cn.TENCN, pb.MAPB, cn.MACN, pb.MACN;
+	WHERE pb.MAPB = @MaPhongBan
+	or  cn.MANC = @MaChiNhanh
+	or pb.MaPB like N'%'+ @MaChiNhanh + '%'
+	or  cn.TenCN like N'%'+ @MaPhongBan + '%'
+	--GROUP BY pb.TENPHG, cn.TENCN, pb.MAPB, cn.MACN, pb.MACN;
 END;
-go
 
+go
+select * from chinhanh
+select * from phongban 
+select * from nhanvien
+
+exec sp_nhanvien_danhsach_theophongban_chinhanh '', '', 'Đà', 'Nội'
 ﻿
 -- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 9:39 CH>

@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CrystalDecisions.Shared;
+using LTUD1_BACHHOAXANH4._7._2.ScreenMenu.Nhap.NhanVien;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.Screen
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormNhanVien : Form
     {
@@ -149,7 +151,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
 
                 // chuyển thành class đối tượng
                 NhanVien nv = (NhanVien)nvController.FromDataRow(dr);
-                
+
                 // thiết lập dữ liệu ngược lại mỗi lần click
                 txtHoTenNV.Text = nv.Hotennv;
                 txtLuong.Text = nv.Luong.ToString();
@@ -316,6 +318,28 @@ namespace LTUD1_BACHHOAXANH472.Screen
             }
         }
 
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            // Khởi tạo một đối tượng mới từ lớp CrystalReport1
+            CrystalReport1 rpt = new CrystalReport1();
 
+            // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+            ParameterValues param = new ParameterValues();
+
+            // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+            ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+
+            // Đặt giá trị của pdv bằng giá trị trong textBox1
+            pdv.Value = textBox1.Text;
+
+            // Thêm pdv vào danh sách các giá trị tham số
+            param.Add(pdv);
+
+            // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+            rpt.DataDefinition.ParameterFields["@masv"].ApplyCurrentValues(param);
+
+            // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+            crystalReportViewer1.ReportSource = rpt;
+        }
     }
 }

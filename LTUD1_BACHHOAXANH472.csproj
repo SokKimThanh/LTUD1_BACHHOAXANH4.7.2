@@ -199,6 +199,12 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\NhaCungCap\NhaCungCap.cs" />
     <Compile Include="ScreenMenu\Nhap\NhaCungCap\NhaCungCapController.cs" />
+    <Compile Include="ScreenMenu\Nhap\NhanVien\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ScreenMenu\Nhap\NhanVien\FormNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,6 +284,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\NhaCungCap\FormNhaCungCap.resx">
       <DependentUpon>FormNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenMenu\Nhap\NhanVien\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\NhanVien\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
@@ -404,6 +414,9 @@
     <Content Include="SQLBienBan\huongdancombinedsql.txt" />
     <Content Include="SQLBienBan\PROJECT_SQL_BHX.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
