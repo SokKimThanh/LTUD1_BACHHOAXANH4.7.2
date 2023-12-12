@@ -146,7 +146,10 @@ namespace LTUD1_BACHHOAXANH472.Screen
                 // khởi tạo đối tượng bằng mã
                 DataTable dt = nvController.SelectByID(manv);
                 DataRow dr = dt.Rows[0];
+
+                // chuyển thành class đối tượng
                 NhanVien nv = (NhanVien)nvController.FromDataRow(dr);
+                
                 // thiết lập dữ liệu ngược lại mỗi lần click
                 txtHoTenNV.Text = nv.Hotennv;
                 txtLuong.Text = nv.Luong.ToString();

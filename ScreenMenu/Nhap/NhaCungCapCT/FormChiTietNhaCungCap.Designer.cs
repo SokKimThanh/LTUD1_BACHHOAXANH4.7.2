@@ -50,6 +50,7 @@ namespace LTUD1_BACHHOAXANH472
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -117,6 +118,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel1.Controls.Add(this.button4, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.button2, 0, 0);
@@ -140,12 +142,12 @@ namespace LTUD1_BACHHOAXANH472
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.SeaShell;
-            this.button1.Location = new System.Drawing.Point(297, 5);
+            this.button1.Location = new System.Drawing.Point(443, 5);
             this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 91);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Quay lại";
+            this.button1.Text = "Làm mới";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -157,7 +159,7 @@ namespace LTUD1_BACHHOAXANH472
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.SeaShell;
-            this.button3.Location = new System.Drawing.Point(151, 5);
+            this.button3.Location = new System.Drawing.Point(5, 5);
             this.button3.Margin = new System.Windows.Forms.Padding(5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(136, 91);
@@ -174,7 +176,7 @@ namespace LTUD1_BACHHOAXANH472
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.SeaShell;
-            this.button2.Location = new System.Drawing.Point(5, 5);
+            this.button2.Location = new System.Drawing.Point(151, 5);
             this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(136, 91);
@@ -207,11 +209,11 @@ namespace LTUD1_BACHHOAXANH472
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel3);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 723);
+            this.groupBox1.Size = new System.Drawing.Size(379, 723);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhập thông tin";
@@ -228,14 +230,16 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 35);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 6;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(367, 685);
+            this.tableLayoutPanel3.RowCount = 8;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(373, 685);
             this.tableLayoutPanel3.TabIndex = 19;
             // 
             // groupBox7
@@ -244,10 +248,10 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox7.ForeColor = System.Drawing.Color.White;
-            this.groupBox7.Location = new System.Drawing.Point(0, 342);
+            this.groupBox7.Location = new System.Drawing.Point(0, 255);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(367, 114);
+            this.groupBox7.Size = new System.Drawing.Size(373, 85);
             this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Số Lượng cung cấp";
@@ -258,7 +262,7 @@ namespace LTUD1_BACHHOAXANH472
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Light", 18F);
             this.textBox1.Location = new System.Drawing.Point(3, 29);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(361, 39);
+            this.textBox1.Size = new System.Drawing.Size(367, 39);
             this.textBox1.TabIndex = 3;
             // 
             // groupBox6
@@ -267,10 +271,10 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(0, 228);
+            this.groupBox6.Location = new System.Drawing.Point(0, 170);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(367, 114);
+            this.groupBox6.Size = new System.Drawing.Size(373, 85);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ngày nhập";
@@ -282,7 +286,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dateTimePicker1.Location = new System.Drawing.Point(3, 29);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(361, 33);
+            this.dateTimePicker1.Size = new System.Drawing.Size(367, 33);
             this.dateTimePicker1.TabIndex = 14;
             // 
             // groupBox5
@@ -291,10 +295,10 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(0, 114);
+            this.groupBox5.Location = new System.Drawing.Point(0, 85);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(367, 114);
+            this.groupBox5.Size = new System.Drawing.Size(373, 85);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Sản phẩm";
@@ -306,7 +310,7 @@ namespace LTUD1_BACHHOAXANH472
             this.comboBox1.Location = new System.Drawing.Point(3, 29);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(361, 33);
+            this.comboBox1.Size = new System.Drawing.Size(367, 33);
             this.comboBox1.TabIndex = 8;
             // 
             // groupBox2
@@ -317,7 +321,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(361, 108);
+            this.groupBox2.Size = new System.Drawing.Size(367, 79);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhà cung cấp";
@@ -329,8 +333,25 @@ namespace LTUD1_BACHHOAXANH472
             this.comboBox2.Location = new System.Drawing.Point(3, 29);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(355, 33);
+            this.comboBox2.Size = new System.Drawing.Size(361, 33);
             this.comboBox2.TabIndex = 9;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button4.FlatAppearance.BorderSize = 3;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.SeaShell;
+            this.button4.Location = new System.Drawing.Point(297, 5);
+            this.button4.Margin = new System.Windows.Forms.Padding(5);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(136, 91);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Thêm";
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // FormChiTietNhaCungCap
             // 
@@ -383,5 +404,6 @@ namespace LTUD1_BACHHOAXANH472
         private ComboBox comboBox2;
         private Button button1;
         private DataGridView dataGridView1;
+        private Button button4;
     }
 }

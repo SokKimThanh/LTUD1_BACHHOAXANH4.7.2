@@ -57,9 +57,12 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tsmInFilePDF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmXuatFileExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.tabReport = new System.Windows.Forms.TabPage();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnTimKiemThongKe = new System.Windows.Forms.Button();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -82,9 +85,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTimKiemThongKe = new System.Windows.Forms.Button();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox20.SuspendLayout();
@@ -98,6 +98,8 @@ namespace LTUD1_BACHHOAXANH472.Screen
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.cmsNhanVien.SuspendLayout();
             this.tabReport.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -109,8 +111,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox18
@@ -337,57 +337,124 @@ namespace LTUD1_BACHHOAXANH472.Screen
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
-            // crystalReportViewer1
+            // groupBox3
             // 
-            btnAdd.BackColor = Color.Transparent;
-            btnAdd.Dock = DockStyle.Fill;
-            btnAdd.FlatAppearance.BorderSize = 3;
-            btnAdd.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 192);
-            btnAdd.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.ForeColor = Color.SeaShell;
-            btnAdd.Location = new Point(151, 5);
-            btnAdd.Margin = new Padding(5);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(136, 84);
-            btnAdd.TabIndex = 0;
-            btnAdd.Text = "Thêm";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
+            this.groupBox3.Controls.Add(this.dgvNhanVien);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(873, 440);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách";
+            // 
+            // dgvNhanVien
+            // 
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien.ContextMenuStrip = this.cmsNhanVien;
+            this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNhanVien.Location = new System.Drawing.Point(3, 35);
+            this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.Size = new System.Drawing.Size(867, 402);
+            this.dgvNhanVien.TabIndex = 0;
+            // 
+            // cmsNhanVien
+            // 
+            this.cmsNhanVien.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cmsNhanVien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmThongKe,
+            this.tsmInFilePDF,
+            this.tsmXuatFileExcel});
+            this.cmsNhanVien.Name = "contextMenuStrip1";
+            this.cmsNhanVien.Size = new System.Drawing.Size(164, 76);
+            // 
+            // tsmThongKe
+            // 
+            this.tsmThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmThongKe.Name = "tsmThongKe";
+            this.tsmThongKe.Size = new System.Drawing.Size(163, 24);
+            this.tsmThongKe.Text = "Thống kê";
+            // 
+            // tsmInFilePDF
+            // 
+            this.tsmInFilePDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmInFilePDF.Name = "tsmInFilePDF";
+            this.tsmInFilePDF.Size = new System.Drawing.Size(163, 24);
+            this.tsmInFilePDF.Text = "Xuất File PDF";
+            // 
+            // tsmXuatFileExcel
+            // 
+            this.tsmXuatFileExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmXuatFileExcel.Name = "tsmXuatFileExcel";
+            this.tsmXuatFileExcel.Size = new System.Drawing.Size(163, 24);
+            this.tsmXuatFileExcel.Text = "Xuất File Excel";
+            // 
+            // tabReport
+            // 
+            this.tabReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.tabReport.Controls.Add(this.tableLayoutPanel4);
+            this.tabReport.Location = new System.Drawing.Point(4, 41);
+            this.tabReport.Name = "tabReport";
+            this.tabReport.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReport.Size = new System.Drawing.Size(879, 446);
+            this.tabReport.TabIndex = 1;
+            this.tabReport.Text = "Report";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.ForeColor = System.Drawing.Color.Black;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 64);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(867, 373);
+            this.crystalReportViewer1.TabIndex = 2;
             // 
             // label1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 67.60124F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.3987579F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(txtHoTen, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnTimKiem, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(3, 3);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(887, 82);
-            tableLayoutPanel1.TabIndex = 11;
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 55);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
             // 
             // textBox1
             // 
-            btnTimKiem.BackColor = Color.Transparent;
-            btnTimKiem.Dock = DockStyle.Fill;
-            btnTimKiem.FlatAppearance.BorderSize = 3;
-            btnTimKiem.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 192);
-            btnTimKiem.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnTimKiem.FlatStyle = FlatStyle.Flat;
-            btnTimKiem.ForeColor = Color.SeaShell;
-            btnTimKiem.Location = new Point(604, 5);
-            btnTimKiem.Margin = new Padding(5);
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(278, 72);
-            btnTimKiem.TabIndex = 4;
-            btnTimKiem.Text = "Tìm kiếm";
-            btnTimKiem.UseVisualStyleBackColor = false;
-            btnTimKiem.Click += btnTimKiem_Click;
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(83, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(528, 49);
+            this.textBox1.TabIndex = 0;
+            // 
+            // btnTimKiemThongKe
+            // 
+            this.btnTimKiemThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimKiemThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnTimKiemThongKe.Location = new System.Drawing.Point(616, 3);
+            this.btnTimKiemThongKe.Name = "btnTimKiemThongKe";
+            this.btnTimKiemThongKe.Size = new System.Drawing.Size(248, 49);
+            this.btnTimKiemThongKe.TabIndex = 2;
+            this.btnTimKiemThongKe.Text = "Tìm kiếm";
+            this.btnTimKiemThongKe.UseVisualStyleBackColor = true;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.ForeColor = System.Drawing.Color.Black;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 64);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(867, 373);
+            this.crystalReportViewer1.TabIndex = 2;
             // 
             // tableLayoutPanel3
             // 
@@ -634,67 +701,104 @@ namespace LTUD1_BACHHOAXANH472.Screen
             // 
             // Column2
             // 
-            Column2.HeaderText = "Trưởng Phòng";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 125;
+            this.Column2.HeaderText = "Trưởng Phòng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
-            // txtHoTen
+            // tableLayoutPanel4
             // 
-            txtHoTen.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtHoTen.Dock = DockStyle.Fill;
-            txtHoTen.Location = new Point(3, 3);
-            txtHoTen.Multiline = true;
-            txtHoTen.Name = "txtHoTen";
-            //txtHoTen.PlaceholderText = "Tìm theo họ tên";
-            txtHoTen.ScrollBars = ScrollBars.Both;
-            txtHoTen.Size = new Size(593, 76);
-            txtHoTen.TabIndex = 5;
-            txtHoTen.TextAlign = HorizontalAlignment.Center;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.crystalReportViewer1, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.86364F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.13636F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(873, 440);
+            this.tableLayoutPanel4.TabIndex = 3;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.02932F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.97068F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 252F));
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnTimKiemThongKe, 2, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(867, 55);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // btnTimKiemThongKe
+            // 
+            this.btnTimKiemThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimKiemThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnTimKiemThongKe.Location = new System.Drawing.Point(617, 3);
+            this.btnTimKiemThongKe.Name = "btnTimKiemThongKe";
+            this.btnTimKiemThongKe.Size = new System.Drawing.Size(247, 49);
+            this.btnTimKiemThongKe.TabIndex = 2;
+            this.btnTimKiemThongKe.Text = "Tìm kiếm";
+            this.btnTimKiemThongKe.UseVisualStyleBackColor = true;
             // 
             // FormNhanVien
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(10, 88, 52);
-            ClientSize = new Size(1284, 729);
-            Controls.Add(tableLayoutPanel3);
-            Font = new Font("Segoe UI Light", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            ForeColor = Color.White;
-            Margin = new Padding(5);
-            Name = "FormNhanVien";
-            Text = "Nhập thông tin nhân viên";
-            Load += FormNhanVien_Load;
-            tableLayoutPanel7.ResumeLayout(false);
-            groupBox19.ResumeLayout(false);
-            groupBox19.PerformLayout();
-            groupBox20.ResumeLayout(false);
-            groupBox20.PerformLayout();
-            tblNhanVien.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvNhanVien).EndInit();
-            cmsNhanVien.ResumeLayout(false);
-            groupBox14.ResumeLayout(false);
-            tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox9.ResumeLayout(false);
-            groupBox9.PerformLayout();
-            groupBox8.ResumeLayout(false);
-            groupBox8.PerformLayout();
-            groupBox7.ResumeLayout(false);
-            groupBox6.ResumeLayout(false);
-            groupBox4.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.ClientSize = new System.Drawing.Size(1284, 729);
+            this.Controls.Add(this.tableLayoutPanel3);
+            this.Font = new System.Drawing.Font("Segoe UI Light", 18F);
+            this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "FormNhanVien";
+            this.Text = "Nhập thông tin nhân viên";
+            this.Load += new System.EventHandler(this.FormNhanVien_Load);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            this.tblNhanVien.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabDanhSach.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
+            this.cmsNhanVien.ResumeLayout(false);
+            this.tabReport.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
