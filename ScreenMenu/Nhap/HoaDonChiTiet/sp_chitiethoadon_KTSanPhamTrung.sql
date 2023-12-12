@@ -29,3 +29,4 @@ BEGIN
 	-- chuẩn sql
 END
 GO
+EXEC sp_chitiethoadon_TimMaSP 'SP03'

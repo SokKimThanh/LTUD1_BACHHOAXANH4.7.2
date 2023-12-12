@@ -11,9 +11,9 @@ GO
 -- Create date: <10/12/2023>
 
 -- =============================================
-drop procedure if exists sp_hinhthuckm_update
+drop procedure if exists sp_chitiethoadon_update
 go
-CREATE PROCEDURE sp_hinhthuckm_update
+CREATE PROCEDURE sp_chitiethoadon_update
 	-- Add the parameters for the stored procedure here
 	@mahd char(11) = '', 
 	@masp char(11) = '',
@@ -32,4 +32,7 @@ BEGIN
 	Update SANPHAM set SLTONKHO = SLTONKHO - @sl where MASP = @masp;
 END
 GO
-exec sp_hinhthuckm_update
+exec sp_chitiethoadon_update 'HD01','SP02',50
+select *
+from CHITIETHD
+where MAHD = 'HD01' and MASP = 'SP02'
