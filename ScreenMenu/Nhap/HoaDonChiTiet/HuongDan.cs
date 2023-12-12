@@ -20,7 +20,7 @@ namespace LTUD1_BACHHOAXANH472
             spConn = new SanPhamController(Utils.ConnectionString);
             ctConn = new ChiTietHoaDonController(Utils.ConnectionString);
             DataGridViewHelper.ConfigureDataGridView(dgvHoaDonChiTiet);
-                DataGridViewHelper.ConfigureDataGridView(dgvhoa);
+            DataGridViewHelper.ConfigureDataGridView(dgvHoaDon);
             //ButtonStateManager buttonStateManager = new ButtonStateManager();
             //buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
             //buttonStateManager.SetProperties(btnThemHD);

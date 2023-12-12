@@ -321,6 +321,9 @@
     <None Include="Resources\danhmucsanpham.png" />
     <None Include="Resources\chitiethoadon.png" />
     <None Include="Resources\BXHLOGO2.png" />
+    <Content Include="Resources\tranparent_detail.png" />
+    <None Include="Resources\tranparent_green_detail.png" />
+    <None Include="Resources\tranparent_hoadon.png" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_delete.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_insert.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_select_all.sql" />
