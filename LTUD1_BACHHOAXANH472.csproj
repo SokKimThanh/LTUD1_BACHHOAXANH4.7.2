@@ -216,6 +216,12 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\NhaCungCap\NhaCungCap.cs" />
     <Compile Include="ScreenMenu\Nhap\NhaCungCap\NhaCungCapController.cs" />
+    <Compile Include="ScreenMenu\Nhap\NhanVien\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ScreenMenu\Nhap\NhanVien\FormNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -307,6 +313,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\NhaCungCap\FormNhaCungCap.resx">
       <DependentUpon>FormNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenMenu\Nhap\NhanVien\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\NhanVien\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
@@ -408,6 +418,7 @@
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_update.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_cbo_laydanhsach_phongban_theo_chinhanh.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_delete.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_insert.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_select_all.sql" />
