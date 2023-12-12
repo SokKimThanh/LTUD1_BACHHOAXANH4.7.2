@@ -6,9 +6,15 @@ namespace LTUD1_BACHHOAXANH472.Screen
 {
     public partial class FormNhanVien : Form
     {
+        // khởi tạo kết nối
         NhanVienController nvController = new NhanVienController(Utils.ConnectionString);
+        // khởi tạo in
         InFilePDFExcel infile;
-        ButtonStateManager buttonStateManager = new ButtonStateManager();
+        // khởi tạo trạng thái cho nút 
+        ButtonStateManager buttonStateManager;
+
+
+
         public FormNhanVien()
         {
             InitializeComponent();
@@ -23,10 +29,19 @@ namespace LTUD1_BACHHOAXANH472.Screen
             dgvNhanVien.Click += dgvNhanVien_Click;
 
             rbNam.Checked = true;
+
+            // khởi tạo trạng thái cho nút
+
+            buttonStateManager = new ButtonStateManager();
+            // khai báo trạng thái khóa nút 
             buttonStateManager.BtnAdd = this.btnAdd;
             buttonStateManager.BtnEdit = this.btnEdit;
             buttonStateManager.BtnDelete = this.btnDelete;
             buttonStateManager.BtnRefresh = this.btnRefresh;
+
+            // chỉnh style nút
+            CustomButtonHelper customButtonHelper = new CustomButtonHelper();
+            customButtonHelper.SetProperties(btnTimKiemThongKe);
         }
 
         private void FormNhanVien_Load(object sender, EventArgs e)
@@ -177,7 +192,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
 
         private void txtHoTenNV_TextChanged(object sender, EventArgs e)
         {
-             
+
         }
 
 

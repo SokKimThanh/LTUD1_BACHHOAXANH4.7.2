@@ -31,656 +31,774 @@ namespace LTUD1_BACHHOAXANH472.Screen
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            groupBox18 = new GroupBox();
-            tableLayoutPanel7 = new TableLayoutPanel();
-            groupBox19 = new GroupBox();
-            textBox5 = new TextBox();
-            groupBox20 = new GroupBox();
-            textBox6 = new TextBox();
-            tblNhanVien = new TableLayoutPanel();
-            groupBox3 = new GroupBox();
-            dgvNhanVien = new DataGridView();
-            cmsNhanVien = new ContextMenuStrip(components);
-            tsmThongKe = new ToolStripMenuItem();
-            tsmInFilePDF = new ToolStripMenuItem();
-            tsmXuatFileExcel = new ToolStripMenuItem();
-            groupBox14 = new GroupBox();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            btnEdit = new Button();
-            btnRefresh = new Button();
-            btnDelete = new Button();
-            btnAdd = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            btnTimKiem = new Button();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            groupBox1 = new GroupBox();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            groupBox5 = new GroupBox();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            rbNam = new RadioButton();
-            rbNu = new RadioButton();
-            groupBox2 = new GroupBox();
-            txtLuong = new TextBox();
-            groupBox9 = new GroupBox();
-            txtHoTenNV = new TextBox();
-            groupBox8 = new GroupBox();
-            txtSDT = new TextBox();
-            groupBox7 = new GroupBox();
-            rptNgaySinh = new DateTimePicker();
-            groupBox6 = new GroupBox();
-            rtbDiaChi = new RichTextBox();
-            groupBox4 = new GroupBox();
-            cboPhongBan = new ComboBox();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            saveFileDialog1 = new SaveFileDialog();
-            txtHoTen = new TextBox();
-            tableLayoutPanel7.SuspendLayout();
-            groupBox19.SuspendLayout();
-            groupBox20.SuspendLayout();
-            tblNhanVien.SuspendLayout();
-            groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvNhanVien).BeginInit();
-            cmsNhanVien.SuspendLayout();
-            groupBox14.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            groupBox1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            groupBox5.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox9.SuspendLayout();
-            groupBox8.SuspendLayout();
-            groupBox7.SuspendLayout();
-            groupBox6.SuspendLayout();
-            groupBox4.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tblNhanVien = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtHoTen = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabDanhSach = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.cmsNhanVien = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tsmThongKe = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmInFilePDF = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmXuatFileExcel = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabReport = new System.Windows.Forms.TabPage();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.rbNam = new System.Windows.Forms.RadioButton();
+            this.rbNu = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.txtHoTenNV = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.rptNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rtbDiaChi = new System.Windows.Forms.RichTextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cboPhongBan = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTimKiemThongKe = new System.Windows.Forms.Button();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            this.groupBox20.SuspendLayout();
+            this.tblNhanVien.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabDanhSach.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
+            this.cmsNhanVien.SuspendLayout();
+            this.tabReport.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.SuspendLayout();
             // 
             // groupBox18
             // 
-            groupBox18.Location = new Point(0, 0);
-            groupBox18.Name = "groupBox18";
-            groupBox18.Size = new Size(200, 100);
-            groupBox18.TabIndex = 0;
-            groupBox18.TabStop = false;
+            this.groupBox18.Location = new System.Drawing.Point(0, 0);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(200, 100);
+            this.groupBox18.TabIndex = 0;
+            this.groupBox18.TabStop = false;
             // 
             // tableLayoutPanel7
             // 
-            tableLayoutPanel7.ColumnCount = 1;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel7.Controls.Add(groupBox19, 0, 2);
-            tableLayoutPanel7.Location = new Point(0, 0);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 3;
-            tableLayoutPanel7.Size = new Size(200, 100);
-            tableLayoutPanel7.TabIndex = 0;
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.groupBox19, 0, 2);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 3;
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel7.TabIndex = 0;
             // 
             // groupBox19
             // 
-            groupBox19.Controls.Add(textBox5);
-            groupBox19.Dock = DockStyle.Fill;
-            groupBox19.ForeColor = Color.White;
-            groupBox19.Location = new Point(3, 3);
-            groupBox19.Name = "groupBox19";
-            groupBox19.Size = new Size(194, 94);
-            groupBox19.TabIndex = 12;
-            groupBox19.TabStop = false;
-            groupBox19.Text = "Họ tên";
+            this.groupBox19.Controls.Add(this.textBox5);
+            this.groupBox19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox19.ForeColor = System.Drawing.Color.White;
+            this.groupBox19.Location = new System.Drawing.Point(3, 3);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(194, 94);
+            this.groupBox19.TabIndex = 12;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Họ tên";
             // 
             // textBox5
             // 
-            textBox5.Dock = DockStyle.Fill;
-            textBox5.Location = new Point(3, 22);
-            textBox5.Margin = new Padding(5);
-            textBox5.Name = "textBox5";
-            //textBox5.PlaceholderText = "Họ và tên";
-            textBox5.Size = new Size(188, 26);
-            textBox5.TabIndex = 5;
+            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox5.Location = new System.Drawing.Point(3, 16);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(188, 20);
+            this.textBox5.TabIndex = 5;
             // 
             // groupBox20
             // 
-            groupBox20.Controls.Add(textBox6);
-            groupBox20.Dock = DockStyle.Fill;
-            groupBox20.ForeColor = Color.White;
-            groupBox20.Location = new Point(3, 86);
-            groupBox20.Name = "groupBox20";
-            groupBox20.Size = new Size(194, 77);
-            groupBox20.TabIndex = 11;
-            groupBox20.TabStop = false;
-            groupBox20.Text = "Số điện thoại";
+            this.groupBox20.Controls.Add(this.textBox6);
+            this.groupBox20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox20.ForeColor = System.Drawing.Color.White;
+            this.groupBox20.Location = new System.Drawing.Point(3, 86);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(194, 77);
+            this.groupBox20.TabIndex = 11;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "Số điện thoại";
             // 
             // textBox6
             // 
-            textBox6.Dock = DockStyle.Fill;
-            textBox6.Location = new Point(3, 22);
-            textBox6.Margin = new Padding(5);
-            textBox6.Name = "textBox6";
-            //textBox6.PlaceholderText = "số điện thoại";
-            textBox6.Size = new Size(188, 26);
-            textBox6.TabIndex = 9;
+            this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox6.Location = new System.Drawing.Point(3, 16);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(5);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(188, 20);
+            this.textBox6.TabIndex = 9;
             // 
             // tblNhanVien
             // 
-            tblNhanVien.ColumnCount = 1;
-            tblNhanVien.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tblNhanVien.Controls.Add(groupBox3, 0, 1);
-            tblNhanVien.Controls.Add(groupBox14, 0, 2);
-            tblNhanVien.Controls.Add(tableLayoutPanel1, 0, 0);
-            tblNhanVien.Dock = DockStyle.Fill;
-            tblNhanVien.Location = new Point(388, 3);
-            tblNhanVien.Name = "tblNhanVien";
-            tblNhanVien.RowCount = 3;
-            tblNhanVien.RowStyles.Add(new RowStyle(SizeType.Percent, 12.1715078F));
-            tblNhanVien.RowStyles.Add(new RowStyle(SizeType.Percent, 68.7413559F));
-            tblNhanVien.RowStyles.Add(new RowStyle(SizeType.Percent, 18.9463253F));
-            tblNhanVien.Size = new Size(893, 723);
-            tblNhanVien.TabIndex = 6;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(dgvNhanVien);
-            groupBox3.Dock = DockStyle.Fill;
-            groupBox3.ForeColor = Color.White;
-            groupBox3.Location = new Point(3, 91);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(887, 491);
-            groupBox3.TabIndex = 10;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Danh sách";
-            // 
-            // dgvNhanVien
-            // 
-            dgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvNhanVien.ContextMenuStrip = cmsNhanVien;
-            dgvNhanVien.Dock = DockStyle.Fill;
-            dgvNhanVien.Location = new Point(3, 35);
-            dgvNhanVien.Name = "dgvNhanVien";
-            dgvNhanVien.Size = new Size(881, 453);
-            dgvNhanVien.TabIndex = 0;
-            // 
-            // cmsNhanVien
-            // 
-            cmsNhanVien.BackColor = SystemColors.ActiveBorder;
-            cmsNhanVien.Items.AddRange(new ToolStripItem[] { tsmThongKe, tsmInFilePDF, tsmXuatFileExcel });
-            cmsNhanVien.Name = "contextMenuStrip1";
-            cmsNhanVien.Size = new Size(164, 76);
-            // 
-            // tsmThongKe
-            // 
-            tsmThongKe.BackColor = Color.FromArgb(255, 192, 192);
-            tsmThongKe.Name = "tsmThongKe";
-            tsmThongKe.Size = new Size(163, 24);
-            tsmThongKe.Text = "Thống kê";
-            tsmThongKe.Click += tsmThongKe_Click;
-            // 
-            // tsmInFilePDF
-            // 
-            tsmInFilePDF.BackColor = Color.FromArgb(255, 192, 192);
-            tsmInFilePDF.Name = "tsmInFilePDF";
-            tsmInFilePDF.Size = new Size(163, 24);
-            tsmInFilePDF.Text = "Xuất File PDF";
-            tsmInFilePDF.Click += tsmInFilePDF_Click;
-            // 
-            // tsmXuatFileExcel
-            // 
-            tsmXuatFileExcel.BackColor = Color.FromArgb(255, 192, 192);
-            tsmXuatFileExcel.Name = "tsmXuatFileExcel";
-            tsmXuatFileExcel.Size = new Size(163, 24);
-            tsmXuatFileExcel.Text = "Xuất File Excel";
-            tsmXuatFileExcel.Click += tsmInFileExcel_Click;
+            this.tblNhanVien.ColumnCount = 1;
+            this.tblNhanVien.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblNhanVien.Controls.Add(this.groupBox14, 0, 2);
+            this.tblNhanVien.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this.tblNhanVien.Controls.Add(this.tabControl1, 0, 1);
+            this.tblNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblNhanVien.Location = new System.Drawing.Point(388, 3);
+            this.tblNhanVien.Name = "tblNhanVien";
+            this.tblNhanVien.RowCount = 3;
+            this.tblNhanVien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.17151F));
+            this.tblNhanVien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.74136F));
+            this.tblNhanVien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.94633F));
+            this.tblNhanVien.Size = new System.Drawing.Size(893, 723);
+            this.tblNhanVien.TabIndex = 6;
             // 
             // groupBox14
             // 
-            groupBox14.Controls.Add(tableLayoutPanel6);
-            groupBox14.Dock = DockStyle.Fill;
-            groupBox14.ForeColor = Color.White;
-            groupBox14.Location = new Point(3, 588);
-            groupBox14.Name = "groupBox14";
-            groupBox14.Size = new Size(887, 132);
-            groupBox14.TabIndex = 8;
-            groupBox14.TabStop = false;
-            groupBox14.Text = "Thao tác dữ liệu";
+            this.groupBox14.Controls.Add(this.tableLayoutPanel6);
+            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox14.ForeColor = System.Drawing.Color.White;
+            this.groupBox14.Location = new System.Drawing.Point(3, 588);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(887, 132);
+            this.groupBox14.TabIndex = 8;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Thao tác dữ liệu";
             // 
             // tableLayoutPanel6
             // 
-            tableLayoutPanel6.ColumnCount = 6;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
-            tableLayoutPanel6.Controls.Add(btnEdit, 0, 0);
-            tableLayoutPanel6.Controls.Add(btnRefresh, 0, 0);
-            tableLayoutPanel6.Controls.Add(btnDelete, 0, 0);
-            tableLayoutPanel6.Controls.Add(btnAdd, 0, 0);
-            tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Font = new Font("Arial Rounded MT Bold", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            tableLayoutPanel6.Location = new Point(3, 35);
-            tableLayoutPanel6.Margin = new Padding(5);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 1;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 162F));
-            tableLayoutPanel6.Size = new Size(881, 94);
-            tableLayoutPanel6.TabIndex = 0;
+            this.tableLayoutPanel6.ColumnCount = 6;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel6.Controls.Add(this.btnEdit, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnRefresh, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnDelete, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.btnAdd, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 35);
+            this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 113F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(881, 94);
+            this.tableLayoutPanel6.TabIndex = 0;
             // 
             // btnEdit
             // 
-            btnEdit.BackColor = Color.Transparent;
-            btnEdit.Dock = DockStyle.Fill;
-            btnEdit.FlatAppearance.BorderSize = 3;
-            btnEdit.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 192);
-            btnEdit.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.ForeColor = Color.SeaShell;
-            btnEdit.Location = new Point(297, 5);
-            btnEdit.Margin = new Padding(5);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(136, 84);
-            btnEdit.TabIndex = 3;
-            btnEdit.Text = "Sửa";
-            btnEdit.UseVisualStyleBackColor = false;
-            btnEdit.Click += btnEdit_Click;
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEdit.FlatAppearance.BorderSize = 3;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnEdit.Location = new System.Drawing.Point(297, 5);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(136, 84);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnRefresh
             // 
-            btnRefresh.BackColor = Color.Transparent;
-            btnRefresh.Dock = DockStyle.Fill;
-            btnRefresh.FlatAppearance.BorderSize = 3;
-            btnRefresh.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 192);
-            btnRefresh.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnRefresh.FlatStyle = FlatStyle.Flat;
-            btnRefresh.ForeColor = Color.SeaShell;
-            btnRefresh.Location = new Point(443, 5);
-            btnRefresh.Margin = new Padding(5);
-            btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(136, 84);
-            btnRefresh.TabIndex = 2;
-            btnRefresh.Text = "làm mới";
-            btnRefresh.UseVisualStyleBackColor = false;
-            btnRefresh.Click += btnRefresh_Click;
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.FlatAppearance.BorderSize = 3;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnRefresh.Location = new System.Drawing.Point(443, 5);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(136, 84);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "làm mới";
+            this.btnRefresh.UseVisualStyleBackColor = false;
             // 
             // btnDelete
             // 
-            btnDelete.BackColor = Color.Transparent;
-            btnDelete.Dock = DockStyle.Fill;
-            btnDelete.FlatAppearance.BorderSize = 3;
-            btnDelete.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 192);
-            btnDelete.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.ForeColor = Color.SeaShell;
-            btnDelete.Location = new Point(5, 5);
-            btnDelete.Margin = new Padding(5);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(136, 84);
-            btnDelete.TabIndex = 1;
-            btnDelete.Text = "Xóa";
-            btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.Click += btnDelete_Click;
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatAppearance.BorderSize = 3;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnDelete.Location = new System.Drawing.Point(5, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(136, 84);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnAdd
             // 
-            btnAdd.BackColor = Color.Transparent;
-            btnAdd.Dock = DockStyle.Fill;
-            btnAdd.FlatAppearance.BorderSize = 3;
-            btnAdd.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 192);
-            btnAdd.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.ForeColor = Color.SeaShell;
-            btnAdd.Location = new Point(151, 5);
-            btnAdd.Margin = new Padding(5);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(136, 84);
-            btnAdd.TabIndex = 0;
-            btnAdd.Text = "Thêm";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.FlatAppearance.BorderSize = 3;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnAdd.Location = new System.Drawing.Point(151, 5);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(136, 84);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 67.60124F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.3987579F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(txtHoTen, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnTimKiem, 1, 0);
-            tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(3, 3);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(887, 82);
-            tableLayoutPanel1.TabIndex = 11;
-            // 
-            // btnTimKiem
-            // 
-            btnTimKiem.BackColor = Color.Transparent;
-            btnTimKiem.Dock = DockStyle.Fill;
-            btnTimKiem.FlatAppearance.BorderSize = 3;
-            btnTimKiem.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 192, 192);
-            btnTimKiem.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 128, 128);
-            btnTimKiem.FlatStyle = FlatStyle.Flat;
-            btnTimKiem.ForeColor = Color.SeaShell;
-            btnTimKiem.Location = new Point(604, 5);
-            btnTimKiem.Margin = new Padding(5);
-            btnTimKiem.Name = "btnTimKiem";
-            btnTimKiem.Size = new Size(278, 72);
-            btnTimKiem.TabIndex = 4;
-            btnTimKiem.Text = "Tìm kiếm";
-            btnTimKiem.UseVisualStyleBackColor = false;
-            btnTimKiem.Click += btnTimKiem_Click;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
-            tableLayoutPanel3.Controls.Add(groupBox1, 0, 0);
-            tableLayoutPanel3.Controls.Add(tblNhanVien, 1, 0);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(0, 0);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(1284, 729);
-            tableLayoutPanel3.TabIndex = 12;
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(tableLayoutPanel2);
-            groupBox1.Dock = DockStyle.Fill;
-            groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(3, 3);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(379, 723);
-            groupBox1.TabIndex = 7;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Nhập thông tin";
-            // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.AutoScroll = true;
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(groupBox5, 0, 6);
-            tableLayoutPanel2.Controls.Add(groupBox2, 0, 5);
-            tableLayoutPanel2.Controls.Add(groupBox9, 0, 1);
-            tableLayoutPanel2.Controls.Add(groupBox8, 0, 3);
-            tableLayoutPanel2.Controls.Add(groupBox7, 0, 2);
-            tableLayoutPanel2.Controls.Add(groupBox6, 0, 4);
-            tableLayoutPanel2.Controls.Add(groupBox4, 0, 0);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 35);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 8;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(373, 685);
-            tableLayoutPanel2.TabIndex = 12;
-            // 
-            // groupBox5
-            // 
-            groupBox5.Controls.Add(flowLayoutPanel1);
-            groupBox5.Dock = DockStyle.Fill;
-            groupBox5.ForeColor = Color.White;
-            groupBox5.Location = new Point(3, 513);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(367, 79);
-            groupBox5.TabIndex = 0;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Giới tính";
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(rbNam);
-            flowLayoutPanel1.Controls.Add(rbNu);
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(3, 35);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Padding = new Padding(16, 0, 16, 0);
-            flowLayoutPanel1.Size = new Size(361, 41);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
-            // rbNam
-            // 
-            rbNam.AutoSize = true;
-            rbNam.Location = new Point(19, 3);
-            rbNam.Name = "rbNam";
-            rbNam.Padding = new Padding(4);
-            rbNam.Size = new Size(89, 44);
-            rbNam.TabIndex = 0;
-            rbNam.TabStop = true;
-            rbNam.Text = "Nam";
-            rbNam.UseVisualStyleBackColor = true;
-            // 
-            // rbNu
-            // 
-            rbNu.AutoSize = true;
-            rbNu.Location = new Point(114, 3);
-            rbNu.Name = "rbNu";
-            rbNu.Padding = new Padding(4);
-            rbNu.Size = new Size(70, 44);
-            rbNu.TabIndex = 1;
-            rbNu.TabStop = true;
-            rbNu.Text = "Nữ";
-            rbNu.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            groupBox2.Controls.Add(txtLuong);
-            groupBox2.Dock = DockStyle.Fill;
-            groupBox2.ForeColor = Color.White;
-            groupBox2.Location = new Point(3, 428);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(367, 79);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Lương";
-            // 
-            // txtLuong
-            // 
-            txtLuong.Dock = DockStyle.Fill;
-            txtLuong.Location = new Point(3, 35);
-            txtLuong.Margin = new Padding(5);
-            txtLuong.Name = "txtLuong";
-            //txtLuong.PlaceholderText = "Lương";
-            txtLuong.Size = new Size(361, 39);
-            txtLuong.TabIndex = 0;
-            // 
-            // groupBox9
-            // 
-            groupBox9.Controls.Add(txtHoTenNV);
-            groupBox9.Dock = DockStyle.Fill;
-            groupBox9.ForeColor = Color.White;
-            groupBox9.Location = new Point(3, 88);
-            groupBox9.Name = "groupBox9";
-            groupBox9.Size = new Size(367, 79);
-            groupBox9.TabIndex = 12;
-            groupBox9.TabStop = false;
-            groupBox9.Text = "Họ tên";
-            // 
-            // txtHoTenNV
-            // 
-            txtHoTenNV.Dock = DockStyle.Fill;
-            txtHoTenNV.Location = new Point(3, 35);
-            txtHoTenNV.Margin = new Padding(5);
-            txtHoTenNV.Name = "txtHoTenNV";
-            //txtHoTenNV.PlaceholderText = "Họ và tên";
-            txtHoTenNV.Size = new Size(361, 39);
-            txtHoTenNV.TabIndex = 0;
-            txtHoTenNV.TextChanged += txtHoTenNV_TextChanged;
-            // 
-            // groupBox8
-            // 
-            groupBox8.Controls.Add(txtSDT);
-            groupBox8.Dock = DockStyle.Fill;
-            groupBox8.ForeColor = Color.White;
-            groupBox8.Location = new Point(3, 258);
-            groupBox8.Name = "groupBox8";
-            groupBox8.Size = new Size(367, 79);
-            groupBox8.TabIndex = 11;
-            groupBox8.TabStop = false;
-            groupBox8.Text = "Số điện thoại";
-            // 
-            // txtSDT
-            // 
-            txtSDT.Dock = DockStyle.Fill;
-            txtSDT.Location = new Point(3, 35);
-            txtSDT.Margin = new Padding(5);
-            txtSDT.Name = "txtSDT";
-            //txtSDT.PlaceholderText = "số điện thoại";
-            txtSDT.Size = new Size(361, 39);
-            txtSDT.TabIndex = 0;
-            // 
-            // groupBox7
-            // 
-            groupBox7.Controls.Add(rptNgaySinh);
-            groupBox7.Dock = DockStyle.Fill;
-            groupBox7.ForeColor = Color.White;
-            groupBox7.Location = new Point(3, 173);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Size = new Size(367, 79);
-            groupBox7.TabIndex = 10;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "Ngày sinh";
-            // 
-            // rptNgaySinh
-            // 
-            rptNgaySinh.Dock = DockStyle.Fill;
-            rptNgaySinh.Format = DateTimePickerFormat.Short;
-            rptNgaySinh.Location = new Point(3, 35);
-            rptNgaySinh.Margin = new Padding(6, 4, 6, 4);
-            rptNgaySinh.Name = "rptNgaySinh";
-            rptNgaySinh.Size = new Size(361, 39);
-            rptNgaySinh.TabIndex = 19;
-            // 
-            // groupBox6
-            // 
-            groupBox6.AutoSize = true;
-            groupBox6.Controls.Add(rtbDiaChi);
-            groupBox6.Dock = DockStyle.Fill;
-            groupBox6.ForeColor = Color.White;
-            groupBox6.Location = new Point(3, 343);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(367, 79);
-            groupBox6.TabIndex = 9;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "Địa chỉ";
-            // 
-            // rtbDiaChi
-            // 
-            rtbDiaChi.Dock = DockStyle.Fill;
-            rtbDiaChi.Location = new Point(3, 35);
-            rtbDiaChi.Name = "rtbDiaChi";
-            rtbDiaChi.Size = new Size(361, 41);
-            rtbDiaChi.TabIndex = 0;
-            rtbDiaChi.Text = "";
-            // 
-            // groupBox4
-            // 
-            groupBox4.Controls.Add(cboPhongBan);
-            groupBox4.Dock = DockStyle.Fill;
-            groupBox4.ForeColor = Color.Snow;
-            groupBox4.Location = new Point(3, 3);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(367, 79);
-            groupBox4.TabIndex = 0;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Phòng ban";
-            // 
-            // cboPhongBan
-            // 
-            cboPhongBan.Dock = DockStyle.Fill;
-            cboPhongBan.FormattingEnabled = true;
-            cboPhongBan.Location = new Point(3, 35);
-            cboPhongBan.Margin = new Padding(5);
-            cboPhongBan.Name = "cboPhongBan";
-            cboPhongBan.Size = new Size(361, 40);
-            cboPhongBan.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Phòng Ban";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Trưởng Phòng";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.Width = 125;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.60124F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.39876F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.txtHoTen, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnTimKiem, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(887, 82);
+            this.tableLayoutPanel1.TabIndex = 11;
             // 
             // txtHoTen
             // 
-            txtHoTen.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtHoTen.Dock = DockStyle.Fill;
-            txtHoTen.Location = new Point(3, 3);
-            txtHoTen.Multiline = true;
-            txtHoTen.Name = "txtHoTen";
-            //txtHoTen.PlaceholderText = "Tìm theo họ tên";
-            txtHoTen.ScrollBars = ScrollBars.Both;
-            txtHoTen.Size = new Size(593, 76);
-            txtHoTen.TabIndex = 5;
-            txtHoTen.TextAlign = HorizontalAlignment.Center;
+            this.txtHoTen.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtHoTen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHoTen.Location = new System.Drawing.Point(3, 3);
+            this.txtHoTen.Multiline = true;
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtHoTen.Size = new System.Drawing.Size(593, 76);
+            this.txtHoTen.TabIndex = 5;
+            this.txtHoTen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
+            this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimKiem.FlatAppearance.BorderSize = 3;
+            this.btnTimKiem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTimKiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiem.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnTimKiem.Location = new System.Drawing.Point(604, 5);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(5);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(278, 72);
+            this.btnTimKiem.TabIndex = 4;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabDanhSach);
+            this.tabControl1.Controls.Add(this.tabReport);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(3, 91);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(887, 491);
+            this.tabControl1.TabIndex = 12;
+            // 
+            // tabDanhSach
+            // 
+            this.tabDanhSach.AllowDrop = true;
+            this.tabDanhSach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.tabDanhSach.Controls.Add(this.groupBox3);
+            this.tabDanhSach.ForeColor = System.Drawing.Color.Transparent;
+            this.tabDanhSach.Location = new System.Drawing.Point(4, 41);
+            this.tabDanhSach.Name = "tabDanhSach";
+            this.tabDanhSach.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDanhSach.Size = new System.Drawing.Size(879, 446);
+            this.tabDanhSach.TabIndex = 0;
+            this.tabDanhSach.Text = "Danh sách";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvNhanVien);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.ForeColor = System.Drawing.Color.White;
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(873, 440);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách";
+            // 
+            // dgvNhanVien
+            // 
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNhanVien.ContextMenuStrip = this.cmsNhanVien;
+            this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvNhanVien.Location = new System.Drawing.Point(3, 35);
+            this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.Size = new System.Drawing.Size(867, 402);
+            this.dgvNhanVien.TabIndex = 0;
+            // 
+            // cmsNhanVien
+            // 
+            this.cmsNhanVien.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cmsNhanVien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmThongKe,
+            this.tsmInFilePDF,
+            this.tsmXuatFileExcel});
+            this.cmsNhanVien.Name = "contextMenuStrip1";
+            this.cmsNhanVien.Size = new System.Drawing.Size(164, 76);
+            // 
+            // tsmThongKe
+            // 
+            this.tsmThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmThongKe.Name = "tsmThongKe";
+            this.tsmThongKe.Size = new System.Drawing.Size(163, 24);
+            this.tsmThongKe.Text = "Thống kê";
+            // 
+            // tsmInFilePDF
+            // 
+            this.tsmInFilePDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmInFilePDF.Name = "tsmInFilePDF";
+            this.tsmInFilePDF.Size = new System.Drawing.Size(163, 24);
+            this.tsmInFilePDF.Text = "Xuất File PDF";
+            // 
+            // tsmXuatFileExcel
+            // 
+            this.tsmXuatFileExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tsmXuatFileExcel.Name = "tsmXuatFileExcel";
+            this.tsmXuatFileExcel.Size = new System.Drawing.Size(163, 24);
+            this.tsmXuatFileExcel.Text = "Xuất File Excel";
+            // 
+            // tabReport
+            // 
+            this.tabReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.tabReport.Controls.Add(this.tableLayoutPanel4);
+            this.tabReport.Location = new System.Drawing.Point(4, 41);
+            this.tabReport.Name = "tabReport";
+            this.tabReport.Padding = new System.Windows.Forms.Padding(3);
+            this.tabReport.Size = new System.Drawing.Size(879, 446);
+            this.tabReport.TabIndex = 1;
+            this.tabReport.Text = "Report";
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.ForeColor = System.Drawing.Color.Black;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 64);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(867, 373);
+            this.crystalReportViewer1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 55);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Location = new System.Drawing.Point(83, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(528, 49);
+            this.textBox1.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tblNhanVien, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1284, 729);
+            this.tableLayoutPanel3.TabIndex = 12;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(379, 723);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Nhập thông tin";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoScroll = true;
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox5, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox9, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox8, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox7, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox6, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.groupBox4, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 35);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(373, 685);
+            this.tableLayoutPanel2.TabIndex = 12;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
+            this.groupBox5.Location = new System.Drawing.Point(3, 513);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(367, 79);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Giới tính";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.rbNam);
+            this.flowLayoutPanel1.Controls.Add(this.rbNu);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 35);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(361, 41);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // rbNam
+            // 
+            this.rbNam.AutoSize = true;
+            this.rbNam.Location = new System.Drawing.Point(19, 3);
+            this.rbNam.Name = "rbNam";
+            this.rbNam.Padding = new System.Windows.Forms.Padding(4);
+            this.rbNam.Size = new System.Drawing.Size(89, 44);
+            this.rbNam.TabIndex = 0;
+            this.rbNam.TabStop = true;
+            this.rbNam.Text = "Nam";
+            this.rbNam.UseVisualStyleBackColor = true;
+            // 
+            // rbNu
+            // 
+            this.rbNu.AutoSize = true;
+            this.rbNu.Location = new System.Drawing.Point(114, 3);
+            this.rbNu.Name = "rbNu";
+            this.rbNu.Padding = new System.Windows.Forms.Padding(4);
+            this.rbNu.Size = new System.Drawing.Size(70, 44);
+            this.rbNu.TabIndex = 1;
+            this.rbNu.TabStop = true;
+            this.rbNu.Text = "Nữ";
+            this.rbNu.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtLuong);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.ForeColor = System.Drawing.Color.White;
+            this.groupBox2.Location = new System.Drawing.Point(3, 428);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(367, 79);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Lương";
+            // 
+            // txtLuong
+            // 
+            this.txtLuong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtLuong.Location = new System.Drawing.Point(3, 35);
+            this.txtLuong.Margin = new System.Windows.Forms.Padding(5);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(361, 39);
+            this.txtLuong.TabIndex = 0;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.txtHoTenNV);
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox9.ForeColor = System.Drawing.Color.White;
+            this.groupBox9.Location = new System.Drawing.Point(3, 88);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(367, 79);
+            this.groupBox9.TabIndex = 12;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Họ tên";
+            // 
+            // txtHoTenNV
+            // 
+            this.txtHoTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHoTenNV.Location = new System.Drawing.Point(3, 35);
+            this.txtHoTenNV.Margin = new System.Windows.Forms.Padding(5);
+            this.txtHoTenNV.Name = "txtHoTenNV";
+            this.txtHoTenNV.Size = new System.Drawing.Size(361, 39);
+            this.txtHoTenNV.TabIndex = 0;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.txtSDT);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox8.ForeColor = System.Drawing.Color.White;
+            this.groupBox8.Location = new System.Drawing.Point(3, 258);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(367, 79);
+            this.groupBox8.TabIndex = 11;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Số điện thoại";
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtSDT.Location = new System.Drawing.Point(3, 35);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(361, 39);
+            this.txtSDT.TabIndex = 0;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.rptNgaySinh);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.ForeColor = System.Drawing.Color.White;
+            this.groupBox7.Location = new System.Drawing.Point(3, 173);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(367, 79);
+            this.groupBox7.TabIndex = 10;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Ngày sinh";
+            // 
+            // rptNgaySinh
+            // 
+            this.rptNgaySinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.rptNgaySinh.Location = new System.Drawing.Point(3, 35);
+            this.rptNgaySinh.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.rptNgaySinh.Name = "rptNgaySinh";
+            this.rptNgaySinh.Size = new System.Drawing.Size(361, 39);
+            this.rptNgaySinh.TabIndex = 19;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.AutoSize = true;
+            this.groupBox6.Controls.Add(this.rtbDiaChi);
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
+            this.groupBox6.Location = new System.Drawing.Point(3, 343);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(367, 79);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Địa chỉ";
+            // 
+            // rtbDiaChi
+            // 
+            this.rtbDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbDiaChi.Location = new System.Drawing.Point(3, 35);
+            this.rtbDiaChi.Name = "rtbDiaChi";
+            this.rtbDiaChi.Size = new System.Drawing.Size(361, 41);
+            this.rtbDiaChi.TabIndex = 0;
+            this.rtbDiaChi.Text = "";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.cboPhongBan);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.ForeColor = System.Drawing.Color.Snow;
+            this.groupBox4.Location = new System.Drawing.Point(3, 3);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(367, 79);
+            this.groupBox4.TabIndex = 0;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Phòng ban";
+            // 
+            // cboPhongBan
+            // 
+            this.cboPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboPhongBan.FormattingEnabled = true;
+            this.cboPhongBan.Location = new System.Drawing.Point(3, 35);
+            this.cboPhongBan.Margin = new System.Windows.Forms.Padding(5);
+            this.cboPhongBan.Name = "cboPhongBan";
+            this.cboPhongBan.Size = new System.Drawing.Size(361, 40);
+            this.cboPhongBan.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Phòng Ban";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Trưởng Phòng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.crystalReportViewer1, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.86364F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.13636F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(873, 440);
+            this.tableLayoutPanel4.TabIndex = 3;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.02932F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.97068F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 252F));
+            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnTimKiemThongKe, 2, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(867, 55);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // btnTimKiemThongKe
+            // 
+            this.btnTimKiemThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimKiemThongKe.ForeColor = System.Drawing.Color.Black;
+            this.btnTimKiemThongKe.Location = new System.Drawing.Point(617, 3);
+            this.btnTimKiemThongKe.Name = "btnTimKiemThongKe";
+            this.btnTimKiemThongKe.Size = new System.Drawing.Size(247, 49);
+            this.btnTimKiemThongKe.TabIndex = 2;
+            this.btnTimKiemThongKe.Text = "Tìm kiếm";
+            this.btnTimKiemThongKe.UseVisualStyleBackColor = true;
             // 
             // FormNhanVien
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(10, 88, 52);
-            ClientSize = new Size(1284, 729);
-            Controls.Add(tableLayoutPanel3);
-            Font = new Font("Segoe UI Light", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            ForeColor = Color.White;
-            Margin = new Padding(5);
-            Name = "FormNhanVien";
-            Text = "Nhập thông tin nhân viên";
-            Load += FormNhanVien_Load;
-            tableLayoutPanel7.ResumeLayout(false);
-            groupBox19.ResumeLayout(false);
-            groupBox19.PerformLayout();
-            groupBox20.ResumeLayout(false);
-            groupBox20.PerformLayout();
-            tblNhanVien.ResumeLayout(false);
-            groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvNhanVien).EndInit();
-            cmsNhanVien.ResumeLayout(false);
-            groupBox14.ResumeLayout(false);
-            tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox9.ResumeLayout(false);
-            groupBox9.PerformLayout();
-            groupBox8.ResumeLayout(false);
-            groupBox8.PerformLayout();
-            groupBox7.ResumeLayout(false);
-            groupBox6.ResumeLayout(false);
-            groupBox4.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.ClientSize = new System.Drawing.Size(1284, 729);
+            this.Controls.Add(this.tableLayoutPanel3);
+            this.Font = new System.Drawing.Font("Segoe UI Light", 18F);
+            this.ForeColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Name = "FormNhanVien";
+            this.Text = "Nhập thông tin nhân viên";
+            this.Load += new System.EventHandler(this.FormNhanVien_Load);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            this.tblNhanVien.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabDanhSach.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
+            this.cmsNhanVien.ResumeLayout(false);
+            this.tabReport.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -711,8 +829,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
         private DateTimePicker dtpNgaySinh;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private GroupBox groupBox3;
-        private DataGridView dgvNhanVien;
         private Button btnEdit;
         private GroupBox groupBox2;
         private TextBox txtLuong;
@@ -730,5 +846,16 @@ namespace LTUD1_BACHHOAXANH472.Screen
         private SaveFileDialog saveFileDialog1;
         private ToolStripMenuItem tsmXuatFileExcel;
         private TextBox txtHoTen;
+        private TabControl tabControl1;
+        private TabPage tabDanhSach;
+        private TabPage tabReport;
+        private TextBox textBox1;
+        private GroupBox groupBox3;
+        private DataGridView dgvNhanVien;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private Label label1;
+        private TableLayoutPanel tableLayoutPanel4;
+        private TableLayoutPanel tableLayoutPanel5;
+        private Button btnTimKiemThongKe;
     }
 }
