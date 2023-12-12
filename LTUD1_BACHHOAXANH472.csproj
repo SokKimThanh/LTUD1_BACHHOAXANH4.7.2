@@ -93,6 +93,7 @@
     <Compile Include="Model\DataGridViewHelper.cs" />
     <Compile Include="Model\GenerateID.cs" />
     <Compile Include="Model\InFilePDFExcel.cs" />
+    <Compile Include="Model\RandomStringGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenMenu\HeThong\FormDangNhap.cs">

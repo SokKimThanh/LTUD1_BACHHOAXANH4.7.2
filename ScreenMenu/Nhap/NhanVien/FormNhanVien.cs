@@ -177,7 +177,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
 
         private void txtHoTenNV_TextChanged(object sender, EventArgs e)
         {
-            buttonStateManager.UpdateButtonStates(ButtonState.AddingTextChanged);
+             
         }
 
 

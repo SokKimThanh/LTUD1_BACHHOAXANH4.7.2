@@ -10,7 +10,7 @@ public class CustomButtonHelper
         flatbutton.BackColor = Color.Transparent;
         flatbutton.FlatStyle = FlatStyle.Flat;
         flatbutton.FlatAppearance.BorderColor = Color.White;
-        flatbutton.FlatAppearance.BorderSize = 4;
+        flatbutton.FlatAppearance.BorderSize = 2;
         flatbutton.FlatAppearance.MouseOverBackColor = o.primaryPink;
         flatbutton.FlatAppearance.MouseDownBackColor = o.secondaryPink;
         flatbutton.ForeColor = Color.White;

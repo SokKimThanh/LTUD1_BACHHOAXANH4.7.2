@@ -6,8 +6,7 @@ public enum ButtonState
 {
     DataGridViewSelected,
     RefreshClicked,
-    FormLoaded,
-    AddingTextChanged
+    FormLoaded
 }
 public class ButtonStateManager : CustomButtonHelper
 {
@@ -28,7 +27,6 @@ public class ButtonStateManager : CustomButtonHelper
                 break;
             case ButtonState.RefreshClicked:
             case ButtonState.FormLoaded:
-            case ButtonState.AddingTextChanged:
                 BtnAdd.Enabled = true;
                 BtnEdit.Enabled = false;
                 BtnDelete.Enabled = false;

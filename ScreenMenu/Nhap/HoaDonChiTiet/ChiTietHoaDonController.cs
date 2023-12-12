@@ -24,7 +24,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.ChiTietHoaDon
                 Sql.CommandType = CommandType.StoredProcedure;
 
                 // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@maHD", user.MaHD);
+                Sql.Parameters.AddWithValue("@maHD" , user.MaHD);
                 Sql.Parameters.AddWithValue("@masp", user.MaSP);
 
                 // Thực thi SqlCommand

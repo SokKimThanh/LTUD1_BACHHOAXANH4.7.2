@@ -15,7 +15,7 @@ internal class Account
     {
         this.tentk = null;
         this.matkhau = null;
-        this.matk = Utils.GenerateRandomAlphanumericString(11);
+        this.matk = "";
         this.createdate = default;
         this.phone = null;
         this.cccd = null;

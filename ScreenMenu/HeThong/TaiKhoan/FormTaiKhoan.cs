@@ -38,7 +38,7 @@ public partial class FormTaiKhoan : Form
     {
         try
         {
-            controller.Insert(new Account(txtTenTaiKhoan.Text, txtMK.Text, Utils.GenerateRandomAlphanumericString(11), DateTime.Parse(dtpCreatedDate.Value.ToShortDateString()), txtSDT.Text, txtCCCD.Text, txtEmail.Text));
+            controller.Insert(new Account(txtTenTaiKhoan.Text, txtMK.Text, "", DateTime.Parse(dtpCreatedDate.Value.ToShortDateString()), txtSDT.Text, txtCCCD.Text, txtEmail.Text));
             Reset();
         }
         catch (Exception ex)
@@ -79,7 +79,7 @@ public partial class FormTaiKhoan : Form
 
         try
         {
-            controller.Update(new Account(txtTenTaiKhoan.Text, txtMK.Text, Utils.GenerateRandomAlphanumericString(11), txtSDT.Text, txtCCCD.Text, txtEmail.Text));
+            controller.Update(new Account(txtTenTaiKhoan.Text, txtMK.Text, "", txtSDT.Text, txtCCCD.Text, txtEmail.Text));
             Reset();
         }
         catch (Exception ex)
