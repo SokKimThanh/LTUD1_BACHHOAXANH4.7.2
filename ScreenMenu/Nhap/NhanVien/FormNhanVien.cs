@@ -1,5 +1,6 @@
 ﻿using CrystalDecisions.Shared;
 using LTUD1_BACHHOAXANH4._7._2.ScreenMenu.Nhap.NhanVien;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DiaDiem;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -10,6 +11,8 @@ namespace LTUD1_BACHHOAXANH472
     {
         // khởi tạo kết nối
         NhanVienController nvController = new NhanVienController(Utils.ConnectionString);
+        DiaDiemController chinhanhController = new DiaDiemController(Utils.ConnectionString);
+
         // khởi tạo in
         InFilePDFExcel infile;
         // khởi tạo trạng thái cho nút 
@@ -50,13 +53,36 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-
+                // hiển thị danh sach nhân viên
                 nvController.SelectAll();
+
+                // hiển thị danh sach phòng ban
                 dgvNhanVien.DataSource = nvController.DataSource;
-                DataTable dt = nvController.GetDanhSachPhongBan();
-                cboPhongBan.DataSource = dt;
+                DataTable dtpb = nvController.GetDanhSachPhongBan();
+                cboPhongBan.DataSource = dtpb;
                 cboPhongBan.ValueMember = "MAPB";
                 cboPhongBan.DisplayMember = "TENPHG";
+
+
+
+
+
+                // hiển thị danh sach chi nhánh report
+                chinhanhController.SelectAll();
+                DataTable dtcn = chinhanhController.DataSource;
+                cboReportChiNhanh.DataSource = dtcn;
+                cboReportChiNhanh.ValueMember = "MACN";
+                cboReportChiNhanh.DisplayMember = "TENCN";
+                cboReportChiNhanh.SelectedIndex = 0;
+
+                // hiển thị danh sach phong ban theo chi nhánh
+                var selectedValue = cboReportChiNhanh.SelectedValue; // Lấy giá trị được chọn
+                DataTable dt = chinhanhController.SelectPhongBanByMaCN(selectedValue.ToString());
+                 
+                cboReportPhongBan.DataSource = dt;
+                cboReportPhongBan.ValueMember = "MAPB";
+                cboReportPhongBan.DisplayMember = "TENPHG";
+
 
                 infile = new InFilePDFExcel(dgvNhanVien);
 
@@ -73,67 +99,6 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //Kiem tra nhap thong tin
-                if (ErrTxt.CheckControlValue(txtHoTenNV))
-                {
-                    MessageBox.Show("txtHoTenNV", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(txtLuong))
-                {
-                    MessageBox.Show("txtLuong", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(txtSDT))
-                {
-                    MessageBox.Show("txtSDT", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(rtbDiaChi))
-                {
-                    MessageBox.Show("rtbDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(rptNgaySinh))
-                {
-                    MessageBox.Show("rptNgaySinh", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-
-                nvController.SelectAll();
-                //DataRow dongcuoicung = nccController.DataSource.Rows[nccController.DataSource.Rows.Count - 1];
-                DataRow dongdautien = nvController.DataSource.Rows[0];
-                // id tự động tăng
-                //string id_cuoi = (string)dongcuoicung["NhanVienID"];
-                string id_dau = (string)dongdautien["NhanVienID"];
-                string maNV = GenerateID.generateID("nv", id_dau);
-
-                string hotennv = txtHoTenNV.Text;
-                float luong = float.Parse(txtLuong.Text);
-                int sdtnv = int.Parse(txtSDT.Text);
-                string diachinv = rtbDiaChi.Text;
-                DateTime ngaysinh = rptNgaySinh.Value;
-                string mapb = cboPhongBan.SelectedValue.ToString();
-                string gioitinh = rbNam.Checked ? "nam" : rbNu.Checked ? "nu" : string.Empty;
-                NhanVien o = new NhanVien(maNV, hotennv, diachinv, luong, sdtnv, ngaysinh, mapb, gioitinh);
-                nvController.Insert(o);
-                nvController.SelectAll();
-                dgvNhanVien.DataSource = nvController.DataSource;
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-                refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                rtbDiaChi.Text = ex.Message;
-            }
-
 
         }
 
@@ -320,26 +285,86 @@ namespace LTUD1_BACHHOAXANH472
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            // Khởi tạo một đối tượng mới từ lớp CrystalReport1
-            CrystalReport1 rpt = new CrystalReport1();
+            //try
+            //{
+            //    // Khởi tạo một đối tượng mới từ lớp CrystalReport1
+            //    CrystalReport1 rpt = new CrystalReport1();
 
-            // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-            ParameterValues param = new ParameterValues();
+            //    // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+            //    ParameterValues paramMaPhongBan = new ParameterValues();
+            //    ParameterValues paramMaChiNhanh = new ParameterValues();
 
-            // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-            ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+            //    // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+            //    ParameterDiscreteValue pdvMaPB = new ParameterDiscreteValue();
+            //    ParameterDiscreteValue pdvMaCN = new ParameterDiscreteValue();
 
-            // Đặt giá trị của pdv bằng giá trị trong textBox1
-            pdv.Value = textBox1.Text;
+            //    // Đặt giá trị của pdv bằng giá trị trong textBox1
+            //    pdvMaPB.Value = cboReportPhongBan.SelectedValue;
+            //    pdvMaCN.Value = cboReportChiNhanh.SelectedValue;
+            //    // Thêm pdv vào danh sách các giá trị tham số
+            //    paramMaPhongBan.Add(pdvMaPB);
+            //    paramMaChiNhanh.Add(pdvMaCN);
+            //    // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+            //    rpt.DataDefinition.ParameterFields["@MaPhongBan"].ApplyCurrentValues(paramMaPhongBan);
+            //    rpt.DataDefinition.ParameterFields["@MaChiNhanh"].ApplyCurrentValues(paramMaChiNhanh);
 
-            // Thêm pdv vào danh sách các giá trị tham số
-            param.Add(pdv);
-
-            // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-            rpt.DataDefinition.ParameterFields["@masv"].ApplyCurrentValues(param);
-
-            // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            crystalReportViewer1.ReportSource = rpt;
+            //    // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+            //    crystalReportViewer1.ReportSource = rpt;
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
+
+        private void btnTimKiemThongKe_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Khởi tạo một đối tượng mới từ lớp CrystalReport1
+                CrystalReport1 rpt = new CrystalReport1();
+
+                // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+                ParameterValues paramMaPhongBan = new ParameterValues();
+                ParameterValues paramMaChiNhanh = new ParameterValues();
+
+                // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+                ParameterDiscreteValue pdvMaPB = new ParameterDiscreteValue();
+                ParameterDiscreteValue pdvMaCN = new ParameterDiscreteValue();
+
+                // Đặt giá trị của pdv bằng giá trị trong textBox1
+                pdvMaPB.Value = cboReportPhongBan.SelectedValue;
+                pdvMaCN.Value = cboReportChiNhanh.SelectedValue;
+                // Thêm pdv vào danh sách các giá trị tham số
+                paramMaPhongBan.Add(pdvMaPB);
+                paramMaChiNhanh.Add(pdvMaCN);
+                // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+                rpt.DataDefinition.ParameterFields["@MaPhongBan"].ApplyCurrentValues(paramMaPhongBan);
+                rpt.DataDefinition.ParameterFields["@MaChiNhanh"].ApplyCurrentValues(paramMaChiNhanh);
+
+                // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+                crystalReportViewer1.ReportSource = rpt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cboReportChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox cbo = (ComboBox)sender;
+            if (cbo.SelectedValue != null) // Kiểm tra xem có giá trị được chọn hay không
+            {
+                var selectedValue = cbo.SelectedValue.ToString(); // Lấy giá trị được chọn
+
+                // Sử dụng selectedValue ở đây
+                DataTable dt = chinhanhController.SelectPhongBanByMaCN(selectedValue);
+                cboReportPhongBan.DataSource = dt;
+                cboReportPhongBan.ValueMember = "MAPB";
+                cboReportPhongBan.DisplayMember = "TENPHG";
+            }
+        }
+
     }
 }

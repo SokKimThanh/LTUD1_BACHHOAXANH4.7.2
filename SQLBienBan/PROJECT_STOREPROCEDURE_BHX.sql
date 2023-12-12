@@ -1695,10 +1695,9 @@ BEGIN
 	FROM nhanvien nv 
 	WHERE pb.MAPB = nv.MAPB AND cn.MACN = pb.MACN FOR XML PATH('')), 1, 2, '') as 'Danh sách nhân viên' 
 	FROM PHONGBAN pb, CHINHANH cn 
-	WHERE pb.MAPB = @MaPhongBan
-	or  cn.MANC = @MaChiNhanh
-	or pb.MaPB like N'%'+ @MaChiNhanh + '%'
-	or  cn.TenCN like N'%'+ @MaPhongBan + '%'
+	WHERE  
+	  cn.MACN  =  @MaChiNhanh  
+	or  pb.MAPB = @MaPhongBan  
 	--GROUP BY pb.TENPHG, cn.TENCN, pb.MAPB, cn.MACN, pb.MACN;
 END;
 
@@ -1707,8 +1706,9 @@ select * from chinhanh
 select * from phongban 
 select * from nhanvien
 
-exec sp_nhanvien_danhsach_theophongban_chinhanh '', '', 'Đà', 'Nội'
-﻿
+exec sp_nhanvien_danhsach_theophongban_chinhanh 'cn01','pb01'
+
+select * from phongban pb, chinhanh cn WHERE cn.MACN = pb.MACN 
 -- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 9:39 CH>
 

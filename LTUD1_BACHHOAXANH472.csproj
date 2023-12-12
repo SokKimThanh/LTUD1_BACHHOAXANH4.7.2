@@ -388,6 +388,7 @@
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_update.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_cbo_laydanhsach_phongban_theo_chinhanh.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_delete.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_insert.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_select_all.sql" />
