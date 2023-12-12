@@ -4,9 +4,9 @@
 -- Create date: <13/11/2023>
 -- Description:	<Mô tả>
 -- =============================================
-DROP PROCEDURE IF EXISTS sp_khachhang_TimKiem
+DROP PROCEDURE IF EXISTS sp_hoadon_TimKiem
 GO
-CREATE PROCEDURE sp_khachhang_TimKiem
+CREATE PROCEDURE sp_hoadon_TimKiem
 	-- Add the parameters for the stored procedure here
 	@ma nvarchar(50)
 AS
@@ -24,4 +24,4 @@ BEGIN
 	 
 END
 GO
-exec sp_khachhang_TimKiem HD01
+exec sp_hoadon_TimKiem HD01
