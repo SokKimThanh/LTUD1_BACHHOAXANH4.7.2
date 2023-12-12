@@ -73,7 +73,11 @@ public abstract class MyController : DBController
 
     public abstract void Update(object sender);
 
-
+    /// <summary>
+    /// Chuyển thành đối tượng class object
+    /// </summary>
+    /// <param name="row"></param>
+    /// <returns></returns>
     public abstract object FromDataRow(DataRow row);
 
 }
