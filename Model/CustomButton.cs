@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 public class CustomButtonHelper
 {
-    public static void SetProperties(Button flatbutton)
+    public void SetProperties(Button flatbutton)
     {
         ErrColors o = new ErrColors();
         flatbutton.BackColor = Color.Transparent;

@@ -242,9 +242,6 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\ChiTietHoaDonThongKe.resx">
       <DependentUpon>ChiTietHoaDonThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.resx">
-      <DependentUpon>HuongDan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\DanhMuc\FormLoaiSP.resx">
       <DependentUpon>FormLoaiSP.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HinhThucKhuyenMai\FormHinhThucKhuyenMai.resx">
       <DependentUpon>FormHinhThucKhuyenMai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\HuongDan.resx">
+      <DependentUpon>HuongDan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDon\FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>

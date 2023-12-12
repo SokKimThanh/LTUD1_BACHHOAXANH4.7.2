@@ -29,7 +29,7 @@ namespace LTUD1_BACHHOAXANH472
                 nccController.SelectAll();
                 dgvNhaCungCap.DataSource = nccController.DataSource;
                 // crud button setting state
-                buttonStateManager.UpdateButtonStates("form_loaded");
+                buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
             }
             catch (Exception ex)
             {
@@ -86,7 +86,7 @@ namespace LTUD1_BACHHOAXANH472
                 nccController.Insert(o);
                 nccController.SelectAll();
                 dgvNhaCungCap.DataSource = nccController.DataSource;
-                buttonStateManager.UpdateButtonStates("refresh_clicked");
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                 refresh();
             }
             catch (Exception ex)
@@ -113,7 +113,7 @@ namespace LTUD1_BACHHOAXANH472
                 txtSDTNCC.Text = o.Sdt.ToString();
 
                 // cập nhật lại trang thái các nút
-                buttonStateManager.UpdateButtonStates("datagridview_selected");
+                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
             }
             catch (Exception ex)
             {
@@ -124,7 +124,7 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            buttonStateManager.UpdateButtonStates("refresh_clicked");
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             refresh();
         }
         private void btnDelete_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace LTUD1_BACHHOAXANH472
                 int dong = dgvNhaCungCap.CurrentCell.RowIndex;
                 string id = dgvNhaCungCap.Rows[dong].Cells[0].Value.ToString();
                 nccController.Delete(id);
-                buttonStateManager.UpdateButtonStates("refresh_clicked");
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                 refresh();
             }
             catch (Exception ex)
@@ -177,7 +177,7 @@ namespace LTUD1_BACHHOAXANH472
                 NhaCungCap o = new NhaCungCap(id, name, address, phone);
                 nccController.Update(o);
 
-                buttonStateManager.UpdateButtonStates("refresh_clicked");
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                 refresh();
             }
             catch (Exception ex)

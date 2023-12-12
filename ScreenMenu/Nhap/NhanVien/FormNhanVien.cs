@@ -44,7 +44,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
                 infile = new InFilePDFExcel(dgvNhanVien);
 
                 // crud button setting state
-                buttonStateManager.UpdateButtonStates("form_loaded");
+                buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
             }
             catch (Exception ex)
             {
@@ -108,7 +108,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
                 nvController.Insert(o);
                 nvController.SelectAll();
                 dgvNhanVien.DataSource = nvController.DataSource;
-                buttonStateManager.UpdateButtonStates("refresh_clicked");
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                 refresh();
             }
             catch (Exception ex)
@@ -149,7 +149,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
                     rbNu.Checked = true;
                 }
                 // cập nhật lại trang thái các nút
-                buttonStateManager.UpdateButtonStates("datagridview_selected");
+                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
             }
             catch (Exception ex)
             {
@@ -171,13 +171,13 @@ namespace LTUD1_BACHHOAXANH472.Screen
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            buttonStateManager.UpdateButtonStates("refresh_clicked");
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             refresh();
         }
 
         private void txtHoTenNV_TextChanged(object sender, EventArgs e)
         {
-            buttonStateManager.UpdateButtonStates("adding_textChanged");
+            buttonStateManager.UpdateButtonStates(ButtonState.AddingTextChanged);
         }
 
 
@@ -188,7 +188,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
                 int dong = dgvNhanVien.CurrentCell.RowIndex;
                 string manv = dgvNhanVien.Rows[dong].Cells[0].Value.ToString();
                 nvController.Delete(manv);
-                buttonStateManager.UpdateButtonStates("refresh_clicked");
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                 refresh();
             }
             catch (Exception ex)
@@ -247,7 +247,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
                 NhanVien o = new NhanVien(maNV, hotennv, diachinv, luong, sdtnv, ngaysinh, mapb, gioitinh);
                 nvController.Update(o);
 
-                buttonStateManager.UpdateButtonStates("refresh_clicked");
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                 refresh();
             }
             catch (Exception ex)

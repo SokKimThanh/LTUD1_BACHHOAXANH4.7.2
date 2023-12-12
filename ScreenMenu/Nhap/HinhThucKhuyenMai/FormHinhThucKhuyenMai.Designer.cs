@@ -377,7 +377,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
         private TableLayoutPanel tableLayoutPanel4;
         private GroupBox groupBox2;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button2;
         private GroupBox groupBox7;
         private TableLayoutPanel tableLayoutPanel5;
         private GroupBox groupBox10;
