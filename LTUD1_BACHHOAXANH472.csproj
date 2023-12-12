@@ -92,13 +92,24 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="khachhangreport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>khachhangreport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KHreport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KHreport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Model\ArrayList.cs" />
     <Compile Include="Model\ButtonStateManager.cs" />
     <Compile Include="Model\CustomButton.cs" />
     <Compile Include="Model\PlaceholderTextBox.cs" />
     <Compile Include="Model\DataGridViewHelper.cs" />
     <Compile Include="Model\GenerateID.cs" />
-    <Compile Include="Model\InFilePDFExcel.cs" />
     <Compile Include="Model\RandomStringGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +180,12 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDon\HoaDon.cs" />
     <Compile Include="ScreenMenu\Nhap\HoaDon\HoaDonController.cs" />
+    <Compile Include="reportHD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reportHD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ScreenMenu\Nhap\KhachHang\FormKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +247,14 @@
     <EmbeddedResource Include="FormMain.vi.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="khachhangreport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>khachhangreport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KHreport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>KHreport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -266,6 +291,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDon\FormHoaDonThongKe.resx">
       <DependentUpon>FormHoaDonThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportHD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>reportHD.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\KhachHang\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
@@ -367,6 +396,7 @@
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_HoaDon_TimKiem.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_update.sql" />
+    <Content Include="ScreenMenu\Nhap\KhachHang\sp_khahchhang_TimKiem.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_delete.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_insert.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_select_all.sql" />
@@ -404,6 +434,9 @@
     <Content Include="SQLBienBan\huongdancombinedsql.txt" />
     <Content Include="SQLBienBan\PROJECT_SQL_BHX.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
