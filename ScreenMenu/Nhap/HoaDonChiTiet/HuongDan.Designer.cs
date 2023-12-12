@@ -37,28 +37,14 @@ namespace LTUD1_BACHHOAXANH472
             this.làmMớiDanhSáchHóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbStep1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtHoaDon = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCapNhatHD = new System.Windows.Forms.Button();
-            this.btnXoaHD = new System.Windows.Forms.Button();
-            this.btnThemHD = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbStep2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnThemSP = new System.Windows.Forms.Button();
-            this.btnCapNhatSoLuongMua = new System.Windows.Forms.Button();
-            this.btnXoaSP = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -75,15 +61,13 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvHoaDonChiTiet = new System.Windows.Forms.DataGridView();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.gbStep3 = new System.Windows.Forms.GroupBox();
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnInPhieuHoaDon = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -97,12 +81,28 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnThemHD = new System.Windows.Forms.Button();
+            this.btnXoaHD = new System.Windows.Forms.Button();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtHoaDon = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboCheckSoLuongTonKho = new System.Windows.Forms.CheckBox();
+            this.btnXoaSP = new System.Windows.Forms.Button();
+            this.btnCapNhatSoLuongMua = new System.Windows.Forms.Button();
+            this.btnThemSP = new System.Windows.Forms.Button();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.contextMenuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gbStep1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbStep2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -113,11 +113,14 @@ namespace LTUD1_BACHHOAXANH472
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.gbStep3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -157,141 +160,38 @@ namespace LTUD1_BACHHOAXANH472
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhân viên bán hàng tạo hóa đơn";
             // 
-            // label2
+            // gbStep1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 72);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mã HD";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(3, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 72);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Khách hàng";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel6);
-            this.groupBox1.Controls.Add(this.btnCapNhatHD);
-            this.groupBox1.Controls.Add(this.btnXoaHD);
-            this.groupBox1.Controls.Add(this.btnThemHD);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(455, 703);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Bước 1: Lập hóa đơn";
+            this.gbStep1.Controls.Add(this.tableLayoutPanel6);
+            this.gbStep1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbStep1.ForeColor = System.Drawing.Color.White;
+            this.gbStep1.Location = new System.Drawing.Point(3, 3);
+            this.gbStep1.Name = "gbStep1";
+            this.gbStep1.Size = new System.Drawing.Size(455, 703);
+            this.gbStep1.TabIndex = 3;
+            this.gbStep1.TabStop = false;
+            this.gbStep1.Text = "Bước 1: Lập hóa đơn";
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel5, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.dgvHoaDon, 0, 4);
+            this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label9, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.dgvHoaDon, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel9, 0, 3);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 4;
+            this.tableLayoutPanel6.RowCount = 5;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.Size = new System.Drawing.Size(449, 668);
             this.tableLayoutPanel6.TabIndex = 9;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.44244F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.55756F));
-            this.tableLayoutPanel5.Controls.Add(this.txtHoaDon, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker1, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.comboBox2, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.comboBox1, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label15, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 3);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 83);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 4;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(443, 288);
-            this.tableLayoutPanel5.TabIndex = 8;
-            // 
-            // txtHoaDon
-            // 
-            this.txtHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtHoaDon.Location = new System.Drawing.Point(129, 3);
-            this.txtHoaDon.Name = "txtHoaDon";
-            this.txtHoaDon.Size = new System.Drawing.Size(311, 36);
-            this.txtHoaDon.TabIndex = 7;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker1.Location = new System.Drawing.Point(129, 219);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(311, 36);
-            this.dateTimePicker1.TabIndex = 5;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(129, 147);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(311, 38);
-            this.comboBox2.TabIndex = 6;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(129, 75);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(311, 38);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(3, 72);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(120, 72);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Nhân viên";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(3, 216);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 72);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Ngày lập hóa đơn";
             // 
             // label9
             // 
@@ -305,50 +205,29 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // btnCapNhatHD
             // 
+            this.btnCapNhatHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnCapNhatHD.ForeColor = System.Drawing.Color.Black;
-            this.btnCapNhatHD.Location = new System.Drawing.Point(323, 574);
+            this.btnCapNhatHD.Location = new System.Drawing.Point(297, 3);
             this.btnCapNhatHD.Name = "btnCapNhatHD";
-            this.btnCapNhatHD.Size = new System.Drawing.Size(111, 51);
+            this.btnCapNhatHD.Size = new System.Drawing.Size(143, 88);
             this.btnCapNhatHD.TabIndex = 3;
             this.btnCapNhatHD.Text = "Cập nhật";
             this.btnCapNhatHD.UseVisualStyleBackColor = true;
             this.btnCapNhatHD.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
-            // btnXoaHD
+            // gbStep2
             // 
-            this.btnXoaHD.ForeColor = System.Drawing.Color.Black;
-            this.btnXoaHD.Location = new System.Drawing.Point(202, 574);
-            this.btnXoaHD.Name = "btnXoaHD";
-            this.btnXoaHD.Size = new System.Drawing.Size(111, 51);
-            this.btnXoaHD.TabIndex = 3;
-            this.btnXoaHD.Text = "Xóa";
-            this.btnXoaHD.UseVisualStyleBackColor = true;
-            this.btnXoaHD.Click += new System.EventHandler(this.btnThemHD_Click);
-            // 
-            // btnThemHD
-            // 
-            this.btnThemHD.ForeColor = System.Drawing.Color.Black;
-            this.btnThemHD.Location = new System.Drawing.Point(4, 574);
-            this.btnThemHD.Name = "btnThemHD";
-            this.btnThemHD.Size = new System.Drawing.Size(183, 51);
-            this.btnThemHD.TabIndex = 3;
-            this.btnThemHD.Text = "Tạo hóa đơn mới";
-            this.btnThemHD.UseVisualStyleBackColor = true;
-            this.btnThemHD.Click += new System.EventHandler(this.btnThemHD_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.BackgroundImage = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.tranparent_green_detail;
-            this.groupBox2.Controls.Add(this.tableLayoutPanel7);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(464, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1006, 703);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Bước 2: Thêm/Xóa sản phẩm trong hóa đơn";
+            this.gbStep2.BackColor = System.Drawing.Color.Transparent;
+            this.gbStep2.BackgroundImage = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.tranparent_green_detail;
+            this.gbStep2.Controls.Add(this.tableLayoutPanel7);
+            this.gbStep2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbStep2.ForeColor = System.Drawing.Color.White;
+            this.gbStep2.Location = new System.Drawing.Point(464, 3);
+            this.gbStep2.Name = "gbStep2";
+            this.gbStep2.Size = new System.Drawing.Size(1006, 703);
+            this.gbStep2.TabIndex = 3;
+            this.gbStep2.TabStop = false;
+            this.gbStep2.Text = "Bước 2: Thêm/Xóa sản phẩm trong hóa đơn";
             // 
             // tableLayoutPanel7
             // 
@@ -383,9 +262,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnThemSP);
-            this.groupBox5.Controls.Add(this.btnCapNhatSoLuongMua);
-            this.groupBox5.Controls.Add(this.btnXoaSP);
+            this.groupBox5.Controls.Add(this.tableLayoutPanel10);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(3, 534);
@@ -394,36 +271,6 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thao tác trên sản phẩm của hóa đơn";
-            // 
-            // btnThemSP
-            // 
-            this.btnThemSP.ForeColor = System.Drawing.Color.Black;
-            this.btnThemSP.Location = new System.Drawing.Point(28, 38);
-            this.btnThemSP.Name = "btnThemSP";
-            this.btnThemSP.Size = new System.Drawing.Size(200, 50);
-            this.btnThemSP.TabIndex = 7;
-            this.btnThemSP.Text = "Thêm sản phẩm";
-            this.btnThemSP.UseVisualStyleBackColor = true;
-            // 
-            // btnCapNhatSoLuongMua
-            // 
-            this.btnCapNhatSoLuongMua.ForeColor = System.Drawing.Color.Black;
-            this.btnCapNhatSoLuongMua.Location = new System.Drawing.Point(469, 38);
-            this.btnCapNhatSoLuongMua.Name = "btnCapNhatSoLuongMua";
-            this.btnCapNhatSoLuongMua.Size = new System.Drawing.Size(450, 50);
-            this.btnCapNhatSoLuongMua.TabIndex = 8;
-            this.btnCapNhatSoLuongMua.Text = "Cập nhật số lượng hàng đã mua";
-            this.btnCapNhatSoLuongMua.UseVisualStyleBackColor = true;
-            // 
-            // btnXoaSP
-            // 
-            this.btnXoaSP.ForeColor = System.Drawing.Color.Black;
-            this.btnXoaSP.Location = new System.Drawing.Point(247, 38);
-            this.btnXoaSP.Name = "btnXoaSP";
-            this.btnXoaSP.Size = new System.Drawing.Size(200, 50);
-            this.btnXoaSP.TabIndex = 9;
-            this.btnXoaSP.Text = "Xóa sản phẩm";
-            this.btnXoaSP.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -616,30 +463,6 @@ namespace LTUD1_BACHHOAXANH472
             this.numericUpDown1.TabIndex = 17;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox2.ForeColor = System.Drawing.Color.White;
-            this.checkBox2.Location = new System.Drawing.Point(3, 3);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(273, 31);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "Tự cập nhật SL tồn kho";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(3, 40);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(273, 31);
-            this.checkBox1.TabIndex = 20;
-            this.checkBox1.Text = "Tự kiểm tra SL tồn kho";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Transparent;
@@ -684,49 +507,49 @@ namespace LTUD1_BACHHOAXANH472
             this.label10.TabIndex = 2;
             this.label10.Text = "Hệ thống tìm tất cả sản phẩm theo danh mục theo hóa đơn";
             // 
-            // groupBox3
+            // gbStep3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox3.Controls.Add(this.button6);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label24);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label20);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.label21);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(3, 718);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1473, 235);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Bước 3: Hiển thị thông tin màn hình thanh toán";
+            this.gbStep3.BackColor = System.Drawing.Color.Transparent;
+            this.gbStep3.Controls.Add(this.btnThanhToan);
+            this.gbStep3.Controls.Add(this.btnInPhieuHoaDon);
+            this.gbStep3.Controls.Add(this.label25);
+            this.gbStep3.Controls.Add(this.label24);
+            this.gbStep3.Controls.Add(this.label23);
+            this.gbStep3.Controls.Add(this.label6);
+            this.gbStep3.Controls.Add(this.label20);
+            this.gbStep3.Controls.Add(this.label19);
+            this.gbStep3.Controls.Add(this.label18);
+            this.gbStep3.Controls.Add(this.label17);
+            this.gbStep3.Controls.Add(this.label21);
+            this.gbStep3.Controls.Add(this.label13);
+            this.gbStep3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbStep3.ForeColor = System.Drawing.Color.White;
+            this.gbStep3.Location = new System.Drawing.Point(3, 718);
+            this.gbStep3.Name = "gbStep3";
+            this.gbStep3.Size = new System.Drawing.Size(1473, 235);
+            this.gbStep3.TabIndex = 3;
+            this.gbStep3.TabStop = false;
+            this.gbStep3.Text = "Bước 3: Hiển thị thông tin màn hình thanh toán";
             // 
-            // button6
+            // btnThanhToan
             // 
-            this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(618, 35);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(184, 51);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Thanh toán";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnThanhToan.ForeColor = System.Drawing.Color.Black;
+            this.btnThanhToan.Location = new System.Drawing.Point(618, 35);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(184, 51);
+            this.btnThanhToan.TabIndex = 3;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnInPhieuHoaDon
             // 
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(1251, 35);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(184, 51);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "In Phiếu hóa đơn";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnInPhieuHoaDon.ForeColor = System.Drawing.Color.Black;
+            this.btnInPhieuHoaDon.Location = new System.Drawing.Point(1251, 35);
+            this.btnInPhieuHoaDon.Name = "btnInPhieuHoaDon";
+            this.btnInPhieuHoaDon.Size = new System.Drawing.Size(184, 51);
+            this.btnInPhieuHoaDon.TabIndex = 3;
+            this.btnInPhieuHoaDon.Text = "In Phiếu hóa đơn";
+            this.btnInPhieuHoaDon.UseVisualStyleBackColor = true;
             // 
             // label25
             // 
@@ -833,7 +656,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.gbStep3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -848,8 +671,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.29667F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.70332F));
-            this.tableLayoutPanel2.Controls.Add(this.groupBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.groupBox2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.gbStep1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.gbStep2, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -864,9 +687,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.88382F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.11618F));
-            this.tableLayoutPanel8.Controls.Add(this.checkBox2, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.cboCheckSoLuongTonKho, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.numericUpDown1, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.checkBox1, 0, 1);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 32);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -876,14 +698,217 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel8.Size = new System.Drawing.Size(482, 74);
             this.tableLayoutPanel8.TabIndex = 21;
             // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 3;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel9.Controls.Add(this.btnThemHD, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.btnXoaHD, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.btnCapNhatHD, 2, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 283);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(443, 94);
+            this.tableLayoutPanel9.TabIndex = 10;
+            // 
+            // btnThemHD
+            // 
+            this.btnThemHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThemHD.ForeColor = System.Drawing.Color.Black;
+            this.btnThemHD.Location = new System.Drawing.Point(3, 3);
+            this.btnThemHD.Name = "btnThemHD";
+            this.btnThemHD.Size = new System.Drawing.Size(141, 88);
+            this.btnThemHD.TabIndex = 4;
+            this.btnThemHD.Text = "Tạo hóa đơn mới";
+            this.btnThemHD.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaHD
+            // 
+            this.btnXoaHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoaHD.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaHD.Location = new System.Drawing.Point(150, 3);
+            this.btnXoaHD.Name = "btnXoaHD";
+            this.btnXoaHD.Size = new System.Drawing.Size(141, 88);
+            this.btnXoaHD.TabIndex = 5;
+            this.btnXoaHD.Text = "Xóa";
+            this.btnXoaHD.UseVisualStyleBackColor = true;
+            // 
             // dgvHoaDon
             // 
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHoaDon.Location = new System.Drawing.Point(3, 377);
+            this.dgvHoaDon.Location = new System.Drawing.Point(3, 383);
             this.dgvHoaDon.Name = "dgvHoaDon";
-            this.dgvHoaDon.Size = new System.Drawing.Size(443, 288);
-            this.dgvHoaDon.TabIndex = 4;
+            this.dgvHoaDon.Size = new System.Drawing.Size(443, 282);
+            this.dgvHoaDon.TabIndex = 11;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.08578F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.91422F));
+            this.tableLayoutPanel5.Controls.Add(this.txtHoaDon, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.dateTimePicker1, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.comboBox2, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.comboBox1, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label15, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label7, 0, 3);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 83);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 4;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(443, 194);
+            this.tableLayoutPanel5.TabIndex = 12;
+            // 
+            // txtHoaDon
+            // 
+            this.txtHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHoaDon.Location = new System.Drawing.Point(153, 3);
+            this.txtHoaDon.Name = "txtHoaDon";
+            this.txtHoaDon.Size = new System.Drawing.Size(287, 36);
+            this.txtHoaDon.TabIndex = 7;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePicker1.Location = new System.Drawing.Point(153, 147);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(287, 36);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(153, 99);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(287, 38);
+            this.comboBox2.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(153, 51);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(287, 38);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(144, 48);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Mã HD";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(3, 48);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(144, 48);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Nhân viên";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(3, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(144, 48);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Khách hàng";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(3, 144);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 50);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Ngày lập hóa đơn";
+            // 
+            // cboCheckSoLuongTonKho
+            // 
+            this.cboCheckSoLuongTonKho.AutoSize = true;
+            this.cboCheckSoLuongTonKho.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboCheckSoLuongTonKho.ForeColor = System.Drawing.Color.White;
+            this.cboCheckSoLuongTonKho.Location = new System.Drawing.Point(3, 3);
+            this.cboCheckSoLuongTonKho.Name = "cboCheckSoLuongTonKho";
+            this.cboCheckSoLuongTonKho.Size = new System.Drawing.Size(273, 31);
+            this.cboCheckSoLuongTonKho.TabIndex = 21;
+            this.cboCheckSoLuongTonKho.Text = "Tự kiểm tra SL tồn kho";
+            this.cboCheckSoLuongTonKho.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaSP
+            // 
+            this.btnXoaSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoaSP.ForeColor = System.Drawing.Color.Black;
+            this.btnXoaSP.Location = new System.Drawing.Point(332, 3);
+            this.btnXoaSP.Name = "btnXoaSP";
+            this.btnXoaSP.Size = new System.Drawing.Size(323, 90);
+            this.btnXoaSP.TabIndex = 9;
+            this.btnXoaSP.Text = "Xóa sản phẩm";
+            this.btnXoaSP.UseVisualStyleBackColor = true;
+            // 
+            // btnCapNhatSoLuongMua
+            // 
+            this.btnCapNhatSoLuongMua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCapNhatSoLuongMua.ForeColor = System.Drawing.Color.Black;
+            this.btnCapNhatSoLuongMua.Location = new System.Drawing.Point(661, 3);
+            this.btnCapNhatSoLuongMua.Name = "btnCapNhatSoLuongMua";
+            this.btnCapNhatSoLuongMua.Size = new System.Drawing.Size(324, 90);
+            this.btnCapNhatSoLuongMua.TabIndex = 8;
+            this.btnCapNhatSoLuongMua.Text = "Cập nhật số lượng hàng đã mua";
+            this.btnCapNhatSoLuongMua.UseVisualStyleBackColor = true;
+            // 
+            // btnThemSP
+            // 
+            this.btnThemSP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThemSP.ForeColor = System.Drawing.Color.Black;
+            this.btnThemSP.Location = new System.Drawing.Point(3, 3);
+            this.btnThemSP.Name = "btnThemSP";
+            this.btnThemSP.Size = new System.Drawing.Size(323, 90);
+            this.btnThemSP.TabIndex = 7;
+            this.btnThemSP.Text = "Thêm sản phẩm";
+            this.btnThemSP.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel10
+            // 
+            this.tableLayoutPanel10.ColumnCount = 3;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel10.Controls.Add(this.btnThemSP, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btnCapNhatSoLuongMua, 2, 0);
+            this.tableLayoutPanel10.Controls.Add(this.btnXoaSP, 1, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(3, 32);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 1;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(988, 96);
+            this.tableLayoutPanel10.TabIndex = 10;
             // 
             // FormChiTietHoaDon
             // 
@@ -899,12 +924,10 @@ namespace LTUD1_BACHHOAXANH472
             this.Text = "Màn hình bán hàng(Hóa đơn chi tiết)";
             this.Load += new System.EventHandler(this.FormChiTietHoaDon_Load);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.gbStep1.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.gbStep2.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -917,13 +940,17 @@ namespace LTUD1_BACHHOAXANH472
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.gbStep3.ResumeLayout(false);
+            this.gbStep3.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -931,26 +958,22 @@ namespace LTUD1_BACHHOAXANH472
         #endregion
         private ContextMenuStrip contextMenuStrip1;
         private Label label1;
-        private Label label2;
-        private Label label5;
-        private GroupBox groupBox1;
-        private Label label7;
-        private GroupBox groupBox2;
-        private GroupBox groupBox3;
-        private Button button3;
+        private GroupBox gbStep1;
+        private GroupBox gbStep2;
+        private GroupBox gbStep3;
+        private Button btnInPhieuHoaDon;
         private Label label8;
         private Label label9;
         private Label label10;
         private Label label13;
         private Label label6;
-        private Label label15;
         private Label label20;
         private Label label19;
         private Label label18;
         private Label label17;
         private Label label21;
         private Label label16;
-        private Button button6;
+        private Button btnThanhToan;
         private Label label23;
         private Label label25;
         private Label label24;
@@ -967,21 +990,10 @@ namespace LTUD1_BACHHOAXANH472
         private Label label11;
         private Label label3;
         private GroupBox groupBox5;
-        private Button btnThemSP;
-        private Button btnCapNhatSoLuongMua;
-        private Button btnXoaSP;
         private GroupBox groupBox6;
         private NumericUpDown numericUpDown1;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private GroupBox groupBox7;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
         private NumericUpDown numericUpDown2;
-        private TextBox txtHoaDon;
-        private Button btnXoaHD;
-        private Button btnThemHD;
         private ToolStripMenuItem tổngSốHóaĐơnToolStripMenuItem;
         private ToolStripMenuItem làmMớiDanhSáchHóaĐơnToolStripMenuItem;
         private ToolStripMenuItem lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem;
@@ -991,9 +1003,25 @@ namespace LTUD1_BACHHOAXANH472
         private TableLayoutPanel tableLayoutPanel4;
         private DataGridView dgvHoaDonChiTiet;
         private TableLayoutPanel tableLayoutPanel6;
-        private TableLayoutPanel tableLayoutPanel5;
         private TableLayoutPanel tableLayoutPanel7;
         private TableLayoutPanel tableLayoutPanel8;
+        private TableLayoutPanel tableLayoutPanel5;
+        private TextBox txtHoaDon;
+        private DateTimePicker dateTimePicker1;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
+        private Label label2;
+        private Label label15;
+        private Label label5;
+        private Label label7;
         private DataGridView dgvHoaDon;
+        private TableLayoutPanel tableLayoutPanel9;
+        private Button btnThemHD;
+        private Button btnXoaHD;
+        private CheckBox cboCheckSoLuongTonKho;
+        private TableLayoutPanel tableLayoutPanel10;
+        private Button btnThemSP;
+        private Button btnCapNhatSoLuongMua;
+        private Button btnXoaSP;
     }
 }
