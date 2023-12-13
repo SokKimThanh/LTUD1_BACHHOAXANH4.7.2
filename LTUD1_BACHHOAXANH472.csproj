@@ -123,6 +123,7 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\TextHelper.cs" />
     <Compile Include="uploads\khachhangreport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -460,7 +461,7 @@
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_insert.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_search.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_danhsach_theophongban_chinhanh.sql" />
-    <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_select_all_all.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_select_nhanvien_phongban.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_update.sql" />
     <Content Include="ScreenMenu\Nhap\PhongBan\sp_cbb_chinhanh_select.sql" />

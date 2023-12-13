@@ -29,10 +29,15 @@ namespace LTUD1_BACHHOAXANH472.Model
                 // Lấy tên của báo cáo từ tên tệp
                 string reportTitle = Path.GetFileNameWithoutExtension(reportPath);
 
-                // Thêm báo cáo vào từ điển
-                reports.Add(reportTitle, reportDocument);
+                // Kiểm tra xem khóa đã tồn tại chưa
+                if (!reports.ContainsKey(reportTitle))
+                {
+                    // Nếu khóa chưa tồn tại, thêm báo cáo vào từ điển
+                    reports.Add(reportTitle, reportDocument);
+                }
             }
         }
+
 
         public ReportDocument GetReport(string reportTitle)
         {

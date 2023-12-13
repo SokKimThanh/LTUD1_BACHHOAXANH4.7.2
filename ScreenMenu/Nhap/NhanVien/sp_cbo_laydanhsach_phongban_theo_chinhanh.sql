@@ -11,5 +11,6 @@ CREATE PROCEDURE sp_cbo_laydanhsach_phongban_theo_chinhanh
 AS
 BEGIN
 	select pb.MAPB, pb.TENPHG from phongban pb, chinhanh cn WHERE cn.MACN = pb.MACN and cn.macn = @macn
-END
+END;
 go
+exec sp_cbo_laydanhsach_phongban_theo_chinhanh 'cn01'

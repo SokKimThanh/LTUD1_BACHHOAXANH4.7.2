@@ -10,7 +10,7 @@ CREATE PROCEDURE sp_nhanvien_search
 AS
 BEGIN 
     
-	SELECT * from nhanvien where HOTENNV like '%' + @keyword + '%'--like chính xác mã 100%
+	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + @keyword + '%'--like chính xác mã 100%
 END;
 go
 

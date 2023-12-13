@@ -8,6 +8,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
+using OfficeOpenXml.FormulaParsing.Excel.Functions;
 
 namespace LTUD1_BACHHOAXANH472
 {
@@ -18,7 +19,7 @@ namespace LTUD1_BACHHOAXANH472
         DiaDiemController chinhanhController = new DiaDiemController(Utils.ConnectionString);
 
         // giả định rằng đang có 1 textbox trên màn hình
-        TextBox txtTieuDeReport;
+        //TextBox txtTieuDeReport;
 
 
         // khởi tạo in
@@ -29,6 +30,8 @@ namespace LTUD1_BACHHOAXANH472
 
         // Khởi tạo report quản lý report
         private ReportManager reportManager;
+
+        ErrTxt errtxt;
 
 
         // Tạo một từ điển để lưu trữ các báo cáo
@@ -58,15 +61,13 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnDelete = this.btnDelete;
             buttonStateManager.BtnRefresh = this.btnRefresh;
 
-            // chỉnh style nút
+            // chỉnh style nút tìm kiếm
             CustomButtonHelper customButtonHelper = new CustomButtonHelper();
-            customButtonHelper.SetProperties(btnTimKiemThongKe);
-
-            txtTieuDeReport = new TextBox();
-            txtTieuDeReport.Text = "rp_nhanvien_nvtheophongban";
+            customButtonHelper.SetProperties(btnImport);
 
             // Khởi tạo ReportManager với đường dẫn đến thư mục chứa các báo cáo
             reportManager = new ReportManager(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "uploads"));
+            errtxt = new ErrTxt(this);
         }
 
 
@@ -86,7 +87,7 @@ namespace LTUD1_BACHHOAXANH472
                 cboPhongBan.ValueMember = "MAPB";
                 cboPhongBan.DisplayMember = "TENPHG";
 
-/*                infile = new InFilePDFExcel(dgvNhanVien);*/
+                /*                infile = new InFilePDFExcel(dgvNhanVien);*/
 
 
 
@@ -101,7 +102,7 @@ namespace LTUD1_BACHHOAXANH472
                 // hiển thị danh sach phong ban theo chi nhánh
                 var selectedValue = cboReportChiNhanh.SelectedValue; // Lấy giá trị được chọn
                 DataTable dt = chinhanhController.SelectPhongBanByMaCN(selectedValue.ToString());
-                 
+
                 cboReportPhongBan.DataSource = dt;
                 cboReportPhongBan.ValueMember = "MAPB";
                 cboReportPhongBan.DisplayMember = "TENPHG";
@@ -112,23 +113,8 @@ namespace LTUD1_BACHHOAXANH472
                 // crud button setting state
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
-
-                // Load các báo cáo
-                reportManager.LoadReports();
-
-                // Thêm các tiêu đề báo cáo vào TreeView
-                foreach (string reportTitle in reportManager.GetReportTitles())
-                {
-                    TreeNode newNode = new TreeNode(reportTitle);
-                    newNode.Name = reportTitle;
-                    tvReport.Nodes.Add(newNode);
-                }
-
-                // Nếu có ít nhất một báo cáo, hiển thị báo cáo đầu tiên
-                if (tvReport.Nodes.Count > 0)
-                {
-                    tvReport.SelectedNode = tvReport.Nodes[0];
-                }
+                // hiển thị danh sach báo cáo
+                TaiLaiDanhSachBaoCao();
             }
             catch (Exception ex)
             {
@@ -136,13 +122,35 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Tải lại danh sach báo cáo
+        /// </summary>
+        public void TaiLaiDanhSachBaoCao()
         {
+            txtTieuDeReport.Text = "rp_nhanvien_nvtheophongban";
 
+            // Xóa tất cả các nút trên TreeView
+            tvReport.Nodes.Clear();
+            tvReportNhanVien.Nodes.Clear();
+            // Load các báo cáo
+            reportManager.LoadReports();
+
+            // Thêm các tiêu đề báo cáo vào TreeView
+            foreach (string reportTitle in reportManager.GetReportTitles())
+            {
+                TreeNode newNode = new TreeNode(reportTitle);
+                newNode.Name = reportTitle;
+                tvReport.Nodes.Add(newNode);
+                tvReportNhanVien.Nodes.Add(newNode);
+
+            }
+
+            // Nếu có ít nhất một báo cáo, hiển thị báo cáo đầu tiên
+            if (tvReport.Nodes.Count > 0)
+            {
+                tvReport.SelectedNode = tvReport.Nodes[0];
+            }
         }
-
         private void dgvNhanVien_Click(object sender, EventArgs e)
         {
             try
@@ -186,36 +194,43 @@ namespace LTUD1_BACHHOAXANH472
 
         public void refresh()
         {
-            txtHoTenNV.Text = string.Empty;
-            rptNgaySinh.Text = string.Empty;
-            rtbDiaChi.Text = string.Empty;
-            txtLuong.Text = string.Empty;
-            txtSDT.Text = string.Empty;
-            cboPhongBan.SelectedIndex = 0;
-            nvController.SelectAll();
-            dgvNhanVien.DataSource = nvController.DataSource;
+            // Chuyển đến tabReport 
+            // chọn tab danh sách để tìm kiếm thì
+            if (tcNhanVien.SelectedTab.Name.Equals("tbDanhSachNhanVien"))
+            {
+                txtHoTenNV.Text = string.Empty;
+                rptNgaySinh.Text = string.Empty;
+                rtbDiaChi.Text = string.Empty;
+                txtLuong.Text = string.Empty;
+                txtSDT.Text = string.Empty;
+                cboPhongBan.SelectedIndex = 0;
+                nvController.SelectAll();
+                dgvNhanVien.DataSource = nvController.DataSource;
+            }
+            else
+            {
+                TaiLaiDanhSachBaoCao();
+            }
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+
             buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             refresh();
         }
-
-        private void txtHoTenNV_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                int dong = dgvNhanVien.CurrentCell.RowIndex;
-                string manv = dgvNhanVien.Rows[dong].Cells[0].Value.ToString();
-                nvController.Delete(manv);
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-                refresh();
+                if (!ErrFrm.DialogConfirm("bạn muốn xóa không?"))
+                {
+                    int dong = dgvNhanVien.CurrentCell.RowIndex;
+                    string manv = dgvNhanVien.Rows[dong].Cells[0].Value.ToString();
+                    nvController.Delete(manv);
+                    buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                    refresh();
+                }
             }
             catch (Exception ex)
             {
@@ -311,18 +326,7 @@ namespace LTUD1_BACHHOAXANH472
                 //infile.ExportToExcel();
             });
         }
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                dgvNhanVien.DataSource = nvController.Search(txtHoTen.Text);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Tim kiem: " + ex.Message);
-            }
-        }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
@@ -358,39 +362,113 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        private void btnTimKiemThongKe_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             try
             {
-                
-                // Khởi tạo một đối tượng mới từ lớp rp_nhanvien_nvtheophongban
-                rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
+                // Chuyển đến tabReport 
+                // chọn tab danh sách để tìm kiếm thì
+                if (tcNhanVien.SelectedTab.Name.Equals("tbDanhSachNhanVien"))
+                {
+                    dgvNhanVien.DataSource = nvController.Search(txtHoTenNV.Text);
+                }
+                else
+                {
+                    // Khởi tạo một đối tượng mới từ lớp rp_nhanvien_nvtheophongban
+                    rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
 
-                // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                ParameterValues paramMaPhongBan = new ParameterValues();
-                ParameterValues paramMaChiNhanh = new ParameterValues();
+                    // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+                    ParameterValues paramMaPhongBan = new ParameterValues();
+                    ParameterValues paramMaChiNhanh = new ParameterValues();
 
-                // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                ParameterDiscreteValue pdvMaPB = new ParameterDiscreteValue();
-                ParameterDiscreteValue pdvMaCN = new ParameterDiscreteValue();
+                    // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+                    ParameterDiscreteValue pdvMaPB = new ParameterDiscreteValue();
+                    ParameterDiscreteValue pdvMaCN = new ParameterDiscreteValue();
 
-                // Đặt giá trị của pdv bằng giá trị trong textBox1
-                pdvMaPB.Value = cboReportPhongBan.SelectedValue;
-                pdvMaCN.Value = cboReportChiNhanh.SelectedValue;
-                // Thêm pdv vào danh sách các giá trị tham số
-                paramMaPhongBan.Add(pdvMaPB);
-                paramMaChiNhanh.Add(pdvMaCN);
-                // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                rpt.DataDefinition.ParameterFields["@MaPhongBan"].ApplyCurrentValues(paramMaPhongBan);
-                rpt.DataDefinition.ParameterFields["@MaChiNhanh"].ApplyCurrentValues(paramMaChiNhanh);
+                    // Đặt giá trị của pdv bằng giá trị trong textBox1
+                    pdvMaPB.Value = cboReportPhongBan.SelectedValue;
+                    pdvMaCN.Value = cboReportChiNhanh.SelectedValue;
+                    // Thêm pdv vào danh sách các giá trị tham số
+                    paramMaPhongBan.Add(pdvMaPB);
+                    paramMaChiNhanh.Add(pdvMaCN);
+                    // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+                    rpt.DataDefinition.ParameterFields["@MaPhongBan"].ApplyCurrentValues(paramMaPhongBan);
+                    rpt.DataDefinition.ParameterFields["@MaChiNhanh"].ApplyCurrentValues(paramMaChiNhanh);
 
-                // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-                crystalReportViewer1.ReportSource = rpt;
+                    // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+                    crystalReportViewer1.ReportSource = rpt;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+
+        public void ImportBaoCao()
+        {
+
+        }
+
+        /// <summary>
+        /// Tải report không tham số khác lên để xem báo cáo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Tạo một OpenFileDialog để cho phép người dùng chọn tệp báo cáo
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.Filter = "Report Files|*.rpt";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn tệp từ OpenFileDialog
+                    string sourcePath = openFileDialog.FileName;
+
+                    // Lấy tên file từ đường dẫn file
+                    string fileName = Path.GetFileName(sourcePath);
+                    txtTieuDeReport.Text = fileName;
+
+                    // Tạo đường dẫn đến thư mục "ScreenMenu\Nhap\NhanVien\uploads"
+                    string targetDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"ScreenMenu\Nhap\NhanVien");
+                    string targetPath = Path.Combine(targetDirectory, fileName);
+
+                    // Copy tệp đã chọn vào thư mục "ScreenMenu\Nhap\NhanVien\uploads", ghi đè nếu tệp đã tồn tại
+                    File.Copy(sourcePath, targetPath, true);
+
+                    // Tải báo cáo từ tệp đã sao chép
+                    ReportDocument reportDocument = new ReportDocument();
+                    reportDocument.Load(targetPath);
+
+                    // Thêm báo cáo vào từ điển
+                    reports.Add(fileName, reportDocument);
+
+                    // Tạo một TreeNode mới với tiêu đề báo cáo
+                    TreeNode newNode = new TreeNode(fileName);
+                    newNode.Name = fileName;
+
+                    // Thêm TreeNode vào TreeView
+                    if (tvReport.SelectedNode == null)
+                    {
+                        // Nếu không có node nào được chọn, thêm node mới vào gốc của TreeView
+                        tvReport.Nodes.Add(newNode);
+                        tvReportNhanVien.Nodes.Add(newNode);
+                    }
+
+                    // Hiển thị báo cáo
+
+                    //crystalReportViewer1.ReportSource = reportDocument;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void cboReportChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
@@ -405,66 +483,6 @@ namespace LTUD1_BACHHOAXANH472
                 cboReportPhongBan.DataSource = dt;
                 cboReportPhongBan.ValueMember = "MAPB";
                 cboReportPhongBan.DisplayMember = "TENPHG";
-            }
-        }
-        public void ImportBaoCao()
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Report Files|*.rpt";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                string reportPath = openFileDialog.FileName;
-                CrystalDecisions.CrystalReports.Engine.ReportDocument reportDocument = new CrystalDecisions.CrystalReports.Engine.ReportDocument();
-                reportDocument.Load(reportPath);
-                crystalReportViewer1.ReportSource = reportDocument;
-            }
-
-        }
-
-        /// <summary>
-        /// Tải report không tham số khác lên để xem báo cáo
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra xem người dùng đã nhập tiêu đề báo cáo chưa
-            if (string.IsNullOrEmpty(txtTieuDeReport.Text))
-            {
-                MessageBox.Show("Vui lòng nhập tiêu đề báo cáo.");
-                return;
-            }
-
-            // Tạo một OpenFileDialog để cho phép người dùng chọn tệp báo cáo
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Report Files|*.rpt";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Tải báo cáo từ tệp đã chọn
-                ReportDocument reportDocument = new ReportDocument();
-                reportDocument.Load(openFileDialog.FileName);
-
-                // Thêm báo cáo vào từ điển
-                reports.Add(txtTieuDeReport.Text, reportDocument);
-
-                // Tạo một TreeNode mới với tiêu đề báo cáo
-                TreeNode newNode = new TreeNode(txtTieuDeReport.Text);
-                newNode.Name = txtTieuDeReport.Text;
-
-                // Thêm TreeNode vào TreeView
-                if (tvReport.SelectedNode == null)
-                {
-                    // Nếu không có node nào được chọn, thêm node mới vào gốc của TreeView
-                    tvReport.Nodes.Add(newNode);
-                }
-                else
-                {
-                    // Nếu có node được chọn, thêm node mới làm con của node được chọn
-                    tvReport.SelectedNode.Nodes.Add(newNode);
-                }
-
-                // Hiển thị báo cáo
-                crystalReportViewer1.ReportSource = reportDocument;
             }
         }
         /// <summary>
@@ -487,9 +505,90 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Kiem tra nhap thong tin
+                if (ErrTxt.CheckControlValue(txtHoTenNV))
+                {
+                    MessageBox.Show("txtHoTenNV", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (ErrTxt.CheckControlValue(txtLuong))
+                {
+                    MessageBox.Show("txtLuong", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
+                if (ErrTxt.CheckControlValue(txtSDT))
+                {
+                    MessageBox.Show("txtSDT", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
+                if (ErrTxt.CheckControlValue(rtbDiaChi))
+                {
+                    MessageBox.Show("rtbDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
+                if (ErrTxt.CheckControlValue(rptNgaySinh))
+                {
+                    MessageBox.Show("rptNgaySinh", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return;
+                }
+
+                nvController.SelectAll();
+                //DataRow dongcuoicung = nccController.DataSource.Rows[nccController.DataSource.Rows.Count - 1];
+                DataRow dongdautien = nvController.DataSource.Rows[0];
+                // id tự động tăng
+                //string id_cuoi = (string)dongcuoicung["NhanVienID"];
+                string id_dau = (string)dongdautien["NhanVienID"];
+                string maNV = GenerateID.generateID("nv", id_dau);
+
+                string hotennv = txtHoTenNV.Text;
+                float luong = float.Parse(txtLuong.Text);
+                int sdtnv = int.Parse(txtSDT.Text);
+                string diachinv = rtbDiaChi.Text;
+                DateTime ngaysinh = rptNgaySinh.Value;
+                string mapb = cboPhongBan.SelectedValue.ToString();
+                string gioitinh = rbNam.Checked ? "nam" : rbNu.Checked ? "nu" : string.Empty;
+                NhanVien o = new NhanVien(maNV, hotennv, diachinv, luong, sdtnv, ngaysinh, mapb, gioitinh);
+                nvController.Insert(o);
+                nvController.SelectAll();
+                dgvNhanVien.DataSource = nvController.DataSource;
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                rtbDiaChi.Text = ex.Message;
+            }
+        }
+
+        private void txtLuong_TextChanged(object sender, EventArgs e)
+        {
+            TextHelper.HandleTextChange_Salary(sender);
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+            TextHelper.HandleTextChange_PhoneNumber(sender);
+        }
+
+        private void txtHoTenNV_TextChanged(object sender, EventArgs e)
+        {
+            // kiểm tra 1 trong 3 cái nào dính thì chặn luôn
+            TextHelper.HandleTextChange_Name(sender);
+        }
+
+        private void rtbDiaChi_TextChanged(object sender, EventArgs e)
+        {
+            TextHelper.HandleTextChange_DiaChi(sender);
         }
     }
 }

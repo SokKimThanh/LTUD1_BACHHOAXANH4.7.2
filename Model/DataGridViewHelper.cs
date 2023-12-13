@@ -13,6 +13,7 @@ public static class DataGridViewHelper
         dgv.MultiSelect = false;
         dgv.Dock = DockStyle.Fill;
         dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        dgv.AllowUserToAddRows = false;
     }
 }
 
