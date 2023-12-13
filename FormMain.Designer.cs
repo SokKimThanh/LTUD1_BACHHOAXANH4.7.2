@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-using Properties = LTUD1_BACHHOAXANH472.Properties;
+﻿using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
     partial class FormMain
