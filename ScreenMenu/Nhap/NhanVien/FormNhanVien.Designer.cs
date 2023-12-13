@@ -57,6 +57,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tsmInFilePDF = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmXuatFileExcel = new System.Windows.Forms.ToolStripMenuItem();
             this.tabReport = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tvReport = new System.Windows.Forms.TreeView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.cboReportPhongBan = new System.Windows.Forms.ComboBox();
@@ -100,6 +102,7 @@ namespace LTUD1_BACHHOAXANH472
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.cmsNhanVien.SuspendLayout();
             this.tabReport.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -408,7 +411,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tsmThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmThongKe.Name = "tsmThongKe";
-            this.tsmThongKe.Size = new System.Drawing.Size(180, 24);
+            this.tsmThongKe.Size = new System.Drawing.Size(163, 24);
             this.tsmThongKe.Text = "Thống kê";
             this.tsmThongKe.Click += new System.EventHandler(this.tsmThongKe_Click);
             // 
@@ -416,7 +419,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tsmInFilePDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmInFilePDF.Name = "tsmInFilePDF";
-            this.tsmInFilePDF.Size = new System.Drawing.Size(180, 24);
+            this.tsmInFilePDF.Size = new System.Drawing.Size(163, 24);
             this.tsmInFilePDF.Text = "Xuất File PDF";
             this.tsmInFilePDF.Click += new System.EventHandler(this.tsmInFilePDF_Click);
             // 
@@ -424,20 +427,45 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tsmXuatFileExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmXuatFileExcel.Name = "tsmXuatFileExcel";
-            this.tsmXuatFileExcel.Size = new System.Drawing.Size(180, 24);
+            this.tsmXuatFileExcel.Size = new System.Drawing.Size(163, 24);
             this.tsmXuatFileExcel.Text = "Xuất File Excel";
             this.tsmXuatFileExcel.Click += new System.EventHandler(this.tsmInFileExcel_Click);
             // 
             // tabReport
             // 
             this.tabReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
-            this.tabReport.Controls.Add(this.tableLayoutPanel4);
+            this.tabReport.Controls.Add(this.tableLayoutPanel8);
             this.tabReport.Location = new System.Drawing.Point(4, 41);
             this.tabReport.Name = "tabReport";
             this.tabReport.Padding = new System.Windows.Forms.Padding(3);
             this.tabReport.Size = new System.Drawing.Size(879, 446);
             this.tabReport.TabIndex = 1;
             this.tabReport.Text = "Báo cáo thống kê";
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.95304F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.04697F));
+            this.tableLayoutPanel8.Controls.Add(this.tvReport, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel4, 1, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(873, 440);
+            this.tableLayoutPanel8.TabIndex = 4;
+            // 
+            // tvReport
+            // 
+            this.tvReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.tvReport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvReport.Location = new System.Drawing.Point(3, 3);
+            this.tvReport.Name = "tvReport";
+            this.tvReport.Size = new System.Drawing.Size(142, 434);
+            this.tvReport.TabIndex = 0;
+            this.tvReport.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvReport_AfterSelect);
             // 
             // tableLayoutPanel4
             // 
@@ -446,12 +474,12 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.crystalReportViewer1, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(151, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(873, 440);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.04545F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.95454F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(719, 434);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
             // tableLayoutPanel5
@@ -472,45 +500,49 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(867, 81);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(713, 46);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // cboReportPhongBan
             // 
             this.cboReportPhongBan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboReportPhongBan.FormattingEnabled = true;
-            this.cboReportPhongBan.Location = new System.Drawing.Point(445, 3);
+            this.cboReportPhongBan.Location = new System.Drawing.Point(366, 3);
             this.cboReportPhongBan.Name = "cboReportPhongBan";
-            this.cboReportPhongBan.Size = new System.Drawing.Size(244, 40);
+            this.cboReportPhongBan.Size = new System.Drawing.Size(199, 40);
             this.cboReportPhongBan.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(349, 0);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Light", 12F);
+            this.label2.Location = new System.Drawing.Point(287, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 81);
+            this.label2.Size = new System.Drawing.Size(73, 46);
             this.label2.TabIndex = 4;
             this.label2.Text = "Phòng ban";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 12F);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 81);
+            this.label1.Size = new System.Drawing.Size(102, 46);
             this.label1.TabIndex = 1;
             this.label1.Text = "Chi Nhánh";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnTimKiemThongKe
             // 
             this.btnTimKiemThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiemThongKe.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiemThongKe.Location = new System.Drawing.Point(695, 3);
+            this.btnTimKiemThongKe.Location = new System.Drawing.Point(571, 3);
             this.btnTimKiemThongKe.Name = "btnTimKiemThongKe";
-            this.btnTimKiemThongKe.Size = new System.Drawing.Size(169, 75);
+            this.btnTimKiemThongKe.Size = new System.Drawing.Size(139, 40);
             this.btnTimKiemThongKe.TabIndex = 2;
             this.btnTimKiemThongKe.Text = "Tìm kiếm";
             this.btnTimKiemThongKe.UseVisualStyleBackColor = true;
@@ -520,9 +552,9 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.cboReportChiNhanh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboReportChiNhanh.FormattingEnabled = true;
-            this.cboReportChiNhanh.Location = new System.Drawing.Point(135, 3);
+            this.cboReportChiNhanh.Location = new System.Drawing.Point(111, 3);
             this.cboReportChiNhanh.Name = "cboReportChiNhanh";
-            this.cboReportChiNhanh.Size = new System.Drawing.Size(208, 40);
+            this.cboReportChiNhanh.Size = new System.Drawing.Size(170, 40);
             this.cboReportChiNhanh.TabIndex = 3;
             this.cboReportChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cboReportChiNhanh_SelectedIndexChanged);
             // 
@@ -532,9 +564,9 @@ namespace LTUD1_BACHHOAXANH472
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 90);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 55);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(867, 347);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(713, 376);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
@@ -813,6 +845,7 @@ namespace LTUD1_BACHHOAXANH472
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.cmsNhanVien.ResumeLayout(false);
             this.tabReport.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -894,5 +927,8 @@ namespace LTUD1_BACHHOAXANH472
         private ComboBox cboReportPhongBan;
         private Label label2;
         private ComboBox cboReportChiNhanh;
+        private TableLayoutPanel tableLayoutPanel8;
+        private TreeView tvReport;
+        private LTUD1_BACHHOAXANH472.rp_nv_theophongban rp_nv_theophongban1;
     }
 }
