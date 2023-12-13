@@ -451,7 +451,7 @@ namespace LTUD1_BACHHOAXANH472
             // gbStep2
             // 
             this.gbStep2.BackColor = System.Drawing.Color.Transparent;
-            this.gbStep2.BackgroundImage = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.tranparent_green_detail;
+            this.gbStep2.BackgroundImage = Properties.Resources.tranparent_green_detail;
             this.gbStep2.Controls.Add(this.tableLayoutPanel7);
             this.gbStep2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbStep2.ForeColor = System.Drawing.Color.White;

@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DiaDiem
+namespace LTUD1_BACHHOAXANH472
 {
     internal class DiaDiemController : MyController
     {
@@ -117,7 +117,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DiaDiem
         public DataTable SelectPhongBanByMaCN(object id)
         {
             // Tạo một đối tượng Database để lưu trữ dữ liệu
-            DataTable dt = new DataTable(); 
+            DataTable dt = new DataTable();
             try
             {
                 // Mở kết nối
@@ -129,7 +129,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DiaDiem
                 Sql.Parameters.AddWithValue("@MACN", id.ToString());
 
                 // Tạo đối tượng SqlDataAdapter
-                Adapter = new SqlDataAdapter(Sql); 
+                Adapter = new SqlDataAdapter(Sql);
 
                 // đổ dữ liệu vào DataTable
                 Adapter.Fill(dt);
