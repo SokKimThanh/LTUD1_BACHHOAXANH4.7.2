@@ -1,5 +1,6 @@
 ﻿-- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 10:57 CH>
+go
 drop procedure if exists sp_nhanvien_select_all_all
 go
 CREATE PROCEDURE sp_nhanvien_select_all_all
@@ -16,8 +17,6 @@ BEGIN
         NHANVIEN NV,
 		PHONGBAN PB
     where NV.MAPB = PB.MAPB
-	order by nv.created_date_nv desc;
-END;
-go
-
+	order by nv.created_date_nv desc
+END
  

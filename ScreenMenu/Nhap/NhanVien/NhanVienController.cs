@@ -157,7 +157,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                throw new Exception("SelectAllALl" + ex.Message);
+                throw new Exception("nhanvien " + ex.Message);
             }
             finally
             {
