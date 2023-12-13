@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTUD1_BACHHOAXANH4._7._2.ScreenMenu.Nhap.NhanVien {
+namespace LTUD1_BACHHOAXANH472.uploads {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH4._7._2.ScreenMenu.Nhap.NhanVien {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class rp_nhanvien_nvtheophongban : ReportClass {
         
-        public CrystalReport1() {
+        public rp_nhanvien_nvtheophongban() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "rp_nhanvien_nvtheophongban.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH4._7._2.ScreenMenu.Nhap.NhanVien {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH4._7._2.ScreenMenu.Nhap.NhanVien.CrystalReport1.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_nvtheophongban.rpt";
             }
             set {
                 // Do nothing
@@ -106,9 +106,9 @@ namespace LTUD1_BACHHOAXANH4._7._2.ScreenMenu.Nhap.NhanVien {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class Cachedrp_nhanvien_nvtheophongban : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public Cachedrp_nhanvien_nvtheophongban() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace LTUD1_BACHHOAXANH4._7._2.ScreenMenu.Nhap.NhanVien {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
             rpt.Site = this.Site;
             return rpt;
         }

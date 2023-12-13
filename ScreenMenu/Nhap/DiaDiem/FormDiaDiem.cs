@@ -1,15 +1,8 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DiaDiem;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.Screen
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormDiaDiem : Form
     {
@@ -74,5 +67,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             DiaDiemController.SelectAll();
             dgvDD.DataSource = DiaDiemController.DataSource;
         }
+
+      
     }
 }

@@ -549,7 +549,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private GroupBox groupBox1;
         private TableLayoutPanel tableLayoutPanel2;
         private GroupBox groupBox9;
-        private TextBox textBox1;
+  
         private GroupBox groupBox8;
         private TextBox txtDonGia;
         private GroupBox groupBox7;
