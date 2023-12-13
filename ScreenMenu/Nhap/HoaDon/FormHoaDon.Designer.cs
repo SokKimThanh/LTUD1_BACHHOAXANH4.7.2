@@ -302,7 +302,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.20191F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.79809F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 239F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 238F));
             this.tableLayoutPanel6.Controls.Add(this.txtTimKiem, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.btnTimKiem, 2, 0);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);

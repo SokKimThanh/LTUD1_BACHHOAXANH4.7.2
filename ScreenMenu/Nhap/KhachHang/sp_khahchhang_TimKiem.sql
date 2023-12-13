@@ -15,7 +15,8 @@ BEGIN
 	
 	
 
-    
+
+    -- Delete statements for procedure here
 	Select *
 	from KHACHHANG
 	where MAKH like N'%'+@ma+'%' or HOTENKH like N'%'+@ma+'%' or SDTKH like N'%'+@ma+'%'
