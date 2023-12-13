@@ -402,7 +402,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tsmInFilePDF,
             this.tsmXuatFileExcel});
             this.cmsNhanVien.Name = "contextMenuStrip1";
-            this.cmsNhanVien.Size = new System.Drawing.Size(181, 98);
+            this.cmsNhanVien.Size = new System.Drawing.Size(164, 76);
             // 
             // tsmThongKe
             // 
