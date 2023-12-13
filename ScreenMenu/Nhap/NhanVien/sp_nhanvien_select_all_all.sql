@@ -19,5 +19,3 @@ BEGIN
 	order by nv.created_date_nv desc;
 END;
 go
-
- 

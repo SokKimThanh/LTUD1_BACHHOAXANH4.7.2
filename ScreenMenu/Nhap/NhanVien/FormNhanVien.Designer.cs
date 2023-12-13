@@ -929,6 +929,6 @@ namespace LTUD1_BACHHOAXANH472
         private ComboBox cboReportChiNhanh;
         private TableLayoutPanel tableLayoutPanel8;
         private TreeView tvReport;
-        private LTUD1_BACHHOAXANH472.rp_nv_theophongban rp_nv_theophongban1;
+        private LTUD1_BACHHOAXANH472.rp_nhanvien_nvtheophongban rp_nv_theophongban1;
     }
 }

@@ -224,10 +224,21 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\NhaCungCap\NhaCungCap.cs" />
     <Compile Include="ScreenMenu\Nhap\NhaCungCap\NhaCungCapController.cs" />
-    <Compile Include="uploads\rp_nv_theophongban.cs">
+    <Compile Include="uploads\rp_nhanvien_nvchitiet.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rp_nv_theophongban.rpt</DependentUpon>
+      <DependentUpon>rp_nhanvien_nvchitiet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="uploads\rp_nhanvien_nvchitiet1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_nhanvien_nvchitiet.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="uploads\rp_nhanvien_nvtheophongban.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_nhanvien_nvtheophongban.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\NhanVien\FormNhanVien.cs">
@@ -313,9 +324,13 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\NhaCungCap\FormNhaCungCap.resx">
       <DependentUpon>FormNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uploads\rp_nv_theophongban.rpt">
+    <EmbeddedResource Include="uploads\rp_nhanvien_nvchitiet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rp_nv_theophongban.cs</LastGenOutput>
+      <LastGenOutput>rp_nhanvien_nvchitiet1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uploads\rp_nhanvien_nvtheophongban.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_nhanvien_nvtheophongban1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\NhanVien\FormNhanVien.resx">
       <DependentUpon>FormNhanVien.cs</DependentUpon>
@@ -426,6 +441,7 @@
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_delete.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_insert.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_search.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_danhsach_theophongban_chinhanh.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_select_all_all.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_update.sql" />

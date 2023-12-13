@@ -62,7 +62,7 @@ namespace LTUD1_BACHHOAXANH472
             customButtonHelper.SetProperties(btnTimKiemThongKe);
 
             txtTieuDeReport = new TextBox();
-            txtTieuDeReport.Text = "rp_nv_theophongban";
+            txtTieuDeReport.Text = "rp_nhanvien_nvtheophongban";
 
             // Khởi tạo ReportManager với đường dẫn đến thư mục chứa các báo cáo
             reportManager = new ReportManager(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "uploads"));
@@ -327,8 +327,8 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                // Khởi tạo một đối tượng mới từ lớp rp_nv_theophongban
-                rp_nv_theophongban rpt = new rp_nv_theophongban();
+                // Khởi tạo một đối tượng mới từ lớp rp_nhanvien_nvtheophongban
+                rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
 
                 // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
                 ParameterValues paramMaPhongBan = new ParameterValues();
@@ -361,8 +361,8 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                // Khởi tạo một đối tượng mới từ lớp rp_nv_theophongban
-                rp_nv_theophongban rpt = new rp_nv_theophongban();
+                // Khởi tạo một đối tượng mới từ lớp rp_nhanvien_nvtheophongban
+                rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
 
                 // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
                 ParameterValues paramMaPhongBan = new ParameterValues();
