@@ -123,7 +123,7 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="khachhangreport.cs">
+    <Compile Include="uploads\khachhangreport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>khachhangreport.rpt</DependentUpon>
@@ -212,7 +212,7 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDon\HoaDon.cs" />
     <Compile Include="ScreenMenu\Nhap\HoaDon\HoaDonController.cs" />
-    <Compile Include="reportHD.cs">
+    <Compile Include="uploads\reportHD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>reportHD.rpt</DependentUpon>
@@ -285,7 +285,7 @@
     <EmbeddedResource Include="FormMain.vi.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="khachhangreport.rpt">
+    <EmbeddedResource Include="uploads\khachhangreport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>khachhangreport.cs</LastGenOutput>
     </EmbeddedResource>
@@ -329,7 +329,7 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDon\FormHoaDonThongKe.resx">
       <DependentUpon>FormHoaDonThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportHD.rpt">
+    <EmbeddedResource Include="uploads\reportHD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>reportHD.cs</LastGenOutput>
     </EmbeddedResource>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTUD1_BACHHOAXANH4._7._2 {
+namespace LTUD1_BACHHOAXANH472.uploads {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH4._7._2 {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class khachhangreport : ReportClass {
+    public class reportHD : ReportClass {
         
-        public khachhangreport() {
+        public reportHD() {
         }
         
         public override string ResourceName {
             get {
-                return "khachhangreport.rpt";
+                return "reportHD.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH4._7._2 {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH4._7._2.khachhangreport.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.reportHD.rpt";
             }
             set {
                 // Do nothing
@@ -98,9 +98,9 @@ namespace LTUD1_BACHHOAXANH4._7._2 {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedkhachhangreport : Component, ICachedReport {
+    public class CachedreportHD : Component, ICachedReport {
         
-        public Cachedkhachhangreport() {
+        public CachedreportHD() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace LTUD1_BACHHOAXANH4._7._2 {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            khachhangreport rpt = new khachhangreport();
+            reportHD rpt = new reportHD();
             rpt.Site = this.Site;
             return rpt;
         }

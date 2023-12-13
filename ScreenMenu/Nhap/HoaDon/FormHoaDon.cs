@@ -1,6 +1,6 @@
 ﻿using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH4._7._2;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
+using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -104,7 +104,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-           
+
             DialogResult r = MessageBox.Show("Bạn có muốn sua khong?", "xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (r == DialogResult.Yes)
             {

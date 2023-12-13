@@ -1,8 +1,7 @@
 ﻿using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH4._7._2;
 using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
+using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Windows.Forms;
 
