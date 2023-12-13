@@ -1,15 +1,16 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LTUD1_BACHHOAXANH4.7.2")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("LTUD1_BACHHOAXANH472")]
+[assembly: AssemblyDescription("Project Lập trình ứng dụng 1 hệ thống quản lý siêu thị bách hóa xanh 472")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("LTUD1_BACHHOAXANH4.7.2")]
+[assembly: AssemblyCompany("BHX Coporation")]
+[assembly: AssemblyProduct("LTUD1_BACHHOAXANH472")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -34,3 +35,4 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: NeutralResourcesLanguage("vi-VN")]

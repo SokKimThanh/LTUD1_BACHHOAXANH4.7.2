@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DiaDiem
+namespace LTUD1_BACHHOAXANH472
 {
     internal class DiaDiem
     {

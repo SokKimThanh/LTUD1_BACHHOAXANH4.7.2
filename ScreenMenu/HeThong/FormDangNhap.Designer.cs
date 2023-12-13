@@ -173,7 +173,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.BXHLOGO2;
+            this.pictureBox1.Image = Properties.Resources.BXHLOGO2;
             this.pictureBox1.Location = new System.Drawing.Point(54, 36);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -296,7 +296,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // ptbShowHidePassword
             // 
-            this.ptbShowHidePassword.Image = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.showpassword;
+            this.ptbShowHidePassword.Image = Properties.Resources.showpassword;
             this.ptbShowHidePassword.Location = new System.Drawing.Point(306, 7);
             this.ptbShowHidePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbShowHidePassword.Name = "ptbShowHidePassword";
@@ -319,7 +319,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.green_password;
+            this.pictureBox3.Image = Properties.Resources.green_password;
             this.pictureBox3.Location = new System.Drawing.Point(12, 7);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
@@ -353,7 +353,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.green_user;
+            this.pictureBox2.Image = Properties.Resources.green_user;
             this.pictureBox2.Location = new System.Drawing.Point(12, 7);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
