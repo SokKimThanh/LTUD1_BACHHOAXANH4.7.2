@@ -894,7 +894,7 @@ namespace LTUD1_BACHHOAXANH472
         private GroupBox groupBox6;
         private RichTextBox rtbDiaChi;
         private GroupBox groupBox4;
-        private DateTimePicker dtpNgaySinh;
+        //private DateTimePicker dtpNgaySinh;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private Button btnEdit;
@@ -929,6 +929,6 @@ namespace LTUD1_BACHHOAXANH472
         private ComboBox cboReportChiNhanh;
         private TableLayoutPanel tableLayoutPanel8;
         private TreeView tvReport;
-        private LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_nvtheophongban rp_nv_theophongban1;
+        //private LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_nvtheophongban rp_nv_theophongban1;
     }
 }
