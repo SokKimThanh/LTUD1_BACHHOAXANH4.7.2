@@ -22,7 +22,7 @@ namespace LTUD1_BACHHOAXANH472
 
 
         // khởi tạo in
-        InFilePDFExcel infile;
+        //InFilePDFExcel infile;
 
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
@@ -107,7 +107,7 @@ namespace LTUD1_BACHHOAXANH472
                 cboReportPhongBan.DisplayMember = "TENPHG";
 
 
-                infile = new InFilePDFExcel(dgvNhanVien);
+                //infile = new InFilePDFExcel(dgvNhanVien);
 
                 // crud button setting state
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
@@ -300,7 +300,7 @@ namespace LTUD1_BACHHOAXANH472
             this.Invoke((MethodInvoker)delegate
             {
                 // Mã hiển thị hộp thoại của bạn ở đây 
-                infile.ExportToPDF();
+                //infile.ExportToPDF();
             });
         }
         private void tsmInFileExcel_Click(object sender, EventArgs e)
@@ -308,7 +308,7 @@ namespace LTUD1_BACHHOAXANH472
             this.Invoke((MethodInvoker)delegate
             {
                 // Mã hiển thị hộp thoại của bạn ở đây 
-                infile.ExportToExcel();
+                //infile.ExportToExcel();
             });
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
