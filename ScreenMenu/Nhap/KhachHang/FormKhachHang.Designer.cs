@@ -59,7 +59,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.khachhangreport1 = new LTUD1_BACHHOAXANH4._7._2.khachhangreport();
+            this.khachhangreport1 = new LTUD1_BACHHOAXANH472.khachhangreport();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -542,6 +542,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private TextBox txtTimKiem;
         private Button btnTimKiem;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private LTUD1_BACHHOAXANH4._7._2.khachhangreport khachhangreport1;
+        private LTUD1_BACHHOAXANH472.khachhangreport khachhangreport1;
     }
 }
