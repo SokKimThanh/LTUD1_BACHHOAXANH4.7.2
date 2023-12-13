@@ -893,8 +893,7 @@ namespace LTUD1_BACHHOAXANH472
         private GroupBox groupBox7;
         private GroupBox groupBox6;
         private RichTextBox rtbDiaChi;
-        private GroupBox groupBox4;
-        //private DateTimePicker dtpNgaySinh;
+        private GroupBox groupBox4;      
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private Button btnEdit;
