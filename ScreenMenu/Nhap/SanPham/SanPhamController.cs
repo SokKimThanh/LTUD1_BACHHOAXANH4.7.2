@@ -25,9 +25,9 @@ namespace LTUD1_BACHHOAXANH472
                 ////Mở kết nối
                 //SqlConnection conn = OpenConnection();
 
-                ////================================================== 
+                ////== 
                 //// Thực hiện các thao tác trên cơ sở dữ liệu tại đây
-                ////==================================================  
+                ////==  
                 //// SanPham sanpham = (SanPham)sender;
                 //Sql.Connection = conn;
                 //Sql.CommandText = "sp_sanpham_insert";

@@ -126,20 +126,20 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            SanPham sp = new SanPham();
-            sp.Ma = txtMaSP.Text;
-            sp.Ten = txtTenSP.Text;
-            sp.NgaySX = DateTime.Parse(dtpNSX.Text);
-            sp.HanSD = DateTime.Parse(dtpHSD.Text);
-            sp.Gia = float.Parse(txtDonGia.Text); ;
-            sp.Soluong = int.Parse(rtbSL.Text);
-            sp.DonVi = rtbDonVi.Text;
-            sp.LoaiSP = cboLoaiSP.SelectedValue.ToString();
-            sp.NCC = cboNCC.SelectedValue.ToString();
-            sp.KhuyenMai = cboKM.SelectedValue.ToString();
-
             try
             {
+                SanPham sp = new SanPham();
+                sp.Ma = txtMaSP.Text;
+                sp.Ten = txtTenSP.Text;
+                sp.NgaySX = DateTime.Parse(dtpNSX.Text);
+                sp.HanSD = DateTime.Parse(dtpHSD.Text);
+                sp.Gia = float.Parse(txtDonGia.Text); ;
+                sp.Soluong = int.Parse(rtbSL.Text);
+                sp.DonVi = rtbDonVi.Text;
+                sp.LoaiSP = cboLoaiSP.SelectedValue.ToString();
+                sp.NCC = cboNCC.SelectedValue.ToString();
+                sp.KhuyenMai = cboKM.SelectedValue.ToString();
+
                 spConn.Update(sp);
                 FormSanPham_Load(sender, e);
                 MessageBox.Show("Sửa sản phẩm thành công!");
