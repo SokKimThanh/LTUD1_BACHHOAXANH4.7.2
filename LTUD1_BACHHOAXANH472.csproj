@@ -98,12 +98,6 @@
       <DependentUpon>khachhangreport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="KHreport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>KHreport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Model\ArrayList.cs" />
     <Compile Include="Model\ButtonStateManager.cs" />
     <Compile Include="Model\CustomButton.cs" />
@@ -256,10 +250,6 @@
     <EmbeddedResource Include="khachhangreport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>khachhangreport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="KHreport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>KHreport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
