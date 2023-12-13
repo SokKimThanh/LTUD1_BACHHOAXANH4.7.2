@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.uploads;
 
 namespace LTUD1_BACHHOAXANH472
 {
@@ -299,7 +300,8 @@ namespace LTUD1_BACHHOAXANH472
             this.Invoke((MethodInvoker)delegate
             {
                 // Mã hiển thị hộp thoại của bạn ở đây 
-                infile.ExportToPDF();
+                //infile.ExportToPDF();
+                MessageBox.Show("Đang khóa");
             });
         }
         private void tsmInFileExcel_Click(object sender, EventArgs e)
@@ -307,7 +309,8 @@ namespace LTUD1_BACHHOAXANH472
             this.Invoke((MethodInvoker)delegate
             {
                 // Mã hiển thị hộp thoại của bạn ở đây 
-                infile.ExportToExcel();
+                //infile.ExportToExcel();
+                MessageBox.Show("Đang khóa");
             });
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
