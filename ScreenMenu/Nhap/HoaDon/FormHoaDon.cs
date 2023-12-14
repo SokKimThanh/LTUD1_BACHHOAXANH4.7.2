@@ -42,12 +42,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             }
         }
 
-        private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             try

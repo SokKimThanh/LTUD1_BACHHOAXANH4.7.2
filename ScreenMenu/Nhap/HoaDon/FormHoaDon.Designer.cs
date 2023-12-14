@@ -232,7 +232,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.dgvHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHD.Size = new System.Drawing.Size(875, 526);
             this.dgvHD.TabIndex = 1;
-            this.dgvHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellContentClick);
+          
             this.dgvHD.Click += new System.EventHandler(this.dgvHD_Click);
             // 
             // tabPage2
