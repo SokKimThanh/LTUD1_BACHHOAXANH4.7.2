@@ -77,9 +77,6 @@ namespace LTUD1_BACHHOAXANH472
             color = new ErrColors();
         }
 
-
-
-
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
             try

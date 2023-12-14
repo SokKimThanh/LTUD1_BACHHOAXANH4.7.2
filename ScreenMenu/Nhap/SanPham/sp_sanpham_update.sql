@@ -21,3 +21,6 @@ BEGIN
 	update sanpham set TENSP = @TENSP, DONVI = @DONVI, NSX = @NSX,HSD = @HSD,DONGIA = @DONGIA,SLTONKHO = @SLTONKHO,MALOAI = @MALOAI,MANCC = @MANCC,MAKM = @MAKM where MASP = @MASP -- chuẩn sql
 END
 GO
+
+select * from LOAISP
+--execute sp_sanpham_update 

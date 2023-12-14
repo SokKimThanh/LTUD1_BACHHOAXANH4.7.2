@@ -9,6 +9,6 @@ CREATE PROCEDURE sp_sanpham_select_one
 	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from sanpham where MASP like @MASP --like chính xác mã 100%
+	SELECT * from sanpham where MASP = @MASP --like chính xác mã 100%
 END
 GO

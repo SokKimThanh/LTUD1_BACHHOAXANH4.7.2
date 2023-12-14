@@ -5,6 +5,89 @@ SET QUOTED_IDENTIFIER ON
 GO
 set dateformat dmy
 -- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+-- Description:	<Tài khoản delete>
+DROP PROCEDURE IF EXISTS sp_quyentruycap_delete
+GO
+CREATE PROCEDURE sp_quyentruycap_delete
+	
+	@TENQTC CHAR(30) 
+AS
+BEGIN
+	DELETE FROM quyentruycap WHERE TENQTC = @TENQTC
+END
+GO
+﻿
+-- Create Procedure sp_quyentruycap_insert.sql
+-- Tài khoản insert
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+
+drop procedure if exists sp_quyentruycap_insert
+go
+CREATE PROCEDURE sp_quyentruycap_insert
+	@MAQTC char(11),
+	@TENQTC  CHAR(30)  	
+AS
+BEGIN
+	INSERT INTO quyentruycap VALUES (@MAQTC, @TENQTC)
+END
+GO
+
+﻿-- Create Procedure sp_quyentruycap_select_all.sql
+-- Tài khoản select all
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+drop procedure if exists sp_quyentruycap_select_all
+go
+CREATE PROCEDURE sp_quyentruycap_select_all
+AS
+BEGIN
+	SELECT qtc.maqtc as ID, qtc.TENQTC as 'Tên quyền truy cập' FROM quyentruycap qtc
+END
+GO
+ ﻿
+-- Create Procedure sp_quyentruycap_select_one.sql
+-- Tài khoản select one
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+go
+drop procedure if exists sp_quyentruycap_select_one
+go
+CREATE PROCEDURE sp_quyentruycap_select_one
+	
+	@TENQTC CHAR(30)
+AS
+BEGIN
+	SELECT * from quyentruycap where TENQTC = @TENQTC --  chính xác mã 100%
+END
+GO
+﻿-- Create Procedure sp_quyentruycap_update.sql
+-- Tài khoản update
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+go
+drop procedure if exists sp_quyentruycap_update
+go
+CREATE PROCEDURE sp_quyentruycap_update
+	@TENQTC CHAR(30),
+	@MAQTC char (11)
+AS
+BEGIN
+	update quyentruycap set TENQTC= @TENQTC where MAQTC = @MAQTC  -- chuẩn sql
+END
+GO
+﻿
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+set dateformat dmy
+-- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
 -- Description:	<Tài khoản delete>
 DROP PROCEDURE IF EXISTS sp_taikhoan_delete
@@ -21,9 +104,7 @@ GO
 -- Create Procedure sp_taikhoan_insert.sql
 -- Tài khoản insert
 -- Author:		Sok Kim Thanh
--- Create date: <16/11/2023>
-
-
+-- Create date: <16/11/2023> 
 drop procedure if exists sp_taikhoan_insert
 go
 CREATE PROCEDURE sp_taikhoan_insert
@@ -172,7 +253,7 @@ BEGIN
 	
 
     
-	SELECT * from LOAISP where MALOAI like @MALOAI --like chính xác mã 100%
+	SELECT * from LOAISP where MALOAI = @MALOAI --like chính xác mã 100%
 END
 GO
 ﻿
@@ -1261,7 +1342,7 @@ CREATE PROCEDURE sp_nhacungcap_select_one
 	@MANCC CHAR(11)
 AS
 BEGIN
-	SELECT * from nhacungcap where MANCC like @MANCC --like chính xác mã 100%
+	SELECT * from nhacungcap where MANCC = @MANCC --like chính xác mã 100%
 END
 GO
 ﻿-- Create Procedure sp_nhacungcap_update.sql
@@ -1281,6 +1362,90 @@ BEGIN
 	update nhacungcap set TENNCC = @TENNCC, DIACHINCC = @DIACHINCC,SDTNCC = @SDTNCC where MANCC = @MANCC -- chuẩn sql
 END
 GO
+﻿
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+set dateformat dmy
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+-- Description:	<Tài khoản delete>
+DROP PROCEDURE IF EXISTS sp_quyentruycap_delete
+GO
+CREATE PROCEDURE sp_quyentruycap_delete
+	
+	@TENQTC CHAR(30) 
+AS
+BEGIN
+	DELETE FROM quyentruycap WHERE TENQTC = @TENQTC
+END
+GO
+﻿
+-- Create Procedure sp_quyentruycap_insert.sql
+-- Tài khoản insert
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+
+drop procedure if exists sp_quyentruycap_insert
+go
+CREATE PROCEDURE sp_quyentruycap_insert
+	 
+	@TENQTC  CHAR(30), 
+	@matkhau char(30),
+	@maqtc char(11)
+AS
+BEGIN
+	INSERT INTO quyentruycap VALUES (@TENQTC, @matkhau, @manv, @maqtc)
+END
+GO
+﻿-- Create Procedure sp_quyentruycap_select_all.sql
+-- Tài khoản select all
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+drop procedure if exists sp_quyentruycap_select_all
+go
+CREATE PROCEDURE sp_quyentruycap_select_all
+AS
+BEGIN
+	SELECT qtc.maqtc as ID, qtc.TENQTC as 'Tên quyền truy cập' FROM quyentruycap qtc
+END
+GO
+ ﻿
+-- Create Procedure sp_quyentruycap_select_one.sql
+-- Tài khoản select one
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+go
+drop procedure if exists sp_quyentruycap_select_one
+go
+CREATE PROCEDURE sp_quyentruycap_select_one
+	
+	@TENQTC CHAR(30)
+AS
+BEGIN
+	SELECT * from quyentruycap where TENQTC = @TENQTC --  chính xác mã 100%
+END
+GO
+﻿-- Create Procedure sp_quyentruycap_update.sql
+-- Tài khoản update
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+go
+drop procedure if exists sp_quyentruycap_update
+go
+CREATE PROCEDURE sp_quyentruycap_update
+	@TENQTC CHAR(30),
+	@MAQTC char (11)
+AS
+BEGIN
+	update quyentruycap set TENQTC= @TENQTC where MAQTC = @MAQTC  -- chuẩn sql
+END
+GO
 ﻿-- =============================================
 -- Author:		<Thanh sok>
 -- Create date: <12/12/2023>
@@ -1294,8 +1459,9 @@ CREATE PROCEDURE sp_cbo_laydanhsach_phongban_theo_chinhanh
 AS
 BEGIN
 	select pb.MAPB, pb.TENPHG from phongban pb, chinhanh cn WHERE cn.MACN = pb.MACN and cn.macn = @macn
-END
-go﻿-- Author:		Sok Kim Thanh
+END;
+go
+exec sp_cbo_laydanhsach_phongban_theo_chinhanh 'cn01'﻿-- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023>
 go
 drop procedure if exists sp_cbo_phongban
@@ -1391,7 +1557,7 @@ CREATE PROCEDURE sp_nhanvien_search
 AS
 BEGIN 
     
-	SELECT * from nhanvien where HOTENNV like '%' + @keyword + '%'--like chính xác mã 100%
+	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + @keyword + '%'--like chính xác mã 100%
 END;
 go
 
@@ -1408,8 +1574,10 @@ BEGIN
 	FROM NHANVIEN nv, PHONGBAN pb
     where nv.MAPB = PB.MAPB
 	order by nv.created_date_nv desc
-END
-go﻿-- Author:		Sok Kim Thanh
+END;
+go
+
+--exec sp_nhanvien_select_nhanvien_phongban﻿-- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 9:39 CH>
 go
 drop procedure if exists sp_nhanvien_select_one
@@ -1421,7 +1589,7 @@ CREATE PROCEDURE sp_nhanvien_select_one
 AS
 BEGIN 
     
-	SELECT * from nhanvien where MANV like @manv --like chính xác mã 100%
+	SELECT * from nhanvien where MANV = @manv --like chính xác mã 100%
 END;
 go
 
@@ -1503,10 +1671,27 @@ go
 CREATE PROCEDURE sp_phongban_select_all
 AS
 BEGIN
-	SELECT pb.MAPB, pb.TENPHG, cn.TENCN from PHONGBAN pb, CHINHANH cn
+	SELECT pb.MAPB, pb.TENPHG as 'Tên phòng ban' , cn.TENCN as 'Tên chi nhánh'  from PHONGBAN pb, CHINHANH cn
 END
 GO
 exec sp_phongban_select_all
+﻿-- Author:		Sok Kim Thanh
+-- Create date: <06/12/2023 9:39 CH>
+go
+drop procedure if exists sp_phongban_select_one
+go
+CREATE PROCEDURE sp_phongban_select_one
+	
+	@mapb char(11)
+	 
+AS
+BEGIN 
+    
+	SELECT * from phongban where mapb = @mapb --like chính xác mã 100%
+END;
+go
+
+--execute sp_phongban_select_one 'pb01'
 ﻿-- Create Procedure sp_nhanvien_update.sql
 -- Nhân viên update
 -- Author:		Sok Kim Thanh
@@ -1580,13 +1765,15 @@ GO
 -- Sản phẩm select all
 -- Author:		<Sok Kim Thanh>
 -- Create date: <07/11/2023>
+-- update date: <14/12/2023> 3:34 CH
 -- Description:	<Sản phẩm select all>
 drop procedure if exists sp_sanpham_select_all
 go
 CREATE PROCEDURE sp_sanpham_select_all
 AS
 BEGIN
-	select * from SanPham
+	select masp, tensp 'Tên sản phẩm', donvi 'Đơn vị', nsx 'Ngày sản xuất', hsd'Hạn sử dụng', dongia'Đơn giá',sltonkho'Tồn kho' 
+	from SanPham
 END
 GO
 exec sp_sanpham_select_all
@@ -1601,7 +1788,7 @@ CREATE PROCEDURE sp_sanpham_select_one
 	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from sanpham where MASP like @MASP --like chính xác mã 100%
+	SELECT * from sanpham where MASP = @MASP --like chính xác mã 100%
 END
 GO
 ﻿-- Create Procedure sp_sanpham_update.sql
@@ -1627,3 +1814,6 @@ BEGIN
 	update sanpham set TENSP = @TENSP, DONVI = @DONVI, NSX = @NSX,HSD = @HSD,DONGIA = @DONGIA,SLTONKHO = @SLTONKHO,MALOAI = @MALOAI,MANCC = @MANCC,MAKM = @MAKM where MASP = @MASP -- chuẩn sql
 END
 GO
+
+select * from LOAISP
+--execute sp_sanpham_update 

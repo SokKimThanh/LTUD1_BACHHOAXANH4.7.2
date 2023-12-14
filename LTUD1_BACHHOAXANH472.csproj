@@ -87,6 +87,15 @@
     <Reference Include="CrystalDecisions.Windows.Forms">
       <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="EPPlus, Version=7.0.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.7.0.3\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
@@ -386,6 +395,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Model\TextHelper.cs" />
+    <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
+    <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
+    <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\NhaCCCT.cs" />
     <Compile Include="ScreenMenu\Nhap\NhanVien\rp_nhanvien_select_all.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -665,6 +677,11 @@
     <Content Include="Resources\tranparent_detail.png" />
     <None Include="Resources\tranparent_green_detail.png" />
     <None Include="Resources\tranparent_hoadon.png" />
+    <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_delete.sql" />
+    <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_insert.sql" />
+    <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_all.sql" />
+    <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_one.sql" />
+    <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_update.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_delete.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_insert.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_select_all.sql" />
@@ -713,6 +730,11 @@
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_update.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_delete.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_insert.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_select_all.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_select_one.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_update.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_cbo_laydanhsach_phongban_theo_chinhanh.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_delete.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_insert.sql" />
@@ -728,6 +750,7 @@
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_update.sql" />
     <Content Include="ScreenMenu\Nhap\PhongBan\sp_cbb_chinhanh_select.sql" />
+    <Content Include="ScreenMenu\Nhap\PhongBan\sp_phongban_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\PhongBan\sp_phongban_delete.sql" />
     <Content Include="ScreenMenu\Nhap\PhongBan\sp_phongban_insert.sql" />
     <Content Include="ScreenMenu\Nhap\PhongBan\sp_phongban_select_all.sql" />
@@ -740,7 +763,7 @@
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_update.sql" />
     <Content Include="SQLBienBan\huongdancombinedsql.txt" />
     <Content Include="SQLBienBan\PROJECT_SQL_BHX.sql" />
-    <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
+    <Content Include="SQLBienBan\PROJECT_INSERT_DATA_BHX.sql" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -757,6 +780,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.6.8.0\build\Fody.targets" Condition="Exists('packages\Fody.6.8.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
