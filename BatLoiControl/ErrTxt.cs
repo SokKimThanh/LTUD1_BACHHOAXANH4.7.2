@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -144,7 +145,7 @@ public class ErrTxt
     {
         Control c = (Control)sender;
         // Only allow digits
-        Regex regex = new Regex("[a-zA-Z]");
+        Regex regex = new Regex("[a-zA-ZeéèẻẽẹêếềễểệaáàảãạăắằẵẳặâấầẩẫậoóòỏõọơớờỡởợôốồổỗộuúùũủụưứừữửựiíìỉĩịyýỳỷỹỵđEÉÈẺẼẸÊẾỀỄỂỆAÁÀẢÃẠĂẮẰẴẲẶÂẤẦẨẪẬOÓÒỎÕỌƠỚỜỠỞỢÔỐỒỔỖỘUÚÙŨỦỤƯỨỪỮỬỰIÍÌỈĨỊYÝỲỶỸỴĐ]");
         bool isText = regex.IsMatch(c.Text.ToString());
         // check input string
         if (isText)
@@ -251,7 +252,11 @@ public class ErrTxt
             return false;
         }
     }
-
+    /// <summary>
+    /// Kiểm tra giá trị nhập của control
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <returns>True: giá trị null hoặc empty</returns>
     public static bool CheckControlValue(object sender)
     {
         if (sender == null)
@@ -628,5 +633,26 @@ public class ErrTxt
             return false;
         }
     }
+    /// <summary>
+    /// Không nhập ít hơn và không nhập nhiều hơn
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="v1">Ít hơn</param>
+    /// <param name="v2">Nhiều hơn</param>
+    /// <returns></returns>
+    internal static bool MinMaxValue_TextChanged(object sender, int v1, int v2)
+    {
+        Control c = (Control)sender;
+        if (c.Text.Length < v1 || c.Text.Length > v2)
+        {
+            // không nhập ít hơn số ký tự tối thiểu hoặc nhiều hơn số ký tự tối đa 
+            return true;//phát hiện sai phạm trả về true
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }
 
