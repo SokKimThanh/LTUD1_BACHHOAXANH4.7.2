@@ -117,8 +117,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 // thiết lập dữ liệu ngược lại mỗi lần click
                 txtMaSP.Text = o.MaSP;
                 txtTenSP.Text = o.TenSP;
-                dtpNSX.Text = o.NgaySX.ToShortTimeString();
-                dtpHSD.Text = o.HanSD.ToShortTimeString();
+                dtpNSX.Value = o.NgaySX;
+                dtpHSD.Value = o.HanSD;
                 txtDonGia.Text = o.Dongia.ToString();
                 rtbSL.Text = o.SLTonKho.ToString();
                 rtbDonVi.Text = o.DonVi.ToString();
