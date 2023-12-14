@@ -49,6 +49,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dgvDD = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3.SuspendLayout();
@@ -132,9 +133,11 @@ namespace LTUD1_BACHHOAXANH472
             this.txtDC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDC.Font = new System.Drawing.Font("Segoe UI Light", 18F);
             this.txtDC.Location = new System.Drawing.Point(3, 29);
+            this.txtDC.Multiline = true;
             this.txtDC.Name = "txtDC";
-            this.txtDC.Size = new System.Drawing.Size(361, 39);
+            this.txtDC.Size = new System.Drawing.Size(361, 76);
             this.txtDC.TabIndex = 2;
+            this.txtDC.TextChanged += new System.EventHandler(this.txtDC_TextChanged);
             // 
             // groupBox5
             // 
@@ -157,6 +160,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenCN.Name = "txtTenCN";
             this.txtTenCN.Size = new System.Drawing.Size(361, 39);
             this.txtTenCN.TabIndex = 2;
+            this.txtTenCN.TextChanged += new System.EventHandler(this.txtTenCN_TextChanged);
             // 
             // groupBox4
             // 
@@ -230,6 +234,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1.Controls.Add(this.btnSua, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnXoa, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnThem, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnRefresh, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 35);
@@ -256,6 +261,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -266,13 +272,14 @@ namespace LTUD1_BACHHOAXANH472
             this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnXoa.Location = new System.Drawing.Point(151, 5);
+            this.btnXoa.Location = new System.Drawing.Point(443, 5);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(5);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(136, 91);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -290,6 +297,25 @@ namespace LTUD1_BACHHOAXANH472
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.FlatAppearance.BorderSize = 3;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnRefresh.Location = new System.Drawing.Point(151, 5);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(136, 91);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Làm mới";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // groupBox8
             // 
@@ -315,6 +341,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvDD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDD.Size = new System.Drawing.Size(881, 534);
             this.dgvDD.TabIndex = 0;
+            this.dgvDD.Click += new System.EventHandler(this.dgvDD_Click);
             // 
             // FormDiaDiem
             // 
@@ -372,5 +399,6 @@ namespace LTUD1_BACHHOAXANH472
         private GroupBox groupBox1;
         private TextBox txtDC;
         private DataGridView dgvDD;
+        private Button btnRefresh;
     }
 }

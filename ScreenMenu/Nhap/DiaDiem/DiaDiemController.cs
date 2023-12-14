@@ -26,7 +26,10 @@ namespace LTUD1_BACHHOAXANH472
                 Sql.Parameters.AddWithValue("@maCN", id);
 
                 // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
+                if (Sql.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Xóa thành công!");
+                }
 
                 // Đóng kết nối
                 CloseConnection();
@@ -62,7 +65,11 @@ namespace LTUD1_BACHHOAXANH472
                 Sql.Parameters.AddWithValue("@tenCN", user.TenCN);
                 Sql.Parameters.AddWithValue("@diaChi", user.DiaChi);
                 // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
+                if (Sql.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Thêm thành công!");
+                }
+
                 // Đóng kết nối
                 CloseConnection();
             }
@@ -165,7 +172,10 @@ namespace LTUD1_BACHHOAXANH472
                 Sql.Parameters.AddWithValue("@tenCN", user.TenCN);
                 Sql.Parameters.AddWithValue("@diaChi", user.DiaChi);
                 // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
+                if (Sql.ExecuteNonQuery() > 0)
+                {
+                    MessageBox.Show("Cập nhật thành công!");
+                }
 
                 // Đóng kết nối
                 CloseConnection();
