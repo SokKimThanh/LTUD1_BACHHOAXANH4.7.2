@@ -83,7 +83,7 @@ namespace LTUD1_BACHHOAXANH472.Model
         internal static void HandleTextChange_TenChiNhanh(object sender)
         {
             // kiểm tra 1 trong 3 cái nào dính thì chặn luôn
-            if (ErrTxt.NoNumber_TextChange(sender) || ErrTxt.NoSpace_TextChange(sender) || ErrTxt.NoSymbol_TextChanged(sender))
+            if (ErrTxt.NoNumber_TextChange(sender) || ErrTxt.NoSymbol_TextChanged(sender))
             {
                 HandleTextChange(sender);
             }
