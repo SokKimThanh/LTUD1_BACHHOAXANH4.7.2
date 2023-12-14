@@ -126,7 +126,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSetting.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnSetting.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSetting.ForeColor = System.Drawing.Color.Transparent;
-            this.btnSetting.Image = Properties.Resources.icon_setting;
+            this.btnSetting.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_setting;
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.UseVisualStyleBackColor = false;
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
@@ -162,7 +162,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnNhaCCCT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnNhaCCCT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNhaCCCT.ForeColor = System.Drawing.Color.White;
-            this.btnNhaCCCT.Image = Properties.Resources.nhacungcapct;
+            this.btnNhaCCCT.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.nhacungcapct;
             this.btnNhaCCCT.Name = "btnNhaCCCT";
             this.btnNhaCCCT.UseVisualStyleBackColor = true;
             this.btnNhaCCCT.Click += new System.EventHandler(this.btnNhaCCCT_Click);
@@ -174,7 +174,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnPhongBan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnPhongBan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnPhongBan.ForeColor = System.Drawing.Color.White;
-            this.btnPhongBan.Image = Properties.Resources.phongban;
+            this.btnPhongBan.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.phongban;
             this.btnPhongBan.Name = "btnPhongBan";
             this.btnPhongBan.UseVisualStyleBackColor = true;
             this.btnPhongBan.Click += new System.EventHandler(this.btnPhongBan_Click);
@@ -186,7 +186,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnHinhThucKM.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnHinhThucKM.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHinhThucKM.ForeColor = System.Drawing.Color.White;
-            this.btnHinhThucKM.Image = Properties.Resources.hinhthuckhuyenmai;
+            this.btnHinhThucKM.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.hinhthuckhuyenmai;
             this.btnHinhThucKM.Name = "btnHinhThucKM";
             this.btnHinhThucKM.UseVisualStyleBackColor = true;
             this.btnHinhThucKM.Click += new System.EventHandler(this.btnHinhThucKM_Click);
@@ -198,7 +198,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnDanhMucSP.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnDanhMucSP.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDanhMucSP.ForeColor = System.Drawing.Color.White;
-            this.btnDanhMucSP.Image = Properties.Resources.danhmucsanpham;
+            this.btnDanhMucSP.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.danhmucsanpham;
             this.btnDanhMucSP.Name = "btnDanhMucSP";
             this.btnDanhMucSP.UseVisualStyleBackColor = true;
             this.btnDanhMucSP.Click += new System.EventHandler(this.btnDanhMucSP_Click);
@@ -210,7 +210,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnChiTietHD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnChiTietHD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChiTietHD.ForeColor = System.Drawing.Color.White;
-            this.btnChiTietHD.Image = Properties.Resources.chitiethoadon;
+            this.btnChiTietHD.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.chitiethoadon;
             this.btnChiTietHD.Name = "btnChiTietHD";
             this.btnChiTietHD.UseVisualStyleBackColor = true;
             this.btnChiTietHD.Click += new System.EventHandler(this.btnChiTietHD_Click);
@@ -222,7 +222,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnDiaDiem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnDiaDiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDiaDiem.ForeColor = System.Drawing.Color.White;
-            this.btnDiaDiem.Image = Properties.Resources.icon_diadiem;
+            this.btnDiaDiem.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_diadiem;
             this.btnDiaDiem.Name = "btnDiaDiem";
             this.btnDiaDiem.UseVisualStyleBackColor = true;
             this.btnDiaDiem.Click += new System.EventHandler(this.btnDiaDiem_Click);
@@ -234,7 +234,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnKhachHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnKhachHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.Image = Properties.Resources.icon_khachhang;
+            this.btnKhachHang.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_khachhang;
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.UseVisualStyleBackColor = true;
             this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
@@ -246,7 +246,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnNhaCungCap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnNhaCungCap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNhaCungCap.ForeColor = System.Drawing.Color.White;
-            this.btnNhaCungCap.Image = Properties.Resources.icon_nhacungcap;
+            this.btnNhaCungCap.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_nhacungcap;
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.UseVisualStyleBackColor = true;
             this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
@@ -258,7 +258,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnKhuyenMai.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnKhuyenMai.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnKhuyenMai.ForeColor = System.Drawing.Color.White;
-            this.btnKhuyenMai.Image = Properties.Resources.icon_khuyenmai;
+            this.btnKhuyenMai.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_khuyenmai;
             this.btnKhuyenMai.Name = "btnKhuyenMai";
             this.btnKhuyenMai.UseVisualStyleBackColor = true;
             this.btnKhuyenMai.Click += new System.EventHandler(this.btnKhuyenMai_Click);
@@ -270,7 +270,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnHoaDon.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnHoaDon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnHoaDon.ForeColor = System.Drawing.Color.White;
-            this.btnHoaDon.Image = Properties.Resources.icon_hoadon;
+            this.btnHoaDon.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_hoadon;
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.UseVisualStyleBackColor = true;
             this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
@@ -282,7 +282,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSanPham.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnSanPham.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSanPham.ForeColor = System.Drawing.Color.White;
-            this.btnSanPham.Image = Properties.Resources.icon_sanpham;
+            this.btnSanPham.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_sanpham;
             this.btnSanPham.Name = "btnSanPham";
             this.btnSanPham.UseVisualStyleBackColor = true;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
@@ -294,7 +294,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnNhanVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.Image = Properties.Resources.icon_nhanvien;
+            this.btnNhanVien.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_nhanvien;
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.UseVisualStyleBackColor = true;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
@@ -321,7 +321,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnDangNhap.FlatAppearance.BorderSize = 0;
             this.btnDangNhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnDangNhap.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDangNhap.Image = Properties.Resources.icon_user_login;
+            this.btnDangNhap.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_user_login;
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             // 
@@ -347,7 +347,7 @@ namespace LTUD1_BACHHOAXANH472
             this.currentChangeButton.FlatAppearance.BorderSize = 0;
             this.currentChangeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.currentChangeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.currentChangeButton.Image = Properties.Resources.icon_home;
+            this.currentChangeButton.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_home;
             this.currentChangeButton.Name = "currentChangeButton";
             this.currentChangeButton.UseVisualStyleBackColor = false;
             // 
@@ -383,8 +383,8 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.btnHome.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.btnHome, "btnHome");
-            this.btnHome.Image = Properties.Resources.BXHLOGO2;
-            this.btnHome.InitialImage = Properties.Resources.BXHLOGO2;
+            this.btnHome.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
+            this.btnHome.InitialImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
             this.btnHome.Name = "btnHome";
             this.btnHome.TabStop = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -395,7 +395,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnMenu.FlatAppearance.BorderSize = 0;
             this.btnMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnMenu.Image = Properties.Resources.icon_menu;
+            this.btnMenu.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_menu;
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
@@ -416,7 +416,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnExit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit.Image = Properties.Resources.icon_exit;
+            this.btnExit.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_exit;
             this.btnExit.Name = "btnExit";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -435,7 +435,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // iconChildForm
             // 
-            this.iconChildForm.BackgroundImage = Properties.Resources.icon_home;
+            this.iconChildForm.BackgroundImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_home;
             resources.ApplyResources(this.iconChildForm, "iconChildForm");
             this.iconChildForm.Name = "iconChildForm";
             this.iconChildForm.TabStop = false;
@@ -473,6 +473,7 @@ namespace LTUD1_BACHHOAXANH472
             // sidebarTimer
             // 
             this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
             // listIcon_navigation_bar
             // 

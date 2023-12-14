@@ -7,8 +7,9 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhanVien;
 using LTUD1_BACHHOAXANH472.uploads;
-using OfficeOpenXml.FormulaParsing.Excel.Functions;
+//using OfficeOpenXml.FormulaParsing.Excel.Functions;
 
 namespace LTUD1_BACHHOAXANH472
 {
@@ -33,6 +34,7 @@ namespace LTUD1_BACHHOAXANH472
 
         ErrTxt errtxt;
 
+        ErrColors color;
 
         // Tạo một từ điển để lưu trữ các báo cáo
         Dictionary<string, ReportDocument> reports = new Dictionary<string, ReportDocument>();
@@ -66,8 +68,13 @@ namespace LTUD1_BACHHOAXANH472
             customButtonHelper.SetProperties(btnImport);
 
             // Khởi tạo ReportManager với đường dẫn đến thư mục chứa các báo cáo
-            reportManager = new ReportManager(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "uploads"));
+            reportManager = new ReportManager(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"ScreenMenu\Nhap\NhanVien"));
+
+            // khởi tạo kiểm tra ô nhập
             errtxt = new ErrTxt(this);
+
+            // khởi tạo tô màu
+            color = new ErrColors();             
         }
 
 
@@ -87,7 +94,7 @@ namespace LTUD1_BACHHOAXANH472
                 cboPhongBan.ValueMember = "MAPB";
                 cboPhongBan.DisplayMember = "TENPHG";
 
-                /*                infile = new InFilePDFExcel(dgvNhanVien);*/
+                /* infile = new InFilePDFExcel(dgvNhanVien);*/
 
 
 
@@ -114,7 +121,21 @@ namespace LTUD1_BACHHOAXANH472
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
                 // hiển thị danh sach báo cáo
-                TaiLaiDanhSachBaoCao();
+                reportManager.LoadReports();
+
+                // Thêm các tiêu đề báo cáo vào TreeView
+                foreach (string reportTitle in reportManager.GetReportTitles())
+                {
+                    TreeNode newNode = new TreeNode(reportTitle);
+                    newNode.Name = reportTitle;
+                    tvReport.Nodes.Add(newNode);
+                }
+
+                // Nếu có ít nhất một báo cáo, hiển thị báo cáo đầu tiên
+                //if (tvReport.Nodes.Count > 0)
+                //{
+                //    tvReport.SelectedNode = tvReport.Nodes[0];
+                //}
             }
             catch (Exception ex)
             {
@@ -122,35 +143,6 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        /// <summary>
-        /// Tải lại danh sach báo cáo
-        /// </summary>
-        public void TaiLaiDanhSachBaoCao()
-        {
-            txtTieuDeReport.Text = "rp_nhanvien_nvtheophongban";
-
-            // Xóa tất cả các nút trên TreeView
-            tvReport.Nodes.Clear();
-            tvReportNhanVien.Nodes.Clear();
-            // Load các báo cáo
-            reportManager.LoadReports();
-
-            // Thêm các tiêu đề báo cáo vào TreeView
-            foreach (string reportTitle in reportManager.GetReportTitles())
-            {
-                TreeNode newNode = new TreeNode(reportTitle);
-                newNode.Name = reportTitle;
-                tvReport.Nodes.Add(newNode);
-                tvReportNhanVien.Nodes.Add(newNode);
-
-            }
-
-            // Nếu có ít nhất một báo cáo, hiển thị báo cáo đầu tiên
-            if (tvReport.Nodes.Count > 0)
-            {
-                tvReport.SelectedNode = tvReport.Nodes[0];
-            }
-        }
         private void dgvNhanVien_Click(object sender, EventArgs e)
         {
             try
@@ -209,7 +201,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             else
             {
-                TaiLaiDanhSachBaoCao();
+                //TaiLaiDanhSachBaoCao();
             }
         }
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -333,7 +325,7 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 // Khởi tạo một đối tượng mới từ lớp rp_nhanvien_nvtheophongban
-                rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
+                rp_nhanvien_select_all rpt = new rp_nhanvien_select_all();
 
                 // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
                 ParameterValues paramMaPhongBan = new ParameterValues();
@@ -366,6 +358,9 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
+                // After the other action is performed, re-select the previously selected node
+                tvReport.SelectedNode = selectedNode;
+
                 // Chuyển đến tabReport 
                 // chọn tab danh sách để tìm kiếm thì
                 if (tcNhanVien.SelectedTab.Name.Equals("tbDanhSachNhanVien"))
@@ -375,25 +370,43 @@ namespace LTUD1_BACHHOAXANH472
                 else
                 {
                     // Khởi tạo một đối tượng mới từ lớp rp_nhanvien_nvtheophongban
-                    rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
+                    rp_nhanvien_select_all rpt = new rp_nhanvien_select_all();
 
                     // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                    ParameterValues paramMaPhongBan = new ParameterValues();
-                    ParameterValues paramMaChiNhanh = new ParameterValues();
+                    //ParameterValues paramMaPhongBan = new ParameterValues();
+                    //ParameterValues paramMaChiNhanh = new ParameterValues();
 
                     // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    ParameterDiscreteValue pdvMaPB = new ParameterDiscreteValue();
-                    ParameterDiscreteValue pdvMaCN = new ParameterDiscreteValue();
+                    //ParameterDiscreteValue pdvMaPB = new ParameterDiscreteValue();
+                    //ParameterDiscreteValue pdvMaCN = new ParameterDiscreteValue();
 
                     // Đặt giá trị của pdv bằng giá trị trong textBox1
-                    pdvMaPB.Value = cboReportPhongBan.SelectedValue;
-                    pdvMaCN.Value = cboReportChiNhanh.SelectedValue;
+                    //pdvMaPB.Value = cboReportPhongBan.SelectedValue.ToString();
+                    //pdvMaCN.Value = cboReportChiNhanh.SelectedValue.ToString();
                     // Thêm pdv vào danh sách các giá trị tham số
-                    paramMaPhongBan.Add(pdvMaPB);
-                    paramMaChiNhanh.Add(pdvMaCN);
+                    //paramMaPhongBan.Add(pdvMaPB);
+                    //paramMaChiNhanh.Add(pdvMaCN);
                     // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                    rpt.DataDefinition.ParameterFields["@MaPhongBan"].ApplyCurrentValues(paramMaPhongBan);
-                    rpt.DataDefinition.ParameterFields["@MaChiNhanh"].ApplyCurrentValues(paramMaChiNhanh);
+                    //rpt.DataDefinition.ParameterFields["@MaPhongBan"].ApplyCurrentValues(paramMaPhongBan);
+                    //rpt.DataDefinition.ParameterFields["@MaChiNhanh"].ApplyCurrentValues(paramMaChiNhanh);
+
+                    // tim theo từng loại báo cáo
+                    //Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+                    ParameterValues paramHOTENNV = new ParameterValues();
+
+
+                    //Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+                    ParameterDiscreteValue pdvHOTENNV = new ParameterDiscreteValue();
+
+
+                    //Đặt giá trị của pdv bằng giá trị trong textBox1
+                    pdvHOTENNV.Value = txtHoTenNV.Text.ToString();
+
+                    //Thêm pdv vào danh sách các giá trị tham số
+                    paramHOTENNV.Add(pdvHOTENNV);
+
+                    //Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+                    rpt.DataDefinition.ParameterFields["@keyword"].ApplyCurrentValues(paramHOTENNV);
 
                     // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
                     crystalReportViewer1.ReportSource = rpt;
@@ -494,13 +507,24 @@ namespace LTUD1_BACHHOAXANH472
         {
             // Lấy tên của node được chọn
             string reportTitle = e.Node.Text;
-
+            // Tô màu node
+            e.Node.BackColor = color.primaryGreen;
             // Lấy báo cáo tương ứng
             ReportDocument reportDocument = reportManager.GetReport(reportTitle);
 
-            // Hiển thị báo cáo
+            // Truyền tham số vào báo cáo
             if (reportDocument != null)
             {
+                switch (reportTitle)
+                {
+                    // load all lần đầu 
+                    case "rp_nhanvien_select_all":
+                        reportDocument.SetParameterValue("@keyword", string.IsNullOrEmpty(txtHoTenNV.Text) ? "" : txtHoTenNV.Text);
+                        break;
+                    default: break;
+                }
+                // Thêm các tham số khác nếu cần thiết
+
                 crystalReportViewer1.ReportSource = reportDocument;
             }
         }
@@ -589,6 +613,37 @@ namespace LTUD1_BACHHOAXANH472
         private void rtbDiaChi_TextChanged(object sender, EventArgs e)
         {
             TextHelper.HandleTextChange_DiaChi(sender);
+        }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private TreeNode selectedNode;
+
+        private void tvReport_BeforeSelect(object sender, TreeViewCancelEventArgs e)
+        {
+            selectedNode = e.Node;
+        }
+
+        private void tblTimKiemThongTin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flpTimKiemThongTin_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cboPhongBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
