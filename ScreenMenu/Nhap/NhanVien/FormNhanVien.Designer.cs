@@ -80,9 +80,6 @@ namespace LTUD1_BACHHOAXANH472
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbltwoColumn = new System.Windows.Forms.TableLayoutPanel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tblTimKiemThongTin = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -100,6 +97,9 @@ namespace LTUD1_BACHHOAXANH472
             this.rtbDiaChi = new System.Windows.Forms.RichTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cboPhongBan = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox19.SuspendLayout();
             this.groupBox20.SuspendLayout();
@@ -348,27 +348,27 @@ namespace LTUD1_BACHHOAXANH472
             this.tsmInFilePDF,
             this.tsmXuatFileExcel});
             this.cmsNhanVien.Name = "contextMenuStrip1";
-            this.cmsNhanVien.Size = new System.Drawing.Size(150, 70);
+            this.cmsNhanVien.Size = new System.Drawing.Size(164, 76);
             // 
             // tsmThongKe
             // 
             this.tsmThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmThongKe.Name = "tsmThongKe";
-            this.tsmThongKe.Size = new System.Drawing.Size(149, 22);
+            this.tsmThongKe.Size = new System.Drawing.Size(163, 24);
             this.tsmThongKe.Text = "Thống kê";
             // 
             // tsmInFilePDF
             // 
             this.tsmInFilePDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmInFilePDF.Name = "tsmInFilePDF";
-            this.tsmInFilePDF.Size = new System.Drawing.Size(149, 22);
+            this.tsmInFilePDF.Size = new System.Drawing.Size(163, 24);
             this.tsmInFilePDF.Text = "Xuất File PDF";
             // 
             // tsmXuatFileExcel
             // 
             this.tsmXuatFileExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmXuatFileExcel.Name = "tsmXuatFileExcel";
-            this.tsmXuatFileExcel.Size = new System.Drawing.Size(149, 22);
+            this.tsmXuatFileExcel.Size = new System.Drawing.Size(163, 24);
             this.tsmXuatFileExcel.Text = "Xuất File Excel";
             // 
             // tcNhanVien
@@ -720,26 +720,12 @@ namespace LTUD1_BACHHOAXANH472
             this.tbltwoColumn.Size = new System.Drawing.Size(1284, 729);
             this.tbltwoColumn.TabIndex = 12;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Phòng Ban";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Trưởng Phòng";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
             // tblTimKiemThongTin
             // 
             this.tblTimKiemThongTin.AutoScroll = true;
             this.tblTimKiemThongTin.ColumnCount = 2;
             this.tblTimKiemThongTin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblTimKiemThongTin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tblTimKiemThongTin.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 0F));
             this.tblTimKiemThongTin.Controls.Add(this.groupBox5, 0, 6);
             this.tblTimKiemThongTin.Controls.Add(this.groupBox2, 0, 5);
             this.tblTimKiemThongTin.Controls.Add(this.groupBox9, 0, 1);
@@ -747,7 +733,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tblTimKiemThongTin.Controls.Add(this.groupBox7, 0, 2);
             this.tblTimKiemThongTin.Controls.Add(this.groupBox6, 0, 4);
             this.tblTimKiemThongTin.Controls.Add(this.groupBox4, 0, 0);
-            this.tblTimKiemThongTin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tblTimKiemThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblTimKiemThongTin.Font = new System.Drawing.Font("Segoe UI Light", 14F);
             this.tblTimKiemThongTin.Location = new System.Drawing.Point(3, 3);
             this.tblTimKiemThongTin.Name = "tblTimKiemThongTin";
@@ -770,7 +756,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(3, 579);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(301, 314);
+            this.groupBox5.Size = new System.Drawing.Size(309, 141);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Giới tính";
@@ -784,7 +770,7 @@ namespace LTUD1_BACHHOAXANH472
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 28);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(295, 283);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(303, 110);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // rbNam
@@ -818,7 +804,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(3, 483);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(301, 90);
+            this.groupBox2.Size = new System.Drawing.Size(309, 90);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lương";
@@ -829,8 +815,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtLuong.Location = new System.Drawing.Point(3, 28);
             this.txtLuong.Margin = new System.Windows.Forms.Padding(5);
             this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(295, 32);
+            this.txtLuong.Size = new System.Drawing.Size(303, 32);
             this.txtLuong.TabIndex = 0;
+            this.txtLuong.TextChanged += new System.EventHandler(this.txtLuong_TextChanged);
             // 
             // groupBox9
             // 
@@ -839,7 +826,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox9.ForeColor = System.Drawing.Color.White;
             this.groupBox9.Location = new System.Drawing.Point(3, 99);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(301, 90);
+            this.groupBox9.Size = new System.Drawing.Size(309, 90);
             this.groupBox9.TabIndex = 12;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Họ tên";
@@ -850,8 +837,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtHoTenNV.Location = new System.Drawing.Point(3, 28);
             this.txtHoTenNV.Margin = new System.Windows.Forms.Padding(5);
             this.txtHoTenNV.Name = "txtHoTenNV";
-            this.txtHoTenNV.Size = new System.Drawing.Size(295, 32);
+            this.txtHoTenNV.Size = new System.Drawing.Size(303, 32);
             this.txtHoTenNV.TabIndex = 0;
+            this.txtHoTenNV.TextChanged += new System.EventHandler(this.txtHoTenNV_TextChanged);
             // 
             // groupBox8
             // 
@@ -860,7 +848,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox8.ForeColor = System.Drawing.Color.White;
             this.groupBox8.Location = new System.Drawing.Point(3, 291);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(301, 90);
+            this.groupBox8.Size = new System.Drawing.Size(309, 90);
             this.groupBox8.TabIndex = 11;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Số điện thoại";
@@ -871,8 +859,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtSDT.Location = new System.Drawing.Point(3, 28);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(5);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(295, 32);
+            this.txtSDT.Size = new System.Drawing.Size(303, 32);
             this.txtSDT.TabIndex = 0;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // groupBox7
             // 
@@ -881,7 +870,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox7.ForeColor = System.Drawing.Color.White;
             this.groupBox7.Location = new System.Drawing.Point(3, 195);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(301, 90);
+            this.groupBox7.Size = new System.Drawing.Size(309, 90);
             this.groupBox7.TabIndex = 10;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Ngày sinh";
@@ -893,7 +882,7 @@ namespace LTUD1_BACHHOAXANH472
             this.rptNgaySinh.Location = new System.Drawing.Point(3, 28);
             this.rptNgaySinh.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.rptNgaySinh.Name = "rptNgaySinh";
-            this.rptNgaySinh.Size = new System.Drawing.Size(295, 32);
+            this.rptNgaySinh.Size = new System.Drawing.Size(303, 32);
             this.rptNgaySinh.TabIndex = 19;
             // 
             // groupBox6
@@ -904,7 +893,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox6.ForeColor = System.Drawing.Color.White;
             this.groupBox6.Location = new System.Drawing.Point(3, 387);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(301, 90);
+            this.groupBox6.Size = new System.Drawing.Size(309, 90);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Địa chỉ";
@@ -914,9 +903,10 @@ namespace LTUD1_BACHHOAXANH472
             this.rtbDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbDiaChi.Location = new System.Drawing.Point(3, 28);
             this.rtbDiaChi.Name = "rtbDiaChi";
-            this.rtbDiaChi.Size = new System.Drawing.Size(295, 59);
+            this.rtbDiaChi.Size = new System.Drawing.Size(303, 59);
             this.rtbDiaChi.TabIndex = 0;
             this.rtbDiaChi.Text = "";
+            this.rtbDiaChi.TextChanged += new System.EventHandler(this.rtbDiaChi_TextChanged);
             // 
             // groupBox4
             // 
@@ -925,7 +915,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox4.ForeColor = System.Drawing.Color.Snow;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(301, 90);
+            this.groupBox4.Size = new System.Drawing.Size(309, 90);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Phòng ban";
@@ -936,9 +926,23 @@ namespace LTUD1_BACHHOAXANH472
             this.cboPhongBan.FormattingEnabled = true;
             this.cboPhongBan.Location = new System.Drawing.Point(3, 28);
             this.cboPhongBan.Name = "cboPhongBan";
-            this.cboPhongBan.Size = new System.Drawing.Size(295, 33);
+            this.cboPhongBan.Size = new System.Drawing.Size(303, 33);
             this.cboPhongBan.TabIndex = 3;
             this.cboPhongBan.SelectedIndexChanged += new System.EventHandler(this.cboPhongBan_SelectedIndexChanged);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Phòng Ban";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Trưởng Phòng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
             // FormNhanVien
             // 

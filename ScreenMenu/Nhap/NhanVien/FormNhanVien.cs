@@ -74,7 +74,7 @@ namespace LTUD1_BACHHOAXANH472
             errtxt = new ErrTxt(this);
 
             // khởi tạo tô màu
-            color = new ErrColors();             
+            color = new ErrColors();
         }
 
 
@@ -234,37 +234,6 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                //Kiem tra nhap thong tin
-                if (ErrTxt.CheckControlValue(txtHoTenNV))
-                {
-                    MessageBox.Show("txtHoTenNV", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(txtLuong))
-                {
-                    MessageBox.Show("txtLuong", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(txtSDT))
-                {
-                    MessageBox.Show("txtSDT", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(rtbDiaChi))
-                {
-                    MessageBox.Show("rtbDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(rptNgaySinh))
-                {
-                    MessageBox.Show("rptNgaySinh", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-
                 Random d = new Random();
 
                 int dong = dgvNhanVien.CurrentCell.RowIndex;
@@ -534,37 +503,6 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                //Kiem tra nhap thong tin
-                if (ErrTxt.CheckControlValue(txtHoTenNV))
-                {
-                    MessageBox.Show("txtHoTenNV", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(txtLuong))
-                {
-                    MessageBox.Show("txtLuong", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(txtSDT))
-                {
-                    MessageBox.Show("txtSDT", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(rtbDiaChi))
-                {
-                    MessageBox.Show("rtbDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-                if (ErrTxt.CheckControlValue(rptNgaySinh))
-                {
-                    MessageBox.Show("rptNgaySinh", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-
                 nvController.SelectAll();
                 //DataRow dongcuoicung = nccController.DataSource.Rows[nccController.DataSource.Rows.Count - 1];
                 DataRow dongdautien = nvController.DataSource.Rows[0];
@@ -607,7 +545,7 @@ namespace LTUD1_BACHHOAXANH472
         private void txtHoTenNV_TextChanged(object sender, EventArgs e)
         {
             // kiểm tra 1 trong 3 cái nào dính thì chặn luôn
-            TextHelper.HandleTextChange_Name(sender);
+            TextHelper.HandleTextChange_FullName(sender);
         }
 
         private void rtbDiaChi_TextChanged(object sender, EventArgs e)
