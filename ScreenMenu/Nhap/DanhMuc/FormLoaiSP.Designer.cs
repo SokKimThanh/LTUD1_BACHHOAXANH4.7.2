@@ -254,7 +254,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             btnXoa.UseVisualStyleBackColor = false;
             btnXoa.Click += btnXoa_Click;
             // 
-            // btnSua
+            // btnEdit
             // 
             btnSua.BackColor = Color.Transparent;
             btnSua.Dock = DockStyle.Fill;
@@ -266,14 +266,14 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             btnSua.ForeColor = Color.SeaShell;
             btnSua.Location = new Point(135, 5);
             btnSua.Margin = new Padding(5);
-            btnSua.Name = "btnSua";
+            btnSua.Name = "btnEdit";
             btnSua.Size = new Size(120, 80);
             btnSua.TabIndex = 2;
             btnSua.Text = "Sửa";
             btnSua.UseVisualStyleBackColor = false;
             btnSua.Click += btnSua_Click;
             // 
-            // btnThem
+            // btnAdd
             // 
             btnThem.BackColor = Color.Transparent;
             btnThem.Dock = DockStyle.Fill;
@@ -284,7 +284,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             btnThem.ForeColor = Color.SeaShell;
             btnThem.Location = new Point(5, 5);
             btnThem.Margin = new Padding(5);
-            btnThem.Name = "btnThem";
+            btnThem.Name = "btnAdd";
             btnThem.Size = new Size(120, 80);
             btnThem.TabIndex = 1;
             btnThem.Text = "Thêm";

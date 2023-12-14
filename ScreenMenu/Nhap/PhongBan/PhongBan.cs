@@ -16,6 +16,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 
         public PhongBan(string maPB, string tenPB, string maCN)
         {
+            if (string.IsNullOrEmpty(maPB) || string.IsNullOrEmpty(tenPB) || string.IsNullOrEmpty(maCN))
+            {
+                throw new Exception("Field bắt buộc nhập!");
+            }
             this.maPB = maPB;
             this.tenPB = tenPB;
             this.maCN = maCN;

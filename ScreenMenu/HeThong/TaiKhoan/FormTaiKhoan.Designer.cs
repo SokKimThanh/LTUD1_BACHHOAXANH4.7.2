@@ -476,7 +476,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1.Size = new System.Drawing.Size(731, 163);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnSua
+            // btnEdit
             // 
             this.btnSua.BackColor = System.Drawing.Color.Transparent;
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -490,7 +490,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.Location = new System.Drawing.Point(491, 4);
             this.btnSua.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.btnSua.Name = "btnSua";
+            this.btnSua.Name = "btnEdit";
             this.btnSua.Size = new System.Drawing.Size(235, 155);
             this.btnSua.TabIndex = 36;
             this.btnSua.Text = "Sửa";

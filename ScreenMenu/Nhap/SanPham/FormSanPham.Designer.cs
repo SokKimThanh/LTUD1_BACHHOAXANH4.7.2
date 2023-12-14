@@ -365,7 +365,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel6.Size = new System.Drawing.Size(941, 105);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
-            // btnLamMoi
+            // btnRefresh
             // 
             this.btnLamMoi.BackColor = System.Drawing.Color.Transparent;
             this.btnLamMoi.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -376,14 +376,14 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnLamMoi.ForeColor = System.Drawing.Color.SeaShell;
             this.btnLamMoi.Location = new System.Drawing.Point(317, 5);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(5);
-            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Name = "btnRefresh";
             this.btnLamMoi.Size = new System.Drawing.Size(146, 95);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // btnSua
+            // btnEdit
             // 
             this.btnSua.BackColor = System.Drawing.Color.Transparent;
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -394,7 +394,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnSua.ForeColor = System.Drawing.Color.SeaShell;
             this.btnSua.Location = new System.Drawing.Point(473, 5);
             this.btnSua.Margin = new System.Windows.Forms.Padding(5);
-            this.btnSua.Name = "btnSua";
+            this.btnSua.Name = "btnEdit";
             this.btnSua.Size = new System.Drawing.Size(146, 95);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
@@ -419,7 +419,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnThem
+            // btnAdd
             // 
             this.btnThem.BackColor = System.Drawing.Color.Transparent;
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -430,7 +430,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnThem.ForeColor = System.Drawing.Color.SeaShell;
             this.btnThem.Location = new System.Drawing.Point(161, 5);
             this.btnThem.Margin = new System.Windows.Forms.Padding(5);
-            this.btnThem.Name = "btnThem";
+            this.btnThem.Name = "btnAdd";
             this.btnThem.Size = new System.Drawing.Size(146, 95);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
