@@ -103,7 +103,7 @@ namespace LTUD1_BACHHOAXANH472
         public bool VerifyAccount(string enteredUserName, string enteredPassword)
         {
             string[] username = { "a", "admin", "NgoQuy234", "VoTu232", "ThanhSok231" };
-            string[] password = { "a", "admin", "ngoquytdc123", "votutdc123", "thanhsoktdc123" };
+            string[] password = { "a", "admin123", "ngoquytdc123", "votutdc123", "thanhsoktdc123" };
 
             //int enteredUserName = 123144;
             //string enteredPassword = "NewYork";
