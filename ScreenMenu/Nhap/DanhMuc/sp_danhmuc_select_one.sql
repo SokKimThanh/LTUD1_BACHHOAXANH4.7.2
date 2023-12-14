@@ -17,6 +17,6 @@ BEGIN
 	
 
     
-	SELECT * from LOAISP where MALOAI like @MALOAI --like chính xác mã 100%
+	SELECT * from LOAISP where MALOAI = @MALOAI --like chính xác mã 100%
 END
 GO

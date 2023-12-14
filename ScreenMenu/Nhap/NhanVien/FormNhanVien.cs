@@ -147,27 +147,27 @@ namespace LTUD1_BACHHOAXANH472
                 // Khởi tạo số dòng đang chọn
                 int dong = dgvNhanVien.CurrentCell.RowIndex;
                 // lấy ra mã
-                string manv = dgvNhanVien.Rows[dong].Cells[0].Value.ToString();
+                string id = dgvNhanVien.Rows[dong].Cells[0].Value.ToString();
                 // khởi tạo đối tượng bằng mã
-                DataTable dt = nvController.SelectByID(manv);
+                DataTable dt = nvController.SelectByID(id);
                 DataRow dr = dt.Rows[0];
 
                 // chuyển thành class đối tượng
-                NhanVien nv = (NhanVien)nvController.FromDataRow(dr);
+                NhanVien o = (NhanVien)nvController.FromDataRow(dr);
 
                 // thiết lập dữ liệu ngược lại mỗi lần click
-                txtHoTenNV.Text = nv.Hotennv;
-                txtLuong.Text = nv.Luong.ToString();
-                txtSDT.Text = nv.Sdtnv.ToString();
-                rtbDiaChi.Text = nv.Diachinv;
-                cboPhongBan.SelectedValue = nv.Mapb;// chay duoc
-                rptNgaySinh.Value = nv.Ngaysinh;//  chay duoc
+                txtHoTenNV.Text = o.Hotennv;
+                txtLuong.Text = o.Luong.ToString();
+                txtSDT.Text = o.Sdtnv.ToString();
+                rtbDiaChi.Text = o.Diachinv;
+                cboPhongBan.SelectedValue = o.Mapb;// chay duoc
+                rptNgaySinh.Value = o.Ngaysinh;//  chay duoc
                 // kiêm tra giới tính để chọn đúng control
-                if (nv.Gioitinh.Equals("nam"))
+                if (o.Gioitinh.Equals("nam"))
                 {
                     rbNam.Checked = true;
                 }
-                else if (nv.Gioitinh.Equals("nu"))
+                else if (o.Gioitinh.Equals("nu"))
                 {
                     rbNu.Checked = true;
                 }
@@ -506,7 +506,7 @@ namespace LTUD1_BACHHOAXANH472
                 // id tự động tăng
                 //string id_cuoi = (string)dongcuoicung["NhanVienID"];
                 string id_dau = (string)dongdautien["NhanVienID"];
-                string maNV = GenerateID.generateID("nv", id_dau);
+                string maNV = GenerateID.generateID("o", id_dau);
 
                 string hotennv = txtHoTenNV.Text;
                 float luong = float.Parse(txtLuong.Text);

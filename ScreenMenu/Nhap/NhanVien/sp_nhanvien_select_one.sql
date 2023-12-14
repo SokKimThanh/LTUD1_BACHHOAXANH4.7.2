@@ -10,7 +10,7 @@ CREATE PROCEDURE sp_nhanvien_select_one
 AS
 BEGIN 
     
-	SELECT * from nhanvien where MANV like @manv --like chính xác mã 100%
+	SELECT * from nhanvien where MANV = @manv --like chính xác mã 100%
 END;
 go
 

@@ -9,6 +9,6 @@ CREATE PROCEDURE sp_nhacungcap_select_one
 	@MANCC CHAR(11)
 AS
 BEGIN
-	SELECT * from nhacungcap where MANCC like @MANCC --like chính xác mã 100%
+	SELECT * from nhacungcap where MANCC = @MANCC --like chính xác mã 100%
 END
 GO
