@@ -397,7 +397,7 @@
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
-    <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\NhaCCCT.cs" />
+    <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\chitietcc.cs" />
     <Compile Include="ScreenMenu\Nhap\NhanVien\rp_nhanvien_select_all.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -730,11 +730,11 @@
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_update.sql" />
-    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_delete.sql" />
-    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_insert.sql" />
-    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_select_all.sql" />
-    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_select_one.sql" />
-    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_nccct_update.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_chitietcc_delete.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_chitietcc_insert.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_chitietcc_select_all.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_chitietcc_select_one.sql" />
+    <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_chitietcc_update.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_cbo_laydanhsach_phongban_theo_chinhanh.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_delete.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_insert.sql" />
