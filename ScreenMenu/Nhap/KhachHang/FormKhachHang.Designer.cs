@@ -440,7 +440,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.05286F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.94714F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 171F));
             this.tableLayoutPanel6.Controls.Add(this.btnTimKiem, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.txtTimKiem, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
@@ -456,9 +456,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // btnTimKiem
             // 
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTimKiem.Location = new System.Drawing.Point(682, 3);
+            this.btnTimKiem.Location = new System.Drawing.Point(681, 3);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(165, 52);
+            this.btnTimKiem.Size = new System.Drawing.Size(166, 52);
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -469,7 +469,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTimKiem.Location = new System.Drawing.Point(302, 3);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(374, 47);
+            this.txtTimKiem.Size = new System.Drawing.Size(373, 47);
             this.txtTimKiem.TabIndex = 4;
             // 
             // label1
@@ -499,8 +499,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // 
             // khachhangreport1
             // 
-            this.khachhangreport1.FileName = "rassdk://C:\\Users\\congq\\AppData\\Local\\Temp\\temp_e68eb46e-f1d1-4c77-827c-bc99c4bab" +
-    "2be.rpt";
+            this.khachhangreport1.FileName = "rassdk://C:\\Users\\congq\\AppData\\Local\\Temp\\temp_93a80b5b-2803-4d0d-bfa3-71de74881" +
+    "938.rpt";
             // 
             // FormKhachHang
             // 

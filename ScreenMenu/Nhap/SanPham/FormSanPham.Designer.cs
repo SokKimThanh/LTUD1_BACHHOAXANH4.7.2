@@ -50,7 +50,15 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvDanhSachSP = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.rptSanPham = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLamMoi = new System.Windows.Forms.Button();
@@ -64,6 +72,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.cboLoaiSP = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cboNCC = new System.Windows.Forms.ComboBox();
+            this.SanPhamrpt1 = new LTUD1_BACHHOAXANH472.uploads.SanPhamrpt();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -76,7 +85,12 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.groupBox15.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSP)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -310,7 +324,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.dgvDanhSachSP);
+            this.groupBox15.Controls.Add(this.tabControl1);
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.ForeColor = System.Drawing.Color.White;
             this.groupBox15.Location = new System.Drawing.Point(3, 126);
@@ -320,16 +334,110 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Danh sách";
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(3, 43);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(941, 419);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.dgvDanhSachSP);
+            this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage1.Location = new System.Drawing.Point(4, 50);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(933, 365);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // dgvDanhSachSP
             // 
             this.dgvDanhSachSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachSP.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachSP.Location = new System.Drawing.Point(3, 43);
+            this.dgvDanhSachSP.Location = new System.Drawing.Point(3, 3);
             this.dgvDanhSachSP.Name = "dgvDanhSachSP";
             this.dgvDanhSachSP.RowHeadersWidth = 51;
-            this.dgvDanhSachSP.Size = new System.Drawing.Size(941, 419);
-            this.dgvDanhSachSP.TabIndex = 0;
-            this.dgvDanhSachSP.Click += new System.EventHandler(this.dgvDanhSachSP_Click);
+            this.dgvDanhSachSP.Size = new System.Drawing.Size(927, 359);
+            this.dgvDanhSachSP.TabIndex = 1;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.tabPage2.Controls.Add(this.tableLayoutPanel4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 50);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(933, 365);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.rptSanPham, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.2702F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.7298F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(927, 359);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.89468F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.10532F));
+            this.tableLayoutPanel7.Controls.Add(this.txtTimKiem, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.btnTimKiem, 1, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(921, 56);
+            this.tableLayoutPanel7.TabIndex = 0;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(3, 3);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(518, 47);
+            this.txtTimKiem.TabIndex = 0;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
+            this.btnTimKiem.Location = new System.Drawing.Point(527, 3);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(165, 50);
+            this.btnTimKiem.TabIndex = 1;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // rptSanPham
+            // 
+            this.rptSanPham.ActiveViewIndex = 0;
+            this.rptSanPham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptSanPham.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rptSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptSanPham.Location = new System.Drawing.Point(3, 65);
+            this.rptSanPham.Name = "rptSanPham";
+            this.rptSanPham.ReportSource = "D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt";
+            this.rptSanPham.Size = new System.Drawing.Size(921, 291);
+            this.rptSanPham.TabIndex = 1;
             // 
             // groupBox14
             // 
@@ -553,7 +661,13 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.groupBox4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachSP)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -579,7 +693,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private ComboBox cboKM;
         private GroupBox groupBox10;
         private ComboBox cboLoaiSP;
-        private DataGridView dgvDanhSachSP;
         private Button btnLamMoi;
         private GroupBox groupBox1;
         private TableLayoutPanel tableLayoutPanel2;
@@ -599,5 +712,15 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private TextBox txtMaSP;
         private GroupBox groupBox3;
         private ComboBox cboNCC;
+        private TabControl tabControl1;
+        private DataGridView dgvDanhSachSP;
+        private TabPage tabPage2;
+        private TableLayoutPanel tableLayoutPanel4;
+        private TableLayoutPanel tableLayoutPanel7;
+        private TextBox txtTimKiem;
+        private TabPage tabPage1;
+        private Button btnTimKiem;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptSanPham;
+        private uploads.SanPhamrpt SanPhamrpt1;
     }
 }
