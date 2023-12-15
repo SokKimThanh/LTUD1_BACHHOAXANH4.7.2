@@ -881,7 +881,9 @@
             this.tableLayoutPanel10.SetColumnSpan(this.label18, 2);
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label18.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_hoadon;
+            this.label18.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label18.Location = new System.Drawing.Point(171, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(476, 41);
