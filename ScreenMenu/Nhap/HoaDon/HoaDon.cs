@@ -10,10 +10,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
     {
         private string maHD, maNV, maKH;
         private DateTime ngayHD;
-        private float tongTien = 0;
+        private decimal tongTien;
         public HoaDon()
         { }
-        public HoaDon(string maHD, string maNV, string maKH, DateTime ngayHD, float tongTien)
+        public HoaDon(string maHD, string maNV, string maKH, DateTime ngayHD, decimal tongTien)
         {
             this.MaHD = maHD;
             this.MaNV = maNV;
@@ -26,6 +26,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
         public string MaNV { get => maNV; set => maNV = value; }
         public string MaKH { get => maKH; set => maKH = value; }
         public DateTime NgayHD { get => ngayHD; set => ngayHD = value; }
-        public float TongTien { get => tongTien; set => tongTien = value; }
+        public decimal TongTien { get => tongTien; set => tongTien = value; }
     }
 }
