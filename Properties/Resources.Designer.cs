@@ -313,6 +313,16 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_search1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_setting {
             get {
                 object obj = ResourceManager.GetObject("icon_setting", resourceCulture);
@@ -373,6 +383,16 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_small_quyentruycap {
+            get {
+                object obj = ResourceManager.GetObject("icon_small_quyentruycap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_small_save {
             get {
                 object obj = ResourceManager.GetObject("icon_small_save", resourceCulture);
@@ -406,6 +426,16 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         internal static System.Drawing.Bitmap icon_user_login {
             get {
                 object obj = ResourceManager.GetObject("icon_user_login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_welcome {
+            get {
+                object obj = ResourceManager.GetObject("icon_welcome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
