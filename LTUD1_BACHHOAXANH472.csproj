@@ -383,7 +383,9 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\TableLayoutHelper.cs" />
+    <Compile Include="Model\TableLayoutHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
@@ -392,11 +394,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rp_nhanvien_select_all.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="uploads\khachhangreport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>khachhangreport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Model\ArrayList.cs" />
     <Compile Include="Model\ButtonStateManager.cs" />
@@ -485,6 +489,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>reportHD.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\KhachHang\FormKhachHang.cs">
       <SubType>Form</SubType>

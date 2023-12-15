@@ -544,7 +544,7 @@
     <Compile Include="uploads\rp_hoadon_theongay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rp_nhanvien_nvtheophongban.rpt</DependentUpon>
+      <DependentUpon>rp_hoadon_theongay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="FormMain.resx">
