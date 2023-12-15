@@ -371,8 +371,9 @@ namespace LTUD1_BACHHOAXANH472
             this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox5.Location = new System.Drawing.Point(169, 68);
             this.textBox5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(293, 32);
+            this.textBox5.Size = new System.Drawing.Size(293, 56);
             this.textBox5.TabIndex = 21;
             // 
             // label14
@@ -393,8 +394,9 @@ namespace LTUD1_BACHHOAXANH472
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox1.Location = new System.Drawing.Point(169, 4);
             this.textBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(293, 32);
+            this.textBox1.Size = new System.Drawing.Size(293, 56);
             this.textBox1.TabIndex = 41;
             // 
             // tableLayoutPanel4
