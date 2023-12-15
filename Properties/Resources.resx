@@ -118,53 +118,50 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="hidepassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hidepassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transparent_khachhang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transparent_khachhang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="danhmucsanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\danhmucsanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_setting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_diadiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_diadiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_nhanvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_nhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_pasword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_pasword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="showpassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\showpassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_user_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_user_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_khachhang" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_khachhang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tranparent_detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tranparent_detail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_menu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_hoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tranparent_green_detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tranparent_green_detail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="hinhthuckhuyenmai" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hinhthuckhuyenmai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_nhacungcap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_nhacungcap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_ngaylaphoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_ngaylaphoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nhacungcapct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nhacungcapct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="chitiethoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\chitiethoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tranparent_hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tranparent_hoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_sanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_sanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_nhacungcap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_nhacungcap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tranparent_detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tranparent_detail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pasword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_pasword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="green_user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BXHLOGO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BXHLOGO2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_khuyenmai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_khuyenmai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,31 +169,46 @@
   <data name="phongban" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phongban.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_khuyenmai" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_khuyenmai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="showpassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\showpassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hidepassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hidepassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tranparent_green_detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tranparent_green_detail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_nhanvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_nhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_banhang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_banhang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="chitiethoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chitiethoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="danhmucsanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\danhmucsanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_khachhang" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_khachhang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BXHLOGO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BXHLOGO2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hinhthuckhuyenmai" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hinhthuckhuyenmai.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="green_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tranparent_hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tranparent_hoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_menu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_hoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_sanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_sanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_user_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_user_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_diadiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_diadiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="transparent_sanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\transparent_sanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
