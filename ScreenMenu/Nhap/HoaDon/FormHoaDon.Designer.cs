@@ -347,7 +347,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 62);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH4.7.2\\uploads\\reportHD.rpt";
+            //this.crystalReportViewer1.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH4.7.2\\uploads\\reportHD.rpt";
             this.crystalReportViewer1.Size = new System.Drawing.Size(868, 406);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
@@ -436,7 +436,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer2.Location = new System.Drawing.Point(3, 66);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
-            this.crystalReportViewer2.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH4.7.2\\uploads\\rp_hoadon_theongay.rpt";
+            //this.crystalReportViewer2.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH4.7.2\\uploads\\rp_hoadon_theongay.rpt";
             this.crystalReportViewer2.Size = new System.Drawing.Size(868, 402);
             this.crystalReportViewer2.TabIndex = 1;
             // 
