@@ -17,6 +17,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             kmConn = new KhuyenMaiController(Utils.ConnectionString);
             loaiConn = new DanhMucController(Utils.ConnectionString);
             nCCConn = new NhaCungCapController(Utils.ConnectionString);
+
+
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSP);
             buttonStateManager.BtnAdd = btnThem;
@@ -44,6 +46,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 cboNCC.DataSource = nCCConn.DataSource;
                 cboNCC.DisplayMember = "TENNCC";
                 cboNCC.ValueMember = "Mancc";
+
+                LamMoi();
             }
             catch (Exception ex)
             {
@@ -54,9 +58,24 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         {
             try
             {
+                if(dtpNSX.Value > dtpHSD.Value) {
+                    MessageBox.Show("Ngày sản xuất nhỏ hơn hạn sử dụng ");
+                    return;
+                }
+                if (ErrTxt.NoText_TextChange(txtDonGia))
+                {
+                    MessageBox.Show("Giá nhập số!");
+                    txtDonGia.Text = string.Empty;
+                    return;
+                }
+                if (ErrTxt.NoText_TextChange(rtbSL))
+                {
+                    MessageBox.Show("Số lượng tồn kho nhập số!");
+                    rtbSL.Text = string.Empty;
+                    return;
+                }
                 SanPham sp = new SanPham();
-                RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
-                txtMaSP.Text = randomStringGenerator.GenerateRandomAlphanumericString(11);
+               
                 sp.MaSP = txtMaSP.Text;
                 sp.TenSP = txtTenSP.Text;
                 sp.NgaySX = DateTime.Parse(dtpNSX.Text);
@@ -78,14 +97,16 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         }
         private void LamMoi()
         {
-            txtMaSP.Text = "";
-            txtTenSP.Text = "";
-            dtpNSX.Text = "";
-            dtpHSD.Text = "";
-            txtDonGia.Text = "";
-            rtbSL.Text = "";
-            rtbDonVi.Text = "";
+            txtMaSP.Text = string.Empty;
+            txtTenSP.Text = string.Empty;
+            dtpNSX.Text = string.Empty;
+            dtpHSD.Text = string.Empty;
+            txtDonGia.Text = string.Empty;
+            rtbSL.Text = string.Empty;
+            rtbDonVi.Text = string.Empty;
             spConn.SelectAll();
+            RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
+            txtMaSP.Text = randomStringGenerator.GenerateRandomAlphanumericString(11);
             dgvDanhSachSP.DataSource = spConn.DataSource;
         }
         private void btnXoa_Click(object sender, EventArgs e)
@@ -136,12 +157,30 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LamMoi();
+            
             buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
             try
             {
+                if (dtpNSX.Value > dtpHSD.Value)
+                {
+                    MessageBox.Show("Ngày sản xuất nhỏ hơn hạn sử dụng ");
+                    return;
+                }
+                if (ErrTxt.NoText_TextChange(txtDonGia))
+                {
+                    MessageBox.Show("Giá nhập số!");
+                    txtDonGia.Text = string.Empty;
+                    return;
+                }
+                if (ErrTxt.NoText_TextChange(rtbSL))
+                {
+                    MessageBox.Show("Số lượng tồn kho nhập số!");
+                    rtbSL.Text = string.Empty;
+                    return;
+                }
                 SanPham sp = new SanPham();
                 sp.MaSP = txtMaSP.Text;
                 sp.TenSP = txtTenSP.Text;

@@ -161,5 +161,10 @@ namespace LTUD1_BACHHOAXANH472
         {
 
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

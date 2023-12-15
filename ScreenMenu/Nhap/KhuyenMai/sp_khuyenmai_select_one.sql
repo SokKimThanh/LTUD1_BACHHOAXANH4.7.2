@@ -5,10 +5,7 @@
 drop procedure if exists sp_khuyenmai_select_one
 go
 CREATE PROCEDURE sp_khuyenmai_select_one
-	@MAKM CHAR(11) ,
-	@NGAYBD DATE ,
-	@NGAYKT DATE,
-	@MAHT char(11)
+	@MAKM CHAR(11) 
 AS
 BEGIN
 	SELECT * from khuyenmai where MAKM = @MAKM --like chính xác mã 100%

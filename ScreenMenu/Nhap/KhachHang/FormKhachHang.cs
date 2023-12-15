@@ -3,6 +3,7 @@ using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
@@ -10,6 +11,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
     public partial class FormKhachHang : Form
     {
         KhachHangController khachHangController;
+        ButtonStateManager buttonStateManager = new ButtonStateManager();
         public FormKhachHang()
         {
 
@@ -19,12 +21,22 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             DataGridViewHelper.ConfigureDataGridView(dgvKH);
             CustomButtonHelper customButtonHelper = new CustomButtonHelper();
             customButtonHelper.SetProperties(btnTimKiem);
+
+            buttonStateManager.BtnEdit = btnEdit;
+            buttonStateManager.BtnDelete = btnDelete;
+            buttonStateManager.BtnRefresh = btnRefresh;
+            buttonStateManager.BtnAdd = btnAdd;
+            buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+
+
         }
   
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
             khachHangController.SelectAll();
             dgvKH.DataSource = khachHangController.DataSource;
+
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
         }
 
      
@@ -71,11 +83,31 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         }
         private void dgvKH_Click(object sender, EventArgs e)
         {
-            int dong = dgvKH.CurrentCell.RowIndex;
-            txtMa.Text = dgvKH.Rows[dong].Cells[0].Value.ToString();
-            txtxHoTen.Text = dgvKH.Rows[dong].Cells[1].Value.ToString();
-            txtSDT.Text = dgvKH.Rows[dong].Cells[2].Value.ToString();
-            txtDTL.Text = dgvKH.Rows[dong].Cells[3].Value.ToString();
+            try
+            {
+                // Khởi tạo số dòng đang chọn
+                int dong = dgvKH.CurrentCell.RowIndex;
+                // lấy ra mã
+                string id = dgvKH.Rows[dong].Cells[0].Value.ToString();
+                // khởi tạo đối tượng bằng mã
+                DataTable dt = khachHangController.SelectByID(id);
+                DataRow dr = dt.Rows[0];
+
+                // chuyển thành class đối tượng
+                KhachHang o = (KhachHang)khachHangController.FromDataRow(dr);
+
+                // thiết lập dữ liệu ngược lại mỗi lần click
+                txtMa.Text = o.Ma;
+                txtxHoTen.Text = o.Ten;
+                txtSDT.Text =o.Sdt.ToString();
+                txtDTL.Text = o.Diem.ToString();
+                // cập nhật lại trang thái các nút
+                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -95,6 +127,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                     khachHangController.Delete(kh.Ma);
                     khachHangController.SelectAll();
                     dgvKH.DataSource = khachHangController.DataSource;
+                    Refresh();
                 }
                 return;
             }
@@ -155,6 +188,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 khachHangController.Update(kh);
                 khachHangController.SelectAll();
                 dgvKH.DataSource = khachHangController.DataSource;
+                Refresh();
             }
             return;
         }
@@ -181,6 +215,19 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
             // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
             crystalReportViewer1.ReportSource = rpt;
+        }
+        private void Refresh()
+        {
+            TaoMa();
+            txtxHoTen.Text = string.Empty;
+            txtSDT.Text = string.Empty;
+            txtDTL.Text = string.Empty;
+        }
+        private void TaoMa()
+        {
+            //mã tự động
+            RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
+            txtMa.Text = randomStringGenerator.GenerateRandomAlphanumericString(4);
         }
     }
 }

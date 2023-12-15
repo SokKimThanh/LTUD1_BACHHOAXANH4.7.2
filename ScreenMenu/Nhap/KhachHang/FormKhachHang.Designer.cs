@@ -45,9 +45,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -204,6 +205,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // txtMa
             // 
             this.txtMa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMa.Enabled = false;
             this.txtMa.Font = new System.Drawing.Font("Segoe UI Light", 18F);
             this.txtMa.Location = new System.Drawing.Point(3, 35);
             this.txtMa.Name = "txtMa";
@@ -272,9 +274,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.btnSua, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnXoa, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnThem, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnEdit, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnRefresh, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnDelete, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAdd, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 42);
@@ -282,63 +285,80 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(870, 59);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnEdit
             // 
-            this.btnSua.BackColor = System.Drawing.Color.Transparent;
-            this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSua.FlatAppearance.BorderSize = 3;
-            this.btnSua.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnSua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSua.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnSua.Location = new System.Drawing.Point(296, 5);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnSua.Name = "btnEdit";
-            this.btnSua.Size = new System.Drawing.Size(133, 49);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEdit.FlatAppearance.BorderSize = 3;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnEdit.Location = new System.Drawing.Point(296, 5);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(133, 49);
+            this.btnEdit.TabIndex = 2;
+            this.btnEdit.Text = "Sửa";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnXoa
+            // btnRefresh
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnXoa.FlatAppearance.BorderSize = 3;
-            this.btnXoa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnXoa.Location = new System.Drawing.Point(151, 5);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(133, 49);
-            this.btnXoa.TabIndex = 1;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.FlatAppearance.BorderSize = 3;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnRefresh.Location = new System.Drawing.Point(441, 5);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(133, 49);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Làm mới";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDelete.FlatAppearance.BorderSize = 3;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnDelete.Location = new System.Drawing.Point(6, 5);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(133, 49);
+            this.btnDelete.TabIndex = 1;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnAdd
             // 
-            this.btnThem.BackColor = System.Drawing.Color.Transparent;
-            this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThem.FlatAppearance.BorderSize = 3;
-            this.btnThem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThem.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnThem.Location = new System.Drawing.Point(6, 5);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.btnThem.Name = "btnAdd";
-            this.btnThem.Size = new System.Drawing.Size(133, 49);
-            this.btnThem.TabIndex = 0;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.FlatAppearance.BorderSize = 3;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnAdd.Location = new System.Drawing.Point(151, 5);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(133, 49);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox3
             // 
@@ -371,7 +391,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tabPage1.Location = new System.Drawing.Point(4, 50);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(947, 415);
+            this.tabPage1.Size = new System.Drawing.Size(862, 325);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Danh Sách";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -384,7 +404,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.dgvKH.Name = "dgvKH";
             this.dgvKH.RowHeadersWidth = 51;
             this.dgvKH.RowTemplate.Height = 24;
-            this.dgvKH.Size = new System.Drawing.Size(941, 409);
+            this.dgvKH.Size = new System.Drawing.Size(856, 319);
             this.dgvKH.TabIndex = 0;
             this.dgvKH.Click += new System.EventHandler(this.dgvKH_Click);
             // 
@@ -420,7 +440,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.05286F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.94714F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
             this.tableLayoutPanel6.Controls.Add(this.btnTimKiem, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.txtTimKiem, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
@@ -429,16 +449,16 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 88F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(850, 58);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTimKiem.Location = new System.Drawing.Point(684, 3);
+            this.btnTimKiem.Location = new System.Drawing.Point(682, 3);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(163, 52);
+            this.btnTimKiem.Size = new System.Drawing.Size(165, 52);
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -447,9 +467,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // txtTimKiem
             // 
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTimKiem.Location = new System.Drawing.Point(303, 3);
+            this.txtTimKiem.Location = new System.Drawing.Point(302, 3);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(375, 47);
+            this.txtTimKiem.Size = new System.Drawing.Size(374, 47);
             this.txtTimKiem.TabIndex = 4;
             // 
             // label1
@@ -457,13 +477,13 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 58);
+            this.label1.Size = new System.Drawing.Size(293, 58);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nhập Thông Tin";
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -476,6 +496,11 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.ToolPanelWidth = 180;
             this.crystalReportViewer1.UseWaitCursor = true;
+            // 
+            // khachhangreport1
+            // 
+            this.khachhangreport1.FileName = "rassdk://C:\\Users\\congq\\AppData\\Local\\Temp\\temp_e68eb46e-f1d1-4c77-827c-bc99c4bab" +
+    "2be.rpt";
             // 
             // FormKhachHang
             // 
@@ -524,9 +549,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private TableLayoutPanel tableLayoutPanel4;
         private GroupBox groupBox2;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button btnSua;
-        private Button btnXoa;
-        private Button btnThem;
+        private Button btnEdit;
+        private Button btnDelete;
+        private Button btnAdd;
         private GroupBox groupBox3;
         private GroupBox groupBox8;
         private GroupBox groupBox7;
@@ -543,5 +568,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private Button btnTimKiem;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private LTUD1_BACHHOAXANH472.uploads.khachhangreport khachhangreport1;
+        private Button btnRefresh;
     }
 }

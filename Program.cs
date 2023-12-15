@@ -1,4 +1,6 @@
 ﻿using LTUD1_BACHHOAXANH472._7._2.ScreenMenu.HeThong;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan;
 using System;
 using System.Windows.Forms;
 
@@ -19,7 +21,7 @@ namespace LTUD1_BACHHOAXANH472
                 //FormHoaDon logon =  new FormHoaDon();
                 //FormKhachHang logon = new FormKhachHang(); 
                 //FormNhanVienAddEdit logon = new FormNhanVienAddEdit();
-                Application.Run(logon);
+                Application.Run(new FormSanPham());
 
                 //Trần Minh Tuấn
                 // vo tu

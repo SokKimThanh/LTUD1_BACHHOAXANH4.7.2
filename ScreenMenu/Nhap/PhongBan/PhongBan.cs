@@ -20,9 +20,12 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
             {
                 throw new Exception("Field bắt buộc nhập!");
             }
-            this.maPB = maPB;
-            this.tenPB = tenPB;
-            this.maCN = maCN;
+            else {
+                this.maPB = maPB;
+                this.tenPB = tenPB;
+                this.maCN = maCN;
+            }
+            
         }
         public string MaPB { get => maPB; set => maPB = value; }
         public string TenPB { get => tenPB; set => tenPB = value; }
