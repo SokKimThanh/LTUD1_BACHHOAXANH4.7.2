@@ -723,36 +723,43 @@
             // TenSP
             // 
             this.TenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenSP.FillWeight = 105.3981F;
             this.TenSP.HeaderText = "Tên Sản Phẩm";
             this.TenSP.Name = "TenSP";
             // 
             // DonGia
             // 
+            this.DonGia.FillWeight = 105.3981F;
             this.DonGia.HeaderText = "Đơn giá";
             this.DonGia.Name = "DonGia";
             // 
             // KM
             // 
+            this.KM.FillWeight = 105.3981F;
             this.KM.HeaderText = "Khuyến Mãi";
             this.KM.Name = "KM";
             // 
             // SL
             // 
+            this.SL.FillWeight = 105.3981F;
             this.SL.HeaderText = "Số Lượng";
             this.SL.Name = "SL";
             // 
             // ThanhTien
             // 
+            this.ThanhTien.FillWeight = 105.3981F;
             this.ThanhTien.HeaderText = "Tổng";
             this.ThanhTien.Name = "ThanhTien";
             // 
             // BtnTangSL
             // 
+            this.BtnTangSL.FillWeight = 87.73023F;
             this.BtnTangSL.HeaderText = "+";
             this.BtnTangSL.Name = "BtnTangSL";
             // 
             // btnGiamSL
             // 
+            this.btnGiamSL.FillWeight = 85.27919F;
             this.btnGiamSL.HeaderText = "-";
             this.btnGiamSL.Name = "btnGiamSL";
             // 
