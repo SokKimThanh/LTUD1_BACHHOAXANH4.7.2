@@ -2,7 +2,7 @@
 using LTUD1_BACHHOAXANH472.Screen;
 using LTUD1_BACHHOAXANH472.ScreenDetail;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap;
-using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
+/*using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;*/
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan;
 using System;
@@ -215,7 +215,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormBanHang());
+/*            OpenChildForm(new FormBanHang());*/
         }
         /**
        * reset click all button
