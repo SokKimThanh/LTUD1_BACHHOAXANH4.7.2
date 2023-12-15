@@ -6,8 +6,8 @@ namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormTaiKhoan : Form
     {
-        readonly AccountController controller;
-
+        AccountController controller;
+        ButtonStateManager state;
 
         public FormTaiKhoan()
         {
@@ -15,7 +15,8 @@ namespace LTUD1_BACHHOAXANH472
             controller = new AccountController(Utils.ConnectionString);
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvTaiKhoan);
-            dgvTaiKhoan.Click += new EventHandler(DgvTaiKhoan_Click);
+            //DataGridViewHelper.ConfigureDataGridView(dgvQuyenTruyCap);
+            
         }
 
 
@@ -67,7 +68,7 @@ namespace LTUD1_BACHHOAXANH472
 
             try
             {
-                controller.Update(new Account(txtTenTaiKhoan.Text, txtMK.Text, "", txtSDT.Text, txtCCCD.Text, txtEmail.Text));
+                //controller.Update(new Account(txtTenTaiKhoan.Text, txtMK.Text, "", txtSDT.Text, txtCCCD.Text, txtEmail.Text));
                 Reset();
             }
             catch (Exception ex)
@@ -98,10 +99,7 @@ namespace LTUD1_BACHHOAXANH472
                 if (o != null)
                 {
                     txtTenTaiKhoan.Text = o.TenTaiKhoan;
-                    txtSDT.Text = o.Phone;
-                    txtEmail.Text = o.Email;
-                    txtCCCD.Text = o.Cccd;
-                    txtMK.Text = o.MatKhau;
+
                 }
             }
             catch (Exception ex)
@@ -112,50 +110,24 @@ namespace LTUD1_BACHHOAXANH472
 
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Lấy tabControl1 từ form hoặc từ nơi nó được khởi tạo
-            TabControl tabControl1 = this.tabControlXemDuLieu;
+            // Lấy tabControlXemDuLieu từ form hoặc từ nơi nó được khởi tạo
+            TabControl tabControlXemDuLieu = this.tabControlXemDuLieu;
+            TabControl tabControlThaoTacDuLieu = this.tabControlThaoTacDuLieu;
 
-            // Đảm bảo rằng tabControl1 có đủ số lượng tab
-            if (tabControl1.TabCount >= tabControlNhapThongTin.TabCount)
+            // Đảm bảo rằng tabControlXemDuLieu có đủ số lượng tab
+            if (tabControlXemDuLieu.TabCount >= tabControlNhapThongTin.TabCount)
             {
-                // Đặt tab được chọn trên tabControl1 để khớp với tab được chọn trên tabControl2
-                tabControl1.SelectedIndex = tabControlNhapThongTin.SelectedIndex;
+                // Đặt tab được chọn trên tabControlXemDuLieu để khớp với tab được chọn trên tabControl2
+                tabControlXemDuLieu.SelectedIndex = tabControlNhapThongTin.SelectedIndex;
+                tabControlThaoTacDuLieu.SelectedIndex = tabControlNhapThongTin.SelectedIndex;
             }
             else
             {
-                // Xử lý trường hợp khi tabControl1 không có đủ số lượng tab
+                // Xử lý trường hợp khi tabControlXemDuLieu không có đủ số lượng tab
                 Console.WriteLine("TabControl1 không có đủ số lượng tab để khớp với TabControl2.");
             }
         }
 
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            // Lấy tabControlNhapThongTin và tabXemDuLieu từ form hoặc từ nơi chúng được khởi tạo
-            TabControl tabControlNhapThongTin = this.tabControlNhapThongTin;
-            TabControl tabXemDuLieu = this.tabControlXemDuLieu;
-
-            // Kiểm tra tab đang được chọn trên mỗi TabControl
-            int selectedTabNhapThongTin = tabControlNhapThongTin.SelectedIndex;
-            int selectedTabXemDuLieu = tabXemDuLieu.SelectedIndex;
-
-            // Phân biệt giữa các tab trên tabControlNhapThongTin và tabXemDuLieu
-            if (selectedTabNhapThongTin == 0 && selectedTabXemDuLieu == 0) // TabTaiKhoan và tabXemThongTinTaiKhoan
-            {
-                Console.WriteLine("Bạn đang thêm thông tin vào bảng TaiKhoan.");
-                // Thêm mã để xử lý việc thêm thông tin vào bảng TaiKhoan tại đây
-            }
-            else if (selectedTabNhapThongTin == 1 && selectedTabXemDuLieu == 1) // TabLoaiTaiKhoan và TabXemThongTinLoaiTaiKhoan
-            {
-                Console.WriteLine("Bạn đang thêm thông tin vào bảng LoaiTaiKhoan.");
-                // Thêm mã để xử lý việc thêm thông tin vào bảng LoaiTaiKhoan tại đây
-            }
-            else
-            {
-                // Xử lý trường hợp khi các tab không tương ứng với nhau
-                Console.WriteLine("Các tab trên tabControlNhapThongTin và tabXemDuLieu không tương ứng với nhau.");
-            }
-        }
 
         private void FormTaiKhoan_Load_1(object sender, EventArgs e)
         {
