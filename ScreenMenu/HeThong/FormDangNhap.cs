@@ -34,15 +34,7 @@ namespace LTUD1_BACHHOAXANH472
             Application.Exit();
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void txtPassword_Click(object sender, EventArgs e)
         {
@@ -63,10 +55,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             txtUserName_Click(sender, e);
         }
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-
-        }
+         
 
         private void btnLogin_MouseHover(object sender, EventArgs e)
         {
@@ -79,15 +68,7 @@ namespace LTUD1_BACHHOAXANH472
             Button b = (Button)sender;
             b.ForeColor = Color.White;
         }
-        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
-        {
-
-
-        }
-        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
-        {
-
-        }
+        
 
 
         private void ptbShowHidePassword_Click(object sender, EventArgs e)
@@ -122,7 +103,7 @@ namespace LTUD1_BACHHOAXANH472
         public bool VerifyAccount(string enteredUserName, string enteredPassword)
         {
             string[] username = { "a", "admin", "NgoQuy234", "VoTu232", "ThanhSok231" };
-            string[] password = { "a", "admin", "ngoquytdc123", "votutdc123", "thanhsoktdc123" };
+            string[] password = { "a", "admin123", "ngoquytdc123", "votutdc123", "thanhsoktdc123" };
 
             //int enteredUserName = 123144;
             //string enteredPassword = "NewYork";
@@ -206,17 +187,12 @@ namespace LTUD1_BACHHOAXANH472
             OtherEvent(sender, e);
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void txtUserName_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

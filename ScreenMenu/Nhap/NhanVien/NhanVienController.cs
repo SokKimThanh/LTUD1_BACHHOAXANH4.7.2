@@ -140,7 +140,7 @@ namespace LTUD1_BACHHOAXANH472
                 SqlConnection conn = OpenConnection();
 
                 // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_nhanvien_select_all_all", conn);
+                Sql = new SqlCommand("sp_nhanvien_select_nhanvien_phongban", conn);
                 Sql.CommandType = CommandType.StoredProcedure;
 
                 // Tạo một đối tượng SqlDataAdapter
@@ -157,7 +157,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                throw new Exception("SelectAllALl" + ex.Message);
+                throw new Exception("nhanvien " + ex.Message);
             }
             finally
             {

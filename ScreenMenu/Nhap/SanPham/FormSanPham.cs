@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
-
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 {
     public partial class FormSanPham : Form
@@ -9,6 +9,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         KhuyenMaiController kmConn;
         DanhMucController loaiConn;
         NhaCungCapController nCCConn;
+        ButtonStateManager buttonStateManager = new ButtonStateManager();
         public FormSanPham()
         {
             InitializeComponent();
@@ -18,132 +19,143 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             nCCConn = new NhaCungCapController(Utils.ConnectionString);
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSP);
+            buttonStateManager.BtnAdd = btnThem;
+            buttonStateManager.BtnEdit = btnSua;
+            buttonStateManager.BtnDelete = btnXoa;
+            buttonStateManager.BtnRefresh = btnLamMoi;
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
         }
-
         private void FormSanPham_Load(object sender, EventArgs e)
         {
             try
             {
                 spConn.SelectAll();
                 dgvDanhSachSP.DataSource = spConn.DataSource;
-
                 kmConn.SelectAll();
                 cboKM.DataSource = kmConn.DataSource;
-
                 cboKM.DisplayMember = "TENHINHTHUC";
                 cboKM.ValueMember = "MAKM";
-
 
                 loaiConn.SelectAll();
                 cboLoaiSP.DataSource = loaiConn.DataSource;
                 cboLoaiSP.DisplayMember = "TENLOAI";
                 cboLoaiSP.ValueMember = "MALOAI";
-
                 nCCConn.SelectAll();
                 cboNCC.DataSource = nCCConn.DataSource;
                 cboNCC.DisplayMember = "TENNCC";
-                cboNCC.ValueMember = "MANCC";
+                cboNCC.ValueMember = "Mancc";
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
-
             try
             {
-
                 SanPham sp = new SanPham();
-                sp.Ma = txtMaSP.Text;
-                sp.Ten = txtTenSP.Text;
+                RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
+                txtMaSP.Text = randomStringGenerator.GenerateRandomAlphanumericString(11);
+                sp.MaSP = txtMaSP.Text;
+                sp.TenSP = txtTenSP.Text;
                 sp.NgaySX = DateTime.Parse(dtpNSX.Text);
                 sp.HanSD = DateTime.Parse(dtpHSD.Text);
-                sp.Gia = float.Parse(txtDonGia.Text); ;
-                sp.Soluong = int.Parse(rtbSL.Text);
+                sp.Dongia = int.Parse(txtDonGia.Text); ;
+                sp.SLTonKho = int.Parse(rtbSL.Text);
                 sp.DonVi = rtbDonVi.Text;
-                sp.LoaiSP = cboLoaiSP.SelectedValue.ToString();
-                sp.NCC = cboNCC.SelectedValue.ToString();
+                sp.MaLoai = cboLoaiSP.SelectedValue.ToString();
+                sp.Mancc = cboNCC.SelectedValue.ToString();
                 sp.KhuyenMai = cboKM.SelectedValue.ToString();
                 spConn.Insert(sp);
-                FormSanPham_Load(sender, e);
-                MessageBox.Show("Thêm sản phẩm thành công!");
-                clean();
+                LamMoi();
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
         }
-        private void clean()
+        private void LamMoi()
         {
             txtMaSP.Text = "";
             txtTenSP.Text = "";
             dtpNSX.Text = "";
             dtpHSD.Text = "";
-            txtDonGia.Text = ""; ;
+            txtDonGia.Text = "";
             rtbSL.Text = "";
             rtbDonVi.Text = "";
-
+            spConn.SelectAll();
+            dgvDanhSachSP.DataSource = spConn.DataSource;
         }
-
-        private void dgvDanhSachSP_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int dong = dgvDanhSachSP.CurrentCell.RowIndex;
-            txtMaSP.Text = dgvDanhSachSP.Rows[dong].Cells[0].Value.ToString();
-            txtTenSP.Text = dgvDanhSachSP.Rows[dong].Cells[1].Value.ToString();
-            dtpNSX.Text = dgvDanhSachSP.Rows[dong].Cells[3].Value.ToString();
-            dtpHSD.Text = dgvDanhSachSP.Rows[dong].Cells[4].Value.ToString();
-            txtDonGia.Text = dgvDanhSachSP.Rows[dong].Cells[5].Value.ToString();
-            rtbSL.Text = dgvDanhSachSP.Rows[dong].Cells[6].Value.ToString();
-            rtbDonVi.Text = dgvDanhSachSP.Rows[dong].Cells[2].Value.ToString();
-            cboKM.Text = dgvDanhSachSP.Rows[dong].Cells[9].Value.ToString();
-            cboLoaiSP.Text = dgvDanhSachSP.Rows[dong].Cells[8].Value.ToString();
-            cboNCC.Text = dgvDanhSachSP.Rows[dong].Cells[7].Value.ToString();
-
-
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
                 spConn.Delete(txtMaSP.Text);
-                FormSanPham_Load(sender, e);
-                MessageBox.Show("Xóa sản phẩm thành công!");
-                clean();
+                LamMoi();
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void btnSua_Click(object sender, EventArgs e)
+        private void dgvDanhSachSP_Click(object sender, EventArgs e)
         {
-            SanPham sp = new SanPham();
-            sp.Ma = txtMaSP.Text;
-            sp.Ten = txtTenSP.Text;
-            sp.NgaySX = DateTime.Parse(dtpNSX.Text);
-            sp.HanSD = DateTime.Parse(dtpHSD.Text);
-            sp.Gia = float.Parse(txtDonGia.Text); ;
-            sp.Soluong = int.Parse(rtbSL.Text);
-            sp.DonVi = rtbDonVi.Text;
-            sp.LoaiSP = cboLoaiSP.SelectedValue.ToString();
-            sp.NCC = cboNCC.SelectedValue.ToString();
-            sp.KhuyenMai = cboKM.SelectedValue.ToString();
-
             try
             {
+                // Khởi tạo số dòng đang chọn
+                int dong = dgvDanhSachSP.CurrentCell.RowIndex;
+                // lấy ra mã
+                string id = dgvDanhSachSP.Rows[dong].Cells[0].Value.ToString();
+                // khởi tạo đối tượng bằng mã
+                DataTable dt = spConn.SelectByID(id);
+                DataRow dr = dt.Rows[0];
+                // chuyển thành class đối tượng
+                SanPham o = (SanPham)spConn.FromDataRow(dr);
+                // thiết lập dữ liệu ngược lại mỗi lần click
+                txtMaSP.Text = o.MaSP;
+                txtTenSP.Text = o.TenSP;
+                dtpNSX.Value = o.NgaySX;
+                dtpHSD.Value = o.HanSD;
+                txtDonGia.Text = o.Dongia.ToString();
+                rtbSL.Text = o.SLTonKho.ToString();
+                rtbDonVi.Text = o.DonVi.ToString();
+                cboKM.SelectedValue = object.Equals(o.KhuyenMai, null) ? "" : o.KhuyenMai;
+                cboLoaiSP.SelectedValue = o.MaLoai;
+                cboNCC.Text = o.Mancc;
+                // cập nhật lại trang thái các nút
+                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            LamMoi();
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+        }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SanPham sp = new SanPham();
+                sp.MaSP = txtMaSP.Text;
+                sp.TenSP = txtTenSP.Text;
+                sp.NgaySX = DateTime.Parse(dtpNSX.Text);
+                sp.HanSD = DateTime.Parse(dtpHSD.Text);
+                sp.Dongia = int.Parse(txtDonGia.Text); ;
+                sp.SLTonKho = int.Parse(rtbSL.Text);
+                sp.DonVi = rtbDonVi.Text;
+                sp.MaLoai = cboLoaiSP.SelectedValue.ToString();
+                sp.Mancc = cboNCC.SelectedValue.ToString();
+                sp.KhuyenMai = cboKM.SelectedValue.ToString();
                 spConn.Update(sp);
-                FormSanPham_Load(sender, e);
-                MessageBox.Show("Sửa sản phẩm thành công!");
-                clean();
+                LamMoi();
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
             {
@@ -152,3 +164,4 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         }
     }
 }
+

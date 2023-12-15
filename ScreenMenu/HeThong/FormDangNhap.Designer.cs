@@ -173,7 +173,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.BXHLOGO2;
+            this.pictureBox1.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
             this.pictureBox1.Location = new System.Drawing.Point(54, 36);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -281,6 +281,9 @@ namespace LTUD1_BACHHOAXANH472
             this.btnLogin.TabIndex = 13;
             this.btnLogin.Text = "ĐĂNG NHẬP";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.MouseLeave += new System.EventHandler(this.btnLogin_MouseLeave);
+            this.btnLogin.MouseHover += new System.EventHandler(this.btnLogin_MouseHover);
             // 
             // pnPassword
             // 
@@ -296,7 +299,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // ptbShowHidePassword
             // 
-            this.ptbShowHidePassword.Image = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.showpassword;
+            this.ptbShowHidePassword.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.showpassword;
             this.ptbShowHidePassword.Location = new System.Drawing.Point(306, 7);
             this.ptbShowHidePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbShowHidePassword.Name = "ptbShowHidePassword";
@@ -304,6 +307,7 @@ namespace LTUD1_BACHHOAXANH472
             this.ptbShowHidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbShowHidePassword.TabIndex = 15;
             this.ptbShowHidePassword.TabStop = false;
+            this.ptbShowHidePassword.Click += new System.EventHandler(this.ptbShowHidePassword_Click);
             // 
             // txtPassword
             // 
@@ -316,10 +320,12 @@ namespace LTUD1_BACHHOAXANH472
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(251, 26);
             this.txtPassword.TabIndex = 15;
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.green_password;
+            this.pictureBox3.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.green_password;
             this.pictureBox3.Location = new System.Drawing.Point(12, 7);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
@@ -350,10 +356,12 @@ namespace LTUD1_BACHHOAXANH472
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(251, 26);
             this.txtUserName.TabIndex = 14;
+            this.txtUserName.Click += new System.EventHandler(this.txtUserName_Click);
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::LTUD1_BACHHOAXANH4._7._2.Properties.Resources.green_user;
+            this.pictureBox2.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.green_user;
             this.pictureBox2.Location = new System.Drawing.Point(12, 7);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
@@ -391,6 +399,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnLoginClose.TabIndex = 9;
             this.btnLoginClose.Text = "X";
             this.btnLoginClose.UseVisualStyleBackColor = true;
+            this.btnLoginClose.Click += new System.EventHandler(this.btnLoginClose_Click);
             // 
             // imageListLogin
             // 
@@ -415,6 +424,8 @@ namespace LTUD1_BACHHOAXANH472
             this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDangNhap";
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
+            this.Shown += new System.EventHandler(this.FormDangNhap_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);

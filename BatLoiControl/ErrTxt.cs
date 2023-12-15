@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -41,7 +42,7 @@ public class ErrTxt
     /// <returns>Return true if is number</returns>
     public static bool NoNumber_KeyPress(KeyPressEventArgs e)
     {
-        Regex regex = new Regex("^[0-9]");
+        Regex regex = new Regex("[0-9]");
         bool isNumber = regex.IsMatch(e.KeyChar.ToString());
         if (isNumber)
         {
@@ -61,19 +62,12 @@ public class ErrTxt
     /// <param name="e"></param>
     public static bool NoText_KeyPress(KeyPressEventArgs e)
     {
-        Regex regex = new Regex("^[a-zA-Z]");
+        // Khớp với bất kỳ ký tự chữ cái nào
+        Regex regex = new Regex("[a-zA-Z]");
         bool isText = regex.IsMatch(e.KeyChar.ToString());
-        if (isText)
-        {
-            // Không cho phép gõ tiếp
-            return true;
-        }
-        else
-        {
-            // Cho phép gõ tiếp
-            return false;
-        }
+        return isText;
     }
+
 
     /// <summary>
     /// Cho phép các ký tự số và ký tự điều khiển như backspace
@@ -84,7 +78,7 @@ public class ErrTxt
     internal static bool NoSymbol_KeyPress(KeyPressEventArgs e)
     {
         // Kiểm tra tất cả các ký tự không phải là chữ và số
-        Regex regex = new Regex("^[!@#$%^&*()_\\-=*/]");
+        Regex regex = new Regex("[!@#$%^&*()_\\-=*/]");
         bool isSymbol = regex.IsMatch(e.KeyChar.ToString());
         if (isSymbol)
         {
@@ -106,7 +100,7 @@ public class ErrTxt
     public static bool NoSpace_KeyPress(KeyPressEventArgs e)
     {
         // Kiểm tra xem phím được nhấn có phải là khoảng trắng hay không
-        Regex regex = new Regex("^[ ]");
+        Regex regex = new Regex("[ ]");
         bool isSpace = regex.IsMatch(e.KeyChar.ToString());
         if (isSpace)
         {
@@ -126,19 +120,22 @@ public class ErrTxt
     public static bool NoNumber_TextChange(object sender)
     {
         Control c = (Control)sender;
-        Regex regex = new Regex("^[0-9]");
+        // Khớp với bất kỳ ký tự số nào
+        Regex regex = new Regex("[0-9]");
         bool isNumber = regex.IsMatch(c.Text.ToString());
         // check input string
         if (isNumber)
         {
-            return true;//phat hien nhap number
+            // Detected number input
+            return true;
         }
-        // nhap ok!
         else
         {
+            // Detected text input!
             return false;
         }
     }
+
     /// <summary>
     /// Không nhập text
     /// </summary>
@@ -147,16 +144,18 @@ public class ErrTxt
     public static bool NoText_TextChange(object sender)
     {
         Control c = (Control)sender;
-        Regex regex = new Regex("^[a-zA-Z]");
+        // Only allow digits
+        Regex regex = new Regex("[a-zA-ZeéèẻẽẹêếềễểệaáàảãạăắằẵẳặâấầẩẫậoóòỏõọơớờỡởợôốồổỗộuúùũủụưứừữửựiíìỉĩịyýỳỷỹỵđEÉÈẺẼẸÊẾỀỄỂỆAÁÀẢÃẠĂẮẰẴẲẶÂẤẦẨẪẬOÓÒỎÕỌƠỚỜỠỞỢÔỐỒỔỖỘUÚÙŨỦỤƯỨỪỮỬỰIÍÌỈĨỊYÝỲỶỸỴĐ]");
         bool isText = regex.IsMatch(c.Text.ToString());
         // check input string
         if (isText)
         {
-            return true;//phat hien nhap text
+            // Detected text input!
+            return true;
         }
-        // nhap ok!
+
         else
-        {
+        {   // Detected number input
             return false;
         }
     }
@@ -168,11 +167,12 @@ public class ErrTxt
     public static bool NoSymbol_TextChanged(object sender)
     {
         Control c = (Control)sender;
-        Regex regex = new Regex("^[!@#$%^&*()_\\-=*/]");
+        Regex regex = new Regex("[!@#$%^&*()_\\-=*/]");
         bool isSymbol = regex.IsMatch(c.Text.ToString());
         // check input string
         if (isSymbol)
         {
+            // phát hiện nhập ký tự đặc biệt
             return true;
         }
         // nhap ok!
@@ -189,7 +189,7 @@ public class ErrTxt
     public static bool NoSpace_TextChange(object sender)
     {
         TextBox c = (TextBox)sender;
-        Regex regex = new Regex("^[ ]");
+        Regex regex = new Regex("[ ]");
         bool isSpace = regex.IsMatch(c.Text.ToString());
         if (isSpace)
         {
@@ -213,7 +213,7 @@ public class ErrTxt
     {
         Control c = (Control)sender;
         string patern = "a-zA-Z0-9 !@#$%^&*()_+*/-eéèẻẽẹêếềễểệaáàảãạăắằẵẳặâấầẩẫậoóòỏõọơớờỡởợôốồổỗộuúùũủụưứừữửựiíìỉĩịyýỳỷỹỵđEÉÈẺẼẸÊẾỀỄỂỆAÁÀẢÃẠĂẮẰẴẲẶÂẤẦẨẪẬOÓÒỎÕỌƠỚỜỠỞỢÔỐỒỔỖỘUÚÙŨỦỤƯỨỪỮỬỰIÍÌỈĨỊYÝỲỶỸỴĐ";
-        Regex regex = new Regex(@"^[" + patern + "]" + "{" + min + "," + max + "}$");
+        Regex regex = new Regex(@"[" + patern + "]" + "{" + min + "," + max + "}$");
         bool isMinMax = regex.IsMatch(c.Text.ToString());
         if (c.Text.Length < 3 || c.Text.Length > max)
         {
@@ -252,7 +252,11 @@ public class ErrTxt
             return false;
         }
     }
-
+    /// <summary>
+    /// Kiểm tra giá trị nhập của control
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <returns>True: giá trị null hoặc empty</returns>
     public static bool CheckControlValue(object sender)
     {
         if (sender == null)
@@ -296,31 +300,31 @@ public class ErrTxt
         if (NoSymbol_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập ký tự đặc biệt";
-            PnError.BackColor = errColors.err_txt_nosymbol;
+            //lblHint.Text = "Không nhập ký tự đặc biệt";
+            //PnError.BackColor = errColors.err_txt_nosymbol;
         }
         else if (NoText_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập chữ";
-            PnError.BackColor = errColors.err_txt_notext;
+            //lblHint.Text = "Không nhập chữ";
+            //PnError.BackColor = errColors.err_txt_notext;
 
         }
         else if (NoSpace_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập khoảng trắng";
-            PnError.BackColor = errColors.err_txt_nospace;
+            //lblHint.Text = "Không nhập khoảng trắng";
+            //PnError.BackColor = errColors.err_txt_nospace;
         }
         else if (NoMinMax_KeyPress(sender, min, max))
         {
-            lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
-            PnError.BackColor = errColors.err_txt_minmax_length;
+            //lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
+            //PnError.BackColor = errColors.err_txt_minmax_length;
         }
         else
         {
-            lblHint.Text = "Nhập ok!";
-            PnError.BackColor = errColors.mes_success;
+            //lblHint.Text = "Nhập ok!";
+            //PnError.BackColor = errColors.mes_success;
             e.Handled = false;
         }
     }
@@ -331,27 +335,27 @@ public class ErrTxt
         if (NoSymbol_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập ký tự đặc biệt";
-            PnError.BackColor = errColors.err_txt_nosymbol;
+            //lblHint.Text = "Không nhập ký tự đặc biệt";
+            //PnError.BackColor = errColors.err_txt_nosymbol;
         }
         else if (NoText_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập chữ";
-            PnError.BackColor = errColors.err_txt_notext;
+            //lblHint.Text = "Không nhập chữ";
+            //PnError.BackColor = errColors.err_txt_notext;
 
         }
         else if (NoSpace_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập khoảng trắng";
-            PnError.BackColor = errColors.err_txt_nospace;
+            //lblHint.Text = "Không nhập khoảng trắng";
+            //PnError.BackColor = errColors.err_txt_nospace;
         }
 
         else
         {
-            lblHint.Text = "Nhập ok!";
-            PnError.BackColor = errColors.mes_success;
+            //lblHint.Text = "Nhập ok!";
+            //PnError.BackColor = errColors.mes_success;
             e.Handled = false;
         }
     }
@@ -362,25 +366,25 @@ public class ErrTxt
         if (NoSymbol_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập ký tự đặc biệt";
-            PnError.BackColor = errColors.err_txt_nosymbol;
+            //lblHint.Text = "Không nhập ký tự đặc biệt";
+            //PnError.BackColor = errColors.err_txt_nosymbol;
         }
         else if (NoText_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập chữ";
-            PnError.BackColor = errColors.err_txt_notext;
+            //lblHint.Text = "Không nhập chữ";
+            //PnError.BackColor = errColors.err_txt_notext;
 
         }
         else if (NoMinMax_KeyPress(sender, min, max))
         {
-            lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
-            PnError.BackColor = errColors.err_txt_minmax_length;
+            //lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
+            //PnError.BackColor = errColors.err_txt_minmax_length;
         }
         else
         {
-            lblHint.Text = "Nhập ok!";
-            PnError.BackColor = errColors.mes_success;
+            //lblHint.Text = "Nhập ok!";
+            //PnError.BackColor = errColors.mes_success;
             e.Handled = false;
         }
     }
@@ -391,20 +395,20 @@ public class ErrTxt
         if (NoSymbol_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập ký tự đặc biệt";
-            PnError.BackColor = errColors.err_txt_nosymbol;
+            //lblHint.Text = "Không nhập ký tự đặc biệt";
+            //PnError.BackColor = errColors.err_txt_nosymbol;
         }
         else if (NoText_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập chữ";
-            PnError.BackColor = errColors.err_txt_notext;
+            //lblHint.Text = "Không nhập chữ";
+            //PnError.BackColor = errColors.err_txt_notext;
 
         }
         else
         {
-            lblHint.Text = "Nhập ok!";
-            PnError.BackColor = errColors.mes_success;
+            //lblHint.Text = "Nhập ok!";
+            //PnError.BackColor = errColors.mes_success;
             e.Handled = false;
         }
     }
@@ -415,25 +419,25 @@ public class ErrTxt
         if (NoSymbol_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập ký tự đặc biệt";
-            PnError.BackColor = errColors.err_txt_nosymbol;
+            //lblHint.Text = "Không nhập ký tự đặc biệt";
+            //PnError.BackColor = errColors.err_txt_nosymbol;
         }
         else if (NoNumber_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập số";
-            PnError.BackColor = errColors.err_txt_nonumber;
+            //lblHint.Text = "Không nhập số";
+            //PnError.BackColor = errColors.err_txt_nonumber;
 
         }
         else if (NoMinMax_KeyPress(sender, min, max))
         {
-            lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
-            PnError.BackColor = errColors.err_txt_minmax_length;
+            //lblHint.Text = "Không nhập đủ hoặc dư số lượng ký tự";
+            //PnError.BackColor = errColors.err_txt_minmax_length;
         }
         else
         {
-            lblHint.Text = "Nhập ok!";
-            PnError.BackColor = errColors.mes_success;
+            //lblHint.Text = "Nhập ok!";
+            //PnError.BackColor = errColors.mes_success;
             e.Handled = false;
         }
     }
@@ -444,21 +448,21 @@ public class ErrTxt
         if (NoSymbol_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập ký tự đặc biệt";
-            PnError.BackColor = errColors.err_txt_nosymbol;
+            //lblHint.Text = "Không nhập ký tự đặc biệt";
+            //PnError.BackColor = errColors.err_txt_nosymbol;
         }
         else if (NoNumber_KeyPress(e))
         {
             e.Handled = true;
-            lblHint.Text = "Không nhập số";
-            PnError.BackColor = errColors.err_txt_nonumber;
+            //lblHint.Text = "Không nhập số";
+            //PnError.BackColor = errColors.err_txt_nonumber;
 
         }
         else
         {
             e.Handled = false;
-            lblHint.Text = "Nhập ok!";
-            PnError.BackColor = errColors.mes_success;
+            //lblHint.Text = "Nhập ok!";
+            //PnError.BackColor = errColors.mes_success;
         }
     }
 
@@ -629,5 +633,26 @@ public class ErrTxt
             return false;
         }
     }
+    /// <summary>
+    /// Không nhập ít hơn và không nhập nhiều hơn
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="v1">Ít hơn</param>
+    /// <param name="v2">Nhiều hơn</param>
+    /// <returns></returns>
+    internal static bool MinMaxValue_TextChanged(object sender, int v1, int v2)
+    {
+        Control c = (Control)sender;
+        if (c.Text.Length < v1 || c.Text.Length > v2)
+        {
+            // không nhập ít hơn số ký tự tối thiểu hoặc nhiều hơn số ký tự tối đa 
+            return true;//phát hiện sai phạm trả về true
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }
 

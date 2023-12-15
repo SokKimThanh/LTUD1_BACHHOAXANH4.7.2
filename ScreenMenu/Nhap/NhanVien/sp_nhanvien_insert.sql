@@ -1,10 +1,11 @@
 ﻿-- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 9:39 CH>
+go
 drop procedure if exists sp_nhanvien_insert
 go
 CREATE PROCEDURE sp_nhanvien_insert
 	 
-	-- Add the parameters for the stored procedure here
+	
 	@manv char(11),
 	@hotennv nvarchar(30),
 	@diachinv nvarchar(100),
@@ -15,7 +16,7 @@ CREATE PROCEDURE sp_nhanvien_insert
 	@gioitinh char(4)
 AS
 BEGIN 
-    -- Insert statements for procedure here
+    
 	-- Đợi 50 milliseconds
 	WAITFOR DELAY '00:00:00.050';
 	INSERT INTO nhanvien(manv, hotennv, diachinv, luong, sdtnv, ngaysinh,mapb, gioitinh) 

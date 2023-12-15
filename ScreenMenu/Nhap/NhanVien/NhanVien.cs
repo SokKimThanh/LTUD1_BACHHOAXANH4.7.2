@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
@@ -13,7 +14,7 @@ namespace LTUD1_BACHHOAXANH472
         private int sdtnv;
         private DateTime ngaysinh;
         private string mapb;
-        private string gioitinh; 
+        private string gioitinh;
 
         public NhanVien()
         {
@@ -37,7 +38,36 @@ namespace LTUD1_BACHHOAXANH472
             {
                 throw new Exception("Tên nhân viên không được để trống!");
             }
+            //Kiem tra nhap thong tin
+            if (string.IsNullOrEmpty(luong.ToString()))
+            {
+                MessageBox.Show("luong", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrEmpty(sdtnv.ToString()))
+            {
+                MessageBox.Show("sdtnv", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                return;
+            }
+            if (string.IsNullOrEmpty(ngaysinh.ToString()))
+            {
+                MessageBox.Show("ngaysinh", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+            if (string.IsNullOrEmpty(gioitinh))
+            {
+                MessageBox.Show("gioitinh", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+            if (string.IsNullOrEmpty(mapb))
+            {
+                MessageBox.Show("mapb", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
             this.manv = manv;
             this.hotennv = hotennv;
             this.diachinv = diachinv;

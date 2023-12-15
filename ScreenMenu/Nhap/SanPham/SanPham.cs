@@ -6,38 +6,44 @@ namespace LTUD1_BACHHOAXANH472
 {
     internal class SanPham
     {
-        private string ma, ten,donVi,nCC,loaiSP,khuyenMai;
-        private double gia;
-        private int soluong;
+        private string masp, tensp, donvi, mancc, maloai, makm;
+        private int dongia;
+        private int sltonkho;
         private DateTime ngaySX, hanSD;
 
         public SanPham()
         {
-            
+
         }
 
-        public SanPham(string ma, string ten, string donVi, string nCC, string loaiSP, string khuyenMai, double gia, int soluong, DateTime ngaySX, DateTime hanSD)
+        public SanPham(string masp, string tensp, string donvi, string nCC, string loaiSP, string makm, int dongia, int soluong, DateTime ngaySX, DateTime hanSD)
         {
-            this.Ma = ma;
-            this.Ten = ten;
-            this.DonVi = donVi;
-            this.NCC = nCC;
-            this.LoaiSP = loaiSP;
-            this.KhuyenMai = khuyenMai;
-            this.Gia = gia;
-            this.Soluong = soluong;
+            if (string.IsNullOrEmpty(masp) || string.IsNullOrEmpty(tensp) || string.IsNullOrEmpty(donvi) || string.IsNullOrEmpty(nCC) || string.IsNullOrEmpty(loaiSP) || string.IsNullOrEmpty(makm))
+            {
+                throw new Exception("Field Không được để trống");
+            }
+
+            this.MaSP = masp;
+            this.TenSP = tensp;
+            this.DonVi = donvi;
+            this.Mancc = nCC;
+            this.MaLoai = loaiSP;
+            this.KhuyenMai = makm;
+            this.Dongia = dongia;
+            this.SLTonKho = soluong;
             this.NgaySX = ngaySX;
             this.HanSD = hanSD;
         }
 
-        public string Ma { get => ma; set => ma = value; }
-        public string Ten { get => ten; set => ten = value; }
-        public string DonVi { get => donVi; set => donVi = value; }
-        public string NCC { get => nCC; set => nCC = value; }
-        public string LoaiSP { get => loaiSP; set => loaiSP = value; }
-        public string KhuyenMai { get => khuyenMai; set => khuyenMai = value; }
-        public double Gia { get => gia; set => gia = value; }
-        public int Soluong { get => soluong; set => soluong = value; }
+
+        public string MaSP { get => masp; set => masp = value; }
+        public string TenSP { get => tensp; set => tensp = value; }
+        public string DonVi { get => donvi; set => donvi = value; }
+        public string Mancc { get => mancc; set => mancc = value; }
+        public string MaLoai { get => maloai; set => maloai = value; }
+        public string KhuyenMai { get => makm; set => makm = value; }
+        public int Dongia { get => dongia; set => dongia = value; }
+        public int SLTonKho { get => sltonkho; set => sltonkho = value; }
         public DateTime NgaySX { get => ngaySX; set => ngaySX = value; }
         public DateTime HanSD { get => hanSD; set => hanSD = value; }
     }
