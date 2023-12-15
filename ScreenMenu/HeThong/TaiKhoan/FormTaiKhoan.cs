@@ -15,7 +15,7 @@ namespace LTUD1_BACHHOAXANH472
             controller = new AccountController(Utils.ConnectionString);
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvTaiKhoan);
-            DataGridViewHelper.ConfigureDataGridView(dgvQuyenTruyCap);
+            //DataGridViewHelper.ConfigureDataGridView(dgvQuyenTruyCap);
             
         }
 
