@@ -43,7 +43,12 @@ namespace LTUD1_BACHHOAXANH472.controller
 
         public override object FromDataRow(DataRow row)
         {
-            throw new NotImplementedException();
+            KhachHang o = new KhachHang();
+            o.Ma = row.Field<string>("MAKH");
+            o.Ten = row.Field<string>("HOTENKH");
+            o.Sdt = row.Field<int>("SDTKH");
+            o.Diem = row.Field<int>("DIEMTL");
+            return o;
         }
 
         public override void Insert(object sender)
@@ -115,7 +120,43 @@ namespace LTUD1_BACHHOAXANH472.controller
 
         public override DataTable SelectByID(object id)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                // Mở kết nối
+                SqlConnection conn = OpenConnection();
+
+                // Tạo một đối tượng SqlCommand
+                Sql = new SqlCommand("sp_khachhang_select_one", conn);
+                Sql.CommandType = CommandType.StoredProcedure;
+                // Thêm tham số vào SqlCommand
+                string idnv = (string)id;
+                idnv = idnv.ToString().Trim();
+                Sql.Parameters.AddWithValue("@maKH", idnv);
+
+                // Tạo một đối tượng SqlDataAdapter
+                Adapter = new SqlDataAdapter(Sql);
+
+                // Tạo một đối tượng DataTable để lưu trữ dữ liệu
+                DataSource = new DataTable();
+
+                // Đổ dữ liệu vào DataTable
+                Adapter.Fill(DataSource);
+
+                // Đóng kết nối
+                CloseConnection();
+
+                // Trả về DataTable
+                return DataSource;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("SelectByID" + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
         }
 
         public override void Update(object sender)
