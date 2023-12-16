@@ -60,6 +60,20 @@ namespace LTUD1_BACHHOAXANH472
             this.btnThemHD = new System.Windows.Forms.Button();
             this.btnXoaHD = new System.Windows.Forms.Button();
             this.btnLamMoiHD = new System.Windows.Forms.Button();
+            this.gbStep3 = new System.Windows.Forms.GroupBox();
+            this.btnThanhToan = new System.Windows.Forms.Button();
+            this.btnInPhieuHoaDon = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.gbStep2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
@@ -88,20 +102,6 @@ namespace LTUD1_BACHHOAXANH472
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.gbStep3 = new System.Windows.Forms.GroupBox();
-            this.btnThanhToan = new System.Windows.Forms.Button();
-            this.btnInPhieuHoaDon = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.contextMenuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -112,6 +112,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.tableLayoutPanel9.SuspendLayout();
+            this.gbStep3.SuspendLayout();
             this.gbStep2.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -126,7 +127,6 @@ namespace LTUD1_BACHHOAXANH472
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            this.gbStep3.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -462,6 +462,174 @@ namespace LTUD1_BACHHOAXANH472
             this.btnLamMoiHD.Text = "Làm mới";
             this.btnLamMoiHD.UseVisualStyleBackColor = true;
             // 
+            // gbStep3
+            // 
+            this.gbStep3.BackColor = System.Drawing.Color.Transparent;
+            this.gbStep3.Controls.Add(this.btnThanhToan);
+            this.gbStep3.Controls.Add(this.btnInPhieuHoaDon);
+            this.gbStep3.Controls.Add(this.label25);
+            this.gbStep3.Controls.Add(this.label24);
+            this.gbStep3.Controls.Add(this.label23);
+            this.gbStep3.Controls.Add(this.label6);
+            this.gbStep3.Controls.Add(this.label20);
+            this.gbStep3.Controls.Add(this.label19);
+            this.gbStep3.Controls.Add(this.label18);
+            this.gbStep3.Controls.Add(this.label17);
+            this.gbStep3.Controls.Add(this.label21);
+            this.gbStep3.Controls.Add(this.label13);
+            this.gbStep3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbStep3.ForeColor = System.Drawing.Color.White;
+            this.gbStep3.Location = new System.Drawing.Point(2, 560);
+            this.gbStep3.Margin = new System.Windows.Forms.Padding(2);
+            this.gbStep3.Name = "gbStep3";
+            this.gbStep3.Padding = new System.Windows.Forms.Padding(2);
+            this.gbStep3.Size = new System.Drawing.Size(1214, 133);
+            this.gbStep3.TabIndex = 3;
+            this.gbStep3.TabStop = false;
+            this.gbStep3.Text = "Bước 3: Hiển thị thông tin màn hình thanh toán";
+            // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.ForeColor = System.Drawing.Color.Black;
+            this.btnThanhToan.Location = new System.Drawing.Point(393, 20);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(117, 29);
+            this.btnThanhToan.TabIndex = 3;
+            this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.UseVisualStyleBackColor = true;
+            // 
+            // btnInPhieuHoaDon
+            // 
+            this.btnInPhieuHoaDon.ForeColor = System.Drawing.Color.Black;
+            this.btnInPhieuHoaDon.Location = new System.Drawing.Point(796, 20);
+            this.btnInPhieuHoaDon.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInPhieuHoaDon.Name = "btnInPhieuHoaDon";
+            this.btnInPhieuHoaDon.Size = new System.Drawing.Size(117, 29);
+            this.btnInPhieuHoaDon.TabIndex = 3;
+            this.btnInPhieuHoaDon.Text = "In Phiếu hóa đơn";
+            this.btnInPhieuHoaDon.UseVisualStyleBackColor = true;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(390, 97);
+            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(254, 19);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Hệ thống cho phép tạo report in hóa đơn";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(390, 80);
+            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(337, 19);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Hệ thống cập nhật số lượng tồn kho cho từng sản phẩm";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(390, 62);
+            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(432, 19);
+            this.label23.TabIndex = 2;
+            this.label23.Text = "Hệ thống ghi nhận thông tin sản phẩm, số lượng mua theo mã hóa đơn ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(522, 26);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(259, 19);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Hoàn tất thanh toán xin cảm ơn quý khách!";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(13, 53);
+            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(115, 19);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Ngày lập hóa đơn";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(176, 98);
+            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(153, 19);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Số tiền giảm khuyến mãi";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(176, 81);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(181, 19);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Hình thức khuyến mãi(nếu có)";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(176, 62);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(184, 19);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Chi tiết thanh toán(chi tiết HD)";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.Location = new System.Drawing.Point(13, 97);
+            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(115, 19);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Số tiền thanh toán";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(13, 76);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(142, 19);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Nhân viên lập hóa đơn";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(1224, 699);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "Report";
+            // 
             // gbStep2
             // 
             this.gbStep2.BackColor = System.Drawing.Color.Transparent;
@@ -733,7 +901,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.88382F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.11618F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 161F));
             this.tableLayoutPanel8.Controls.Add(this.numericUpDown1, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.panel1, 1, 0);
@@ -752,10 +920,10 @@ namespace LTUD1_BACHHOAXANH472
             this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI Light", 20F);
             this.numericUpDown1.ForeColor = System.Drawing.Color.Red;
-            this.numericUpDown1.Location = new System.Drawing.Point(247, 2);
+            this.numericUpDown1.Location = new System.Drawing.Point(241, 2);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(152, 43);
+            this.numericUpDown1.Size = new System.Drawing.Size(158, 43);
             this.numericUpDown1.TabIndex = 17;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -775,10 +943,10 @@ namespace LTUD1_BACHHOAXANH472
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panel1.Controls.Add(this.label12);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(144, 2);
+            this.panel1.Location = new System.Drawing.Point(140, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(99, 35);
+            this.panel1.Size = new System.Drawing.Size(97, 35);
             this.panel1.TabIndex = 19;
             // 
             // label12
@@ -842,174 +1010,6 @@ namespace LTUD1_BACHHOAXANH472
             this.label10.TabIndex = 2;
             this.label10.Text = "Hệ thống tìm tất cả sản phẩm theo danh mục theo hóa đơn";
             // 
-            // gbStep3
-            // 
-            this.gbStep3.BackColor = System.Drawing.Color.Transparent;
-            this.gbStep3.Controls.Add(this.btnThanhToan);
-            this.gbStep3.Controls.Add(this.btnInPhieuHoaDon);
-            this.gbStep3.Controls.Add(this.label25);
-            this.gbStep3.Controls.Add(this.label24);
-            this.gbStep3.Controls.Add(this.label23);
-            this.gbStep3.Controls.Add(this.label6);
-            this.gbStep3.Controls.Add(this.label20);
-            this.gbStep3.Controls.Add(this.label19);
-            this.gbStep3.Controls.Add(this.label18);
-            this.gbStep3.Controls.Add(this.label17);
-            this.gbStep3.Controls.Add(this.label21);
-            this.gbStep3.Controls.Add(this.label13);
-            this.gbStep3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gbStep3.ForeColor = System.Drawing.Color.White;
-            this.gbStep3.Location = new System.Drawing.Point(2, 560);
-            this.gbStep3.Margin = new System.Windows.Forms.Padding(2);
-            this.gbStep3.Name = "gbStep3";
-            this.gbStep3.Padding = new System.Windows.Forms.Padding(2);
-            this.gbStep3.Size = new System.Drawing.Size(1214, 133);
-            this.gbStep3.TabIndex = 3;
-            this.gbStep3.TabStop = false;
-            this.gbStep3.Text = "Bước 3: Hiển thị thông tin màn hình thanh toán";
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.ForeColor = System.Drawing.Color.Black;
-            this.btnThanhToan.Location = new System.Drawing.Point(393, 20);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(2);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(117, 29);
-            this.btnThanhToan.TabIndex = 3;
-            this.btnThanhToan.Text = "Thanh toán";
-            this.btnThanhToan.UseVisualStyleBackColor = true;
-            // 
-            // btnInPhieuHoaDon
-            // 
-            this.btnInPhieuHoaDon.ForeColor = System.Drawing.Color.Black;
-            this.btnInPhieuHoaDon.Location = new System.Drawing.Point(796, 20);
-            this.btnInPhieuHoaDon.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInPhieuHoaDon.Name = "btnInPhieuHoaDon";
-            this.btnInPhieuHoaDon.Size = new System.Drawing.Size(117, 29);
-            this.btnInPhieuHoaDon.TabIndex = 3;
-            this.btnInPhieuHoaDon.Text = "In Phiếu hóa đơn";
-            this.btnInPhieuHoaDon.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(390, 97);
-            this.label25.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(254, 19);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Hệ thống cho phép tạo report in hóa đơn";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(390, 80);
-            this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(337, 19);
-            this.label24.TabIndex = 2;
-            this.label24.Text = "Hệ thống cập nhật số lượng tồn kho cho từng sản phẩm";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(390, 62);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(432, 19);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Hệ thống ghi nhận thông tin sản phẩm, số lượng mua theo mã hóa đơn ";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(522, 26);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(259, 19);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Hoàn tất thanh toán xin cảm ơn quý khách!";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(13, 53);
-            this.label20.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(115, 19);
-            this.label20.TabIndex = 2;
-            this.label20.Text = "Ngày lập hóa đơn";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(176, 98);
-            this.label19.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(153, 19);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Số tiền giảm khuyến mãi";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(176, 81);
-            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(181, 19);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Hình thức khuyến mãi(nếu có)";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(176, 62);
-            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(184, 19);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Chi tiết thanh toán(chi tiết HD)";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(13, 97);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(115, 19);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "Số tiền thanh toán";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(13, 76);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(142, 19);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Nhân viên lập hóa đơn";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(1224, 699);
-            this.tabPage2.TabIndex = 0;
-            this.tabPage2.Text = "Report";
-            // 
             // FormChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1035,6 +1035,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             this.tableLayoutPanel9.ResumeLayout(false);
+            this.gbStep3.ResumeLayout(false);
+            this.gbStep3.PerformLayout();
             this.gbStep2.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
@@ -1053,8 +1055,6 @@ namespace LTUD1_BACHHOAXANH472
             this.panel1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            this.gbStep3.ResumeLayout(false);
-            this.gbStep3.PerformLayout();
             this.ResumeLayout(false);
 
         }
