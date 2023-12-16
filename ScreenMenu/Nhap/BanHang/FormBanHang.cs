@@ -19,7 +19,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 
         private void FormBanHang_Load(object sender, EventArgs e)
         {
-
+            DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
+            DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
