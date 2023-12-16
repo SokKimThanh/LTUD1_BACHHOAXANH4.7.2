@@ -20,6 +20,11 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         private void FormBanHang_Load(object sender, EventArgs e)
         {
 
-        } 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
