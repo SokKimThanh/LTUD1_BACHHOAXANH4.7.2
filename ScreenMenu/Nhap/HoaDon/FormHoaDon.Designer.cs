@@ -131,7 +131,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tableLayoutPanel1.Size = new System.Drawing.Size(888, 94);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnEdit
+            // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.Transparent;
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,7 +142,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.btnSua.ForeColor = System.Drawing.Color.SeaShell;
             this.btnSua.Location = new System.Drawing.Point(301, 5);
             this.btnSua.Margin = new System.Windows.Forms.Padding(5);
-            this.btnSua.Name = "btnEdit";
+            this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(138, 84);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
@@ -167,7 +167,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnAdd
+            // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.Transparent;
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -178,7 +178,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.btnThem.ForeColor = System.Drawing.Color.SeaShell;
             this.btnThem.Location = new System.Drawing.Point(5, 5);
             this.btnThem.Margin = new System.Windows.Forms.Padding(5);
-            this.btnThem.Name = "btnAdd";
+            this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(138, 84);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
@@ -232,7 +232,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.dgvHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHD.Size = new System.Drawing.Size(875, 526);
             this.dgvHD.TabIndex = 1;
-          
             this.dgvHD.Click += new System.EventHandler(this.dgvHD_Click);
             // 
             // tabPage2
