@@ -1,7 +1,6 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
+namespace LTUD1_BACHHOAXANH472
 {
     partial class FormSanPham
     {

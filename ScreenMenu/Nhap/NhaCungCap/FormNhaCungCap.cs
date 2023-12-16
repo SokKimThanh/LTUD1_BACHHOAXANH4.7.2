@@ -256,6 +256,6 @@ namespace LTUD1_BACHHOAXANH472
                 MessageBox.Show(ex.Message);
                 txtDiaChi.Text = ex.Message;
             }
-        }
+        } 
     }
 }

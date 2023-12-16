@@ -473,6 +473,16 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_small_search {
+            get {
+                object obj = ResourceManager.GetObject("icon_small_search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_small_tenkhachhang {
             get {
                 object obj = ResourceManager.GetObject("icon_small_tenkhachhang", resourceCulture);

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.ChiTietHoaDon
+namespace LTUD1_BACHHOAXANH472
 {
     internal class ChiTietHoaDon
     {
-        private string  maHD,maSP;
+        private string maHD, maSP;
         private int soLuong;
 
         public ChiTietHoaDon() { }

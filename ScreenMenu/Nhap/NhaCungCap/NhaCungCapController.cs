@@ -149,6 +149,44 @@ namespace LTUD1_BACHHOAXANH472
                 CloseConnection();
             }
         }
+        public DataTable sp_cbo_nhacungcap_select_all()
+        {
+            try
+            {
+                // Mở kết nối
+                SqlConnection conn = OpenConnection();
+
+                // Tạo một đối tượng SqlCommand
+                Sql = new SqlCommand("sp_cbo_nhacungcap_select_all", conn);
+                Sql.CommandType = CommandType.StoredProcedure;
+
+                // Tạo một đối tượng SqlDataAdapter
+                Adapter = new SqlDataAdapter(Sql);
+
+                // Tạo một đối tượng DataTable để lưu trữ dữ liệu
+                DataTable table = new DataTable();
+
+                // Đổ dữ liệu vào DataTable
+                Adapter.Fill(table);
+
+                // Thêm hàng "Tất cả" vào đầu DataTable
+                DataRow row = table.NewRow();
+                row["mancc"] = null;
+                row["tenncc"] = "Tất cả"; // Thay đổi 0 thành chỉ mục hoặc tên của cột bạn muốn đặt giá trị "Tất cả"
+                table.Rows.InsertAt(row, 0);
+                 
+                CloseConnection();
+                return table;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
         public override void SelectAll()
         {
             try

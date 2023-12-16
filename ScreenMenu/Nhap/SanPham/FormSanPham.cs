@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
+namespace LTUD1_BACHHOAXANH472 
 {
     public partial class FormSanPham : Form
     {

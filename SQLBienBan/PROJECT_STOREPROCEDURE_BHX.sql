@@ -451,6 +451,29 @@ BEGIN
 END
 GO
 ﻿
+
+-- Author:		Vo Tu
+-- Create date: <13/11/2023>
+
+set dateformat dmy
+DROP PROCEDURE IF EXISTS rp_hoadon_theongay
+GO
+CREATE PROCEDURE rp_hoadon_theongay
+	
+	@ngay date
+AS
+BEGIN
+
+    
+	Select hd.MAHD,hd.NGAYHOADON,hd.TONGTHANHTIEN,nv.HOTENNV,kh.HOTENKH
+	from HOADON hd
+	INNER Join NHANVIEN nv on hd.MANV = nv.MANV
+	INNER Join KHACHHANG kh on hd.MAKH = kh.MAKH
+	where hd.NGAYHOADON = @ngay
+END
+GO
+exec rp_hoadon_theongay '15-01-2022'
+select * from HOADON﻿
 -- Create Procedure sp_nhacungcap_select_all.sql
 -- Nhà cung cấp select all
 -- Author:		Vo Tu
@@ -693,14 +716,10 @@ CREATE PROCEDURE sp_hoadon_select_one
 	@maHD char(11) = ''
 AS
 BEGIN
-	
-	
-	
-    
 	SELECT * from HOADON where MAHD  = @maHD --like chính xác mã 100%
 END
 GO
-﻿
+exec sp_hoadon_select_one '12'﻿
 
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
@@ -968,29 +987,16 @@ exec sp_chitiethoadon_TimKiem 'HD01','B'
 ﻿
 -- Create Procedure sp_chitiethoadon_update.sql
 -- Danh mục update
-
-
-GO
-
-GO
-
 -- Author:		Quy Ngo
 -- Create date: <10/12/2023>
 
 
 drop procedure if exists sp_chitiethoadon_TongTien
 go
-CREATE PROCEDURE sp_chitiethoadon_TongTien
-	
+CREATE PROCEDURE sp_chitiethoadon_TongTien 
 	@mahd char(11) = ''
 AS
-BEGIN
-	
-	
-	
-
-    
-	
+BEGIN 
 	Declare  @TT int = 0;
 	select   @TT   += ct.SLMUA * sp.DONGIA 
 	from CHITIETHD ct,HOADON hd,SANPHAM sp
@@ -1089,6 +1095,19 @@ exec sp_khachhang_select_all
 
 
 
+﻿-- Author:		Vo Tu
+-- Create date: <13/11/2023>
+-- Create Procedure sp_khachhang_select_one.sql
+-- Nhà cung cấp select one
+drop procedure if exists sp_khachhang_select_one
+go
+CREATE PROCEDURE sp_khachhang_select_one
+	@maKH char(11)
+AS
+BEGIN
+	SELECT * from KHACHHANG where  MAKH = @maKH --like chính xác mã 100%
+END
+GO
 ﻿-- Create Procedure sp_khachhang_update.sql
 -- Nhà cung cấp update
 -- Author:		Vo Tu
@@ -1132,19 +1151,6 @@ END
 GO
 select * from KHACHHANG
 exec sp_khachhang_TimKiem 'Lê'
-﻿-- Author:		Vo Tu
--- Create date: <13/11/2023>
--- Create Procedure sp_khachhang_select_one.sql
--- Nhà cung cấp select one
-drop procedure if exists sp_khachhang_select_one
-go
-CREATE PROCEDURE sp_khachhang_select_one
-	@maKH char(11)
-AS
-BEGIN
-	SELECT * from KHACHHANG where  MAKH = @maKH --like chính xác mã 100%
-END
-GO
 ﻿-- Create Procedure sp_khuyenmai_update.sql
 -- Danh mục update
 -- Author:		Sok Kim Thanh
@@ -1371,81 +1377,96 @@ set dateformat dmy
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 -- Description:	<Tài khoản delete>
-DROP PROCEDURE IF EXISTS sp_quyentruycap_delete
+DROP PROCEDURE IF EXISTS sp_chitietcc_delete
 GO
-CREATE PROCEDURE sp_quyentruycap_delete
-	
-	@TENQTC CHAR(30) 
+CREATE PROCEDURE sp_chitietcc_delete
+	@MANCC char(11),
+	@MASP char(11)	
 AS
 BEGIN
-	DELETE FROM quyentruycap WHERE TENQTC = @TENQTC
+	DELETE FROM chitietcc WHERE MANCC = @MANCC and  MASP = @MASP
 END
 GO
-﻿
--- Create Procedure sp_quyentruycap_insert.sql
+--select count(*) from CHITIETCC
+--execute sp_chitietcc_delete 'ncc03', 'sp15'
+--select count(*) from CHITIETCC
+--select * from nhacungcap
+--select * from sanpham
+--select * from chitietcc﻿
+-- Create Procedure sp_chitietcc_insert.sql
 -- Tài khoản insert
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 
 
-drop procedure if exists sp_quyentruycap_insert
+drop procedure if exists sp_chitietcc_insert
 go
-CREATE PROCEDURE sp_quyentruycap_insert
-	 
-	@TENQTC  CHAR(30), 
-	@matkhau char(30),
-	@maqtc char(11)
+CREATE PROCEDURE sp_chitietcc_insert
+	@MANCC char(11),
+	@MASP char(11),
+	@SLCUNGCCAP int
 AS
 BEGIN
-	INSERT INTO quyentruycap VALUES (@TENQTC, @matkhau, @manv, @maqtc)
+	INSERT INTO chitietcc(MANCC,MASP,SLCUNGCCAP)
+	Values(@MANCC,@MASP,@SLCUNGCCAP)
 END
 GO
-﻿-- Create Procedure sp_quyentruycap_select_all.sql
+--select count(*) from CHITIETCC
+--execute sp_chitietcc_insert 'ncc01', 'sp02', 123 
+--select count(*) from CHITIETCC﻿-- Create Procedure sp_chitietcc_select_all.sql
 -- Tài khoản select all
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 
-drop procedure if exists sp_quyentruycap_select_all
+drop procedure if exists sp_chitietcc_select_all
 go
-CREATE PROCEDURE sp_quyentruycap_select_all
+CREATE PROCEDURE sp_chitietcc_select_all
 AS
 BEGIN
-	SELECT qtc.maqtc as ID, qtc.TENQTC as 'Tên quyền truy cập' FROM quyentruycap qtc
+	select * from chitietcc	
 END
 GO
- ﻿
--- Create Procedure sp_quyentruycap_select_one.sql
+ 
+execute sp_chitietcc_select_all﻿
+-- Create Procedure sp_chitietcc_select_one.sql
 -- Tài khoản select one
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 
 go
-drop procedure if exists sp_quyentruycap_select_one
+drop procedure if exists sp_chitietcc_select_one
 go
-CREATE PROCEDURE sp_quyentruycap_select_one
-	
-	@TENQTC CHAR(30)
+CREATE PROCEDURE sp_chitietcc_select_one	
+	@MANCC CHAR(11),
+	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from quyentruycap where TENQTC = @TENQTC --  chính xác mã 100%
+	SELECT * from chitietcc where  MANCC = @MANCC and MASP=@MASP --  chính xác mã 100%
 END
 GO
-﻿-- Create Procedure sp_quyentruycap_update.sql
+
+execute sp_chitietcc_select_one  'ncc01' , 'sp01'﻿-- Create Procedure sp_chitietcc_update.sql
 -- Tài khoản update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 
 go
-drop procedure if exists sp_quyentruycap_update
+drop procedure if exists sp_chitietcc_update
 go
-CREATE PROCEDURE sp_quyentruycap_update
-	@TENQTC CHAR(30),
-	@MAQTC char (11)
+CREATE PROCEDURE sp_chitietcc_update
+	@MANCC char(11),
+	@MASP char(11),
+	@SLCUNGCCAP int
 AS
 BEGIN
-	update quyentruycap set TENQTC= @TENQTC where MAQTC = @MAQTC  -- chuẩn sql
+	update chitietcc set SLCUNGCCAP = @SLCUNGCCAP where MANCC = @MANCC and MASP = @MASP  -- chuẩn sql
 END
 GO
+
+--execute sp_chitietcc_update 'ncc01', 'sp01', 10
+--execute sp_chitietcc_select_one 'ncc01', 'sp01'
+--execute sp_chitietcc_update 'ncc01', 'sp01', 100
+--execute sp_chitietcc_select_one 'ncc01', 'sp01'
 ﻿-- =============================================
 -- Author:		<Thanh sok>
 -- Create date: <12/12/2023>
