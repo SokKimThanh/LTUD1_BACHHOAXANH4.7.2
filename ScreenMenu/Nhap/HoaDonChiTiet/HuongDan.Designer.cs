@@ -136,24 +136,24 @@ namespace LTUD1_BACHHOAXANH472
             this.làmMớiDanhSáchHóaĐơnToolStripMenuItem,
             this.lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(306, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(349, 76);
             // 
             // tổngSốHóaĐơnToolStripMenuItem
             // 
             this.tổngSốHóaĐơnToolStripMenuItem.Name = "tổngSốHóaĐơnToolStripMenuItem";
-            this.tổngSốHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.tổngSốHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(348, 24);
             this.tổngSốHóaĐơnToolStripMenuItem.Text = "Tổng số hóa đơn";
             // 
             // làmMớiDanhSáchHóaĐơnToolStripMenuItem
             // 
             this.làmMớiDanhSáchHóaĐơnToolStripMenuItem.Name = "làmMớiDanhSáchHóaĐơnToolStripMenuItem";
-            this.làmMớiDanhSáchHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.làmMớiDanhSáchHóaĐơnToolStripMenuItem.Size = new System.Drawing.Size(348, 24);
             this.làmMớiDanhSáchHóaĐơnToolStripMenuItem.Text = "Làm mới danh sách hóa đơn";
             // 
             // lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem
             // 
             this.lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem.Name = "lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem";
-            this.lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(305, 22);
+            this.lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem.Size = new System.Drawing.Size(348, 24);
             this.lấyRaHóaĐơnMớiNhấtĐểThêmSảnPhẩmToolStripMenuItem.Text = "Lấy ra hóa đơn mới nhất để thêm sản phẩm";
             // 
             // tabControl1
@@ -733,7 +733,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.88382F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.11618F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 154F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel8.Controls.Add(this.numericUpDown1, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.label11, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.panel1, 1, 0);
@@ -752,10 +752,10 @@ namespace LTUD1_BACHHOAXANH472
             this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numericUpDown1.Font = new System.Drawing.Font("Segoe UI Light", 20F);
             this.numericUpDown1.ForeColor = System.Drawing.Color.Red;
-            this.numericUpDown1.Location = new System.Drawing.Point(248, 2);
+            this.numericUpDown1.Location = new System.Drawing.Point(247, 2);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(151, 43);
+            this.numericUpDown1.Size = new System.Drawing.Size(152, 43);
             this.numericUpDown1.TabIndex = 17;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -778,7 +778,7 @@ namespace LTUD1_BACHHOAXANH472
             this.panel1.Location = new System.Drawing.Point(144, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 35);
+            this.panel1.Size = new System.Drawing.Size(99, 35);
             this.panel1.TabIndex = 19;
             // 
             // label12
