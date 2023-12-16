@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 public class Utils
 {
-    private static string connectionString = "Data Source=localhost;Initial Catalog=BACHHOAXANH; Integrated Security=true";
+    private static string connectionString = "Data Source=.;Initial Catalog = BACHHOAXANH; Integrated Security = True";
     public static string ConnectionString
     {
         get { return connectionString; }

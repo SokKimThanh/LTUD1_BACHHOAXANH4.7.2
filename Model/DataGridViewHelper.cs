@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -15,50 +16,58 @@ public static class DataGridViewHelper
         dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         dgv.AllowUserToAddRows = false;
     }
-    public static void TaoCotHoaDon(DataGridView dgvThongTinHoaDon)
+    public static void ChangeHeaderNameDanhThongTinHoaDon(DataGridView dgvThongTinHoaDon)
     {
-        // Tạo cột Mã sản phẩm
-        DataGridViewTextBoxColumn colMaSP = new DataGridViewTextBoxColumn();
-        colMaSP.Name = "MASP";
-        colMaSP.HeaderText = "Mã sản phẩm";
-        dgvThongTinHoaDon.Columns.Add(colMaSP);
+        dgvThongTinHoaDon.Columns[0].HeaderText = "Mã Sản Phẩm";
+        dgvThongTinHoaDon.Columns[1].HeaderText = "Tên Sản Phẩm";
+        dgvThongTinHoaDon.Columns[2].HeaderText = "Đơn Giá";
+        dgvThongTinHoaDon.Columns[3].HeaderText = "Khuyến Mãi";
+        dgvThongTinHoaDon.Columns[4].HeaderText = "Số Lượng";
+        dgvThongTinHoaDon.Columns[5].HeaderText = "Tổng";
+        dgvThongTinHoaDon.Columns[6].HeaderText = "+";
+        dgvThongTinHoaDon.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+        dgvThongTinHoaDon.Columns[7].HeaderText = "-";
+        dgvThongTinHoaDon.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+     
+    }
 
-        // Tạo cột Tên sản phẩm
-        DataGridViewTextBoxColumn colTenSP = new DataGridViewTextBoxColumn();
-        colTenSP.Name = "TENSP";
-        colTenSP.HeaderText = "Tên sản phẩm";
-        dgvThongTinHoaDon.Columns.Add(colTenSP);
+    public static void ChangeHeaderNameDanhSachSanPham(DataGridView dgvDanhSachSanPham)
+    {
+        dgvDanhSachSanPham.Columns[1].HeaderText = "Mã Sản Phẩm";
+        dgvDanhSachSanPham.Columns[2].HeaderText = "Tên Sản Phẩm";
+        //dgvDanhSachSanPham.Columns[3].HeaderText = "Đơn Vị Tính";
+        //dgvDanhSachSanPham.Columns[4].HeaderText = "NSX";
+        //dgvDanhSachSanPham.Columns[5].HeaderText = "HSD";
+        dgvDanhSachSanPham.Columns[6].HeaderText = "Đơn Giá";
+        dgvDanhSachSanPham.Columns[7].HeaderText = "SL Tồn";
+        //dgvDanhSachSanPham.Columns[8].HeaderText = "Mã Loại";
+        //dgvDanhSachSanPham.Columns[9].HeaderText = "Mã NCC";
+        dgvDanhSachSanPham.Columns[10].HeaderText = "Mã KM";
 
-        // Tạo cột Đơn giá
-        DataGridViewTextBoxColumn colDonGia = new DataGridViewTextBoxColumn();
-        colDonGia.Name = "DONGIA";
-        colDonGia.HeaderText = "Đơn giá";
-        dgvThongTinHoaDon.Columns.Add(colDonGia);
+        dgvDanhSachSanPham.Columns.RemoveAt(3);
+        dgvDanhSachSanPham.Columns.RemoveAt(3);
+        dgvDanhSachSanPham.Columns.RemoveAt(3);
 
-        // Tạo cột Số lượng
-        DataGridViewTextBoxColumn colSoLuong = new DataGridViewTextBoxColumn();
-        colSoLuong.Name = "SOLUONG";
-        colSoLuong.HeaderText = "Số lượng";
-        dgvThongTinHoaDon.Columns.Add(colSoLuong);
+        dgvDanhSachSanPham.Columns.RemoveAt(5);
+        dgvDanhSachSanPham.Columns.RemoveAt(5);
+        //dgvDanhSachSanPham.Columns.RemoveAt(5);
 
-        // Tạo cột Tổng
-        DataGridViewTextBoxColumn colTong = new DataGridViewTextBoxColumn();
-        colTong.Name = "TONG";
-        colTong.HeaderText = "Tổng";
-        dgvThongTinHoaDon.Columns.Add(colTong);
 
-        // Tạo cột Tăng số lượng
-        DataGridViewButtonColumn btnTangSoLuong = new DataGridViewButtonColumn();
-        btnTangSoLuong.Name = "BtnTangSoLuong";
-        btnTangSoLuong.HeaderText = "Tăng số lượng";
-        dgvThongTinHoaDon.Columns.Add(btnTangSoLuong);
+    }
 
-        // Tạo cột Giảm số lượng
-        DataGridViewButtonColumn btnGiamSoLuong = new DataGridViewButtonColumn();
-        btnGiamSoLuong.Name = "BtnGiamSoLuong";
-        btnGiamSoLuong.HeaderText = "Giảm số lượng";
-        dgvThongTinHoaDon.Columns.Add(btnGiamSoLuong);
+    public static void TaoCotAddToCast(DataGridView dgvDanhSachSanPham)
+    {
+        DataGridViewButtonColumn colAddToCast = new DataGridViewButtonColumn();
+        colAddToCast.Name = "btnAddToCast";
+        colAddToCast.HeaderText = "Giỏ hàng";
+        dgvDanhSachSanPham.Columns.Insert(0, colAddToCast);
 
+        foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
+        {
+            DataGridViewCell cell = new DataGridViewButtonCell();
+            cell.Value = "+";
+            row.Cells[0].Value = cell.Value;
+        }
     }
 }
 
