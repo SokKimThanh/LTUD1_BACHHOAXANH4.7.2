@@ -11,7 +11,7 @@ namespace LTUD1_BACHHOAXANH472
         SanPhamController spCon;
         ChiTietNCCController ctnccCon;
 
-        
+
 
 
         ButtonStateManager buttonStateManager;
@@ -44,7 +44,7 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void FormChiTietNhaCungCap_Load(object sender, EventArgs e)
         {
-             spCon.SelectAll();
+            spCon.SelectAll();
             cboSanPham.DataSource = spCon.DataSource;
             cboSanPham.DisplayMember = "TENSP";
             cboSanPham.ValueMember = "MASP";
@@ -62,7 +62,8 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ErrTxt.NoText_TextChange(txtSoLuong)){
+            if (ErrTxt.NoText_TextChange(txtSoLuong))
+            {
                 MessageBox.Show("Nhập số");
                 txtSoLuong.Text = string.Empty;
                 return;
@@ -77,7 +78,7 @@ namespace LTUD1_BACHHOAXANH472
                 Refresh();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -108,10 +109,10 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message+ "\t1");
+                MessageBox.Show(ex.Message + "\t1");
             }
         }
 
-       
+
     }
 }

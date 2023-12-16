@@ -1,6 +1,5 @@
 ﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472

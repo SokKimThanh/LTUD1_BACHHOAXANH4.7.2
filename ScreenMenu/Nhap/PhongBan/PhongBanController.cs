@@ -46,7 +46,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 
         public override object FromDataRow(DataRow row)
         {
-           PhongBan o = new PhongBan();
+            PhongBan o = new PhongBan();
             o.MaPB = row.Field<string>("mapb");
             o.TenPB = row.Field<string>("TENPHG");
             o.MaCN = row.Field<string>("macn");
@@ -175,7 +175,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 //đóng kết nối
                 CloseConnection();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

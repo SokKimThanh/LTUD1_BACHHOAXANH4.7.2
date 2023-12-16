@@ -2,6 +2,7 @@
 using LTUD1_BACHHOAXANH472.Screen;
 using LTUD1_BACHHOAXANH472.ScreenDetail;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap;
+/*using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;*/
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan;
 using System;
@@ -210,6 +211,12 @@ namespace LTUD1_BACHHOAXANH472
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
             OpenChildForm(new FormChiTietNhaCungCap());
         }
+        //13
+        private void btnBanHang_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
+            /*            OpenChildForm(new FormBanHang());*/
+        }
         /**
        * reset click all button
        */
@@ -236,7 +243,7 @@ namespace LTUD1_BACHHOAXANH472
                 //if (panelSidebar.Width == panelSidebar.MinimumSize.Width)
                 {
                     // đặt lại chữ
-                    this.btnDiaDiem.Text = "địa điểm".ToUpper();
+                    this.btnChiNhanh.Text = "địa điểm".ToUpper();
                     this.btnNhanVien.Text = "nhân viên".ToUpper();
                     this.btnNhaCungCap.Text = "nhà cung cấp".ToUpper();
                     this.btnSanPham.Text = "sản phẩm".ToUpper();

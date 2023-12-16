@@ -11,7 +11,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
     public partial class FormKhachHang : Form
     {
         KhachHangController khachHangController;
-        ButtonStateManager buttonStateManager = new ButtonStateManager();
+        // khởi tạo trạng thái cho nút 
+        ButtonStateManager buttonStateManager;
         public FormKhachHang()
         {
 
@@ -21,25 +22,24 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             DataGridViewHelper.ConfigureDataGridView(dgvKH);
             CustomButtonHelper customButtonHelper = new CustomButtonHelper();
             customButtonHelper.SetProperties(btnTimKiem);
-
-            buttonStateManager.BtnEdit = btnEdit;
-            buttonStateManager.BtnDelete = btnDelete;
-            buttonStateManager.BtnRefresh = btnRefresh;
-            buttonStateManager.BtnAdd = btnAdd;
-            buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
-
-
+            buttonStateManager = new ButtonStateManager();
+            // khai báo trạng thái khóa nút 
+            buttonStateManager.BtnAdd = this.btnThem;
+            buttonStateManager.BtnEdit = this.btnXoa;
+            buttonStateManager.BtnDelete = this.btnSua;
+            buttonStateManager.BtnRefresh = this.btnLamMoi;
         }
-  
+
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
             khachHangController.SelectAll();
             dgvKH.DataSource = khachHangController.DataSource;
-
-            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+            //mã tự động
+            RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
+            txtMa.Text = randomStringGenerator.GenerateRandomAlphanumericString(10);
         }
 
-     
+
 
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -99,7 +99,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 // thiết lập dữ liệu ngược lại mỗi lần click
                 txtMa.Text = o.Ma;
                 txtxHoTen.Text = o.Ten;
-                txtSDT.Text =o.Sdt.ToString();
+                txtSDT.Text = o.Sdt.ToString();
                 txtDTL.Text = o.Diem.ToString();
                 // cập nhật lại trang thái các nút
                 buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
@@ -131,11 +131,11 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 }
                 return;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
-        
+
         }
 
         private void txtMa_TextChanged(object sender, EventArgs e)
@@ -216,18 +216,23 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
             crystalReportViewer1.ReportSource = rpt;
         }
-        private void Refresh()
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            TaoMa();
+            refresh();
+        }
+        public void refresh()
+        {
+            // Chuyển đến tabReport 
+            // chọn tab danh sách để tìm kiếm thì
+            RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
+            txtMa.Text = randomStringGenerator.GenerateRandomAlphanumericString(10);
             txtxHoTen.Text = string.Empty;
             txtSDT.Text = string.Empty;
             txtDTL.Text = string.Empty;
-        }
-        private void TaoMa()
-        {
-            //mã tự động
-            RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
-            txtMa.Text = randomStringGenerator.GenerateRandomAlphanumericString(4);
+            khachHangController.SelectAll();
+            dgvKH.DataSource = khachHangController.DataSource;
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
     }
 }

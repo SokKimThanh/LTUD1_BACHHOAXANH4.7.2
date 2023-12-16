@@ -35,6 +35,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSua = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -48,6 +49,13 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTiemKiemTheoNgay = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpkNgay = new System.Windows.Forms.DateTimePicker();
+            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -71,6 +79,9 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -118,6 +129,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Controls.Add(this.btnSua, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnLamMoi, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnXoa, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnThem, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -131,7 +143,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tableLayoutPanel1.Size = new System.Drawing.Size(888, 94);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnEdit
+            // btnSua
             // 
             this.btnSua.BackColor = System.Drawing.Color.Transparent;
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,12 +154,30 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.btnSua.ForeColor = System.Drawing.Color.SeaShell;
             this.btnSua.Location = new System.Drawing.Point(301, 5);
             this.btnSua.Margin = new System.Windows.Forms.Padding(5);
-            this.btnSua.Name = "btnEdit";
+            this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(138, 84);
-            this.btnSua.TabIndex = 2;
+            this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.BackColor = System.Drawing.Color.Transparent;
+            this.btnLamMoi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLamMoi.FlatAppearance.BorderSize = 3;
+            this.btnLamMoi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLamMoi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLamMoi.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnLamMoi.Location = new System.Drawing.Point(449, 5);
+            this.btnLamMoi.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(138, 84);
+            this.btnLamMoi.TabIndex = 2;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
@@ -158,7 +188,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.btnXoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnXoa.Location = new System.Drawing.Point(153, 5);
+            this.btnXoa.Location = new System.Drawing.Point(5, 5);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(5);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(138, 84);
@@ -167,7 +197,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnAdd
+            // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.Color.Transparent;
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -176,9 +206,9 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.btnThem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnThem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThem.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnThem.Location = new System.Drawing.Point(5, 5);
+            this.btnThem.Location = new System.Drawing.Point(153, 5);
             this.btnThem.Margin = new System.Windows.Forms.Padding(5);
-            this.btnThem.Name = "btnAdd";
+            this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(138, 84);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
@@ -201,6 +231,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(3, 43);
             this.tabControl1.Name = "tabControl1";
@@ -232,7 +263,6 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.dgvHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHD.Size = new System.Drawing.Size(875, 526);
             this.dgvHD.TabIndex = 1;
-          
             this.dgvHD.Click += new System.EventHandler(this.dgvHD_Click);
             // 
             // tabPage2
@@ -309,7 +339,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.AutoSize = true;
             this.crystalReportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -317,9 +347,98 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 62);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH472\\uploads\\reportHD.rpt";
             this.crystalReportViewer1.Size = new System.Drawing.Size(868, 406);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.tabPage3.Controls.Add(this.tableLayoutPanel7);
+            this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.tabPage3.Location = new System.Drawing.Point(4, 50);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(880, 477);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Thống Kê Theo Ngày";
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel8, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.crystalReportViewer2, 0, 1);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 2;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 408F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(874, 471);
+            this.tableLayoutPanel7.TabIndex = 0;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 3;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.37677F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.62323F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 162F));
+            this.tableLayoutPanel8.Controls.Add(this.btnTiemKiemTheoNgay, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.dtpkNgay, 1, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(868, 57);
+            this.tableLayoutPanel8.TabIndex = 0;
+            // 
+            // btnTiemKiemTheoNgay
+            // 
+            this.btnTiemKiemTheoNgay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTiemKiemTheoNgay.Location = new System.Drawing.Point(709, 3);
+            this.btnTiemKiemTheoNgay.Name = "btnTiemKiemTheoNgay";
+            this.btnTiemKiemTheoNgay.Size = new System.Drawing.Size(156, 51);
+            this.btnTiemKiemTheoNgay.TabIndex = 5;
+            this.btnTiemKiemTheoNgay.Text = "Tìm Kiếm";
+            this.btnTiemKiemTheoNgay.UseVisualStyleBackColor = true;
+            this.btnTiemKiemTheoNgay.Click += new System.EventHandler(this.btnTiemKiemTheoNgay_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(272, 57);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nhập Thông Tin";
+            // 
+            // dtpkNgay
+            // 
+            this.dtpkNgay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpkNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpkNgay.Location = new System.Drawing.Point(281, 3);
+            this.dtpkNgay.Name = "dtpkNgay";
+            this.dtpkNgay.Size = new System.Drawing.Size(422, 47);
+            this.dtpkNgay.TabIndex = 4;
+            // 
+            // crystalReportViewer2
+            // 
+            this.crystalReportViewer2.ActiveViewIndex = 0;
+            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer2.Location = new System.Drawing.Point(3, 66);
+            this.crystalReportViewer2.Name = "crystalReportViewer2";
+            this.crystalReportViewer2.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH472\\uploads\\rp_hoadon_theongay.rpt";
+            this.crystalReportViewer2.Size = new System.Drawing.Size(868, 402);
+            this.crystalReportViewer2.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -390,6 +509,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             // txtMaHD
             // 
             this.txtMaHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMaHD.Enabled = false;
             this.txtMaHD.Font = new System.Drawing.Font("Segoe UI Light", 18F);
             this.txtMaHD.Location = new System.Drawing.Point(3, 35);
             this.txtMaHD.Name = "txtMaHD";
@@ -517,6 +637,10 @@ namespace LTUD1_BACHHOAXANH472.Screen
             this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -536,7 +660,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
         private TableLayoutPanel tableLayoutPanel4;
         private GroupBox groupBox3;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button btnSua;
+        private Button btnLamMoi;
         private Button btnXoa;
         private Button btnThem;
         private GroupBox groupBox4;
@@ -563,5 +687,13 @@ namespace LTUD1_BACHHOAXANH472.Screen
         private Button btnTimKiem;
         private Label label1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private Button btnSua;
+        private TabPage tabPage3;
+        private TableLayoutPanel tableLayoutPanel7;
+        private TableLayoutPanel tableLayoutPanel8;
+        private Label label2;
+        private Button btnTiemKiemTheoNgay;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
+        private DateTimePicker dtpkNgay;
     }
 }

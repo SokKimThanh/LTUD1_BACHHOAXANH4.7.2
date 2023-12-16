@@ -9,7 +9,7 @@ go
 CREATE PROCEDURE sp_sanpham_select_all
 AS
 BEGIN
-	select masp, tensp 'Tên sản phẩm', donvi 'Đơn vị', nsx 'Ngày sản xuất', hsd'Hạn sử dụng', dongia'Đơn giá',sltonkho'Tồn kho' 
+	select masp, tensp , donvi N'Đơn vị', nsx N'Ngày sản xuất', hsd N'Hạn sử dụng', dongia N'Đơn giá',sltonkho N'Tồn kho' 
 	from SanPham
 END
 GO

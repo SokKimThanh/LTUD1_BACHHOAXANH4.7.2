@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 {
@@ -20,12 +16,13 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
             {
                 throw new Exception("Field bắt buộc nhập!");
             }
-            else {
+            else
+            {
                 this.maPB = maPB;
                 this.tenPB = tenPB;
                 this.maCN = maCN;
             }
-            
+
         }
         public string MaPB { get => maPB; set => maPB = value; }
         public string TenPB { get => tenPB; set => tenPB = value; }

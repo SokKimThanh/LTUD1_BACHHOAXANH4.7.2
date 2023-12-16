@@ -1,12 +1,6 @@
-﻿using LTUD1_BACHHOAXANH472.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
@@ -25,7 +19,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
             buttonStateManager.BtnEdit = btnSua;
             buttonStateManager.BtnDelete = btnXoa;
-            buttonStateManager.BtnRefresh = btnRefresh  ;
+            buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnThem;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
 
@@ -57,7 +51,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private void btnThem_Click(object sender, EventArgs e)
         {
 
-            
+
             try
             {
                 KhuyenMai km = new KhuyenMai();
@@ -68,7 +62,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 kmConn.Insert(km);
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Thêm khuyến mãi thành công!");
-               Refresh();
+                Refresh();
             }
             catch (Exception ex)
             {
@@ -76,11 +70,11 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             }
         }
 
-       
+
 
         private void dgvDSKM_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
 
         }
 

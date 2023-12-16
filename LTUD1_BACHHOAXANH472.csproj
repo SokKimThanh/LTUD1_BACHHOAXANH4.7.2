@@ -60,20 +60,8 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
-      <HintPath>packages\Bunifu.Licensing.5.0.0\lib\net40\Bunifu.Licensing.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    <Reference Include="Costura, Version=5.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Costura.Fody.5.7.0\lib\netstandard1.0\Costura.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus, Version=7.0.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
       <HintPath>packages\EPPlus.7.0.3\lib\net462\EPPlus.dll</HintPath>
@@ -386,7 +374,6 @@
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\chitietcc.cs" />
-    <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\ChiTietNCCController.cs" />
     <Compile Include="ScreenMenu\Nhap\NhanVien\rp_nhanvien_select_all.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -437,12 +424,6 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\ChiTietHoaDonThongKe.Designer.cs">
       <DependentUpon>ChiTietHoaDonThongKe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\HuongDan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\HuongDan.Designer.cs">
-      <DependentUpon>HuongDan.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\DanhMuc\DanhMuc.cs" />
     <Compile Include="ScreenMenu\Nhap\DanhMuc\DanhMucController.cs" />
@@ -543,6 +524,12 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\SanPham\SanPham.cs" />
     <Compile Include="ScreenMenu\Nhap\SanPham\SanPhamController.cs" />
+    <Compile Include="uploads\rp_hoadon_theongay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_hoadon_theongay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -588,9 +575,6 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\HinhThucKhuyenMai\FormHinhThucKhuyenMai.resx">
       <DependentUpon>FormHinhThucKhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\HuongDan.resx">
-      <DependentUpon>HuongDan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDon\FormHoaDon.resx">
       <DependentUpon>FormHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -621,6 +605,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\SanPham\FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uploads\rp_hoadon_theongay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_hoadon_theongay.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -705,6 +693,7 @@
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_insert.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_select_one.sql" />
+    <Content Include="ScreenMenu\Nhap\HoaDon\rp_hoadon_theongay.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_HoaDon_TimKiem.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_update.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khahchhang_TimKiem.sql" />
@@ -712,7 +701,7 @@
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_insert.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_update.sql" />
-    <Content Include="ScreenMenu\Nhap\KhachHang\sp_kkhachhang_select_one.sql" />
+    <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_cbo_hinhthuckm.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_delete.sql" />
     <Content Include="ScreenMenu\Nhap\KhuyenMai\sp_khuyenmai_insert.sql" />

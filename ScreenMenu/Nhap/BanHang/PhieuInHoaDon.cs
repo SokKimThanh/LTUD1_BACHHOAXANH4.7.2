@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTUD1_BACHHOAXANH472.uploads {
+namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rp_nhanvien_nvtheophongban : ReportClass {
+    public class PhieuInHoaDon : ReportClass {
         
-        public rp_nhanvien_nvtheophongban() {
+        public PhieuInHoaDon() {
         }
         
         public override string ResourceName {
             get {
-                return "rp_nhanvien_nvtheophongban.rpt";
+                return "PhieuInHoaDon.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_nvtheophongban.rpt";
+                return "LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang.PhieuInHoaDon.rpt";
             }
             set {
                 // Do nothing
@@ -87,28 +87,12 @@ namespace LTUD1_BACHHOAXANH472.uploads {
                 return this.ReportDefinition.Sections[4];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MaChiNhanh {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MaPhongBan {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrp_nhanvien_nvtheophongban : Component, ICachedReport {
+    public class CachedPhieuInHoaDon : Component, ICachedReport {
         
-        public Cachedrp_nhanvien_nvtheophongban() {
+        public CachedPhieuInHoaDon() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
+            PhieuInHoaDon rpt = new PhieuInHoaDon();
             rpt.Site = this.Site;
             return rpt;
         }

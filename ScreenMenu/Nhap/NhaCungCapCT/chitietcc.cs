@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT
+﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT
 {
     internal class NhaCCCT
     {

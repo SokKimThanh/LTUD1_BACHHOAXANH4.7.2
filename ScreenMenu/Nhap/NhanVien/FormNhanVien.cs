@@ -1,14 +1,13 @@
 ﻿
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhanVien;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhanVien;
-using LTUD1_BACHHOAXANH472.uploads;
 //using OfficeOpenXml.FormulaParsing.Excel.Functions;
 
 namespace LTUD1_BACHHOAXANH472

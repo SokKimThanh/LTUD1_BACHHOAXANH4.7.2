@@ -40,7 +40,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 cbbMaCN.DisplayMember = "TENCN";
                 cbbMaCN.ValueMember = "MACN";
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -81,7 +82,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 {
                     MessageBox.Show("Nhập tên phòng ban!");
                 }
-                else {
+                else
+                {
                     PhongBan phongBan = new PhongBan();
                     phongBan.MaPB = txtMaPB.Text;
                     phongBan.TenPB = txtTenPB.Text;
@@ -92,8 +94,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                     buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                     Refresh();
                 }
-                
-            }catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -110,7 +113,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 dgvPB.DataSource = pbController.DataSource;
                 Refresh();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -129,7 +133,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 dgvPB.DataSource = pbController.DataSource;
                 Refresh();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

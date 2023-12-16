@@ -1,29 +1,16 @@
 ﻿
 -- Create Procedure sp_chitiethoadon_update.sql
 -- Danh mục update
-
-
-GO
-
-GO
-
 -- Author:		Quy Ngo
 -- Create date: <10/12/2023>
 
 
 drop procedure if exists sp_chitiethoadon_TongTien
 go
-CREATE PROCEDURE sp_chitiethoadon_TongTien
-	
+CREATE PROCEDURE sp_chitiethoadon_TongTien 
 	@mahd char(11) = ''
 AS
-BEGIN
-	
-	
-	
-
-    
-	
+BEGIN 
 	Declare  @TT int = 0;
 	select   @TT   += ct.SLMUA * sp.DONGIA 
 	from CHITIETHD ct,HOADON hd,SANPHAM sp
