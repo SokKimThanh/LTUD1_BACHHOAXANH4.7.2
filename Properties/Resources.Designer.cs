@@ -453,6 +453,26 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_small_phantrangleft {
+            get {
+                object obj = ResourceManager.GetObject("icon_small_phantrangleft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_small_phantrangright {
+            get {
+                object obj = ResourceManager.GetObject("icon_small_phantrangright", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_small_quyentruycap {
             get {
                 object obj = ResourceManager.GetObject("icon_small_quyentruycap", resourceCulture);

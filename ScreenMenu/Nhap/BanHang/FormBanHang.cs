@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 {
@@ -27,7 +28,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             // thêm dữ liệu vào datagridview sản phẩm
             sanPhamController.SelectAll();
             dgvDanhSachSanPham.DataSource = sanPhamController.DataSource;
-             // thêm dữ liệu vào loại sản phẩm 
+            // thêm dữ liệu vào loại sản phẩm 
             danhMucController.SelectAll();
             cboLoaiSanPham.DataSource = danhMucController.DataSource;
             cboLoaiSanPham.ValueMember = "MALOAI";
@@ -203,7 +204,55 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
                 CapNhatTongSoLuongMua();
             }
         }
-         
+        private PictureBox currentPictureBox;
+        private void pictureBox2_MouseHover(object sender, EventArgs e)
+        {
+            currentPictureBox = sender as PictureBox;
+            timer1.Start();
+        }
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            currentPictureBox = sender as PictureBox;
+            timer1.Start();
+        }
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            currentPictureBox = sender as PictureBox;
+            timer1.Start();
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            currentPictureBox = sender as PictureBox;
+            timer1.Stop();
+        }
+
+        private bool isZoomingIn = true;
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (isZoomingIn)
+            {
+                currentPictureBox.Width += 1;
+                currentPictureBox.Height += 1;
+
+                if (currentPictureBox.Width >= 32) // MAX_WIDTH là kích thước tối đa bạn muốn phóng to
+                {
+                    isZoomingIn = false;
+                }
+            }
+            else
+            {
+                currentPictureBox.Width -= 1;
+                currentPictureBox.Height -= 1;
+
+                if (currentPictureBox.Width <= 24) // MIN_WIDTH là kích thước tối thiểu bạn muốn thu nhỏ
+                {
+                    isZoomingIn = true;
+                }
+            }
+        }
+
 
     }
 }
