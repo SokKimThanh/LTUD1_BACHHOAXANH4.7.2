@@ -1,5 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.Model;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -120,7 +119,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
                 CloseConnection();
             }
         }
-        public  void SelectAllNhanVien()
+        public void SelectAllNhanVien()
         {
             try
             {
@@ -151,7 +150,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
                 CloseConnection();
             }
         }
-        public  void SelectAllKhachHang()
+        public void SelectAllKhachHang()
         {
             try
             {
@@ -222,7 +221,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
                 CloseConnection();
             }
         }
-        
+
         public override void Update(object sender)
         {
             try

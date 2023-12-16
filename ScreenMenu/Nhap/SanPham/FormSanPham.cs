@@ -1,7 +1,10 @@
-﻿using System;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using LTUD1_BACHHOAXANH472.uploads;
+using System;
 using System.Data;
 using System.Windows.Forms;
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormSanPham : Form
     {
@@ -17,6 +20,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             kmConn = new KhuyenMaiController(Utils.ConnectionString);
             loaiConn = new DanhMucController(Utils.ConnectionString);
             nCCConn = new NhaCungCapController(Utils.ConnectionString);
+
+
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSP);
             buttonStateManager.BtnAdd = btnThem;
@@ -24,6 +29,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             buttonStateManager.BtnDelete = btnXoa;
             buttonStateManager.BtnRefresh = btnLamMoi;
             buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+            LamMoi();
         }
         private void FormSanPham_Load(object sender, EventArgs e)
         {
@@ -44,6 +50,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 cboNCC.DataSource = nCCConn.DataSource;
                 cboNCC.DisplayMember = "TENNCC";
                 cboNCC.ValueMember = "Mancc";
+
+                LamMoi();
             }
             catch (Exception ex)
             {
@@ -54,9 +62,31 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         {
             try
             {
+                if (txtTenSP.Text == string.Empty)
+                {
+                    MessageBox.Show("Nhập tên sản phảm ");
+                    return;
+                }
+                if (dtpNSX.Value > dtpHSD.Value)
+                {
+                    MessageBox.Show("Ngày sản xuất nhỏ hơn hạn sử dụng ");
+                    return;
+                }
+                if (ErrTxt.NoText_TextChange(txtDonGia) || txtDonGia.Text == string.Empty)
+                {
+                    MessageBox.Show("Giá nhập số!");
+                    txtDonGia.Text = string.Empty;
+                    return;
+                }
+                if (ErrTxt.NoText_TextChange(rtbSL) || rtbSL.Text == string.Empty)
+                {
+                    MessageBox.Show("Số lượng tồn kho nhập số!");
+                    rtbSL.Text = string.Empty;
+                    return;
+                }
+
                 SanPham sp = new SanPham();
-                RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
-                txtMaSP.Text = randomStringGenerator.GenerateRandomAlphanumericString(11);
+
                 sp.MaSP = txtMaSP.Text;
                 sp.TenSP = txtTenSP.Text;
                 sp.NgaySX = DateTime.Parse(dtpNSX.Text);
@@ -78,14 +108,16 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         }
         private void LamMoi()
         {
-            txtMaSP.Text = "";
-            txtTenSP.Text = "";
-            dtpNSX.Text = "";
-            dtpHSD.Text = "";
-            txtDonGia.Text = "";
-            rtbSL.Text = "";
-            rtbDonVi.Text = "";
+            txtMaSP.Text = string.Empty;
+            txtTenSP.Text = string.Empty;
+            dtpNSX.Text = string.Empty;
+            dtpHSD.Text = string.Empty;
+            txtDonGia.Text = string.Empty;
+            rtbSL.Text = string.Empty;
+            rtbDonVi.Text = string.Empty;
             spConn.SelectAll();
+            RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
+            txtMaSP.Text = randomStringGenerator.GenerateRandomAlphanumericString(11);
             dgvDanhSachSP.DataSource = spConn.DataSource;
         }
         private void btnXoa_Click(object sender, EventArgs e)
@@ -102,6 +134,113 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             }
         }
         private void dgvDanhSachSP_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            LamMoi();
+
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+        }
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dtpNSX.Value > dtpHSD.Value)
+                {
+                    MessageBox.Show("Ngày sản xuất nhỏ hơn hạn sử dụng ");
+                    return;
+                }
+                if (ErrTxt.NoText_TextChange(txtDonGia))
+                {
+                    MessageBox.Show("Giá nhập số!");
+                    txtDonGia.Text = string.Empty;
+                    return;
+                }
+                if (ErrTxt.NoText_TextChange(rtbSL))
+                {
+                    MessageBox.Show("Số lượng tồn kho nhập số!");
+                    rtbSL.Text = string.Empty;
+                    return;
+                }
+                SanPham sp = new SanPham();
+                sp.MaSP = txtMaSP.Text;
+                sp.TenSP = txtTenSP.Text;
+                sp.NgaySX = DateTime.Parse(dtpNSX.Text);
+                sp.HanSD = DateTime.Parse(dtpHSD.Text);
+                sp.Dongia = int.Parse(txtDonGia.Text); ;
+                sp.SLTonKho = int.Parse(rtbSL.Text);
+                sp.DonVi = rtbDonVi.Text;
+                sp.MaLoai = cboLoaiSP.SelectedValue.ToString();
+                sp.Mancc = cboNCC.SelectedValue.ToString();
+                sp.KhuyenMai = cboKM.SelectedValue.ToString();
+                spConn.Update(sp);
+                LamMoi();
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboTheLoaiTimKiem.Text == "Theo tên")
+                {
+                    SanPhamrpt rptSP = new SanPhamrpt();
+                    // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+                    ParameterValues param = new ParameterValues();
+
+                    // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+
+                    // Đặt giá trị của pdv bằng giá trị trong textBox1
+                    pdv.Value = txtTimKiem.Text;
+
+                    // Thêm pdv vào danh sách các giá trị tham số
+                    param.Add(pdv);
+
+                    // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+                    rptSP.DataDefinition.ParameterFields["@TENSP"].ApplyCurrentValues(param);
+
+                    // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+                    rptSanPham.ReportSource = rptSP;
+                }
+
+                else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
+                {
+                    // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+                    ParameterValues param = new ParameterValues();
+
+                    // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+
+                    // Đặt giá trị của pdv bằng giá trị trong textBox
+                    pdv.Value = dtpTKNgay.Value;
+
+                    // Thêm pdv vào danh sách các giá trị tham số
+                    param.Add(pdv);
+
+                    SanPhamTheoNgay rptSP = new SanPhamTheoNgay();
+                    // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+                    rptSP.DataDefinition.ParameterFields["@NgayHT"].ApplyCurrentValues(param);
+
+                    // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+                    rptSanPham.ReportSource = rptSP;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void dgvDanhSachSP_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -133,35 +272,32 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 MessageBox.Show(ex.Message);
             }
         }
-        private void btnLamMoi_Click(object sender, EventArgs e)
+
+        private void cboLoaiTimKiem_TextChanged(object sender, EventArgs e)
         {
-            LamMoi();
-            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+
+
         }
-        private void btnSua_Click(object sender, EventArgs e)
+
+        private void cboTheLoaiTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                SanPham sp = new SanPham();
-                sp.MaSP = txtMaSP.Text;
-                sp.TenSP = txtTenSP.Text;
-                sp.NgaySX = DateTime.Parse(dtpNSX.Text);
-                sp.HanSD = DateTime.Parse(dtpHSD.Text);
-                sp.Dongia = int.Parse(txtDonGia.Text); ;
-                sp.SLTonKho = int.Parse(rtbSL.Text);
-                sp.DonVi = rtbDonVi.Text;
-                sp.MaLoai = cboLoaiSP.SelectedValue.ToString();
-                sp.Mancc = cboNCC.SelectedValue.ToString();
-                sp.KhuyenMai = cboKM.SelectedValue.ToString();
-                spConn.Update(sp);
-                LamMoi();
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                if (cboTheLoaiTimKiem.Text == "Theo tên")
+                {
+                    ReportDocument reportDocument = new ReportDocument();
+                    reportDocument.Load("D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
+                }
+                else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
+                {
+                    ReportDocument reportDocument = new ReportDocument();
+                    reportDocument.Load("D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamTheoNgay.rpt");
+                }
+
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
+
 }
 

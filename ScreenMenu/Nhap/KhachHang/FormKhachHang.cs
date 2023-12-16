@@ -127,6 +127,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                     khachHangController.Delete(kh.Ma);
                     khachHangController.SelectAll();
                     dgvKH.DataSource = khachHangController.DataSource;
+                    Refresh();
                 }
                 return;
             }
@@ -187,6 +188,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 khachHangController.Update(kh);
                 khachHangController.SelectAll();
                 dgvKH.DataSource = khachHangController.DataSource;
+                Refresh();
             }
             return;
         }
@@ -226,10 +228,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
             txtMa.Text = randomStringGenerator.GenerateRandomAlphanumericString(10);
             txtxHoTen.Text = string.Empty;
-                txtSDT.Text = string.Empty;
-                txtDTL.Text = string.Empty;
-                khachHangController.SelectAll();
-                dgvKH.DataSource = khachHangController.DataSource;
+            txtSDT.Text = string.Empty;
+            txtDTL.Text = string.Empty;
+            khachHangController.SelectAll();
+            dgvKH.DataSource = khachHangController.DataSource;
             buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
     }

@@ -12,7 +12,7 @@ CREATE PROCEDURE sp_chitietcc_select_one
 	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from chitietcc where  MANCC = @MANCC and MASP=@MASP --  chính xác mã 100%
+	SELECT * from chitietcc  --  chính xác mã 100%
 END
 GO
 

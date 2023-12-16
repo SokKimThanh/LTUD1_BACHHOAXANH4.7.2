@@ -16,7 +16,7 @@ namespace LTUD1_BACHHOAXANH472
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvTaiKhoan);
             //DataGridViewHelper.ConfigureDataGridView(dgvQuyenTruyCap);
-            
+
         }
 
 
@@ -130,6 +130,11 @@ namespace LTUD1_BACHHOAXANH472
 
 
         private void FormTaiKhoan_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

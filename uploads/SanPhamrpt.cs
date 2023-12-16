@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rp_nhanvien_nvtheophongban : ReportClass {
+    public class SanPhamrpt : ReportClass {
         
-        public rp_nhanvien_nvtheophongban() {
+        public SanPhamrpt() {
         }
         
         public override string ResourceName {
             get {
-                return "rp_nhanvien_nvtheophongban.rpt";
+                return "SanPhamrpt.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_nvtheophongban.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.SanPhamrpt.rpt";
             }
             set {
                 // Do nothing
@@ -90,25 +90,17 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MaChiNhanh {
+        public CrystalDecisions.Shared.IParameterField Parameter_TenSP {
             get {
                 return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MaPhongBan {
-            get {
-                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrp_nhanvien_nvtheophongban : Component, ICachedReport {
+    public class CachedSanPhamrpt : Component, ICachedReport {
         
-        public Cachedrp_nhanvien_nvtheophongban() {
+        public CachedSanPhamrpt() {
         }
         
         [Browsable(false)]
@@ -145,7 +137,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rp_nhanvien_nvtheophongban rpt = new rp_nhanvien_nvtheophongban();
+            SanPhamrpt rpt = new SanPhamrpt();
             rpt.Site = this.Site;
             return rpt;
         }
