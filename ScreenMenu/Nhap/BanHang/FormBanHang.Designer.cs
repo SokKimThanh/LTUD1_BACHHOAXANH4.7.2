@@ -124,11 +124,11 @@
             // 
             this.tpManHinhBanHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(40)))), ((int)(((byte)(10)))));
             this.tpManHinhBanHang.Controls.Add(this.tlpManHinhBanHang);
-            this.tpManHinhBanHang.Location = new System.Drawing.Point(4, 26);
+            this.tpManHinhBanHang.Location = new System.Drawing.Point(4, 37);
             this.tpManHinhBanHang.Margin = new System.Windows.Forms.Padding(0);
             this.tpManHinhBanHang.Name = "tpManHinhBanHang";
             this.tpManHinhBanHang.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpManHinhBanHang.Size = new System.Drawing.Size(1292, 738);
+            this.tpManHinhBanHang.Size = new System.Drawing.Size(1292, 727);
             this.tpManHinhBanHang.TabIndex = 0;
             this.tpManHinhBanHang.Text = "Màn hình bán hàng";
             // 
@@ -165,7 +165,7 @@
             this.tlpManHinhBanHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpManHinhBanHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpManHinhBanHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpManHinhBanHang.Size = new System.Drawing.Size(1286, 734);
+            this.tlpManHinhBanHang.Size = new System.Drawing.Size(1286, 723);
             this.tlpManHinhBanHang.TabIndex = 1;
             // 
             // tlpThongTinDangNhap
@@ -478,7 +478,7 @@
             this.cboLoaiSanPham.Location = new System.Drawing.Point(237, 42);
             this.cboLoaiSanPham.Margin = new System.Windows.Forms.Padding(1);
             this.cboLoaiSanPham.Name = "cboLoaiSanPham";
-            this.cboLoaiSanPham.Size = new System.Drawing.Size(196, 40);
+            this.cboLoaiSanPham.Size = new System.Drawing.Size(196, 56);
             this.cboLoaiSanPham.TabIndex = 7;
             // 
             // cboNhaCungCap
@@ -490,7 +490,7 @@
             this.cboNhaCungCap.Location = new System.Drawing.Point(434, 41);
             this.cboNhaCungCap.Margin = new System.Windows.Forms.Padding(0);
             this.cboNhaCungCap.Name = "cboNhaCungCap";
-            this.cboNhaCungCap.Size = new System.Drawing.Size(201, 40);
+            this.cboNhaCungCap.Size = new System.Drawing.Size(201, 56);
             this.cboNhaCungCap.TabIndex = 8;
             // 
             // btnRefresh
@@ -556,7 +556,8 @@
             this.dgvThongTinHoaDon.Location = new System.Drawing.Point(4, 320);
             this.dgvThongTinHoaDon.Margin = new System.Windows.Forms.Padding(4, 0, 0, 4);
             this.dgvThongTinHoaDon.Name = "dgvThongTinHoaDon";
-            this.dgvThongTinHoaDon.Size = new System.Drawing.Size(639, 246);
+            this.dgvThongTinHoaDon.RowHeadersWidth = 62;
+            this.dgvThongTinHoaDon.Size = new System.Drawing.Size(639, 235);
             this.dgvThongTinHoaDon.TabIndex = 8;
             this.dgvThongTinHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinHoaDon_CellContentClick);
             // 
@@ -564,6 +565,7 @@
             // 
             this.MASP.FillWeight = 1F;
             this.MASP.HeaderText = "MASP";
+            this.MASP.MinimumWidth = 8;
             this.MASP.Name = "MASP";
             // 
             // TenSP
@@ -571,30 +573,35 @@
             this.TenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.TenSP.FillWeight = 112.6024F;
             this.TenSP.HeaderText = "Tên Sản Phẩm";
+            this.TenSP.MinimumWidth = 8;
             this.TenSP.Name = "TenSP";
             // 
             // DonGia
             // 
             this.DonGia.FillWeight = 112.6024F;
             this.DonGia.HeaderText = "Đơn giá";
+            this.DonGia.MinimumWidth = 8;
             this.DonGia.Name = "DonGia";
             // 
             // KM
             // 
             this.KM.FillWeight = 112.6024F;
             this.KM.HeaderText = "Khuyến Mãi";
+            this.KM.MinimumWidth = 8;
             this.KM.Name = "KM";
             // 
             // SL
             // 
             this.SL.FillWeight = 112.6024F;
             this.SL.HeaderText = "Số Lượng";
+            this.SL.MinimumWidth = 8;
             this.SL.Name = "SL";
             // 
             // ThanhTien
             // 
             this.ThanhTien.FillWeight = 112.6024F;
             this.ThanhTien.HeaderText = "Tổng";
+            this.ThanhTien.MinimumWidth = 8;
             this.ThanhTien.Name = "ThanhTien";
             // 
             // BtnTangSL
@@ -611,6 +618,7 @@
             this.BtnTangSL.FillWeight = 87.73023F;
             this.BtnTangSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTangSL.HeaderText = "+";
+            this.BtnTangSL.MinimumWidth = 8;
             this.BtnTangSL.Name = "BtnTangSL";
             this.BtnTangSL.Text = "Tăng";
             this.BtnTangSL.ToolTipText = "Tăng số lượng sản phẩm mua";
@@ -630,6 +638,7 @@
             this.btnGiamSL.FillWeight = 85.27919F;
             this.btnGiamSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiamSL.HeaderText = "-";
+            this.btnGiamSL.MinimumWidth = 8;
             this.btnGiamSL.Name = "btnGiamSL";
             this.btnGiamSL.Text = "Giảm";
             this.btnGiamSL.ToolTipText = "Giảm số lượng sản phẩm mua";
@@ -646,7 +655,7 @@
             this.pnDanhSachSanPham.Margin = new System.Windows.Forms.Padding(4, 0, 0, 4);
             this.pnDanhSachSanPham.Name = "pnDanhSachSanPham";
             this.tlpManHinhBanHang.SetRowSpan(this.pnDanhSachSanPham, 2);
-            this.pnDanhSachSanPham.Size = new System.Drawing.Size(639, 410);
+            this.pnDanhSachSanPham.Size = new System.Drawing.Size(639, 399);
             this.pnDanhSachSanPham.TabIndex = 9;
             // 
             // dgvDanhSachSanPham
@@ -663,7 +672,8 @@
             this.dgvDanhSachSanPham.Location = new System.Drawing.Point(0, 0);
             this.dgvDanhSachSanPham.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.dgvDanhSachSanPham.Name = "dgvDanhSachSanPham";
-            this.dgvDanhSachSanPham.Size = new System.Drawing.Size(637, 408);
+            this.dgvDanhSachSanPham.RowHeadersWidth = 62;
+            this.dgvDanhSachSanPham.Size = new System.Drawing.Size(637, 397);
             this.dgvDanhSachSanPham.TabIndex = 9;
             this.dgvDanhSachSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSanPham_CellContentClick);
             // 
@@ -776,7 +786,7 @@
             this.tlpNhapTTHD.Controls.Add(this.btnThanhToan, 1, 3);
             this.tlpNhapTTHD.Controls.Add(this.btnHuyThanhToan, 2, 3);
             this.tlpNhapTTHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNhapTTHD.Location = new System.Drawing.Point(0, 570);
+            this.tlpNhapTTHD.Location = new System.Drawing.Point(0, 559);
             this.tlpNhapTTHD.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.tlpNhapTTHD.Name = "tlpNhapTTHD";
             this.tlpNhapTTHD.RowCount = 4;
@@ -1062,7 +1072,7 @@
             // 
             // FormBanHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
