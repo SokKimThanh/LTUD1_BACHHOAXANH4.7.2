@@ -386,6 +386,7 @@
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\chitietcc.cs" />
+    <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\ChiTietNCCController.cs" />
     <Compile Include="ScreenMenu\Nhap\NhanVien\rp_nhanvien_select_all.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -542,6 +543,12 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\SanPham\SanPham.cs" />
     <Compile Include="ScreenMenu\Nhap\SanPham\SanPhamController.cs" />
+    <Compile Include="uploads\SanPhamrpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SanPhamrpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -620,6 +627,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\SanPham\FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uploads\SanPhamrpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SanPhamrpt.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -748,6 +759,7 @@
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_one.sql" />
+    <Content Include="ScreenMenu\Nhap\SanPham\sp_SanPham_TimTenSanPham.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_update.sql" />
     <Content Include="SQLBienBan\huongdancombinedsql.txt" />
     <Content Include="SQLBienBan\PROJECT_SQL_BHX.sql" />
