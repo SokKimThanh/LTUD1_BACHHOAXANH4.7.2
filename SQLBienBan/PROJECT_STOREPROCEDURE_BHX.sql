@@ -1477,7 +1477,8 @@ go
 CREATE PROCEDURE sp_chitietcc_select_all
 AS
 BEGIN
-	SELECT qtc.maqtc as ID, qtc.TENQTC as 'Tên quyền truy cập' FROM quyentruycap qtc
+	select ncc.TENNCC,sp.TENSP,ct.SLCUNGCCAP  from chitietcc ct, nhacungcap ncc, sanpham sp
+	where ct.MANCC = ncc.MANCC and ct.MASP = sp.MASP
 END
 GO
  
@@ -1495,7 +1496,7 @@ CREATE PROCEDURE sp_chitietcc_select_one
 	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from quyentruycap where TENQTC = @TENQTC --  chính xác mã 100%
+	SELECT * from chitietcc  --  chính xác mã 100%
 END
 GO
 

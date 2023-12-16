@@ -215,7 +215,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            /*            OpenChildForm(new FormBanHang());*/
+/*            OpenChildForm(new FormBanHang());*/
         }
         /**
        * reset click all button

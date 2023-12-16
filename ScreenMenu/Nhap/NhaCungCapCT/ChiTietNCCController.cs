@@ -22,7 +22,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT
 
         public override object FromDataRow(DataRow row)
         {
-            NhaCCCT o  = new NhaCCCT();
+            NhaCCCT o = new NhaCCCT();
             o.MaNCC = row.Field<string>("MANCC");
             o.MaSP = row.Field<string>("MASP");
             o.SoLuong = 0;
@@ -81,7 +81,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT
                 Adapter.Fill(DataSource);
 
                 CloseConnection();
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
