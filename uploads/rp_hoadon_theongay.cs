@@ -16,9 +16,9 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rp_hoadon_theongay1 : ReportClass {
+    public class rp_hoadon_theongay : ReportClass {
         
-        public rp_hoadon_theongay1() {
+        public rp_hoadon_theongay() {
         }
         
         public override string ResourceName {
@@ -98,9 +98,9 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrp_hoadon_theongay1 : Component, ICachedReport {
+    public class Cachedrp_hoadon_theongay : Component, ICachedReport {
         
-        public Cachedrp_hoadon_theongay1() {
+        public Cachedrp_hoadon_theongay() {
         }
         
         [Browsable(false)]
