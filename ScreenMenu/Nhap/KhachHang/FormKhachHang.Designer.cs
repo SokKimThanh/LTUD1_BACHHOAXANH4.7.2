@@ -496,6 +496,11 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.crystalReportViewer1.ToolPanelWidth = 180;
             this.crystalReportViewer1.UseWaitCursor = true;
             // 
+            // khachhangreport1
+            // 
+            this.khachhangreport1.FileName = "rassdk://C:\\Users\\congq\\AppData\\Local\\Temp\\temp_93a80b5b-2803-4d0d-bfa3-71de74881" +
+    "938.rpt";
+            // 
             // FormKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

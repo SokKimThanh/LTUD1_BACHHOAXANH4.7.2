@@ -127,6 +127,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                     khachHangController.Delete(kh.Ma);
                     khachHangController.SelectAll();
                     dgvKH.DataSource = khachHangController.DataSource;
+                    Refresh();
                 }
                 return;
             }
@@ -187,6 +188,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 khachHangController.Update(kh);
                 khachHangController.SelectAll();
                 dgvKH.DataSource = khachHangController.DataSource;
+                Refresh();
             }
             return;
         }
