@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
@@ -89,7 +87,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -229,6 +227,79 @@ namespace LTUD1_BACHHOAXANH472
                 HanSD = row.Field<DateTime>("hsd"),
             };
             return o;
+        }
+
+        internal DataTable PhanTrang(int currentPage, int pageSize, string searchTerm, string loaiSanPham, string nhaCungCap)
+        {
+            try
+            {
+                // Mở kết nối
+                SqlConnection conn = OpenConnection();
+
+                // Tạo một đối tượng DataTable để lưu trữ dữ liệu
+                DataTable table = new DataTable();
+
+                // Tạo một đối tượng SqlCommand
+                Sql = new SqlCommand("sp_sanpham_phantrang", conn);
+                Sql.CommandType = CommandType.StoredProcedure;
+
+
+                // Thêm tham số vào SqlCommand
+                //Sql.Parameters.Add("@searchTerm", SqlDbType.NVarChar).Value = searchTerm ?? (object)DBNull.Value;
+                //Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
+                //Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
+                searchTerm = searchTerm ?? null;
+                loaiSanPham = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
+                Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
+                Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
+
+                Sql.Parameters.AddWithValue("@currPage", currentPage);
+                Sql.Parameters.AddWithValue("@recodperpage", pageSize);
+
+                // Tạo một đối tượng SqlDataAdapter
+                Adapter = new SqlDataAdapter(Sql);
+
+                // Đổ dữ liệu vào DataTable
+                Adapter.Fill(table);
+
+                // Đóng kết nối
+                CloseConnection();
+
+                // Trả về DataTable
+                return table;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("PhanTrang" + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+        public int GetRowCount()
+        {
+            int count = 0;
+            try
+            {
+                SqlConnection conn = OpenConnection();
+                SqlCommand cmd = new SqlCommand($"SELECT COUNT(*) FROM sanpham", conn);
+                count = (int)cmd.ExecuteScalar();
+
+                //đóng kết nối
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("GetRowCount" + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return count;
         }
     }
 }

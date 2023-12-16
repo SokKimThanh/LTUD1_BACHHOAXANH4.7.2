@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
@@ -489,12 +490,12 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 67);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.PrintMode = CrystalDecisions.Windows.Forms.PrintMode.PrintOutputController;
-            this.crystalReportViewer1.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH4.7.2\\uploads\\khachhangreport.rpt";
             this.crystalReportViewer1.Size = new System.Drawing.Size(850, 249);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.ToolPanelWidth = 180;
             this.crystalReportViewer1.UseWaitCursor = true;
+
             // 
             // FormKhachHang
             // 

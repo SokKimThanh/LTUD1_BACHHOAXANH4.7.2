@@ -35,10 +35,11 @@ namespace LTUD1_BACHHOAXANH472.controller
             {
                 MessageBox.Show(ex.Message);
             }
-            finally {
+            finally
+            {
                 CloseConnection();
             }
-           
+
         }
 
         public override object FromDataRow(DataRow row)
@@ -110,7 +111,7 @@ namespace LTUD1_BACHHOAXANH472.controller
             }
             catch (Exception ex)
             {
-               MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {

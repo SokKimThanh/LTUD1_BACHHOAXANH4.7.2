@@ -37,18 +37,19 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSetting = new System.Windows.Forms.Button();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.tlpNavigationBar = new System.Windows.Forms.TableLayoutPanel();
-            this.btnNhaCCCT = new System.Windows.Forms.Button();
-            this.btnPhongBan = new System.Windows.Forms.Button();
+            this.btnBanHang = new System.Windows.Forms.Button();
+            this.btnNhanVien = new System.Windows.Forms.Button();
             this.btnHinhThucKM = new System.Windows.Forms.Button();
             this.btnDanhMucSP = new System.Windows.Forms.Button();
             this.btnChiTietHD = new System.Windows.Forms.Button();
-            this.btnDiaDiem = new System.Windows.Forms.Button();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnNhaCungCap = new System.Windows.Forms.Button();
+            this.btnNhaCCCT = new System.Windows.Forms.Button();
             this.btnKhuyenMai = new System.Windows.Forms.Button();
             this.btnHoaDon = new System.Windows.Forms.Button();
             this.btnSanPham = new System.Windows.Forms.Button();
-            this.btnNhanVien = new System.Windows.Forms.Button();
+            this.btnChiNhanh = new System.Windows.Forms.Button();
+            this.btnPhongBan = new System.Windows.Forms.Button();
             this.panelHeader = new System.Windows.Forms.Panel();
             this.tlpHeader = new System.Windows.Forms.TableLayoutPanel();
             this.btnDangNhap = new System.Windows.Forms.Button();
@@ -59,7 +60,7 @@ namespace LTUD1_BACHHOAXANH472
             this.currentChangeTitle = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.tlpMenu = new System.Windows.Forms.TableLayoutPanel();
-            this.btnHome = new System.Windows.Forms.PictureBox();
+            this.btnTrangChu = new System.Windows.Forms.PictureBox();
             this.btnMenu = new System.Windows.Forms.Button();
             this.tlpExit = new System.Windows.Forms.TableLayoutPanel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -83,7 +84,7 @@ namespace LTUD1_BACHHOAXANH472
             this.cmsLogOut.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.tlpMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTrangChu)).BeginInit();
             this.tlpExit.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconChildForm)).BeginInit();
@@ -141,43 +142,44 @@ namespace LTUD1_BACHHOAXANH472
             // 
             resources.ApplyResources(this.tlpNavigationBar, "tlpNavigationBar");
             this.tlpNavigationBar.BackColor = System.Drawing.Color.Transparent;
-            this.tlpNavigationBar.Controls.Add(this.btnNhaCCCT, 0, 11);
-            this.tlpNavigationBar.Controls.Add(this.btnPhongBan, 0, 10);
+            this.tlpNavigationBar.Controls.Add(this.btnBanHang, 0, 0);
+            this.tlpNavigationBar.Controls.Add(this.btnNhanVien, 0, 1);
             this.tlpNavigationBar.Controls.Add(this.btnHinhThucKM, 0, 9);
             this.tlpNavigationBar.Controls.Add(this.btnDanhMucSP, 0, 8);
             this.tlpNavigationBar.Controls.Add(this.btnChiTietHD, 0, 7);
-            this.tlpNavigationBar.Controls.Add(this.btnDiaDiem, 0, 1);
             this.tlpNavigationBar.Controls.Add(this.btnKhachHang, 0, 6);
             this.tlpNavigationBar.Controls.Add(this.btnNhaCungCap, 0, 5);
+            this.tlpNavigationBar.Controls.Add(this.btnNhaCCCT, 0, 11);
             this.tlpNavigationBar.Controls.Add(this.btnKhuyenMai, 0, 4);
             this.tlpNavigationBar.Controls.Add(this.btnHoaDon, 0, 3);
             this.tlpNavigationBar.Controls.Add(this.btnSanPham, 0, 2);
-            this.tlpNavigationBar.Controls.Add(this.btnNhanVien, 0, 0);
+            this.tlpNavigationBar.Controls.Add(this.btnChiNhanh, 0, 12);
+            this.tlpNavigationBar.Controls.Add(this.btnPhongBan, 0, 10);
             this.tlpNavigationBar.Name = "tlpNavigationBar";
             // 
-            // btnNhaCCCT
+            // btnBanHang
             // 
-            resources.ApplyResources(this.btnNhaCCCT, "btnNhaCCCT");
-            this.btnNhaCCCT.FlatAppearance.BorderSize = 0;
-            this.btnNhaCCCT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
-            this.btnNhaCCCT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNhaCCCT.ForeColor = System.Drawing.Color.White;
-            this.btnNhaCCCT.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.nhacungcapct;
-            this.btnNhaCCCT.Name = "btnNhaCCCT";
-            this.btnNhaCCCT.UseVisualStyleBackColor = true;
-            this.btnNhaCCCT.Click += new System.EventHandler(this.btnNhaCCCT_Click);
+            resources.ApplyResources(this.btnBanHang, "btnBanHang");
+            this.btnBanHang.FlatAppearance.BorderSize = 0;
+            this.btnBanHang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            this.btnBanHang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnBanHang.ForeColor = System.Drawing.Color.White;
+            this.btnBanHang.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_banhang;
+            this.btnBanHang.Name = "btnBanHang";
+            this.btnBanHang.UseVisualStyleBackColor = true;
+            this.btnBanHang.Click += new System.EventHandler(this.btnBanHang_Click);
             // 
-            // btnPhongBan
+            // btnNhanVien
             // 
-            resources.ApplyResources(this.btnPhongBan, "btnPhongBan");
-            this.btnPhongBan.FlatAppearance.BorderSize = 0;
-            this.btnPhongBan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
-            this.btnPhongBan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPhongBan.ForeColor = System.Drawing.Color.White;
-            this.btnPhongBan.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.phongban;
-            this.btnPhongBan.Name = "btnPhongBan";
-            this.btnPhongBan.UseVisualStyleBackColor = true;
-            this.btnPhongBan.Click += new System.EventHandler(this.btnPhongBan_Click);
+            resources.ApplyResources(this.btnNhanVien, "btnNhanVien");
+            this.btnNhanVien.FlatAppearance.BorderSize = 0;
+            this.btnNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            this.btnNhanVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNhanVien.ForeColor = System.Drawing.Color.White;
+            this.btnNhanVien.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_nhanvien;
+            this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.UseVisualStyleBackColor = true;
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btnHinhThucKM
             // 
@@ -215,18 +217,6 @@ namespace LTUD1_BACHHOAXANH472
             this.btnChiTietHD.UseVisualStyleBackColor = true;
             this.btnChiTietHD.Click += new System.EventHandler(this.btnChiTietHD_Click);
             // 
-            // btnDiaDiem
-            // 
-            resources.ApplyResources(this.btnDiaDiem, "btnDiaDiem");
-            this.btnDiaDiem.FlatAppearance.BorderSize = 0;
-            this.btnDiaDiem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
-            this.btnDiaDiem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDiaDiem.ForeColor = System.Drawing.Color.White;
-            this.btnDiaDiem.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_diadiem;
-            this.btnDiaDiem.Name = "btnDiaDiem";
-            this.btnDiaDiem.UseVisualStyleBackColor = true;
-            this.btnDiaDiem.Click += new System.EventHandler(this.btnDiaDiem_Click);
-            // 
             // btnKhachHang
             // 
             resources.ApplyResources(this.btnKhachHang, "btnKhachHang");
@@ -250,6 +240,18 @@ namespace LTUD1_BACHHOAXANH472
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.UseVisualStyleBackColor = true;
             this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
+            // 
+            // btnNhaCCCT
+            // 
+            resources.ApplyResources(this.btnNhaCCCT, "btnNhaCCCT");
+            this.btnNhaCCCT.FlatAppearance.BorderSize = 0;
+            this.btnNhaCCCT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            this.btnNhaCCCT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNhaCCCT.ForeColor = System.Drawing.Color.White;
+            this.btnNhaCCCT.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.nhacungcapct;
+            this.btnNhaCCCT.Name = "btnNhaCCCT";
+            this.btnNhaCCCT.UseVisualStyleBackColor = true;
+            this.btnNhaCCCT.Click += new System.EventHandler(this.btnNhaCCCT_Click);
             // 
             // btnKhuyenMai
             // 
@@ -287,17 +289,28 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSanPham.UseVisualStyleBackColor = true;
             this.btnSanPham.Click += new System.EventHandler(this.btnSanPham_Click);
             // 
-            // btnNhanVien
+            // btnChiNhanh
             // 
-            resources.ApplyResources(this.btnNhanVien, "btnNhanVien");
-            this.btnNhanVien.FlatAppearance.BorderSize = 0;
-            this.btnNhanVien.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
-            this.btnNhanVien.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnNhanVien.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_nhanvien;
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.UseVisualStyleBackColor = true;
-            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
+            resources.ApplyResources(this.btnChiNhanh, "btnChiNhanh");
+            this.btnChiNhanh.FlatAppearance.BorderSize = 0;
+            this.btnChiNhanh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            this.btnChiNhanh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChiNhanh.ForeColor = System.Drawing.Color.White;
+            this.btnChiNhanh.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_diadiem;
+            this.btnChiNhanh.Name = "btnChiNhanh";
+            this.btnChiNhanh.UseVisualStyleBackColor = true;
+            // 
+            // btnPhongBan
+            // 
+            resources.ApplyResources(this.btnPhongBan, "btnPhongBan");
+            this.btnPhongBan.FlatAppearance.BorderSize = 0;
+            this.btnPhongBan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            this.btnPhongBan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPhongBan.ForeColor = System.Drawing.Color.White;
+            this.btnPhongBan.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.phongban;
+            this.btnPhongBan.Name = "btnPhongBan";
+            this.btnPhongBan.UseVisualStyleBackColor = true;
+            this.btnPhongBan.Click += new System.EventHandler(this.btnPhongBan_Click);
             // 
             // panelHeader
             // 
@@ -375,19 +388,19 @@ namespace LTUD1_BACHHOAXANH472
             // tlpMenu
             // 
             resources.ApplyResources(this.tlpMenu, "tlpMenu");
-            this.tlpMenu.Controls.Add(this.btnHome, 0, 0);
+            this.tlpMenu.Controls.Add(this.btnTrangChu, 0, 0);
             this.tlpMenu.Controls.Add(this.btnMenu, 0, 0);
             this.tlpMenu.Name = "tlpMenu";
             // 
-            // btnHome
+            // btnTrangChu
             // 
-            this.btnHome.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btnHome, "btnHome");
-            this.btnHome.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
-            this.btnHome.InitialImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
-            this.btnHome.Name = "btnHome";
-            this.btnHome.TabStop = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnTrangChu.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.btnTrangChu, "btnTrangChu");
+            this.btnTrangChu.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
+            this.btnTrangChu.InitialImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
+            this.btnTrangChu.Name = "btnTrangChu";
+            this.btnTrangChu.TabStop = false;
+            this.btnTrangChu.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnMenu
             // 
@@ -532,7 +545,7 @@ namespace LTUD1_BACHHOAXANH472
             this.cmsLogOut.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.tlpMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTrangChu)).EndInit();
             this.tlpExit.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconChildForm)).EndInit();
@@ -562,7 +575,6 @@ namespace LTUD1_BACHHOAXANH472
         private Panel panel6;
         private TableLayoutPanel tlpNavigationBar;
         private Button btnNhanVien;
-        private Button btnDiaDiem;
         private Button btnKhachHang;
         private Button btnNhaCungCap;
         private Button btnKhuyenMai;
@@ -576,7 +588,7 @@ namespace LTUD1_BACHHOAXANH472
         private Label currentChangeTitle;
         private Panel panelMenu;
         private TableLayoutPanel tlpMenu;
-        private PictureBox btnHome;
+        private PictureBox btnTrangChu;
         private Button btnMenu;
         private ContextMenuStrip cmsLogOut;
         private ToolStripMenuItem đăngXuấtToolStripMenuItem;
@@ -585,8 +597,10 @@ namespace LTUD1_BACHHOAXANH472
         private Label lblExit;
         private Button btnChiTietHD;
         private Button btnDanhMucSP;
-        private Button btnNhaCCCT;
         private Button btnPhongBan;
         private Button btnHinhThucKM;
+        private Button btnChiNhanh;
+        private Button btnNhaCCCT;
+        private Button btnBanHang;
     }
 }
