@@ -6,7 +6,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan
     {
         string maqtc;
         string tenqtc;
+        public QuyenTruyCap()
+        {
 
+        }
         public QuyenTruyCap(string maqtc, string tenqtc)
         {
             if (string.IsNullOrEmpty(maqtc) || maqtc.Length > 11)
