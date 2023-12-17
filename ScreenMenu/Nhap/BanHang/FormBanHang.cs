@@ -1,5 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.controller;
-using LTUD1_BACHHOAXANH472.Model;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
@@ -9,7 +8,7 @@ namespace LTUD1_BACHHOAXANH472
         private int currentPage = 1;
         private int pageSize = 4;
         private int pageCount = 0;
-        PBanHangController banhangController;
+        PBanHangController banhangController = new PBanHangController();
         PhanTrangSanPham phantrang;
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
@@ -23,9 +22,9 @@ namespace LTUD1_BACHHOAXANH472
             cboPageSize.DropDownStyle = ComboBoxStyle.DropDownList;
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
-            //DataGridViewHelper.ChangeHeaderNameDanhThongTinHoaDon(dgvThongTinHoaDon);
-            //DataGridViewHelper.ChangeHeaderNameDanhSachSanPham(dgvDanhSachSanPham);
-            DataGridViewHelper.TaoCotAddToCart(dgvDanhSachSanPham);
+            DataGridViewHelper.ChangeHeaderNameDanhThongTinHoaDon(dgvThongTinHoaDon);
+            DataGridViewHelper.ChangeHeaderNameDanhSachSanPham(dgvDanhSachSanPham);
+            DataGridViewHelper.TaoCotThemGioHang(dgvDanhSachSanPham);
 
 
         }
@@ -62,7 +61,12 @@ namespace LTUD1_BACHHOAXANH472
             //--.................            sản phẩm giỏ hàng            ..................
             //==============================================================================
             //khởi tạo banhang controller điều khiển luồng dữ liệu trên form bán hàng
-            banhangController = new PBanHangController(dgvThongTinHoaDon, dgvDanhSachSanPham);
+            banhangController.TxtSDTKhachHang = txtSDT;
+            banhangController.TxtMaHoaDon = txtMaHoaDon;
+            banhangController.TxtTenKhachHang = txtTenKhachHang;
+            banhangController.TxtSoLuongMua = txtSoLuongMua;
+            banhangController.DgvDanhSachSanPham = dgvDanhSachSanPham;
+            banhangController.DgvThongTinHoaDon = dgvThongTinHoaDon;
 
             //==============================================================================
             //--..........................................................................--
@@ -82,6 +86,11 @@ namespace LTUD1_BACHHOAXANH472
             txtSoLuongMua.Text = "0";
 
         }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------.       Sự kiện chọn tiêu chí tìm kiếm     .----------------
+        //--.................             nhà  cung cấp             ..................--
+        //==============================================================================
         private void cboNhaCungCap_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboNhaCungCap.SelectedItem.ToString() == "Tất cả")
@@ -203,7 +212,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
+            banhangController.btnThanhToan_Click(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -212,6 +221,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void dgvThongTinHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            banhangController.dgvThongTinHoaDon_CellContentClick(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -220,6 +230,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            banhangController.dgvDanhSachSanPham_CellContentClick(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -228,17 +239,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
-            // Xác nhận trước khi xóa
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                // Xóa tất cả các dòng trong dgvThongTinHoaDon
-                dgvThongTinHoaDon.Rows.Clear();
-                txtTenKhachHang.Text = "";
-                txtSDT.Text = "";
-                lblTongTien.Text = "";
-                txtSoLuongMua.Text = "";
-            }
+            banhangController.btnThanhToan_Click(sender, e);
         }
 
 

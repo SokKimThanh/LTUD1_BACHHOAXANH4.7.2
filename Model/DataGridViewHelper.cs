@@ -47,12 +47,12 @@ public static class DataGridViewHelper
         dgvDanhSachSanPham.Columns[10].HeaderText = "Mã KM";
     }
 
-    public static void TaoCotAddToCart(DataGridView dgvDanhSachSanPham)
+    public static void TaoCotThemGioHang(DataGridView dgvDanhSachSanPham)
     {
-        DataGridViewButtonColumn colAddToCast = new DataGridViewButtonColumn();
-        colAddToCast.Name = "btnAddToCast";
-        colAddToCast.HeaderText = "Giỏ hàng";
-        dgvDanhSachSanPham.Columns.Insert(dgvDanhSachSanPham.Rows.Count, colAddToCast);
+        DataGridViewButtonColumn colThemGioHang = new DataGridViewButtonColumn();
+        colThemGioHang.Name = "btnThemGioHang";
+        colThemGioHang.HeaderText = "Giỏ hàng";
+        dgvDanhSachSanPham.Columns.Insert(dgvDanhSachSanPham.Rows.Count, colThemGioHang);
         ErrColors color = new ErrColors();
         foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
         {
