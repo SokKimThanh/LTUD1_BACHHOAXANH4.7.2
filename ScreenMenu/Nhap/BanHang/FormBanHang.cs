@@ -1,5 +1,6 @@
 ﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -8,12 +9,18 @@ namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormBanHang : Form
     {
+
         private BindingSource bindingSource1 = new BindingSource();
         private int currentPage = 1;
         private int pageSize = 4;
         private int pageCount = 0;
-
         private PictureBox currentPictureBox;
+
+        BanHangController banghangController = new BanHangController();
+
+        PhanTrangSanPham phantrang;
+        RandomStringGenerator rnd = new RandomStringGenerator();
+
         ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
         HoaDonController hoadonController = new HoaDonController(Utils.ConnectionString);
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
@@ -22,19 +29,21 @@ namespace LTUD1_BACHHOAXANH472
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
         ChiTietHoaDonController cchtController = new ChiTietHoaDonController(Utils.ConnectionString);
         HoaDonController hoaDonController = new HoaDonController(Utils.ConnectionString);
-        RandomStringGenerator rnd = new RandomStringGenerator();
 
         public FormBanHang()
         {
             InitializeComponent();
+            phantrang = new PhanTrangSanPham(bindingSource1, currentPage, pageSize, pageCount);
+
+
             // Vô hiệu hóa sự kiện CellValueChanged
 
             // tạo mã random cho mã hóa đơn
             txtMaHoaDon.Text = rnd.GenerateRandomAlphanumericString(11);
 
             // thêm dữ liệu vào datagridview sản phẩm
-            sanPhamController.SelectAll();
-            dgvDanhSachSanPham.DataSource = sanPhamController.DataSource;
+
+            dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham;
 
             // thêm dữ liệu vào loại sản phẩm 
             danhMucController.SelectAll();
@@ -212,16 +221,7 @@ namespace LTUD1_BACHHOAXANH472
 
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Lấy giá trị của hàng được nhấp vào
-            if (e.ColumnIndex == dgvDanhSachSanPham.Columns["btnAddToCast"].Index && e.RowIndex >= 0)
-            {
-                //Lấy dữ liệu dòng đó ra
-                DataGridViewRow selectedRow = dgvDanhSachSanPham.Rows[e.RowIndex];
-
-                //Thêm vào dgvThongTinHoaDon
-                dgvThongTinHoaDon.Rows.Add(MapDataRow(selectedRow));
-
-            }
+           
         }
 
         private void btnHuyThanhToan_Click(object sender, EventArgs e)
@@ -272,7 +272,7 @@ namespace LTUD1_BACHHOAXANH472
                 currentPictureBox.Width += 1;
                 currentPictureBox.Height += 1;
 
-                if (currentPictureBox.Width >= 32) // MAX_WIDTH là kích thước tối đa bạn muốn phóng to
+                if (currentPictureBox.Width >= 32) // MAX_WIDTH là kích thước tối đa phóng to
                 {
                     isZoomingIn = false;
                 }
@@ -282,140 +282,28 @@ namespace LTUD1_BACHHOAXANH472
                 currentPictureBox.Width -= 1;
                 currentPictureBox.Height -= 1;
 
-                if (currentPictureBox.Width <= 24) // MIN_WIDTH là kích thước tối thiểu bạn muốn thu nhỏ
+                if (currentPictureBox.Width <= 24) // MIN_WIDTH là kích thước tối thiểu thu nhỏ
                 {
                     isZoomingIn = true;
                 }
             }
-        }
-
-        private void lblTieuDeHoaDon_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        //Map datarow từ grid sản phẩm sang grid hóa đơn
-        private DataGridViewRow MapDataRow(DataGridViewRow rowDanhSachSanPham)
-        {
-            //Thêm 1 obj cho dgvThongTinHoaDon vì dữ các cột không đồng bộ
-
-            DataGridViewRow row = new DataGridViewRow();
-
-            //Tạo columns cho từng hàng
-            for (int i = 0; i < dgvThongTinHoaDon.Columns.Count - 2; i++)
-            {
-                row.Cells.Add(new DataGridViewTextBoxCell());
-            }
-            row.Cells[0].Value = rowDanhSachSanPham.Cells[1].Value;
-            row.Cells[1].Value = rowDanhSachSanPham.Cells[2].Value;
-            row.Cells[2].Value = rowDanhSachSanPham.Cells[3].Value;
-            row.Cells[3].Value = TinhToanKhuyenMai(rowDanhSachSanPham.Cells[5].Value.ToString());
-            row.Cells[4].Value = 0;
-            row.Cells[5].Value = 0;
-
-            row.Cells.Add(new DataGridViewButtonCell());
-            row.Cells[6].Value = "+";
-            row.Cells.Add(new DataGridViewButtonCell());
-            row.Cells[7].Value = "-";
-            return row;
-        }
-
-        private double TinhToanKhuyenMai(string maKM)
-        {
-            switch (maKM.Trim())
-            {
-                case "KM01":
-                    return 10;
-                case "KM02":
-                    return 20;
-                case "KM03":
-                    return 30;
-                default:
-                    return 1;
-            }
-        }
-
-        private int TinhSoLuongTonTheoMa(string maSP)
-        {
-            int soLuongTon = 0;
-            foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
-            {
-                if (maSP.Trim() == row.Cells[1].Value.ToString().Trim())
-                    soLuongTon += Convert.ToInt32(row.Cells[4].Value.ToString());
-            }
-            return soLuongTon;
-        }
-
-        private bool KiemTraLonHonTon(string maSP)
-        {
-            int soLuongTruocKhiThem = 0;
-            int soLuongTon = TinhSoLuongTonTheoMa(maSP);
-
-            foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
-            {
-                if (maSP.Trim() == row.Cells[0].Value.ToString().Trim())
-                {
-                    soLuongTruocKhiThem += Convert.ToInt32(row.Cells[4].Value.ToString().Trim());
-                }
-            }
-
-            if (soLuongTruocKhiThem < soLuongTon)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        private void SetTongTienVaTongSoLuong()
-        {
-            double sum = 0;
-            int tongSoluong = 0;
-            foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
-            {
-                tongSoluong += Convert.ToInt32(row.Cells[4].Value);
-                sum += Convert.ToDouble(row.Cells[5].Value);
-            }
-            txtSoLuongMua.Text = tongSoluong.ToString();
-            lblTongTien.Text = sum.ToString();
-        }
+        } 
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-                e.Handled = true;
+            TextHelper.HandleTextChange_PhoneNumber(sender);
         }
 
-        private void GetDataGridviewSanPham()
-        {
-            try
-            {
-                bindingSource1.DataSource = sanPhamController.PhanTrang(currentPage, pageSize, null, null, null);
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error");
-            }
-        }
+
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (currentPage < pageCount)
-            {
-                currentPage++;
-                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
-                GetDataGridviewSanPham();
-            }
+            phantrang.btnNext_Click(sender, e);
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            if (currentPage > 1)
-            {
-                currentPage--;
-                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
-                GetDataGridviewSanPham();
-            }
+            phantrang.btnPrevious_Click(sender, e);
         }
 
     }
