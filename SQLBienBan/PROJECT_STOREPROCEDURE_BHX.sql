@@ -240,35 +240,37 @@ exec sp_sanpham_giamgia_select_all 'HD01'
 -- Create Procedure sp_sanpham_phantrang.sql
 -- Author:		Sok Kim Thanh
 -- Create date: <16/12/2023>
-
+-- update date 17/12/2023
 drop procedure if exists sp_sanpham_phantrang
 go
 CREATE PROCEDURE sp_sanpham_phantrang
-    @loaiSanPham nvarchar(100) = NULL, -- loại sản phẩm
-    @nhaCungCap nvarchar(100) = NULL, -- nhà cung cấp
-    @searchTerm nvarchar(100) = NULL, -- từ khóa tìm kiếm 
-    @currPage int, -- trang hiện tại
-    @recodperpage int -- số dòng trên 1 trang
+    @loaiSanPham nvarchar(100) = NULL,
+    @nhaCungCap nvarchar(100) = NULL,
+    @searchTerm nvarchar(100) = NULL,
+    @currPage int,
+    @recodperpage int
 AS
 BEGIN 
-    -- lấy dữ liệu và chỉ số dòng (row) của nó
     WITH phantrang AS (
         SELECT ROW_NUMBER() OVER (ORDER BY sp.masp) AS STT
             ,sp.masp, sp.tensp, sp.donvi, sp.dongia
-            ,km.phantramgiamgia  as N'GiamGia'
-	        ,dongia * (100- km.phantramgiamgia)/100 as N'GiaBan'
+            ,km.phantramgiamgia  as GiamGia
+	        ,dongia * (100- km.phantramgiamgia)/100 as GiaBan
             ,sltonkho
-        FROM sanpham sp, khuyenmai km-- tên của bảng cần lấy dữ liệu
+        FROM sanpham sp
+        INNER JOIN khuyenmai km ON sp.MAKM = km.MAKM
         WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
         AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
         AND MANCC = ISNULL(@nhaCungCap, MANCC)
     )
-    -- lấy các dòng có chỉ số row phù hợp các các tiêu chí phân trang
-    SELECT * FROM phantrang WHERE STT BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage;
-END;
-go
-execute sp_sanpham_phantrang '','ncc01','',1, 4﻿
+    SELECT STT, masp, tensp, donvi, dongia, GiamGia, GiaBan, sltonkho
+    FROM phantrang 
+    WHERE STT BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage;
+END
 
+select * from LOAISP
+select * from nhacungcap
+execute sp_sanpham_phantrang 'l01','ncc02','a',1,16
 -- Create Procedure sp_danhmuc_delete.sql
 -- Danh mục delete
 -- Author:		Sok Kim Thanh
