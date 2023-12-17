@@ -86,7 +86,7 @@
             this.sotrang.TabIndex = 3;
             this.sotrang.Text = "Trang hiện tại";
             this.sotrang.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.sotrang.Click += new System.EventHandler(this.sotrang_Click);
+
             // 
             // tongsotrang
             // 
@@ -98,7 +98,6 @@
             this.tongsotrang.Size = new System.Drawing.Size(107, 20);
             this.tongsotrang.TabIndex = 3;
             this.tongsotrang.Text = "Tổng số trang";
-            this.tongsotrang.Click += new System.EventHandler(this.tongsotrang_Click);
             // 
             // txtTenSanPham
             // 

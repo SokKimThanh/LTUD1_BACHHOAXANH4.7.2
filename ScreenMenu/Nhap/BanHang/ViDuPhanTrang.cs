@@ -94,15 +94,5 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             pageCount = controller.GetRowCount() / pageSize; ;
             tongsotrang.Text = pageCount.ToString();
         }
-
-        private void tongsotrang_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sotrang_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

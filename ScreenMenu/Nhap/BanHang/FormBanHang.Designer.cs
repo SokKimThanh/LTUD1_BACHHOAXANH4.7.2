@@ -7,7 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using CrystalDecisions.Shared;
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+namespace LTUD1_BACHHOAXANH472
 {
     partial class FormBanHang
     {
@@ -93,10 +93,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             this.tieudedanhsachsangpham = new System.Windows.Forms.TableLayoutPanel();
             this.lblTieuDeDanhSaschSanPham = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tlpPhanTrang = new System.Windows.Forms.TableLayoutPanel();
+            this.btnNext = new System.Windows.Forms.PictureBox();
             this.lblTongSoTrang = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btnPrevious = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tcManHinhBanHang.SuspendLayout();
             this.tpManHinhBanHang.SuspendLayout();
@@ -113,9 +113,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             this.tlpNhapTTHD.SuspendLayout();
             this.tieudedanhsachsangpham.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.tlpPhanTrang.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).BeginInit();
             this.SuspendLayout();
             // 
             // tcManHinhBanHang
@@ -1008,7 +1008,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.panel2.Controls.Add(this.tableLayoutPanel1);
+            this.panel2.Controls.Add(this.tlpPhanTrang);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(484, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(0);
@@ -1016,39 +1016,39 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             this.panel2.Size = new System.Drawing.Size(153, 58);
             this.panel2.TabIndex = 6;
             // 
-            // tableLayoutPanel1
+            // tlpPhanTrang
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 24F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblTongSoTrang, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.24138F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.51724F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.24138F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(153, 58);
-            this.tableLayoutPanel1.TabIndex = 10;
+            this.tlpPhanTrang.ColumnCount = 3;
+            this.tlpPhanTrang.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpPhanTrang.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPhanTrang.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlpPhanTrang.Controls.Add(this.btnNext, 2, 1);
+            this.tlpPhanTrang.Controls.Add(this.lblTongSoTrang, 1, 1);
+            this.tlpPhanTrang.Controls.Add(this.btnPrevious, 0, 1);
+            this.tlpPhanTrang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpPhanTrang.Location = new System.Drawing.Point(0, 0);
+            this.tlpPhanTrang.Name = "tlpPhanTrang";
+            this.tlpPhanTrang.RowCount = 3;
+            this.tlpPhanTrang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+            this.tlpPhanTrang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpPhanTrang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+            this.tlpPhanTrang.Size = new System.Drawing.Size(153, 58);
+            this.tlpPhanTrang.TabIndex = 10;
             // 
-            // pictureBox1
+            // btnNext
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangright;
-            this.pictureBox1.InitialImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangright;
-            this.pictureBox1.Location = new System.Drawing.Point(129, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 38);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangright;
+            this.btnNext.InitialImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangright;
+            this.btnNext.Location = new System.Drawing.Point(121, 4);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(32, 50);
+            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnNext.TabIndex = 2;
+            this.btnNext.TabStop = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // lblTongSoTrang
             // 
@@ -1056,30 +1056,29 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             this.lblTongSoTrang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblTongSoTrang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTongSoTrang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.lblTongSoTrang.Location = new System.Drawing.Point(27, 10);
+            this.lblTongSoTrang.Location = new System.Drawing.Point(35, 4);
             this.lblTongSoTrang.Name = "lblTongSoTrang";
             this.lblTongSoTrang.Padding = new System.Windows.Forms.Padding(4);
-            this.lblTongSoTrang.Size = new System.Drawing.Size(99, 38);
+            this.lblTongSoTrang.Size = new System.Drawing.Size(83, 50);
             this.lblTongSoTrang.TabIndex = 1;
             this.lblTongSoTrang.Text = "1/40";
             this.lblTongSoTrang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTongSoTrang.Click += new System.EventHandler(this.lblTongSoTrang_Click);
             // 
-            // pictureBox2
+            // btnPrevious
             // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangleft;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 10);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.pictureBox2.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
-            this.pictureBox2.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
+            this.btnPrevious.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangleft;
+            this.btnPrevious.Location = new System.Drawing.Point(0, 4);
+            this.btnPrevious.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(32, 50);
+            this.btnPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnPrevious.TabIndex = 0;
+            this.btnPrevious.TabStop = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            this.btnPrevious.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            this.btnPrevious.MouseHover += new System.EventHandler(this.pictureBox2_MouseHover);
             // 
             // timer1
             // 
@@ -1129,10 +1128,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             this.tieudedanhsachsangpham.ResumeLayout(false);
             this.tieudedanhsachsangpham.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.tlpPhanTrang.ResumeLayout(false);
+            this.tlpPhanTrang.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1185,10 +1184,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         private System.Windows.Forms.Label lblTieuDeDanhSaschSanPham;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblTongSoTrang;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnPrevious;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tlpPhanTrang;
+        private System.Windows.Forms.PictureBox btnNext;
         private System.Windows.Forms.DataGridViewTextBoxColumn MASP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;

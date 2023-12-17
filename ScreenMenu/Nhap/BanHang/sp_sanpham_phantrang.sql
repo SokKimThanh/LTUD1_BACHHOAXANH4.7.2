@@ -15,7 +15,11 @@ AS
 BEGIN
     -- lấy dữ liệu và chỉ số dòng (row) của nó
     WITH phantrang AS (
-        SELECT ROW_NUMBER() OVER (ORDER BY masp) AS Row, masp, tensp, donvi, dongia, sltonkho
+        SELECT ROW_NUMBER() OVER (ORDER BY dongia) AS STT
+            ,masp, tensp, donvi, dongia
+            ,phantramgiam N'Phần trăm giảm giá'
+	        ,dongia * (100-phantramgiamgia)/100 N'Giá sau giảm giá'
+            ,sltonkho
         FROM sanpham sp-- tên của bảng cần lấy dữ liệu
         WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
         AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
@@ -27,4 +31,4 @@ END
 
 
 
-execute sp_sanpham_phantrang 1,4
+execute sp_sanpham_phantrang null,null,null,1,4

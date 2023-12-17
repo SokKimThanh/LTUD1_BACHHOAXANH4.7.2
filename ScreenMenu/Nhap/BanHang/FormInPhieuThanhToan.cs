@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormInPhieuThanhToan : Form
     {

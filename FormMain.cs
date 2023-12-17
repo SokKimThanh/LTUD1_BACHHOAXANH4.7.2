@@ -1,8 +1,5 @@
-﻿
-using LTUD1_BACHHOAXANH472.Screen;
-using LTUD1_BACHHOAXANH472.ScreenDetail;
+﻿using LTUD1_BACHHOAXANH472.ScreenDetail;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap;
-using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan;
 using System;
@@ -323,7 +320,7 @@ namespace LTUD1_BACHHOAXANH472
 
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmDangXuat_Click(object sender, EventArgs e)
         {
             // Thực hiện các tác vụ đăng xuất ở đây
             try

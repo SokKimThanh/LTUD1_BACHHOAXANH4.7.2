@@ -1,14 +1,19 @@
 ﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
 using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormBanHang : Form
     {
+        private BindingSource bindingSource1 = new BindingSource();
+        private int currentPage = 1;
+        private int pageSize = 4;
+        private int pageCount = 0;
+
+        private PictureBox currentPictureBox;
         ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
         HoaDonController hoadonController = new HoaDonController(Utils.ConnectionString);
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
@@ -16,10 +21,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         KhachHangController khachHangController = new KhachHangController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
         ChiTietHoaDonController cchtController = new ChiTietHoaDonController(Utils.ConnectionString);
+        HoaDonController hoaDonController = new HoaDonController(Utils.ConnectionString);
         RandomStringGenerator rnd = new RandomStringGenerator();
-        private PictureBox currentPictureBox;
-
-
 
         public FormBanHang()
         {
@@ -44,20 +47,42 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             cboNhaCungCap.DataSource = nhaCungCapController.DataSource;
             cboNhaCungCap.ValueMember = "MANCC";
             cboNhaCungCap.DisplayMember = "TENNCC";
-        }
 
-        private void GetData()
+            bindingSource1.DataSource = sanPhamController.PhanTrang(currentPage, pageSize, null, null, null);
+            dgvDanhSachSanPham.DataSource = bindingSource1;
+            pageCount = sanPhamController.GetRowCount() / pageSize; ;
+            lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
+        }
+        private void FormBanHang_Load(object sender, EventArgs e)
         {
-            try
-            {
+            cboLoaiSanPham.DataSource = danhMucController.sp_cbo_danhmuc_select_all();
+            cboLoaiSanPham.ValueMember = "MALOAI";
+            cboLoaiSanPham.DisplayMember = "TENLOAI";
 
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Error");
-            }
+            cboNhaCungCap.DataSource = nhaCungCapController.sp_cbo_nhacungcap_select_all();
+            cboNhaCungCap.ValueMember = "MANCC";
+            cboNhaCungCap.DisplayMember = "TENNCC";
+
+
+            DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
+
+            DataGridViewHelper.ChangeHeaderNameDanhThongTinHoaDon(dgvThongTinHoaDon);
+
+            //DataGridViewHelper.ChangeHeaderNameDanhSachSanPham(dgvDanhSachSanPham);
+            DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
+            DataGridViewHelper.TaoCotAddToCast(dgvDanhSachSanPham);
+
+            //format theo nhu cầu :) 
+            dgvThongTinHoaDon.ScrollBars = ScrollBars.Both;
+            dgvThongTinHoaDon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dgvDanhSachSanPham.ScrollBars = ScrollBars.Both;
+            dgvDanhSachSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            lblTongTien.Text = "0";
+            txtSoLuongMua.Text = "0";
+
         }
-
         private void cboNhaCungCap_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboNhaCungCap.SelectedItem.ToString() == "Tất cả")
@@ -81,36 +106,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             string tensanpham = txtTenSanPham.Text;
 
         }
-        private void FormBanHang_Load(object sender, EventArgs e)
-        {
-            cboLoaiSanPham.DataSource = danhMucController.sp_cbo_danhmuc_select_all();
-            cboLoaiSanPham.ValueMember = "MALOAI";
-            cboLoaiSanPham.DisplayMember = "TENLOAI";
 
-            cboNhaCungCap.DataSource = nhaCungCapController.sp_cbo_nhacungcap_select_all();
-            cboNhaCungCap.ValueMember = "MANCC";
-            cboNhaCungCap.DisplayMember = "TENNCC";
-
-
-            DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
-
-            DataGridViewHelper.ChangeHeaderNameDanhThongTinHoaDon(dgvThongTinHoaDon);
-
-            DataGridViewHelper.TaoCotAddToCast(dgvDanhSachSanPham);
-            DataGridViewHelper.ChangeHeaderNameDanhSachSanPham(dgvDanhSachSanPham);
-            DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
-
-            //format theo nhu cầu :) 
-            dgvThongTinHoaDon.ScrollBars = ScrollBars.Both;
-            dgvThongTinHoaDon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dgvDanhSachSanPham.ScrollBars = ScrollBars.Both;
-            dgvDanhSachSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            lblTongTien.Text = "0";
-            txtSoLuongMua.Text = "0";
-
-        }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             //Loại bỏ những dòng có số lượng < 0 đi
@@ -338,7 +334,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
                 default:
                     return 1;
             }
-
         }
 
         private int TinhSoLuongTonTheoMa(string maSP)
@@ -391,633 +386,37 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
                 e.Handled = true;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void lblTongSoTrang_Click(object sender, EventArgs e)
-        {
-
-        }
-    }
-    class HoaDon
-    {
-        private string maHD, maNV, maKH;
-        private DateTime ngayHD;
-        private decimal tongTien;
-        public HoaDon()
-        { }
-        public HoaDon(string maHD, string maNV, string maKH, DateTime ngayHD, decimal tongTien)
-        {
-            this.MaHD = maHD;
-            this.MaNV = maNV;
-            this.MaKH = maKH;
-            this.NgayHD = ngayHD;
-            this.TongTien = tongTien;
-        }
-
-        public string MaHD { get => maHD; set => maHD = value; }
-        public string MaNV { get => maNV; set => maNV = value; }
-        public string MaKH { get => maKH; set => maKH = value; }
-        public DateTime NgayHD { get => ngayHD; set => ngayHD = value; }
-        public decimal TongTien { get => tongTien; set => tongTien = value; }
-    }
-    internal class ChiTietHoaDon
-    {
-        private string maHD, maSP;
-        private int soLuong;
-
-        public ChiTietHoaDon() { }
-        public ChiTietHoaDon(string maHD, string maSP, int soLuong)
-        {
-            this.MaHD = maHD;
-            this.MaSP = maSP;
-            this.SoLuong = soLuong;
-        }
-
-        public string MaHD { get => maHD; set => maHD = value; }
-        public string MaSP { get => maSP; set => maSP = value; }
-        public int SoLuong { get => soLuong; set => soLuong = value; }
-    }
-    public class HoaDonController : MyController
-    {
-        public HoaDonController(string connectionString) : base(connectionString)
-        {
-        }
-
-        public override void Delete(object id)
+        private void GetDataGridviewSanPham()
         {
             try
             {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_hoadon_delete", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@maHD", id);
-
-                // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
-
-                // Đóng kết nối
-                CloseConnection();
+                bindingSource1.DataSource = sanPhamController.PhanTrang(currentPage, pageSize, null, null, null);
             }
-            catch (Exception ex)
+            catch (SqlException)
             {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
+                MessageBox.Show("Error");
             }
         }
 
-        public override object FromDataRow(DataRow row)
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            HoaDon o = new HoaDon();
-            o.MaHD = row.Field<string>("mahd");
-            o.NgayHD = row.Field<DateTime>("ngayhoadon");
-            o.TongTien = row.Field<decimal>("tongthanhtien");
-            /*  o.TongTien = 0;*/
-            o.MaNV = row.Field<string>("manv");
-            o.MaKH = row.Field<string>("makh");
-            return o;
+            if (currentPage < pageCount)
+            {
+                currentPage++;
+                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
+                GetDataGridviewSanPham();
+            }
         }
 
-        public override void Insert(object sender)
+        private void btnPrevious_Click(object sender, EventArgs e)
         {
-
-            try
+            if (currentPage > 1)
             {
-                HoaDon user = (HoaDon)sender;
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_hoadon_insert", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-                // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@maHD", user.MaHD);
-                Sql.Parameters.AddWithValue("@ngayHD", user.NgayHD);
-                Sql.Parameters.AddWithValue("@tongTien", user.TongTien);
-                Sql.Parameters.AddWithValue("@maNV", user.MaNV);
-                Sql.Parameters.AddWithValue("@maKH", user.MaKH);
-                // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
-
-                // Đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
+                currentPage--;
+                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
+                GetDataGridviewSanPham();
             }
         }
 
-        public override void SelectAll()
-        {
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // thực hiện các thao tác trên cơ sở dữ liệu
-                Sql = new SqlCommand("sp_hoadon_select_all", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Tạo đối tượng SqlDataAdapter
-                Adapter = new SqlDataAdapter(Sql);
-
-                // Tạo một đối tượng Database để lưu trữ dữ liệu
-                DataSource = new DataTable();
-
-                // đổ dữ liệu vào DataTable
-                Adapter.Fill(DataSource);
-
-                //đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-        public void SelectAllNhanVien()
-        {
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // thực hiện các thao tác trên cơ sở dữ liệu
-                Sql = new SqlCommand("sp_nhanvien_select_all", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Tạo đối tượng SqlDataAdapter
-                Adapter = new SqlDataAdapter(Sql);
-
-                // Tạo một đối tượng Database để lưu trữ dữ liệu
-                DataSource = new DataTable();
-
-                // đổ dữ liệu vào DataTable
-                Adapter.Fill(DataSource);
-                //đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-        public void SelectAllKhachHang()
-        {
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // thực hiện các thao tác trên cơ sở dữ liệu
-                Sql = new SqlCommand("sp_cbb_khachhang_select_all", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Tạo đối tượng SqlDataAdapter
-                Adapter = new SqlDataAdapter(Sql);
-
-                // Tạo một đối tượng Database để lưu trữ dữ liệu
-                DataSource = new DataTable();
-
-                // đổ dữ liệu vào DataTable
-                Adapter.Fill(DataSource);
-                //đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-
-        public override DataTable SelectByID(object id)
-        {
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_hoadon_select_one", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-                // Thêm tham số vào SqlCommand
-                string idnv = (string)id;
-                idnv = idnv.ToString().Trim();
-                Sql.Parameters.AddWithValue("@maHD", idnv);
-
-                // Tạo một đối tượng SqlDataAdapter
-                Adapter = new SqlDataAdapter(Sql);
-
-                // Tạo một đối tượng DataTable để lưu trữ dữ liệu
-                DataSource = new DataTable();
-
-                // Đổ dữ liệu vào DataTable
-                Adapter.Fill(DataSource);
-
-                // Đóng kết nối
-                CloseConnection();
-
-                // Trả về DataTable
-                return DataSource;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("SelectByID" + ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-
-        public override void Update(object sender)
-        {
-            try
-            {
-                HoaDon user = (HoaDon)sender;
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_hoadon_update", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@maHD", user.MaHD);
-                Sql.Parameters.AddWithValue("@ngayHD", user.NgayHD);
-                Sql.Parameters.AddWithValue("@tongTien", user.TongTien);
-                Sql.Parameters.AddWithValue("@maNV", user.MaNV);
-                Sql.Parameters.AddWithValue("@maKH", user.MaKH);
-                // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
-
-                // Đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-    }
-    internal class ChiTietHoaDonController : MyController
-    {
-        public ChiTietHoaDonController(string connectionString) : base(connectionString)
-        {
-        }
-
-        public override void Delete(object sender)
-        {
-            ChiTietHoaDon user = (ChiTietHoaDon)sender;
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_chitiethoadon_delete", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@maHD", user.MaHD);
-                Sql.Parameters.AddWithValue("@masp", user.MaSP);
-
-                // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
-
-                // Đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-        public string TongTien(object id)
-        {
-            string TT = "";
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_chitiethoadon_tongtien", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@mahd", id);
-
-
-                using (SqlDataReader reader = Sql.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        // Assuming YourColumnName is a string column; adjust accordingly
-                        int value = reader.GetInt32(0);
-                        //MessageBox.Show(value.ToString());
-                        TT = value.ToString() + "\tVND";
-                        // MessageBox.Show(TT);
-                    }
-                    else
-                    {
-                        TT = "No data found.";
-                    }
-                }
-                // Đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-            return TT;
-        }
-        public int KTTonKho(object id, int sl)
-        {
-            int SL = 0;
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_chitiethoadon_Kiemtratonkho", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@makm", id);
-                Sql.Parameters.AddWithValue("@slmua", sl);
-
-
-                using (SqlDataReader reader = Sql.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        // Assuming YourColumnName is a string column; adjust accordingly
-                        int value = reader.GetInt32(0);
-                        //MessageBox.Show(value.ToString());
-                        if (value > 0)
-                        {
-                            MessageBox.Show("Sản phẩm tồn kho còn lại: " + value.ToString());
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hết hàng");
-                        }
-                        // MessageBox.Show(TT);
-                        SL = value;
-                    }
-                    else
-                    {
-                        MessageBox.Show("No data found.");
-                    }
-                }
-                // Đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-            return SL;
-
-        }
-        public override object FromDataRow(DataRow row)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Insert(object sender)
-        {
-            ChiTietHoaDon user = (ChiTietHoaDon)sender;
-            // if (KTMASP(user.MaSP) == true)
-            //  {
-
-            try
-            {
-
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_chitiethoadon_insert", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@mahd", user.MaHD);
-                Sql.Parameters.AddWithValue("masp", user.MaSP);
-                Sql.Parameters.AddWithValue("@sl", user.SoLuong);
-                // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
-
-                // Đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-            // }
-
-        }
-
-        public override void SelectAll()
-        {
-            try
-            {/*
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // thực hiện các thao tác trên cơ sở dữ liệu
-                Sql = new SqlCommand("sp_chitiethoadon_select_one", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-                Sql.Parameters.AddWithValue("@maHD", user.MaHD);
-                // Tạo đối tượng SqlDataAdapter
-                Adapter = new SqlDataAdapter(Sql);
-
-                // Tạo một đối tượng Database để lưu trữ dữ liệu
-                DataSource = new DataTable();
-
-                // đổ dữ liệu vào DataTable
-                Adapter.Fill(DataSource);
-
-                //đóng kết nối
-                CloseConnection();*/
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
-
-        public override DataTable SelectByID(object id)
-        {
-
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // thực hiện các thao tác trên cơ sở dữ liệu
-                Sql = new SqlCommand("sp_chitiethoadon_select_all", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-                Sql.Parameters.AddWithValue("@mahd", id);
-                // Tạo đối tượng SqlDataAdapter
-                Adapter = new SqlDataAdapter(Sql);
-
-                // Tạo một đối tượng Database để lưu trữ dữ liệu
-                DataSource = new DataTable();
-
-                // đổ dữ liệu vào DataTable
-                Adapter.Fill(DataSource);
-
-                //đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-            return DataSource;
-        }
-        public bool KTMASP(object id)
-        {
-
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // thực hiện các thao tác trên cơ sở dữ liệu
-                Sql = new SqlCommand("sp_chitiethoadon_TimMaSP", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-                Sql.Parameters.AddWithValue("@masp", id);
-                using (SqlDataReader reader = Sql.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        // Assuming YourColumnName is a string column; adjust accordingly
-                        string value = reader.GetString(0);
-                        MessageBox.Show(value.ToString());
-                        if (value.ToString() == id.ToString())
-                        {
-                            return false;
-                        }
-
-                    }
-                    else
-                    {
-                        return true;
-
-                    }
-                }
-
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-            return false;
-        }
-
-        public override void Update(object sender)
-        {
-            try
-            {
-                ChiTietHoaDon user = (ChiTietHoaDon)sender;
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
-
-                // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_hinhthuckm_update", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
-
-                // Thêm tham số vào SqlCommand
-                Sql.Parameters.AddWithValue("@maHD", user.MaHD);
-                Sql.Parameters.AddWithValue("masp", user.MaSP);
-                Sql.Parameters.AddWithValue("@SL", user.SoLuong);
-                // Thực thi SqlCommand
-                Sql.ExecuteNonQuery();
-
-                // Đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
     }
 }

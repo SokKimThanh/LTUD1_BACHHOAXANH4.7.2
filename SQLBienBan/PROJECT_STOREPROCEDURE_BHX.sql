@@ -194,7 +194,28 @@ BEGIN
 	select MANCC, TENNCC from nhacungcap order by created_date_ncc desc
 END
 GO
-execute sp_cbo_nhacungcap_select_all﻿
+execute sp_cbo_nhacungcap_select_all﻿-- Create Procedure sp_sanpham_select_all.SQL
+-- Sản phẩm giảm giá
+-- Author:		<Sok Kim Thanh>
+-- Create date: <17/12/2023>
+-- Description:	<Sản phẩm giảm giá>
+drop procedure if exists sp_sanpham_giamgia_select_all
+go
+CREATE PROCEDURE sp_sanpham_giamgia_select_all
+AS
+BEGIN
+	select masp,tensp 
+	,dongia N'Giá Gốc'
+	, donvi N'Đơn vị tính'
+	,phantramgiam N'Phần trăm giảm giá'
+	,dongia * (100-phantramgiamgia)/100 N'Giá sau giảm giá'
+	,sltonkho N'Tồn kho' 
+	from SanPham
+END
+GO
+
+exec sp_sanpham_giamgia_select_all
+﻿
 -- Create Procedure sp_sanpham_phantrang.sql
 -- Author:		Sok Kim Thanh
 -- Create date: <16/12/2023>
@@ -211,7 +232,11 @@ AS
 BEGIN
     -- lấy dữ liệu và chỉ số dòng (row) của nó
     WITH phantrang AS (
-        SELECT ROW_NUMBER() OVER (ORDER BY masp) AS Row, masp, tensp, donvi, dongia, sltonkho
+        SELECT ROW_NUMBER() OVER (ORDER BY dongia) AS STT
+            ,masp, tensp, donvi, dongia
+            ,phantramgiam N'Phần trăm giảm giá'
+	        ,dongia * (100-phantramgiamgia)/100 N'Giá sau giảm giá'
+            ,sltonkho
         FROM sanpham sp-- tên của bảng cần lấy dữ liệu
         WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
         AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
@@ -223,7 +248,7 @@ END
 
 
 
-execute sp_sanpham_phantrang 1,4﻿
+execute sp_sanpham_phantrang null,null,null,1,4﻿
 -- Create Procedure sp_danhmuc_delete.sql
 -- Danh mục delete
 -- Author:		Sok Kim Thanh
@@ -1304,7 +1329,7 @@ GO
 drop procedure if exists sp_khuyenmai_update
 go
 CREATE PROCEDURE sp_khuyenmai_update
-	@makm char(11) = N'', 
+	@makm char(11) = '', 
 	@ngaybd date,
 	@ngaykt date,
 	@maht char(11)

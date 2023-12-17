@@ -31,24 +31,22 @@ public static class DataGridViewHelper
     {
         dgvDanhSachSanPham.Columns[1].HeaderText = "Mã Sản Phẩm";
         dgvDanhSachSanPham.Columns[2].HeaderText = "Tên Sản Phẩm";
-        //dgvDanhSachSanPham.Columns[3].HeaderText = "Đơn Vị Tính";
-        //dgvDanhSachSanPham.Columns[4].HeaderText = "NSX";
-        //dgvDanhSachSanPham.Columns[5].HeaderText = "HSD";
+        dgvDanhSachSanPham.Columns[3].HeaderText = "Đơn Vị Tính";
+        dgvDanhSachSanPham.Columns[4].HeaderText = "NSX";
+        dgvDanhSachSanPham.Columns[5].HeaderText = "HSD";
         dgvDanhSachSanPham.Columns[6].HeaderText = "Đơn Giá";
         dgvDanhSachSanPham.Columns[7].HeaderText = "SL Tồn";
-        //dgvDanhSachSanPham.Columns[8].HeaderText = "Mã Loại";
-        //dgvDanhSachSanPham.Columns[9].HeaderText = "Mã NCC";
+        dgvDanhSachSanPham.Columns[8].HeaderText = "Mã Loại";
+        dgvDanhSachSanPham.Columns[9].HeaderText = "Mã NCC";
         dgvDanhSachSanPham.Columns[10].HeaderText = "Mã KM";
 
-        dgvDanhSachSanPham.Columns.RemoveAt(3);
-        dgvDanhSachSanPham.Columns.RemoveAt(3);
-        dgvDanhSachSanPham.Columns.RemoveAt(3);
+        //dgvDanhSachSanPham.Columns.RemoveAt(3);
+        //dgvDanhSachSanPham.Columns.RemoveAt(3);
+        //dgvDanhSachSanPham.Columns.RemoveAt(3);
 
-        dgvDanhSachSanPham.Columns.RemoveAt(5);
-        dgvDanhSachSanPham.Columns.RemoveAt(5);
         //dgvDanhSachSanPham.Columns.RemoveAt(5);
-
-
+        //dgvDanhSachSanPham.Columns.RemoveAt(5);
+        //dgvDanhSachSanPham.Columns.RemoveAt(5); 
     }
 
     public static void TaoCotAddToCast(DataGridView dgvDanhSachSanPham)
@@ -56,13 +54,13 @@ public static class DataGridViewHelper
         DataGridViewButtonColumn colAddToCast = new DataGridViewButtonColumn();
         colAddToCast.Name = "btnAddToCast";
         colAddToCast.HeaderText = "Giỏ hàng";
-        dgvDanhSachSanPham.Columns.Insert(0, colAddToCast);
+        dgvDanhSachSanPham.Columns.Insert(dgvDanhSachSanPham.Rows.Count, colAddToCast);
 
         foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
         {
             DataGridViewCell cell = new DataGridViewButtonCell();
             cell.Value = "+";
-            row.Cells[0].Value = cell.Value;
+            row.Cells[dgvDanhSachSanPham.Rows.Count].Value = cell.Value;
         }
     }
 }

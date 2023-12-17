@@ -1,5 +1,6 @@
 ﻿using System;
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
+
+namespace LTUD1_BACHHOAXANH472
 {
     internal class HoaDon
     {
