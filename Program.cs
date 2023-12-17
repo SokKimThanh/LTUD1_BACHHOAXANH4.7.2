@@ -22,7 +22,7 @@ namespace LTUD1_BACHHOAXANH472
                 //FormHoaDon logon =  new FormHoaDon();
                 //FormKhachHang logon = new FormKhachHang(); 
                 //FormNhanVienAddEdit logon = new FormNhanVienAddEdit();
-                Application.Run( new FormLoaiSP());
+                Application.Run(logon);
             }
             catch (Exception)
             {
