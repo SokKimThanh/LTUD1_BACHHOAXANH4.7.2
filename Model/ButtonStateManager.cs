@@ -1,6 +1,4 @@
 ﻿/*using iTextSharp.text;*/
-using System.Windows.Forms;
-
 public enum ButtonState
 {
     DataGridViewSelected,

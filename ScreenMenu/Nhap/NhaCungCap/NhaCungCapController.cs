@@ -1,8 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-
-namespace LTUD1_BACHHOAXANH472
+﻿namespace LTUD1_BACHHOAXANH472
 {
     public class NhaCungCapController : MyController
     {

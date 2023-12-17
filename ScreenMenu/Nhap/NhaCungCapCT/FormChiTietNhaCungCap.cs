@@ -1,7 +1,4 @@
 ﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT;
-using System;
-using System.Data;
-using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {

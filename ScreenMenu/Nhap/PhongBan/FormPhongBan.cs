@@ -1,8 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
-
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
+﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 {
     public partial class FormPhongBan : Form
     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
-
-namespace LTUD1_BACHHOAXANH472
+﻿namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormNhaCungCap : Form
     {
@@ -256,6 +252,6 @@ namespace LTUD1_BACHHOAXANH472
                 MessageBox.Show(ex.Message);
                 txtDiaChi.Text = ex.Message;
             }
-        } 
+        }
     }
 }

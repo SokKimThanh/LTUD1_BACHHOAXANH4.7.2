@@ -1,8 +1,4 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using System.Collections.Generic;
-using System.IO;
-
-namespace LTUD1_BACHHOAXANH472.Model
+﻿namespace LTUD1_BACHHOAXANH472.Model
 {
     public class ReportManager
     {

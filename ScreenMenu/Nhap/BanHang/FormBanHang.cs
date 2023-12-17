@@ -1,10 +1,4 @@
 ﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
-using System;
-using System.ComponentModel;
-using System.Data.SqlClient;
-using System.Data;
-using System.Windows.Forms;
-using System.Drawing;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 {

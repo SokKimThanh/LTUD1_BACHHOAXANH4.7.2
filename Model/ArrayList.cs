@@ -1,7 +1,4 @@
-﻿using System;
-
-
-class ArrayList<ThamSoKieu>
+﻿class ArrayList<ThamSoKieu>
 {
     private ThamSoKieu[] items;
     private int size;

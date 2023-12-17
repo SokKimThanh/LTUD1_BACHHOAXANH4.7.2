@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
+﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
 {
     public partial class FormLoaiSP : Form
     {

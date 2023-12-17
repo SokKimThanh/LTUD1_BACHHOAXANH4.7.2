@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
+﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
 {
     internal class DanhMuc
     {

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Windows.Forms;
-using Size = System.Drawing.Size;
+﻿using Size = System.Drawing.Size;
 
 namespace LTUD1_BACHHOAXANH472.Model
 {

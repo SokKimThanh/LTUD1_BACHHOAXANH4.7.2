@@ -1,8 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-namespace LTUD1_BACHHOAXANH472._7._2.ScreenMenu.HeThong
+﻿namespace LTUD1_BACHHOAXANH472._7._2.ScreenMenu.HeThong
 {
     public partial class FormUploadFilesReport : Form
     {

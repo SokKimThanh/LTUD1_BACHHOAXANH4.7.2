@@ -1,9 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
-
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
+﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
 {
     public class HoaDonController : MyController
     {

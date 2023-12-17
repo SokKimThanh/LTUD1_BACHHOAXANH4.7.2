@@ -1,10 +1,4 @@
-﻿using System.Drawing;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
-
-
-
-public class ErrTxt
+﻿public class ErrTxt
 {
     Label lblHint;
     Panel pnError;

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
+﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
 {
     public partial class FormHoaDonThongKe : Form
     {

@@ -1,8 +1,4 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-
-
-public static class DataGridViewHelper
+﻿public static class DataGridViewHelper
 {
     public static void ConfigureDataGridView(DataGridView dgv)
     {

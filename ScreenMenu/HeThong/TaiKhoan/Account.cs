@@ -1,8 +1,4 @@
-﻿
-using System;
-
-
-internal class Account
+﻿internal class Account
 {
     private string tentk, matkhau, matk;
     private DateTime createdate;

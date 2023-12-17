@@ -1,7 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-
-namespace LTUD1_BACHHOAXANH472
+﻿namespace LTUD1_BACHHOAXANH472
 {
     internal class Program
     {
@@ -20,11 +17,6 @@ namespace LTUD1_BACHHOAXANH472
                 //FormKhachHang logon = new FormKhachHang(); 
                 //FormNhanVienAddEdit logon = new FormNhanVienAddEdit();
                 Application.Run(logon);
-
-                //Trần Minh Tuấn
-                // vo tu
-
-                //gi change
             }
             catch (Exception)
             {

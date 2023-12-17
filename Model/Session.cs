@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-public class Session
+﻿public class Session
 {
     private static string username = "";// chưa nhớ matkhau tentk
     public string Username { get => username; set => username = value; }

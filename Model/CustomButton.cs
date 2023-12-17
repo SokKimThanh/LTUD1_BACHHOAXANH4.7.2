@@ -1,8 +1,4 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-
-
-public class CustomButtonHelper
+﻿public class CustomButtonHelper
 {
     public void SetProperties(Button flatbutton)
     {

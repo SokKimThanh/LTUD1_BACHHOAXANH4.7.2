@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan
+﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan
 {
     internal class QuyenTruyCap
     {

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-public class RandomStringGenerator
+﻿public class RandomStringGenerator
 {
     private const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private HashSet<string> generatedStrings = new HashSet<string>();

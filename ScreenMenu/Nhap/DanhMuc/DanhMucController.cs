@@ -1,7 +1,4 @@
 ﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc;
-using System;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace LTUD1_BACHHOAXANH472
 {
