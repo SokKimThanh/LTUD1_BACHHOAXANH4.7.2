@@ -246,6 +246,7 @@
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\FormBanHangExtendController.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>

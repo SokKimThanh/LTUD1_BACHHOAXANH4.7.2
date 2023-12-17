@@ -1,12 +1,9 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
-using System;
-using System.ComponentModel;
-using System.Data.SqlClient;
-using System.Data;
-using System.Windows.Forms;
-using System.Drawing;
+﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.controller;
+using System;
+using System.Data;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 {
@@ -18,6 +15,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
         KhachHangController khachHangController = new KhachHangController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
+        ChiTietHoaDonController cchtController = new ChiTietHoaDonController(Utils.ConnectionString);
         RandomStringGenerator rnd = new RandomStringGenerator();
         private PictureBox currentPictureBox;
 
@@ -52,14 +50,14 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         {
             try
             {
-               
+
             }
             catch (SqlException)
             {
                 MessageBox.Show("Error");
             }
         }
-       
+
         private void cboNhaCungCap_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cboNhaCungCap.SelectedItem.ToString() == "Tất cả")
@@ -81,7 +79,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             string loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
             string nhacungcap = cboNhaCungCap.SelectedValue.ToString();
             string tensanpham = txtTenSanPham.Text;
-          
+
         }
         private void FormBanHang_Load(object sender, EventArgs e)
         {
@@ -395,13 +393,13 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            
-          
+
+
         }
 
         private void lblTongSoTrang_Click(object sender, EventArgs e)

@@ -25,7 +25,6 @@ public static class DataGridViewHelper
         dgvThongTinHoaDon.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         dgvThongTinHoaDon.Columns[7].HeaderText = "-";
         dgvThongTinHoaDon.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
     }
 
     public static void ChangeHeaderNameDanhSachSanPham(DataGridView dgvDanhSachSanPham)
