@@ -8,3 +8,4 @@
 - 16/12/2023 12:33 CH Viết ví dụ phân trang
 - 16/12/2023 04:03 Ch thực hiện phân trang 
 - 17/12/2023 01:56 SA Merge conflict đồ án
+- 17/12/2023 03:01 CH thêm cột phần trăm giảm giá và cột giá sau giảm giá trong datagridview dgvdanhsachsanpham

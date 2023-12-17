@@ -27,11 +27,6 @@ Date(dd/MM/yyyy)		Author				Comments
 ------------------------------------------------------------
 --Tạo database mới										   -
 ------------------------------------------------------------
-go
-use master
-go
-drop database BACHHOAXANH
-go
 create database BACHHOAXANH
 go 
 use BACHHOAXANH
@@ -140,7 +135,7 @@ alter table TAIKHOAN add constraint FK_TAIKHOAN_QUYENTRUYCAP foreign key (MAQTC)
 ---------------------CHỈNH SỬA BẢNG-------------------------
 ------------------------------------------------------------
 ************************************************************/
-alter table khuyenmai add phantramgiamgia int;
+alter table khuyenmai add phantramgiamgia int null;
 
 
 

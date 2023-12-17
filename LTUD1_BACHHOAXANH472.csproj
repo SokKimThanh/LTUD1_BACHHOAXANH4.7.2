@@ -246,24 +246,25 @@
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\FormBanHangExtendController.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangController.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.Designer.cs">
       <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScreenMenu\Nhap\BanHang\PhanTrangSanPham.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PhieuInHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.cs">
+    <Compile Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.Designer.cs">
-      <DependentUpon>ViDuPhanTrang.cs</DependentUpon>
+    <Compile Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.Designer.cs">
+      <DependentUpon>FViDuPhanTrang.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.cs">
       <SubType>Form</SubType>
@@ -460,8 +461,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PhieuInHoaDon1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.resx">
-      <DependentUpon>ViDuPhanTrang.cs</DependentUpon>
+    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.resx">
+      <DependentUpon>FViDuPhanTrang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
@@ -566,6 +567,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon_pagesize.png" />
+    <None Include="Resources\icon_small_phantrangright.png" />
+    <None Include="Resources\icon_big_phantrangright.png" />
+    <None Include="Resources\icon_big_phantrangleft.png" />
+    <None Include="Resources\icon_small_phantrangleft.png" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
     <None Include="Resources\showpassword.png" />
     <None Include="Resources\phongban.png" />
@@ -611,8 +618,6 @@
     <Content Include="Resources\icon_small_huy.png" />
     <Content Include="Resources\icon_small_lammoi.png" />
     <Content Include="Resources\icon_small_nhanvien.png" />
-    <Content Include="Resources\icon_small_phantrangleft.png" />
-    <Content Include="Resources\icon_small_phantrangright.png" />
     <Content Include="Resources\icon_small_quyentruycap.png" />
     <Content Include="Resources\icon_small_save.png" />
     <Content Include="Resources\icon_small_search.png" />
@@ -639,7 +644,7 @@
     <Content Include="ScreenMenu\Nhap\BanHang\sp_cbo_danhmuc_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_cbo_nhacungcap_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_insert.sql" />
-    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang_count.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_delete.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_insert.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_KTSanPhamTrung.sql" />
