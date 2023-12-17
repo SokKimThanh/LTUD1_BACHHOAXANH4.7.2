@@ -225,6 +225,8 @@ namespace LTUD1_BACHHOAXANH472
         private void dgvThongTinHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             banhangController.dgvThongTinHoaDon_CellContentClick(sender, e);
+            lblTongTien.Text = banhangController.LblTongTien.Text;
+            txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
         //==============================================================================
         //--..........................................................................--
@@ -234,7 +236,17 @@ namespace LTUD1_BACHHOAXANH472
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             banhangController.dgvDanhSachSanPham_CellContentClick(sender, e);
+            if (banhangController.LblTongTien != null)
+            {
+                lblTongTien.Text = banhangController.LblTongTien.Text;
+            }
+            else
+            {
+                // Xử lý trường hợp LblTongTien là null
+            }
+            txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
+
         //==============================================================================
         //--..........................................................................--
         //------------------Sự kiện event hủy thanh toán -------------------------------
@@ -243,6 +255,8 @@ namespace LTUD1_BACHHOAXANH472
         private void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
             banhangController.btnThanhToan_Click(sender, e);
+            lblTongTien.Text = banhangController.LblTongTien.Text;
+            txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
 
 

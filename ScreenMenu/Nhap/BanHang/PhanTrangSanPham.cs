@@ -8,6 +8,7 @@ namespace LTUD1_BACHHOAXANH472
 {
     internal class PhanTrangSanPham
     {
+        int pageIndex = 16;//Đơn vị cách nhau mỗi trang
         private BindingSource danhSachSP = new BindingSource();
         private int currentPage = 1;// số trang hiện tại
         private int pageSize = 8;// số sản phẩm mỗi trang 
@@ -95,7 +96,7 @@ namespace LTUD1_BACHHOAXANH472
                 int[] array = new int[5];
                 for (int i = 1; i < array.Length; i++)
                 {
-                    array[i] = i * 4;
+                    array[i] = i * pageIndex;
                 }
 
                 // Thêm mảng số vào ComboBox
