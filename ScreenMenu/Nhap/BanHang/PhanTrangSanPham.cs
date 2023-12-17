@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,12 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
     internal class PhanTrangSanPham
     {
         private BindingSource danhSachSP = new BindingSource();
-        private int currentPage = 1;
-        private int pageSize = 4;
-        private int pageCount = 0;
-        private string tensanpham;
-        private string nhacungcap;
-        private string loaisanpham;
+        private int currentPage = 1;// số trang hiện tại
+        private int pageSize = 4;// số sản phẩm mỗi trang 
+        private int pageCount = 0;// tổng số trang có thể hiển thị        
+        private string tensanpham;// Tên sản phẩm (tensp)
+        private string nhacungcap;// nhà cung cấp (mancc)
+        private string loaisanpham;// loại sản phẩm (loaisp)
         SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
 
         public PhanTrangSanPham(int currentPage, int pageSize, int pageCount, string searchterm = null, string nhacungcap = null, string loaisanpham = null)
@@ -37,11 +38,13 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         public string Nhacungcap { get => nhacungcap; set => nhacungcap = value; }
         public string Loaisanpham { get => loaisanpham; set => loaisanpham = value; }
 
-        public void GetData()
+        public void PhanTrangSP()
         {
             try
             {
-                DanhSachSanPham.DataSource = sanPhamController.PhanTrang(currentPage, pageSize, tensanpham, nhacungcap, loaisanpham);
+                DataTable dt = sanPhamController.PhanTrang(currentPage, pageSize, tensanpham, nhacungcap, loaisanpham);
+                this.PageCount = sanPhamController.GetRowCount() / pageSize;
+                DanhSachSanPham.DataSource = dt;
             }
             catch (SqlException)
             {
@@ -55,10 +58,14 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             {
                 currentPage++;
                 Label lblTongSoTrang = sender as Label;
-                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
-                GetData();
+                if (lblTongSoTrang != null)
+                {
+                    lblTongSoTrang.Text = GetTongSoTrang();//Trang 1/40
+                }
+                PhanTrangSP();
             }
         }
+
 
         public void btnPrevious_Click(object sender, EventArgs e)
         {
@@ -66,10 +73,17 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             {
                 currentPage--;
                 Label lblTongSoTrang = sender as Label;
-                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
-                GetData();
+                if (lblTongSoTrang != null)
+                {
+                    lblTongSoTrang.Text = GetTongSoTrang();//Trang 1/40
+                }
+                PhanTrangSP();
             }
         }
+        public string GetTongSoTrang()
+        {
 
+            return $"Trang {this.CurrentPage}/{this.PageCount}";//Trang 1/40
+        }
     }
 }

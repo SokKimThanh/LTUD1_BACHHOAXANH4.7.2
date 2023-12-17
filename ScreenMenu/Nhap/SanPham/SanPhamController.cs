@@ -244,7 +244,7 @@ namespace LTUD1_BACHHOAXANH472
                 //Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
                 //Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
                 searchTerm = searchTerm ?? null;
-                loaiSanPham = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
                 nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
                 Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
                 Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
@@ -266,7 +266,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                throw new Exception("PhanTrangSanPham" + ex.Message);
+                throw new Exception("PhanTrangSP" + ex.Message);
             }
             finally
             {
@@ -280,7 +280,7 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 SqlConnection conn = OpenConnection();
-                SqlCommand cmd = new SqlCommand($"SELECT COUNT(*) FROM sanpham", conn);
+                SqlCommand cmd = new SqlCommand("sp_sanpham_phantrang_count", conn);
                 count = (int)cmd.ExecuteScalar();
 
                 //đóng kết nối

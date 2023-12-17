@@ -3,6 +3,7 @@ using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
@@ -34,14 +35,14 @@ namespace LTUD1_BACHHOAXANH472
         /// </summary>
         public FormBanHang()
         {
-            InitializeComponent(); 
+            InitializeComponent();
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
 
             //DataGridViewHelper.ChangeHeaderNameDanhThongTinHoaDon(dgvThongTinHoaDon);
             //DataGridViewHelper.ChangeHeaderNameDanhSachSanPham(dgvDanhSachSanPham);
             //DataGridViewHelper.TaoCotAddToCart(dgvDanhSachSanPham);
-             
+
         }
         /// <summary>
         /// Hàm load dữ liệu
@@ -55,7 +56,7 @@ namespace LTUD1_BACHHOAXANH472
 
             // thêm dữ liệu vào datagridview sản phẩm
             phantrang = new PhanTrangSanPham(currentPage, pageSize, pageCount);
-            phantrang.GetData();
+            phantrang.PhanTrangSP();
 
             dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham.DataSource;
 
@@ -75,8 +76,8 @@ namespace LTUD1_BACHHOAXANH472
             cboNhaCungCap.DataSource = nhaCungCapController.sp_cbo_nhacungcap_select_all();
             cboNhaCungCap.ValueMember = "MANCC";
             cboNhaCungCap.DisplayMember = "TENNCC";
-             
-            
+
+
 
             lblTongTien.Text = "0";
             txtSoLuongMua.Text = "0";
@@ -100,60 +101,47 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            // lấy giá trị trên các ô nhập
             phantrang.Loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
             phantrang.Nhacungcap = cboNhaCungCap.SelectedValue.ToString();
             phantrang.Tensanpham = txtTenSanPham.Text;
-            phantrang.GetData();
+
+            // thực hiện câu truy vấn phân trang 
+            phantrang.PhanTrangSP();
+
+            // lấy dữ liệu phân trang hiện tại
+            dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham.DataSource;
+            phantrang.CurrentPage = 1;
+            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
         }
-        private void pictureBox2_MouseHover(object sender, EventArgs e)
+        private void btnPrevious_MouseHover(object sender, EventArgs e)
         {
-            currentPictureBox = sender as PictureBox;
-            timer1.Start();
+            PictureBox currentPictureBox = sender as PictureBox;
+            currentPictureBox.Image = Properties.Resources.icon_small32_phantrangleft; // đổi sang hình to hơn
         }
 
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        private void btnPrevious_MouseLeave(object sender, EventArgs e)
         {
-            currentPictureBox = sender as PictureBox;
-            timer1.Start();
+            PictureBox currentPictureBox = sender as PictureBox;
+            currentPictureBox.Image = Properties.Resources.icon_small_phantrangleft; // đổi sang hình nhỏ hơn
         }
 
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        private void btnNext_MouseHover(object sender, EventArgs e)
         {
-            currentPictureBox = sender as PictureBox;
-            timer1.Start();
+            PictureBox currentPictureBox = sender as PictureBox;
+            currentPictureBox.Image = Properties.Resources.icon_small32_phantrangright; // đổi sang hình to hơn
         }
 
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        private void btnNext_MouseLeave(object sender, EventArgs e)
         {
-            currentPictureBox = sender as PictureBox;
-            timer1.Stop();
+            PictureBox currentPictureBox = sender as PictureBox;
+            currentPictureBox.Image = Properties.Resources.icon_small_phantrangright; // đổi sang hình nhỏ hơn
         }
 
-        private bool isZoomingIn = true;
 
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            if (isZoomingIn)
-            {
-                currentPictureBox.Width += 1;
-                currentPictureBox.Height += 1;
 
-                if (currentPictureBox.Width >= 32) // MAX_WIDTH là kích thước tối đa phóng to
-                {
-                    isZoomingIn = false;
-                }
-            }
-            else
-            {
-                currentPictureBox.Width -= 1;
-                currentPictureBox.Height -= 1;
 
-                if (currentPictureBox.Width <= 24) // MIN_WIDTH là kích thước tối thiểu thu nhỏ
-                {
-                    isZoomingIn = true;
-                }
-            }
-        }
+
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -165,11 +153,15 @@ namespace LTUD1_BACHHOAXANH472
         private void btnNext_Click(object sender, EventArgs e)
         {
             phantrang.btnNext_Click(sender, e);
+            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+            dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham.DataSource;
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
             phantrang.btnPrevious_Click(sender, e);
+            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+            dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham.DataSource;
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {

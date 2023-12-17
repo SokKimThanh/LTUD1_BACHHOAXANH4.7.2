@@ -264,12 +264,10 @@ BEGIN
         AND MANCC = ISNULL(@nhaCungCap, MANCC)
     )
     -- lấy các dòng có chỉ số row phù hợp các các tiêu chí phân trang
-    SELECT * FROM phantrang WHERE STT BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage
-END
-
-
-
-execute sp_sanpham_phantrang null,null,null, 1, 4﻿
+    SELECT * FROM phantrang WHERE STT BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage;
+END;
+go
+execute sp_sanpham_phantrang '','ncc01','', 1, 4﻿
 
 -- Create Procedure sp_danhmuc_delete.sql
 -- Danh mục delete

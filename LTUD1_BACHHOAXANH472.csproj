@@ -567,6 +567,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon_small32_phantrangleft.png" />
+    <None Include="Resources\icon_small32_phantrangright.png" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
     <None Include="Resources\showpassword.png" />
     <None Include="Resources\phongban.png" />
@@ -640,7 +643,7 @@
     <Content Include="ScreenMenu\Nhap\BanHang\sp_cbo_danhmuc_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_cbo_nhacungcap_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_insert.sql" />
-    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang_count.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_delete.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_insert.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_KTSanPhamTrung.sql" />
