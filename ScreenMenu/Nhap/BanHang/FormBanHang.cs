@@ -1,10 +1,6 @@
 ﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using System;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
@@ -13,18 +9,11 @@ namespace LTUD1_BACHHOAXANH472
         private int currentPage = 1;
         private int pageSize = 4;
         private int pageCount = 0;
-        private PictureBox currentPictureBox;
         PBanHangController banhangController;
         PhanTrangSanPham phantrang;
         RandomStringGenerator rnd = new RandomStringGenerator();
-        ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
-        HoaDonController hoadonController = new HoaDonController(Utils.ConnectionString);
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
-        SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
-        KhachHangController khachHangController = new KhachHangController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
-        ChiTietHoaDonController cchtController = new ChiTietHoaDonController(Utils.ConnectionString);
-        HoaDonController hoaDonController = new HoaDonController(Utils.ConnectionString);
         /// <summary>
         /// Hàm load design
         /// </summary>
@@ -67,9 +56,19 @@ namespace LTUD1_BACHHOAXANH472
             phantrang.CreatePagesizeCombobox(cboPageSize);
             // cbopagesize index = 1
             cboPageSize.SelectedIndex = 1;
-
+            //==============================================================================
+            //--..........................................................................--
+            //------------------.      Khởi tạo thao tác datagridview       .---------------
+            //--.................            sản phẩm giỏ hàng            ..................
+            //==============================================================================
             //khởi tạo banhang controller điều khiển luồng dữ liệu trên form bán hàng
             banhangController = new PBanHangController(dgvThongTinHoaDon, dgvDanhSachSanPham);
+
+            //==============================================================================
+            //--..........................................................................--
+            //------------------.      Khởi tạo dữ liệu combobox danh mục       .-----------
+            //--.................                loại sản phẩm            ..................
+            //==============================================================================
             // thêm dữ liệu vào combobox loại sản phẩm 
             cboLoaiSanPham.DataSource = danhMucController.sp_cbo_danhmuc_select_all();
             cboLoaiSanPham.ValueMember = "MALOAI";
@@ -242,6 +241,6 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        
+
     }
 }

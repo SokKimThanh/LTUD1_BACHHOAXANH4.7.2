@@ -1,23 +1,38 @@
-﻿using System.Data.SqlClient;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using System;
-using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.controller;
+using LTUD1_BACHHOAXANH472;
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+namespace LTUD1_BACHHOAXANH472
 {
     public class PBanHangController
     {
-        DataGridView dgvThongTinHoaDon;
-        DataGridView dgvDanhSachSanPham;
-        SanPhamController sanphamController = new SanPhamController(Utils.ConnectionString);
         int soluongmua;
         double tongtien;
-        public PBanHangController(DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
-        {
-            this.dgvThongTinHoaDon = dgvThongTinHoaDon;
-            this.dgvDanhSachSanPham = dgvDanhSachSanPham;
-        }
+        TextBox txtSDTKhachHang;
+        TextBox txtTenKhachHang;
+        TextBox txtMaHoaDon;
+        Label lblTongTien;
+
+        RandomStringGenerator rnd = new RandomStringGenerator();
+
+        DataGridView dgvThongTinHoaDon;
+        DataGridView dgvDanhSachSanPham;
+
+        ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
+        HoaDonController hoadonController = new HoaDonController(Utils.ConnectionString);
+        KhachHangController khachHangController = new KhachHangController(Utils.ConnectionString);
+
+
+        public int Soluongmua { get => soluongmua; set => soluongmua = value; }
+        public double Tongtien { get => tongtien; set => tongtien = value; }
+        public TextBox TxtSDTKhachHang { get => txtSDTKhachHang; set => txtSDTKhachHang = value; }
+        public TextBox TxtTenKhachHang { get => txtTenKhachHang; set => txtTenKhachHang = value; }
+        public TextBox TxtMaHoaDon { get => txtMaHoaDon; set => txtMaHoaDon = value; }
+        public Label LblTongTien { get => lblTongTien; set => lblTongTien = value; }
+        public DataGridView DgvThongTinHoaDon { get => dgvThongTinHoaDon; set => dgvThongTinHoaDon = value; }
+        public DataGridView DgvDanhSachSanPham { get => dgvDanhSachSanPham; set => dgvDanhSachSanPham = value; }
 
         //Map datarow từ grid sản phẩm sang grid hóa đơn
         private DataGridViewRow MapDataRow(DataGridViewRow rowDanhSachSanPham)
@@ -34,7 +49,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             row.Cells[0].Value = rowDanhSachSanPham.Cells[1].Value;
             row.Cells[1].Value = rowDanhSachSanPham.Cells[2].Value;
             row.Cells[2].Value = rowDanhSachSanPham.Cells[3].Value;
-            row.Cells[3].Value = rowDanhSachSanPham.Cells[5].Value;
+            row.Cells[3].Value = rowDanhSachSanPham.Cells[5].Value;//tính tiền khuyến mãi sau giảm giá 
             row.Cells[4].Value = 0;
             row.Cells[5].Value = 0;
 
@@ -152,38 +167,37 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
                 return;
             }
 
-            //if (DialogResult.Yes == MessageBox.Show("Xác nhận thanh toán", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            //{
-            //    if (string.IsNullOrEmpty(txtTenKhachHang.Text) && string.IsNullOrEmpty(txtSDT.Text))
-            //    {
-            //        MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-            //        return;
-            //    }
-            //    KhachHang khachHang = new KhachHang();
+            if (DialogResult.Yes == MessageBox.Show("Xác nhận thanh toán", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                if (string.IsNullOrEmpty(txtTenKhachHang.Text) && string.IsNullOrEmpty(txtSDTKhachHang.Text))
+                {
+                    MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    return;
+                }
+                KhachHang khachHang = new KhachHang();
 
-            //    khachHang.Ma = rnd.GenerateRandomAlphanumericString(11);
-            //    khachHang.Ten = txtTenKhachHang.Text;
-            //    khachHang.Sdt = Convert.ToInt32(txtSDT.Text);
+                khachHang.Ma = rnd.GenerateRandomAlphanumericString(11);
+                khachHang.Ten = txtTenKhachHang.Text;
+                khachHang.Sdt = Convert.ToInt32(txtSDTKhachHang.Text);
 
-            //    khachHangController.Insert(khachHang);
+                khachHangController.Insert(khachHang);
 
-            //    HoaDon hoaDon = new HoaDon(txtMaHoaDon.Text, "manv_admin", khachHang.Ma, DateTime.Now, Convert.ToDecimal(lblTongTien.Text));
+                HoaDon hoaDon = new HoaDon(txtMaHoaDon.Text, "manv_admin", khachHang.Ma, DateTime.Now, Convert.ToDecimal(lblTongTien.Text));
 
-            //    hoadonController.Insert(hoaDon);
-            //    foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
-            //    {
-            //        ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(txtMaHoaDon.Text, row.Cells[0].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
-            //        cthdController.Insert(chiTietHoaDon);
-            //    }
-            //    if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            //    {
-            //        FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan();
-            //        frmThanhToan.ShowDialog();
-            //    }
+                hoadonController.Insert(hoaDon);
+                foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
+                {
+                    ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(txtMaHoaDon.Text, row.Cells[0].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
+                    cthdController.Insert(chiTietHoaDon);
+                }
+                if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan();
+                    frmThanhToan.ShowDialog();
+                }
 
-            //    MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);
-            //}
-
+                MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+            }
         }
     }
 

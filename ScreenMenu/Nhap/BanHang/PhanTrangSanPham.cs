@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+namespace LTUD1_BACHHOAXANH472
 {
     internal class PhanTrangSanPham
     {
