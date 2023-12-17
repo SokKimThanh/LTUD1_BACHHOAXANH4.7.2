@@ -267,7 +267,7 @@ BEGIN
     SELECT * FROM phantrang WHERE STT BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage;
 END;
 go
-execute sp_sanpham_phantrang '','ncc01','', 1, 4﻿
+execute sp_sanpham_phantrang '','ncc01','',1, 4﻿
 
 -- Create Procedure sp_danhmuc_delete.sql
 -- Danh mục delete

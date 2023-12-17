@@ -56,7 +56,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         {
             bindingSource1.DataSource = controller.PhanTrang(currentPage, pageSize, null, null, null);
             dataGridView1.DataSource = bindingSource1;
-            pageCount = controller.GetRowCount() / pageSize; ;
+            pageCount = controller.GetRowCount(null, null, null) / pageSize; ;
             tongsotrang.Text = pageCount.ToString();
 
             cboLoaiSanPham.DataSource = loaispController.sp_cbo_danhmuc_select_all();
@@ -91,7 +91,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             string tensanpham = txtTenSanPham.Text;
             bindingSource1.DataSource = controller.PhanTrang(currentPage, pageSize, tensanpham, loaisanpham, nhacungcap);
             dataGridView1.DataSource = bindingSource1;
-            pageCount = controller.GetRowCount() / pageSize; ;
+            pageCount = controller.GetRowCount(tensanpham, loaisanpham, nhacungcap) / pageSize; ;
             tongsotrang.Text = pageCount.ToString();
         }
     }

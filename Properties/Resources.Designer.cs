@@ -283,6 +283,16 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_pagesize {
+            get {
+                object obj = ResourceManager.GetObject("icon_pagesize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_pasword {
             get {
                 object obj = ResourceManager.GetObject("icon_pasword", resourceCulture);

@@ -266,7 +266,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                throw new Exception("PhanTrangSP" + ex.Message);
+                throw new Exception("GetDataPhanTrang" + ex.Message);
             }
             finally
             {
@@ -274,13 +274,25 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        public int GetRowCount()
+        public int GetRowCount(string searchTerm, string loaiSanPham, string nhaCungCap)
         {
             int count = 0;
             try
             {
                 SqlConnection conn = OpenConnection();
                 SqlCommand cmd = new SqlCommand("sp_sanpham_phantrang_count", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số vào Stored Procedure
+                searchTerm = searchTerm ?? null;
+                loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
+                nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
+                Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
+                Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
+
+
+                // Sử dụng ExecuteScalar để lấy giá trị đầu tiên của hàng đầu tiên
                 count = (int)cmd.ExecuteScalar();
 
                 //đóng kết nối

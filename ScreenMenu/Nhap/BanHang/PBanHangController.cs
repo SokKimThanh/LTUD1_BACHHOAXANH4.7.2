@@ -6,14 +6,14 @@ using LTUD1_BACHHOAXANH472.Model;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 {
-    public class BanHangController
+    public class PBanHangController
     {
         DataGridView dgvThongTinHoaDon;
         DataGridView dgvDanhSachSanPham;
         SanPhamController sanphamController = new SanPhamController(Utils.ConnectionString);
         int soluongmua;
         double tongtien;
-        public BanHangController(DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
+        public PBanHangController(DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
         {
             this.dgvThongTinHoaDon = dgvThongTinHoaDon;
             this.dgvDanhSachSanPham = dgvDanhSachSanPham;

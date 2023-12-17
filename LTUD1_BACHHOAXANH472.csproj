@@ -246,7 +246,7 @@
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\BanHangController.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangController.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,11 +260,11 @@
       <DependentUpon>PhieuInHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.cs">
+    <Compile Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.Designer.cs">
-      <DependentUpon>ViDuPhanTrang.cs</DependentUpon>
+    <Compile Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.Designer.cs">
+      <DependentUpon>FViDuPhanTrang.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.cs">
       <SubType>Form</SubType>
@@ -461,8 +461,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PhieuInHoaDon1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.resx">
-      <DependentUpon>ViDuPhanTrang.cs</DependentUpon>
+    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.resx">
+      <DependentUpon>FViDuPhanTrang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
@@ -569,6 +569,7 @@
   <ItemGroup>
     <None Include="Resources\icon_small32_phantrangleft.png" />
     <None Include="Resources\icon_small32_phantrangright.png" />
+    <None Include="Resources\icon_pagesize.png" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
     <None Include="Resources\showpassword.png" />

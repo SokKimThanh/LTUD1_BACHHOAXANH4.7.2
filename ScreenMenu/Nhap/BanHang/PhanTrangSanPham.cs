@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
@@ -13,7 +10,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
     {
         private BindingSource danhSachSP = new BindingSource();
         private int currentPage = 1;// số trang hiện tại
-        private int pageSize = 4;// số sản phẩm mỗi trang 
+        private int pageSize = 8;// số sản phẩm mỗi trang 
         private int pageCount = 0;// tổng số trang có thể hiển thị        
         private string tensanpham;// Tên sản phẩm (tensp)
         private string nhacungcap;// nhà cung cấp (mancc)
@@ -38,18 +35,22 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         public string Nhacungcap { get => nhacungcap; set => nhacungcap = value; }
         public string Loaisanpham { get => loaisanpham; set => loaisanpham = value; }
 
-        public void PhanTrangSP()
+        public DataTable GetDataPhanTrang()
         {
             try
             {
-                DataTable dt = sanPhamController.PhanTrang(currentPage, pageSize, tensanpham, nhacungcap, loaisanpham);
-                this.PageCount = sanPhamController.GetRowCount() / pageSize;
-                DanhSachSanPham.DataSource = dt;
+                danhSachSP.DataSource = sanPhamController.PhanTrang(CurrentPage, PageSize, Tensanpham, loaisanpham, Nhacungcap);
+                int rowcount = sanPhamController.GetRowCount(string.IsNullOrEmpty(Tensanpham) ? null : Tensanpham.Trim().ToLower()
+                    , string.IsNullOrEmpty(Loaisanpham) ? null : Loaisanpham.Trim().ToLower(),
+                    string.IsNullOrEmpty(Nhacungcap) ? null : Nhacungcap.Trim().ToLower());
+                this.PageCount = rowcount % pageSize;
+
             }
-            catch (SqlException)
+            catch (SqlException ex)
             {
-                MessageBox.Show("Error");
+                throw new Exception(ex.Message);
             }
+            return (DataTable)danhSachSP.DataSource;
         }
 
         public void btnNext_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
                 {
                     lblTongSoTrang.Text = GetTongSoTrang();//Trang 1/40
                 }
-                PhanTrangSP();
+                GetDataPhanTrang();
             }
         }
 
@@ -77,13 +78,29 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
                 {
                     lblTongSoTrang.Text = GetTongSoTrang();//Trang 1/40
                 }
-                PhanTrangSP();
+                GetDataPhanTrang();
             }
         }
         public string GetTongSoTrang()
         {
 
             return $"Trang {this.CurrentPage}/{this.PageCount}";//Trang 1/40
+        }
+        public void CreatePagesizeCombobox(object sender)
+        {
+            ComboBox cboPageSize = (ComboBox)sender;
+            if (cboPageSize != null)
+            {
+                // Tạo mảng số cách nhau 4 đơn vị
+                int[] array = new int[5];
+                for (int i = 1; i < array.Length; i++)
+                {
+                    array[i] = i * 4;
+                }
+
+                // Thêm mảng số vào ComboBox
+                cboPageSize.Items.AddRange(array.Cast<object>().ToArray());
+            }
         }
     }
 }
