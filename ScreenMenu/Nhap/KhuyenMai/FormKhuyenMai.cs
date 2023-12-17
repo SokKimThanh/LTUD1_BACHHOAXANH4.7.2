@@ -20,7 +20,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             buttonStateManager.BtnDelete = btnXoa;
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnThem;
-            buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
         }
         private void FormKhuyenMai_Load(object sender, EventArgs e)
@@ -132,6 +132,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             dtpNBD.Value = DateTime.Now;
             dtpNKT.Value = DateTime.Now;
             cboMaHT.SelectedIndex = 0;
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
