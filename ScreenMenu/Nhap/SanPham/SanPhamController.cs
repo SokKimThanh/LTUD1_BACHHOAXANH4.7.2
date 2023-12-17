@@ -6,15 +6,10 @@ namespace LTUD1_BACHHOAXANH472
 {
     internal class SanPhamController : MyController
     {
-
-
-
         public SanPhamController(string connectionString) : base(connectionString)
         {
 
         }
-
-
 
         public override void Insert(object sender)
         {
@@ -178,6 +173,7 @@ namespace LTUD1_BACHHOAXANH472
                 CloseConnection();
             }
         }
+
         public override void Delete(object id)
         {
             try
@@ -278,6 +274,7 @@ namespace LTUD1_BACHHOAXANH472
                 CloseConnection();
             }
         }
+
         public int GetRowCount()
         {
             int count = 0;
