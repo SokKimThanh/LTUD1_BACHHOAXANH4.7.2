@@ -1,4 +1,5 @@
-﻿
+﻿use BACHHOAXANH
+go
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -202,19 +203,39 @@ execute sp_cbo_nhacungcap_select_all﻿-- Create Procedure sp_sanpham_select_all
 drop procedure if exists sp_sanpham_giamgia_select_all
 go
 CREATE PROCEDURE sp_sanpham_giamgia_select_all
+@MAHD CHAR(11)
 AS
 BEGIN
-	select masp,tensp 
-	,dongia N'Giá Gốc'
-	, donvi N'Đơn vị tính'
-	,phantramgiam N'Phần trăm giảm giá'
-	,dongia * (100-phantramgiamgia)/100 N'Giá sau giảm giá'
-	,sltonkho N'Tồn kho' 
-	from SanPham
+	Declare  @TT int = 0;
+	select   @TT   +=  sp.dongia * (100-km.phantramgiamgia)/100 * ct.SLMUA
+	from CHITIETHD ct,HOADON hd,SANPHAM sp,KHUYENMAI km
+	where ct.MAHD = hd.MAHD and sp.MASP = ct.MASP and ct.MAHD = @mahd and sp.MAKM = km.MAKM
+
+	--select @TT as 'Tổng thành tiền'
+	Update HOADON
+	set TONGTHANHTIEN = @TT
+	where MAHD = @mahd; 
+
+	select hd.MAHD,hd.NGAYHOADON,hd.MANV, sp.masp,sp.tensp,cthd.SLMUA 
+	,sp.dongia N'Giá Gốc'
+	, sp.donvi N'Đơn vị tính'
+	,km.phantramgiamgia N'Phần trăm giảm giá'
+	,sp.dongia * (100-km.phantramgiamgia)/100 N'Giá sau giảm giá'
+	,sp.sltonkho N'Tồn kho',
+	cthd.SLMUA
+	,sp.dongia * (100-km.phantramgiamgia)/100 * cthd.SLMUA N'Thành tiền'
+	,hd.TONGTHANHTIEN N'Tổng thành tiền'
+	from SanPham sp,KHUYENMAI km, HOADON hd, CHITIETHD cthd
+	where sp.MAKM = km.MAKM and hd.MAHD = @MAHD and cthd.MAHD = hd.MAHD and cthd.MASP = sp.MASP
+
+	
+
+	select TONGTHANHTIEN  from HoaDon where HOADON.MAHD =@MAHD
 END
 GO
+--select * from SANPHAM
+exec sp_sanpham_giamgia_select_all 'HD01'
 
-exec sp_sanpham_giamgia_select_all
 ﻿
 -- Create Procedure sp_sanpham_phantrang.sql
 -- Author:		Sok Kim Thanh
@@ -225,30 +246,31 @@ go
 CREATE PROCEDURE sp_sanpham_phantrang
     @loaiSanPham nvarchar(100) = NULL, -- loại sản phẩm
     @nhaCungCap nvarchar(100) = NULL, -- nhà cung cấp
-    @searchTerm nvarchar(100) = NULL, -- từ khóa tìm kiếm
+    @searchTerm nvarchar(100) = NULL, -- từ khóa tìm kiếm 
     @currPage int, -- trang hiện tại
     @recodperpage int -- số dòng trên 1 trang
 AS
-BEGIN
+BEGIN 
     -- lấy dữ liệu và chỉ số dòng (row) của nó
     WITH phantrang AS (
-        SELECT ROW_NUMBER() OVER (ORDER BY dongia) AS STT
-            ,masp, tensp, donvi, dongia
-            ,phantramgiam N'Phần trăm giảm giá'
-	        ,dongia * (100-phantramgiamgia)/100 N'Giá sau giảm giá'
+        SELECT ROW_NUMBER() OVER (ORDER BY sp.masp) AS STT
+            ,sp.masp, sp.tensp, sp.donvi, sp.dongia
+            ,km.phantramgiamgia  as N'GiamGia'
+	        ,dongia * (100- km.phantramgiamgia)/100 as N'GiaBan'
             ,sltonkho
-        FROM sanpham sp-- tên của bảng cần lấy dữ liệu
+        FROM sanpham sp, khuyenmai km-- tên của bảng cần lấy dữ liệu
         WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
         AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
         AND MANCC = ISNULL(@nhaCungCap, MANCC)
     )
     -- lấy các dòng có chỉ số row phù hợp các các tiêu chí phân trang
-    SELECT * FROM phantrang WHERE Row BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage
+    SELECT * FROM phantrang WHERE STT BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage
 END
 
 
 
-execute sp_sanpham_phantrang null,null,null,1,4﻿
+execute sp_sanpham_phantrang null,null,null, 1, 4﻿
+
 -- Create Procedure sp_danhmuc_delete.sql
 -- Danh mục delete
 -- Author:		Sok Kim Thanh
@@ -1288,10 +1310,11 @@ CREATE PROCEDURE sp_khuyenmai_insert
 	@makm char(11) = '', 
 	@ngaybd date,
 	@ngaykt date,
-	@maht char(11) = N''
+	@maht char(11) = N'',
+	@phantramgiamgia int = 0
 AS
 BEGIN
-	INSERT INTO khuyenmai VALUES (@makm, @ngaybd, @ngaykt,@maht)
+	INSERT INTO khuyenmai VALUES (@makm, @ngaybd, @ngaykt,@maht, @phantramgiamgia)
 END
 GO
 ﻿-- Create Procedure sp_khuyenmai_select_all.sql
@@ -1332,10 +1355,12 @@ CREATE PROCEDURE sp_khuyenmai_update
 	@makm char(11) = '', 
 	@ngaybd date,
 	@ngaykt date,
-	@maht char(11)
+	@maht char(11),
+	@phantramgiamgia int
 AS
 BEGIN
-	update khuyenmai set ngaybd = @ngaybd, ngaykt = @ngaykt, maht=@maht where makm = @makm -- chuẩn sql
+	update khuyenmai set ngaybd = @ngaybd, ngaykt = @ngaykt, maht=@maht, 
+	phantramgiamgia = isnull(@phantramgiamgia, phantramgiamgia) where makm = @makm -- chuẩn sql
 END
 GO
 ﻿-- Create Procedure sp_nhacungcap_delete.sql

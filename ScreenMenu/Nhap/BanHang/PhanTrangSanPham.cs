@@ -14,18 +14,17 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         private int currentPage = 1;
         private int pageSize = 4;
         private int pageCount = 0;
-        private string searchterm;
+        private string tensanpham;
         private string nhacungcap;
         private string loaisanpham;
         SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
 
-        public PhanTrangSanPham(BindingSource bindingSource1, int currentPage, int pageSize, int pageCount, string searchterm = null, string nhacungcap = null, string loaisanpham = null)
+        public PhanTrangSanPham(int currentPage, int pageSize, int pageCount, string searchterm = null, string nhacungcap = null, string loaisanpham = null)
         {
-            this.danhSachSP = bindingSource1;
             this.currentPage = currentPage;
             this.pageSize = pageSize;
             this.pageCount = pageCount;
-            this.searchterm = searchterm;
+            this.tensanpham = searchterm;
             this.nhacungcap = nhacungcap;
             this.loaisanpham = loaisanpham;
         }
@@ -34,7 +33,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         public int CurrentPage { get => currentPage; set => currentPage = value; }
         public int PageSize { get => pageSize; set => pageSize = value; }
         public int PageCount { get => pageCount; set => pageCount = value; }
-        public string Searchterm { get => searchterm; set => searchterm = value; }
+        public string Tensanpham { get => tensanpham; set => tensanpham = value; }
         public string Nhacungcap { get => nhacungcap; set => nhacungcap = value; }
         public string Loaisanpham { get => loaisanpham; set => loaisanpham = value; }
 
@@ -42,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         {
             try
             {
-                danhSachSP.DataSource = sanPhamController.PhanTrang(currentPage, pageSize, searchterm, nhacungcap, loaisanpham);
+                DanhSachSanPham.DataSource = sanPhamController.PhanTrang(currentPage, pageSize, tensanpham, nhacungcap, loaisanpham);
             }
             catch (SqlException)
             {
@@ -71,6 +70,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
                 GetData();
             }
         }
-         
+
     }
 }

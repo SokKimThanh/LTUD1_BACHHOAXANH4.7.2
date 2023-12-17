@@ -240,16 +240,15 @@ namespace LTUD1_BACHHOAXANH472
 
 
                 // Thêm tham số vào SqlCommand
-                Sql.Parameters.Add("@searchTerm", SqlDbType.NVarChar).Value = searchTerm ?? (object)DBNull.Value;
-                Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
-                Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
-                //searchTerm = searchTerm ?? null;
-                //loaiSanPham = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
-                //nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
-                //Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
-                //Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
-                //Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
-
+                //Sql.Parameters.Add("@searchTerm", SqlDbType.NVarChar).Value = searchTerm ?? (object)DBNull.Value;
+                //Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
+                //Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
+                searchTerm = searchTerm ?? null;
+                loaiSanPham = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
+                Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
+                Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
                 Sql.Parameters.AddWithValue("@currPage", currentPage);
                 Sql.Parameters.AddWithValue("@recodperpage", pageSize);
 
@@ -296,30 +295,6 @@ namespace LTUD1_BACHHOAXANH472
                 CloseConnection();
             }
             return count;
-        }
-
-        internal double getGiaSauGiamGia(object makm, object masp)
-        {
-            double giasaugiamgia = 0;
-            try
-            {
-                SqlConnection conn = OpenConnection();
-                SqlCommand sql = new SqlCommand("sp_sanpham_giasaugiamgia", conn);
-                sql.Parameters.AddWithValue("@phantramgiamgia", )
-                giasaugiamgia = (int)sql.ExecuteScalar();
-
-                //đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("GetRowCount" + ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
-            return giasaugiamgia;
         }
     }
 }

@@ -2,6 +2,10 @@
 using System.Windows.Forms;
 public static class DataGridViewHelper
 {
+    /// <summary>
+    /// Hàm vẽ lại các thuộc tính cần thiết cho một datagridview
+    /// </summary>
+    /// <param name="dgv">Datagridview bình thường chưa qua design</param>
     public static void ConfigureDataGridView(DataGridView dgv)
     {
         dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -12,6 +16,8 @@ public static class DataGridViewHelper
         dgv.Dock = DockStyle.Fill;
         dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         dgv.AllowUserToAddRows = false;
+        dgv.ScrollBars = ScrollBars.Both;
+
     }
     public static void ChangeHeaderNameDanhThongTinHoaDon(DataGridView dgvThongTinHoaDon)
     {
@@ -39,17 +45,9 @@ public static class DataGridViewHelper
         dgvDanhSachSanPham.Columns[8].HeaderText = "Mã Loại";
         dgvDanhSachSanPham.Columns[9].HeaderText = "Mã NCC";
         dgvDanhSachSanPham.Columns[10].HeaderText = "Mã KM";
-
-        //dgvDanhSachSanPham.Columns.RemoveAt(3);
-        //dgvDanhSachSanPham.Columns.RemoveAt(3);
-        //dgvDanhSachSanPham.Columns.RemoveAt(3);
-
-        //dgvDanhSachSanPham.Columns.RemoveAt(5);
-        //dgvDanhSachSanPham.Columns.RemoveAt(5);
-        //dgvDanhSachSanPham.Columns.RemoveAt(5); 
     }
 
-    public static void TaoCotAddToCast(DataGridView dgvDanhSachSanPham)
+    public static void TaoCotAddToCart(DataGridView dgvDanhSachSanPham)
     {
         DataGridViewButtonColumn colAddToCast = new DataGridViewButtonColumn();
         colAddToCast.Name = "btnAddToCast";

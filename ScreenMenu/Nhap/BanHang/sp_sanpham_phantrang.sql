@@ -17,7 +17,7 @@ BEGIN
     WITH phantrang AS (
         SELECT ROW_NUMBER() OVER (ORDER BY dongia) AS STT
             ,masp, tensp, donvi, dongia
-            ,phantramgiam N'Phần trăm giảm giá'
+            ,phantramgiam N'% giảm giá'
 	        ,dongia * (100-phantramgiamgia)/100 N'Giá sau giảm giá'
             ,sltonkho
         FROM sanpham sp-- tên của bảng cần lấy dữ liệu
