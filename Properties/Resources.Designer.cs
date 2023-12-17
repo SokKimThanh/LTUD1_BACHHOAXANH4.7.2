@@ -153,6 +153,26 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_big_phantrangleft {
+            get {
+                object obj = ResourceManager.GetObject("icon_big_phantrangleft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_big_phantrangright {
+            get {
+                object obj = ResourceManager.GetObject("icon_big_phantrangright", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_check_ok {
             get {
                 object obj = ResourceManager.GetObject("icon_check_ok", resourceCulture);
@@ -526,26 +546,6 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         internal static System.Drawing.Bitmap icon_small_user {
             get {
                 object obj = ResourceManager.GetObject("icon_small_user", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_small32_phantrangleft {
-            get {
-                object obj = ResourceManager.GetObject("icon_small32_phantrangleft", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icon_small32_phantrangright {
-            get {
-                object obj = ResourceManager.GetObject("icon_small32_phantrangright", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -31,11 +31,12 @@ namespace LTUD1_BACHHOAXANH472
         public FormBanHang()
         {
             InitializeComponent();
+            cboPageSize.DropDownStyle = ComboBoxStyle.DropDownList;
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
             //DataGridViewHelper.ChangeHeaderNameDanhThongTinHoaDon(dgvThongTinHoaDon);
             //DataGridViewHelper.ChangeHeaderNameDanhSachSanPham(dgvDanhSachSanPham);
-            //DataGridViewHelper.TaoCotAddToCart(dgvDanhSachSanPham);
+            DataGridViewHelper.TaoCotAddToCart(dgvDanhSachSanPham);
 
 
         }
@@ -136,7 +137,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnPrevious_MouseHover(object sender, EventArgs e)
         {
             PictureBox currentPictureBox = sender as PictureBox;
-            currentPictureBox.Image = Properties.Resources.icon_small32_phantrangleft; // đổi sang hình to hơn
+            currentPictureBox.Image = Properties.Resources.icon_big_phantrangleft; // đổi sang hình to hơn
         }
         //==============================================================================
         //--..........................................................................--
@@ -156,7 +157,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnNext_MouseHover(object sender, EventArgs e)
         {
             PictureBox currentPictureBox = sender as PictureBox;
-            currentPictureBox.Image = Properties.Resources.icon_small32_phantrangright; // đổi sang hình to hơn
+            currentPictureBox.Image = Properties.Resources.icon_big_phantrangright; // đổi sang hình to hơn
         }
         //==============================================================================
         //--..........................................................................--
@@ -203,13 +204,29 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+
         }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event tăng giảm số lượng mua------------------------
+        //--..........................................................................--
+        //==============================================================================
         private void dgvThongTinHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event  add to cart----------------------------------
+        //--..........................................................................--
+        //==============================================================================
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event hủy thanh toán -------------------------------
+        //--..........................................................................--
+        //==============================================================================
         private void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
             // Xác nhận trước khi xóa
@@ -225,5 +242,6 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
+        
     }
 }

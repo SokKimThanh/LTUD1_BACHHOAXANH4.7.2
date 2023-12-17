@@ -1,31 +1,30 @@
-﻿-- Author:		Sok Kim Thanh
--- Create date: <17/12/2023>
--- update date 6:44 CH
-drop procedure if exists sp_sanpham_phantrang_count
-go
+﻿-- AUTHOR:		SOK KIM THANH
+-- CREATE DATE: <17/12/2023>
+-- UPDATE DATE 6:44 CH
+DROP PROCEDURE IF EXISTS sp_sanpham_phantrang_count
+GO
 CREATE PROCEDURE sp_sanpham_phantrang_count
-    @loaiSanPham nvarchar(100) = NULL,
-    @nhaCungCap nvarchar(100) = NULL,
-    @searchTerm nvarchar(100) = NULL
+    @LOAISANPHAM NVARCHAR(100) = NULL,
+    @NHACUNGCAP NVARCHAR(100) = NULL,
+    @SEARCHTERM NVARCHAR(100) = NULL
 AS
 BEGIN 
-    -- lấy dữ liệu và chỉ số dòng (row) của nó
-    WITH phantrang AS (
-        SELECT ROW_NUMBER() OVER (ORDER BY sp.masp) AS STT
-            ,sp.masp, sp.tensp, sp.donvi, sp.dongia
-            ,km.phantramgiamgia  as GiamGia
-	        ,dongia * (100- km.phantramgiamgia)/100 as GiaBan
-            ,sltonkho
-        FROM sanpham sp
-        INNER JOIN khuyenmai km ON sp.MAKM = km.MAKM
-        WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
-        AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
-        AND MANCC = ISNULL(@nhaCungCap, MANCC)
+    -- LẤY DỮ LIỆU VÀ CHỈ SỐ DÒNG (ROW) CỦA NÓ
+    WITH PHANTRANG AS (
+        SELECT ROW_NUMBER() OVER (ORDER BY SP.MASP) AS STT
+            ,SP.MASP, SP.TENSP, SP.DONVI, SP.DONGIA
+            ,KM.PHANTRAMGIAMGIA  AS GIAMGIA
+	        ,DONGIA * (100- KM.PHANTRAMGIAMGIA)/100 AS GIABAN
+            ,SLTONKHO
+        FROM SANPHAM SP
+        INNER JOIN KHUYENMAI KM ON SP.MAKM = KM.MAKM
+        WHERE TENSP LIKE '%' + ISNULL(@SEARCHTERM, TENSP) + '%'
+        AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
+        AND MANCC = ISNULL(@NHACUNGCAP, MANCC)
     )
-    -- đếm số dòng
-    SELECT COUNT(*) as TotalRows
-    FROM phantrang;
+    -- ĐẾM SỐ DÒNG
+    SELECT COUNT(*) AS TOTALROWS
+    FROM PHANTRANG;
 END;
-go
-
-execute sp_sanpham_phantrang_count null,null,'f'
+GO
+EXECUTE SP_SANPHAM_PHANTRANG_COUNT NULL,NULL,'F'

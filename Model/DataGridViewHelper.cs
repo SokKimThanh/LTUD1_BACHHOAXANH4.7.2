@@ -53,11 +53,13 @@ public static class DataGridViewHelper
         colAddToCast.Name = "btnAddToCast";
         colAddToCast.HeaderText = "Giỏ hàng";
         dgvDanhSachSanPham.Columns.Insert(dgvDanhSachSanPham.Rows.Count, colAddToCast);
-
+        ErrColors color = new ErrColors();
         foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
         {
             DataGridViewCell cell = new DataGridViewButtonCell();
             cell.Value = "+";
+            cell.Style.BackColor = color.primaryGreen;
+            cell.Style.ForeColor = color.primaryPink;
             row.Cells[dgvDanhSachSanPham.Rows.Count].Value = cell.Value;
         }
     }

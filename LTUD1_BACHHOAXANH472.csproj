@@ -567,9 +567,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon_small32_phantrangleft.png" />
-    <None Include="Resources\icon_small32_phantrangright.png" />
     <None Include="Resources\icon_pagesize.png" />
+    <None Include="Resources\icon_small_phantrangright.png" />
+    <None Include="Resources\icon_big_phantrangright.png" />
+    <None Include="Resources\icon_big_phantrangleft.png" />
+    <None Include="Resources\icon_small_phantrangleft.png" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
     <None Include="Resources\showpassword.png" />
@@ -616,8 +618,6 @@
     <Content Include="Resources\icon_small_huy.png" />
     <Content Include="Resources\icon_small_lammoi.png" />
     <Content Include="Resources\icon_small_nhanvien.png" />
-    <Content Include="Resources\icon_small_phantrangleft.png" />
-    <Content Include="Resources\icon_small_phantrangright.png" />
     <Content Include="Resources\icon_small_quyentruycap.png" />
     <Content Include="Resources\icon_small_save.png" />
     <Content Include="Resources\icon_small_search.png" />

@@ -26,30 +26,24 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 
             DataGridViewRow row = new DataGridViewRow();
 
-            ////Tạo columns cho từng hàng
-            //for (int i = 0; i < dgvThongTinHoaDon.Columns.Count - 2; i++)
-            //{
-            //    row.Cells.Add(new DataGridViewTextBoxCell());
-            //}
-            //row.Cells[0].Value = rowDanhSachSanPham.Cells[1].Value;
-            //row.Cells[1].Value = rowDanhSachSanPham.Cells[2].Value;
-            //row.Cells[2].Value = rowDanhSachSanPham.Cells[3].Value;
-            //row.Cells[3].Value = TinhToanKhuyenMai(rowDanhSachSanPham.Cells[5].Value.ToString());
-            //row.Cells[4].Value = 0;
-            //row.Cells[5].Value = 0;
+            //Tạo columns cho từng hàng
+            for (int i = 0; i < dgvThongTinHoaDon.Columns.Count - 2; i++)
+            {
+                row.Cells.Add(new DataGridViewTextBoxCell());
+            }
+            row.Cells[0].Value = rowDanhSachSanPham.Cells[1].Value;
+            row.Cells[1].Value = rowDanhSachSanPham.Cells[2].Value;
+            row.Cells[2].Value = rowDanhSachSanPham.Cells[3].Value;
+            row.Cells[3].Value = rowDanhSachSanPham.Cells[5].Value;
+            row.Cells[4].Value = 0;
+            row.Cells[5].Value = 0;
 
-            //row.Cells.Add(new DataGridViewButtonCell());
-            //row.Cells[6].Value = "+";
-            //row.Cells.Add(new DataGridViewButtonCell());
-            //row.Cells[7].Value = "-";
+            row.Cells.Add(new DataGridViewButtonCell());
+            row.Cells[6].Value = "+";
+            row.Cells.Add(new DataGridViewButtonCell());
+            row.Cells[7].Value = "-";
             return row;
         }
-
-        //private double TinhToanKhuyenMai(string maKM)
-        //{
-        //return sanphamController.getGiaSauGiamGia(makm);
-        //}
-
         private int TinhSoLuongTonTheoMa(string maSP)
         {
             int soLuongTon = 0;
