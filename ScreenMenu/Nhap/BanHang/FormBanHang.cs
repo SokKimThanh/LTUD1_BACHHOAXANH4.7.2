@@ -6,7 +6,7 @@ namespace LTUD1_BACHHOAXANH472
     public partial class FormBanHang : Form
     {
         private int currentPage = 1;
-        private int pageSize = 4;
+        private int pageSize = 16;
         private int pageCount = 0;
         PBanHangController banhangController = new PBanHangController();
         PhanTrangSanPham phantrang;
@@ -19,14 +19,15 @@ namespace LTUD1_BACHHOAXANH472
         public FormBanHang()
         {
             InitializeComponent();
+
+            // cài đặt style cho combobox 
+            cboNhaCungCap.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboLoaiSanPham.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPageSize.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            // cài đặt style cho datagridview 
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
-            DataGridViewHelper.ChangeHeaderNameDanhThongTinHoaDon(dgvThongTinHoaDon);
-            DataGridViewHelper.ChangeHeaderNameDanhSachSanPham(dgvDanhSachSanPham);
-            DataGridViewHelper.TaoCotThemGioHang(dgvDanhSachSanPham);
-
-
         }
         /// <summary>
         /// Hàm load dữ liệu
@@ -67,7 +68,9 @@ namespace LTUD1_BACHHOAXANH472
             banhangController.TxtSoLuongMua = txtSoLuongMua;
             banhangController.DgvDanhSachSanPham = dgvDanhSachSanPham;
             banhangController.DgvThongTinHoaDon = dgvThongTinHoaDon;
-
+            banhangController.ChangeHeaderNameDanhThongTinHoaDon();
+            banhangController.ChangeHeaderNameDanhSachSanPham();
+            banhangController.TaoCotThemGioHang();
             //==============================================================================
             //--..........................................................................--
             //------------------.      Khởi tạo dữ liệu combobox danh mục       .-----------
