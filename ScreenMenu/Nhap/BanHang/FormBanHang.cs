@@ -206,7 +206,9 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextHelper.HandleTextChange_PhoneNumber(sender);
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)){
+                e.Handled = true;
+            }
         }
         //==============================================================================
         //--..........................................................................--
@@ -254,11 +256,19 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
-            banhangController.btnThanhToan_Click(sender, e);
+            banhangController.btnHuyThanhToan_Click(sender, e);
             lblTongTien.Text = banhangController.LblTongTien.Text;
             txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
 
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
 
+        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

@@ -794,6 +794,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenKhachHang.Size = new System.Drawing.Size(476, 74);
             this.txtTenKhachHang.TabIndex = 3;
             this.txtTenKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTenKhachHang.TextChanged += new System.EventHandler(this.txtTenKhachHang_TextChanged);
             // 
             // label2
             // 
@@ -845,6 +846,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtSDT.Size = new System.Drawing.Size(476, 74);
             this.txtSDT.TabIndex = 3;
             this.txtSDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // tlpNhapTTHD

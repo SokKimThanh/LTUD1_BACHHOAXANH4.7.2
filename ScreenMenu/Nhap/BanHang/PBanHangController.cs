@@ -8,11 +8,11 @@ namespace LTUD1_BACHHOAXANH472
     public class PBanHangController
     {
 
-        TextBox txtSDTKhachHang;
-        TextBox txtTenKhachHang;
-        TextBox txtMaHoaDon;
-        TextBox txtSoLuongMua;
-        Label lblTongTien;
+        TextBox txtSDTKhachHang = new TextBox();
+        TextBox txtTenKhachHang = new TextBox();
+        TextBox txtMaHoaDon = new TextBox();
+        TextBox txtSoLuongMua = new TextBox();
+        Label lblTongTien = new Label();
 
         RandomStringGenerator rnd = new RandomStringGenerator();
 
@@ -61,8 +61,8 @@ namespace LTUD1_BACHHOAXANH472
             int soLuongTon = 0;
             foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
             {
-                if (maSP.Trim() == row.Cells[1].Value.ToString().Trim())
-                    soLuongTon += Convert.ToInt32(row.Cells[4].Value.ToString());
+                if (maSP.Trim() == row.Cells[2].Value.ToString().Trim())
+                    soLuongTon += Convert.ToInt32(row.Cells[8].Value.ToString());
             }
             return soLuongTon;
         }
@@ -86,10 +86,11 @@ namespace LTUD1_BACHHOAXANH472
             }
             return false;
         }
-        int soluongmua;
-        double tongtien;
+       
         public void SetTongTienVaTongSoLuong()
         {
+            int soluongmua =0;
+            double tongtien = 0;
             foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
             {
                 soluongmua += Convert.ToInt32(row.Cells[4].Value);
@@ -135,7 +136,7 @@ namespace LTUD1_BACHHOAXANH472
             }
 
             // Kiểm tra xem người dùng có nhấp vào cột nút giảm số lượng hay không
-            if (e.ColumnIndex == dgvThongTinHoaDon.Columns["btnGiamSL"].Index && e.RowIndex >= 0)
+            else if (e.ColumnIndex == dgvThongTinHoaDon.Columns["btnGiamSL"].Index && e.RowIndex >= 0)
             {
                 double soLuong = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[4].Value) - 1;
 
@@ -198,6 +199,11 @@ namespace LTUD1_BACHHOAXANH472
                     ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(txtMaHoaDon.Text, row.Cells[0].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
                     cthdController.Insert(chiTietHoaDon);
                 }
+                //==============================================================================
+                //--..........................................................................--
+                //------------------        Sự kiện in hóa đơn       ---------------------------
+                //--..........................................................................--
+                //==============================================================================
                 if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
                     FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan();
@@ -207,7 +213,7 @@ namespace LTUD1_BACHHOAXANH472
                 MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);
             }
         }
-        private void btnHuyThanhToan_Click(object sender, EventArgs e)
+        public void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
             // Xác nhận trước khi xóa
             DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo);
@@ -291,7 +297,7 @@ namespace LTUD1_BACHHOAXANH472
             DataGridViewButtonColumn colThemGioHang = new DataGridViewButtonColumn();
             colThemGioHang.Name = "btnThemGioHang";
             colThemGioHang.HeaderText = "Giỏ hàng";
-            dgvDanhSachSanPham.Columns.Insert(dgvDanhSachSanPham.Columns.Count, colThemGioHang);
+            dgvDanhSachSanPham.Columns.Add(colThemGioHang);
             ErrColors color = new ErrColors();
             foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
             {
