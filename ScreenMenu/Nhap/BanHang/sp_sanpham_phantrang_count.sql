@@ -1,6 +1,6 @@
-﻿-- Create Procedure sp_sanpham_phantrang_count.sql
--- Author:		Sok Kim Thanh
+﻿-- Author:		Sok Kim Thanh
 -- Create date: <17/12/2023>
+-- update date 6:44 CH
 drop procedure if exists sp_sanpham_phantrang_count
 go
 CREATE PROCEDURE sp_sanpham_phantrang_count
@@ -13,11 +13,11 @@ BEGIN
     WITH phantrang AS (
         SELECT ROW_NUMBER() OVER (ORDER BY sp.masp) AS STT
             ,sp.masp, sp.tensp, sp.donvi, sp.dongia
-            ,km.phantramgiamgia  as N'GiamGia'
-	        ,dongia * (100- km.phantramgiamgia)/100 as N'GiaBan'
+            ,km.phantramgiamgia  as GiamGia
+	        ,dongia * (100- km.phantramgiamgia)/100 as GiaBan
             ,sltonkho
         FROM sanpham sp
-        INNER JOIN khuyenmai km ON sp.masp = km.masp
+        INNER JOIN khuyenmai km ON sp.MAKM = km.MAKM
         WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
         AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
         AND MANCC = ISNULL(@nhaCungCap, MANCC)
@@ -25,4 +25,7 @@ BEGIN
     -- đếm số dòng
     SELECT COUNT(*) as TotalRows
     FROM phantrang;
-END
+END;
+go
+
+execute sp_sanpham_phantrang_count null,null,'f'

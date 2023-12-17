@@ -1,5 +1,4 @@
-﻿use BACHHOAXANH
-go
+﻿
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -236,8 +235,7 @@ GO
 --select * from SANPHAM
 exec sp_sanpham_giamgia_select_all 'HD01'
 
-﻿
--- Create Procedure sp_sanpham_phantrang.sql
+﻿-- Create Procedure sp_sanpham_phantrang.sql
 -- Author:		Sok Kim Thanh
 -- Create date: <16/12/2023>
 -- update date 17/12/2023
@@ -270,7 +268,37 @@ END
 
 select * from LOAISP
 select * from nhacungcap
-execute sp_sanpham_phantrang 'l01','ncc02','a',1,16
+execute sp_sanpham_phantrang 'l01','ncc02','a',1,16﻿-- Author:		Sok Kim Thanh
+-- Create date: <17/12/2023>
+-- update date 6:44 CH
+drop procedure if exists sp_sanpham_phantrang_count
+go
+CREATE PROCEDURE sp_sanpham_phantrang_count
+    @loaiSanPham nvarchar(100) = NULL,
+    @nhaCungCap nvarchar(100) = NULL,
+    @searchTerm nvarchar(100) = NULL
+AS
+BEGIN 
+    -- lấy dữ liệu và chỉ số dòng (row) của nó
+    WITH phantrang AS (
+        SELECT ROW_NUMBER() OVER (ORDER BY sp.masp) AS STT
+            ,sp.masp, sp.tensp, sp.donvi, sp.dongia
+            ,km.phantramgiamgia  as GiamGia
+	        ,dongia * (100- km.phantramgiamgia)/100 as GiaBan
+            ,sltonkho
+        FROM sanpham sp
+        INNER JOIN khuyenmai km ON sp.MAKM = km.MAKM
+        WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
+        AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
+        AND MANCC = ISNULL(@nhaCungCap, MANCC)
+    )
+    -- đếm số dòng
+    SELECT COUNT(*) as TotalRows
+    FROM phantrang;
+END;
+go
+
+execute sp_sanpham_phantrang_count null,null,'f'﻿
 -- Create Procedure sp_danhmuc_delete.sql
 -- Danh mục delete
 -- Author:		Sok Kim Thanh
