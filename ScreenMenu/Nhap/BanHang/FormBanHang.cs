@@ -1,5 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.Model;
-using System;
+﻿using System;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
@@ -206,7 +205,8 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)){
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
                 e.Handled = true;
             }
         }
@@ -263,12 +263,12 @@ namespace LTUD1_BACHHOAXANH472
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
         {
-          
+
         }
     }
 }
