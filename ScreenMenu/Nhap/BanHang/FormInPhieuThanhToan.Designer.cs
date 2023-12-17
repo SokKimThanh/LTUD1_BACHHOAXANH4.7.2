@@ -49,7 +49,7 @@
             this.rpvInHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rpvInHoaDon.Location = new System.Drawing.Point(0, 0);
             this.rpvInHoaDon.Name = "rpvInHoaDon";
-            this.rpvInHoaDon.ReportSource = "D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\ScreenMenu\\Nhap\\BanHang\\PhieuInHoaDon.rpt";
+            //this.rpvInHoaDon.ReportSource = "D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\ScreenMenu\\Nhap\\BanHang\\PhieuInHoaDon.rpt";
             this.rpvInHoaDon.Size = new System.Drawing.Size(1275, 507);
             this.rpvInHoaDon.TabIndex = 1;
             this.rpvInHoaDon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
