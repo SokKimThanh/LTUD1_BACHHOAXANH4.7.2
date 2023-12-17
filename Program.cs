@@ -1,4 +1,7 @@
-﻿namespace LTUD1_BACHHOAXANH472
+﻿using System;
+using System.Windows.Forms;
+
+namespace LTUD1_BACHHOAXANH472
 {
     internal class Program
     {

@@ -1,4 +1,5 @@
-﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
+﻿using System;
+namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 {
     internal class PhongBan
     {

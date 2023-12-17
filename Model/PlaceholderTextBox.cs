@@ -1,4 +1,8 @@
-﻿namespace LTUD1_BACHHOAXANH472.model
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace LTUD1_BACHHOAXANH472.model
 {
 
     public class PlaceholderTextBox

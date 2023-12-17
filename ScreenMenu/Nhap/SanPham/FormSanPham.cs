@@ -1,4 +1,10 @@
-﻿namespace LTUD1_BACHHOAXANH472
+﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using LTUD1_BACHHOAXANH472.uploads;
+using System;
+using System.Data;
+using System.Windows.Forms;
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormSanPham : Form
     {

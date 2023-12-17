@@ -1,4 +1,6 @@
-﻿public class ErrFrm
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
+public class ErrFrm
 {
     /// <summary>
     /// Kiểm tra các lỗi trên form bất kỳ

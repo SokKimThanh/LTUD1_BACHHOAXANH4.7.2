@@ -1,6 +1,10 @@
 ﻿// General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+using System.Reflection;
+using System.Resources;
+using System.Runtime.InteropServices;
+
 [assembly: AssemblyTitle("LTUD1_BACHHOAXANH472")]
 [assembly: AssemblyDescription("Project Lập trình ứng dụng 1 hệ thống quản lý siêu thị bách hóa xanh 472")]
 [assembly: AssemblyConfiguration("")]

@@ -1,4 +1,8 @@
-﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
+﻿using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
+namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 {
     public partial class FormKhuyenMai : Form
     {
@@ -34,7 +38,7 @@
                 DataGridViewHelper.ConfigureDataGridView(dgvDSKM);
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
-                Refresh();
+                Refresh2();
             }
             catch (Exception ex)
             {
@@ -57,7 +61,7 @@
                 kmConn.Insert(km);
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Thêm khuyến mãi thành công!");
-                Refresh();
+                Refresh2();
             }
             catch (Exception ex)
             {
@@ -80,7 +84,7 @@
                 kmConn.Delete(txtMaKM.Text);
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Xoá khuyến mãi thành công!");
-                Refresh();
+                Refresh2();
             }
             catch (Exception ex)
             {
@@ -107,7 +111,7 @@
                 kmConn.Update(km);
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Sửa khuyến mãi thành công!");
-                Refresh();
+                Refresh2();
             }
             catch (Exception ex)
             {
@@ -122,7 +126,7 @@
             RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
             txtMaKM.Text = randomStringGenerator.GenerateRandomAlphanumericString(10);
         }
-        private void Refresh()
+        private void Refresh2()
         {
             TaoMa();
             dtpNBD.Value = DateTime.Now;
@@ -132,7 +136,7 @@
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            Refresh();
+            Refresh2();
         }
 
         private void dgvDSKM_Click(object sender, EventArgs e)

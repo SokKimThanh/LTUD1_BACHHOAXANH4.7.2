@@ -590,9 +590,40 @@
     <None Include="Resources\chitiethoadon.png" />
     <None Include="Resources\BXHLOGO2.png" />
     <Content Include="Logo.ico" />
+    <Content Include="Resources\icon_apdung.png" />
+    <Content Include="Resources\icon_banhang.png" />
+    <Content Include="Resources\icon_check_ok.png" />
+    <Content Include="Resources\icon_green_hoadon.png" />
+    <Content Include="Resources\icon_huy.png" />
+    <Content Include="Resources\icon_ngaylaphoadon.png" />
+    <Content Include="Resources\icon_search1.png" />
+    <Content Include="Resources\icon_search_small.png" />
+    <Content Include="Resources\icon_small_apdung.png" />
+    <Content Include="Resources\icon_small_green_cancle.png" />
+    <Content Include="Resources\icon_small_green_hotenkhachhang.png" />
+    <Content Include="Resources\icon_small_green_save.png" />
+    <Content Include="Resources\icon_small_green_smartphone.png" />
+    <Content Include="Resources\icon_small_green_taikhoan.png" />
+    <Content Include="Resources\icon_small_green_welcome.png" />
+    <Content Include="Resources\icon_small_hoadon.png" />
+    <Content Include="Resources\icon_small_huy.png" />
+    <Content Include="Resources\icon_small_lammoi.png" />
+    <Content Include="Resources\icon_small_nhanvien.png" />
+    <Content Include="Resources\icon_small_phantrangleft.png" />
+    <Content Include="Resources\icon_small_phantrangright.png" />
+    <Content Include="Resources\icon_small_quyentruycap.png" />
+    <Content Include="Resources\icon_small_save.png" />
+    <Content Include="Resources\icon_small_search.png" />
+    <Content Include="Resources\icon_small_tenkhachhang.png" />
+    <Content Include="Resources\icon_small_user.png" />
+    <Content Include="Resources\icon_smartphone.png" />
+    <Content Include="Resources\icon_welcome.png" />
     <Content Include="Resources\tranparent_detail.png" />
     <None Include="Resources\tranparent_green_detail.png" />
     <None Include="Resources\tranparent_hoadon.png" />
+    <Content Include="Resources\transparent_khachhang.png" />
+    <Content Include="Resources\transparent_sanpham.png" />
+    <Content Include="Resources\transparent_timkiem.png" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_delete.sql" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_insert.sql" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_all.sql" />
@@ -707,13 +738,13 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.Platforms">
-      <Version>1.1.0</Version>
+      <Version>8.0.0-preview.7.23375.6</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Win32.Primitives">
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="NETStandard.Library">
-      <Version>1.6.1</Version>
+      <Version>2.0.3</Version>
     </PackageReference>
     <PackageReference Include="System.AppContext">
       <Version>4.3.0</Version>
@@ -725,13 +756,13 @@
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Console">
-      <Version>4.3.0</Version>
+      <Version>4.3.1</Version>
     </PackageReference>
     <PackageReference Include="System.Diagnostics.Debug">
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Diagnostics.DiagnosticSource">
-      <Version>4.3.0</Version>
+      <Version>8.0.0</Version>
     </PackageReference>
     <PackageReference Include="System.Diagnostics.Tools">
       <Version>4.3.0</Version>
@@ -767,10 +798,10 @@
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Net.Http">
-      <Version>4.3.0</Version>
+      <Version>4.3.4</Version>
     </PackageReference>
     <PackageReference Include="System.Net.Primitives">
-      <Version>4.3.0</Version>
+      <Version>4.3.1</Version>
     </PackageReference>
     <PackageReference Include="System.Net.Sockets">
       <Version>4.3.0</Version>
@@ -791,10 +822,10 @@
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime">
-      <Version>4.3.0</Version>
+      <Version>4.3.1</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.Extensions">
-      <Version>4.3.0</Version>
+      <Version>4.3.1</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.Handles">
       <Version>4.3.0</Version>
@@ -809,7 +840,7 @@
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Security.Cryptography.Algorithms">
-      <Version>4.3.0</Version>
+      <Version>4.3.1</Version>
     </PackageReference>
     <PackageReference Include="System.Security.Cryptography.Encoding">
       <Version>4.3.0</Version>
@@ -818,7 +849,7 @@
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Security.Cryptography.X509Certificates">
-      <Version>4.3.0</Version>
+      <Version>4.3.2</Version>
     </PackageReference>
     <PackageReference Include="System.Text.Encoding">
       <Version>4.3.0</Version>
@@ -827,7 +858,7 @@
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Text.RegularExpressions">
-      <Version>4.3.0</Version>
+      <Version>4.3.1</Version>
     </PackageReference>
     <PackageReference Include="System.Threading">
       <Version>4.3.0</Version>
@@ -839,7 +870,7 @@
       <Version>4.3.0</Version>
     </PackageReference>
     <PackageReference Include="System.Xml.ReaderWriter">
-      <Version>4.3.0</Version>
+      <Version>4.3.1</Version>
     </PackageReference>
     <PackageReference Include="System.Xml.XDocument">
       <Version>4.3.0</Version>

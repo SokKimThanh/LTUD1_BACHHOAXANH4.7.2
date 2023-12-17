@@ -1,4 +1,5 @@
-﻿public class Utils
+﻿using System.Data.SqlClient;
+public class Utils
 {
     private static string connectionString = "Data Source=localhost;Initial Catalog=BACHHOAXANH; Integrated Security=true";
     public static string ConnectionString

@@ -410,7 +410,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tbBaoCaoNhanVien.AutoScroll = true;
             this.tbBaoCaoNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
-            this.tbBaoCaoNhanVien.BackgroundImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.tranparent_hoadon;
+            this.tbBaoCaoNhanVien.BackgroundImage = LTUD1_BACHHOAXANH472.Properties.Resources.tranparent_hoadon;
             this.tbBaoCaoNhanVien.Controls.Add(this.tableLayoutPanel9);
             this.tbBaoCaoNhanVien.Location = new System.Drawing.Point(4, 41);
             this.tbBaoCaoNhanVien.Name = "tbBaoCaoNhanVien";

@@ -1,6 +1,10 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
+﻿using CrystalDecisions.Shared;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
 using LTUD1_BACHHOAXANH472.uploads;
-
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.Screen
 {
     public partial class FormHoaDon : Form

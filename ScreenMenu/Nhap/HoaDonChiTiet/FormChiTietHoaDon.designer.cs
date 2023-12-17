@@ -479,7 +479,6 @@ namespace LTUD1_BACHHOAXANH472
         private Label label4;
         private TableLayoutPanel tableLayoutPanel4;
         private GroupBox groupBox2;
-        private Button btnThem;
         private TableLayoutPanel tableLayoutPanel5;
         private GroupBox groupBox3;
         private GroupBox groupBox5;

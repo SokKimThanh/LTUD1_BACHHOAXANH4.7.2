@@ -1,4 +1,5 @@
-﻿namespace LTUD1_BACHHOAXANH472
+﻿using System;
+namespace LTUD1_BACHHOAXANH472
 {
     internal class KhuyenMai
     {
@@ -29,7 +30,7 @@
 
         public override string ToString()
         {
-            return $"{makm,-15}{Ngaybd.ToString("dd/MM/yyyy"),-10}{Ngaykt.ToString("dd/MM/yyyy"),-10}{Maht,-15}";
+            return $"{makm,-15}{Ngaybd,-10:dd/MM/yyyy}{Ngaykt,-10:dd/MM/yyyy}{Maht,-15}";
         }
     }
 }

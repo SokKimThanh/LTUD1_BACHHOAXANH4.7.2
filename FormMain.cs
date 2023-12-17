@@ -4,7 +4,10 @@ using LTUD1_BACHHOAXANH472.ScreenDetail;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan;
-
+using System;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {

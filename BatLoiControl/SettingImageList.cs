@@ -1,4 +1,7 @@
-﻿public struct RGB_COLORS
+﻿using System.Drawing;
+using System.Windows.Forms;
+
+public struct RGB_COLORS
 {
     public static Color PrimaryGreen = Color.FromArgb(0, 31, 72);
     public static Color SecondaryGreen = Color.FromArgb(0, 128, 0);//green

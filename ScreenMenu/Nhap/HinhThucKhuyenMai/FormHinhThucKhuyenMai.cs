@@ -1,4 +1,6 @@
-﻿namespace LTUD1_BACHHOAXANH472.ScreenDetail
+﻿using System;
+using System.Windows.Forms;
+namespace LTUD1_BACHHOAXANH472.ScreenDetail
 {
     public partial class FormHinhThucKhuyenMai : Form
     {

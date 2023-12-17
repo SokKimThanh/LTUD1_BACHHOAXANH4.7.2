@@ -1,4 +1,6 @@
-﻿/// <summary>
+﻿using System.Data;
+
+/// <summary>
 /// Lớp DBController là lớp định nghĩa các thao tác trên cơ sở dữ liệu
 /// 11/07/2023
 /// </summary>

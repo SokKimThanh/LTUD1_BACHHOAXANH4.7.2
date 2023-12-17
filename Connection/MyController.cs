@@ -1,4 +1,7 @@
-﻿/// <summary>
+﻿using System.Data;
+using System.Data.SqlClient;
+
+/// <summary>
 /// Lớp MyController điều khiển thao tác trên cơ sở dữ liệu dữ liệu và chiến thuật đóng mở kết nối
 /// là một lớp trừu tượng chứa một thể hiện của DatabaseConnection và cung cấp hai phương thức bảo vệ để mở và đóng kết nối
 /// là một lớp trừu tượng kế thừa interface DBController chứa các phương thức định nghĩa sẵn để thao tác trên cơ sở dữ liệu

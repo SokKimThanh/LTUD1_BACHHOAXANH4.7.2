@@ -1,4 +1,6 @@
-﻿public class GenerateID
+﻿using System;
+
+public class GenerateID
 {
     /// <summary>
     /// Tìm newid cuối của danh sách

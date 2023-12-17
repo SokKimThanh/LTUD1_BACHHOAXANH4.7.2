@@ -1,4 +1,13 @@
-﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using CrystalDecisions.Shared;
+namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 {
     partial class FormBanHang
     {
@@ -248,7 +257,7 @@
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label12.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_welcome;
+            this.label12.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_welcome;
             this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label12.Location = new System.Drawing.Point(0, 0);
             this.label12.Margin = new System.Windows.Forms.Padding(0);
@@ -265,7 +274,7 @@
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label19.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_taikhoan;
+            this.label19.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_taikhoan;
             this.label19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label19.Location = new System.Drawing.Point(0, 29);
             this.label19.Margin = new System.Windows.Forms.Padding(0);
@@ -290,7 +299,7 @@
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel5.BackgroundImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.tranparent_green_detail;
+            this.tableLayoutPanel5.BackgroundImage = LTUD1_BACHHOAXANH472.Properties.Resources.tranparent_green_detail;
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -326,7 +335,7 @@
             this.lblTieuDeKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTieuDeKhachHang.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTieuDeKhachHang.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTieuDeKhachHang.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_khachhang;
+            this.lblTieuDeKhachHang.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_khachhang;
             this.lblTieuDeKhachHang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTieuDeKhachHang.Location = new System.Drawing.Point(1, 64);
             this.lblTieuDeKhachHang.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -343,7 +352,7 @@
             this.lblTieuDeSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTieuDeSanPham.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTieuDeSanPham.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTieuDeSanPham.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_search;
+            this.lblTieuDeSanPham.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_search;
             this.lblTieuDeSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTieuDeSanPham.Location = new System.Drawing.Point(644, 64);
             this.lblTieuDeSanPham.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -428,7 +437,7 @@
             this.btnSearchSanPham.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnSearchSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchSanPham.ForeColor = System.Drawing.Color.White;
-            this.btnSearchSanPham.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_search;
+            this.btnSearchSanPham.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_search;
             this.btnSearchSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSearchSanPham.Location = new System.Drawing.Point(0, 82);
             this.btnSearchSanPham.Margin = new System.Windows.Forms.Padding(0);
@@ -505,7 +514,7 @@
             this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_lammoi;
+            this.btnRefresh.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_lammoi;
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRefresh.Location = new System.Drawing.Point(237, 82);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -523,7 +532,7 @@
             this.lblTieuDeHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTieuDeHoaDon.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTieuDeHoaDon.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTieuDeHoaDon.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_hoadon;
+            this.lblTieuDeHoaDon.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_hoadon;
             this.lblTieuDeHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTieuDeHoaDon.Location = new System.Drawing.Point(1, 256);
             this.lblTieuDeHoaDon.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -714,7 +723,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label2.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_hotenkhachhang;
+            this.label2.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_hotenkhachhang;
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(4, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -732,7 +741,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label3.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_smartphone;
+            this.label3.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_smartphone;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label3.Location = new System.Drawing.Point(4, 62);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -794,7 +803,7 @@
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label10.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_save;
+            this.label10.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_save;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label10.Location = new System.Drawing.Point(4, 120);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -828,7 +837,7 @@
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label14.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_hoadon;
+            this.label14.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_hoadon;
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label14.Location = new System.Drawing.Point(1, 0);
             this.label14.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -845,7 +854,7 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label16.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_green_hoadon;
+            this.label16.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_green_hoadon;
             this.label16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label16.Location = new System.Drawing.Point(4, 40);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -862,7 +871,7 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label17.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_green_hoadon;
+            this.label17.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_green_hoadon;
             this.label17.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label17.Location = new System.Drawing.Point(4, 80);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -919,7 +928,7 @@
             this.btnThanhToan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnThanhToan.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_save;
+            this.btnThanhToan.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_save;
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThanhToan.Location = new System.Drawing.Point(170, 123);
             this.btnThanhToan.Name = "btnThanhToan";
@@ -940,7 +949,7 @@
             this.btnHuyThanhToan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnHuyThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuyThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnHuyThanhToan.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_huy;
+            this.btnHuyThanhToan.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_huy;
             this.btnHuyThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHuyThanhToan.Location = new System.Drawing.Point(478, 123);
             this.btnHuyThanhToan.Name = "btnHuyThanhToan";
@@ -972,7 +981,7 @@
             this.lblTieuDeDanhSaschSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTieuDeDanhSaschSanPham.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTieuDeDanhSaschSanPham.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTieuDeDanhSaschSanPham.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_sanpham;
+            this.lblTieuDeDanhSaschSanPham.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_sanpham;
             this.lblTieuDeDanhSaschSanPham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblTieuDeDanhSaschSanPham.Location = new System.Drawing.Point(1, 0);
             this.lblTieuDeDanhSaschSanPham.Margin = new System.Windows.Forms.Padding(1, 0, 0, 0);
@@ -1016,8 +1025,8 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangright;
-            this.pictureBox1.InitialImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangright;
+            this.pictureBox1.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangright;
+            this.pictureBox1.InitialImage = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangright;
             this.pictureBox1.Location = new System.Drawing.Point(129, 10);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
@@ -1044,7 +1053,7 @@
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangleft;
+            this.pictureBox2.Image = LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_phantrangleft;
             this.pictureBox2.Location = new System.Drawing.Point(0, 10);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";

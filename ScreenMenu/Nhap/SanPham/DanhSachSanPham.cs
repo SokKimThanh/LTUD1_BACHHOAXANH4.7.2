@@ -1,4 +1,6 @@
-﻿namespace LTUD1_BACHHOAXANH472
+﻿using System.Collections.Generic;
+
+namespace LTUD1_BACHHOAXANH472
 {
     internal class DanhSachSanPham
     {

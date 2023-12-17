@@ -1,4 +1,6 @@
-﻿public class DatabaseConnection
+﻿using System.Data;
+using System.Data.SqlClient;
+public class DatabaseConnection
 {
 #pragma warning disable IDE0044 // Add readonly modifier
     private SqlConnection conn;
