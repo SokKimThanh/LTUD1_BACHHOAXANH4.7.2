@@ -9,10 +9,8 @@ CREATE PROCEDURE sp_sanpham_select_ten
 	@TenSP nvarchar(50)
 AS
 BEGIN
-	SELECT * from sanpham sp, NHACUNGCAP ncc, LOAISP lsp 
-	WHERE (sp.TENSP like N'%'+ ISNULL(@TenSP, sp.TENSP) +'%' 
-		AND sp.MANCC = ncc.MANCC 
-		AND lsp.MALOAI=sp.MALOAI)
+	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.TENSP like N'%'+ @TenSP+'%' and sp.MANCC = ncc.MANCC and lsp.MALOAI=sp.MALOAI--like chính xác mã 100%
 END
 GO
-exec sp_sanpham_select_ten N'Sản'
+select * from sanpham
+exec sp_sanpham_select_ten 'CÁ'

@@ -562,6 +562,8 @@
     <None Include="Resources\icon_big_phantrangleft.png" />
     <None Include="Resources\icon_small_phantrangleft.png" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
+    <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />
+    <Content Include="ScreenMenu\Nhap\SanPham\sp_SanPham_TimTenSanPham.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
     <None Include="Resources\showpassword.png" />
     <None Include="Resources\phongban.png" />
