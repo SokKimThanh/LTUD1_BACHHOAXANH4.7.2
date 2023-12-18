@@ -2,8 +2,6 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System;
-using LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan;
 
 public class AccountController : MyController
 {

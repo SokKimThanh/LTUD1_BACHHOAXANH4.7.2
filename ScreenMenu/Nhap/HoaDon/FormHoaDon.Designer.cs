@@ -308,7 +308,6 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(899, 87);
             this.tableLayoutPanel6.TabIndex = 0;
-            this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
             // txtTimKiem
             // 
@@ -338,8 +337,7 @@ namespace LTUD1_BACHHOAXANH472
             this.label1.Size = new System.Drawing.Size(239, 87);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhập Thông Tin";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
+             // 
             // crystalReportViewer1
             // 
             this.crystalReportViewer1.ActiveViewIndex = 0;
@@ -354,7 +352,7 @@ namespace LTUD1_BACHHOAXANH472
             this.crystalReportViewer1.Size = new System.Drawing.Size(899, 383);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
+            
             // 
             // tabPage3
             // 

@@ -7,9 +7,9 @@ namespace LTUD1_BACHHOAXANH472
     public partial class FormTaiKhoan : Form
     {
         AccountController AcountController;
-        ButtonStateManager buttonStateManager;
+        //ButtonStateManager buttonStateManager;
         QuyenTruyCapController quyenTruyCapController;
-        AccountController controller;
+        //AccountController controller;
         //ButtonStateManager state;
 
         public FormTaiKhoan()
