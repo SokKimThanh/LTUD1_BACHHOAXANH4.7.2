@@ -252,13 +252,13 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangController.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.cs">
+    <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.Designer.cs">
-      <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
+    <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuHoaDon.Designer.cs">
+      <DependentUpon>FormInPhieuHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangController.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\PhanTrangSanPham.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
@@ -464,8 +464,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.resx">
-      <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
+    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FormInPhieuHoaDon.resx">
+      <DependentUpon>FormInPhieuHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\PhieuInHoaDon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

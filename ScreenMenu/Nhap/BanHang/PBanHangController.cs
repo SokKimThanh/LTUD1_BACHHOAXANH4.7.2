@@ -1,5 +1,6 @@
 ﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using System;
 using System.Windows.Forms;
 
@@ -13,6 +14,7 @@ namespace LTUD1_BACHHOAXANH472
         TextBox txtMaHoaDon = new TextBox();
         TextBox txtSoLuongMua = new TextBox();
         Label lblTongTien = new Label();
+        TabControl tcManHinhBanHang = new TabControl();
 
         RandomStringGenerator rnd = new RandomStringGenerator();
 
@@ -30,6 +32,7 @@ namespace LTUD1_BACHHOAXANH472
         public DataGridView DgvThongTinHoaDon { get => dgvThongTinHoaDon; set => dgvThongTinHoaDon = value; }
         public DataGridView DgvDanhSachSanPham { get => dgvDanhSachSanPham; set => dgvDanhSachSanPham = value; }
         public TextBox TxtSoLuongMua { get => txtSoLuongMua; set => txtSoLuongMua = value; }
+        public TabControl TcManHinhBanHang { get => tcManHinhBanHang; set => tcManHinhBanHang = value; }
 
         //Map datarow từ grid sản phẩm sang grid hóa đơn
         public DataGridViewRow MapDataRow(DataGridViewRow rowDanhSachSanPham)
@@ -125,7 +128,7 @@ namespace LTUD1_BACHHOAXANH472
                     double donGia = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[2].Value);
 
                     //Tính toán tổng
-                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = donGia * (khuyenMai / 100) * soLuong;
+                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = khuyenMai * soLuong;
 
                 }
                 else
@@ -152,7 +155,7 @@ namespace LTUD1_BACHHOAXANH472
                 double donGia = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[2].Value);
 
                 //Tính toán tổng
-                dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = donGia * (khuyenMai / 100) * soLuong;
+                dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = khuyenMai * soLuong;
             }
 
             SetTongTienVaTongSoLuong();
@@ -206,8 +209,11 @@ namespace LTUD1_BACHHOAXANH472
                 //==============================================================================
                 if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan();
-                    frmThanhToan.ShowDialog();
+                    /* FormInPhieuHoaDon frmThanhToan = new FormInPhieuHoaDon();
+                     frmThanhToan.ShowDialog();*/
+                    // Lấy tabControlXemDuLieu từ form hoặc từ nơi nó được khởi tạo
+                    //TabControl tcManHinhBanHang = this.tcManHinhBanHang;
+                    tcManHinhBanHang.SelectedIndex = 2;
                 }
 
                 MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);
