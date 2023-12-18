@@ -625,6 +625,7 @@
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_all.sql" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_one.sql" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_update.sql" />
+    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cbo_quyentruycap_select_all.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_delete.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_insert.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_select_all.sql" />

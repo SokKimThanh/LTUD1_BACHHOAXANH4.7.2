@@ -3,6 +3,9 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System;
+using LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan;
+using LTUD1_BACHHOAXANH472.Model;
 
 public class QuyenTruyCapController : MyController
 {
@@ -19,23 +22,23 @@ public class QuyenTruyCapController : MyController
         // Tạo một đối tượng SqlCommand
         Sql = new SqlCommand("sp_quyentruycap_delete", conn);
         Sql.CommandType = CommandType.StoredProcedure;
-
         // Thêm tham số vào SqlCommand
-        Sql.Parameters.AddWithValue("@maqtc", id);
-
+        Sql.Parameters.AddWithValue("@maQTC", id);
         // Thực thi SqlCommand
         if (Sql.ExecuteNonQuery() > 0)
         {
             MessageBox.Show("Xóa Thành công");
         }
-
         // Đóng kết nối
         CloseConnection();
     }
 
     public override object FromDataRow(DataRow row)
     {
-        return new QuyenTruyCap(row.Field<string>("maqtc"), row.Field<string>("tenqtc"));
+        QuyenTruyCap o = new QuyenTruyCap();
+        o.Maqtc = row.Field<string>("MAQTC");
+        o.Tenqtc = row.Field<string>("TENQTC");
+        return o;
     }
 
     public override void Insert(object sender)
@@ -53,8 +56,6 @@ public class QuyenTruyCapController : MyController
             // Thêm tham số vào SqlCommand
             Sql.Parameters.AddWithValue("@maqtc", o.Maqtc);
             Sql.Parameters.AddWithValue("@tenqtc", o.Tenqtc);
-
-
             // Thực thi SqlCommand
             if (Sql.ExecuteNonQuery() > 0)
             {

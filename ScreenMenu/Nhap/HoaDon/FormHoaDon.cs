@@ -221,20 +221,5 @@ namespace LTUD1_BACHHOAXANH472
             // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
             crystalReportViewer2.ReportSource = rpt;
         }
-
-        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

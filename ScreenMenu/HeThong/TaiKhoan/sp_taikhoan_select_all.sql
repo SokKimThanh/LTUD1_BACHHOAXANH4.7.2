@@ -8,7 +8,7 @@ go
 CREATE PROCEDURE sp_taikhoan_select_all
 AS
 BEGIN
-	SELECT tk.TENTK as ID, tk.TENTK, qtc.TENQTC FROM TAIKHOAN tk, QUYENTRUYCAP qtc where tk.MAQTC = qtc.MAQTC
+SELECT * from TAIKHOAN
 END
 GO
  

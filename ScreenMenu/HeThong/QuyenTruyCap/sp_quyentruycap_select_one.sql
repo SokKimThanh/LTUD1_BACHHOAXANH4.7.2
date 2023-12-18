@@ -9,9 +9,9 @@ drop procedure if exists sp_quyentruycap_select_one
 go
 CREATE PROCEDURE sp_quyentruycap_select_one
 	
-	@TENQTC CHAR(30)
+	@MAQTC CHAR(30)
 AS
 BEGIN
-	SELECT * from quyentruycap where TENQTC = @TENQTC --  chính xác mã 100%
+	SELECT * from quyentruycap where MAQTC = @MAQTC --  chính xác mã 100%
 END
 GO
