@@ -9,11 +9,9 @@ CREATE PROCEDURE sp_sanpham_select_ngay
 	@NgayHT date
 AS
 BEGIN
-	SELECT * from sanpham sp, NHACUNGCAP ncc, LOAISP lsp 
-	WHERE (sp.HSD = ISNULL(@NgayHT, sp.HSD) 
-		AND sp.MANCC = ncc.MANCC 
-		AND lsp.MALOAI=sp.MALOAI)
+	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = @NgayHT--like chính xác mã 100%
+	
 END
 GO
-
-p_sanpham_select_ngay '2023-04-03'
+select * From SANPHAM
+exec sp_sanpham_select_ngay
