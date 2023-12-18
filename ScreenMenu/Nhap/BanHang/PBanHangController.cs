@@ -1,6 +1,7 @@
 ﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
@@ -8,20 +9,38 @@ namespace LTUD1_BACHHOAXANH472
     public class PBanHangController
     {
 
+        ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
+        HoaDonController hoadonController = new HoaDonController(Utils.ConnectionString);
+        KhachHangController khachHangController = new KhachHangController(Utils.ConnectionString);
+        RandomStringGenerator rnd = new RandomStringGenerator();
+
         TextBox txtSDTKhachHang = new TextBox();
         TextBox txtTenKhachHang = new TextBox();
         TextBox txtMaHoaDon = new TextBox();
         TextBox txtSoLuongMua = new TextBox();
         Label lblTongTien = new Label();
 
-        RandomStringGenerator rnd = new RandomStringGenerator();
-
         DataGridView dgvThongTinHoaDon;
         DataGridView dgvDanhSachSanPham;
 
-        ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
-        HoaDonController hoadonController = new HoaDonController(Utils.ConnectionString);
-        KhachHangController khachHangController = new KhachHangController(Utils.ConnectionString);
+        double tongthanhtien = 0;
+        double tongsoluong = 0;
+        private string btnThemHDCT;
+
+        public PBanHangController()
+        {
+
+        }
+
+        public PBanHangController(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon)
+        {
+            this.txtSDTKhachHang = txtSDTKhachHang;
+            this.txtTenKhachHang = txtTenKhachHang;
+            this.txtMaHoaDon = txtMaHoaDon;
+            this.txtSoLuongMua = txtSoLuongMua;
+            this.lblTongTien = lblTongTien;
+            this.dgvThongTinHoaDon = dgvThongTinHoaDon;
+        }
 
         public TextBox TxtSDTKhachHang { get => txtSDTKhachHang; set => txtSDTKhachHang = value; }
         public TextBox TxtTenKhachHang { get => txtTenKhachHang; set => txtTenKhachHang = value; }
@@ -30,32 +49,80 @@ namespace LTUD1_BACHHOAXANH472
         public DataGridView DgvThongTinHoaDon { get => dgvThongTinHoaDon; set => dgvThongTinHoaDon = value; }
         public DataGridView DgvDanhSachSanPham { get => dgvDanhSachSanPham; set => dgvDanhSachSanPham = value; }
         public TextBox TxtSoLuongMua { get => txtSoLuongMua; set => txtSoLuongMua = value; }
+        public double Tongthanhtien { get => tongthanhtien; set => tongthanhtien = value; }
+        public double Tongsoluong { get => tongsoluong; set => tongsoluong = value; }
 
-        //Map datarow từ grid sản phẩm sang grid hóa đơn
+        /// <summary>
+        /// Map datarow từ grid sản phẩm sang grid hóa đơn
+        /// </summary>
+        /// <param name="rowDanhSachSanPham">một dòng sản phẩm được chọn</param>
+        /// <returns></returns>
         public DataGridViewRow MapDataRow(DataGridViewRow rowDanhSachSanPham)
         {
-            //Thêm 1 obj cho dgvThongTinHoaDon vì dữ các cột không đồng bộ
-
-            DataGridViewRow row = new DataGridViewRow();
-
-            //Tạo columns cho từng hàng
-            for (int i = 0; i < dgvThongTinHoaDon.Columns.Count - 2; i++)
+            // Kiểm tra xem sản phẩm đã tồn tại trong dgvThongTinHoaDon hay chưa
+            //dgvThongTinHoaDon.Columns["SL"].Index
+            foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
             {
-                row.Cells.Add(new DataGridViewTextBoxCell());
-            }
-            row.Cells[0].Value = rowDanhSachSanPham.Cells[1].Value;
-            row.Cells[1].Value = rowDanhSachSanPham.Cells[2].Value;
-            row.Cells[2].Value = rowDanhSachSanPham.Cells[3].Value;
-            row.Cells[3].Value = rowDanhSachSanPham.Cells[5].Value;//tính tiền khuyến mãi sau giảm giá 
-            row.Cells[4].Value = 0;
-            row.Cells[5].Value = 0;
+                int columnIndex = dgvThongTinHoaDon.CurrentCell.ColumnIndex; // Lấy chỉ số cột hiện tại
+                string columnName = dgvThongTinHoaDon.Columns[columnIndex].Name; // Lấy tên cột
 
-            row.Cells.Add(new DataGridViewButtonCell());
-            row.Cells[6].Value = "+";
-            row.Cells.Add(new DataGridViewButtonCell());
-            row.Cells[7].Value = "-";
-            return row;
+                if (row.Cells["MASP"].Value.ToString() == rowDanhSachSanPham.Cells["MASP"].Value.ToString())
+                {
+                    // Nếu sản phẩm đã tồn tại, tăng số lượng lên 1 và cập nhật tổng tiền
+                    int soluongmuahang = 0;
+                    if (dgvThongTinHoaDon.Columns.Contains("SL") && row.Cells["SL"].Value != null)
+                    {
+                        soluongmuahang = int.Parse(row.Cells["SL"].Value.ToString()) + 1;
+
+                        // kiểm tra tồn kho
+                        if (soluongmuahang <= int.Parse(rowDanhSachSanPham.Cells["SLTONKHO"].Value.ToString()))
+                        {
+                            row.Cells["SL"].Value = soluongmuahang; // Cập nhật số lượng
+                        }
+                        else
+                        {
+                            throw new Exception("Không đủ số lượng sản phẩm!");
+                        }
+                    }
+                    int khuyenmai = int.Parse(row.Cells["KM"].Value.ToString());
+
+                    double tongtien = soluongmuahang * khuyenmai; // Tính lại tổng tiền
+                    row.Cells["THANHTIEN"].Value = tongtien; // Cập nhật tổng tiền
+
+                    return null; // Trả về null vì không cần thêm hàng mới
+                }
+            }
+
+            // Nếu sản phẩm chưa tồn tại, tạo một hàng mới
+            DataGridViewRow newRow = new DataGridViewRow();
+
+            // Tạo các ô cho từng cột
+            for (int i = 0; i < dgvThongTinHoaDon.Columns.Count - 2; i++) // -2: Bỏ qua 2 ô cuối là ô cộng trừ
+            {
+                newRow.Cells.Add(new DataGridViewTextBoxCell());
+            }
+
+            // Điền thông tin sản phẩm vào hàng mới
+            newRow.Cells[dgvThongTinHoaDon.Columns["MASP"].Index].Value = rowDanhSachSanPham.Cells["MASP"].Value;
+            newRow.Cells[dgvThongTinHoaDon.Columns["TENSP"].Index].Value = rowDanhSachSanPham.Cells["TENSP"].Value;
+            newRow.Cells[dgvThongTinHoaDon.Columns["DONGIA"].Index].Value = rowDanhSachSanPham.Cells["DONGIA"].Value;
+            newRow.Cells[dgvThongTinHoaDon.Columns["KM"].Index].Value = rowDanhSachSanPham.Cells["GIABAN"].Value;
+            newRow.Cells[dgvThongTinHoaDon.Columns["SL"].Index].Value = 1;
+            newRow.Cells[dgvThongTinHoaDon.Columns["THANHTIEN"].Index].Value = 1;
+            // Thêm các nút cộng trừ
+            newRow.Cells.Add(new DataGridViewButtonCell());
+            newRow.Cells[6].Value = "+";
+            newRow.Cells.Add(new DataGridViewButtonCell());
+            newRow.Cells[7].Value = "-";
+
+            return newRow; // Trả về hàng mới
         }
+
+        /// <summary>
+        /// Tính số lượng tồn kho
+        /// </summary>
+        /// <param name="maSP"></param>
+        /// <returns></returns>
         public int TinhSoLuongTonTheoMa(string maSP)
         {
             int soLuongTon = 0;
@@ -67,6 +134,11 @@ namespace LTUD1_BACHHOAXANH472
             return soLuongTon;
         }
 
+        /// <summary>
+        /// Kiểm tra Số lượng tồn kho theo mã sản phẩm
+        /// </summary>
+        /// <param name="maSP"></param>
+        /// <returns></returns>
         public bool KiemTraLonHonTon(string maSP)
         {
             int soLuongTruocKhiThem = 0;
@@ -83,21 +155,21 @@ namespace LTUD1_BACHHOAXANH472
 
             if (soLuongTruocKhiThem < soLuongTon)
             {
-                return true;
+                return true;// thông qua. số lượng trước khi thêm nhỏ hơn số lượng tồn
             }
-            return false;
+            return false;// phát hiện sai phạm 
         }
 
-        public void SetTongTienVaTongSoLuong()
+        public void SetTongTienVaTongSoLuong(DataGridView dgvThongTinHoaDon)
         {
-            int soluongmua = 0;
+            int tongsoluong = 0;
             double tongtien = 0;
             foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
             {
-                soluongmua += Convert.ToInt32(row.Cells[4].Value);
-                tongtien += Convert.ToDouble(row.Cells[3].Value);
+                tongsoluong += Convert.ToInt32(row.Cells["SL"].Value);
+                tongtien += Convert.ToDouble(row.Cells["KM"].Value);
             }
-            txtSoLuongMua.Text = soluongmua.ToString();
+            txtSoLuongMua.Text = tongsoluong.ToString();
             if (lblTongTien != null)
             {
                 lblTongTien.Text = tongtien.ToString();
@@ -107,8 +179,7 @@ namespace LTUD1_BACHHOAXANH472
                 // Xử lý trường hợp lblTongTien là null
             }
         }
-        double tongthanhtien = 0;
-        double tongsoluong = 0;
+
         public void dgvThongTinHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Tăng số lượng
@@ -162,7 +233,21 @@ namespace LTUD1_BACHHOAXANH472
 
             }
             lblTongTien.Text = tongthanhtien.ToString();
-            SetTongTienVaTongSoLuong();
+            SetTongTienVaTongSoLuong(dgvThongTinHoaDon);
+        }
+        public void btnHuyThanhToan_Click(object sender, EventArgs e)
+        {
+            // Xác nhận trước khi xóa
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Xóa tất cả các dòng trong dgvThongTinHoaDon
+                dgvThongTinHoaDon.Rows.Clear();
+                txtTenKhachHang.Text = "";
+                TxtSDTKhachHang.Text = "";
+                lblTongTien.Text = "";
+                txtSoLuongMua.Text = "";
+            }
         }
         public void btnThanhToan_Click(object sender, EventArgs e)
         {
@@ -220,101 +305,79 @@ namespace LTUD1_BACHHOAXANH472
                 MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);
             }
         }
-        public void btnHuyThanhToan_Click(object sender, EventArgs e)
+
+        //==============================================================================
+        //--..........................................................................--
+        //------------------           Sự kiện click btnThemHDCT       -----------------
+        //--..........................................................................--
+        //==============================================================================
+        public void dgvDanhSachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Xác nhận trước khi xóa
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                // Xóa tất cả các dòng trong dgvThongTinHoaDon
-                dgvThongTinHoaDon.Rows.Clear();
-                txtTenKhachHang.Text = "";
-                TxtSDTKhachHang.Text = "";
-                lblTongTien.Text = "";
-                txtSoLuongMua.Text = "";
-            }
-        }
-
-        public void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Kiểm tra xem người dùng có nhấp vào cột nút "btnThemGioHang" hay không
-            if (e.ColumnIndex == dgvDanhSachSanPham.Columns["btnThemGioHang"].Index && e.RowIndex >= 0)
-            {
-                // Thêm sản phẩm vào dgvThongTinHoaDon hoặc cập nhật số lượng nếu sản phẩm đã tồn tại
-
-                // Lấy thông tin sản phẩm từ dgvDanhSachSanPham
-                string maSP = dgvDanhSachSanPham.Rows[e.RowIndex].Cells["MASP"].Value.ToString();
-                string tenSP = dgvDanhSachSanPham.Rows[e.RowIndex].Cells["TenSP"].Value.ToString();
-                decimal donGia = decimal.Parse(dgvDanhSachSanPham.Rows[e.RowIndex].Cells["DonGia"].Value.ToString());
-                decimal km = decimal.Parse(dgvDanhSachSanPham.Rows[e.RowIndex].Cells["GIABAN"].Value.ToString());
-
-                // Tìm sản phẩm trong dgvThongTinHoaDon
-                foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
+                // Kiểm tra xem người dùng có nhấp vào nút cuối cùng không
+                if (e.ColumnIndex == dgvDanhSachSanPham.Columns[btnThemHDCT].Index && e.RowIndex >= 0)
                 {
-                    string cellMaSanPham = row.Cells[0].Value.ToString().Trim();
-                    if (cellMaSanPham == maSP)
+                    // Lấy hàng hiện tại
+                    DataGridViewRow rowDanhSachSanPham = dgvDanhSachSanPham.Rows[e.RowIndex];
+
+                    // Gọi hàm MapDataRow
+                    DataGridViewRow newRow = MapDataRow(rowDanhSachSanPham);
+
+                    // Kiểm tra xem newRow có phải là null không
+                    if (newRow != null)
                     {
-                        // Nếu sản phẩm đã tồn tại, tăng số lượng lên 1
-                        int soluong = int.Parse(row.Cells["SL"].Value.ToString()) + 1;
-                        int khuyenmai = int.Parse(row.Cells["KM"].Value.ToString());
-                        row.Cells["SL"].Value = soluong;// cap nhat lai so luong theo ma
-                        double tongtien = soluong * khuyenmai;// cap nhat tong tien theo ma
-                        row.Cells["ThanhTien"].Value = tongtien;
-                        return;
+                        // Thêm hàng mới vào dgvThongTinHoaDon
+                        dgvThongTinHoaDon.Rows.Add(newRow);
                     }
                 }
-
-                // Nếu sản phẩm chưa tồn tại, thêm một dòng mới vào dgvThongTinHoaDon
-                dgvThongTinHoaDon.Rows.Add(maSP, tenSP, donGia, km, 1);
-
-                SetTongTienVaTongSoLuong();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
+
+
         public void ChangeHeaderNameDanhThongTinHoaDon()
         {
-            dgvThongTinHoaDon.Columns[0].HeaderText = "Mã Sản Phẩm";
-            dgvThongTinHoaDon.Columns[1].HeaderText = "Tên Sản Phẩm";
-            dgvThongTinHoaDon.Columns[2].HeaderText = "Đơn Giá";
-            dgvThongTinHoaDon.Columns[3].HeaderText = "Khuyến Mãi";
-            dgvThongTinHoaDon.Columns[4].HeaderText = "Số Lượng";
-            dgvThongTinHoaDon.Columns[5].HeaderText = "Tổng";
-            dgvThongTinHoaDon.Columns[6].HeaderText = "+";
-            dgvThongTinHoaDon.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvThongTinHoaDon.Columns[7].HeaderText = "-";
-            dgvThongTinHoaDon.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvThongTinHoaDon.Columns["MASP"].HeaderText = "Mã Sản Phẩm";
+            dgvThongTinHoaDon.Columns["TENSP"].HeaderText = "Tên Sản Phẩm";
+            dgvThongTinHoaDon.Columns["DONGIA"].HeaderText = "Đơn Giá";
+            dgvThongTinHoaDon.Columns["KM"].HeaderText = "Khuyến Mãi";
+            dgvThongTinHoaDon.Columns["SL"].HeaderText = "Số Lượng";
+            dgvThongTinHoaDon.Columns["THANHTIEN"].HeaderText = "Tổng";
+            dgvThongTinHoaDon.Columns["BtnTangSL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvThongTinHoaDon.Columns["btnGiamSL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         public void ChangeHeaderNameDanhSachSanPham()
         {
-
-
-            dgvDanhSachSanPham.Columns[1].HeaderText = "Mã Sản Phẩm";
-            dgvDanhSachSanPham.Columns[2].HeaderText = "Tên Sản Phẩm";
-            dgvDanhSachSanPham.Columns[3].HeaderText = "Đơn Vị Tính";
-            dgvDanhSachSanPham.Columns[4].HeaderText = "Giá gốc";
-            dgvDanhSachSanPham.Columns[5].HeaderText = "% Giảm giá";
-            dgvDanhSachSanPham.Columns[6].HeaderText = "Giá bán";
-            dgvDanhSachSanPham.Columns[7].HeaderText = "SL Tồn";
-            //dgvDanhSachSanPham.Columns[8].HeaderText = "Mã Loại";
-            //dgvDanhSachSanPham.Columns[9].HeaderText = "Mã NCC";
-            //dgvDanhSachSanPham.Columns[10].HeaderText = "Mã KM";
+            dgvDanhSachSanPham.Columns["MASP"].HeaderText = "Mã Sản Phẩm";
+            dgvDanhSachSanPham.Columns["TENSP"].HeaderText = "Tên Sản Phẩm";
+            dgvDanhSachSanPham.Columns["DONVI"].HeaderText = "Đơn Vị Tính";
+            dgvDanhSachSanPham.Columns["DONGIA"].HeaderText = "Giá gốc";//Đơn giá 
+            dgvDanhSachSanPham.Columns["GIAMGIA"].HeaderText = "% Giảm giá";
+            dgvDanhSachSanPham.Columns["GIABAN"].HeaderText = "Giá bán";// giá khuyến mãi sau giảm giá
+            dgvDanhSachSanPham.Columns["SLTONKHO"].HeaderText = "SL Tồn";
         }
 
         public void TaoCotThemGioHang()
         {
-            DataGridViewButtonColumn colThemGioHang = new DataGridViewButtonColumn();
-            colThemGioHang.Name = "btnThemGioHang";
-            colThemGioHang.HeaderText = "Giỏ hàng";
-            dgvDanhSachSanPham.Columns.Add(colThemGioHang);
-            ErrColors color = new ErrColors();
-            foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
-            {
-                DataGridViewCell cell = new DataGridViewButtonCell();
-                cell.Value = "+";
-                cell.Style.BackColor = color.primaryGreen;
-                cell.Style.ForeColor = color.primaryPink;
-                row.Cells[dgvDanhSachSanPham.Columns["btnThemGioHang"].Index].Value = cell.Value;
-            }
+            // Lấy tổng số cột
+            int totalColumns = dgvDanhSachSanPham.Columns.Count;
+
+            // Thay đổi thứ tự cột "btnThemHDCT" thành vị trí cuối cùng
+            dgvDanhSachSanPham.Columns["btnThemHDCT"].DisplayIndex = totalColumns - 1;
+
+
+            // Lấy cột cuối cùng
+            DataGridViewColumn lastColumn = dgvDanhSachSanPham.Columns["btnThemHDCT"];
+
+            // Hiển thị tên cột cuối cùng
+
+            btnThemHDCT = lastColumn.Name;
         }
 
     }

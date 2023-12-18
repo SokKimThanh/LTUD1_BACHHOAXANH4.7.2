@@ -35,10 +35,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 62);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(26, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 0;
             // 
             // rpvInHoaDon
@@ -48,23 +47,23 @@
             this.rpvInHoaDon.Cursor = System.Windows.Forms.Cursors.Default;
             this.rpvInHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rpvInHoaDon.Location = new System.Drawing.Point(0, 0);
+            this.rpvInHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rpvInHoaDon.Name = "rpvInHoaDon";
-            //this.rpvInHoaDon.ReportSource = "D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\ScreenMenu\\Nhap\\BanHang\\PhieuInHoaDon.rpt";
-            this.rpvInHoaDon.Size = new System.Drawing.Size(1275, 507);
+            this.rpvInHoaDon.ReportSource = "F:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\uploads\\PhieuInHoaDon.rpt";
+            this.rpvInHoaDon.Size = new System.Drawing.Size(956, 412);
             this.rpvInHoaDon.TabIndex = 1;
             this.rpvInHoaDon.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.rpvInHoaDon.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // FormInPhieuThanhToan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.ClientSize = new System.Drawing.Size(1275, 507);
+            this.ClientSize = new System.Drawing.Size(956, 412);
             this.Controls.Add(this.rpvInHoaDon);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormInPhieuThanhToan";
             this.Text = "FormInPhieuThanhToan";
             this.ResumeLayout(false);

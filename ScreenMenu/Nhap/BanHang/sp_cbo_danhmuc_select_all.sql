@@ -13,6 +13,6 @@ CREATE PROCEDURE sp_cbo_danhmuc_select_all
 AS
 BEGIN
 	SELECT maloai, tenloai from LOAISP
-END
+END;
 GO
 execute sp_cbo_danhmuc_select_all

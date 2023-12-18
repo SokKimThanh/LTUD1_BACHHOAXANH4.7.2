@@ -23,11 +23,22 @@ Date(dd/MM/yyyy)		Author				Comments
 10/12/2023	07:44 CH	Sok Kim Thanh		Thêm trường created_date_ncc datetime vào bảng nha cung cap, giá trị mặc định là ngày hiện tại
 14/12/2023	09:24 CH	Sok Kim Thanh		Thêm dữ liệu cho ứng dụng
 17/12/2023	10/42 SA	Sok Kim Thanh		Thêm cột phantramgiamgia int cho khuyến mãi 
+19/12/2023	05:04 SA	Sok Kim Thanh		Sửa đoạn code tạo database, thêm dữ liệu cho bảng chi nhánh, nhân viên, khách hàng ,sản phẩm
 ***************************************************************************************************/
 ------------------------------------------------------------
 --Tạo database mới										   -
 ------------------------------------------------------------
+IF DB_ID('bachhoaxanh') IS NOT NULL
+BEGIN
+	use master
+    ALTER DATABASE bachhoaxanh SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE bachhoaxanh;
+END
+ 
 create database BACHHOAXANH
+
+ALTER DATABASE bachhoaxanh SET MULTI_USER;
+
 go 
 use BACHHOAXANH
 
@@ -136,7 +147,7 @@ alter table TAIKHOAN add constraint FK_TAIKHOAN_QUYENTRUYCAP foreign key (MAQTC)
 ------------------------------------------------------------
 ************************************************************/
 alter table khuyenmai add phantramgiamgia int null;
-
+alter table 
 
 
 

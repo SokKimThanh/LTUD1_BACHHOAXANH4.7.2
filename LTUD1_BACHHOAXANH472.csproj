@@ -224,12 +224,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Model\TextHelper.cs" />
-    <Compile Include="PhieuInHoaDon.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PhieuInHoaDon.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.cs">
@@ -239,7 +233,7 @@
       <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangController.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\PhanTrangSanPham.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\PhanTrangController.cs" />
     <Compile Include="uploads\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -439,10 +433,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.vi.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PhieuInHoaDon.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PhieuInHoaDon.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.resx">
       <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>

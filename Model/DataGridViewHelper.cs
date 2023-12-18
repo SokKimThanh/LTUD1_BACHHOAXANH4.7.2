@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using ScrollBars = System.Windows.Forms.ScrollBars;
 public static class DataGridViewHelper
 {
     /// <summary>
@@ -16,9 +17,8 @@ public static class DataGridViewHelper
         dgv.Dock = DockStyle.Fill;
         dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         dgv.AllowUserToAddRows = false;
-        dgv.ScrollBars = ScrollBars.Both;
-
-    }
+        dgv.ScrollBars = ScrollBars.Both; 
+    } 
 }
 
 

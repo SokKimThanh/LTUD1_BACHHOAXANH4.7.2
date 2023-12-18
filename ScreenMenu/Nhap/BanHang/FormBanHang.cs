@@ -1,5 +1,5 @@
-﻿using LTUD1_BACHHOAXANH472.Model;
-using System;
+﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
@@ -9,7 +9,7 @@ namespace LTUD1_BACHHOAXANH472
         private int pageSize = 16;
         private int pageCount = 0;
         PBanHangController banhangController = new PBanHangController();
-        PhanTrangSanPham phantrang;
+        PhanTrangController phantrang;
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
@@ -44,7 +44,7 @@ namespace LTUD1_BACHHOAXANH472
             //--..........................................................................--
             //==============================================================================
             // thêm dữ liệu vào datagridview sản phẩm
-            phantrang = new PhanTrangSanPham(currentPage, pageSize, pageCount);
+            phantrang = new PhanTrangController(currentPage, pageSize, pageCount);
             dgvDanhSachSanPham.DataSource = phantrang.GetDataPhanTrang();
             lblTongSoTrang.Text = phantrang.GetTongSoTrang();
             //==============================================================================
@@ -206,7 +206,8 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)){
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
                 e.Handled = true;
             }
         }
@@ -230,14 +231,9 @@ namespace LTUD1_BACHHOAXANH472
             lblTongTien.Text = banhangController.LblTongTien.Text;
             txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
-        //==============================================================================
-        //--..........................................................................--
-        //------------------Sự kiện event  add to cart----------------------------------
-        //--..........................................................................--
-        //==============================================================================
-        private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvDanhSachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            banhangController.dgvDanhSachSanPham_CellContentClick(sender, e);
+            banhangController.dgvDanhSachSanPham_CellClick(sender, e);
             if (banhangController.LblTongTien != null)
             {
                 lblTongTien.Text = banhangController.LblTongTien.Text;
@@ -248,7 +244,6 @@ namespace LTUD1_BACHHOAXANH472
             }
             txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
-
         //==============================================================================
         //--..........................................................................--
         //------------------Sự kiện event hủy thanh toán -------------------------------
@@ -261,14 +256,45 @@ namespace LTUD1_BACHHOAXANH472
             txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
 
-        private void txtSDT_TextChanged(object sender, EventArgs e)
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event nhấn chuột lên dòng --------------------------
+        //--................      trong datagridview        ..........................--
+        //==============================================================================
+        private void dgvDanhSachSanPham_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.RowIndex >= 0) // Kiểm tra xem con trỏ chuột có đang ở trên một hàng không
+            {
+                // Thay đổi màu nền của hàng
+                this.dgvDanhSachSanPham.Rows[e.RowIndex].DefaultCellStyle.BackColor = new ErrColors().primaryPink; // Màu khi di chuột qua
+            }
         }
 
-        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
+        private void dgvDanhSachSanPham_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
-          
+            if (e.RowIndex >= 0) // Kiểm tra xem con trỏ chuột có đang ở trên một hàng không
+            {
+                // Trả lại màu nền mặc định cho hàng
+                this.dgvDanhSachSanPham.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White; // Màu mặc định 
+            }
         }
+        private void dgvDanhSachHoaDon_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem con trỏ chuột có đang ở trên một hàng không
+            {
+                // Thay đổi màu nền của hàng
+                this.dgvThongTinHoaDon.Rows[e.RowIndex].DefaultCellStyle.BackColor = new ErrColors().primaryPink; // Màu khi di chuột qua
+            }
+        }
+
+        private void dgvDanhSachHoaDon_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0) // Kiểm tra xem con trỏ chuột có đang ở trên một hàng không
+            {
+                // Trả lại màu nền mặc định cho hàng
+                this.dgvThongTinHoaDon.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White; // Màu mặc định 
+            }
+        }
+
     }
 }

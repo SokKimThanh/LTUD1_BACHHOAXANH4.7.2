@@ -34,7 +34,7 @@ BEGIN
 	
 
 	select TONGTHANHTIEN  from HoaDon where HOADON.MAHD =@MAHD
-END
+END;
 GO
 --select * from SANPHAM
 exec sp_sanpham_giamgia_select_all 'HD01'

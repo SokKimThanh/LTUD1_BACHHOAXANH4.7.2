@@ -186,7 +186,7 @@ CREATE PROCEDURE sp_cbo_danhmuc_select_all
 AS
 BEGIN
 	SELECT maloai, tenloai from LOAISP
-END
+END;
 GO
 execute sp_cbo_danhmuc_select_all﻿-- Author:		Sok Kim Thanh
 -- Create date: <16/12/2023>
@@ -197,7 +197,7 @@ CREATE PROCEDURE sp_cbo_nhacungcap_select_all
 AS
 BEGIN
 	select MANCC, TENNCC from nhacungcap order by created_date_ncc desc
-END
+END;
 GO
 execute sp_cbo_nhacungcap_select_all﻿-- Create Procedure sp_sanpham_select_all.SQL
 -- Sản phẩm giảm giá
@@ -235,7 +235,7 @@ BEGIN
 	
 
 	select TONGTHANHTIEN  from HoaDon where HOADON.MAHD =@MAHD
-END
+END;
 GO
 --select * from SANPHAM
 exec sp_sanpham_giamgia_select_all 'HD01'
@@ -269,7 +269,8 @@ BEGIN
     SELECT STT, MASP, TENSP, DONVI, DONGIA, GIAMGIA, GIABAN, SLTONKHO
     FROM PHANTRANG 
     WHERE STT BETWEEN (@CURRPAGE - 1)*@RECODPERPAGE+1 AND @CURRPAGE*@RECODPERPAGE;
-END
+END;
+go
 SELECT * FROM LOAISP
 SELECT * FROM NHACUNGCAP
 EXECUTE sp_sanpham_phantrang 'L01','NCC02','A',1,16
@@ -1949,14 +1950,12 @@ CREATE PROCEDURE sp_sanpham_select_ngay
 	@NgayHT date
 AS
 BEGIN
-	SELECT * from sanpham sp, NHACUNGCAP ncc, LOAISP lsp 
-	WHERE (sp.HSD = ISNULL(@NgayHT, sp.HSD) 
-		AND sp.MANCC = ncc.MANCC 
-		AND lsp.MALOAI=sp.MALOAI)
+	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = @NgayHT--like chính xác mã 100%
+	
 END
 GO
-
-p_sanpham_select_ngay '2023-04-03'
+select * From SANPHAM
+exec sp_sanpham_select_ngay
 ﻿-- Create Procedure sp_sanpham_select_one.sql
 -- Sản phẩm select one
 -- Author:		Sok Kim Thanh
@@ -1982,13 +1981,11 @@ CREATE PROCEDURE sp_sanpham_select_ten
 	@TenSP nvarchar(50)
 AS
 BEGIN
-	SELECT * from sanpham sp, NHACUNGCAP ncc, LOAISP lsp 
-	WHERE (sp.TENSP like N'%'+ ISNULL(@TenSP, sp.TENSP) +'%' 
-		AND sp.MANCC = ncc.MANCC 
-		AND lsp.MALOAI=sp.MALOAI)
+	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.TENSP like N'%'+ @TenSP+'%' and sp.MANCC = ncc.MANCC and lsp.MALOAI=sp.MALOAI--like chính xác mã 100%
 END
 GO
-exec sp_sanpham_select_ten N'Sản'
+select * from sanpham
+exec sp_sanpham_select_ten 'CÁ'
 ﻿-- Create Procedure sp_sanpham_update.sql
 -- Sản phẩm update
 -- Author:		Sok Kim Thanh

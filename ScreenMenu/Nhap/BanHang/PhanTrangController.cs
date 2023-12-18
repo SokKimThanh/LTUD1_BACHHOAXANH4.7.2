@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
-    internal class PhanTrangSanPham
+    internal class PhanTrangController
     {
-        int pageIndex = 16;//Đơn vị cách nhau mỗi trang
+        int pageIndex = 32;//Đơn vị cách nhau mỗi trang
         private BindingSource danhSachSP = new BindingSource();
         private int currentPage = 1;// số trang hiện tại
         private int pageSize = 8;// số sản phẩm mỗi trang 
@@ -18,7 +18,7 @@ namespace LTUD1_BACHHOAXANH472
         private string loaisanpham;// loại sản phẩm (loaisp)
         SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
 
-        public PhanTrangSanPham(int currentPage, int pageSize, int pageCount, string searchterm = null, string nhacungcap = null, string loaisanpham = null)
+        public PhanTrangController(int currentPage, int pageSize, int pageCount, string searchterm = null, string nhacungcap = null, string loaisanpham = null)
         {
             this.currentPage = currentPage;
             this.pageSize = pageSize;

@@ -7,6 +7,6 @@ CREATE PROCEDURE sp_cbo_nhacungcap_select_all
 AS
 BEGIN
 	select MANCC, TENNCC from nhacungcap order by created_date_ncc desc
-END
+END;
 GO
 execute sp_cbo_nhacungcap_select_all
