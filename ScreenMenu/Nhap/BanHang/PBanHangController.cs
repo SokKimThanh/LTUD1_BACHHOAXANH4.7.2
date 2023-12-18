@@ -86,10 +86,10 @@ namespace LTUD1_BACHHOAXANH472
             }
             return false;
         }
-       
+
         public void SetTongTienVaTongSoLuong()
         {
-            int soluongmua =0;
+            int soluongmua = 0;
             double tongtien = 0;
             foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
             {
@@ -125,7 +125,7 @@ namespace LTUD1_BACHHOAXANH472
                     double donGia = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[2].Value);
 
                     //Tính toán tổng
-                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = donGia * (khuyenMai / 100) * soLuong;
+                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = khuyenMai * soLuong;
 
                 }
                 else
@@ -152,7 +152,7 @@ namespace LTUD1_BACHHOAXANH472
                 double donGia = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[2].Value);
 
                 //Tính toán tổng
-                dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = donGia * (khuyenMai / 100) * soLuong;
+                dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = khuyenMai * soLuong;
             }
 
             SetTongTienVaTongSoLuong();

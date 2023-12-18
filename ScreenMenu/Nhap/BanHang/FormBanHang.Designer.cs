@@ -101,6 +101,8 @@ namespace LTUD1_BACHHOAXANH472
             this.lblTongSoTrang = new System.Windows.Forms.Label();
             this.btnPrevious = new System.Windows.Forms.PictureBox();
             this.btnNext = new System.Windows.Forms.PictureBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tcManHinhBanHang.SuspendLayout();
             this.tpManHinhBanHang.SuspendLayout();
             this.tlpManHinhBanHang.SuspendLayout();
@@ -120,11 +122,13 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpPhanTrang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcManHinhBanHang
             // 
             this.tcManHinhBanHang.Controls.Add(this.tpManHinhBanHang);
+            this.tcManHinhBanHang.Controls.Add(this.tabPage1);
             this.tcManHinhBanHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcManHinhBanHang.Location = new System.Drawing.Point(0, 0);
             this.tcManHinhBanHang.Margin = new System.Windows.Forms.Padding(0);
@@ -1149,6 +1153,28 @@ namespace LTUD1_BACHHOAXANH472
             this.btnNext.MouseLeave += new System.EventHandler(this.btnNext_MouseLeave);
             this.btnNext.MouseHover += new System.EventHandler(this.btnNext_MouseHover);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.crystalReportViewer1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1292, 738);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Phiếu in hóa đơn";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1286, 732);
+            this.crystalReportViewer1.TabIndex = 0;
+            // 
             // FormBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1198,6 +1224,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpPhanTrang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1265,5 +1292,7 @@ namespace LTUD1_BACHHOAXANH472
         private Label label6;
         private Label label7;
         private PictureBox btnNext;
+        private TabPage tabPage1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
