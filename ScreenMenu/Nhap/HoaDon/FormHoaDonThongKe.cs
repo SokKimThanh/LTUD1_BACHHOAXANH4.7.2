@@ -24,10 +24,5 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
             hdConn.SelectByID(txtTimKiem.Text);
             dgvDanhSach.DataSource = hdConn.DataSource;
         }
-
-        private void FormHoaDonThongKe_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

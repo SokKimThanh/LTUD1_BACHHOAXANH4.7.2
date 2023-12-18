@@ -31,130 +31,120 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvDanhSach = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            groupBox1 = new GroupBox();
+            dgvDanhSach = new DataGridView();
+            panel1 = new Panel();
+            btnTimKiem = new Button();
+            button3 = new Button();
+            button1 = new Button();
+            txtTimKiem = new TextBox();
+            tableLayoutPanel1.SuspendLayout();
+            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvDanhSach).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(725, 332);
-            this.tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(groupBox1, 0, 1);
+            tableLayoutPanel1.Controls.Add(panel1, 0, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 101F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(967, 510);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dgvDanhSach);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(2, 68);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(721, 262);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Danh sách";
+            groupBox1.Controls.Add(dgvDanhSach);
+            groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Location = new Point(3, 104);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(961, 403);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Danh sách";
             // 
             // dgvDanhSach
             // 
-            this.dgvDanhSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.Location = new System.Drawing.Point(2, 15);
-            this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgvDanhSach.Name = "dgvDanhSach";
-            this.dgvDanhSach.RowHeadersWidth = 51;
-            this.dgvDanhSach.RowTemplate.Height = 29;
-            this.dgvDanhSach.Size = new System.Drawing.Size(717, 245);
-            this.dgvDanhSach.TabIndex = 0;
+            dgvDanhSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvDanhSach.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDanhSach.Dock = DockStyle.Fill;
+            dgvDanhSach.Location = new Point(3, 23);
+            dgvDanhSach.Name = "dgvDanhSach";
+            dgvDanhSach.RowHeadersWidth = 51;
+            dgvDanhSach.RowTemplate.Height = 29;
+            dgvDanhSach.Size = new Size(955, 377);
+            dgvDanhSach.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnTimKiem);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.txtTimKiem);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(721, 62);
-            this.panel1.TabIndex = 1;
+            panel1.Controls.Add(btnTimKiem);
+            panel1.Controls.Add(button3);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(txtTimKiem);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(961, 95);
+            panel1.TabIndex = 1;
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(266, 22);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(70, 19);
-            this.btnTimKiem.TabIndex = 1;
-            this.btnTimKiem.Text = "kiếmTìm ";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
+            btnTimKiem.Location = new Point(354, 34);
+            btnTimKiem.Name = "btnTimKiem";
+            btnTimKiem.Size = new Size(94, 29);
+            btnTimKiem.TabIndex = 1;
+            btnTimKiem.Text = "kiếmTìm ";
+            btnTimKiem.UseVisualStyleBackColor = true;
+            btnTimKiem.Click += button2_Click;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(444, 21);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 19);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Print";
-            this.button3.UseVisualStyleBackColor = true;
+            button3.Location = new Point(592, 33);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 1;
+            button3.Text = "Print";
+            button3.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(357, 21);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 19);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Tắt form";
-            this.button1.UseVisualStyleBackColor = true;
+            button1.Location = new Point(476, 33);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 1;
+            button1.Text = "Tắt form";
+            button1.UseVisualStyleBackColor = true;
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(34, 23);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(194, 20);
-            this.txtTimKiem.TabIndex = 0;
+            txtTimKiem.Location = new Point(46, 35);
+            txtTimKiem.Name = "txtTimKiem";
+            txtTimKiem.Size = new Size(258, 27);
+            txtTimKiem.TabIndex = 0;
             // 
             // FormHoaDonThongKe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 332);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "FormHoaDonThongKe";
-            this.Text = "FormHoaDonThongKe";
-            this.Load += new System.EventHandler(this.FormHoaDonThongKe_Load_1);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(967, 510);
+            Controls.Add(tableLayoutPanel1);
+            Name = "FormHoaDonThongKe";
+            Text = "FormHoaDonThongKe";
+            Load += FormHoaDonThongKe_Load;
+            tableLayoutPanel1.ResumeLayout(false);
+            groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvDanhSach).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

@@ -134,13 +134,13 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1.Controls.Add(this.btnThem, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 35);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 43);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(888, 102);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(888, 94);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnSua
@@ -155,7 +155,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSua.Location = new System.Drawing.Point(301, 5);
             this.btnSua.Margin = new System.Windows.Forms.Padding(5);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(138, 92);
+            this.btnSua.Size = new System.Drawing.Size(138, 84);
             this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnLamMoi.Location = new System.Drawing.Point(449, 5);
             this.btnLamMoi.Margin = new System.Windows.Forms.Padding(5);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(138, 92);
+            this.btnLamMoi.Size = new System.Drawing.Size(138, 84);
             this.btnLamMoi.TabIndex = 2;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
@@ -191,7 +191,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnXoa.Location = new System.Drawing.Point(5, 5);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(5);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(138, 92);
+            this.btnXoa.Size = new System.Drawing.Size(138, 84);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -209,7 +209,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnThem.Location = new System.Drawing.Point(153, 5);
             this.btnThem.Margin = new System.Windows.Forms.Padding(5);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(138, 92);
+            this.btnThem.Size = new System.Drawing.Size(138, 84);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -233,19 +233,19 @@ namespace LTUD1_BACHHOAXANH472
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 35);
+            this.tabControl1.Location = new System.Drawing.Point(3, 43);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(888, 539);
+            this.tabControl1.Size = new System.Drawing.Size(888, 531);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvHD);
-            this.tabPage1.Location = new System.Drawing.Point(4, 41);
+            this.tabPage1.Location = new System.Drawing.Point(4, 50);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(880, 494);
+            this.tabPage1.Size = new System.Drawing.Size(880, 477);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Danh Sách";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -269,10 +269,10 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
             this.tabPage2.Controls.Add(this.tableLayoutPanel5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 41);
+            this.tabPage2.Location = new System.Drawing.Point(4, 50);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(880, 494);
+            this.tabPage2.Size = new System.Drawing.Size(880, 477);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thống Kê";
             // 
@@ -288,7 +288,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 412F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(874, 488);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(874, 471);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // tableLayoutPanel6
@@ -305,7 +305,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(868, 70);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(868, 53);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // txtTimKiem
@@ -313,7 +313,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTimKiem.Location = new System.Drawing.Point(237, 3);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(389, 39);
+            this.txtTimKiem.Size = new System.Drawing.Size(389, 47);
             this.txtTimKiem.TabIndex = 0;
             // 
             // btnTimKiem
@@ -321,7 +321,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiem.Location = new System.Drawing.Point(632, 3);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(233, 64);
+            this.btnTimKiem.Size = new System.Drawing.Size(233, 47);
             this.btnTimKiem.TabIndex = 1;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -333,19 +333,19 @@ namespace LTUD1_BACHHOAXANH472
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(228, 70);
+            this.label1.Size = new System.Drawing.Size(228, 53);
             this.label1.TabIndex = 2;
             this.label1.Text = "Nhập Thông Tin";
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.AutoSize = true;
             this.crystalReportViewer1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 79);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 62);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(868, 406);
             this.crystalReportViewer1.TabIndex = 1;
@@ -356,10 +356,10 @@ namespace LTUD1_BACHHOAXANH472
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
             this.tabPage3.Controls.Add(this.tableLayoutPanel7);
             this.tabPage3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 41);
+            this.tabPage3.Location = new System.Drawing.Point(4, 50);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(880, 513);
+            this.tabPage3.Size = new System.Drawing.Size(880, 477);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Thống Kê Theo Ngày";
             // 
@@ -375,7 +375,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel7.RowCount = 2;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 408F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(874, 507);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(874, 471);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // tableLayoutPanel8
@@ -393,7 +393,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(868, 93);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(868, 57);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // btnTiemKiemTheoNgay
@@ -401,7 +401,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnTiemKiemTheoNgay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTiemKiemTheoNgay.Location = new System.Drawing.Point(709, 3);
             this.btnTiemKiemTheoNgay.Name = "btnTiemKiemTheoNgay";
-            this.btnTiemKiemTheoNgay.Size = new System.Drawing.Size(156, 87);
+            this.btnTiemKiemTheoNgay.Size = new System.Drawing.Size(156, 51);
             this.btnTiemKiemTheoNgay.TabIndex = 5;
             this.btnTiemKiemTheoNgay.Text = "Tìm Kiếm";
             this.btnTiemKiemTheoNgay.UseVisualStyleBackColor = true;
@@ -414,7 +414,7 @@ namespace LTUD1_BACHHOAXANH472
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(272, 93);
+            this.label2.Size = new System.Drawing.Size(272, 57);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nhập Thông Tin";
             // 
@@ -424,17 +424,18 @@ namespace LTUD1_BACHHOAXANH472
             this.dtpkNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpkNgay.Location = new System.Drawing.Point(281, 3);
             this.dtpkNgay.Name = "dtpkNgay";
-            this.dtpkNgay.Size = new System.Drawing.Size(422, 39);
+            this.dtpkNgay.Size = new System.Drawing.Size(422, 47);
             this.dtpkNgay.TabIndex = 4;
             // 
             // crystalReportViewer2
             // 
-            this.crystalReportViewer2.ActiveViewIndex = -1;
+            this.crystalReportViewer2.ActiveViewIndex = 0;
             this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer2.Location = new System.Drawing.Point(3, 102);
+            this.crystalReportViewer2.Location = new System.Drawing.Point(3, 66);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
+            //this.crystalReportViewer2.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH472\\uploads\\rp_hoadon_theongay.rpt";
             this.crystalReportViewer2.Size = new System.Drawing.Size(868, 402);
             this.crystalReportViewer2.TabIndex = 1;
             // 
@@ -477,7 +478,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel3.Controls.Add(this.groupBox5, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.groupBox2, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 35);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 43);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 6;
@@ -487,7 +488,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(375, 691);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(375, 683);
             this.tableLayoutPanel3.TabIndex = 19;
             // 
             // groupBox7
@@ -499,7 +500,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(375, 115);
+            this.groupBox7.Size = new System.Drawing.Size(375, 113);
             this.groupBox7.TabIndex = 9;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Mã Hóa Đơn";
@@ -509,9 +510,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtMaHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaHD.Enabled = false;
             this.txtMaHD.Font = new System.Drawing.Font("Segoe UI Light", 18F);
-            this.txtMaHD.Location = new System.Drawing.Point(3, 29);
+            this.txtMaHD.Location = new System.Drawing.Point(3, 35);
             this.txtMaHD.Name = "txtMaHD";
-            this.txtMaHD.Size = new System.Drawing.Size(369, 39);
+            this.txtMaHD.Size = new System.Drawing.Size(369, 47);
             this.txtMaHD.TabIndex = 2;
             this.txtMaHD.TextChanged += new System.EventHandler(this.txtMaHD_TextChanged);
             // 
@@ -521,10 +522,10 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox9.ForeColor = System.Drawing.Color.White;
-            this.groupBox9.Location = new System.Drawing.Point(0, 460);
+            this.groupBox9.Location = new System.Drawing.Point(0, 452);
             this.groupBox9.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(375, 115);
+            this.groupBox9.Size = new System.Drawing.Size(375, 113);
             this.groupBox9.TabIndex = 8;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Tổng tiền";
@@ -534,9 +535,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTongTien.Enabled = false;
             this.txtTongTien.Font = new System.Drawing.Font("Segoe UI Light", 18F);
-            this.txtTongTien.Location = new System.Drawing.Point(3, 29);
+            this.txtTongTien.Location = new System.Drawing.Point(3, 35);
             this.txtTongTien.Name = "txtTongTien";
-            this.txtTongTien.Size = new System.Drawing.Size(369, 39);
+            this.txtTongTien.Size = new System.Drawing.Size(369, 47);
             this.txtTongTien.TabIndex = 2;
             // 
             // groupBox6
@@ -545,10 +546,10 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox6.ForeColor = System.Drawing.Color.White;
-            this.groupBox6.Location = new System.Drawing.Point(0, 345);
+            this.groupBox6.Location = new System.Drawing.Point(0, 339);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(375, 115);
+            this.groupBox6.Size = new System.Drawing.Size(375, 113);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Ngày lập";
@@ -557,10 +558,10 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.dtpkNgayLap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpkNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpkNgayLap.Location = new System.Drawing.Point(3, 29);
+            this.dtpkNgayLap.Location = new System.Drawing.Point(3, 35);
             this.dtpkNgayLap.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.dtpkNgayLap.Name = "dtpkNgayLap";
-            this.dtpkNgayLap.Size = new System.Drawing.Size(369, 33);
+            this.dtpkNgayLap.Size = new System.Drawing.Size(369, 39);
             this.dtpkNgayLap.TabIndex = 14;
             // 
             // groupBox5
@@ -569,10 +570,10 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(0, 115);
+            this.groupBox5.Location = new System.Drawing.Point(0, 113);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(375, 115);
+            this.groupBox5.Size = new System.Drawing.Size(375, 113);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Khách hàng";
@@ -581,10 +582,10 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.cbbMaKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbMaKH.FormattingEnabled = true;
-            this.cbbMaKH.Location = new System.Drawing.Point(3, 29);
+            this.cbbMaKH.Location = new System.Drawing.Point(3, 35);
             this.cbbMaKH.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.cbbMaKH.Name = "cbbMaKH";
-            this.cbbMaKH.Size = new System.Drawing.Size(369, 33);
+            this.cbbMaKH.Size = new System.Drawing.Size(369, 40);
             this.cbbMaKH.TabIndex = 8;
             // 
             // groupBox2
@@ -593,9 +594,9 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(3, 233);
+            this.groupBox2.Location = new System.Drawing.Point(3, 229);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(369, 109);
+            this.groupBox2.Size = new System.Drawing.Size(369, 107);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhân viên";
@@ -604,15 +605,15 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.cbbMaNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbbMaNV.FormattingEnabled = true;
-            this.cbbMaNV.Location = new System.Drawing.Point(3, 29);
+            this.cbbMaNV.Location = new System.Drawing.Point(3, 35);
             this.cbbMaNV.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.cbbMaNV.Name = "cbbMaNV";
-            this.cbbMaNV.Size = new System.Drawing.Size(363, 33);
+            this.cbbMaNV.Size = new System.Drawing.Size(363, 40);
             this.cbbMaNV.TabIndex = 9;
             // 
             // FormHoaDon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
             this.ClientSize = new System.Drawing.Size(1293, 735);

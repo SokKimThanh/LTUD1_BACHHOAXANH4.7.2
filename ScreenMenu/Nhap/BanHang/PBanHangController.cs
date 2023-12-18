@@ -1,7 +1,6 @@
 ﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
@@ -87,24 +86,19 @@ namespace LTUD1_BACHHOAXANH472
             }
             return false;
         }
-
+       
         public void SetTongTienVaTongSoLuong()
         {
-            int soluongmua = 0;
+            int soluongmua =0;
             double tongtien = 0;
             foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
             {
-                int soluong = Convert.ToInt32(row.Cells[4].Value);
-                double sotien = Convert.ToDouble(row.Cells[5].Value);
-
-                soluongmua += soluong;
-                tongtien += sotien;
+                soluongmua += Convert.ToInt32(row.Cells[4].Value);
+                tongtien += Convert.ToDouble(row.Cells[5].Value);
             }
-            txtSoLuongMua.Text = string.Empty;
             txtSoLuongMua.Text = soluongmua.ToString();
             if (lblTongTien != null)
             {
-                lblTongTien.Text = string.Empty;
                 lblTongTien.Text = tongtien.ToString();
             }
             else
@@ -128,8 +122,10 @@ namespace LTUD1_BACHHOAXANH472
 
                     double khuyenMai = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[3].Value);
 
+                    double donGia = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[2].Value);
+
                     //Tính toán tổng
-                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = khuyenMai * soLuong;
+                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = donGia * (khuyenMai / 100) * soLuong;
 
                 }
                 else
@@ -156,7 +152,7 @@ namespace LTUD1_BACHHOAXANH472
                 double donGia = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[2].Value);
 
                 //Tính toán tổng
-                dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = khuyenMai * soLuong;
+                dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = donGia * (khuyenMai / 100) * soLuong;
             }
 
             SetTongTienVaTongSoLuong();
@@ -176,7 +172,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             if (dgvThongTinHoaDon.Rows.Count == 0)
             {
-                MessageBox.Show("Vui lòng thêm sản phẩm vào hóa đơn", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng thêm sản phẩm vào hóa đơn", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                 return;
             }
 
@@ -184,7 +180,7 @@ namespace LTUD1_BACHHOAXANH472
             {
                 if (string.IsNullOrEmpty(txtTenKhachHang.Text) && string.IsNullOrEmpty(txtSDTKhachHang.Text))
                 {
-                    MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                     return;
                 }
                 KhachHang khachHang = new KhachHang();
@@ -208,15 +204,13 @@ namespace LTUD1_BACHHOAXANH472
                 //------------------        Sự kiện in hóa đơn       ---------------------------
                 //--..........................................................................--
                 //==============================================================================
-                //if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                //{
-                DataTable dt = hoadonController.SelectByID(string.IsNullOrEmpty(TxtMaHoaDon.Text) ? txtMaHoaDon.Text : "hd01");
-                HoaDon hd = (HoaDon)hoadonController.FromDataRow(dt.Rows[0]);
-                FormInHoaDonThanhToan frmThanhToan = new FormInHoaDonThanhToan(hd.MaHD);
-                frmThanhToan.ShowDialog();
-                //}
+                if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+                {
+                    FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan();
+                    frmThanhToan.ShowDialog();
+                }
 
-                //MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);
             }
         }
         public void btnHuyThanhToan_Click(object sender, EventArgs e)
