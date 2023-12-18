@@ -86,10 +86,10 @@ namespace LTUD1_BACHHOAXANH472
             }
             return false;
         }
-
+       
         public void SetTongTienVaTongSoLuong()
         {
-            int soluongmua = 0;
+            int soluongmua =0;
             double tongtien = 0;
             foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
             {
@@ -97,9 +97,9 @@ namespace LTUD1_BACHHOAXANH472
                 tongtien += Convert.ToDouble(row.Cells[5].Value);
             }
             txtSoLuongMua.Text = soluongmua.ToString();
-            if (lblTongTien != null)
+            if (LblTongTien != null)
             {
-                lblTongTien.Text = tongtien.ToString();
+                LblTongTien.Text = tongtien.ToString();
             }
             else
             {
@@ -206,8 +206,8 @@ namespace LTUD1_BACHHOAXANH472
                 //==============================================================================
                 if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan();
-                    frmThanhToan.ShowDialog();
+                    //FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan();
+                    //frmThanhToan.ShowDialog();
                 }
 
                 MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);

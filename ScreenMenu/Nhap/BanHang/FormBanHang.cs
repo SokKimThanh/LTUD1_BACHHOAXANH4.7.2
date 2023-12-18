@@ -64,7 +64,7 @@ namespace LTUD1_BACHHOAXANH472
             //--.................            sản phẩm giỏ hàng            ..................
             //==============================================================================
             //khởi tạo banhang controller điều khiển luồng dữ liệu trên form bán hàng
-            //banhangController.TcManHinhBanHang = this.tcManHinhBanHang ;
+            //banhangController.TcManHinhBanHang = this.tcManHinhBanHang;
             banhangController.TxtSDTKhachHang = txtSDT;
             banhangController.TxtMaHoaDon = txtMaHoaDon;
             banhangController.TxtTenKhachHang = txtTenKhachHang;
@@ -279,7 +279,7 @@ namespace LTUD1_BACHHOAXANH472
         private void tcManHinhBanHang_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Lấy tabControlXemDuLieu từ form hoặc từ nơi nó được khởi tạo
-           // TabControl tcManHinhBanHang = this.tcManHinhBanHang;
+            // TabControl tcManHinhBanHang = this.tcManHinhBanHang;
             //tcManHinhBanHang.SelectedIndex = 2;
         }
 
