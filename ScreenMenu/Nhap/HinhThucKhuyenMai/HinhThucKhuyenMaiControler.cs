@@ -1,5 +1,5 @@
-﻿using System.Data.SqlClient;
-using System.Data;
+﻿using System.Data;
+using System.Data.SqlClient;
 
 namespace LTUD1_BACHHOAXANH472
 {
@@ -7,8 +7,8 @@ namespace LTUD1_BACHHOAXANH472
     {
         public HinhThucKhuyenMaiControler(string connectionString) : base(connectionString)
         { }
-            public override void Delete(object id)
-        { 
+        public override void Delete(object id)
+        {
             // Mở kết nối
             SqlConnection conn = OpenConnection();
 
@@ -129,6 +129,6 @@ namespace LTUD1_BACHHOAXANH472
             // Đóng kết nối
             CloseConnection();
         }
-    
+
     }
 }

@@ -7,8 +7,8 @@ go
 CREATE PROCEDURE sp_khuyenmai_select_all
 AS
 BEGIN
-	SELECT * from KHUYENMAI , HINHTHUCKM
-	where KHUYENMAI.MAHT = HINHTHUCKM.MAHT
+	SELECT km.*,ht.TENHINHTHUC from KHUYENMAI km , HINHTHUCKM ht
+	where km.MAHT = ht.MAHT 
 END
 GO
 exec sp_khuyenmai_select_all

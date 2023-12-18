@@ -8,7 +8,8 @@ go
 CREATE PROCEDURE sp_chitietcc_select_all
 AS
 BEGIN
-	select * from chitietcc	
+	select ncc.TENNCC,sp.TENSP,ct.SLCUNGCCAP  from chitietcc ct, nhacungcap ncc, sanpham sp
+	where ct.MANCC = ncc.MANCC and ct.MASP = sp.MASP
 END
 GO
  

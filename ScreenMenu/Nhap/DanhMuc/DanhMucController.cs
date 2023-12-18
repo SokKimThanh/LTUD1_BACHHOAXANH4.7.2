@@ -120,7 +120,45 @@ namespace LTUD1_BACHHOAXANH472
                 CloseConnection();
             }
         }
+        public DataTable sp_cbo_danhmuc_select_all()
+        {
+            try
+            {
+                // Mở kết nối
+                SqlConnection conn = OpenConnection();
 
+                // thực hiện các thao tác trên cơ sở dữ liệu
+                Sql = new SqlCommand("sp_cbo_danhmuc_select_all", conn);
+                Sql.CommandType = CommandType.StoredProcedure;
+
+                // Tạo đối tượng SqlDataAdapter
+                Adapter = new SqlDataAdapter(Sql);
+
+                // Tạo một đối tượng Database để lưu trữ dữ liệu
+                DataTable table = new DataTable();
+
+                // đổ dữ liệu vào DataTable
+                Adapter.Fill(table);
+
+                // Thêm hàng "Tất cả" vào đầu DataTable
+                DataRow row = table.NewRow();
+                row["maloai"] = null;
+                row["tenloai"] = "Tất cả"; // Thay đổi 0 thành chỉ mục hoặc tên của cột bạn muốn đặt giá trị "Tất cả"
+                table.Rows.InsertAt(row, 0);
+
+
+                CloseConnection();
+                return table;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
         public override DataTable SelectByID(object id)
         {
             try

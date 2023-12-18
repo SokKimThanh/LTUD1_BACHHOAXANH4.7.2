@@ -34,7 +34,7 @@ namespace LTUD1_BACHHOAXANH472
             Application.Exit();
         }
 
-        
+
 
         private void txtPassword_Click(object sender, EventArgs e)
         {
@@ -55,7 +55,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             txtUserName_Click(sender, e);
         }
-         
+
 
         private void btnLogin_MouseHover(object sender, EventArgs e)
         {
@@ -68,7 +68,7 @@ namespace LTUD1_BACHHOAXANH472
             Button b = (Button)sender;
             b.ForeColor = Color.White;
         }
-        
+
 
 
         private void ptbShowHidePassword_Click(object sender, EventArgs e)

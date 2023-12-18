@@ -46,7 +46,11 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 
         public override object FromDataRow(DataRow row)
         {
-            throw new NotImplementedException();
+            PhongBan o = new PhongBan();
+            o.MaPB = row.Field<string>("mapb");
+            o.TenPB = row.Field<string>("TENPHG");
+            o.MaCN = row.Field<string>("macn");
+            return o;
         }
 
         public override void Insert(object sender)
@@ -150,7 +154,32 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 
         public override DataTable SelectByID(object id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                // Mở kết nối
+                SqlConnection conn = OpenConnection();
+
+                // thực hiện các thao tác trên cơ sở dữ liệu
+                Sql = new SqlCommand("sp_phongban_select_one", conn);
+                Sql.CommandType = CommandType.StoredProcedure;
+                Sql.Parameters.AddWithValue("@maPB", id);
+                // Tạo đối tượng SqlDataAdapter
+                Adapter = new SqlDataAdapter(Sql);
+
+                // Tạo một đối tượng Database để lưu trữ dữ liệu
+                DataSource = new DataTable();
+
+                // đổ dữ liệu vào DataTable
+                Adapter.Fill(DataSource);
+
+                //đóng kết nối
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return DataSource;
         }
         public override void Update(object sender)
         {

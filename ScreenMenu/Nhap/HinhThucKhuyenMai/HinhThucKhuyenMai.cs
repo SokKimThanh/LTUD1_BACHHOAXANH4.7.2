@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LTUD1_BACHHOAXANH472
+﻿namespace LTUD1_BACHHOAXANH472
 {
     internal class HinhThucKhuyenMai
     {
-        string makm ;
+        string makm;
         string hinhthuc;
         string ghichu;
         public HinhThucKhuyenMai()
@@ -31,7 +25,7 @@ namespace LTUD1_BACHHOAXANH472
 
         public override string ToString()
         {
-            return  $"{makm,-15}{Hinhthuc,-15}{Ghichu,-15}";
+            return $"{makm,-15}{Hinhthuc,-15}{Ghichu,-15}";
         }
     }
 }

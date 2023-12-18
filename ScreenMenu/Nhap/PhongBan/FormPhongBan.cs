@@ -23,14 +23,28 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
         {
 
         }
+        private void TaoMa()
+        {
+            //mã tự động
+            RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
+            txtMaPB.Text = randomStringGenerator.GenerateRandomAlphanumericString(4);
+        }
         private void FormPhongBan_Load(object sender, EventArgs e)
         {
-            pbController.SelectAll();
-            dgvPB.DataSource = pbController.DataSource;
-            pbController.SelectMaCN();
-            cbbMaCN.DataSource = pbController.DataSource;
-            cbbMaCN.DisplayMember = "TENCN";
-            cbbMaCN.ValueMember = "MACN";
+            try
+            {
+                pbController.SelectAll();
+                dgvPB.DataSource = pbController.DataSource;
+                pbController.SelectMaCN();
+                cbbMaCN.DataSource = pbController.DataSource;
+                cbbMaCN.DisplayMember = "TENCN";
+                cbbMaCN.ValueMember = "MACN";
+                buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dgvPB_Click(object sender, EventArgs e)
@@ -49,7 +63,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 PhongBan o = (PhongBan)pbController.FromDataRow(dr);
 
                 // thiết lập dữ liệu ngược lại mỗi lần click
-                txtMaPB.Text = o.MaCN;
+                txtMaPB.Text = o.MaPB;
                 txtTenPB.Text = o.TenPB;
                 // cập nhật lại trang thái các nút
                 buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
@@ -58,51 +72,83 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
             {
                 MessageBox.Show(ex.Message);
             }
-            buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
-        }
-        private void groupBox7_Enter(object sender, EventArgs e)
-        {
-
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             // check dữ liệu
+            try
+            {
+                if (string.IsNullOrEmpty(txtTenPB.Text))
+                {
+                    MessageBox.Show("Nhập tên phòng ban!");
+                }
+                else
+                {
+                    PhongBan phongBan = new PhongBan();
+                    phongBan.MaPB = txtMaPB.Text;
+                    phongBan.TenPB = txtTenPB.Text;
+                    phongBan.MaCN = cbbMaCN.SelectedValue.ToString();
+                    pbController.Insert(phongBan);
+                    pbController.SelectAll();
+                    dgvPB.DataSource = pbController.DataSource;
+                    buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                    Refresh();
+                }
 
-            PhongBan phongBan = new PhongBan();
-            phongBan.MaPB = txtMaPB.Text;
-            phongBan.TenPB = txtTenPB.Text;
-            phongBan.MaCN = cbbMaCN.SelectedValue.ToString();
-            pbController.Insert(phongBan);
-            pbController.SelectAll();
-            dgvPB.DataSource = pbController.DataSource;
-            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnXoa(object sender, EventArgs e)
         {
-            PhongBan phongBan = new PhongBan();
-            phongBan.MaPB = txtMaPB.Text;
-            pbController.Delete(phongBan.MaPB);
-            pbController.SelectAll();
-            dgvPB.DataSource = pbController.DataSource;
-            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+            try
+            {
+                PhongBan phongBan = new PhongBan();
+                phongBan.MaPB = txtMaPB.Text;
+                pbController.Delete(phongBan.MaPB);
+                pbController.SelectAll();
+                dgvPB.DataSource = pbController.DataSource;
+                Refresh();
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            PhongBan phongBan = new PhongBan();
-            phongBan.MaPB = txtMaPB.Text;
-            phongBan.TenPB = txtTenPB.Text;
-            phongBan.MaCN = cbbMaCN.Text;
-            pbController.Update(phongBan);
-            pbController.SelectAll();
-            dgvPB.DataSource = pbController.DataSource;
-            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+            try
+            {
+                PhongBan phongBan = new PhongBan();
+                phongBan.MaPB = txtMaPB.Text;
+                phongBan.TenPB = txtTenPB.Text;
+                phongBan.MaCN = cbbMaCN.Text;
+                pbController.Update(phongBan);
+                pbController.SelectAll();
+                dgvPB.DataSource = pbController.DataSource;
+                Refresh();
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void Refresh()
+        {
+            TaoMa();
+            txtTenPB.Text = string.Empty;
+            cbbMaCN.SelectedIndex = 0;
         }
 
-        private void FormPhongBan_Load_1(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            Refresh();
         }
     }
 }

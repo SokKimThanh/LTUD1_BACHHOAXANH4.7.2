@@ -233,8 +233,8 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-/*                InFilePDFExcel o = new InFilePDFExcel(dgvNhaCungCap);*/
-/*                o.ExportToPDF();*/
+                /*                InFilePDFExcel o = new InFilePDFExcel(dgvNhaCungCap);*/
+                /*                o.ExportToPDF();*/
             }
             catch (Exception ex)
             {
@@ -248,14 +248,14 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-/*                InFilePDFExcel o = new InFilePDFExcel(dgvNhaCungCap);
-                o.ExportToExcel();*/
+                /*                InFilePDFExcel o = new InFilePDFExcel(dgvNhaCungCap);
+                                o.ExportToExcel();*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 txtDiaChi.Text = ex.Message;
             }
-        }
+        } 
     }
 }

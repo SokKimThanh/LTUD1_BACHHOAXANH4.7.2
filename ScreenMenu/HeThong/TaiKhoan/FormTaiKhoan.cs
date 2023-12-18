@@ -284,5 +284,10 @@ namespace LTUD1_BACHHOAXANH472
             catch(Exception ex) { MessageBox.Show( ex.Message); }
            
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
