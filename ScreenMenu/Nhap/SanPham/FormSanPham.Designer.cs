@@ -56,14 +56,12 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboTheLoaiTimKiem = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtpTKNgay = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.rptSanPham = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLamMoi = new System.Windows.Forms.Button();
@@ -77,6 +75,8 @@ namespace LTUD1_BACHHOAXANH472
             this.cboLoaiSP = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cboNCC = new System.Windows.Forms.ComboBox();
+            this.rptSanPham = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.cboTheLoaiTimKiem = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -351,7 +351,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(941, 434);
-            this.tabControl1.TabIndex = 0;
+            this.tabControl1.TabIndex = 2;
             this.tabControl1.Tag = "";
             // 
             // tabPage1
@@ -431,19 +431,6 @@ namespace LTUD1_BACHHOAXANH472
             this.panel1.Size = new System.Drawing.Size(379, 59);
             this.panel1.TabIndex = 6;
             // 
-            // cboTheLoaiTimKiem
-            // 
-            this.cboTheLoaiTimKiem.FormattingEnabled = true;
-            this.cboTheLoaiTimKiem.Items.AddRange(new object[] {
-            "Theo hạn sử dụng",
-            "Theo tên"});
-            this.cboTheLoaiTimKiem.Location = new System.Drawing.Point(3, 4);
-            this.cboTheLoaiTimKiem.Name = "cboTheLoaiTimKiem";
-            this.cboTheLoaiTimKiem.Size = new System.Drawing.Size(373, 49);
-            this.cboTheLoaiTimKiem.TabIndex = 1;
-            this.cboTheLoaiTimKiem.Text = "Theo hạn sử dụng";
-            this.cboTheLoaiTimKiem.TextChanged += new System.EventHandler(this.cboTheLoaiTimKiem_SelectedIndexChanged);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dtpTKNgay);
@@ -454,8 +441,9 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // dtpTKNgay
             // 
+            this.dtpTKNgay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpTKNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTKNgay.Location = new System.Drawing.Point(0, 6);
+            this.dtpTKNgay.Location = new System.Drawing.Point(0, 0);
             this.dtpTKNgay.Name = "dtpTKNgay";
             this.dtpTKNgay.Size = new System.Drawing.Size(194, 47);
             this.dtpTKNgay.TabIndex = 6;
@@ -470,9 +458,10 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(-3, 4);
+            this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTimKiem.Location = new System.Drawing.Point(0, 0);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(219, 47);
+            this.txtTimKiem.Size = new System.Drawing.Size(213, 47);
             this.txtTimKiem.TabIndex = 1;
             // 
             // panel4
@@ -485,26 +474,15 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // btnTimKiem
             // 
+            this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiem.ForeColor = System.Drawing.Color.Black;
-            this.btnTimKiem.Location = new System.Drawing.Point(0, 6);
+            this.btnTimKiem.Location = new System.Drawing.Point(0, 0);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(111, 47);
+            this.btnTimKiem.Size = new System.Drawing.Size(111, 59);
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // rptSanPham
-            // 
-            this.rptSanPham.ActiveViewIndex = 0;
-            this.rptSanPham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rptSanPham.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rptSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptSanPham.Location = new System.Drawing.Point(3, 74);
-            this.rptSanPham.Name = "rptSanPham";
-            //this.rptSanPham.ReportSource = "D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamTheoNgay.rpt";
-            this.rptSanPham.Size = new System.Drawing.Size(921, 297);
-            this.rptSanPham.TabIndex = 1;
             // 
             // groupBox14
             // 
@@ -700,6 +678,29 @@ namespace LTUD1_BACHHOAXANH472
             this.cboNCC.Size = new System.Drawing.Size(303, 49);
             this.cboNCC.TabIndex = 0;
             // 
+            // rptSanPham
+            // 
+            this.rptSanPham.ActiveViewIndex = -1;
+            this.rptSanPham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptSanPham.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rptSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptSanPham.Location = new System.Drawing.Point(3, 74);
+            this.rptSanPham.Name = "rptSanPham";
+            this.rptSanPham.Size = new System.Drawing.Size(921, 297);
+            this.rptSanPham.TabIndex = 1;
+            // 
+            // cboTheLoaiTimKiem
+            // 
+            this.cboTheLoaiTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboTheLoaiTimKiem.FormattingEnabled = true;
+            this.cboTheLoaiTimKiem.Items.AddRange(new object[] {
+            "Theo tên",
+            "Theo hạn sử dụng"});
+            this.cboTheLoaiTimKiem.Location = new System.Drawing.Point(0, 0);
+            this.cboTheLoaiTimKiem.Name = "cboTheLoaiTimKiem";
+            this.cboTheLoaiTimKiem.Size = new System.Drawing.Size(379, 49);
+            this.cboTheLoaiTimKiem.TabIndex = 0;
+            // 
             // FormSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 41F);
@@ -788,15 +789,15 @@ namespace LTUD1_BACHHOAXANH472
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel7;
         private TabPage tabPage1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptSanPham;
         private DataGridView dgvDanhSachSP;
         private Panel panel1;
-        private ComboBox cboTheLoaiTimKiem;
         private Panel panel2;
         private DateTimePicker dtpTKNgay;
         private Panel panel3;
         private TextBox txtTimKiem;
         private Panel panel4;
         private Button btnTimKiem;
+        private ComboBox cboTheLoaiTimKiem;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptSanPham;
     }
 }

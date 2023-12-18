@@ -145,7 +145,7 @@ namespace LTUD1_BACHHOAXANH472
 
                 if (soLuong < 0)
                 {
-                    MessageBox.Show($"Số lượng không được  < 0!", "Lỗi giảm số lượng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Số lượng không được  < 0!", "Lỗi giảm số lượng", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 dgvThongTinHoaDon.Rows[e.RowIndex].Cells[4].Value = soLuong; // gán lại số lượng
@@ -175,7 +175,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             if (dgvThongTinHoaDon.Rows.Count == 0)
             {
-                MessageBox.Show("Vui lòng thêm sản phẩm vào hóa đơn", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng thêm sản phẩm vào hóa đơn", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -183,7 +183,7 @@ namespace LTUD1_BACHHOAXANH472
             {
                 if (string.IsNullOrEmpty(txtTenKhachHang.Text) && string.IsNullOrEmpty(txtSDTKhachHang.Text))
                 {
-                    MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 KhachHang khachHang = new KhachHang();
@@ -214,6 +214,7 @@ namespace LTUD1_BACHHOAXANH472
                     // Lấy tabControlXemDuLieu từ form hoặc từ nơi nó được khởi tạo
                     //TabControl tcManHinhBanHang = this.tcManHinhBanHang;
                     tcManHinhBanHang.SelectedIndex = 2;
+                    
                 }
 
                 MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);
@@ -222,7 +223,7 @@ namespace LTUD1_BACHHOAXANH472
         public void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
             // Xác nhận trước khi xóa
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
                 // Xóa tất cả các dòng trong dgvThongTinHoaDon

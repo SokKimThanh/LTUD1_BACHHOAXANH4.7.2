@@ -222,6 +222,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             banhangController.btnThanhToan_Click(sender, e);
+            crystalReportViewer1_Load(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
