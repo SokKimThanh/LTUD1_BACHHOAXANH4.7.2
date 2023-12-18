@@ -201,7 +201,7 @@ namespace LTUD1_BACHHOAXANH472
         {
 
             // Khởi tạo một đối tượng mới từ lớp CrystalReport1
-            //rp_hoadon_theongay rpt = new rp_hoadon_theongay();
+            rp_hoadon_theongay rpt = new rp_hoadon_theongay();
 
             // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
             ParameterValues param = new ParameterValues();
@@ -216,10 +216,25 @@ namespace LTUD1_BACHHOAXANH472
             param.Add(pdv);
 
             // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-            //rpt.DataDefinition.ParameterFields["@ngay"].ApplyCurrentValues(param);
+            rpt.DataDefinition.ParameterFields["@ngay"].ApplyCurrentValues(param);
 
             // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            //crystalReportViewer2.ReportSource = rpt;
+            crystalReportViewer2.ReportSource = rpt;
+        }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
