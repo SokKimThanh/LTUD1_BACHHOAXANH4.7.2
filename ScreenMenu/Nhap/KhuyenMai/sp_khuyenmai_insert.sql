@@ -1,4 +1,4 @@
-﻿-- Create Procedure sp_khuyenmai_insert.sql
+-- Create Procedure sp_khuyenmai_insert.sql
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_khuyenmai_insert

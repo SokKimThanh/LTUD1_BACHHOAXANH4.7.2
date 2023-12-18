@@ -1,4 +1,4 @@
-﻿-- Author:		Sok Kim Thanh
+-- Author:		Sok Kim Thanh
 -- Create date: <16/12/2023>
 -- Create Procedure sp_cbo_nhacungcap_select_all
 drop procedure if exists sp_cbo_nhacungcap_select_all

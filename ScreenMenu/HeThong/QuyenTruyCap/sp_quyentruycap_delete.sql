@@ -1,6 +1,6 @@
-﻿-- Author:		Sok Kim Thanh
+-- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
--- Description:	<Tài khoản delete>
+-- Description:	<T�i kho?n delete>
 DROP PROCEDURE IF EXISTS sp_quyentruycap_delete
 GO
 CREATE PROCEDURE sp_quyentruycap_delete

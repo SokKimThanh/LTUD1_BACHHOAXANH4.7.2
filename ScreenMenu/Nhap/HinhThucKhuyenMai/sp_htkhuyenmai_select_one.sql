@@ -1,9 +1,7 @@
-Ôªø
 -- Create Procedure sp_hinhthuckm_select_one.sql
--- Danh m·ª•c select one
+-- Danh m?c select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
-
 drop procedure if exists sp_hinhthuckm_select_one
 go
 CREATE PROCEDURE sp_hinhthuckm_select_one
@@ -12,6 +10,6 @@ CREATE PROCEDURE sp_hinhthuckm_select_one
 	@ghichu nvarchar(100) = N''
 AS
 BEGIN
-	SELECT * from hinhthuckm where MAHT = @makm --like ch√≠nh x√°c m√£ 100%
+	SELECT * from hinhthuckm where MAHT = @makm --like chÌnh x·c m„ 100%
 END
 GO

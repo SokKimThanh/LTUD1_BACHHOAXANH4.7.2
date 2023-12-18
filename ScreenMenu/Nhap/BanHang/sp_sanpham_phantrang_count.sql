@@ -1,4 +1,4 @@
-﻿-- AUTHOR:		SOK KIM THANH
+-- AUTHOR:		SOK KIM THANH
 -- CREATE DATE: <17/12/2023>
 -- UPDATE DATE 6:44 CH
 DROP PROCEDURE IF EXISTS sp_sanpham_phantrang_count
@@ -9,7 +9,7 @@ CREATE PROCEDURE sp_sanpham_phantrang_count
     @SEARCHTERM NVARCHAR(100) = NULL
 AS
 BEGIN 
-    -- LẤY DỮ LIỆU VÀ CHỈ SỐ DÒNG (ROW) CỦA NÓ
+    -- L?Y D? LI?U V� CH? S? D�NG (ROW) C?A N�
     WITH PHANTRANG AS (
         SELECT ROW_NUMBER() OVER (ORDER BY SP.MASP) AS STT
             ,SP.MASP, SP.TENSP, SP.DONVI, SP.DONGIA
@@ -22,7 +22,7 @@ BEGIN
         AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
         AND MANCC = ISNULL(@NHACUNGCAP, MANCC) AND SLTONKHO > 0
     )
-    -- ĐẾM SỐ DÒNG
+    -- �?M S? D�NG
     SELECT COUNT(*) AS TOTALROWS
     FROM PHANTRANG;
 END;

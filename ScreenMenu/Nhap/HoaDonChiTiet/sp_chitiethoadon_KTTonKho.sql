@@ -1,30 +1,17 @@
-﻿
 -- Create Procedure sp_chitiethoadon_delete.sql
--- Danh mục delete
-
-
+-- Danh m?c delete
 GO
-
 GO
-
 -- Author:		Quy Ngo
 -- Create date: <10/12/2023>
-
-
 DROP PROCEDURE IF EXISTS sp_chitiethoadon_Kiemtratonkho
 GO
 CREATE PROCEDURE sp_chitiethoadon_Kiemtratonkho
-	
 	@makm char(11),
 	@slmua int
 AS
 BEGIN
-	
-	
-	
-
-    
-	Select  sp.SLTONKHO - @slmua as 'Tồn kho'
+	Select  sp.SLTONKHO - @slmua as 'T?n kho'
 	from SANPHAM sp,HOADON hd
 	 where  sp.MaSP = @makm 
 END

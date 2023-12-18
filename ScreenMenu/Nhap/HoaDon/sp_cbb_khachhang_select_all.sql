@@ -1,9 +1,8 @@
-﻿
 -- Create Procedure sp_nhacungcap_select_all.sql
--- Nhà cung cấp select all
+-- Nh� cung c?p select all
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
--- Description:	<Nhà cung cấp select all>
+-- Description:	<Nh� cung c?p select all>
 drop procedure if exists sp_cbb_khachhang_select_all
 go
 CREATE PROCEDURE sp_cbb_khachhang_select_all
@@ -14,10 +13,9 @@ END
 GO
 exec sp_cbb_khachhang_select_all
 -- Create Procedure sp_nhacungcap_update.sql
--- Nhà cung cấp update
+-- Nh� cung c?p update
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
-
 drop procedure if exists sp_khachhang_update
 go
 CREATE PROCEDURE sp_khachhang_update
@@ -27,14 +25,13 @@ CREATE PROCEDURE sp_khachhang_update
 	@diemTL int = 0
 AS
 BEGIN
-	update KHACHHANG set HOTENKH = @tenKH,SDTKH = @sdtKH, DIEMTL = @diemTL where MAKH = @maKH -- chuẩn sql
+	update KHACHHANG set HOTENKH = @tenKH,SDTKH = @sdtKH, DIEMTL = @diemTL where MAKH = @maKH -- chu?n sql
 END
 GO
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nhà cung cấp insert
+-- Nh� cung c?p insert
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
-
 drop procedure if exists sp_nhacungcap_insert
 go
 CREATE PROCEDURE sp_khachhang_insert
@@ -48,10 +45,9 @@ BEGIN
 END
 GO
 -- Create Procedure sp_nhacungcap_delete.sql
--- Nhà cung cấp delete
+-- Nh� cung c?p delete
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
-
 DROP PROCEDURE IF EXISTS sp_khachhang_delete
 GO
 CREATE PROCEDURE sp_khachhang_delete

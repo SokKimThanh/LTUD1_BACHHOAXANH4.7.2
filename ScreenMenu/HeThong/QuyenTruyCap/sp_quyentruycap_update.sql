@@ -1,8 +1,7 @@
-﻿-- Create Procedure sp_quyentruycap_update.sql
--- Tài khoản update
+-- Create Procedure sp_quyentruycap_update.sql
+-- T�i kho?n update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
-
 go
 drop procedure if exists sp_quyentruycap_update
 go
@@ -11,6 +10,6 @@ CREATE PROCEDURE sp_quyentruycap_update
 	@MAQTC char (11)
 AS
 BEGIN
-	update quyentruycap set TENQTC= @TENQTC where MAQTC = @MAQTC  -- chuẩn sql
+	update quyentruycap set TENQTC= @TENQTC where MAQTC = @MAQTC  -- chu?n sql
 END
 GO

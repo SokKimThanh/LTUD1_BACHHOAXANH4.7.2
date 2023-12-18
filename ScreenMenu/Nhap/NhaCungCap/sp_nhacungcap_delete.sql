@@ -1,5 +1,5 @@
-﻿-- Create Procedure sp_nhacungcap_delete.sql
--- Nhà cung cấp delete
+-- Create Procedure sp_nhacungcap_delete.sql
+-- Nh� cung c?p delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 -- update date: 10-12-2023

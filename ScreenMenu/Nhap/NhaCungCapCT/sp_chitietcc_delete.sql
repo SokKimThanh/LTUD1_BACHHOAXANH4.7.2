@@ -1,4 +1,3 @@
-﻿
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -6,7 +5,7 @@ GO
 set dateformat dmy
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
--- Description:	<Tài khoản delete>
+-- Description:	<T�i kho?n delete>
 DROP PROCEDURE IF EXISTS sp_chitietcc_delete
 GO
 CREATE PROCEDURE sp_chitietcc_delete
