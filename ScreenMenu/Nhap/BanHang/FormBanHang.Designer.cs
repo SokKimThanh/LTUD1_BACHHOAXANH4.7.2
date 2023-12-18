@@ -1173,8 +1173,7 @@ namespace LTUD1_BACHHOAXANH472
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = "D:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\ScreenMenu\\Nhap\\BanHang\\PhieuInHoaDon" +
-    ".rpt";
+            this.crystalReportViewer1.ReportSource = "uploads\\PhieuInHoaDon.rpt";
             this.crystalReportViewer1.Size = new System.Drawing.Size(1286, 732);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);

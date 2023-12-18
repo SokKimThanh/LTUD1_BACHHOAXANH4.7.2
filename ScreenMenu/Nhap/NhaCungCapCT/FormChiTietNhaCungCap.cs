@@ -72,7 +72,7 @@ namespace LTUD1_BACHHOAXANH472
                 NhaCCCT o = new NhaCCCT();
                 o.MaNCC = cboNCC.SelectedValue.ToString();
                 o.MaSP = cboSanPham.SelectedValue.ToString();
-                o.SoLuong =int.Parse( txtSoLuong.Text);
+                o.SoLuong = int.Parse(txtSoLuong.Text);
                 ctnccCon.Insert(o);
                 Refresh2();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);

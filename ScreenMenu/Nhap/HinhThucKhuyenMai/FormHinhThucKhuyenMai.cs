@@ -29,13 +29,13 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
-            if(txtTenHTKM.Text == string.Empty)
+
+            if (txtTenHTKM.Text == string.Empty)
             {
                 MessageBox.Show("Nhập tên khuyến mãi");
                 return;
             }
-           
+
             try
             {
                 HinhThucKhuyenMai htkm = new HinhThucKhuyenMai();

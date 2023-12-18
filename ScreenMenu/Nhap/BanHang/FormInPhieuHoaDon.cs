@@ -1,13 +1,5 @@
 ﻿using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.uploads;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
@@ -21,7 +13,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 
         private void FormInPhieuHoaDon_Load(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 PhieuInHoaDon rptPIHD = new PhieuInHoaDon();
                 // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
                 ParameterValues param = new ParameterValues();
@@ -41,11 +34,11 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
                 // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
                 crystalReportViewer1.ReportSource = rptPIHD;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
     }
 }

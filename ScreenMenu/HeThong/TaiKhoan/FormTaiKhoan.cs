@@ -149,7 +149,7 @@ namespace LTUD1_BACHHOAXANH472
                 txtMaQTC.Text = o.Maqtc;
                 txtTenQTC.Text = o.Tenqtc;
                 // cập nhật lại trang thái các nút
-          /*      state.UpdateButtonStates(ButtonState.DataGridViewSelected);*/
+                /*      state.UpdateButtonStates(ButtonState.DataGridViewSelected);*/
             }
             catch (Exception ex)
             {
@@ -265,13 +265,13 @@ namespace LTUD1_BACHHOAXANH472
                 txtMK.Text = string.Empty;
                 cboNV.SelectedIndex = 0;
                 cboQTC.SelectedIndex = 0;
-              /*  state.UpdateButtonStates(ButtonState.RefreshClicked);*/
+                /*  state.UpdateButtonStates(ButtonState.RefreshClicked);*/
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
 
         private void btnRefreshQuyenTruyCap_Click(object sender, EventArgs e)
@@ -280,10 +280,10 @@ namespace LTUD1_BACHHOAXANH472
             {
                 txtMK.Text = string.Empty;
                 txtMaQTC.Text = string.Empty;
-/*                state.UpdateButtonStates(ButtonState.RefreshClicked);*/
+                /*                state.UpdateButtonStates(ButtonState.RefreshClicked);*/
             }
-            catch(Exception ex) { MessageBox.Show( ex.Message); }
-           
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
         }
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)

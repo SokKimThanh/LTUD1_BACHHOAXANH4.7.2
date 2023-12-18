@@ -218,7 +218,7 @@ namespace LTUD1_BACHHOAXANH472
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
             OpenChildForm(new FormDiaDiem());
         }
-    
+
         /**
        * reset click all button
        */
@@ -355,6 +355,6 @@ namespace LTUD1_BACHHOAXANH472
             OpenChildForm(new FormDangNhap());
         }
 
-       
+
     }
 }

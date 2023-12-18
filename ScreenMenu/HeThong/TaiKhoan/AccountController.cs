@@ -140,34 +140,34 @@ public class AccountController : MyController
     }
     public void select_cbo_nhanvien()
     {
-            try
-            {
-                // Mở kết nối
-                SqlConnection conn = OpenConnection();
+        try
+        {
+            // Mở kết nối
+            SqlConnection conn = OpenConnection();
 
-                // thực hiện các thao tác trên cơ sở dữ liệu
-                Sql = new SqlCommand("sp_nhanvien_select_all", conn);
-                Sql.CommandType = CommandType.StoredProcedure;
+            // thực hiện các thao tác trên cơ sở dữ liệu
+            Sql = new SqlCommand("sp_nhanvien_select_all", conn);
+            Sql.CommandType = CommandType.StoredProcedure;
 
-                // Tạo đối tượng SqlDataAdapter
-                Adapter = new SqlDataAdapter(Sql);
+            // Tạo đối tượng SqlDataAdapter
+            Adapter = new SqlDataAdapter(Sql);
 
-                // Tạo một đối tượng Database để lưu trữ dữ liệu
-                DataSource = new DataTable();
+            // Tạo một đối tượng Database để lưu trữ dữ liệu
+            DataSource = new DataTable();
 
-                // đổ dữ liệu vào DataTable
-                Adapter.Fill(DataSource);
-                //đóng kết nối
-                CloseConnection();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-            finally
-            {
-                CloseConnection();
-            }
+            // đổ dữ liệu vào DataTable
+            Adapter.Fill(DataSource);
+            //đóng kết nối
+            CloseConnection();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        finally
+        {
+            CloseConnection();
+        }
     }
 
     public override DataTable SelectByID(object id)

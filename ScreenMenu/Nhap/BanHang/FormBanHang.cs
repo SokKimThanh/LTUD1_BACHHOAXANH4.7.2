@@ -1,5 +1,4 @@
 ﻿using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using System;
 using System.Windows.Forms;
