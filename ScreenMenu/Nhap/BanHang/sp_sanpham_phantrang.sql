@@ -1,30 +1,35 @@
-﻿
--- Create Procedure sp_sanpham_phantrang.sql
--- Author:		Sok Kim Thanh
--- Create date: <16/12/2023>
-
-drop procedure if exists sp_sanpham_phantrang
-go
+﻿-- CREATE PROCEDURE SP_SANPHAM_PHANTRANG.SQL
+-- AUTHOR:		SOK KIM THANH
+-- CREATE DATE: <16/12/2023>
+-- UPDATE DATE 17/12/2023
+DROP PROCEDURE IF EXISTS sp_sanpham_phantrang
+GO
 CREATE PROCEDURE sp_sanpham_phantrang
-    @loaiSanPham nvarchar(100) = NULL, -- loại sản phẩm
-    @nhaCungCap nvarchar(100) = NULL, -- nhà cung cấp
-    @searchTerm nvarchar(100) = NULL, -- từ khóa tìm kiếm
-    @currPage int, -- trang hiện tại
-    @recodperpage int -- số dòng trên 1 trang
+    @LOAISANPHAM NVARCHAR(100) = NULL,
+    @NHACUNGCAP NVARCHAR(100) = NULL,
+    @SEARCHTERM NVARCHAR(100) = NULL,
+    @CURRPAGE INT,
+    @RECODPERPAGE INT
 AS
-BEGIN
-    -- lấy dữ liệu và chỉ số dòng (row) của nó
-    WITH phantrang AS (
-        SELECT ROW_NUMBER() OVER (ORDER BY masp) AS Row, masp, tensp, donvi, dongia, sltonkho
-        FROM sanpham sp-- tên của bảng cần lấy dữ liệu
-        WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
-        AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
-        AND MANCC = ISNULL(@nhaCungCap, MANCC)
+BEGIN 
+    WITH PHANTRANG AS (
+        SELECT ROW_NUMBER() OVER (ORDER BY SP.MASP) AS STT
+            ,SP.MASP, SP.TENSP, SP.DONVI, SP.DONGIA
+            ,KM.PHANTRAMGIAMGIA  AS GIAMGIA
+	        ,DONGIA * (100- KM.PHANTRAMGIAMGIA)/100 AS GIABAN
+            ,SLTONKHO
+        FROM SANPHAM SP
+        INNER JOIN KHUYENMAI KM ON SP.MAKM = KM.MAKM
+        WHERE TENSP LIKE '%' + ISNULL(@SEARCHTERM, TENSP) + '%'
+        AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
+        AND MANCC = ISNULL(@NHACUNGCAP, MANCC) AND SLTONKHO > 0 
     )
-    -- lấy các dòng có chỉ số row phù hợp các các tiêu chí phân trang
-    SELECT * FROM phantrang WHERE Row BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage
-END
+    SELECT STT, MASP, TENSP, DONVI, DONGIA, GIAMGIA, GIABAN, SLTONKHO
+    FROM PHANTRANG 
+    WHERE STT BETWEEN (@CURRPAGE - 1)*@RECODPERPAGE+1 AND @CURRPAGE*@RECODPERPAGE;
+END;
+go
+SELECT * FROM LOAISP
+SELECT * FROM NHACUNGCAP
+EXECUTE sp_sanpham_phantrang 'L01','NCC02','A',1,16
 
-
-
-execute sp_sanpham_phantrang 1,4

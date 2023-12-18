@@ -1,5 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -110,7 +109,7 @@ namespace LTUD1_BACHHOAXANH472
                 {
                     MessageBox.Show("Sửa sản phẩm không thành công!");
                 }
-                
+
 
             }
             catch (Exception ex)

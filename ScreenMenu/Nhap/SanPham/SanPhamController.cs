@@ -1,22 +1,15 @@
 ﻿using System;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-
 namespace LTUD1_BACHHOAXANH472
 {
     internal class SanPhamController : MyController
     {
-
-
-
         public SanPhamController(string connectionString) : base(connectionString)
         {
 
         }
-
-
 
         public override void Insert(object sender)
         {
@@ -180,6 +173,7 @@ namespace LTUD1_BACHHOAXANH472
                 CloseConnection();
             }
         }
+
         public override void Delete(object id)
         {
             try
@@ -250,12 +244,11 @@ namespace LTUD1_BACHHOAXANH472
                 //Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
                 //Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
                 searchTerm = searchTerm ?? null;
-                loaiSanPham = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
                 nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
                 Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
                 Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
                 Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
-
                 Sql.Parameters.AddWithValue("@currPage", currentPage);
                 Sql.Parameters.AddWithValue("@recodperpage", pageSize);
 
@@ -273,20 +266,33 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                throw new Exception("PhanTrang" + ex.Message);
+                throw new Exception("GetDataPhanTrang" + ex.Message);
             }
             finally
             {
                 CloseConnection();
             }
         }
-        public int GetRowCount()
+
+        public int GetRowCount(string searchTerm, string loaiSanPham, string nhaCungCap)
         {
             int count = 0;
             try
             {
                 SqlConnection conn = OpenConnection();
-                SqlCommand cmd = new SqlCommand($"SELECT COUNT(*) FROM sanpham", conn);
+                SqlCommand cmd = new SqlCommand("sp_sanpham_phantrang_count", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số vào Stored Procedure
+                searchTerm = searchTerm ?? null;
+                loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
+                nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
+                Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
+                Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
+
+
+                // Sử dụng ExecuteScalar để lấy giá trị đầu tiên của hàng đầu tiên
                 count = (int)cmd.ExecuteScalar();
 
                 //đóng kết nối

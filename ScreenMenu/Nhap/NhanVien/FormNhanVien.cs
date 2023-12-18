@@ -1,5 +1,4 @@
-﻿
-using CrystalDecisions.CrystalReports.Engine;
+﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhanVien;
@@ -8,8 +7,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
-//using OfficeOpenXml.FormulaParsing.Excel.Functions;
-
 namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormNhanVien : Form

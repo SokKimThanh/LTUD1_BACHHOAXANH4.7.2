@@ -2,7 +2,6 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 {
     public partial class FormKhuyenMai : Form
@@ -21,7 +20,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             buttonStateManager.BtnDelete = btnXoa;
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnThem;
-            buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
         }
         private void FormKhuyenMai_Load(object sender, EventArgs e)
@@ -39,7 +38,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 DataGridViewHelper.ConfigureDataGridView(dgvDSKM);
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
-                Refresh();
+                Refresh2();
             }
             catch (Exception ex)
             {
@@ -62,7 +61,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 kmConn.Insert(km);
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Thêm khuyến mãi thành công!");
-                Refresh();
+                Refresh2();
             }
             catch (Exception ex)
             {
@@ -85,7 +84,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 kmConn.Delete(txtMaKM.Text);
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Xoá khuyến mãi thành công!");
-                Refresh();
+                Refresh2();
             }
             catch (Exception ex)
             {
@@ -112,7 +111,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 kmConn.Update(km);
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Sửa khuyến mãi thành công!");
-                Refresh();
+                Refresh2();
             }
             catch (Exception ex)
             {
@@ -127,17 +126,18 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
             txtMaKM.Text = randomStringGenerator.GenerateRandomAlphanumericString(10);
         }
-        private void Refresh()
+        private void Refresh2()
         {
             TaoMa();
             dtpNBD.Value = DateTime.Now;
             dtpNKT.Value = DateTime.Now;
             cboMaHT.SelectedIndex = 0;
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            Refresh();
+            Refresh2();
         }
 
         private void dgvDSKM_Click(object sender, EventArgs e)

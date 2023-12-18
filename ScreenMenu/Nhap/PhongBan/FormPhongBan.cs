@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 {
     public partial class FormPhongBan : Form
@@ -92,7 +91,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                     pbController.SelectAll();
                     dgvPB.DataSource = pbController.DataSource;
                     buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-                    Refresh();
+                    Refresh2();
                 }
 
             }
@@ -111,7 +110,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 pbController.Delete(phongBan.MaPB);
                 pbController.SelectAll();
                 dgvPB.DataSource = pbController.DataSource;
-                Refresh();
+                Refresh2();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
@@ -131,7 +130,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 pbController.Update(phongBan);
                 pbController.SelectAll();
                 dgvPB.DataSource = pbController.DataSource;
-                Refresh();
+                Refresh2();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
@@ -139,7 +138,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 MessageBox.Show(ex.Message);
             }
         }
-        private void Refresh()
+        private void Refresh2()
         {
             TaoMa();
             txtTenPB.Text = string.Empty;
@@ -148,7 +147,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            Refresh();
+            Refresh2();
         }
     }
 }

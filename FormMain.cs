@@ -1,15 +1,11 @@
-﻿
-using LTUD1_BACHHOAXANH472.Screen;
-using LTUD1_BACHHOAXANH472.ScreenDetail;
+﻿using LTUD1_BACHHOAXANH472.ScreenDetail;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap;
-/*using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;*/
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan;
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-
 
 namespace LTUD1_BACHHOAXANH472
 {
@@ -47,7 +43,7 @@ namespace LTUD1_BACHHOAXANH472
             lblAccountName.Text = Session.Username;
 
 
-            //Trần Minh Tuấn 
+            // 
             this.IsMdiContainer = true; // Đặt form này là MdiContainer
 
         }
@@ -215,7 +211,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-/*            OpenChildForm(new FormBanHang());*/
+            OpenChildForm(new FormBanHang());
         }
         /**
        * reset click all button
@@ -324,12 +320,12 @@ namespace LTUD1_BACHHOAXANH472
 
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmDangXuat_Click(object sender, EventArgs e)
         {
             // Thực hiện các tác vụ đăng xuất ở đây
             try
             {
-                //Trần Minh Tuấn
+                //
                 Close();
 
             }

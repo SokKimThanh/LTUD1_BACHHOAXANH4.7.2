@@ -7,9 +7,10 @@ CREATE PROCEDURE sp_khuyenmai_insert
 	@makm char(11) = '', 
 	@ngaybd date,
 	@ngaykt date,
-	@maht char(11) = N''
+	@maht char(11) = N'',
+	@phantramgiamgia int = 0
 AS
 BEGIN
-	INSERT INTO khuyenmai VALUES (@makm, @ngaybd, @ngaykt,@maht)
+	INSERT INTO khuyenmai VALUES (@makm, @ngaybd, @ngaykt,@maht, @phantramgiamgia)
 END
 GO

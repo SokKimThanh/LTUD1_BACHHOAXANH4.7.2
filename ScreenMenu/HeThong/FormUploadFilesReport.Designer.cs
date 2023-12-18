@@ -1,4 +1,11 @@
-﻿namespace LTUD1_BACHHOAXANH472._7._2.ScreenMenu.HeThong
+﻿using CrystalDecisions.CrystalReports.Engine;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
+using System.Windows.Forms;
+namespace LTUD1_BACHHOAXANH472.HeThong
 {
     partial class FormUploadFilesReport
     {

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-
 public class Session
 {
     private static string username = "";// chưa nhớ matkhau tentk

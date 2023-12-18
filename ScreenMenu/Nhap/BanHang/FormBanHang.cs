@@ -1,258 +1,274 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
-using System.ComponentModel;
-using System.Data.SqlClient;
-using System.Data;
 using System.Windows.Forms;
-using System.Drawing;
-
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormBanHang : Form
     {
-        ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
-        HoaDonController hoadonController = new HoaDonController(Utils.ConnectionString);
-        DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
-        SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
-        NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
+        private int currentPage = 1;
+        private int pageSize = 16;
+        private int pageCount = 0;
+        PBanHangController banhangController = new PBanHangController();
+        PhanTrangSanPham phantrang;
         RandomStringGenerator rnd = new RandomStringGenerator();
-
+        DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
+        NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
+        /// <summary>
+        /// Hàm load design
+        /// </summary>
         public FormBanHang()
         {
             InitializeComponent();
-            // Vô hiệu hóa sự kiện CellValueChanged
-            dgvThongTinHoaDon.CellValueChanged -= dgvThongTinHoaDon_CellValueChanged;
-            // tạo mã random cho mã hóa đơn
-            txtMaHoaDon.Text = rnd.GenerateRandomAlphanumericString(11);
 
-            // thêm dữ liệu vào datagridview sản phẩm
-            sanPhamController.SelectAll();
-            dgvDanhSachSanPham.DataSource = sanPhamController.DataSource;
-            // thêm dữ liệu vào loại sản phẩm 
-            danhMucController.SelectAll();
-            cboLoaiSanPham.DataSource = danhMucController.DataSource;
-            cboLoaiSanPham.ValueMember = "MALOAI";
-            cboLoaiSanPham.DisplayMember = "TENLOAI";
+            // cài đặt style cho combobox 
+            cboNhaCungCap.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboLoaiSanPham.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPageSize.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            // thêm dữ liệu vào combobox nhà cung cấp
-            cboNhaCungCap.DataSource = nhaCungCapController.sp_cbo_nhacungcap_select_all();
-            //cboLoaiSanPham.ValueMember = "TENNCC";
-            //cboLoaiSanPham.DisplayMember = "TENNCC";
-        }
-
-        private void FormBanHang_Load(object sender, EventArgs e)
-        {
+            // cài đặt style cho datagridview 
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
         }
+        /// <summary>
+        /// Hàm load dữ liệu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FormBanHang_Load(object sender, EventArgs e)
+        {
+            // tạo mã random cho mã hóa đơn
+            txtMaHoaDon.Text = rnd.GenerateRandomAlphanumericString(11);
+            //==============================================================================
+            //--..........................................................................--
+            //------------------.           Khởi tạo phân trang       .---------------------
+            //--..........................................................................--
+            //==============================================================================
+            // thêm dữ liệu vào datagridview sản phẩm
+            phantrang = new PhanTrangSanPham(currentPage, pageSize, pageCount);
+            dgvDanhSachSanPham.DataSource = phantrang.GetDataPhanTrang();
+            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+            //==============================================================================
+            //--..........................................................................--
+            //------------------.  Khởi tạocombobox hiển thị số lượng item       .----------
+            //--..........................................................................--
+            //==============================================================================
+            // Gọi phương thức create pagesize để tạo một combobox chứa pagesize tùy chỉnh hiển thị dữ liệu
+            phantrang.CreatePagesizeCombobox(cboPageSize);
+            // cbopagesize index = 1
+            cboPageSize.SelectedIndex = 1;
+            //==============================================================================
+            //--..........................................................................--
+            //------------------.      Khởi tạo thao tác datagridview       .---------------
+            //--.................            sản phẩm giỏ hàng            ..................
+            //==============================================================================
+            //khởi tạo banhang controller điều khiển luồng dữ liệu trên form bán hàng
+            banhangController.TxtSDTKhachHang = txtSDT;
+            banhangController.TxtMaHoaDon = txtMaHoaDon;
+            banhangController.TxtTenKhachHang = txtTenKhachHang;
+            banhangController.TxtSoLuongMua = txtSoLuongMua;
+            banhangController.DgvDanhSachSanPham = dgvDanhSachSanPham;
+            banhangController.DgvThongTinHoaDon = dgvThongTinHoaDon;
+            banhangController.ChangeHeaderNameDanhThongTinHoaDon();
+            banhangController.ChangeHeaderNameDanhSachSanPham();
+            banhangController.TaoCotThemGioHang();
+            //==============================================================================
+            //--..........................................................................--
+            //------------------.      Khởi tạo dữ liệu combobox danh mục       .-----------
+            //--.................                loại sản phẩm            ..................
+            //==============================================================================
+            // thêm dữ liệu vào combobox loại sản phẩm 
+            cboLoaiSanPham.DataSource = danhMucController.sp_cbo_danhmuc_select_all();
+            cboLoaiSanPham.ValueMember = "MALOAI";
+            cboLoaiSanPham.DisplayMember = "TENLOAI";
+            // thêm dữ liệu vào combobox nhà cung cấp
+            cboNhaCungCap.DataSource = nhaCungCapController.sp_cbo_nhacungcap_select_all();
+            cboNhaCungCap.ValueMember = "MANCC";
+            cboNhaCungCap.DisplayMember = "TENNCC";
+
+            lblTongTien.Text = "0";
+            txtSoLuongMua.Text = "0";
+
+        }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------.       Sự kiện chọn tiêu chí tìm kiếm     .----------------
+        //--.................             nhà  cung cấp             ..................--
+        //==============================================================================
+        private void cboNhaCungCap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboNhaCungCap.SelectedItem.ToString() == "Tất cả")
+            {
+                // Thực hiện hành động khi người dùng chọn "Tất cả"
+                cboNhaCungCap.SelectedValue = null;
+            }
+        }
+        private void cboLoaiSanPham_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboLoaiSanPham.SelectedItem.ToString() == "Tất cả")
+            {
+                // Thực hiện hành động khi người dùng chọn "Tất cả"
+                cboNhaCungCap.SelectedValue = null;
+            }
+        }
+        private void cboPageSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Lấy giá trị được chọn từ ComboBox
+            int selectedValue = (int)cboPageSize.SelectedItem;
+            // Gán giá trị pagesize
+            phantrang.PageSize = selectedValue;
+        }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------.       Sự kiện tìm kiếm sản phẩm     .---------------------
+        //--..........................................................................--
+        //==============================================================================
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            // thông tin trang hiển thị 
+            phantrang.PageSize = int.Parse(cboPageSize.SelectedItem.ToString());
+
+            // lấy giá trị trên các ô nhập
+            phantrang.Loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
+            phantrang.Nhacungcap = cboNhaCungCap.SelectedValue.ToString();
+            phantrang.Tensanpham = txtTenSanPham.Text;
+            // thực hiện câu truy vấn phân trang 
+            // lấy dữ liệu phân trang hiện tại
+            dgvDanhSachSanPham.DataSource = phantrang.GetDataPhanTrang();
+            // làm mới danh sách 
+            dgvDanhSachSanPham.Refresh();
+
+            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+        }
+
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Giao diện hình mũi tên nhỏ chuyển trang---------------------
+        //--..........................................................................--
+        //==============================================================================
+        private void btnPrevious_MouseHover(object sender, EventArgs e)
+        {
+            PictureBox currentPictureBox = sender as PictureBox;
+            currentPictureBox.Image = Properties.Resources.icon_big_phantrangleft; // đổi sang hình to hơn
+        }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Giao diện hình mũi tên nhỏ chuyển trang---------------------
+        //--..........................................................................--
+        //==============================================================================
+        private void btnPrevious_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox currentPictureBox = sender as PictureBox;
+            currentPictureBox.Image = Properties.Resources.icon_small_phantrangleft; // đổi sang hình nhỏ hơn
+        }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Giao diện hình mũi tên nhỏ chuyển trang---------------------
+        //--..........................................................................--
+        //==============================================================================
+        private void btnNext_MouseHover(object sender, EventArgs e)
+        {
+            PictureBox currentPictureBox = sender as PictureBox;
+            currentPictureBox.Image = Properties.Resources.icon_big_phantrangright; // đổi sang hình to hơn
+        }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Giao diện hình mũi tên nhỏ chuyển trang---------------------
+        //--..........................................................................--
+        //==============================================================================
+        private void btnNext_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox currentPictureBox = sender as PictureBox;
+            currentPictureBox.Image = Properties.Resources.icon_small_phantrangright; // đổi sang hình nhỏ hơn
+        }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------SỰ KIỆN EVENT hình mũi tên nhỏ chuyển trang-----------------
+        //--..........................................................................--
+        //==============================================================================
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            phantrang.btnNext_Click(sender, e);
+            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+            dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham.DataSource;
+            dgvDanhSachSanPham.Refresh();
+        }
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            phantrang.btnPrevious_Click(sender, e);
+            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+            dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham.DataSource;
+            dgvDanhSachSanPham.Refresh();
+        }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event kiểm tra nhập số điện thoại-------------------
+        //--..........................................................................--
+        //==============================================================================
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)){
+                e.Handled = true;
+            }
+        }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event bấm thanh toán -------------------------------
+        //--..........................................................................--
+        //==============================================================================
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
-            //
-            FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan();
-            frmThanhToan.Show();
+            banhangController.btnThanhToan_Click(sender, e);
         }
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event tăng giảm số lượng mua------------------------
+        //--..........................................................................--
+        //==============================================================================
         private void dgvThongTinHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Kích hoạt lại sự kiện CellValueChanged
-            //dgvThongTinHoaDon.CellValueChanged += dgvThongTinHoaDon_CellValueChanged;
-
-            // Kiểm tra xem người dùng có nhấp vào cột nút tăng số lượng hay không
-            if (e.ColumnIndex == dgvThongTinHoaDon.Columns["BtnTangSL"].Index && e.RowIndex >= 0)
-            {
-                // Tăng số lượng sản phẩm
-                int sl = int.Parse(dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value.ToString());
-                dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value = sl + 1;
-            }
-
-            // Kiểm tra xem người dùng có nhấp vào cột nút giảm số lượng hay không
-            if (e.ColumnIndex == dgvThongTinHoaDon.Columns["btnGiamSL"].Index && e.RowIndex >= 0)
-            {
-                // Giảm số lượng sản phẩm
-                int sl = int.Parse(dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value.ToString());
-                if (sl > 0)
-                {
-                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value = sl - 1;
-                }
-            }
+            banhangController.dgvThongTinHoaDon_CellContentClick(sender, e);
+            lblTongTien.Text = banhangController.LblTongTien.Text;
+            txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
-        private void dgvThongTinHoaDon_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            // Đảm bảo rằng tất cả dữ liệu đã được tải xong
-            if (e.ListChangedType != ListChangedType.ItemDeleted)
-            {
-                // Thực hiện các thao tác trên DataGridView tại đây
-            }
-        }
-
-        private void dgvThongTinHoaDon_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (dgvThongTinHoaDon.RowCount > 0)
-                {
-                    // dgvThongTinHoaDon đã có dữ liệu
-                    // Kiểm tra xem người dùng có thay đổi giá trị trong cột "SL" hay không
-                    if (e.ColumnIndex == dgvThongTinHoaDon.Columns["SL"].Index && e.RowIndex >= 0)
-                    {
-                        // Lấy số lượng sản phẩm mới
-                        int sl = int.Parse(dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value.ToString());
-
-                        // Lấy đơn giá
-                        decimal donGia = decimal.Parse(dgvThongTinHoaDon.Rows[e.RowIndex].Cells["DonGia"].Value.ToString());
-
-                        // Tính toán tổng tiền mới
-                        decimal thanhTien = sl * donGia;
-
-                        // Cập nhật tổng tiền trong DataGridView
-                        dgvThongTinHoaDon.Rows[e.RowIndex].Cells["ThanhTien"].Value = thanhTien;
-                    }
-                }
-                else
-                {
-                    // dgvThongTinHoaDon chưa có dữ liệu
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        private void CapNhatTongSoLuongMua()
-        {
-            int tongSoLuongMua = 0;
-
-            // Duyệt qua tất cả các dòng trong dgvThongTinHoaDon
-            foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
-            {
-                // Lấy số lượng từ mỗi dòng
-                int soLuong = Convert.ToInt32(row.Cells["SL"].Value);
-
-                // Cộng số lượng vào tổng số lượng mua
-                tongSoLuongMua += soLuong;
-            }
-
-            // Cập nhật ô txtSoLuongMua với tổng số lượng mua mới
-            txtSoLuongMua.Text = tongSoLuongMua.ToString();
-        }
-
-        private void CapNhatTongTien()
-        {
-            decimal tongTien = 0;
-
-            // Duyệt qua tất cả các dòng trong dgvThongTinHoaDon
-            foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
-            {
-                // Lấy số lượng và đơn giá từ mỗi dòng
-                int soLuong = Convert.ToInt32(row.Cells["SL"].Value);
-                decimal donGia = Convert.ToDecimal(row.Cells["DonGia"].Value);
-
-                // Tính thành tiền và cộng vào tổng tiền
-                tongTien += soLuong * donGia;
-            }
-
-            // Cập nhật label với tổng tiền mới
-            lblTongTien.Text = tongTien.ToString("N0");
-        }
-
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event  add to cart----------------------------------
+        //--..........................................................................--
+        //==============================================================================
         private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Kiểm tra xem người dùng có nhấp vào cột nút "btnThemGioHang" hay không
-            if (e.ColumnIndex == dgvDanhSachSanPham.Columns["btnThemGioHang"].Index && e.RowIndex >= 0)
+            banhangController.dgvDanhSachSanPham_CellContentClick(sender, e);
+            if (banhangController.LblTongTien != null)
             {
-                // Thêm sản phẩm vào dgvThongTinHoaDon hoặc cập nhật số lượng nếu sản phẩm đã tồn tại
-
-                // Lấy thông tin sản phẩm từ dgvDanhSachSanPham
-                string maSP = dgvDanhSachSanPham.Rows[e.RowIndex].Cells["MaSPP"].Value.ToString();
-                string tenSP = dgvDanhSachSanPham.Rows[e.RowIndex].Cells["TenSP"].Value.ToString();
-                decimal donGia = decimal.Parse(dgvDanhSachSanPham.Rows[e.RowIndex].Cells["DonGia"].Value.ToString());
-                decimal km = decimal.Parse(dgvDanhSachSanPham.Rows[e.RowIndex].Cells["KM"].Value.ToString());
-
-                // Tìm sản phẩm trong dgvThongTinHoaDon
-                foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
-                {
-                    if (row.Cells["MaSP"].Value.ToString() == maSP)
-                    {
-                        // Nếu sản phẩm đã tồn tại, tăng số lượng lên 1
-                        row.Cells["SL"].Value = int.Parse(row.Cells["SL"].Value.ToString()) + 1;
-                        return;
-                    }
-                }
-
-                // Nếu sản phẩm chưa tồn tại, thêm một dòng mới vào dgvThongTinHoaDon
-                dgvThongTinHoaDon.Rows.Add(maSP, tenSP, donGia, km, 1);
-
-                // Cập nhật tổng tiền
-                CapNhatTongTien();
-                // Cập nhật tổng số lượng
-                CapNhatTongSoLuongMua();
-            }
-        }
-        private void btnHuyThanhToan_Click(object sender, EventArgs e)
-        {
-            // Xác nhận trước khi xóa
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                // Xóa tất cả các dòng trong dgvThongTinHoaDon
-                dgvThongTinHoaDon.Rows.Clear();
-
-                // Cập nhật tổng tiền
-                CapNhatTongTien();
-                // Cập nhật tổng số lượng
-                CapNhatTongSoLuongMua();
-            }
-        }
-        private PictureBox currentPictureBox;
-        private void pictureBox2_MouseHover(object sender, EventArgs e)
-        {
-            currentPictureBox = sender as PictureBox;
-            timer1.Start();
-        }
-        private void pictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            currentPictureBox = sender as PictureBox;
-            timer1.Start();
-        }
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            currentPictureBox = sender as PictureBox;
-            timer1.Start();
-        }
-
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            currentPictureBox = sender as PictureBox;
-            timer1.Stop();
-        }
-
-        private bool isZoomingIn = true;
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            if (isZoomingIn)
-            {
-                currentPictureBox.Width += 1;
-                currentPictureBox.Height += 1;
-
-                if (currentPictureBox.Width >= 32) // MAX_WIDTH là kích thước tối đa bạn muốn phóng to
-                {
-                    isZoomingIn = false;
-                }
+                lblTongTien.Text = banhangController.LblTongTien.Text;
             }
             else
             {
-                currentPictureBox.Width -= 1;
-                currentPictureBox.Height -= 1;
-
-                if (currentPictureBox.Width <= 24) // MIN_WIDTH là kích thước tối thiểu bạn muốn thu nhỏ
-                {
-                    isZoomingIn = true;
-                }
+                // Xử lý trường hợp LblTongTien là null
             }
+            txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
 
+        //==============================================================================
+        //--..........................................................................--
+        //------------------Sự kiện event hủy thanh toán -------------------------------
+        //--..........................................................................--
+        //==============================================================================
+        private void btnHuyThanhToan_Click(object sender, EventArgs e)
+        {
+            banhangController.btnHuyThanhToan_Click(sender, e);
+            lblTongTien.Text = banhangController.LblTongTien.Text;
+            txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
+        }
 
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

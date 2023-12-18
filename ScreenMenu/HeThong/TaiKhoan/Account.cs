@@ -1,7 +1,4 @@
-﻿
-using System;
-
-
+﻿using System;
 internal class Account
 {
     private string tentk, matkhau, manv, maqtc;

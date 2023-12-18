@@ -1,7 +1,4 @@
-﻿
-
-using System;
-
+﻿using System;
 namespace LTUD1_BACHHOAXANH472
 {
     internal class SanPham

@@ -1,11 +1,11 @@
-﻿/*using iTextSharp.text;*/
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 public enum ButtonState
 {
     DataGridViewSelected,
-    RefreshClicked,
-    FormLoaded
+    Clicked,
+    FormLoaded,
+    RefreshClicked
 }
 public class ButtonStateManager : CustomButtonHelper
 {

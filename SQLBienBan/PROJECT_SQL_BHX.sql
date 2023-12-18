@@ -22,15 +22,11 @@ Date(dd/MM/yyyy)		Author				Comments
 09/12/2023	10:03 SA	Sok Kim Thanh		Thêm trường created_date_nv datetime vào bảng nhân viên, giá trị mặc định là ngày hiện tại
 10/12/2023	07:44 CH	Sok Kim Thanh		Thêm trường created_date_ncc datetime vào bảng nha cung cap, giá trị mặc định là ngày hiện tại
 14/12/2023	09:24 CH	Sok Kim Thanh		Thêm dữ liệu cho ứng dụng
+17/12/2023	10/42 SA	Sok Kim Thanh		Thêm cột phantramgiamgia int cho khuyến mãi 
 ***************************************************************************************************/
 ------------------------------------------------------------
 --Tạo database mới										   -
 ------------------------------------------------------------
-go
-use master
-go
-drop database BACHHOAXANH
-go
 create database BACHHOAXANH
 go 
 use BACHHOAXANH
@@ -132,6 +128,19 @@ ALTER TABLE CHITIETCC ADD CONSTRAINT FK_CHITIETCC_NHACUNGCAP FOREIGN KEY (MANCC)
 ALTER TABLE CHITIETCC ADD CONSTRAINT FK_CHITIETCC_SANPHAM FOREIGN KEY (MASP) REFERENCES SANPHAM (MASP);
 alter table TAIKHOAN add constraint FK_TAIKHOAN_NHANVIEN foreign key (MANV) references NHANVIEN(MANV)
 alter table TAIKHOAN add constraint FK_TAIKHOAN_QUYENTRUYCAP foreign key (MAQTC) references QUYENTRUYCAP(MAQTC)
+
+
+/***********************************************************
+------------------------------------------------------------
+---------------------CHỈNH SỬA BẢNG-------------------------
+------------------------------------------------------------
+************************************************************/
+alter table khuyenmai add phantramgiamgia int null;
+
+
+
+
+
 /***********************************************************
 ------------------------------------------------------------
 ---------------------Tạo default value----------------------
@@ -141,6 +150,7 @@ alter table TAIKHOAN add constraint FK_TAIKHOAN_QUYENTRUYCAP foreign key (MAQTC)
 --o	SANPHAM có DONGIA = 0
 --o	KHACHHANG có DIEMTL = 0
 --o	NGAYHOADON = DateTime.Now
+--o	KHUYENMAI có phantramgiamgia = 0
 ************************************************************/
 -- default lương nhân viên
 go
@@ -171,3 +181,21 @@ add constraint d_ngayhoadon default GETDATE() for NGAYHOADON
 go
 alter table NHACUNGCAP
 add constraint d_created_date_ncc default getdate() for created_date_ncc
+
+--default giá trị giảm giá
+go
+alter table KHUYENMAI
+add constraint d_phantramgiamgia default 0 for phantramgiamgia
+
+
+/***********************************************************
+------------------------------------------------------------
+---------------------Tạo check value------------------------
+------------------------------------------------------------
+--o	KHUYENMAI có check phamtramgiamgia >=0 and phantramgiamgia <= 90
+************************************************************/
+ALTER TABLE KHUYENMAI
+ADD CONSTRAINT check_phantramgiamgia CHECK (phantramgiamgia >= 0 AND phantramgiamgia <= 90);
+
+
+

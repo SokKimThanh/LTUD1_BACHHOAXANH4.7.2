@@ -141,7 +141,28 @@
   <metadata name="btnGiamSL.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnPrevious.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAF5JREFUSEvt1MEJgFAMBNGU8vtvylJiBlZUEC8mB2Ef5KIwCx4Ms0eZueo2To/6
+        XOLoHajgLV639Oo7YorC8ZOi6I9DYYwNzH4iEFUcHnlHVHH0/4tQ4WNkZsD+JGIHs5jgX7sIDgMAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="btnPrevious.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAF5JREFUSEvt1MEJgFAMBNGU8vtvylJiBlZUEC8mB2Ef5KIwCx4Ms0eZueo2To/6
+        XOLoHajgLV639Oo7YorC8ZOi6I9DYYwNzH4iEFUcHnlHVHH0/4tQ4WNkZsD+JGIHs5jgX7sIDgMAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="btnNext.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAFFJREFUSEvt0LEJACAMRNGM4v5LOUr0w4GdVWIh98EmxTswnIvMnHpDp9qEU88I
+        qHDyyD1Q4fRmROe6Nto3sMG+LwITSsZPQqkeJ8E9uPuhiAVw7uBfGsOijwAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

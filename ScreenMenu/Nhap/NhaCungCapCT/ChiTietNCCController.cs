@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT
@@ -125,7 +121,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT
             }
             return DataSource;
         }
-    
+
 
         public override void Update(object sender)
         {

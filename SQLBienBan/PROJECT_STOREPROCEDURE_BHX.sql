@@ -194,36 +194,112 @@ BEGIN
 	select MANCC, TENNCC from nhacungcap order by created_date_ncc desc
 END
 GO
-execute sp_cbo_nhacungcap_select_all﻿
--- Create Procedure sp_sanpham_phantrang.sql
--- Author:		Sok Kim Thanh
--- Create date: <16/12/2023>
-
-drop procedure if exists sp_sanpham_phantrang
+execute sp_cbo_nhacungcap_select_all﻿-- Create Procedure sp_sanpham_select_all.SQL
+-- Sản phẩm giảm giá
+-- Author:		<Sok Kim Thanh>
+-- Create date: <17/12/2023>
+-- Description:	<Sản phẩm giảm giá>
+drop procedure if exists sp_sanpham_giamgia_select_all
 go
-CREATE PROCEDURE sp_sanpham_phantrang
-    @loaiSanPham nvarchar(100) = NULL, -- loại sản phẩm
-    @nhaCungCap nvarchar(100) = NULL, -- nhà cung cấp
-    @searchTerm nvarchar(100) = NULL, -- từ khóa tìm kiếm
-    @currPage int, -- trang hiện tại
-    @recodperpage int -- số dòng trên 1 trang
+CREATE PROCEDURE sp_sanpham_giamgia_select_all
+@MAHD CHAR(11)
 AS
 BEGIN
-    -- lấy dữ liệu và chỉ số dòng (row) của nó
-    WITH phantrang AS (
-        SELECT ROW_NUMBER() OVER (ORDER BY masp) AS Row, masp, tensp, donvi, dongia, sltonkho
-        FROM sanpham sp-- tên của bảng cần lấy dữ liệu
-        WHERE tensp LIKE '%' + ISNULL(@searchTerm, tensp) + '%'
-        AND MALOAI = ISNULL(@loaiSanPham, MALOAI)
-        AND MANCC = ISNULL(@nhaCungCap, MANCC)
-    )
-    -- lấy các dòng có chỉ số row phù hợp các các tiêu chí phân trang
-    SELECT * FROM phantrang WHERE Row BETWEEN (@currPage - 1)*@recodperpage+1 AND @currPage*@recodperpage
+	Declare  @TT int = 0;
+	select   @TT   +=  sp.dongia * (100-km.phantramgiamgia)/100 * ct.SLMUA
+	from CHITIETHD ct,HOADON hd,SANPHAM sp,KHUYENMAI km
+	where ct.MAHD = hd.MAHD and sp.MASP = ct.MASP and ct.MAHD = @mahd and sp.MAKM = km.MAKM
+
+	--select @TT as 'Tổng thành tiền'
+	Update HOADON
+	set TONGTHANHTIEN = @TT
+	where MAHD = @mahd; 
+
+	select hd.MAHD,hd.NGAYHOADON,hd.MANV, sp.masp,sp.tensp,cthd.SLMUA 
+	,sp.dongia N'Giá Gốc'
+	, sp.donvi N'Đơn vị tính'
+	,km.phantramgiamgia N'Phần trăm giảm giá'
+	,sp.dongia * (100-km.phantramgiamgia)/100 N'Giá sau giảm giá'
+	,sp.sltonkho N'Tồn kho',
+	cthd.SLMUA
+	,sp.dongia * (100-km.phantramgiamgia)/100 * cthd.SLMUA N'Thành tiền'
+	,hd.TONGTHANHTIEN N'Tổng thành tiền'
+	from SanPham sp,KHUYENMAI km, HOADON hd, CHITIETHD cthd
+	where sp.MAKM = km.MAKM and hd.MAHD = @MAHD and cthd.MAHD = hd.MAHD and cthd.MASP = sp.MASP
+
+	
+
+	select TONGTHANHTIEN  from HoaDon where HOADON.MAHD =@MAHD
 END
+GO
+--select * from SANPHAM
+exec sp_sanpham_giamgia_select_all 'HD01'
 
+﻿-- CREATE PROCEDURE SP_SANPHAM_PHANTRANG.SQL
+-- AUTHOR:		SOK KIM THANH
+-- CREATE DATE: <16/12/2023>
+-- UPDATE DATE 17/12/2023
+DROP PROCEDURE IF EXISTS sp_sanpham_phantrang
+GO
+CREATE PROCEDURE sp_sanpham_phantrang
+    @LOAISANPHAM NVARCHAR(100) = NULL,
+    @NHACUNGCAP NVARCHAR(100) = NULL,
+    @SEARCHTERM NVARCHAR(100) = NULL,
+    @CURRPAGE INT,
+    @RECODPERPAGE INT
+AS
+BEGIN 
+    WITH PHANTRANG AS (
+        SELECT ROW_NUMBER() OVER (ORDER BY SP.MASP) AS STT
+            ,SP.MASP, SP.TENSP, SP.DONVI, SP.DONGIA
+            ,KM.PHANTRAMGIAMGIA  AS GIAMGIA
+	        ,DONGIA * (100- KM.PHANTRAMGIAMGIA)/100 AS GIABAN
+            ,SLTONKHO
+        FROM SANPHAM SP
+        INNER JOIN KHUYENMAI KM ON SP.MAKM = KM.MAKM
+        WHERE TENSP LIKE '%' + ISNULL(@SEARCHTERM, TENSP) + '%'
+        AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
+        AND MANCC = ISNULL(@NHACUNGCAP, MANCC)
+    )
+    SELECT STT, MASP, TENSP, DONVI, DONGIA, GIAMGIA, GIABAN, SLTONKHO
+    FROM PHANTRANG 
+    WHERE STT BETWEEN (@CURRPAGE - 1)*@RECODPERPAGE+1 AND @CURRPAGE*@RECODPERPAGE;
+END
+SELECT * FROM LOAISP
+SELECT * FROM NHACUNGCAP
+EXECUTE SP_SANPHAM_PHANTRANG 'L01','NCC02','A',1,16
 
-
-execute sp_sanpham_phantrang 1,4﻿
+﻿-- AUTHOR:		SOK KIM THANH
+-- CREATE DATE: <17/12/2023>
+-- UPDATE DATE 6:44 CH
+DROP PROCEDURE IF EXISTS sp_sanpham_phantrang_count
+GO
+CREATE PROCEDURE sp_sanpham_phantrang_count
+    @LOAISANPHAM NVARCHAR(100) = NULL,
+    @NHACUNGCAP NVARCHAR(100) = NULL,
+    @SEARCHTERM NVARCHAR(100) = NULL
+AS
+BEGIN 
+    -- LẤY DỮ LIỆU VÀ CHỈ SỐ DÒNG (ROW) CỦA NÓ
+    WITH PHANTRANG AS (
+        SELECT ROW_NUMBER() OVER (ORDER BY SP.MASP) AS STT
+            ,SP.MASP, SP.TENSP, SP.DONVI, SP.DONGIA
+            ,KM.PHANTRAMGIAMGIA  AS GIAMGIA
+	        ,DONGIA * (100- KM.PHANTRAMGIAMGIA)/100 AS GIABAN
+            ,SLTONKHO
+        FROM SANPHAM SP
+        INNER JOIN KHUYENMAI KM ON SP.MAKM = KM.MAKM
+        WHERE TENSP LIKE '%' + ISNULL(@SEARCHTERM, TENSP) + '%'
+        AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
+        AND MANCC = ISNULL(@NHACUNGCAP, MANCC)
+    )
+    -- ĐẾM SỐ DÒNG
+    SELECT COUNT(*) AS TOTALROWS
+    FROM PHANTRANG;
+END;
+GO
+EXECUTE SP_SANPHAM_PHANTRANG_COUNT NULL,NULL,'F'
+﻿
 -- Create Procedure sp_danhmuc_delete.sql
 -- Danh mục delete
 -- Author:		Sok Kim Thanh
@@ -1263,10 +1339,11 @@ CREATE PROCEDURE sp_khuyenmai_insert
 	@makm char(11) = '', 
 	@ngaybd date,
 	@ngaykt date,
-	@maht char(11) = N''
+	@maht char(11) = N'',
+	@phantramgiamgia int = 0
 AS
 BEGIN
-	INSERT INTO khuyenmai VALUES (@makm, @ngaybd, @ngaykt,@maht)
+	INSERT INTO khuyenmai VALUES (@makm, @ngaybd, @ngaykt,@maht, @phantramgiamgia)
 END
 GO
 ﻿-- Create Procedure sp_khuyenmai_select_all.sql
@@ -1304,13 +1381,15 @@ GO
 drop procedure if exists sp_khuyenmai_update
 go
 CREATE PROCEDURE sp_khuyenmai_update
-	@makm char(11) = N'', 
+	@makm char(11) = '', 
 	@ngaybd date,
 	@ngaykt date,
-	@maht char(11)
+	@maht char(11),
+	@phantramgiamgia int
 AS
 BEGIN
-	update khuyenmai set ngaybd = @ngaybd, ngaykt = @ngaykt, maht=@maht where makm = @makm -- chuẩn sql
+	update khuyenmai set ngaybd = @ngaybd, ngaykt = @ngaykt, maht=@maht, 
+	phantramgiamgia = isnull(@phantramgiamgia, phantramgiamgia) where makm = @makm -- chuẩn sql
 END
 GO
 ﻿-- Create Procedure sp_nhacungcap_delete.sql

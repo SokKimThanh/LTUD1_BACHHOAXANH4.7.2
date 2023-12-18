@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
 {
     public partial class FormLoaiSP : Form
@@ -37,13 +36,16 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnThem.Enabled = false;
-            txtMaLoai.Enabled = false;
         }
         private void clean()
         {
             txtMaLoai.Text = "";
             txtTenMaLoai.Text = "";
             txtGhiChu.Text = "";
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnThem.Enabled = true;
+            btnLamMoi.Enabled = true;
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -107,7 +109,12 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnThem.Enabled = true;
-            txtMaLoai.Enabled = true;
+            btnLamMoi.Enabled = true;
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            clean();
         }
     }
 }

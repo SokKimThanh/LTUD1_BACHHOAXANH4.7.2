@@ -8,9 +8,11 @@ CREATE PROCEDURE sp_khuyenmai_update
 	@makm char(11) = '', 
 	@ngaybd date,
 	@ngaykt date,
-	@maht char(11)
+	@maht char(11),
+	@phantramgiamgia int
 AS
 BEGIN
-	update khuyenmai set ngaybd = @ngaybd, ngaykt = @ngaykt, maht=@maht where makm = @makm -- chuẩn sql
+	update khuyenmai set ngaybd = @ngaybd, ngaykt = @ngaykt, maht=@maht, 
+	phantramgiamgia = isnull(@phantramgiamgia, phantramgiamgia) where makm = @makm -- chuẩn sql
 END
 GO

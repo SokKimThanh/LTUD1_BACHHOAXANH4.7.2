@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-
 namespace LTUD1_BACHHOAXANH472.ScreenDetail
 {
     public partial class FormHinhThucKhuyenMai : Form
@@ -12,12 +11,15 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             InitializeComponent();
             htkmConn = new HinhThucKhuyenMaiControler(Utils.ConnectionString);
             DataGridViewHelper.ConfigureDataGridView(dgvHTKM);
+            clean();
+            txtMaHTKM.Enabled = false;
         }
 
         private void FormChiTietKhuyenMai_Load(object sender, EventArgs e)
         {
             htkmConn.SelectAll();
             dgvHTKM.DataSource = htkmConn.DataSource;
+            clean();
         }
 
         private void dgvHTKM_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -27,13 +29,19 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            HinhThucKhuyenMai htkm = new HinhThucKhuyenMai();
-            htkm.Makm = txtMaHTKM.Text;
-            htkm.Hinhthuc = txtTenHTKM.Text;
-            htkm.Ghichu = txtGhiChu.Text;
-
+            
+            if(txtTenHTKM.Text == string.Empty)
+            {
+                MessageBox.Show("Nhập tên khuyến mãi");
+                return;
+            }
+           
             try
             {
+                HinhThucKhuyenMai htkm = new HinhThucKhuyenMai();
+                htkm.Makm = txtMaHTKM.Text;
+                htkm.Hinhthuc = txtTenHTKM.Text;
+                htkm.Ghichu = txtGhiChu.Text;
                 htkmConn.Insert(htkm);
                 FormChiTietKhuyenMai_Load(sender, e);
                 MessageBox.Show("Thêm hình thúc khuyến mãi thành công");
@@ -46,9 +54,14 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
         }
         private void clean()
         {
-            txtMaHTKM.Text = "";
+            RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
+            txtMaHTKM.Text = randomStringGenerator.GenerateRandomAlphanumericString(11);
             txtTenHTKM.Text = "";
             txtGhiChu.Text = "";
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+            btnThem.Enabled = true;
+            btnLamMoi.Enabled = true;
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -102,7 +115,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnThem.Enabled = false;
-            txtMaHTKM.Enabled = false;
+            btnLamMoi.Enabled = false;
         }
 
         private void dgvHTKM_DoubleClick(object sender, EventArgs e)
@@ -111,7 +124,12 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnThem.Enabled = true;
-            txtMaHTKM.Enabled = true;
+            btnLamMoi.Enabled = true;
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            clean();
         }
     }
 }

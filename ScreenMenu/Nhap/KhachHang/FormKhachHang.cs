@@ -5,7 +5,6 @@ using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Data;
 using System.Windows.Forms;
-
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 {
     public partial class FormKhachHang : Form

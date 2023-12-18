@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-
 namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormChiTietNhaCungCap : Form
@@ -33,7 +32,7 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
         }
 
-        private void Refresh()
+        private void Refresh2()
         {
             cboNCC.SelectedIndex = 0;
             txtSoLuong.Text = "0";
@@ -55,7 +54,7 @@ namespace LTUD1_BACHHOAXANH472
             cboNCC.ValueMember = "MANCC";
 
 
-            Refresh();
+            Refresh2();
             buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
         }
@@ -75,7 +74,7 @@ namespace LTUD1_BACHHOAXANH472
                 o.MaSP = cboSanPham.SelectedValue.ToString();
 
                 ctnccCon.Insert(o);
-                Refresh();
+                Refresh2();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)

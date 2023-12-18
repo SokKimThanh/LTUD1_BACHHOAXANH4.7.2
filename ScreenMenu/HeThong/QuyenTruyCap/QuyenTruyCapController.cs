@@ -7,7 +7,6 @@ using System;
 using LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan;
 using LTUD1_BACHHOAXANH472.Model;
 
-
 public class QuyenTruyCapController : MyController
 {
     public QuyenTruyCapController(string connectionString) : base(connectionString)
