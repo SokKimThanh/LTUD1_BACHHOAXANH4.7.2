@@ -1326,18 +1326,6 @@ go
 -- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 9:39 CH>
 go
-drop procedure if exists sp_nhanvien_delete
-go
-CREATE PROCEDURE sp_nhanvien_delete
-	@manv char(11) 
-AS
-BEGIN 
-	DELETE FROM nhanvien WHERE manv = @manv
-END;
-go 
--- Author:		Sok Kim Thanh
--- Create date: <06/12/2023 9:39 CH>
-go
 drop procedure if exists sp_nhanvien_insert
 go
 CREATE PROCEDURE sp_nhanvien_insert
@@ -1576,10 +1564,10 @@ set dateformat ymd
 drop procedure if exists sp_sanpham_select_ngay
 go
 CREATE PROCEDURE sp_sanpham_select_ngay
-	@NgayHT date
+	@NgayHT date = null
 AS
 BEGIN
-	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = @NgayHT--like chính xác mã 100%
+	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = isnull(@NgayHT,sp.hsd)--like chính xác mã 100%
 END
 GO
 select * From SANPHAM

@@ -702,7 +702,6 @@
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_update.sql" />
-    <Content Include="SQLBienBan\huongdancombinedsql.txt" />
     <Content Include="SQLBienBan\PROJECT_SQL_BHX.sql" />
     <Content Include="SQLBienBan\PROJECT_INSERT_DATA_BHX.sql" />
   </ItemGroup>

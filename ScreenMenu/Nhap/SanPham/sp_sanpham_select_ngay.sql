@@ -6,10 +6,10 @@ set dateformat ymd
 drop procedure if exists sp_sanpham_select_ngay
 go
 CREATE PROCEDURE sp_sanpham_select_ngay
-	@NgayHT date
+	@NgayHT date = null
 AS
 BEGIN
-	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = @NgayHT--like chính xác mã 100%
+	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = isnull(@NgayHT,sp.hsd)--like chính xác mã 100%
 END
 GO
 select * From SANPHAM
