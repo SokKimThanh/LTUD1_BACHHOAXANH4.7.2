@@ -16,7 +16,7 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 //FormDangNhap logon = new FormDangNhap();
-                //FormMain logon = new FormMain();
+                FormMain logon = new FormMain();
                 //ViDuPhanTrang logon = new ViDuPhanTrang();
                 //FormUploadFilesReport logon = new FormUploadFilesReport();
                 //FormHoaDon logon =  new FormHoaDon();
