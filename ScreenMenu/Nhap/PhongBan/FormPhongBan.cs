@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.controller;
+using LTUD1_BACHHOAXANH472.Model;
+using System;
 using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
@@ -105,13 +107,23 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
         {
             try
             {
-                PhongBan phongBan = new PhongBan();
-                phongBan.MaPB = txtMaPB.Text;
-                pbController.Delete(phongBan.MaPB);
-                pbController.SelectAll();
-                dgvPB.DataSource = pbController.DataSource;
-                Refresh2();
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                if (ErrTxt.CheckControlValue(txtMaPB))
+                {
+                    MessageBox.Show("txtMaPB", "Bắt buộc!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DialogResult r = MessageBox.Show("Bạn có muốn xoa khong?", "xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    PhongBan phongBan = new PhongBan();
+                    phongBan.MaPB = txtMaPB.Text;
+                    pbController.Delete(phongBan.MaPB);
+                    pbController.SelectAll();
+                    dgvPB.DataSource = pbController.DataSource;
+                    Refresh2();
+                    buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                }
+          
             }
             catch (Exception ex)
             {
