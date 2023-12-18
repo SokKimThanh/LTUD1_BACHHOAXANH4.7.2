@@ -1,23 +1,15 @@
-﻿
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-set dateformat dmy
--- Author:		Sok Kim Thanh
+﻿-- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 -- Description:	<Tài khoản delete>
 DROP PROCEDURE IF EXISTS sp_quyentruycap_delete
 GO
 CREATE PROCEDURE sp_quyentruycap_delete
-	
-	@TENQTC CHAR(30) 
+	@maQTC CHAR(11) 
 AS
 BEGIN
-	DELETE FROM quyentruycap WHERE TENQTC = @TENQTC
+	DELETE FROM quyentruycap WHERE MAQTC = @maQTC
 END
-GO
-﻿
+GO﻿
 -- Create Procedure sp_quyentruycap_insert.sql
 -- Tài khoản insert
 -- Author:		Sok Kim Thanh
@@ -45,7 +37,7 @@ go
 CREATE PROCEDURE sp_quyentruycap_select_all
 AS
 BEGIN
-	SELECT qtc.maqtc as ID, qtc.TENQTC as 'Tên quyền truy cập' FROM quyentruycap qtc
+	SELECT qtc.maqtc, qtc.TENQTC FROM quyentruycap qtc
 END
 GO
  ﻿
@@ -59,10 +51,10 @@ drop procedure if exists sp_quyentruycap_select_one
 go
 CREATE PROCEDURE sp_quyentruycap_select_one
 	
-	@TENQTC CHAR(30)
+	@MAQTC CHAR(30)
 AS
 BEGIN
-	SELECT * from quyentruycap where TENQTC = @TENQTC --  chính xác mã 100%
+	SELECT * from quyentruycap where MAQTC = @MAQTC --  chính xác mã 100%
 END
 GO
 ﻿-- Create Procedure sp_quyentruycap_update.sql
@@ -81,7 +73,20 @@ BEGIN
 	update quyentruycap set TENQTC= @TENQTC where MAQTC = @MAQTC  -- chuẩn sql
 END
 GO
-﻿
+﻿-- Create Procedure sp_quyentruycap_select_all.sql
+-- Tài khoản select all
+-- Author:		Sok Kim Thanh
+-- Create date: <14/12/2023>
+
+drop procedure if exists sp_cbo_quyentruycap_select_all
+go
+CREATE PROCEDURE sp_cbo_quyentruycap_select_all
+AS
+BEGIN
+	SELECT qtc.maqtc, qtc.TENQTC FROM quyentruycap qtc
+END
+GO
+ ﻿
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -128,7 +133,7 @@ go
 CREATE PROCEDURE sp_taikhoan_select_all
 AS
 BEGIN
-	SELECT tk.TENTK as ID, tk.TENTK, qtc.TENQTC FROM TAIKHOAN tk, QUYENTRUYCAP qtc where tk.MAQTC = qtc.MAQTC
+SELECT * from TAIKHOAN
 END
 GO
  ﻿
@@ -259,7 +264,7 @@ BEGIN
         INNER JOIN KHUYENMAI KM ON SP.MAKM = KM.MAKM
         WHERE TENSP LIKE '%' + ISNULL(@SEARCHTERM, TENSP) + '%'
         AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
-        AND MANCC = ISNULL(@NHACUNGCAP, MANCC)
+        AND MANCC = ISNULL(@NHACUNGCAP, MANCC) AND SLTONKHO > 0 
     )
     SELECT STT, MASP, TENSP, DONVI, DONGIA, GIAMGIA, GIABAN, SLTONKHO
     FROM PHANTRANG 
@@ -267,7 +272,7 @@ BEGIN
 END
 SELECT * FROM LOAISP
 SELECT * FROM NHACUNGCAP
-EXECUTE SP_SANPHAM_PHANTRANG 'L01','NCC02','A',1,16
+EXECUTE sp_sanpham_phantrang 'L01','NCC02','A',1,16
 
 ﻿-- AUTHOR:		SOK KIM THANH
 -- CREATE DATE: <17/12/2023>
@@ -291,7 +296,7 @@ BEGIN
         INNER JOIN KHUYENMAI KM ON SP.MAKM = KM.MAKM
         WHERE TENSP LIKE '%' + ISNULL(@SEARCHTERM, TENSP) + '%'
         AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
-        AND MANCC = ISNULL(@NHACUNGCAP, MANCC)
+        AND MANCC = ISNULL(@NHACUNGCAP, MANCC) AND SLTONKHO > 0
     )
     -- ĐẾM SỐ DÒNG
     SELECT COUNT(*) AS TOTALROWS
@@ -605,7 +610,7 @@ BEGIN
 	where hd.NGAYHOADON = @ngay
 END
 GO
-exec rp_hoadon_theongay '15-01-2022'
+exec rp_hoadon_theongay '1-01-2022'
 select * from HOADON﻿
 -- Create Procedure sp_nhacungcap_select_all.sql
 -- Nhà cung cấp select all
@@ -1542,6 +1547,7 @@ AS
 BEGIN
 	INSERT INTO chitietcc(MANCC,MASP,SLCUNGCCAP)
 	Values(@MANCC,@MASP,@SLCUNGCCAP)
+	Update SanPham set SLTONKHO += SLTONKHO + @SLCungCCap;
 END
 GO
 --select count(*) from CHITIETCC
