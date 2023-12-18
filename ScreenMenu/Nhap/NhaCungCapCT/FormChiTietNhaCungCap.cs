@@ -37,7 +37,7 @@ namespace LTUD1_BACHHOAXANH472
             cboNCC.SelectedIndex = 0;
             txtSoLuong.Text = "0";
             cboSanPham.SelectedIndex = 0;
-
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             ctnccCon.SelectAll();
             dgvNCCCT.DataSource = ctnccCon.DataSource;
         }
@@ -72,7 +72,7 @@ namespace LTUD1_BACHHOAXANH472
                 NhaCCCT o = new NhaCCCT();
                 o.MaNCC = cboNCC.SelectedValue.ToString();
                 o.MaSP = cboSanPham.SelectedValue.ToString();
-
+                o.SoLuong =int.Parse( txtSoLuong.Text);
                 ctnccCon.Insert(o);
                 Refresh2();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);

@@ -15,6 +15,7 @@ AS
 BEGIN
 	INSERT INTO chitietcc(MANCC,MASP,SLCUNGCCAP)
 	Values(@MANCC,@MASP,@SLCUNGCCAP)
+	Update SanPham set SLTONKHO += SLTONKHO + @SLCungCCap;
 END
 GO
 --select count(*) from CHITIETCC
