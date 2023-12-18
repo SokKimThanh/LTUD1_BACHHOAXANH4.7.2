@@ -238,5 +238,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         {
 
         }
+
+        private void crystalReportViewer1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
