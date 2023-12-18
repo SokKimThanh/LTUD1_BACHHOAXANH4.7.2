@@ -20,5 +20,5 @@ BEGIN
 	where hd.NGAYHOADON = @ngay
 END
 GO
-exec rp_hoadon_theongay '15-01-2022'
+exec rp_hoadon_theongay '1-01-2022'
 select * from HOADON

@@ -89,10 +89,10 @@ namespace LTUD1_BACHHOAXANH472
             }
             return false;
         }
-       
+
         public void SetTongTienVaTongSoLuong()
         {
-            int soluongmua =0;
+            int soluongmua = 0;
             double tongtien = 0;
             foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
             {
