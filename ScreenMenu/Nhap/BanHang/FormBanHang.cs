@@ -1,6 +1,4 @@
-﻿using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
@@ -64,7 +62,6 @@ namespace LTUD1_BACHHOAXANH472
             //--.................            sản phẩm giỏ hàng            ..................
             //==============================================================================
             //khởi tạo banhang controller điều khiển luồng dữ liệu trên form bán hàng
-            //banhangController.TcManHinhBanHang = this.tcManHinhBanHang;
             banhangController.TxtSDTKhachHang = txtSDT;
             banhangController.TxtMaHoaDon = txtMaHoaDon;
             banhangController.TxtTenKhachHang = txtTenKhachHang;
@@ -209,8 +206,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)){
                 e.Handled = true;
             }
         }
@@ -222,7 +218,6 @@ namespace LTUD1_BACHHOAXANH472
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             banhangController.btnThanhToan_Click(sender, e);
-            crystalReportViewer1_Load(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -268,48 +263,12 @@ namespace LTUD1_BACHHOAXANH472
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-
+           
         }
 
         private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void tcManHinhBanHang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Lấy tabControlXemDuLieu từ form hoặc từ nơi nó được khởi tạo
-            // TabControl tcManHinhBanHang = this.tcManHinhBanHang;
-            //tcManHinhBanHang.SelectedIndex = 2;
-        }
-
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                PhieuInHoaDon rptPIHD = new PhieuInHoaDon();
-                // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                ParameterValues param = new ParameterValues();
-
-                // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-
-                // Đặt giá trị của pdv bằng giá trị trong textBox1
-                pdv.Value = txtMaHoaDon.Text;
-
-                // Thêm pdv vào danh sách các giá trị tham số
-                param.Add(pdv);
-
-                // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                rptPIHD.DataDefinition.ParameterFields["@MAHD"].ApplyCurrentValues(param);
-
-                // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-                crystalReportViewer1.ReportSource = rptPIHD;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+          
         }
     }
 }

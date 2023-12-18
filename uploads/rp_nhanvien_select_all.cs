@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhanVien {
+namespace LTUD1_BACHHOAXANH472.uploads {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhanVien {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhanVien.rp_nhanvien_select_all.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_select_all.rpt";
             }
             set {
                 // Do nothing

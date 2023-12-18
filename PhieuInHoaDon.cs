@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang {
+namespace LTUD1_BACHHOAXANH472 {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang.PhieuInHoaDon.rpt";
+                return "LTUD1_BACHHOAXANH472.PhieuInHoaDon.rpt";
             }
             set {
                 // Do nothing
@@ -85,6 +85,14 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang {
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_MAHD {
+            get {
+                return this.DataDefinition.ParameterFields[0];
             }
         }
     }
