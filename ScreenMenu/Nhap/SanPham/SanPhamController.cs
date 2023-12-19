@@ -224,7 +224,7 @@ namespace LTUD1_BACHHOAXANH472
             return o;
         }
 
-        internal DataTable PhanTrang(int currentPage, int pageSize, string searchTerm, string loaiSanPham, string nhaCungCap)
+        internal DataTable PhanTrang(int currentPage, int pageSize, string tenSanPham, string loaiSanPham, string nhaCungCap)
         {
             try
             {
@@ -240,13 +240,13 @@ namespace LTUD1_BACHHOAXANH472
 
 
                 // Thêm tham số vào SqlCommand
-                //Sql.Parameters.Add("@searchTerm", SqlDbType.NVarChar).Value = searchTerm ?? (object)DBNull.Value;
+                //Sql.Parameters.Add("@tenSanpham", SqlDbType.NVarChar).Value = tenSanpham ?? (object)DBNull.Value;
                 //Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
                 //Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
-                searchTerm = searchTerm ?? null;
+                tenSanPham = tenSanPham ?? null;
                 loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
                 nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
-                Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
+                Sql.Parameters.AddWithValue("@tenSanpham", tenSanPham);
                 Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
                 Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
                 Sql.Parameters.AddWithValue("@currPage", currentPage);
@@ -274,7 +274,7 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        public int GetRowCount(string searchTerm, string loaiSanPham, string nhaCungCap)
+        public int GetRowCount(string tenSanpham, string loaiSanPham, string nhaCungCap)
         {
             int count = 0;
             try
@@ -284,10 +284,10 @@ namespace LTUD1_BACHHOAXANH472
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số vào Stored Procedure
-                searchTerm = searchTerm ?? null;
+                tenSanpham = tenSanpham ?? null;
                 loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
                 nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
-                Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
+                Sql.Parameters.AddWithValue("@tenSanpham", tenSanpham);
                 Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
                 Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
 

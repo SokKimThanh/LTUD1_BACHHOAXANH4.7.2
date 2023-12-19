@@ -25,14 +25,15 @@ namespace LTUD1_BACHHOAXANH472
 
         double tongthanhtien = 0;
         double tongsoluong = 0;
-        private string btnThemHDCT;
+        private string btnNameThemHDCT;// tên nút thêm hóa đơn ct
+
 
         public PBanHangController()
         {
 
         }
 
-        public PBanHangController(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon)
+        public PBanHangController(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
         {
             this.txtSDTKhachHang = txtSDTKhachHang;
             this.txtTenKhachHang = txtTenKhachHang;
@@ -40,6 +41,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtSoLuongMua = txtSoLuongMua;
             this.lblTongTien = lblTongTien;
             this.dgvThongTinHoaDon = dgvThongTinHoaDon;
+            this.dgvDanhSachSanPham = dgvDanhSachSanPham;
         }
 
         public TextBox TxtSDTKhachHang { get => txtSDTKhachHang; set => txtSDTKhachHang = value; }
@@ -81,7 +83,7 @@ namespace LTUD1_BACHHOAXANH472
                         }
                         else
                         {
-                            throw new Exception("Không đủ số lượng sản phẩm!");
+                            throw new Exception("Không đủ số lượng cung cấp!");
                         }
                     }
                     int khuyenmai = int.Parse(row.Cells["KM"].Value.ToString());
@@ -108,7 +110,7 @@ namespace LTUD1_BACHHOAXANH472
             newRow.Cells[dgvThongTinHoaDon.Columns["DONGIA"].Index].Value = rowDanhSachSanPham.Cells["DONGIA"].Value;
             newRow.Cells[dgvThongTinHoaDon.Columns["KM"].Index].Value = rowDanhSachSanPham.Cells["GIABAN"].Value;
             newRow.Cells[dgvThongTinHoaDon.Columns["SL"].Index].Value = 1;
-            newRow.Cells[dgvThongTinHoaDon.Columns["THANHTIEN"].Index].Value = 1;
+            newRow.Cells[dgvThongTinHoaDon.Columns["THANHTIEN"].Index].Value = rowDanhSachSanPham.Cells["GIABAN"].Value;
             // Thêm các nút cộng trừ
             newRow.Cells.Add(new DataGridViewButtonCell());
             newRow.Cells[6].Value = "+";
@@ -129,7 +131,9 @@ namespace LTUD1_BACHHOAXANH472
             foreach (DataGridViewRow row in dgvDanhSachSanPham.Rows)
             {
                 if (maSP.Trim() == row.Cells[2].Value.ToString().Trim())
+                {
                     soLuongTon += Convert.ToInt32(row.Cells[8].Value.ToString());
+                }
             }
             return soLuongTon;
         }
@@ -164,10 +168,12 @@ namespace LTUD1_BACHHOAXANH472
         {
             int tongsoluong = 0;
             double tongtien = 0;
+
             foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
             {
                 tongsoluong += Convert.ToInt32(row.Cells["SL"].Value);
                 tongtien += Convert.ToDouble(row.Cells["KM"].Value);
+                row.Cells["btnGiamSL"].Value = tongtien;
             }
             txtSoLuongMua.Text = tongsoluong.ToString();
             if (lblTongTien != null)
@@ -179,7 +185,6 @@ namespace LTUD1_BACHHOAXANH472
                 // Xử lý trường hợp lblTongTien là null
             }
         }
-
         public void dgvThongTinHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             // Tăng số lượng
@@ -204,9 +209,8 @@ namespace LTUD1_BACHHOAXANH472
                 }
                 else
                 {
-                    MessageBox.Show($"Mã {maSP} không đủ số lượng!", "Lỗi thêm số lượng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Không đủ số lượng cung cấp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
 
             // Kiểm tra xem người dùng có nhấp vào cột nút giảm số lượng hay không
@@ -214,9 +218,11 @@ namespace LTUD1_BACHHOAXANH472
             {
                 double soLuong = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[4].Value) - 1;
 
-                if (soLuong < 0)
+                if (soLuong <= 0)
                 {
-                    MessageBox.Show($"Số lượng không được  < 0!", "Lỗi giảm số lượng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Xóa dòng khỏi DataGridView
+                    dgvThongTinHoaDon.Rows.RemoveAt(e.RowIndex);
+                    MessageBox.Show($"Hủy thêm Sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
                 dgvThongTinHoaDon.Rows[e.RowIndex].Cells[4].Value = soLuong; // gán lại số lượng
@@ -230,11 +236,12 @@ namespace LTUD1_BACHHOAXANH472
 
                 tongthanhtien -= tongtien;
                 tongsoluong -= soLuong;
-
             }
             lblTongTien.Text = tongthanhtien.ToString();
             SetTongTienVaTongSoLuong(dgvThongTinHoaDon);
         }
+
+
         public void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
             // Xác nhận trước khi xóa
@@ -308,15 +315,15 @@ namespace LTUD1_BACHHOAXANH472
 
         //==============================================================================
         //--..........................................................................--
-        //------------------           Sự kiện click btnThemHDCT       -----------------
+        //------------------           Sự kiện click btnNameThemHDCT       -------------
         //--..........................................................................--
         //==============================================================================
         public void dgvDanhSachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                // Kiểm tra xem người dùng có nhấp vào nút cuối cùng không
-                if (e.ColumnIndex == dgvDanhSachSanPham.Columns[btnThemHDCT].Index && e.RowIndex >= 0)
+                // Kiểm tra xem người dùng có nhấp vào nút cuối cùng không                
+                if (e.ColumnIndex == dgvDanhSachSanPham.Columns[btnNameThemHDCT].Index && e.RowIndex >= 0)
                 {
                     // Lấy hàng hiện tại
                     DataGridViewRow rowDanhSachSanPham = dgvDanhSachSanPham.Rows[e.RowIndex];
@@ -348,8 +355,6 @@ namespace LTUD1_BACHHOAXANH472
             dgvThongTinHoaDon.Columns["KM"].HeaderText = "Khuyến Mãi";
             dgvThongTinHoaDon.Columns["SL"].HeaderText = "Số Lượng";
             dgvThongTinHoaDon.Columns["THANHTIEN"].HeaderText = "Tổng";
-            dgvThongTinHoaDon.Columns["BtnTangSL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvThongTinHoaDon.Columns["btnGiamSL"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         public void ChangeHeaderNameDanhSachSanPham()
@@ -363,23 +368,33 @@ namespace LTUD1_BACHHOAXANH472
             dgvDanhSachSanPham.Columns["SLTONKHO"].HeaderText = "SL Tồn";
         }
 
-        public void TaoCotThemGioHang()
+        public void CreateButtonClickHoaDonSanPham()
         {
+            //==============================================================================
+            //--..........................................................................--
+            //------------------          Thêm nút cho danh sách sản phẩm      -------------
+            //--..........................................................................--
+            //==============================================================================
             // Lấy tổng số cột
             int totalColumns = dgvDanhSachSanPham.Columns.Count;
 
-            // Thay đổi thứ tự cột "btnThemHDCT" thành vị trí cuối cùng
-            dgvDanhSachSanPham.Columns["btnThemHDCT"].DisplayIndex = totalColumns - 1;
+            // Thay đổi thứ tự cột "btnNameThemHDCT" thành vị trí cuối cùng
+            dgvDanhSachSanPham.Columns["btnNameThemHDCT"].DisplayIndex = totalColumns - 1;
 
 
             // Lấy cột cuối cùng
-            DataGridViewColumn lastColumn = dgvDanhSachSanPham.Columns["btnThemHDCT"];
+            DataGridViewColumn lastColumn = dgvDanhSachSanPham.Columns["btnNameThemHDCT"];
 
             // Hiển thị tên cột cuối cùng
 
-            btnThemHDCT = lastColumn.Name;
-        }
+            btnNameThemHDCT = lastColumn.Name;
 
+            //==============================================================================
+            //--..........................................................................--
+            //------------------          Thêm nút cho danh sách sản phẩm      -------------
+            //--..........................................................................--
+            //==============================================================================
+        }
     }
 
 }

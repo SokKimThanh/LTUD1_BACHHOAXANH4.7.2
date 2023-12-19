@@ -8,7 +8,7 @@ namespace LTUD1_BACHHOAXANH472
         private int currentPage = 1;
         private int pageSize = 16;
         private int pageCount = 0;
-        PBanHangController banhangController = new PBanHangController();
+        PBanHangController banhangController;
         PhanTrangController phantrang;
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
@@ -54,7 +54,7 @@ namespace LTUD1_BACHHOAXANH472
             //==============================================================================
             // Gọi phương thức create pagesize để tạo một combobox chứa pagesize tùy chỉnh hiển thị dữ liệu
             phantrang.CreatePagesizeCombobox(cboPageSize);
-            // cbopagesize index = 1
+            // Khởi tạo vị trí bắt đầu
             cboPageSize.SelectedIndex = 1;
             //==============================================================================
             //--..........................................................................--
@@ -62,15 +62,11 @@ namespace LTUD1_BACHHOAXANH472
             //--.................            sản phẩm giỏ hàng            ..................
             //==============================================================================
             //khởi tạo banhang controller điều khiển luồng dữ liệu trên form bán hàng
-            banhangController.TxtSDTKhachHang = txtSDT;
-            banhangController.TxtMaHoaDon = txtMaHoaDon;
-            banhangController.TxtTenKhachHang = txtTenKhachHang;
-            banhangController.TxtSoLuongMua = txtSoLuongMua;
-            banhangController.DgvDanhSachSanPham = dgvDanhSachSanPham;
-            banhangController.DgvThongTinHoaDon = dgvThongTinHoaDon;
+            banhangController = new PBanHangController(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham);
+
             banhangController.ChangeHeaderNameDanhThongTinHoaDon();
             banhangController.ChangeHeaderNameDanhSachSanPham();
-            banhangController.TaoCotThemGioHang();
+            banhangController.CreateButtonClickHoaDonSanPham();
             //==============================================================================
             //--..........................................................................--
             //------------------.      Khởi tạo dữ liệu combobox danh mục       .-----------
@@ -296,5 +292,27 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            txtTenSanPham.Text = string.Empty;
+            cboLoaiSanPham.SelectedIndex = 0;
+            cboNhaCungCap.SelectedIndex = 0;
+            lblLoaiSanPham.Text = phantrang.GetTongSoTrangBanDau();
+
+            // thông tin trang hiển thị 
+            phantrang.PageSize = int.Parse(cboPageSize.SelectedItem.ToString());
+
+            // lấy giá trị trên các ô nhập
+            phantrang.Loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
+            phantrang.Nhacungcap = cboNhaCungCap.SelectedValue.ToString();
+            phantrang.Tensanpham = txtTenSanPham.Text;
+            // thực hiện câu truy vấn phân trang 
+            // lấy dữ liệu phân trang hiện tại
+            dgvDanhSachSanPham.DataSource = phantrang.GetDataPhanTrang();// gán lại giá trị cho controller thông qua các sự kiện
+            // làm mới danh sách 
+            dgvDanhSachSanPham.Refresh();
+
+            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+        }
     }
 }
