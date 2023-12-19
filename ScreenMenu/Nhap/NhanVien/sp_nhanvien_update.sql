@@ -5,7 +5,7 @@ drop procedure if exists sp_nhanvien_update
 go
 CREATE PROCEDURE sp_nhanvien_update
 	@manv char(11),
-	@hotennv nvarchar(30),
+	@hotennv NVARCHAR(255),
 	@diachinv nvarchar(100),
 	@luong float,
 	@sdtnv int,

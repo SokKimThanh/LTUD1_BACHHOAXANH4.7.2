@@ -4,7 +4,7 @@ drop procedure if exists sp_diaiem_update
 go
 CREATE PROCEDURE sp_diadiem_update
 	@maCN char(4) = '',
-	@tenCN nvarchar(30),
+	@tenCN NVARCHAR(255),
 	@diaChi nvarchar(100)
 AS
 BEGIN

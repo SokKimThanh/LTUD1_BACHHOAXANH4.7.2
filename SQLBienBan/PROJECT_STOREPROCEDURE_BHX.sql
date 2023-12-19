@@ -298,7 +298,7 @@ drop procedure if exists sp_danhmuc_insert
 go
 CREATE PROCEDURE sp_danhmuc_insert
 	@MALOAI CHAR(11) ,
-	@TENLOAI NVARCHAR(30),
+	@TENLOAI NVARCHAR(255),
 	@GHICHU NVARCHAR(100)
 AS
 BEGIN
@@ -338,7 +338,7 @@ drop procedure if exists sp_danhmuc_update
 go
 CREATE PROCEDURE sp_danhmuc_update
 	@MALOAI CHAR(11),
-	@TENLOAI NVARCHAR(30),
+	@TENLOAI NVARCHAR(255),
 	@GHICHU NVARCHAR(100)
 AS
 BEGIN
@@ -365,7 +365,7 @@ drop procedure if exists sp_diadiem_insert
 go
 CREATE PROCEDURE sp_diadiem_insert
 	@maCN char(4) = '',
-	@tenCN nvarchar(30),
+	@tenCN NVARCHAR(255),
 	@diaChi nvarchar(100)
 AS
 BEGIN
@@ -397,7 +397,7 @@ drop procedure if exists sp_diaiem_update
 go
 CREATE PROCEDURE sp_diadiem_update
 	@maCN char(4) = '',
-	@tenCN nvarchar(30),
+	@tenCN NVARCHAR(255),
 	@diaChi nvarchar(100)
 AS
 BEGIN
@@ -516,7 +516,7 @@ drop procedure if exists sp_khachhang_update
 go
 CREATE PROCEDURE sp_khachhang_update
 	@maKH char(11) = '', 
-	@tenKH nvarchar(30) = N'',
+	@tenKH NVARCHAR(255) = N'',
 	@sdtKH int = 0,
 	@diemTL int = 0
 AS
@@ -532,7 +532,7 @@ drop procedure if exists sp_nhacungcap_insert
 go
 CREATE PROCEDURE sp_khachhang_insert
 	@maKH char(11) = '', 
-	@tenKH nvarchar(30) = N'',
+	@tenKH NVARCHAR(255) = N'',
 	@sdtKH int = 0,
 	@diemTL int = 0
 AS
@@ -910,7 +910,7 @@ drop procedure if exists sp_khachhang_insert
 go
 CREATE PROCEDURE sp_khachhang_insert
 	@maKH char(11),
-	@tenKH nvarchar(30),
+	@tenKH NVARCHAR(255),
 	@sdtKH int = 0,
 	@diemTL int = 0
 AS
@@ -952,7 +952,7 @@ drop procedure if exists sp_khachhang_update
 go
 CREATE PROCEDURE sp_khachhang_update
 	@maKH char(11) = '', 
-	@tenKH nvarchar(30) = N'',
+	@tenKH NVARCHAR(255) = N'',
 	@sdtKH int = 0,
 	@diemTL int = 0
 AS
@@ -1094,7 +1094,7 @@ drop procedure if exists sp_nhacungcap_insert
 go
 CREATE PROCEDURE sp_nhacungcap_insert
 	@MANCC CHAR(11),
-	@TENNCC NVARCHAR(30) ,
+	@TENNCC NVARCHAR(255) ,
 	@DIACHINCC NVARCHAR(100),
 	@SDTNCC INT
 AS
@@ -1170,7 +1170,7 @@ drop procedure if exists sp_nhacungcap_update
 go
 CREATE PROCEDURE sp_nhacungcap_update
 	@MANCC CHAR(11),
-	@TENNCC NVARCHAR(30) ,
+	@TENNCC NVARCHAR(255) ,
 	@DIACHINCC NVARCHAR(100),
 	@SDTNCC INT   
 AS
@@ -1330,7 +1330,7 @@ drop procedure if exists sp_nhanvien_insert
 go
 CREATE PROCEDURE sp_nhanvien_insert
 	@manv char(11),
-	@hotennv nvarchar(30),
+	@hotennv NVARCHAR(255),
 	@diachinv nvarchar(100),
 	@luong float,
 	@sdtnv int,
@@ -1395,7 +1395,7 @@ drop procedure if exists sp_nhanvien_update
 go
 CREATE PROCEDURE sp_nhanvien_update
 	@manv char(11),
-	@hotennv nvarchar(30),
+	@hotennv NVARCHAR(255),
 	@diachinv nvarchar(100),
 	@luong float,
 	@sdtnv int,
@@ -1442,7 +1442,7 @@ drop procedure if exists sp_phongban_insert
 go
 CREATE PROCEDURE sp_PhongBan_insert
  @maPB char(11),
-	@tenPB nvarchar(30),
+	@tenPB NVARCHAR(255),
 	@maCN nvarchar(100)
 AS
 BEGIN
@@ -1484,7 +1484,7 @@ drop procedure if exists sp_phongban_update
 go
 CREATE PROCEDURE sp_phongban_update
 	@maPB char(11),
-	@tenPB nvarchar(30),
+	@tenPB NVARCHAR(255),
 	@maCN nvarchar(100)
 AS
 BEGIN
@@ -1512,8 +1512,8 @@ drop procedure if exists sp_sanpham_insert
 go
 CREATE PROCEDURE sp_sanpham_insert
 	@MASP CHAR(11),
-	@TENSP NVARCHAR(30) ,
-	@DONVI NVARCHAR(30),
+	@TENSP NVARCHAR(255) ,
+	@DONVI NVARCHAR(255),
 	@NSX DATE ,
 	@HSD DATE ,
 	@DONGIA INT ,
@@ -1608,8 +1608,8 @@ drop procedure if exists sp_sanpham_update
 go
 CREATE PROCEDURE sp_sanpham_update
 	@MASP CHAR(11),
-	@TENSP NVARCHAR(30) ,
-	@DONVI NVARCHAR(30),
+	@TENSP NVARCHAR(255) ,
+	@DONVI NVARCHAR(255),
 	@NSX DATE ,
 	@HSD DATE ,
 	@DONGIA INT ,

@@ -6,8 +6,8 @@ drop procedure if exists sp_sanpham_update
 go
 CREATE PROCEDURE sp_sanpham_update
 	@MASP CHAR(11),
-	@TENSP NVARCHAR(30) ,
-	@DONVI NVARCHAR(30),
+	@TENSP NVARCHAR(255) ,
+	@DONVI NVARCHAR(255),
 	@NSX DATE ,
 	@HSD DATE ,
 	@DONGIA INT ,

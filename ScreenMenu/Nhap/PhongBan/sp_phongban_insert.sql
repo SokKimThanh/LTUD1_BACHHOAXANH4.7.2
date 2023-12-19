@@ -6,7 +6,7 @@ drop procedure if exists sp_phongban_insert
 go
 CREATE PROCEDURE sp_PhongBan_insert
  @maPB char(11),
-	@tenPB nvarchar(30),
+	@tenPB NVARCHAR(255),
 	@maCN nvarchar(100)
 AS
 BEGIN

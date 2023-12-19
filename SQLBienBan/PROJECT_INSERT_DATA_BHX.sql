@@ -11,7 +11,11 @@ set dateformat dmy
 -- Thêm dữ liệu vào bảng LOAISP
 INSERT INTO LOAISP (MALOAI,TENLOAI,GHICHU)
 VALUES 
-('L05', N'Gạo', 'Các sản phẩm từ gạo'),
+('L01', N'Gạo', 'Các sản phẩm từ gạo'),
+('L02', N'Đậu nành', 'Các sản phẩm từ đậu nành'),
+('L03', N'Ngô', 'Các sản phẩm từ ngô'),
+('L04', N'Lúa mì', 'Các sản phẩm từ lúa mì'),
+('L05', N'Khoai tây', 'Các sản phẩm từ khoai tây'),
 ('L06', N'Bột', 'Các sản phẩm từ bột'),
 ('L07', N'Đường', 'Các sản phẩm từ đường'),
 ('L08', N'Nước', 'Các sản phẩm từ nước'),
@@ -379,15 +383,15 @@ VALUES
 -- Thêm dữ liệu vào bảng CHITIETHD
 INSERT INTO CHITIETHD (MAHD, MASP, SLMUA) VALUES
 ('HD01', 'SP01', 1),
-('HD01', 'SP02', 2),
-('HD01', 'SP03', 3),
-('HD01', 'SP04', 4),
-('HD01', 'SP05', 5),
+('HD02', 'SP02', 2),
+('HD03', 'SP03', 3),
+('HD04', 'SP04', 4),
+('HD05', 'SP05', 5),
 ('HD01', 'SP06', 6),
-('HD01', 'SP07', 7),
-('HD01', 'SP08', 8),
-('HD01', 'SP09', 9),
-('HD01', 'SP10', 10),
+('HD02', 'SP07', 7),
+('HD03', 'SP08', 8),
+('HD04', 'SP09', 9),
+('HD05', 'SP10', 10),
 ('HD01', 'SP11', 11),
 ('HD01', 'SP12', 12),
 ('HD01', 'SP13', 13),
@@ -441,4 +445,5 @@ INSERT INTO taikhoan VALUES ('tentaikhoan9', 'matkhau3', 'nv03', 'QTC02');
  
 
 INSERT INTO taikhoan VALUES ('tentaikhoan10', 'matkhau4', 'nv04', 'QTC01');
-INSERT INTO taikhoan VALUES ('admin', 'admin123', 'manv_admin', 'maqtc_full');
+
+INSERT INTO taikhoan VALUES ('admin', 'admin123', 'NV40', 'maqtc_full');

@@ -7,7 +7,7 @@ drop procedure if exists sp_nhacungcap_update
 go
 CREATE PROCEDURE sp_nhacungcap_update
 	@MANCC CHAR(11),
-	@TENNCC NVARCHAR(30) ,
+	@TENNCC NVARCHAR(255) ,
 	@DIACHINCC NVARCHAR(100),
 	@SDTNCC INT   
 AS

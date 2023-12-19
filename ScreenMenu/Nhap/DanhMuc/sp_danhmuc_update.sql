@@ -6,7 +6,7 @@ drop procedure if exists sp_danhmuc_update
 go
 CREATE PROCEDURE sp_danhmuc_update
 	@MALOAI CHAR(11),
-	@TENLOAI NVARCHAR(30),
+	@TENLOAI NVARCHAR(255),
 	@GHICHU NVARCHAR(100)
 AS
 BEGIN

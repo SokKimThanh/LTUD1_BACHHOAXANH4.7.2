@@ -7,7 +7,7 @@ drop procedure if exists sp_diadiem_insert
 go
 CREATE PROCEDURE sp_diadiem_insert
 	@maCN char(4) = '',
-	@tenCN nvarchar(30),
+	@tenCN NVARCHAR(255),
 	@diaChi nvarchar(100)
 AS
 BEGIN

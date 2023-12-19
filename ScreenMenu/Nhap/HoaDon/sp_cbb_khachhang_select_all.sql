@@ -20,7 +20,7 @@ drop procedure if exists sp_khachhang_update
 go
 CREATE PROCEDURE sp_khachhang_update
 	@maKH char(11) = '', 
-	@tenKH nvarchar(30) = N'',
+	@tenKH NVARCHAR(255) = N'',
 	@sdtKH int = 0,
 	@diemTL int = 0
 AS
@@ -36,7 +36,7 @@ drop procedure if exists sp_nhacungcap_insert
 go
 CREATE PROCEDURE sp_khachhang_insert
 	@maKH char(11) = '', 
-	@tenKH nvarchar(30) = N'',
+	@tenKH NVARCHAR(255) = N'',
 	@sdtKH int = 0,
 	@diemTL int = 0
 AS
