@@ -31,7 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
-            this.sotrang = new System.Windows.Forms.Label();
+            this.lblTongSoTrang = new System.Windows.Forms.Label();
             this.tongsotrang = new System.Windows.Forms.Label();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -76,16 +76,16 @@
             this.btnPrevious.UseVisualStyleBackColor = true;
             this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
-            // sotrang
+            // lblTongSoTrang
             // 
-            this.sotrang.AutoSize = true;
-            this.sotrang.Location = new System.Drawing.Point(422, 635);
-            this.sotrang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.sotrang.Name = "sotrang";
-            this.sotrang.Size = new System.Drawing.Size(105, 20);
-            this.sotrang.TabIndex = 3;
-            this.sotrang.Text = "Trang hiện tại";
-            this.sotrang.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTongSoTrang.AutoSize = true;
+            this.lblTongSoTrang.Location = new System.Drawing.Point(422, 635);
+            this.lblTongSoTrang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTongSoTrang.Name = "lblTongSoTrang";
+            this.lblTongSoTrang.Size = new System.Drawing.Size(105, 20);
+            this.lblTongSoTrang.TabIndex = 3;
+            this.lblTongSoTrang.Text = "Trang hiện tại";
+            this.lblTongSoTrang.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 
             // 
             // tongsotrang
@@ -192,7 +192,7 @@
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTenSanPham);
             this.Controls.Add(this.tongsotrang);
-            this.Controls.Add(this.sotrang);
+            this.Controls.Add(this.lblTongSoTrang);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.dataGridView1);
@@ -211,7 +211,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
-        private System.Windows.Forms.Label sotrang;
+        private System.Windows.Forms.Label lblTongSoTrang;
         private System.Windows.Forms.Label tongsotrang;
         private System.Windows.Forms.TextBox txtTenSanPham;
         private System.Windows.Forms.Button btnTimKiem;

@@ -224,7 +224,7 @@ namespace LTUD1_BACHHOAXANH472
             return o;
         }
 
-        internal DataTable PhanTrang(int currentPage, int pageSize, string tenSanPham, string loaiSanPham, string nhaCungCap)
+        internal DataTable PhanTrang(int currentPage, int recordPerPage, string tenSanPham, string loaiSanPham, string nhaCungCap)
         {
             try
             {
@@ -250,7 +250,7 @@ namespace LTUD1_BACHHOAXANH472
                 Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
                 Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
                 Sql.Parameters.AddWithValue("@currPage", currentPage);
-                Sql.Parameters.AddWithValue("@recodperpage", pageSize);
+                Sql.Parameters.AddWithValue("@recodperpage", recordPerPage);
 
                 // Tạo một đối tượng SqlDataAdapter
                 Adapter = new SqlDataAdapter(Sql);
@@ -266,7 +266,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                throw new Exception("GetDataPhanTrang" + ex.Message);
+                throw new Exception("GetData" + ex.Message);
             }
             finally
             {
@@ -283,10 +283,15 @@ namespace LTUD1_BACHHOAXANH472
                 SqlCommand cmd = new SqlCommand("sp_sanpham_phantrang_count", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                //
+                Sql.Parameters.Add("@tenSanpham", SqlDbType.NVarChar).Value = tenSanpham ?? (object)DBNull.Value;
+                Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
+                Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
+
                 // Thêm các tham số vào Stored Procedure
-                tenSanpham = tenSanpham ?? null;
-                loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
-                nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                //tenSanpham = tenSanpham ?? null;
+                //loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
+                //nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
                 Sql.Parameters.AddWithValue("@tenSanpham", tenSanpham);
                 Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
                 Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);

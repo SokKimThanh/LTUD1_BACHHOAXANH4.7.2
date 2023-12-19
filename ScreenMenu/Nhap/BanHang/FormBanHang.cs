@@ -1,15 +1,17 @@
-﻿using System;
+﻿using CrystalDecisions.Windows.Forms;
+using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormBanHang : Form
     {
         private int currentPage = 1;
-        private int pageSize = 16;
+        private int recordPerPage = 8;
         private int pageCount = 0;
-        PBanHangController banhangController;
-        PhanTrangController phantrang;
+        PBanHangHoaDonChiTietAdapter banhangController;
+        PBanHangSanPhamAdapter phantrangController;
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
@@ -23,11 +25,12 @@ namespace LTUD1_BACHHOAXANH472
             // cài đặt style cho combobox 
             cboNhaCungCap.DropDownStyle = ComboBoxStyle.DropDownList;
             cboLoaiSanPham.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboPageSize.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboRecordPerPage.DropDownStyle = ComboBoxStyle.DropDownList;
 
             // cài đặt style cho datagridview 
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
+
         }
         /// <summary>
         /// Hàm load dữ liệu
@@ -38,32 +41,25 @@ namespace LTUD1_BACHHOAXANH472
         {
             // tạo mã random cho mã hóa đơn
             txtMaHoaDon.Text = rnd.GenerateRandomAlphanumericString(11);
+
             //==============================================================================
             //--..........................................................................--
-            //------------------.           Khởi tạo phân trang       .---------------------
-            //--..........................................................................--
+            //------------------.    Khởi tạo thao tác datagridview       .-----------------
+            //--............................ sản phẩm phân trang .........................--
             //==============================================================================
-            // thêm dữ liệu vào datagridview sản phẩm
-            phantrang = new PhanTrangController(currentPage, pageSize, pageCount);
-            dgvDanhSachSanPham.DataSource = phantrang.GetDataPhanTrang();
-            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
-            //==============================================================================
-            //--..........................................................................--
-            //------------------.  Khởi tạocombobox hiển thị số lượng item       .----------
-            //--..........................................................................--
-            //==============================================================================
-            // Gọi phương thức create pagesize để tạo một combobox chứa pagesize tùy chỉnh hiển thị dữ liệu
-            phantrang.CreatePagesizeCombobox(cboPageSize);
-            // Khởi tạo vị trí bắt đầu
-            cboPageSize.SelectedIndex = 1;
+
+            phantrangController = new PBanHangSanPhamAdapter(cboRecordPerPage, txtTenSanPham, cboNhaCungCap, cboLoaiSanPham, dgvDanhSachSanPham, lblTongSoTrang, 8);
+            phantrangController.SetRecordPerPageCombobox(8, 4);
+            phantrangController.GetData();
+            //dgvDanhSachSanPham.DataSource = phantrangController.DgvDanhSachSanPham.DataSource;
+            //lblTongSoTrang.Text = phantrangController.GetTongSoTrang();
             //==============================================================================
             //--..........................................................................--
             //------------------.      Khởi tạo thao tác datagridview       .---------------
             //--.................            sản phẩm giỏ hàng            ..................
             //==============================================================================
-            //khởi tạo banhang controller điều khiển luồng dữ liệu trên form bán hàng
-            banhangController = new PBanHangController(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham);
-
+            //khởi tạo banhang sanPhamController điều khiển luồng dữ liệu trên form bán hàng
+            banhangController = new PBanHangHoaDonChiTietAdapter(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham);
             banhangController.ChangeHeaderNameDanhThongTinHoaDon();
             banhangController.ChangeHeaderNameDanhSachSanPham();
             banhangController.CreateButtonClickHoaDonSanPham();
@@ -85,6 +81,7 @@ namespace LTUD1_BACHHOAXANH472
             txtSoLuongMua.Text = "0";
 
         }
+
         //==============================================================================
         //--..........................................................................--
         //------------------.       Sự kiện chọn tiêu chí tìm kiếm     .----------------
@@ -106,12 +103,17 @@ namespace LTUD1_BACHHOAXANH472
                 cboNhaCungCap.SelectedValue = null;
             }
         }
-        private void cboPageSize_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboRecordPerPage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Lấy giá trị được chọn từ ComboBox
-            int selectedValue = (int)cboPageSize.SelectedItem;
-            // Gán giá trị pagesize
-            phantrang.PageSize = selectedValue;
+            if (cboLoaiSanPham.SelectedItem.ToString() == "0")
+            {
+                // Thực hiện hành động khi người dùng chọn "Tất cả"
+                cboRecordPerPage.SelectedValue = null;
+            }
+            else
+            {
+                phantrangController.RecordsPerPage = int.Parse(cboRecordPerPage.SelectedItem.ToString());
+            }
         }
         //==============================================================================
         //--..........................................................................--
@@ -120,20 +122,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            // thông tin trang hiển thị 
-            phantrang.PageSize = int.Parse(cboPageSize.SelectedItem.ToString());
-
-            // lấy giá trị trên các ô nhập
-            phantrang.Loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
-            phantrang.Nhacungcap = cboNhaCungCap.SelectedValue.ToString();
-            phantrang.Tensanpham = txtTenSanPham.Text;
-            // thực hiện câu truy vấn phân trang 
-            // lấy dữ liệu phân trang hiện tại
-            dgvDanhSachSanPham.DataSource = phantrang.GetDataPhanTrang();
-            // làm mới danh sách 
-            dgvDanhSachSanPham.Refresh();
-
-            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+            phantrangController.btnTimKiem_Click(sender, e);
         }
 
         //==============================================================================
@@ -183,17 +172,11 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnNext_Click(object sender, EventArgs e)
         {
-            phantrang.btnNext_Click(sender, e);
-            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
-            dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham.DataSource;
-            dgvDanhSachSanPham.Refresh();
+            phantrangController.btnNext_Click(sender, e);
         }
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            phantrang.btnPrevious_Click(sender, e);
-            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
-            dgvDanhSachSanPham.DataSource = phantrang.DanhSachSanPham.DataSource;
-            dgvDanhSachSanPham.Refresh();
+            phantrangController.btnPrevious_Click(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -252,85 +235,12 @@ namespace LTUD1_BACHHOAXANH472
             txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
 
-        //==============================================================================
-        //--..........................................................................--
-        //------------------Sự kiện event nhấn chuột lên dòng --------------------------
-        //--................      trong datagridview        ..........................--
-        //==============================================================================
-        private void dgvDanhSachSanPham_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Kiểm tra xem con trỏ chuột có đang ở trên một hàng không
-            {
-                // Thay đổi màu nền của hàng
-                this.dgvDanhSachSanPham.Rows[e.RowIndex].DefaultCellStyle.BackColor = new ErrColors().primaryPink; // Màu khi di chuột qua
-            }
-        }
 
-        private void dgvDanhSachSanPham_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Kiểm tra xem con trỏ chuột có đang ở trên một hàng không
-            {
-                // Trả lại màu nền mặc định cho hàng
-                this.dgvDanhSachSanPham.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White; // Màu mặc định 
-            }
-        }
-        private void dgvDanhSachHoaDon_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Kiểm tra xem con trỏ chuột có đang ở trên một hàng không
-            {
-                // Thay đổi màu nền của hàng
-                this.dgvThongTinHoaDon.Rows[e.RowIndex].DefaultCellStyle.BackColor = new ErrColors().primaryPink; // Màu khi di chuột qua
-            }
-        }
-
-        private void dgvDanhSachHoaDon_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0) // Kiểm tra xem con trỏ chuột có đang ở trên một hàng không
-            {
-                // Trả lại màu nền mặc định cho hàng
-                this.dgvThongTinHoaDon.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White; // Màu mặc định 
-            }
-        }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            txtTenSanPham.Text = string.Empty;
-            cboLoaiSanPham.SelectedIndex = 0;
-            cboNhaCungCap.SelectedIndex = 0;
-            lblLoaiSanPham.Text = phantrang.GetTongSoTrangBanDau();
+            phantrangController.btnRefresh_Click(sender, e);
         }
-            // thông tin trang hiển thị 
-            phantrang.PageSize = int.Parse(cboPageSize.SelectedItem.ToString());
-            }
-            // lấy giá trị trên các ô nhập
-            phantrang.Loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
-            phantrang.Nhacungcap = cboNhaCungCap.SelectedValue.ToString();
-            phantrang.Tensanpham = txtTenSanPham.Text;
-            // thực hiện câu truy vấn phân trang 
-            // lấy dữ liệu phân trang hiện tại
-            dgvDanhSachSanPham.DataSource = phantrang.GetDataPhanTrang();// gán lại giá trị cho controller thông qua các sự kiện
-            // làm mới danh sách 
-            dgvDanhSachSanPham.Refresh();
-            {
-            lblTongSoTrang.Text = phantrang.GetTongSoTrang();
-            if (currentPage > 1)
-            {
-                currentPage--;
-                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
-                GetDataGridviewSanPham();
-            }
-            if (currentPage > 1)
-            {
-                currentPage--;
-                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
-                GetDataGridviewSanPham();
-            }
-            if (currentPage > 1)
-            {
-                currentPage--;
-                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
-                GetDataGridviewSanPham();
-            }
-        }
+
     }
 }

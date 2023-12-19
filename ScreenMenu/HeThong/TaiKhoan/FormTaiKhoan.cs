@@ -9,7 +9,7 @@ namespace LTUD1_BACHHOAXANH472
         AccountController AcountController;
         //ButtonStateManager buttonStateManager;
         QuyenTruyCapController quyenTruyCapController;
-        //AccountController controller;
+        //AccountController sanPhamController;
         //ButtonStateManager state;
 
         public FormTaiKhoan()

@@ -226,14 +226,15 @@
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\PhanTrangController.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.designer.cs">
       <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangController.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\PhanTrangController.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangHoaDonChiTietAdapter.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangSanPhamAdapter.cs" />
     <Compile Include="uploads\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

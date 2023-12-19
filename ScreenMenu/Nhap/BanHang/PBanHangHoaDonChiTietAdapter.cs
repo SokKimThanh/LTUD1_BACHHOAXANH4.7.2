@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
-    public class PBanHangController
+    public class PBanHangHoaDonChiTietAdapter
     {
 
         ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
@@ -30,12 +30,12 @@ namespace LTUD1_BACHHOAXANH472
         private string btnNameThemHDCT;// tên nút thêm hóa đơn ct
 
 
-        public PBanHangController()
+        public PBanHangHoaDonChiTietAdapter()
         {
 
         }
 
-        public PBanHangController(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
+        public PBanHangHoaDonChiTietAdapter(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
         {
             this.txtSDTKhachHang = txtSDTKhachHang;
             this.txtTenKhachHang = txtTenKhachHang;
@@ -364,13 +364,13 @@ namespace LTUD1_BACHHOAXANH472
 
         public void ChangeHeaderNameDanhSachSanPham()
         {
-            dgvDanhSachSanPham.Columns["MASP"].HeaderText = "Mã Sản Phẩm";
-            dgvDanhSachSanPham.Columns["TENSP"].HeaderText = "Tên Sản Phẩm";
-            dgvDanhSachSanPham.Columns["DONVI"].HeaderText = "Đơn Vị Tính";
-            dgvDanhSachSanPham.Columns["DONGIA"].HeaderText = "Giá gốc";//Đơn giá 
-            dgvDanhSachSanPham.Columns["GIAMGIA"].HeaderText = "% Giảm giá";
-            dgvDanhSachSanPham.Columns["GIABAN"].HeaderText = "Giá bán";// giá khuyến mãi sau giảm giá
-            dgvDanhSachSanPham.Columns["SLTONKHO"].HeaderText = "SL Tồn";
+            //dgvDanhSachSanPham.Columns["MASP"].HeaderText = "Mã Sản Phẩm";
+            //dgvDanhSachSanPham.Columns["TENSP"].HeaderText = "Tên Sản Phẩm";
+            //dgvDanhSachSanPham.Columns["DONVI"].HeaderText = "Đơn Vị Tính";
+            //dgvDanhSachSanPham.Columns["DONGIA"].HeaderText = "Giá gốc";//Đơn giá 
+            //dgvDanhSachSanPham.Columns["GIAMGIA"].HeaderText = "% Giảm giá";
+            //dgvDanhSachSanPham.Columns["GIABAN"].HeaderText = "Giá bán";// giá khuyến mãi sau giảm giá
+            //dgvDanhSachSanPham.Columns["SLTONKHO"].HeaderText = "SL Tồn";
         }
 
         public void CreateButtonClickHoaDonSanPham()

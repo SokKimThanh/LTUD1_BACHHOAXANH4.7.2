@@ -8,9 +8,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
     {
         private BindingSource bindingSource1 = new BindingSource();
         private int currentPage = 1;
-        private int pageSize = 4;
-        private int pageCount = 0;
-        SanPhamController controller = new SanPhamController(Utils.ConnectionString);
+        private int recordsPerPage = 4;
+        private int recordTotals = 0;
+        SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
         DanhMucController loaispController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nccController = new NhaCungCapController(Utils.ConnectionString);
 
@@ -24,7 +24,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
         {
             try
             {
-                bindingSource1.DataSource = controller.PhanTrang(currentPage, pageSize, null, null, null);
+                bindingSource1.DataSource = sanPhamController.PhanTrang(currentPage, recordsPerPage, null, null, null);
             }
             catch (SqlException)
             {
@@ -34,10 +34,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            if (currentPage < pageCount)
+            if (currentPage < recordTotals)
             {
                 currentPage++;
-                sotrang.Text = currentPage.ToString();
+                lblTongSoTrang.Text = currentPage.ToString();
                 GetData();
             }
         }
@@ -47,17 +47,17 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             if (currentPage > 1)
             {
                 currentPage--;
-                sotrang.Text = currentPage.ToString();
+                lblTongSoTrang.Text = currentPage.ToString();
                 GetData();
             }
         }
 
         private void ViDuPhanTrang_Load(object sender, EventArgs e)
         {
-            bindingSource1.DataSource = controller.PhanTrang(currentPage, pageSize, null, null, null);
+            bindingSource1.DataSource = sanPhamController.PhanTrang(currentPage, recordsPerPage, null, null, null);
             dataGridView1.DataSource = bindingSource1;
-            pageCount = controller.GetRowCount(null, null, null) / pageSize; ;
-            tongsotrang.Text = pageCount.ToString();
+            recordTotals = sanPhamController.GetRowCount(null, null, null) / recordsPerPage; ;
+            tongsotrang.Text = recordTotals.ToString();
 
             cboLoaiSanPham.DataSource = loaispController.sp_cbo_danhmuc_select_all();
             cboLoaiSanPham.ValueMember = "MALOAI";
@@ -89,10 +89,10 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
             string loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
             string nhacungcap = cboNhaCungCap.SelectedValue.ToString();
             string tensanpham = txtTenSanPham.Text;
-            bindingSource1.DataSource = controller.PhanTrang(currentPage, pageSize, tensanpham, loaisanpham, nhacungcap);
+            bindingSource1.DataSource = sanPhamController.PhanTrang(currentPage, recordsPerPage, tensanpham, loaisanpham, nhacungcap);
             dataGridView1.DataSource = bindingSource1;
-            pageCount = controller.GetRowCount(tensanpham, loaisanpham, nhacungcap) / pageSize; ;
-            tongsotrang.Text = pageCount.ToString();
+            recordTotals = sanPhamController.GetRowCount(tensanpham, loaisanpham, nhacungcap) / recordsPerPage; ;
+            tongsotrang.Text = recordTotals.ToString();
         }
     }
 }

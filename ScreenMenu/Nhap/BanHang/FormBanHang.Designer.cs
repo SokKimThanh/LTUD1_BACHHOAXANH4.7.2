@@ -59,7 +59,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpThongTinKhachHangTimKiemSanPham = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.cboPageSize = new System.Windows.Forms.ComboBox();
+            this.cboRecordPerPage = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblTenSanPham = new System.Windows.Forms.Label();
             this.txtTenSanPham = new System.Windows.Forms.TextBox();
@@ -410,7 +410,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cboPageSize, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cboRecordPerPage, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(440, 84);
@@ -437,18 +437,18 @@ namespace LTUD1_BACHHOAXANH472
             this.label6.Text = " ";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cboPageSize
+            // cboRecordPerPage
             // 
-            this.cboPageSize.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.cboPageSize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboPageSize.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPageSize.FormattingEnabled = true;
-            this.cboPageSize.Location = new System.Drawing.Point(135, 1);
-            this.cboPageSize.Margin = new System.Windows.Forms.Padding(1);
-            this.cboPageSize.Name = "cboPageSize";
-            this.cboPageSize.Size = new System.Drawing.Size(67, 40);
-            this.cboPageSize.TabIndex = 7;
-            this.cboPageSize.SelectedIndexChanged += new System.EventHandler(this.cboPageSize_SelectedIndexChanged);
+            this.cboRecordPerPage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.cboRecordPerPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboRecordPerPage.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRecordPerPage.FormattingEnabled = true;
+            this.cboRecordPerPage.Location = new System.Drawing.Point(135, 1);
+            this.cboRecordPerPage.Margin = new System.Windows.Forms.Padding(1);
+            this.cboRecordPerPage.Name = "cboRecordPerPage";
+            this.cboRecordPerPage.Size = new System.Drawing.Size(67, 40);
+            this.cboRecordPerPage.TabIndex = 7;
+            this.cboRecordPerPage.SelectedIndexChanged += new System.EventHandler(this.cboRecordPerPage_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -642,8 +642,6 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvThongTinHoaDon.Size = new System.Drawing.Size(639, 246);
             this.dgvThongTinHoaDon.TabIndex = 8;
             this.dgvThongTinHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinHoaDon_CellContentClick);
-            this.dgvThongTinHoaDon.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachHoaDon_CellMouseEnter);
-            this.dgvThongTinHoaDon.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachHoaDon_CellMouseLeave);
             // 
             // MASP
             // 
@@ -1287,7 +1285,7 @@ namespace LTUD1_BACHHOAXANH472
         private System.Windows.Forms.Label lblTongSoTrang;
         private System.Windows.Forms.PictureBox btnPrevious;
         private System.Windows.Forms.TableLayoutPanel tlpPhanTrang;
-        private ComboBox cboPageSize;
+        private ComboBox cboRecordPerPage;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label6;
         private Label label7;

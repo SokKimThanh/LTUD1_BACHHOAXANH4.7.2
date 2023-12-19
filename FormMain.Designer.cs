@@ -522,7 +522,7 @@ namespace LTUD1_BACHHOAXANH472
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(4, "khachhang.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(5, "khuyenmai.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(6, "menu.png");
-            this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(7, "nhacungcap.png");
+            this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(7, "cboNhaCungCap.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(8, "nhanvien.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(9, "sanpham.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(10, "search.png");
