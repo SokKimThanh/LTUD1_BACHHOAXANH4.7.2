@@ -60,18 +60,10 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms">
-      <HintPath>c:\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
-    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.3.0.0\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
@@ -92,9 +84,6 @@
       <HintPath>packages\RestSharpSigned.105.2.3\lib\net46\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
     <Reference Include="System.CodeDom, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.CodeDom.6.0.0\lib\net461\System.CodeDom.dll</HintPath>
     </Reference>
@@ -143,19 +132,10 @@
       <HintPath>packages\System.IO.Ports.6.0.0\lib\net461\System.IO.Ports.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
     <Reference Include="System.Reflection.Context" />
     <Reference Include="System.Runtime.Caching" />
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
@@ -246,24 +226,25 @@
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\FormBanHangExtendController.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.Designer.cs">
+    <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.designer.cs">
       <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\PhieuInHoaDon1.cs">
+    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangController.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\PhanTrangController.cs" />
+    <Compile Include="uploads\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PhieuInHoaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.cs">
+    <Compile Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.Designer.cs">
-      <DependentUpon>ViDuPhanTrang.cs</DependentUpon>
+    <Compile Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.Designer.cs">
+      <DependentUpon>FViDuPhanTrang.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.cs">
       <SubType>Form</SubType>
@@ -273,7 +254,7 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\chitietcc.cs" />
     <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\ChiTietNCCController.cs" />
-    <Compile Include="ScreenMenu\Nhap\NhanVien\rp_nhanvien_select_all.cs">
+    <Compile Include="uploads\rp_nhanvien_select_all.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rp_nhanvien_select_all.rpt</DependentUpon>
@@ -456,17 +437,17 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.resx">
       <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\PhieuInHoaDon.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PhieuInHoaDon1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\ViDuPhanTrang.resx">
-      <DependentUpon>ViDuPhanTrang.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\NhanVien\rp_nhanvien_select_all.rpt">
+    <EmbeddedResource Include="uploads\PhieuInHoaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PhieuInHoaDon1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.resx">
+      <DependentUpon>FViDuPhanTrang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="uploads\rp_nhanvien_select_all.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rp_nhanvien_select_all.cs</LastGenOutput>
     </EmbeddedResource>
@@ -560,12 +541,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SQLBienBan\BienBanThanhTuQuy.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icon_pagesize.png" />
+    <None Include="Resources\icon_small_phantrangright.png" />
+    <None Include="Resources\icon_big_phantrangright.png" />
+    <None Include="Resources\icon_big_phantrangleft.png" />
+    <None Include="Resources\icon_small_phantrangleft.png" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
+    <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />
+    <Content Include="ScreenMenu\Nhap\SanPham\sp_SanPham_TimTenSanPham.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
     <None Include="Resources\showpassword.png" />
     <None Include="Resources\phongban.png" />
@@ -611,8 +599,6 @@
     <Content Include="Resources\icon_small_huy.png" />
     <Content Include="Resources\icon_small_lammoi.png" />
     <Content Include="Resources\icon_small_nhanvien.png" />
-    <Content Include="Resources\icon_small_phantrangleft.png" />
-    <Content Include="Resources\icon_small_phantrangright.png" />
     <Content Include="Resources\icon_small_quyentruycap.png" />
     <Content Include="Resources\icon_small_save.png" />
     <Content Include="Resources\icon_small_search.png" />
@@ -631,6 +617,7 @@
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_all.sql" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_one.sql" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_update.sql" />
+    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cbo_quyentruycap_select_all.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_delete.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_insert.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_select_all.sql" />
@@ -639,7 +626,7 @@
     <Content Include="ScreenMenu\Nhap\BanHang\sp_cbo_danhmuc_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_cbo_nhacungcap_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_insert.sql" />
-    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang_count.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_delete.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_insert.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDonChiTiet\sp_chitiethoadon_KTSanPhamTrung.sql" />
@@ -715,7 +702,6 @@
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_update.sql" />
-    <Content Include="SQLBienBan\huongdancombinedsql.txt" />
     <Content Include="SQLBienBan\PROJECT_SQL_BHX.sql" />
     <Content Include="SQLBienBan\PROJECT_INSERT_DATA_BHX.sql" />
   </ItemGroup>
@@ -735,6 +721,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Costura.Fody">
+      <Version>5.7.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="Fody">
       <Version>6.8.0</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

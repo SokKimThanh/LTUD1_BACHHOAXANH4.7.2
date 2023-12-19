@@ -286,12 +286,12 @@ namespace LTUD1_BACHHOAXANH472
                 if (cboTheLoaiTimKiem.Text == "Theo tên")
                 {
                     ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load("D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
+                    reportDocument.Load(@"D:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
                 }
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
                     ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load("D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamTheoNgay.rpt");
+                    reportDocument.Load(@"D:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH472\uploads\SanPhamTheoNgay.rpt");
                 }
 
             }

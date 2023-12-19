@@ -436,7 +436,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.crystalReportViewer1, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -444,9 +444,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 207F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(642, 259);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
@@ -455,7 +454,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.05286F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.94714F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel6.Controls.Add(this.btnTimKiem, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.txtTimKiem, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.label1, 0, 0);
@@ -465,17 +464,17 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(638, 48);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(638, 39);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTimKiem.Location = new System.Drawing.Point(507, 2);
+            this.btnTimKiem.Location = new System.Drawing.Point(505, 2);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(129, 44);
+            this.btnTimKiem.Size = new System.Drawing.Size(131, 35);
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -487,7 +486,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.txtTimKiem.Location = new System.Drawing.Point(224, 2);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(279, 39);
+            this.txtTimKiem.Size = new System.Drawing.Size(277, 39);
             this.txtTimKiem.TabIndex = 4;
             // 
             // label1
@@ -496,25 +495,27 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 48);
+            this.label1.Size = new System.Drawing.Size(218, 39);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nhập Thông Tin";
             // 
             // crystalReportViewer1
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.ActiveViewIndex = 0;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(2, 54);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(2, 45);
             this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.PrintMode = CrystalDecisions.Windows.Forms.PrintMode.PrintOutputController;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(638, 203);
+            this.crystalReportViewer1.ReportSource = "D:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\uploads\\khachhangreport.rpt";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(638, 212);
             this.crystalReportViewer1.TabIndex = 1;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crystalReportViewer1.ToolPanelWidth = 180;
             this.crystalReportViewer1.UseWaitCursor = true;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load_1);
             // 
             // FormKhachHang
             // 

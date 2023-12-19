@@ -1,5 +1,5 @@
-ï»¿-- Create Procedure sp_PhongBan_select_all.sql
--- NhÃ¢n viÃªn phongban all
+-- Create Procedure sp_PhongBan_select_all.sql
+-- Nhân viên phongban all
 -- Author:		vo tu
 -- Create date: <10/11/2023>
 -- Description:	<vo tu select all>

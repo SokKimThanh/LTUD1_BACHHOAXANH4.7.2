@@ -233,5 +233,15 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             dgvKH.DataSource = khachHangController.DataSource;
             buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crystalReportViewer1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

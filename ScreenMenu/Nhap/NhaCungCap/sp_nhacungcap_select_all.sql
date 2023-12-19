@@ -1,4 +1,4 @@
-﻿-- Author:		Sok Kim Thanh
+-- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 -- update date: 10-12-2023
 -- Create Procedure sp_nhacungcap_select_all
@@ -10,7 +10,6 @@ BEGIN
 	select * from nhacungcap ncc order by ncc.created_date_ncc desc
 END
 GO
-
 -- Author:		Sok Kim Thanh
 -- Create date: <10/12/2023>
 -- Create Procedure sp_nhacungcap_cu_select_all
@@ -24,7 +23,6 @@ BEGIN
 	order by ncc.created_date_ncc desc
 END
 GO
-
 -- Author:		Sok Kim Thanh
 -- Create date: <10/12/2023>
 -- Create Procedure sp_nhacungcap_moi_select_all

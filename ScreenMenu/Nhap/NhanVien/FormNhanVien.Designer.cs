@@ -348,27 +348,27 @@ namespace LTUD1_BACHHOAXANH472
             this.tsmInFilePDF,
             this.tsmXuatFileExcel});
             this.cmsNhanVien.Name = "contextMenuStrip1";
-            this.cmsNhanVien.Size = new System.Drawing.Size(164, 76);
+            this.cmsNhanVien.Size = new System.Drawing.Size(150, 70);
             // 
             // tsmThongKe
             // 
             this.tsmThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmThongKe.Name = "tsmThongKe";
-            this.tsmThongKe.Size = new System.Drawing.Size(163, 24);
+            this.tsmThongKe.Size = new System.Drawing.Size(149, 22);
             this.tsmThongKe.Text = "Thống kê";
             // 
             // tsmInFilePDF
             // 
             this.tsmInFilePDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmInFilePDF.Name = "tsmInFilePDF";
-            this.tsmInFilePDF.Size = new System.Drawing.Size(163, 24);
+            this.tsmInFilePDF.Size = new System.Drawing.Size(149, 22);
             this.tsmInFilePDF.Text = "Xuất File PDF";
             // 
             // tsmXuatFileExcel
             // 
             this.tsmXuatFileExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.tsmXuatFileExcel.Name = "tsmXuatFileExcel";
-            this.tsmXuatFileExcel.Size = new System.Drawing.Size(163, 24);
+            this.tsmXuatFileExcel.Size = new System.Drawing.Size(149, 22);
             this.tsmXuatFileExcel.Text = "Xuất File Excel";
             // 
             // tcNhanVien
@@ -401,6 +401,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhanVien.Location = new System.Drawing.Point(3, 3);
             this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.Size = new System.Drawing.Size(937, 521);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellContentClick);
@@ -410,7 +411,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tbBaoCaoNhanVien.AutoScroll = true;
             this.tbBaoCaoNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
-            this.tbBaoCaoNhanVien.BackgroundImage = LTUD1_BACHHOAXANH472.Properties.Resources.tranparent_hoadon;
+            this.tbBaoCaoNhanVien.BackgroundImage = global::LTUD1_BACHHOAXANH472.Properties.Resources.tranparent_hoadon;
             this.tbBaoCaoNhanVien.Controls.Add(this.tableLayoutPanel9);
             this.tbBaoCaoNhanVien.Location = new System.Drawing.Point(4, 41);
             this.tbBaoCaoNhanVien.Name = "tbBaoCaoNhanVien";
