@@ -19,6 +19,8 @@ namespace LTUD1_BACHHOAXANH472
         TextBox txtMaHoaDon = new TextBox();
         TextBox txtSoLuongMua = new TextBox();
         Label lblTongTien = new Label();
+        private string manhanvien;
+        private string makhachhang;
 
         DataGridView dgvThongTinHoaDon;
         DataGridView dgvDanhSachSanPham;
@@ -53,6 +55,8 @@ namespace LTUD1_BACHHOAXANH472
         public TextBox TxtSoLuongMua { get => txtSoLuongMua; set => txtSoLuongMua = value; }
         public double Tongthanhtien { get => tongthanhtien; set => tongthanhtien = value; }
         public double Tongsoluong { get => tongsoluong; set => tongsoluong = value; }
+        public string Manhanvien { get => manhanvien; set => manhanvien = value; }
+        public string Makhachhang { get => makhachhang; set => makhachhang = value; }
 
         /// <summary>
         /// Map datarow từ grid sản phẩm sang grid hóa đơn
@@ -305,7 +309,7 @@ namespace LTUD1_BACHHOAXANH472
                 //==============================================================================
                 if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
-                    HoaDon hoadon = new HoaDon(txtMaHoaDon.Text,, txtTenKhachHang.Text, DateTime.Now, decimal.Parse(lblTongTien.Text));
+                    HoaDon hoadon = new HoaDon(txtMaHoaDon.Text, manhanvien, makhachhang, DateTime.Now, decimal.Parse(lblTongTien.Text));
                     FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan(hoadon);
                     frmThanhToan.ShowDialog();
                 }
