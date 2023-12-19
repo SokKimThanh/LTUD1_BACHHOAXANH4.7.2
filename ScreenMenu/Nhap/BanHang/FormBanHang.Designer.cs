@@ -881,7 +881,6 @@ namespace LTUD1_BACHHOAXANH472
             this.txtSDTKhachHang.Size = new System.Drawing.Size(476, 61);
             this.txtSDTKhachHang.TabIndex = 3;
             this.txtSDTKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSDTKhachHang.TextChanged += new System.EventHandler(this.txtSDTKhachHang_TextChanged);
             this.txtSDTKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // tlpNhapTTHD

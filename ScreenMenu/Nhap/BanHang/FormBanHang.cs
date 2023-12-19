@@ -298,10 +298,10 @@ namespace LTUD1_BACHHOAXANH472
             cboLoaiSanPham.SelectedIndex = 0;
             cboNhaCungCap.SelectedIndex = 0;
             lblLoaiSanPham.Text = phantrang.GetTongSoTrangBanDau();
-
+        }
             // thông tin trang hiển thị 
             phantrang.PageSize = int.Parse(cboPageSize.SelectedItem.ToString());
-
+            }
             // lấy giá trị trên các ô nhập
             phantrang.Loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
             phantrang.Nhacungcap = cboNhaCungCap.SelectedValue.ToString();
@@ -311,7 +311,26 @@ namespace LTUD1_BACHHOAXANH472
             dgvDanhSachSanPham.DataSource = phantrang.GetDataPhanTrang();// gán lại giá trị cho controller thông qua các sự kiện
             // làm mới danh sách 
             dgvDanhSachSanPham.Refresh();
+            {
             lblTongSoTrang.Text = phantrang.GetTongSoTrang();
+            if (currentPage > 1)
+            {
+                currentPage--;
+                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
+                GetDataGridviewSanPham();
+            }
+            if (currentPage > 1)
+            {
+                currentPage--;
+                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
+                GetDataGridviewSanPham();
+            }
+            if (currentPage > 1)
+            {
+                currentPage--;
+                lblTongSoTrang.Text = $"Trang {currentPage}/{pageCount}";//Trang 1/40
+                GetDataGridviewSanPham();
+            }
         }
     }
 }
