@@ -8,8 +8,8 @@ namespace LTUD1_BACHHOAXANH472
         private int currentPage = 1;
         private int recordsPerPage = 8;
         private int totalRecords = 0;
-        AdapterHoaDon banhangController;
-        AdapterSanPhamSearch sanphamAdapter;
+        AdapterBanHang banhangController;
+        AdapterPhanTrang sanphamAdapter;
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
@@ -67,23 +67,12 @@ namespace LTUD1_BACHHOAXANH472
                 //------------------.    Khởi tạo thao tác datagridview       .-----------------
                 //--.....................      sản phẩm phân trang       .....................--
                 //==============================================================================
-
-
-                sanphamAdapter = new AdapterSanPhamSearch(cboRecordPerPage, txtTenSanPham, cboNhaCungCap, cboLoaiSanPham, dgvDanhSachSanPham, lblTongSoTrang, 8);
+                sanphamAdapter = new AdapterPhanTrang(cboRecordPerPage, txtTenSanPham, cboNhaCungCap, cboLoaiSanPham, dgvDanhSachSanPham, lblTongSoTrang, 8);
                 sanphamAdapter.SetRecordPerPageCombobox(8, 4);
                 cboRecordPerPage.SelectedIndex = 1;
-
                 recordsPerPage = int.Parse(cboRecordPerPage.SelectedItem.ToString());
-                PhanTrangController phanTrangController = new PhanTrangController(recordsPerPage);
-
-
                 dgvDanhSachSanPham.DataSource = sanphamAdapter.GetData(recordsPerPage);
-
-
-                totalRecords = sanphamAdapter.GetRowCount();//-- bi lỗi
-
-                phanTrangController.SetTotalRecords(totalRecords);
-
+                totalRecords = sanphamAdapter.GetRowCount();
                 lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();
                 //==============================================================================
                 //--..........................................................................--
@@ -91,7 +80,7 @@ namespace LTUD1_BACHHOAXANH472
                 //--.................            sản phẩm hóa đơn             ..................
                 //==============================================================================
                 //khởi tạo banhang sanPhamController điều khiển luồng dữ liệu trên form bán hàng
-                banhangController = new AdapterHoaDon(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham);
+                banhangController = new AdapterBanHang(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham);
                 banhangController.ChangeHeaderNameDanhThongTinHoaDon();
                 banhangController.ChangeHeaderNameDanhSachSanPham();
                 banhangController.CreateButtonClickHoaDonSanPham();
@@ -224,7 +213,15 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            banhangController.btnThanhToan_Click(sender, e);
+            try
+            {
+                banhangController.btnThanhToan_Click(sender, e);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
         //==============================================================================
         //--..........................................................................--

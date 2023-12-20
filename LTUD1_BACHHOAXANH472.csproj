@@ -220,21 +220,18 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\TableLayoutHelper.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\PhanTrangController.cs" />
+    <Compile Include="Model\PhanTrangController.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.designer.cs">
       <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\AdapterHoaDon.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\AdapterSanPhamSearch.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\AdapterBanHang.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\AdapterPhanTrang.cs" />
     <Compile Include="uploads\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -292,10 +289,10 @@
     </Compile>
     <Compile Include="ScreenMenu\HeThong\TaiKhoan\Account.cs" />
     <Compile Include="ScreenMenu\HeThong\TaiKhoan\AccountController.cs" />
-    <Compile Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.cs">
+    <Compile Include="ScreenMenu\HeThong\FormTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\FormTaiKhoan.Designer.cs">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\ChiTietHoaDon.cs" />
@@ -472,7 +469,7 @@
     <EmbeddedResource Include="ScreenMenu\HeThong\FormUploadFilesReport.resx">
       <DependentUpon>FormUploadFilesReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\ChiTietHoaDonThongKe.resx">

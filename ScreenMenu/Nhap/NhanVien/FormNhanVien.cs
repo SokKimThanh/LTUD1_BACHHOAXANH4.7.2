@@ -14,27 +14,11 @@ namespace LTUD1_BACHHOAXANH472
         // khởi tạo kết nối
         NhanVienController nvController = new NhanVienController(Utils.ConnectionString);
         DiaDiemController chinhanhController = new DiaDiemController(Utils.ConnectionString);
-
-        // giả định rằng đang có 1 textbox trên màn hình
-        //TextBox txtTieuDeReport;
-
-
-        // khởi tạo in
-        //InFilePDFExcel infile;
-
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
-
-        // Khởi tạo report quản lý report
-        private ReportManager reportManager;
-
+        // Hàm hỗ trợ kiểm tra lỗi nhập
         ErrTxt errtxt;
-
         ErrColors color;
-
-        // Tạo một từ điển để lưu trữ các báo cáo
-        Dictionary<string, ReportDocument> reports = new Dictionary<string, ReportDocument>();
-
         public FormNhanVien()
         {
             InitializeComponent();
@@ -59,13 +43,6 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnDelete = this.btnDelete;
             buttonStateManager.BtnRefresh = this.btnRefresh;
 
-            // chỉnh style nút tìm kiếm
-            CustomButtonHelper customButtonHelper = new CustomButtonHelper();
-            customButtonHelper.SetProperties(btnImport);
-
-            // Khởi tạo ReportManager với đường dẫn đến thư mục chứa các báo cáo
-            reportManager = new ReportManager(Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"ScreenMenu\Nhap\NhanVien"));
-
             // khởi tạo kiểm tra ô nhập
             errtxt = new ErrTxt(this);
 
@@ -87,48 +64,8 @@ namespace LTUD1_BACHHOAXANH472
                 cboPhongBan.ValueMember = "MAPB";
                 cboPhongBan.DisplayMember = "TENPHG";
 
-                /* infile = new InFilePDFExcel(dgvNhanVien);*/
-
-
-
-                // hiển thị danh sach chi nhánh report
-                chinhanhController.SelectAll();
-                DataTable dtcn = chinhanhController.DataSource;
-                cboReportChiNhanh.DataSource = dtcn;
-                cboReportChiNhanh.ValueMember = "MACN";
-                cboReportChiNhanh.DisplayMember = "TENCN";
-                cboReportChiNhanh.SelectedIndex = 0;
-
-                // hiển thị danh sach phong ban theo chi nhánh
-                var selectedValue = cboReportChiNhanh.SelectedValue; // Lấy giá trị được chọn
-                DataTable dt = chinhanhController.SelectPhongBanByMaCN(selectedValue.ToString());
-
-                cboReportPhongBan.DataSource = dt;
-                cboReportPhongBan.ValueMember = "MAPB";
-                cboReportPhongBan.DisplayMember = "TENPHG";
-
-
-                //infile = new InFilePDFExcel(dgvNhanVien);
-
                 // crud button setting state
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
-
-                // hiển thị danh sach báo cáo
-                reportManager.LoadReports();
-
-                // Thêm các tiêu đề báo cáo vào TreeView
-                foreach (string reportTitle in reportManager.GetReportTitles())
-                {
-                    TreeNode newNode = new TreeNode(reportTitle);
-                    newNode.Name = reportTitle;
-                    tvReport.Nodes.Add(newNode);
-                }
-
-                // Nếu có ít nhất một báo cáo, hiển thị báo cáo đầu tiên
-                //if (tvReport.Nodes.Count > 0)
-                //{
-                //    tvReport.SelectedNode = tvReport.Nodes[0];
-                //}
             }
             catch (Exception ex)
             {
@@ -264,115 +201,16 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        private void tsmInFilePDF_Click(object sender, EventArgs e)
-        {
-            this.Invoke((MethodInvoker)delegate
-            {
-                // Mã hiển thị hộp thoại của bạn ở đây 
-                //infile.ExportToPDF();
-            });
-        }
-        private void tsmInFileExcel_Click(object sender, EventArgs e)
-        {
-            this.Invoke((MethodInvoker)delegate
-            {
-                // Mã hiển thị hộp thoại của bạn ở đây 
-                //infile.ExportToExcel();
-            });
-        }
-
-
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                // Khởi tạo một đối tượng mới từ lớp rp_nhanvien_nvtheophongban
-                rp_nhanvien_select_all rpt = new rp_nhanvien_select_all();
-
-                // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                ParameterValues paramMaPhongBan = new ParameterValues();
-                ParameterValues paramMaChiNhanh = new ParameterValues();
-
-                // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                ParameterDiscreteValue pdvMaPB = new ParameterDiscreteValue();
-                ParameterDiscreteValue pdvMaCN = new ParameterDiscreteValue();
-
-                // Đặt giá trị của pdv bằng giá trị trong textBox1
-                pdvMaPB.Value = cboReportPhongBan.SelectedValue;
-                pdvMaCN.Value = cboReportChiNhanh.SelectedValue;
-                // Thêm pdv vào danh sách các giá trị tham số
-                paramMaPhongBan.Add(pdvMaPB);
-                paramMaChiNhanh.Add(pdvMaCN);
-                // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                rpt.DataDefinition.ParameterFields["@MaPhongBan"].ApplyCurrentValues(paramMaPhongBan);
-                rpt.DataDefinition.ParameterFields["@MaChiNhanh"].ApplyCurrentValues(paramMaChiNhanh);
-
-                // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-                crystalReportViewer1.ReportSource = rpt;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             try
             {
-                // After the other action is performed, re-select the previously selected node
-                tvReport.SelectedNode = selectedNode;
-
                 // Chuyển đến tabReport 
                 // chọn tab danh sách để tìm kiếm thì
                 if (tcNhanVien.SelectedTab.Name.Equals("tbDanhSachNhanVien"))
                 {
                     dgvNhanVien.DataSource = nvController.Search(txtHoTenNV.Text);
                 }
-                else
-                {
-                    // Khởi tạo một đối tượng mới từ lớp rp_nhanvien_nvtheophongban
-                    rp_nhanvien_select_all rpt = new rp_nhanvien_select_all();
-
-                    // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                    //ParameterValues paramMaPhongBan = new ParameterValues();
-                    //ParameterValues paramMaChiNhanh = new ParameterValues();
-
-                    // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    //ParameterDiscreteValue pdvMaPB = new ParameterDiscreteValue();
-                    //ParameterDiscreteValue pdvMaCN = new ParameterDiscreteValue();
-
-                    // Đặt giá trị của pdv bằng giá trị trong textBox1
-                    //pdvMaPB.Value = cboReportPhongBan.SelectedValue.ToString();
-                    //pdvMaCN.Value = cboReportChiNhanh.SelectedValue.ToString();
-                    // Thêm pdv vào danh sách các giá trị tham số
-                    //paramMaPhongBan.Add(pdvMaPB);
-                    //paramMaChiNhanh.Add(pdvMaCN);
-                    // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                    //rpt.DataDefinition.ParameterFields["@MaPhongBan"].ApplyCurrentValues(paramMaPhongBan);
-                    //rpt.DataDefinition.ParameterFields["@MaChiNhanh"].ApplyCurrentValues(paramMaChiNhanh);
-
-                    // tim theo từng loại báo cáo
-                    //Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                    ParameterValues paramHOTENNV = new ParameterValues();
-
-
-                    //Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    ParameterDiscreteValue pdvHOTENNV = new ParameterDiscreteValue();
-
-
-                    //Đặt giá trị của pdv bằng giá trị trong textBox1
-                    pdvHOTENNV.Value = txtHoTenNV.Text.ToString();
-
-                    //Thêm pdv vào danh sách các giá trị tham số
-                    paramHOTENNV.Add(pdvHOTENNV);
-
-                    //Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                    rpt.DataDefinition.ParameterFields["@keyword"].ApplyCurrentValues(paramHOTENNV);
-
-                    // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-                    crystalReportViewer1.ReportSource = rpt;
-                }
             }
             catch (Exception ex)
             {
@@ -380,116 +218,6 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-
-        public void ImportBaoCao()
-        {
-
-        }
-
-        /// <summary>
-        /// Tải report không tham số khác lên để xem báo cáo
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Tạo một OpenFileDialog để cho phép người dùng chọn tệp báo cáo
-                OpenFileDialog openFileDialog = new OpenFileDialog();
-                openFileDialog.Filter = "Report Files|*.rpt";
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    // Lấy đường dẫn tệp từ OpenFileDialog
-                    string sourcePath = openFileDialog.FileName;
-
-                    // Lấy tên file từ đường dẫn file
-                    string fileName = Path.GetFileName(sourcePath);
-                    txtTieuDeReport.Text = fileName;
-
-                    // Tạo đường dẫn đến thư mục "ScreenMenu\Nhap\NhanVien\uploads"
-                    string targetDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"ScreenMenu\Nhap\NhanVien");
-                    string targetPath = Path.Combine(targetDirectory, fileName);
-
-                    // Copy tệp đã chọn vào thư mục "ScreenMenu\Nhap\NhanVien\uploads", ghi đè nếu tệp đã tồn tại
-                    File.Copy(sourcePath, targetPath, true);
-
-                    // Tải báo cáo từ tệp đã sao chép
-                    ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load(targetPath);
-
-                    // Thêm báo cáo vào từ điển
-                    reports.Add(fileName, reportDocument);
-
-                    // Tạo một TreeNode mới với tiêu đề báo cáo
-                    TreeNode newNode = new TreeNode(fileName);
-                    newNode.Name = fileName;
-
-                    // Thêm TreeNode vào TreeView
-                    if (tvReport.SelectedNode == null)
-                    {
-                        // Nếu không có node nào được chọn, thêm node mới vào gốc của TreeView
-                        tvReport.Nodes.Add(newNode);
-                        tvReportNhanVien.Nodes.Add(newNode);
-                    }
-
-                    // Hiển thị báo cáo
-
-                    //crystalReportViewer1.ReportSource = reportDocument;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void cboReportChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox cbo = (ComboBox)sender;
-            if (cbo.SelectedValue != null) // Kiểm tra xem có giá trị được chọn hay không
-            {
-                var selectedValue = cbo.SelectedValue.ToString(); // Lấy giá trị được chọn
-
-                // Sử dụng selectedValue ở đây
-                DataTable dt = chinhanhController.SelectPhongBanByMaCN(selectedValue);
-                cboReportPhongBan.DataSource = dt;
-                cboReportPhongBan.ValueMember = "MAPB";
-                cboReportPhongBan.DisplayMember = "TENPHG";
-            }
-        }
-        /// <summary>
-        /// Sự kiện report nhấp vào hiển thị report được chọn
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tvReport_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            // Lấy tên của node được chọn
-            string reportTitle = e.Node.Text;
-            // Tô màu node
-            e.Node.BackColor = color.primaryGreen;
-            // Lấy báo cáo tương ứng
-            ReportDocument reportDocument = reportManager.GetReport(reportTitle);
-
-            // Truyền tham số vào báo cáo
-            if (reportDocument != null)
-            {
-                switch (reportTitle)
-                {
-                    // load all lần đầu 
-                    case "rp_nhanvien_select_all":
-                        reportDocument.SetParameterValue("@keyword", string.IsNullOrEmpty(txtHoTenNV.Text) ? "" : txtHoTenNV.Text);
-                        break;
-                    default: break;
-                }
-                // Thêm các tham số khác nếu cần thiết
-
-                crystalReportViewer1.ReportSource = reportDocument;
-            }
-        }
 
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -544,37 +272,6 @@ namespace LTUD1_BACHHOAXANH472
         private void rtbDiaChi_TextChanged(object sender, EventArgs e)
         {
             TextHelper.HandleTextChange_DiaChi(sender);
-        }
-
-        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        private TreeNode selectedNode;
-
-        private void tvReport_BeforeSelect(object sender, TreeViewCancelEventArgs e)
-        {
-            selectedNode = e.Node;
-        }
-
-        private void tblTimKiemThongTin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flpTimKiemThongTin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void cboPhongBan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

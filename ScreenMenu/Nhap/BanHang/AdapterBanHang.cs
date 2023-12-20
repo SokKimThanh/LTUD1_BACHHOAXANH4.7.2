@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
-    public class AdapterHoaDon
+    public class AdapterBanHang
     {
 
         ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
@@ -30,12 +30,12 @@ namespace LTUD1_BACHHOAXANH472
         private string btnNameThemHDCT;// tên nút thêm hóa đơn ct
 
 
-        public AdapterHoaDon()
+        public AdapterBanHang()
         {
 
         }
 
-        public AdapterHoaDon(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
+        public AdapterBanHang(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
         {
             this.txtSDTKhachHang = txtSDTKhachHang;
             this.txtTenKhachHang = txtTenKhachHang;
@@ -307,14 +307,21 @@ namespace LTUD1_BACHHOAXANH472
                 //------------------        Sự kiện in hóa đơn       ---------------------------
                 //--..........................................................................--
                 //==============================================================================
-                if (DialogResult.Yes == MessageBox.Show("Thanh toán thành công!\nBạn có muốn in hóa đơn", "In hóa đơn", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-                {
-                    HoaDon hoadon = new HoaDon(txtMaHoaDon.Text, manhanvien, makhachhang, DateTime.Now, decimal.Parse(lblTongTien.Text));
-                    FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan(hoadon);
-                    frmThanhToan.ShowDialog();
-                }
 
-                MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+                // Tạo mới thông tin khách hàng
+                //KhachHang kh = new KhachHang();
+                //kh.Ma = rnd.GenerateRandomAlphanumericString(11);
+                //kh.Ten = txtTenKhachHang.Text;
+                //kh.Sdt = int.Parse(txtSDTKhachHang.Text);
+                // lưu khach hàng xuống db
+                //khachHangController.Insert(kh);
+                //string manv  = TaiKhoan.getMaNV();
+
+                //HoaDon hoadon = new HoaDon(txtMaHoaDon.Text, manhanvien, kh.Ma, DateTime.Now, decimal.Parse(lblTongTien.Text));
+
+                //FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan(hoadon);
+                //frmThanhToan.ShowDialog(); 
+                MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

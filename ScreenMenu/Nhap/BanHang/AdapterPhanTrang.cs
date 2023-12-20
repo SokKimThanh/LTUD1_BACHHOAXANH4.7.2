@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
-    public class AdapterSanPhamSearch
+    public class AdapterPhanTrang
     {
         //==============================================================================
         //--..........................................................................--
@@ -30,11 +30,11 @@ namespace LTUD1_BACHHOAXANH472
         //------------------.               constructor           .---------------------
         //--..........................................................................--
         //==============================================================================
-        public AdapterSanPhamSearch(int recordsPerPage)
+        public AdapterPhanTrang(int recordsPerPage)
         {
             this.recordsPerPage = recordsPerPage;
         }
-        public AdapterSanPhamSearch(ComboBox cboRecordPerPage, TextBox txtTenSanPham, ComboBox cboNhaCungCap, ComboBox cboLoaiSanPham, DataGridView dgvDanhSachSanPham, Label lblTongSoTrang, int recordsPerPage)
+        public AdapterPhanTrang(ComboBox cboRecordPerPage, TextBox txtTenSanPham, ComboBox cboNhaCungCap, ComboBox cboLoaiSanPham, DataGridView dgvDanhSachSanPham, Label lblTongSoTrang, int recordsPerPage)
         {
             this.cboRecordPerPage = cboRecordPerPage;
             this.txtTenSanPham = txtTenSanPham;
