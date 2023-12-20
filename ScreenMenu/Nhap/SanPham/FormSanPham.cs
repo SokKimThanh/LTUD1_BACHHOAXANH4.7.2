@@ -217,10 +217,11 @@ namespace LTUD1_BACHHOAXANH472
                     ParameterValues param = new ParameterValues();
 
                     // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-
-                    // Đặt giá trị của pdv bằng giá trị trong textBox
-                    pdv.Value = dtpTKNgay.Value;
+                    ParameterDiscreteValue pdv = new ParameterDiscreteValue
+                    {
+                        // Đặt giá trị của pdv bằng giá trị trong textBox
+                        Value = dtpTKNgay.Value
+                    };
 
                     // Thêm pdv vào danh sách các giá trị tham số
                     param.Add(pdv);

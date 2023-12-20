@@ -1,4 +1,6 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using System;
 using System.Collections.Generic;
 using System.IO;
 namespace LTUD1_BACHHOAXANH472.Model
@@ -56,6 +58,30 @@ namespace LTUD1_BACHHOAXANH472.Model
             // Trả về danh sách tiêu đề của tất cả các báo cáo
             return new List<string>(reports.Keys);
         }
+
+        public void ApplyParametersToReport(string reportTitle, Dictionary<string, string> parameters)
+        {
+            // Tìm báo cáo tương ứng trong từ điển
+            if (reports.TryGetValue(reportTitle, out ReportDocument reportDocument))
+            {
+                // Duyệt qua từ điển các tham số và áp dụng chúng cho báo cáo
+                foreach (var param in parameters)
+                {
+                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                    pdv.Value = param.Value;
+                    ParameterValues paramValues = new ParameterValues();
+                    paramValues.Add(pdv);
+
+                    // Áp dụng các giá trị tham số hiện tại cho tham số tương ứng trong định nghĩa dữ liệu của báo cáo
+                    reportDocument.DataDefinition.ParameterFields[param.Key].ApplyCurrentValues(paramValues);
+                }
+            }
+            else
+            {
+                throw new ArgumentException("Report title not found in the report manager.");
+            }
+        }
+
     }
 
 }

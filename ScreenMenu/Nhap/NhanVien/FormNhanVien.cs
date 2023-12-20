@@ -1,6 +1,9 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.uploads;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Windows.Forms;
@@ -272,18 +275,26 @@ namespace LTUD1_BACHHOAXANH472
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
+            // khởi tạo file name report muốn hiển thị
             string fileName = "rp_nhanvien_select_all.rpt";
-            // Tạo đường dẫn đến thư mục "ScreenMenu\Nhap\NhanVien\uploads"
-            string targetDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"uploads");
-            string targetPath = Path.Combine(targetDirectory, fileName);
 
-            // Tải báo cáo từ tệp đã sao chép
-            ReportDocument reportDocument = new ReportDocument();
-            reportDocument.Load(targetPath);
+            // Tạo đường dẫn đến thư mục đích
+            string targetDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, Utils.UploadString);
 
+            //khởi tạo trình quản lý thư mục report
+            ReportManager reportManager = new ReportManager(targetDirectory);
+            reportManager.LoadReports();
+
+            // Giả sử bạn có một từ điển chứa các tham số và giá trị tương ứng
+            Dictionary<string, string> parameters = new Dictionary<string, string> { { "@tennhanvien", txtHoTen.Text } /*, { "@diachi", txtDiaChi.Text },{ "@manv", txtMaNV.Text } thêm các thông số khác sau dấu phấy*/ };
+
+            // cập nhật các thông số report vào file report chỉ định
+            reportManager.ApplyParametersToReport(fileName, parameters);
+
+            // Tải báo cáo từ đường dẫn chỉ định
+            ReportDocument reportDocument = reportManager.GetReport(fileName);
 
             // Hiển thị báo cáo
-
             crystalReportViewer1.ReportSource = reportDocument;
         }
     }
