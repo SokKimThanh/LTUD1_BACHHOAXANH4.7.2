@@ -370,13 +370,13 @@ namespace LTUD1_BACHHOAXANH472
 
         public void ChangeHeaderNameDanhSachSanPham()
         {
-            //dgvDanhSachSanPham.Columns["MASP"].HeaderText = "Mã Sản Phẩm";
-            //dgvDanhSachSanPham.Columns["TENSP"].HeaderText = "Tên Sản Phẩm";
-            //dgvDanhSachSanPham.Columns["DONVI"].HeaderText = "Đơn Vị Tính";
-            //dgvDanhSachSanPham.Columns["DONGIA"].HeaderText = "Giá gốc";//Đơn giá 
-            //dgvDanhSachSanPham.Columns["GIAMGIA"].HeaderText = "% Giảm giá";
-            //dgvDanhSachSanPham.Columns["GIABAN"].HeaderText = "Giá bán";// giá khuyến mãi sau giảm giá
-            //dgvDanhSachSanPham.Columns["SLTONKHO"].HeaderText = "SL Tồn";
+            dgvDanhSachSanPham.Columns["MASP"].HeaderText = "Mã Sản Phẩm";
+            dgvDanhSachSanPham.Columns["TENSP"].HeaderText = "Tên Sản Phẩm";
+            dgvDanhSachSanPham.Columns["DONVI"].HeaderText = "Đơn Vị Tính";
+            dgvDanhSachSanPham.Columns["DONGIA"].HeaderText = "Giá gốc";//Đơn giá 
+            dgvDanhSachSanPham.Columns["GIAMGIA"].HeaderText = "% Giảm giá";
+            dgvDanhSachSanPham.Columns["GIABAN"].HeaderText = "Giá bán";// giá khuyến mãi sau giảm giá
+            dgvDanhSachSanPham.Columns["SLTONKHO"].HeaderText = "SL Tồn";
         }
 
         public void CreateButtonClickHoaDonSanPham()
