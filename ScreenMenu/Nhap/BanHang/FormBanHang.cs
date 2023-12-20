@@ -9,7 +9,7 @@ namespace LTUD1_BACHHOAXANH472
         private int recordsPerPage = 8;
         private int totalRecords = 0;
         AdapterBanHang banhangController;
-        AdapterPhanTrang sanphamAdapter;
+        AdapterPhanTrang phantrangAdapter;
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
@@ -55,18 +55,18 @@ namespace LTUD1_BACHHOAXANH472
                 cboNhaCungCap.DataSource = nhaCungCapController.sp_cbo_nhacungcap_select_all();
                 cboNhaCungCap.ValueMember = "MANCC";
                 cboNhaCungCap.DisplayMember = "TENNCC";
-                txtTenSanPham = new TextBox();
+
                 //==============================================================================
                 //--..........................................................................--
                 //------------------.    Khởi tạo thao tác datagridview       .-----------------
                 //--.....................      sản phẩm phân trang       .....................--
                 //==============================================================================
-                sanphamAdapter = new AdapterPhanTrang(cboRecordPerPage, txtTenSanPham, cboNhaCungCap, cboLoaiSanPham, dgvDanhSachSanPham, lblTongSoTrang, 8);
-                sanphamAdapter.SetRecordPerPageCombobox(8, 4);
+                phantrangAdapter = new AdapterPhanTrang(cboRecordPerPage, txtTenSanPham, cboNhaCungCap, cboLoaiSanPham, dgvDanhSachSanPham, lblTongSoTrang, 8);
+                phantrangAdapter.SetRecordPerPageCombobox(8, 4);
                 cboRecordPerPage.SelectedIndex = 1;
                 recordsPerPage = int.Parse(cboRecordPerPage.SelectedItem.ToString());
-                dgvDanhSachSanPham.DataSource = sanphamAdapter.GetData(recordsPerPage);
-                totalRecords = sanphamAdapter.GetRowCount();
+                dgvDanhSachSanPham.DataSource = phantrangAdapter.GetData(recordsPerPage);
+                totalRecords = phantrangAdapter.GetRowCount();
                 lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();
                 //==============================================================================
                 //--..........................................................................--
@@ -122,7 +122,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             else
             {
-                dgvDanhSachSanPham.DataSource = sanphamAdapter.GetData(recordsPerPage);
+                dgvDanhSachSanPham.DataSource = phantrangAdapter.GetData(recordsPerPage);
             }
         }
         //==============================================================================
@@ -132,7 +132,8 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            sanphamAdapter.btnTimKiem_Click(sender, e);
+            phantrangAdapter.Tensanpham1 = txtTenSanPham.Text;
+            phantrangAdapter.btnTimKiem_Click();
         }
 
         //==============================================================================
@@ -182,11 +183,11 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnNext_Click(object sender, EventArgs e)
         {
-            sanphamAdapter.btnNext_Click(sender, e);
+            phantrangAdapter.btnNext_Click(sender, e);
         }
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            sanphamAdapter.btnPrevious_Click(sender, e);
+            phantrangAdapter.btnPrevious_Click(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -254,7 +255,7 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            sanphamAdapter.btnRefresh_Click(sender, e);
+            phantrangAdapter.btnRefresh_Click(sender, e);
         }
 
         private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
@@ -262,5 +263,9 @@ namespace LTUD1_BACHHOAXANH472
             TextHelper.HandleTextChange_FullName(sender);
         }
 
+        private void txtTenSanPham_TextChanged(object sender, EventArgs e)
+        {
+            TextHelper.HandleTextChange_FullName(sender);
+        }
     }
 }

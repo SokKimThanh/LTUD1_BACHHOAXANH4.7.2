@@ -24,7 +24,9 @@ namespace LTUD1_BACHHOAXANH472
         private int currentPage = 1;
         private int recordsPerPage = 4;
         private int totalRecords = 0;
-
+        private string tensanpham = "";
+        private string loaisanpham = "";
+        private string nhacungcap = "";
         //==============================================================================
         //--..........................................................................--
         //------------------.               constructor           .---------------------
@@ -57,6 +59,9 @@ namespace LTUD1_BACHHOAXANH472
         public DataGridView DgvDanhSachSanPham { get => dgvDanhSachSanPham; set => dgvDanhSachSanPham = value; }
         public Label LblTongSoTrang { get => lblTongSoTrang; set => lblTongSoTrang = value; }
         public int RecordsPerPage { get => recordsPerPage; set => recordsPerPage = value; }
+        public string Tensanpham1 { get => tensanpham; set => tensanpham = value; }
+        public string Loaisanpham1 { get => loaisanpham; set => loaisanpham = value; }
+        public string Nhacungcap1 { get => nhacungcap; set => nhacungcap = value; }
 
 
         /// <summary>
@@ -115,15 +120,11 @@ namespace LTUD1_BACHHOAXANH472
             recordsPerPage = (int)cboRecordPerPage.SelectedItem;
             dgvDanhSachSanPham.DataSource = GetData(recordsPerPage);
         }
-        public void btnTimKiem_Click(object sender, EventArgs e)
+        public void btnTimKiem_Click()
         {
-            string tensanpham = txtTenSanPham.Text;
-            string loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
-            string nhacungcap = cboNhaCungCap.SelectedValue.ToString();
-
             // khởi tạo dữ liệu mới khi tìm kiếm theo tiêu chí
             recordsPerPage = (int)cboRecordPerPage.SelectedItem;
-            dgvDanhSachSanPham.DataSource = GetData(recordsPerPage, tensanpham, loaisanpham, nhacungcap);
+            dgvDanhSachSanPham.DataSource = GetData(recordsPerPage, Tensanpham1, Loaisanpham1, Nhacungcap1);
 
             currentPage = 1;
             totalRecords = sanPhamController.GetRowCount(null, null, null) / recordsPerPage;
@@ -153,7 +154,7 @@ namespace LTUD1_BACHHOAXANH472
             totalRecords = sanPhamController.GetRowCount(null, null, null) / recordsPerPage;
 
             // Tạo mới phân trang theo tổng số record
-            dgvDanhSachSanPham.DataSource = GetData(totalRecords);
+            dgvDanhSachSanPham.DataSource = GetData(recordsPerPage);
 
             // Tạo mới tổng số trang
             lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();

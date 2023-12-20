@@ -494,6 +494,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenSanPham.Name = "txtTenSanPham";
             this.txtTenSanPham.Size = new System.Drawing.Size(239, 36);
             this.txtTenSanPham.TabIndex = 3;
+            this.txtTenSanPham.TextChanged += new System.EventHandler(this.txtTenSanPham_TextChanged);
             // 
             // btnSearchSanPham
             // 
