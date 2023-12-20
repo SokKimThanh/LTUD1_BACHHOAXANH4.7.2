@@ -2,7 +2,7 @@
 public class Utils
 {
     private static string connectionString = "Data Source=.;Initial Catalog = BACHHOAXANH; Integrated Security = True";
-    private static string uploadString = @"upload";
+    private static string uploadString = @"uploads";
     public static string ConnectionString
     {
         get { return connectionString; }

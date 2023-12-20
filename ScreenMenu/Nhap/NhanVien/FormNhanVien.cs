@@ -276,7 +276,7 @@ namespace LTUD1_BACHHOAXANH472
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
             // khởi tạo file name report muốn hiển thị
-            string fileName = "rp_nhanvien_select_all.rpt";
+            string fileName = "rp_nhanvien_select_all";
 
             // Tạo đường dẫn đến thư mục đích
             string targetDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, Utils.UploadString);
