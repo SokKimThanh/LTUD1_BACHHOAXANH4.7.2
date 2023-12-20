@@ -1,6 +1,8 @@
-﻿using LTUD1_BACHHOAXANH472.Model;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Data;
+using System.IO;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
@@ -266,6 +268,23 @@ namespace LTUD1_BACHHOAXANH472
         private void rtbDiaChi_TextChanged(object sender, EventArgs e)
         {
             TextHelper.HandleTextChange_DiaChi(sender);
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            string fileName = "rp_nhanvien_select_all.rpt";
+            // Tạo đường dẫn đến thư mục "ScreenMenu\Nhap\NhanVien\uploads"
+            string targetDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, @"uploads");
+            string targetPath = Path.Combine(targetDirectory, fileName);
+
+            // Tải báo cáo từ tệp đã sao chép
+            ReportDocument reportDocument = new ReportDocument();
+            reportDocument.Load(targetPath);
+
+
+            // Hiển thị báo cáo
+
+            crystalReportViewer1.ReportSource = reportDocument;
         }
     }
 }

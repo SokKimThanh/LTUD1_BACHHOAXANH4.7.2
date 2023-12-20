@@ -53,6 +53,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tcNhanVien = new System.Windows.Forms.TabControl();
             this.tbDanhSachNhanVien = new System.Windows.Forms.TabPage();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.tbInBaoCao = new System.Windows.Forms.TabPage();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabDanhSach = new System.Windows.Forms.TabPage();
@@ -93,6 +95,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tcNhanVien.SuspendLayout();
             this.tbDanhSachNhanVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
+            this.tbInBaoCao.SuspendLayout();
             this.tabReport.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -348,6 +351,7 @@ namespace LTUD1_BACHHOAXANH472
             // tcNhanVien
             // 
             this.tcNhanVien.Controls.Add(this.tbDanhSachNhanVien);
+            this.tcNhanVien.Controls.Add(this.tbInBaoCao);
             this.tcNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcNhanVien.Location = new System.Drawing.Point(3, 3);
             this.tcNhanVien.Name = "tcNhanVien";
@@ -377,6 +381,31 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvNhanVien.Size = new System.Drawing.Size(937, 521);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.Click += new System.EventHandler(this.dgvNhanVien_Click);
+            // 
+            // tbInBaoCao
+            // 
+            this.tbInBaoCao.Controls.Add(this.crystalReportViewer1);
+            this.tbInBaoCao.Location = new System.Drawing.Point(4, 41);
+            this.tbInBaoCao.Name = "tbInBaoCao";
+            this.tbInBaoCao.Padding = new System.Windows.Forms.Padding(3);
+            this.tbInBaoCao.Size = new System.Drawing.Size(943, 527);
+            this.tbInBaoCao.TabIndex = 1;
+            this.tbInBaoCao.Text = "In Báo cáo";
+            this.tbInBaoCao.UseVisualStyleBackColor = true;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.DisplayStatusBar = false;
+            this.crystalReportViewer1.DisplayToolbar = false;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(937, 521);
+            this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // txtHoTen
             // 
@@ -741,6 +770,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tcNhanVien.ResumeLayout(false);
             this.tbDanhSachNhanVien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
+            this.tbInBaoCao.ResumeLayout(false);
             this.tabReport.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -820,5 +850,7 @@ namespace LTUD1_BACHHOAXANH472
         private TabControl tcNhanVien;
         private TabPage tbDanhSachNhanVien;
         private DataGridView dgvNhanVien;
+        private TabPage tbInBaoCao;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }

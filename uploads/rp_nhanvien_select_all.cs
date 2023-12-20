@@ -90,7 +90,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_keyword {
+        public CrystalDecisions.Shared.IParameterField Parameter_tennhanvien {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
