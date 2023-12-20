@@ -207,8 +207,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BatLoiControl\ErrColors.cs" />
-    <Compile Include="BatLoiControl\ErrFrm.cs" />
-    <Compile Include="BatLoiControl\ErrTxt.cs" />
+    <Compile Include="BatLoiControl\ErrForm.cs" />
+    <Compile Include="BatLoiControl\ErrTextbox.cs" />
     <Compile Include="BatLoiControl\SettingImageList.cs" />
     <Compile Include="Connection\DatabaseConnection.cs" />
     <Compile Include="Connection\DBController.cs" />
@@ -220,6 +220,7 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ComboBoxHelper.cs" />
     <Compile Include="Model\TextHelper.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />

@@ -51,18 +51,18 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 //Kiem tra nhap thong tin
-                if (ErrTxt.CheckControlValue(txtTenNhaCC))
+                if (ErrTextbox.CheckControlValue(txtTenNhaCC))
                 {
                     MessageBox.Show("txtTenNhaCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtSDTNCC))
+                if (ErrTextbox.CheckControlValue(txtSDTNCC))
                 {
                     MessageBox.Show("txtSDTNCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtDiaChi))
+                if (ErrTextbox.CheckControlValue(txtDiaChi))
                 {
                     MessageBox.Show("txtDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -148,18 +148,18 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 //Kiem tra nhap thong tin
-                if (ErrTxt.CheckControlValue(txtTenNhaCC))
+                if (ErrTextbox.CheckControlValue(txtTenNhaCC))
                 {
                     MessageBox.Show("txtTenNhaCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtSDTNCC))
+                if (ErrTextbox.CheckControlValue(txtSDTNCC))
                 {
                     MessageBox.Show("txtSDTNCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtDiaChi))
+                if (ErrTextbox.CheckControlValue(txtDiaChi))
                 {
                     MessageBox.Show("txtDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 

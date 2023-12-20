@@ -134,7 +134,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                if (!ErrFrm.DialogConfirm("Xác nhận cập nhật mới"))
+                if (!ErrForm.DialogConfirm("Xác nhận cập nhật mới"))
                 {
                     // Mở kết nối
                     SanPham sanpham = (SanPham)sender;
@@ -178,7 +178,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                if (!ErrFrm.DialogConfirm("Xác nhận xóa"))
+                if (!ErrForm.DialogConfirm("Xác nhận xóa"))
                 {
                     // Mở kết nối
                     SqlConnection conn = OpenConnection();

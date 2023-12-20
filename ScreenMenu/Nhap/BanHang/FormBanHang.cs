@@ -1,5 +1,7 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
@@ -13,7 +15,7 @@ namespace LTUD1_BACHHOAXANH472
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
-        SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
+        //SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
         /// <summary>
         /// Hàm load design
         /// </summary>
@@ -22,15 +24,9 @@ namespace LTUD1_BACHHOAXANH472
             InitializeComponent();
 
             // cài đặt style cho combobox 
-            cboNhaCungCap.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboLoaiSanPham.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboRecordPerPage.DropDownStyle = ComboBoxStyle.DropDownList;
-            // Thiết lập chiều cao tối đa khi ComboBox mở ra là 100 pixel
-            cboNhaCungCap.DropDownHeight = 100;
-            cboLoaiSanPham.DropDownHeight = 100;
-            cboRecordPerPage.DropDownHeight = 100;
-
-
+            ComboBoxHelper.ConfigureComboBox(cboNhaCungCap);
+            ComboBoxHelper.ConfigureComboBox(cboLoaiSanPham);
+            ComboBoxHelper.ConfigureComboBox(cboRecordPerPage);
 
             // cài đặt style cho datagridview 
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
@@ -201,10 +197,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            TextHelper.HandlePhoneNumber(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -264,6 +257,11 @@ namespace LTUD1_BACHHOAXANH472
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             sanphamAdapter.btnRefresh_Click(sender, e);
+        }
+
+        private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
+        {
+            TextHelper.HandleTextChange_FullName(sender);
         }
 
     }

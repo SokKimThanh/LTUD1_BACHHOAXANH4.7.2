@@ -56,7 +56,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                if (ErrTxt.CheckControlValue(txtMaHD))
+                if (ErrTextbox.CheckControlValue(txtMaHD))
                 {
                     MessageBox.Show("txtMaHD", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -108,7 +108,7 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (ErrTxt.CheckControlValue(txtMaHD))
+            if (ErrTextbox.CheckControlValue(txtMaHD))
             {
                 MessageBox.Show("phai chon thông tin để xóa", "Bắt buộc!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -177,7 +177,7 @@ namespace LTUD1_BACHHOAXANH472
         private void txtMaHD_TextChanged(object sender, EventArgs e)
         {
 
-            if (ErrTxt.NoSymbol_TextChanged(sender))
+            if (ErrTextbox.isText(sender))
             {
                 MessageBox.Show("txtHoMaHD", "chỉ được nhập chữ hoặc số!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;

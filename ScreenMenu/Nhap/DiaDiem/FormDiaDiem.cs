@@ -39,7 +39,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                if (ErrTxt.CheckControlValue(txtDC) || ErrTxt.CheckControlValue(txtTenCN))
+                if (ErrTextbox.CheckControlValue(txtDC) || ErrTextbox.CheckControlValue(txtTenCN))
                 {
                     MessageBox.Show("Các trường dữ liệu không được để trống!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -98,7 +98,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                if (!ErrFrm.DialogConfirm("Bạn có chắc chắn muốn xóa?"))
+                if (!ErrForm.DialogConfirm("Bạn có chắc chắn muốn xóa?"))
                 {
                     DiaDiem diaDiem = new DiaDiem();
                     diaDiem.MaCN = txtMaCN.Text;

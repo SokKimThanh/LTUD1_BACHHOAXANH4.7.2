@@ -61,7 +61,7 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ErrTxt.NoText_TextChange(txtSoLuong))
+            if (ErrTextbox.NoText_TextChange(txtSoLuong))
             {
                 MessageBox.Show("Nhập số");
                 txtSoLuong.Text = string.Empty;

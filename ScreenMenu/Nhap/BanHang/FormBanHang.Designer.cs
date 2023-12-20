@@ -49,8 +49,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.lblQTC = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
@@ -84,8 +84,8 @@ namespace LTUD1_BACHHOAXANH472
             this.btnNameThemHDCT = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tlpInputNhapTTKH = new System.Windows.Forms.TableLayoutPanel();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblHoTenKH = new System.Windows.Forms.Label();
+            this.lblSDTKH = new System.Windows.Forms.Label();
             this.txtSDTKhachHang = new System.Windows.Forms.TextBox();
             this.tlpNhapTTHD = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
@@ -216,8 +216,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.48495F));
             this.tableLayoutPanel4.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label19, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lblWelcome, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblQTC, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 1);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -257,39 +257,39 @@ namespace LTUD1_BACHHOAXANH472
             this.label1.Text = "Quản trị viên";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label12
+            // lblWelcome
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label12.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_welcome;
-            this.label12.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label12.Location = new System.Drawing.Point(0, 0);
-            this.label12.Margin = new System.Windows.Forms.Padding(0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(164, 29);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Welcome!";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblWelcome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblWelcome.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
+            this.lblWelcome.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_welcome;
+            this.lblWelcome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblWelcome.Location = new System.Drawing.Point(0, 0);
+            this.lblWelcome.Margin = new System.Windows.Forms.Padding(0);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(164, 29);
+            this.lblWelcome.TabIndex = 0;
+            this.lblWelcome.Text = "Welcome!";
+            this.lblWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label19
+            // lblQTC
             // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label19.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_taikhoan;
-            this.label19.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label19.Location = new System.Drawing.Point(0, 29);
-            this.label19.Margin = new System.Windows.Forms.Padding(0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(164, 29);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Quyền truy cập";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblQTC.AutoSize = true;
+            this.lblQTC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblQTC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblQTC.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQTC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
+            this.lblQTC.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_taikhoan;
+            this.lblQTC.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblQTC.Location = new System.Drawing.Point(0, 29);
+            this.lblQTC.Margin = new System.Windows.Forms.Padding(0);
+            this.lblQTC.Name = "lblQTC";
+            this.lblQTC.Size = new System.Drawing.Size(164, 29);
+            this.lblQTC.TabIndex = 0;
+            this.lblQTC.Text = "Quyền truy cập";
+            this.lblQTC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panel1
             // 
@@ -801,8 +801,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpInputNhapTTKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.94221F));
             this.tlpInputNhapTTKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpInputNhapTTKH.Controls.Add(this.txtTenKhachHang, 1, 0);
-            this.tlpInputNhapTTKH.Controls.Add(this.label2, 0, 0);
-            this.tlpInputNhapTTKH.Controls.Add(this.label3, 0, 1);
+            this.tlpInputNhapTTKH.Controls.Add(this.lblHoTenKH, 0, 0);
+            this.tlpInputNhapTTKH.Controls.Add(this.lblSDTKH, 0, 1);
             this.tlpInputNhapTTKH.Controls.Add(this.txtSDTKhachHang, 1, 1);
             this.tlpInputNhapTTKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpInputNhapTTKH.Location = new System.Drawing.Point(0, 128);
@@ -828,42 +828,43 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenKhachHang.Size = new System.Drawing.Size(476, 61);
             this.txtTenKhachHang.TabIndex = 3;
             this.txtTenKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTenKhachHang.TextChanged += new System.EventHandler(this.txtTenKhachHang_TextChanged);
             // 
-            // label2
+            // lblHoTenKH
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label2.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_hotenkhachhang;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(4, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 62);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Họ Tên Khách hàng";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblHoTenKH.AutoSize = true;
+            this.lblHoTenKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblHoTenKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblHoTenKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblHoTenKH.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoTenKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
+            this.lblHoTenKH.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_hotenkhachhang;
+            this.lblHoTenKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblHoTenKH.Location = new System.Drawing.Point(4, 0);
+            this.lblHoTenKH.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.lblHoTenKH.Name = "lblHoTenKH";
+            this.lblHoTenKH.Size = new System.Drawing.Size(163, 62);
+            this.lblHoTenKH.TabIndex = 0;
+            this.lblHoTenKH.Text = "Họ Tên Khách hàng";
+            this.lblHoTenKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label3
+            // lblSDTKH
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label3.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_smartphone;
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(4, 62);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 62);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Số điện thoại";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSDTKH.AutoSize = true;
+            this.lblSDTKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.lblSDTKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSDTKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblSDTKH.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSDTKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
+            this.lblSDTKH.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_green_smartphone;
+            this.lblSDTKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSDTKH.Location = new System.Drawing.Point(4, 62);
+            this.lblSDTKH.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.lblSDTKH.Name = "lblSDTKH";
+            this.lblSDTKH.Size = new System.Drawing.Size(163, 62);
+            this.lblSDTKH.TabIndex = 0;
+            this.lblSDTKH.Text = "Số điện thoại";
+            this.lblSDTKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtSDTKhachHang
             // 
@@ -1244,8 +1245,8 @@ namespace LTUD1_BACHHOAXANH472
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblWelcome;
+        private System.Windows.Forms.Label lblQTC;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label5;
@@ -1265,8 +1266,8 @@ namespace LTUD1_BACHHOAXANH472
         private System.Windows.Forms.DataGridView dgvDanhSachSanPham;
         private System.Windows.Forms.TableLayoutPanel tlpInputNhapTTKH;
         private System.Windows.Forms.TextBox txtTenKhachHang;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblHoTenKH;
+        private System.Windows.Forms.Label lblSDTKH;
         private System.Windows.Forms.TextBox txtSDTKhachHang;
         private System.Windows.Forms.TableLayoutPanel tlpNhapTTHD;
         private System.Windows.Forms.Label label10;

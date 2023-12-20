@@ -1,4 +1,7 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Web.UI;
+using System.Windows.Forms;
+using Control = System.Windows.Forms.Control;
 namespace LTUD1_BACHHOAXANH472.Model
 {
     public static class TextHelper
@@ -29,9 +32,9 @@ namespace LTUD1_BACHHOAXANH472.Model
                 }
             }
         }
-        public static void HandleTextChange(object sender, int min, int max)
+        public static void HandleTextChangeMinmax(Control control, int min, int max)
         {
-            Control control = sender as Control;
+
             if (control != null)
             {
                 // Xóa ký tự cuối cùng đã nhập nếu vượt quá số ký tự tối đa
@@ -54,19 +57,36 @@ namespace LTUD1_BACHHOAXANH472.Model
         /// <summary>
         /// Số điện thoại không nhập chữ, không nhập ký tự, hoặc khoảng trắng
         /// </summary>
-        /// <param name="sender"></param>
-        public static void HandleTextChange_PhoneNumber(object sender)
+        /// <param name="sender">một thể hiện của Textbox</param>
+        /// <param name="e">một thể hiện của EventArgs hoặc KeyPressEventArgs</param>
+        public static void HandlePhoneNumber(object sender, object e)
         {
             int min = 9; int max = 11;
-            if (ErrTxt.NoText_TextChange(sender) || ErrTxt.NoSymbol_TextChanged(sender) || ErrTxt.NoSpace_TextChange(sender) || ErrTxt.MinMaxValue_TextChanged(sender, min, max))
+            if (ErrTextbox.isSpace(sender) || ErrTextbox.MinMaxValue_TextChanged(sender, min, max))
             {
-                HandleTextChange(sender, min, max);
+                Control control = sender as Control;
+
+                if (e is KeyPressEventArgs)
+                {
+                    KeyPressEventArgs a = e as KeyPressEventArgs;
+
+                    HandleTextChangeMinmax(control, min, max);
+                    if (!char.IsControl(a.KeyChar) && !char.IsDigit(a.KeyChar))
+                    {
+                        a.Handled = true;
+                    }
+                }
+                else if (e is EventArgs)
+                {
+                    HandleTextChangeMinmax(control, min, max);
+                }
             }
         }
 
+
         internal static void HandleTextChange_Salary(object sender)
         {
-            if (ErrTxt.NoText_TextChange(sender))
+            if (ErrTextbox.NoText_TextChange(sender))
             {
                 HandleTextChange(sender);
             }
@@ -76,25 +96,35 @@ namespace LTUD1_BACHHOAXANH472.Model
         internal static void HandleTextChange_TenChiNhanh(object sender)
         {
             // kiểm tra 1 trong 3 cái nào dính thì chặn luôn
-            if (ErrTxt.NoNumber_TextChange(sender) || ErrTxt.NoSymbol_TextChanged(sender))
+            if (ErrTextbox.isNumber(sender) || ErrTextbox.isText(sender))
             {
                 HandleTextChange(sender);
             }
         }
         public static void HandleTextChange_DiaChi(object sender)
         {
-            if (ErrTxt.NoSymbol_TextChanged(sender))
+            if (ErrTextbox.isText(sender))
             {
                 HandleTextChange(sender);
             }
         }
         public static void HandleTextChange_FullName(object sender)
         {
-            // kiểm tra 1 trong 3 cái nào dính thì chặn luôn
-            if (ErrTxt.NoNumber_TextChange(sender) || ErrTxt.NoSpace_TextChange(sender) || ErrTxt.NoSymbol_TextChanged(sender))
+            int min = 30; int max = 30;
+            // kiểm tra 1 trong 3 cái nào dính thì chặn luôn 
+            TextBox textBox = sender as TextBox;
+            Control control = sender as Control;
+            if (textBox != null)
             {
-                HandleTextChange(sender);
+                string text = textBox.Text;
+                int charCount = text.Length;
+                if (ErrTextbox.isNumber(sender) || charCount > max || charCount < min)
+                {
+
+                    HandleTextChangeMinmax(control, min, max);
+                }
             }
+
         }
     }
 

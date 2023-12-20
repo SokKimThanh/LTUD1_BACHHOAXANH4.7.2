@@ -17,18 +17,17 @@ namespace LTUD1_BACHHOAXANH472
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
         // Hàm hỗ trợ kiểm tra lỗi nhập
-        ErrTxt errtxt;
+        ErrTextbox errtxt;
         ErrColors color;
         public FormNhanVien()
         {
             InitializeComponent();
 
             // combobox phong ban setting
-            cboPhongBan.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxHelper.ConfigureComboBox(cboPhongBan);
 
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvNhanVien);
-
             // data grid view event
             dgvNhanVien.Click += dgvNhanVien_Click;
 
@@ -44,7 +43,7 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnRefresh = this.btnRefresh;
 
             // khởi tạo kiểm tra ô nhập
-            errtxt = new ErrTxt(this);
+            errtxt = new ErrTextbox(this);
 
             // khởi tạo tô màu
             color = new ErrColors();
@@ -145,7 +144,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                if (!ErrFrm.DialogConfirm("bạn muốn xóa không?"))
+                if (!ErrForm.DialogConfirm("bạn muốn xóa không?"))
                 {
                     int dong = dgvNhanVien.CurrentCell.RowIndex;
                     string manv = dgvNhanVien.Rows[dong].Cells[0].Value.ToString();
@@ -260,12 +259,12 @@ namespace LTUD1_BACHHOAXANH472
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_PhoneNumber(sender);
+            TextHelper.HandlePhoneNumber(sender, e);
         }
 
         private void txtHoTenNV_TextChanged(object sender, EventArgs e)
         {
-            // kiểm tra 1 trong 3 cái nào dính thì chặn luôn
+            // kiểm tra 1 trong 3 cái nào dính thì chặn luôn 
             TextHelper.HandleTextChange_FullName(sender);
         }
 

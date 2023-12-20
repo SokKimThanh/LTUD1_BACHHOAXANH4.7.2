@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-public class ErrFrm
+public class ErrForm
 {
     /// <summary>
     /// Kiểm tra các lỗi trên form bất kỳ
@@ -13,7 +13,7 @@ public class ErrFrm
     public Form F { get => f; set => f = value; }
     public ErrorProvider Err { get => err; set => err = value; }
 
-    public ErrFrm(Form form)
+    public ErrForm(Form form)
     {
         this.f = form;
         this.err = new ErrorProvider();

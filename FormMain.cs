@@ -19,7 +19,7 @@ namespace LTUD1_BACHHOAXANH472
         private Button currentButton = new Button();
         private Form currentChildForm = new Form();
         public SettingImageList navigationBar;
-        public ErrFrm errform;
+        public ErrForm errform;
         public Session Session { get; set; }
 
         public bool btn_out = false;
@@ -28,7 +28,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             InitializeComponent();
             navigationBar = new SettingImageList(listIcon_navigation_bar);
-            errform = new ErrFrm(this);
+            errform = new ErrForm(this);
             Session = new Session();
         }
         private void FormMain_Load(object sender, EventArgs e)

@@ -105,7 +105,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
         {
             try
             {
-                if (ErrTxt.CheckControlValue(txtMaPB))
+                if (ErrTextbox.CheckControlValue(txtMaPB))
                 {
                     MessageBox.Show("txtMaPB", "Bắt buộc!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;

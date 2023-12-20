@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-public class ErrTxt
+public class ErrTextbox
 {
     Label lblHint;
     Panel pnError;
@@ -9,7 +9,7 @@ public class ErrTxt
     public Label LblHint { get => lblHint; set => lblHint = value; }
     public Panel PnError { get => pnError; set => pnError = value; }
 
-    public ErrTxt(Form frm)
+    public ErrTextbox(Form frm)
     {
         lblHint = new Label();
         pnError = new Panel();
@@ -111,7 +111,7 @@ public class ErrTxt
     /// </summary>
     /// <param name="sender"></param>
     /// <returns>return true if  have number</returns>
-    public static bool NoNumber_TextChange(object sender)
+    public static bool isNumber(object sender)
     {
         Control c = (Control)sender;
         // Khớp với bất kỳ ký tự số nào
@@ -158,7 +158,7 @@ public class ErrTxt
     /// </summary>
     /// <param name="sender"></param>
     /// <returns>return true if no have symbol</returns>
-    public static bool NoSymbol_TextChanged(object sender)
+    public static bool isText(object sender)
     {
         Control c = (Control)sender;
         Regex regex = new Regex("[!@#$%^&*()_\\-=*/]");
@@ -180,7 +180,7 @@ public class ErrTxt
     /// </summary>
     /// <param name="sender"></param>
     /// <returns>true if no space</returns>
-    public static bool NoSpace_TextChange(object sender)
+    public static bool isSpace(object sender)
     {
         TextBox c = (TextBox)sender;
         Regex regex = new Regex("[ ]");
@@ -463,15 +463,15 @@ public class ErrTxt
     public bool NoSymNumSpaceMinMaxChange(object sender, int min = 3, int max = 16)
     {
         Control c = (Control)sender;
-        if (NoSymbol_TextChanged(sender))
+        if (isText(sender))
         {
             return true;
         }
-        else if (NoNumber_TextChange(sender))
+        else if (isNumber(sender))
         {
             return true;
         }
-        else if (NoSpace_TextChange(sender))
+        else if (isSpace(sender))
         {
             return true;
         }
@@ -494,11 +494,11 @@ public class ErrTxt
     public bool NoSymNumMinMaxChange(object sender, int min = 3, int max = 16)
     {
         Control c = (Control)sender;
-        if (NoSymbol_TextChanged(sender))
+        if (isText(sender))
         {
             return true;
         }
-        else if (NoNumber_TextChange(sender))
+        else if (isNumber(sender))
         {
             return true;
         }
@@ -520,11 +520,11 @@ public class ErrTxt
     {
         Control c = (Control)sender;
 
-        if (NoSymbol_TextChanged(sender))
+        if (isText(sender))
         {
             return true;
         }
-        else if (NoNumber_TextChange(sender))
+        else if (isNumber(sender))
         {
             return true;
         }
@@ -543,7 +543,7 @@ public class ErrTxt
     public bool NoSymTextSpaceMinMaxChange(object sender, int min = 3, int max = 16)
     {
         Control c = (Control)sender;
-        if (NoSymbol_TextChanged(sender))
+        if (isText(sender))
         {
             return true;
         }
@@ -551,7 +551,7 @@ public class ErrTxt
         {
             return true;
         }
-        else if (NoSpace_TextChange(sender))
+        else if (isSpace(sender))
         {
             return true;
         }
@@ -572,7 +572,7 @@ public class ErrTxt
     public bool NoSymTextSpaceChange(object sender)
     {
         Control c = (Control)sender;
-        if (NoSymbol_TextChanged(sender))
+        if (isText(sender))
         {
             return true;
         }
@@ -580,7 +580,7 @@ public class ErrTxt
         {
             return true;
         }
-        else if (NoSpace_TextChange(sender))
+        else if (isSpace(sender))
         {
             return true;
         }
@@ -593,7 +593,7 @@ public class ErrTxt
     public bool NoSymTextMinMaxChange(object sender, int min = 3, int max = 16)
     {
         Control c = (Control)sender;
-        if (NoSymbol_TextChanged(sender))
+        if (isText(sender))
         {
             return true;
         }
@@ -614,7 +614,7 @@ public class ErrTxt
     public bool NoSymTextChange(object sender)
     {
         Control c = (Control)sender;
-        if (NoSymbol_TextChanged(sender))
+        if (isText(sender))
         {
             return true;
         }

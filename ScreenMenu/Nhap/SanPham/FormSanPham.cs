@@ -72,13 +72,13 @@ namespace LTUD1_BACHHOAXANH472
                     MessageBox.Show("Ngày sản xuất nhỏ hơn hạn sử dụng ");
                     return;
                 }
-                if (ErrTxt.NoText_TextChange(txtDonGia) || txtDonGia.Text == string.Empty)
+                if (ErrTextbox.NoText_TextChange(txtDonGia) || txtDonGia.Text == string.Empty)
                 {
                     MessageBox.Show("Giá nhập số!");
                     txtDonGia.Text = string.Empty;
                     return;
                 }
-                if (ErrTxt.NoText_TextChange(rtbSL) || rtbSL.Text == string.Empty)
+                if (ErrTextbox.NoText_TextChange(rtbSL) || rtbSL.Text == string.Empty)
                 {
                     MessageBox.Show("Số lượng tồn kho nhập số!");
                     rtbSL.Text = string.Empty;
@@ -152,13 +152,13 @@ namespace LTUD1_BACHHOAXANH472
                     MessageBox.Show("Ngày sản xuất nhỏ hơn hạn sử dụng ");
                     return;
                 }
-                if (ErrTxt.NoText_TextChange(txtDonGia))
+                if (ErrTextbox.NoText_TextChange(txtDonGia))
                 {
                     MessageBox.Show("Giá nhập số!");
                     txtDonGia.Text = string.Empty;
                     return;
                 }
-                if (ErrTxt.NoText_TextChange(rtbSL))
+                if (ErrTextbox.NoText_TextChange(rtbSL))
                 {
                     MessageBox.Show("Số lượng tồn kho nhập số!");
                     rtbSL.Text = string.Empty;
