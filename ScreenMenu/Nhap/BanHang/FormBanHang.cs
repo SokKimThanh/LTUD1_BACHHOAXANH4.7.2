@@ -132,8 +132,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            phantrangAdapter.Tensanpham1 = txtTenSanPham.Text;
-            phantrangAdapter.btnTimKiem_Click();
+
         }
 
         //==============================================================================
@@ -223,15 +222,13 @@ namespace LTUD1_BACHHOAXANH472
         private void dgvThongTinHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             banhangController.dgvThongTinHoaDon_CellContentClick(sender, e);
-            lblTongTien.Text = banhangController.LblTongTien.Text;
-            txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
         private void dgvDanhSachSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             banhangController.dgvDanhSachSanPham_CellClick(sender, e);
-            if (banhangController.LblTongTien != null)
+            if (banhangController.Lblthanhtien != null)
             {
-                lblTongTien.Text = banhangController.LblTongTien.Text;
+                lblTongTien.Text = banhangController.Lblthanhtien.Text;
             }
             else
             {
@@ -247,7 +244,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
             banhangController.btnHuyThanhToan_Click(sender, e);
-            lblTongTien.Text = banhangController.LblTongTien.Text;
+            lblTongTien.Text = banhangController.Lblthanhtien.Text;
             txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
 
@@ -266,6 +263,11 @@ namespace LTUD1_BACHHOAXANH472
         private void txtTenSanPham_TextChanged(object sender, EventArgs e)
         {
             TextHelper.HandleTextChange_FullName(sender);
+        }
+
+        private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace LTUD1_BACHHOAXANH472
         TextBox txtTenKhachHang = new TextBox();
         TextBox txtMaHoaDon = new TextBox();
         TextBox txtSoLuongMua = new TextBox();
-        Label lblTongTien = new Label();
+        Label lblthanhtien = new Label();
         private string manhanvien;
         private string makhachhang;
 
@@ -34,13 +34,13 @@ namespace LTUD1_BACHHOAXANH472
 
         }
 
-        public AdapterBanHang(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
+        public AdapterBanHang(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblthanhtien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
         {
             this.txtSDTKhachHang = txtSDTKhachHang;
             this.txtTenKhachHang = txtTenKhachHang;
             this.txtMaHoaDon = txtMaHoaDon;
             this.txtSoLuongMua = txtSoLuongMua;
-            this.lblTongTien = lblTongTien;
+            this.lblthanhtien = lblthanhtien;
             this.dgvThongTinHoaDon = dgvThongTinHoaDon;
             this.dgvDanhSachSanPham = dgvDanhSachSanPham;
         }
@@ -48,7 +48,7 @@ namespace LTUD1_BACHHOAXANH472
         public TextBox TxtSDTKhachHang { get => txtSDTKhachHang; set => txtSDTKhachHang = value; }
         public TextBox TxtTenKhachHang { get => txtTenKhachHang; set => txtTenKhachHang = value; }
         public TextBox TxtMaHoaDon { get => txtMaHoaDon; set => txtMaHoaDon = value; }
-        public Label LblTongTien { get => lblTongTien; set => lblTongTien = value; }
+        public Label Lblthanhtien { get => lblthanhtien; set => lblthanhtien = value; }
         public DataGridView DgvThongTinHoaDon { get => dgvThongTinHoaDon; set => dgvThongTinHoaDon = value; }
         public DataGridView DgvDanhSachSanPham { get => dgvDanhSachSanPham; set => dgvDanhSachSanPham = value; }
         public TextBox TxtSoLuongMua { get => txtSoLuongMua; set => txtSoLuongMua = value; }
@@ -91,8 +91,8 @@ namespace LTUD1_BACHHOAXANH472
                     }
                     int khuyenmai = int.Parse(row.Cells["KM"].Value.ToString());
 
-                    double tongtien = soluongmuahang * khuyenmai; // Tính lại tổng tiền
-                    row.Cells["THANHTIEN"].Value = tongtien; // Cập nhật tổng tiền
+                    double thanhtien = soluongmuahang * khuyenmai; // Tính lại tổng tiền
+                    row.Cells["THANHTIEN"].Value = thanhtien; // Cập nhật tổng tiền
 
                     return null; // Trả về null vì không cần thêm hàng mới
                 }
@@ -167,25 +167,21 @@ namespace LTUD1_BACHHOAXANH472
             return false;// phát hiện sai phạm 
         }
 
-        public void SetTongTienVaTongSoLuong(DataGridView dgvThongTinHoaDon)
+        public void SetthanhtienVaTongSoLuong()
         {
             int tongsoluong = 0;
-            double tongtien = 0;
+            double thanhtien = 0;
 
-            foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
+            foreach (DataGridViewRow row in DgvThongTinHoaDon.Rows)
             {
                 tongsoluong += Convert.ToInt32(row.Cells["SL"].Value);
-                tongtien += Convert.ToDouble(row.Cells["KM"].Value);
-                row.Cells["btnGiamSL"].Value = tongtien;
+                thanhtien += Convert.ToDouble(row.Cells["ThanhTien"].Value);
             }
             txtSoLuongMua.Text = tongsoluong.ToString();
-            if (lblTongTien != null)
+            if (lblthanhtien != null)
             {
-                lblTongTien.Text = tongtien.ToString();
-            }
-            else
-            {
-                // Xử lý trường hợp lblTongTien là null
+                Lblthanhtien.Text = thanhtien.ToString();
+                TxtSoLuongMua.Text = tongsoluong.ToString();
             }
         }
         public void dgvThongTinHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -196,19 +192,16 @@ namespace LTUD1_BACHHOAXANH472
                 string maSP = dgvThongTinHoaDon.Rows[e.RowIndex].Cells[0].Value.ToString().Trim();
                 if (KiemTraLonHonTon(maSP)) // check tồn
                 {
-                    double soLuong = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[4].Value) + 1;
+                    double soLuong = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value) + 1;
 
-                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells[4].Value = soLuong; // gán lại số lượng
+                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value = soLuong; // gán lại số lượng
 
-                    double khuyenMai = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[3].Value);
+                    double khuyenMai = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells["KM"].Value);
 
 
                     //Tính toán tổng
-                    double tongtien = khuyenMai * soLuong;
-                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = tongtien;
-
-                    tongthanhtien += tongtien;
-                    tongsoluong += soLuong;
+                    double thanhtien = khuyenMai * soLuong;
+                    dgvThongTinHoaDon.Rows[e.RowIndex].Cells["ThanhTien"].Value = thanhtien;
                 }
                 else
                 {
@@ -219,44 +212,42 @@ namespace LTUD1_BACHHOAXANH472
             // Kiểm tra xem người dùng có nhấp vào cột nút giảm số lượng hay không
             else if (e.ColumnIndex == dgvThongTinHoaDon.Columns["btnGiamSL"].Index && e.RowIndex >= 0)
             {
-                double soLuong = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[4].Value) - 1;
+                double soLuong = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value) - 1;
 
                 if (soLuong <= 0)
                 {
                     // Xóa dòng khỏi DataGridView
                     dgvThongTinHoaDon.Rows.RemoveAt(e.RowIndex);
+                    lblthanhtien.Text = "0";
+                    txtSoLuongMua.Text = "0";
                     MessageBox.Show($"Hủy thêm Sản phẩm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
-                dgvThongTinHoaDon.Rows[e.RowIndex].Cells[4].Value = soLuong; // gán lại số lượng
+                dgvThongTinHoaDon.Rows[e.RowIndex].Cells["SL"].Value = soLuong; // gán lại số lượng
 
-                double khuyenMai = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells[3].Value);
+                double khuyenMai = Convert.ToInt32(dgvThongTinHoaDon.Rows[e.RowIndex].Cells["KM"].Value);
 
 
                 //Tính toán tổng
-                double tongtien = khuyenMai * soLuong;
-                dgvThongTinHoaDon.Rows[e.RowIndex].Cells[5].Value = tongtien;
-
-                tongthanhtien -= tongtien;
-                tongsoluong -= soLuong;
+                double thanhtien = khuyenMai * soLuong;
+                dgvThongTinHoaDon.Rows[e.RowIndex].Cells["ThanhTien"].Value = thanhtien;
             }
-            lblTongTien.Text = tongthanhtien.ToString();
-            SetTongTienVaTongSoLuong(dgvThongTinHoaDon);
+            SetthanhtienVaTongSoLuong();
         }
 
 
         public void btnHuyThanhToan_Click(object sender, EventArgs e)
         {
             // Xác nhận trước khi xóa
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn hủy thanh toán và xóa tất cả các mục trong giỏ hàng không?", "Xác nhận hủy thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.Yes)
             {
                 // Xóa tất cả các dòng trong dgvThongTinHoaDon
                 dgvThongTinHoaDon.Rows.Clear();
                 txtTenKhachHang.Text = "";
                 TxtSDTKhachHang.Text = "";
-                lblTongTien.Text = "";
-                txtSoLuongMua.Text = "";
+                lblthanhtien.Text = "0";
+                txtSoLuongMua.Text = "0";
             }
         }
         public void btnThanhToan_Click(object sender, EventArgs e)
@@ -274,7 +265,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             if (dgvThongTinHoaDon.Rows.Count == 0)
             {
-                MessageBox.Show("Vui lòng thêm sản phẩm vào hóa đơn", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng thêm sản phẩm vào hóa đơn", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -282,9 +273,14 @@ namespace LTUD1_BACHHOAXANH472
             {
                 if (string.IsNullOrEmpty(txtTenKhachHang.Text) && string.IsNullOrEmpty(txtSDTKhachHang.Text))
                 {
-                    MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                //==============================================================================
+                //--..........................................................................--
+                //------------------        Sự kiện in hóa đơn       ---------------------------
+                //--..........................................................................--
+                //==============================================================================
                 KhachHang khachHang = new KhachHang();
 
                 khachHang.Ma = rnd.GenerateRandomAlphanumericString(11);
@@ -293,7 +289,7 @@ namespace LTUD1_BACHHOAXANH472
 
                 khachHangController.Insert(khachHang);
 
-                HoaDon hoaDon = new HoaDon(txtMaHoaDon.Text, "manv_admin", khachHang.Ma, DateTime.Now, Convert.ToDecimal(lblTongTien.Text));
+                HoaDon hoaDon = new HoaDon(txtMaHoaDon.Text, "manv_admin", khachHang.Ma, DateTime.Now, Convert.ToDecimal(lblthanhtien.Text));
 
                 hoadonController.Insert(hoaDon);
                 foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
@@ -301,25 +297,8 @@ namespace LTUD1_BACHHOAXANH472
                     ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(txtMaHoaDon.Text, row.Cells[0].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
                     cthdController.Insert(chiTietHoaDon);
                 }
-                //==============================================================================
-                //--..........................................................................--
-                //------------------        Sự kiện in hóa đơn       ---------------------------
-                //--..........................................................................--
-                //==============================================================================
-
-                // Tạo mới thông tin khách hàng
-                //KhachHang kh = new KhachHang();
-                //kh.Ma = rnd.GenerateRandomAlphanumericString(11);
-                //kh.Ten = txtTenKhachHang.Text;
-                //kh.Sdt = int.Parse(txtSDTKhachHang.Text);
-                // lưu khach hàng xuống db
-                //khachHangController.Insert(kh);
-                //string manv  = TaiKhoan.getMaNV();
-
-                //HoaDon hoadon = new HoaDon(txtMaHoaDon.Text, manhanvien, kh.Ma, DateTime.Now, decimal.Parse(lblTongTien.Text));
-
-                //FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan(hoadon);
-                //frmThanhToan.ShowDialog(); 
+                FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan(hoaDon);
+                frmThanhToan.ShowDialog();
                 MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
@@ -348,6 +327,7 @@ namespace LTUD1_BACHHOAXANH472
                         // Thêm hàng mới vào dgvThongTinHoaDon
                         dgvThongTinHoaDon.Rows.Add(newRow);
                     }
+                    SetthanhtienVaTongSoLuong();
                 }
             }
             catch (Exception ex)
