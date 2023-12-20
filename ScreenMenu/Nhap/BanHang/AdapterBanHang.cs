@@ -1,6 +1,7 @@
 ﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
@@ -12,6 +13,7 @@ namespace LTUD1_BACHHOAXANH472
         HoaDonController hoadonController = new HoaDonController(Utils.ConnectionString);
         KhachHangController khachHangController = new KhachHangController(Utils.ConnectionString);
         RandomStringGenerator rnd = new RandomStringGenerator();
+        HoaDon hoadon;
 
         TextBox txtSDTKhachHang = new TextBox();
         TextBox txtTenKhachHang = new TextBox();
@@ -27,14 +29,14 @@ namespace LTUD1_BACHHOAXANH472
         double tongthanhtien = 0;
         double tongsoluong = 0;
         private string btnNameThemHDCT;// tên nút thêm hóa đơn ct
-
+        TabControl tcManHinhBanHang = new TabControl();
 
         public AdapterBanHang()
         {
 
         }
 
-        public AdapterBanHang(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblthanhtien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
+        public AdapterBanHang(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblthanhtien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham, HoaDon hoadon, TabControl tcManHinhBanHang)
         {
             this.txtSDTKhachHang = txtSDTKhachHang;
             this.txtTenKhachHang = txtTenKhachHang;
@@ -43,6 +45,8 @@ namespace LTUD1_BACHHOAXANH472
             this.lblthanhtien = lblthanhtien;
             this.dgvThongTinHoaDon = dgvThongTinHoaDon;
             this.dgvDanhSachSanPham = dgvDanhSachSanPham;
+            this.hoadon = hoadon;
+            tcManHinhBanHang = tcManHinhBanHang;
         }
 
         public TextBox TxtSDTKhachHang { get => txtSDTKhachHang; set => txtSDTKhachHang = value; }
@@ -56,6 +60,8 @@ namespace LTUD1_BACHHOAXANH472
         public double Tongsoluong { get => tongsoluong; set => tongsoluong = value; }
         public string Manhanvien { get => manhanvien; set => manhanvien = value; }
         public string Makhachhang { get => makhachhang; set => makhachhang = value; }
+        public HoaDon Hoadon { get => hoadon; set => hoadon = value; }
+        public TabControl TcManHinhBanHang { get => tcManHinhBanHang; set => tcManHinhBanHang = value; }
 
         /// <summary>
         /// Map datarow từ grid sản phẩm sang grid hóa đơn
@@ -289,17 +295,15 @@ namespace LTUD1_BACHHOAXANH472
 
                 khachHangController.Insert(khachHang);
 
-                HoaDon hoaDon = new HoaDon(txtMaHoaDon.Text, "manv_admin", khachHang.Ma, DateTime.Now, Convert.ToDecimal(lblthanhtien.Text));
+                Hoadon = new HoaDon(txtMaHoaDon.Text, "NV14", khachHang.Ma, DateTime.Now, Convert.ToDecimal(lblthanhtien.Text));
 
-                hoadonController.Insert(hoaDon);
+                hoadonController.Insert(Hoadon);
                 foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)
                 {
-                    ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(txtMaHoaDon.Text, row.Cells[0].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
+                    ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon(txtMaHoaDon.Text, row.Cells["MASP"].Value.ToString(), Convert.ToInt32(row.Cells["SL"].Value));
                     cthdController.Insert(chiTietHoaDon);
                 }
-                FormInPhieuThanhToan frmThanhToan = new FormInPhieuThanhToan(hoaDon);
-                frmThanhToan.ShowDialog();
-                MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Thanh toán thành công", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.None);
             }
         }
 
@@ -334,9 +338,7 @@ namespace LTUD1_BACHHOAXANH472
             {
                 MessageBox.Show(ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
-
 
         public void ChangeHeaderNameDanhThongTinHoaDon()
         {
@@ -371,7 +373,6 @@ namespace LTUD1_BACHHOAXANH472
 
             // Thay đổi thứ tự cột "btnNameThemHDCT" thành vị trí cuối cùng
             dgvDanhSachSanPham.Columns["btnNameThemHDCT"].DisplayIndex = totalColumns - 1;
-
 
             // Lấy cột cuối cùng
             DataGridViewColumn lastColumn = dgvDanhSachSanPham.Columns["btnNameThemHDCT"];

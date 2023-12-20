@@ -1,5 +1,7 @@
 ﻿using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.uploads;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
@@ -13,6 +15,7 @@ namespace LTUD1_BACHHOAXANH472
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
+        HoaDon hoadon = new HoaDon();
         //SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
         /// <summary>
         /// Hàm load design
@@ -74,7 +77,7 @@ namespace LTUD1_BACHHOAXANH472
                 //--.................            sản phẩm hóa đơn             ..................
                 //==============================================================================
                 //khởi tạo banhang sanPhamController điều khiển luồng dữ liệu trên form bán hàng
-                banhangController = new AdapterBanHang(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham);
+                banhangController = new AdapterBanHang(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham, hoadon, tcManHinhBanHang);
                 banhangController.ChangeHeaderNameDanhThongTinHoaDon();
                 banhangController.ChangeHeaderNameDanhSachSanPham();
                 banhangController.CreateButtonClickHoaDonSanPham();
@@ -269,5 +272,42 @@ namespace LTUD1_BACHHOAXANH472
         {
 
         }
+
+        private void crvInPhieuThanhToan_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tcManHinhBanHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tcManHinhBanHang.SelectedTab == tcManHinhBanHang.TabPages[1])
+            {
+                // Do something here
+                //MessageBox.Show("banhangController.Hoadon.MaHD: " + txtMaHoaDon.Text);
+                //==============================================================================
+                //--..........................................................................--
+                //------------------        Tạo report in hóa đơn       ---------------------------
+                //--..........................................................................--
+                //==============================================================================
+                ReportHelper rh = new ReportHelper();
+                rh.CrystalReportViewer1 = this.crystalReportViewer1;
+                rh.FileReportName = "PhieuInHoaDon";
+                if (!string.IsNullOrEmpty(banhangController.Hoadon.MaHD))
+                {
+                    rh.Parameters = new Dictionary<string, string> { { "@mahd", banhangController.Hoadon.MaHD } };
+                    rh.LoadReport();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy mã hd");
+                }
+            }
+        }
+
     }
 }

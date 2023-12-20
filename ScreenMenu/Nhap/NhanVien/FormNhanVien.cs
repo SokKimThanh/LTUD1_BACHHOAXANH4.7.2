@@ -275,27 +275,11 @@ namespace LTUD1_BACHHOAXANH472
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            // khởi tạo file name report muốn hiển thị
-            string fileName = "rp_nhanvien_select_all";
-
-            // Tạo đường dẫn đến thư mục đích
-            string targetDirectory = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, Utils.UploadString);
-
-            //khởi tạo trình quản lý thư mục report
-            ReportManager reportManager = new ReportManager(targetDirectory);
-            reportManager.LoadReports();
-
-            // Giả sử bạn có một từ điển chứa các tham số và giá trị tương ứng
-            Dictionary<string, string> parameters = new Dictionary<string, string> { { "@tennhanvien", txtHoTen.Text } /*, { "@diachi", txtDiaChi.Text },{ "@manv", txtMaNV.Text } thêm các thông số khác sau dấu phấy*/ };
-
-            // cập nhật các thông số report vào file report chỉ định
-            reportManager.ApplyParametersToReport(fileName, parameters);
-
-            // Tải báo cáo từ đường dẫn chỉ định
-            ReportDocument reportDocument = reportManager.GetReport(fileName);
-
-            // Hiển thị báo cáo
-            crystalReportViewer1.ReportSource = reportDocument;
+            ReportHelper rh = new ReportHelper();
+            rh.CrystalReportViewer1 = this.crystalReportViewer1;
+            rh.FileReportName = @"rp_nhanvien_select_all";
+            rh.Parameters = new Dictionary<string, string> { { "@tennhanvien", txtHoTenNV.Text } };
+            rh.LoadReport();
         }
     }
 }

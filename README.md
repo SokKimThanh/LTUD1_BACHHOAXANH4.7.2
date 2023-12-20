@@ -11,3 +11,4 @@
 - 17/12/2023 03:01 CH thêm cột phần trăm giảm giá và cột giá sau giảm giá trong datagridview dgvdanhsachsanpham
 - 20/12/2023 07:30 SA Tách sự kiện phan trang ra khỏi form thành adapter
 - 20/12/2023 08:51 SA hoàn thành phân trang tìm kiếm, record per page phân trang
+- 20/12/2023 08:50 CH Hoàn thành chức năng hiển thị thông tin report phiếu hóa đơn lên tabcontrol 
