@@ -195,6 +195,7 @@
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -226,6 +227,12 @@
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="Model\PhanTrangController.cs" />
+    <Compile Include="ScreenMenu\HeThong\TaoBieuDoDonGian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreenMenu\HeThong\TaoBieuDoDonGian.Designer.cs">
+      <DependentUpon>TaoBieuDoDonGian.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterBanHang.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterPhanTrang.cs" />
     <Compile Include="uploads\PhieuInHoaDon1.cs">
@@ -429,6 +436,9 @@
     <EmbeddedResource Include="FormMain.vi.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ScreenMenu\HeThong\TaoBieuDoDonGian.resx">
+      <DependentUpon>TaoBieuDoDonGian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -544,6 +554,7 @@
     <None Include="Resources\icon_big_phantrangleft.png" />
     <None Include="Resources\icon_small_phantrangleft.png" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_SanPham_TimTenSanPham.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />

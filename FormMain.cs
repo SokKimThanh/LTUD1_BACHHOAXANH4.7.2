@@ -42,10 +42,7 @@ namespace LTUD1_BACHHOAXANH472
             this.DoubleBuffered = true;// giảm nháy màn hình 
             lblAccountName.Text = Session.Username;
 
-
-            // 
-            this.IsMdiContainer = true; // Đặt form này là MdiContainer
-
+            this.IsMdiContainer = true; // Đặt form này là MdiContainer 
         }
 
         /**

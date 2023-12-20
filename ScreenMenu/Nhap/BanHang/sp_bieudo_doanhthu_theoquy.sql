@@ -1,0 +1,44 @@
+-- AUTHOR:		SOK KIM THANH
+-- CREATE DATE: <17/12/2023>
+-- UPDATE DATE 6:44 CH
+DROP PROCEDURE IF EXISTS GetQuarterlyRevenue
+GO
+CREATE PROCEDURE GetQuarterlyRevenue
+AS
+BEGIN
+    SELECT 
+        DATEPART(QUARTER, HOADON) AS Quarter, 
+        DATEPART(YEAR, HOADON.NGAYHOADON) AS Year, 
+        SUM(HOADON.TONGTHANHTIEN) AS TotalRevenue
+    FROM 
+        Sales
+    GROUP BY 
+        DATEPART(QUARTER, HOADON.NGAYHOADON), 
+        DATEPART(YEAR, HOADON.NGAYHOADON)
+    ORDER BY 
+        Year, 
+        Quarter;
+END;
+GO
+EXECUTE GetQuarterlyRevenue 
+
+
+DROP PROCEDURE IF EXISTS GetQuarterlyRevenue
+GO
+CREATE PROCEDURE GetRevenueByProduct
+AS
+BEGIN
+    SELECT 
+        CHITIETHD.MASP AS ProductID, 
+        SUM(HOADON.TONGTHANHTIEN) AS TotalRevenue
+    FROM 
+        HOADON
+    INNER JOIN 
+        CHITIETHD ON HOADON.MAHD = CHITIETHD.MAHD
+    GROUP BY 
+        CHITIETHD.MASP
+    ORDER BY 
+        TotalRevenue DESC;
+END;
+GO
+EXECUTE GetRevenueByProduct 
