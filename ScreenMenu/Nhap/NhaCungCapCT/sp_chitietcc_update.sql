@@ -1,5 +1,5 @@
--- Create Procedure sp_chitietcc_update.sql
--- T�i kho?n update
+﻿-- Create Procedure sp_chitietcc_update.sql
+-- Tài kho?n update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go
@@ -11,7 +11,7 @@ CREATE PROCEDURE sp_chitietcc_update
 	@SLCUNGCCAP int
 AS
 BEGIN
-	update chitietcc set SLCUNGCCAP = @SLCUNGCCAP where MANCC = @MANCC and MASP = @MASP  -- chu?n sql
+	update chitietcc set SLCUNGCCAP = @SLCUNGCCAP where MANCC = @MANCC and MASP = @MASP  -- chuẩn sql
 END
 GO
 --execute sp_chitietcc_update 'ncc01', 'sp01', 10

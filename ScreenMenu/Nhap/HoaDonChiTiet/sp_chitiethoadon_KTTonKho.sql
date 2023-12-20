@@ -1,4 +1,4 @@
--- Create Procedure sp_chitiethoadon_delete.sql
+﻿-- Create Procedure sp_chitiethoadon_delete.sql
 -- Danh m?c delete
 GO
 GO
@@ -11,7 +11,7 @@ CREATE PROCEDURE sp_chitiethoadon_Kiemtratonkho
 	@slmua int
 AS
 BEGIN
-	Select  sp.SLTONKHO - @slmua as 'T?n kho'
+	Select  sp.SLTONKHO - @slmua as 'Tồn kho'
 	from SANPHAM sp,HOADON hd
 	 where  sp.MaSP = @makm 
 END

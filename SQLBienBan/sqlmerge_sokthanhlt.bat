@@ -10,7 +10,7 @@ if exist "%output%" (
 
 for /R "D:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH472\ScreenMenu\" %%G in (*.sql) do (
     echo Đang xử lý tệp %%G...
-    powershell -Command "(Get-Content '%%G') | Where-Object { $_.Trim() -ne '' } | Set-Content '%%G'"
+    powershell -Command "(Get-Content '%%G' -Encoding Unicode) | Where-Object { $_.Trim() -ne '' } | Set-Content '%%G' -Encoding Unicode"
     type "%%G" >> "%output%"
 )
 echo Hoàn tất!

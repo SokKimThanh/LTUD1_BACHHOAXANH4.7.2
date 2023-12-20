@@ -1,4 +1,4 @@
--- Create Procedure sp_sanpham_select_all.SQL
+Ôªø-- Create Procedure sp_sanpham_select_all.SQL
 -- S?n ph?m select all
 -- Author:		<Sok Kim Thanh>
 -- Create date: <07/11/2023>
@@ -9,7 +9,7 @@ go
 CREATE PROCEDURE sp_sanpham_select_all
 AS
 BEGIN
-	select masp, tensp , donvi N'–on v?', nsx N'Ng‡y s?n xu?t', hsd N'H?n s? d?ng', dongia N'–on gi·',sltonkho N'T?n kho' 
+	select masp, tensp , donvi N'√êon v?', nsx N'Ng√†y s?n xu?t', hsd N'H?n s? d?ng', dongia N'√êon gi√°',sltonkho N'T·ªìn kho' 
 	from SanPham
 END
 GO

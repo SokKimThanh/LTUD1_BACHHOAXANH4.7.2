@@ -1,4 +1,4 @@
--- Create Procedure sp_chitiethoadon_update.sql
+﻿-- Create Procedure sp_chitiethoadon_update.sql
 -- Danh m?c update
 GO
 GO
@@ -13,7 +13,7 @@ BEGIN
 	Select sp.MASP
 	from  CHITIETHD sp
 	where sp.MASP = @masp
-	-- chu?n sql
+	-- chuẩn sql
 END
 GO
 EXEC sp_chitiethoadon_TimMaSP 'SP03'

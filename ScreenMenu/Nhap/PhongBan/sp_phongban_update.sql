@@ -1,5 +1,5 @@
--- Create Procedure sp_nhanvien_update.sql
--- Nh�n vi�n update
+﻿-- Create Procedure sp_nhanvien_update.sql
+-- Nhân viên update
 -- Author:		Sok Kim Thanh
 -- Create date: <10/11/2023>
 drop procedure if exists sp_phongban_update
@@ -10,6 +10,6 @@ CREATE PROCEDURE sp_phongban_update
 	@maCN nvarchar(100)
 AS
 BEGIN
-	update PHONGBAN set TENPHG = @tenPB, MACN = @maCN where MACN = @maCN -- chu?n sql
+	update PHONGBAN set TENPHG = @tenPB, MACN = @maCN where MACN = @maCN -- chuẩn sql
 END
 GO

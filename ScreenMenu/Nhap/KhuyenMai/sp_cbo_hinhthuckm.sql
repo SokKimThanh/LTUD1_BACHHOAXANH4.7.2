@@ -1,4 +1,4 @@
--- Create Procedure sp_khuyenmai_update.sql
+﻿-- Create Procedure sp_khuyenmai_update.sql
 -- Danh m?c update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -10,6 +10,6 @@ CREATE PROCEDURE sp_cbo_hinhthuckm
 	--@ghichu nvarchar(100) = N''
 AS
 BEGIN
-	SELECT MAHT from hinhthuckm-- chu?n sql
+	SELECT MAHT from hinhthuckm-- chuẩn sql
 END
 GO

@@ -1,4 +1,4 @@
--- Author:		Sok Kim Thanh
+﻿-- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 9:39 CH>
 go
 drop procedure if exists sp_nhanvien_update
@@ -14,6 +14,6 @@ CREATE PROCEDURE sp_nhanvien_update
 	@gioitinh nvarchar(10)
 AS
 BEGIN 
-	update nhanvien set hotennv = @hotennv, diachinv = @diachinv,luong=@luong,sdtnv=@sdtnv ,ngaysinh=@ngaysinh, mapb = @mapb, gioitinh = @gioitinh where manv = @manv-- chu?n sql
+	update nhanvien set hotennv = @hotennv, diachinv = @diachinv,luong=@luong,sdtnv=@sdtnv ,ngaysinh=@ngaysinh, mapb = @mapb, gioitinh = @gioitinh where manv = @manv-- chuẩn sql
 END;
 go

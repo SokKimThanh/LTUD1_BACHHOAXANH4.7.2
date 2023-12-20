@@ -1,4 +1,4 @@
-set dateformat dmy
+Ôªøset dateformat dmy
 -- Create Procedure sp_nhanvien_select_all.sql
 -- nhan vien select all
 -- Author:		Vo Tu
@@ -14,7 +14,7 @@ END
 GO
 exec sp_nhanvien_select_all
 -- Create Procedure sp_nhacungcap_update.sql
--- Nh‡ cung c?p update
+-- Nh√† cung c?p update
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_hoadon_update
@@ -27,12 +27,12 @@ CREATE PROCEDURE sp_hoadon_update
 	@maKH char(11)
 AS
 BEGIN
-	update HOADON set NGAYHOADON = @ngayHD, TONGTHANHTIEN = @tongTien, MANV = @maNV, MAKH =@maKH where MAHD = @maHD -- chu?n sql
+	update HOADON set NGAYHOADON = @ngayHD, TONGTHANHTIEN = @tongTien, MANV = @maNV, MAKH =@maKH where MAHD = @maHD -- chu·∫©n sql
 END
 GO
 --exec sp_hoadon_update'HD03','15/01/2022', 90000,'NV02', 'KH02'
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nh‡ cung c?p insert
+-- Nh√† cung c?p insert
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_hoadon_insert
@@ -50,7 +50,7 @@ END
 GO
 --exec sp_hoadon_insert 'HD03','15/01/2022', 90000,'NV02', 'KH02'
 -- Create Procedure sp_nhacungcap_delete.sql
--- Nh‡ cung c?p delete
+-- Nh√† cung c?p delete
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 DROP PROCEDURE IF EXISTS sp_hoadon_delete

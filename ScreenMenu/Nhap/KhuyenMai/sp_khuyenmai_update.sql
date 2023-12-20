@@ -1,4 +1,4 @@
--- Create Procedure sp_khuyenmai_update.sql
+﻿-- Create Procedure sp_khuyenmai_update.sql
 -- Danh m?c update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -13,6 +13,6 @@ CREATE PROCEDURE sp_khuyenmai_update
 AS
 BEGIN
 	update khuyenmai set ngaybd = @ngaybd, ngaykt = @ngaykt, maht=@maht, 
-	phantramgiamgia = isnull(@phantramgiamgia, phantramgiamgia) where makm = @makm -- chu?n sql
+	phantramgiamgia = isnull(@phantramgiamgia, phantramgiamgia) where makm = @makm -- chuẩn sql
 END
 GO

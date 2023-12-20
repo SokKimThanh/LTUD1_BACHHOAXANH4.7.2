@@ -1,7 +1,7 @@
--- Author:		Sok Kim Thanh
+ï»¿-- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 10:57 CH>
 -- update date: <12/12/2023 10:57 ch>
--- Description:	<Hi?n th? report nhân viên theo chi nhánh theo phòng ban>
+-- Description:	<Hiá»ƒn thá»‹ report nhÃ¢n viÃªn theo chi nhÃ¡nh theo phÃ²ng ban>
 go
 drop procedure if exists sp_nhanvien_danhsach_theophongban_chinhanh
 go
@@ -10,9 +10,9 @@ CREATE PROCEDURE sp_nhanvien_danhsach_theophongban_chinhanh
 		@MaPhongBan char(4)
 AS
 BEGIN 
-	SELECT cn.TENCN as 'Tên Chi Nhánh', pb.TENPHG as 'Phòng ban', STUFF((SELECT ', ' + nv.HOTENNV 
+	SELECT cn.TENCN as 'TÃªn Chi NhÃ¡nh', pb.TENPHG as 'PhÃ²ng ban', STUFF((SELECT ', ' + nv.HOTENNV 
 	FROM nhanvien nv 
-	WHERE pb.MAPB = nv.MAPB AND cn.MACN = pb.MACN FOR XML PATH('')), 1, 2, '') as 'Danh sách nhân viên' 
+	WHERE pb.MAPB = nv.MAPB AND cn.MACN = pb.MACN FOR XML PATH('')), 1, 2, '') as 'Danh sÃ¡ch nhÃ¢n viÃªn' 
 	FROM PHONGBAN pb, CHINHANH cn 
 	WHERE cn.MACN  =  @MaChiNhanh or  pb.MAPB = @MaPhongBan  
 	--GROUP BY pb.TENPHG, cn.TENCN, pb.MAPB, cn.MACN, pb.MACN;

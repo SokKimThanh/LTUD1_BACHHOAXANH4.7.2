@@ -1,5 +1,5 @@
--- Create Procedure sp_taikhoan_update.sql
--- T�i kho?n update
+﻿-- Create Procedure sp_taikhoan_update.sql
+-- Tài kho?n update
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
 go
@@ -12,6 +12,6 @@ CREATE PROCEDURE sp_taikhoan_update
 	@MAQTC char (11)
 AS
 BEGIN
-	update taikhoan set matkhau = @MATKHAU, manv = @MANV, MAQTC = @MAQTC where tentk= @TENTK -- chu?n sql
+	update taikhoan set matkhau = @MATKHAU, manv = @MANV, MAQTC = @MAQTC where tentk= @TENTK -- chuẩn sql
 END
 GO

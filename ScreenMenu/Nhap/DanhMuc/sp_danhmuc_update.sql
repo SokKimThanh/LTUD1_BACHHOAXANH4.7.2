@@ -1,4 +1,4 @@
--- Create Procedure sp_danhmuc_update.sql
+﻿-- Create Procedure sp_danhmuc_update.sql
 -- Danh m?c update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -10,6 +10,6 @@ CREATE PROCEDURE sp_danhmuc_update
 	@GHICHU NVARCHAR(100)
 AS
 BEGIN
-	update LOAISP set TENLOAI = @TENLOAI, GHICHU = @GHICHU where MALOAI = @MALOAI -- chu?n sql
+	update LOAISP set TENLOAI = @TENLOAI, GHICHU = @GHICHU where MALOAI = @MALOAI -- chuẩn sql
 END
 GO
