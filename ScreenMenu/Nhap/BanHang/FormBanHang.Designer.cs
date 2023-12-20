@@ -1290,7 +1290,6 @@ namespace LTUD1_BACHHOAXANH472
         private Label label6;
         private Label label7;
         private PictureBox btnNext;
-        private DataGridViewButtonColumn btnThemHDCT;
         private DataGridViewTextBoxColumn MASP;
         private DataGridViewTextBoxColumn TenSP;
         private DataGridViewTextBoxColumn DonGia;

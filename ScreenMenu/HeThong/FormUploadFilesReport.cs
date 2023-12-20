@@ -22,8 +22,8 @@ namespace LTUD1_BACHHOAXANH472.HeThong
         DiaDiemController chinhanhController = new DiaDiemController(Utils.ConnectionString);
         private TreeNode selectedNode;
         // Hàm hỗ trợ kiểm tra lỗi nhập
-        ErrTxt errtxt;
-        ErrColors color;
+        //ErrTxt errtxt;
+        ErrColors color = new ErrColors();
 
         public FormUploadFilesReport()
         {
