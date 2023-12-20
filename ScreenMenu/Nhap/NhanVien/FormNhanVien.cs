@@ -1,11 +1,6 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.uploads;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {

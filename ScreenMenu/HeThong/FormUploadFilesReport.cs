@@ -5,11 +5,8 @@ using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using System.Windows.Media;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 namespace LTUD1_BACHHOAXANH472.HeThong
 {
     public partial class FormUploadFilesReport : Form

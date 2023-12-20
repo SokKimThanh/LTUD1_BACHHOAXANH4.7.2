@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Web.UI;
 using System.Windows.Forms;
 using Control = System.Windows.Forms.Control;
 namespace LTUD1_BACHHOAXANH472.Model
