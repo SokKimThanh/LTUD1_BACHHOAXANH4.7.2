@@ -233,8 +233,8 @@
     <Compile Include="ScreenMenu\Nhap\BanHang\FormInPhieuThanhToan.designer.cs">
       <DependentUpon>FormInPhieuThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangHoaDonChiTietAdapter.cs" />
-    <Compile Include="ScreenMenu\Nhap\BanHang\PBanHangSanPhamAdapter.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\AdapterHoaDon.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\AdapterSanPhamSearch.cs" />
     <Compile Include="uploads\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

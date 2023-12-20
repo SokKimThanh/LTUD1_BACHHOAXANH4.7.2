@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
-    public class PBanHangHoaDonChiTietAdapter
+    public class AdapterHoaDon
     {
 
         ChiTietHoaDonController cthdController = new ChiTietHoaDonController(Utils.ConnectionString);
@@ -30,12 +30,12 @@ namespace LTUD1_BACHHOAXANH472
         private string btnNameThemHDCT;// tên nút thêm hóa đơn ct
 
 
-        public PBanHangHoaDonChiTietAdapter()
+        public AdapterHoaDon()
         {
 
         }
 
-        public PBanHangHoaDonChiTietAdapter(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
+        public AdapterHoaDon(TextBox txtSDTKhachHang, TextBox txtTenKhachHang, TextBox txtMaHoaDon, TextBox txtSoLuongMua, Label lblTongTien, DataGridView dgvThongTinHoaDon, DataGridView dgvDanhSachSanPham)
         {
             this.txtSDTKhachHang = txtSDTKhachHang;
             this.txtTenKhachHang = txtTenKhachHang;

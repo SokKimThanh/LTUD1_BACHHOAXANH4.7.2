@@ -1,20 +1,19 @@
-﻿using CrystalDecisions.Windows.Forms;
+﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using System;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormBanHang : Form
     {
         private int currentPage = 1;
-        private int recordPerPage = 8;
-        private int pageCount = 0;
-        PBanHangHoaDonChiTietAdapter banhangController;
-        PBanHangSanPhamAdapter phantrangController;
+        private int recordsPerPage = 8;
+        private int totalRecords = 0;
+        AdapterHoaDon banhangController;
+        AdapterSanPhamSearch sanphamAdapter;
         RandomStringGenerator rnd = new RandomStringGenerator();
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
+        SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
         /// <summary>
         /// Hàm load design
         /// </summary>
@@ -26,6 +25,12 @@ namespace LTUD1_BACHHOAXANH472
             cboNhaCungCap.DropDownStyle = ComboBoxStyle.DropDownList;
             cboLoaiSanPham.DropDownStyle = ComboBoxStyle.DropDownList;
             cboRecordPerPage.DropDownStyle = ComboBoxStyle.DropDownList;
+            // Thiết lập chiều cao tối đa khi ComboBox mở ra là 100 pixel
+            cboNhaCungCap.DropDownHeight = 100;
+            cboLoaiSanPham.DropDownHeight = 100;
+            cboRecordPerPage.DropDownHeight = 100;
+
+
 
             // cài đặt style cho datagridview 
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
@@ -39,46 +44,66 @@ namespace LTUD1_BACHHOAXANH472
         /// <param name="e"></param>
         private void FormBanHang_Load(object sender, EventArgs e)
         {
-            // tạo mã random cho mã hóa đơn
-            txtMaHoaDon.Text = rnd.GenerateRandomAlphanumericString(11);
+            try
+            {
+                // tạo mã random cho mã hóa đơn
+                txtMaHoaDon.Text = rnd.GenerateRandomAlphanumericString(11);
+                //==============================================================================
+                //--..........................................................................--
+                //------------------.      Khởi tạo dữ liệu combobox danh mục       .-----------
+                //--.................                loại sản phẩm            ..................
+                //==============================================================================
+                // thêm dữ liệu vào combobox loại sản phẩm 
+                cboLoaiSanPham.DataSource = danhMucController.sp_cbo_danhmuc_select_all();
+                cboLoaiSanPham.ValueMember = "MALOAI";
+                cboLoaiSanPham.DisplayMember = "TENLOAI";
+                // thêm dữ liệu vào combobox nhà cung cấp
+                cboNhaCungCap.DataSource = nhaCungCapController.sp_cbo_nhacungcap_select_all();
+                cboNhaCungCap.ValueMember = "MANCC";
+                cboNhaCungCap.DisplayMember = "TENNCC";
+                txtTenSanPham = new TextBox();
+                //==============================================================================
+                //--..........................................................................--
+                //------------------.    Khởi tạo thao tác datagridview       .-----------------
+                //--.....................      sản phẩm phân trang       .....................--
+                //==============================================================================
 
-            //==============================================================================
-            //--..........................................................................--
-            //------------------.    Khởi tạo thao tác datagridview       .-----------------
-            //--............................ sản phẩm phân trang .........................--
-            //==============================================================================
 
-            phantrangController = new PBanHangSanPhamAdapter(cboRecordPerPage, txtTenSanPham, cboNhaCungCap, cboLoaiSanPham, dgvDanhSachSanPham, lblTongSoTrang, 8);
-            phantrangController.SetRecordPerPageCombobox(8, 4);
-            phantrangController.GetData();
-            //dgvDanhSachSanPham.DataSource = phantrangController.DgvDanhSachSanPham.DataSource;
-            //lblTongSoTrang.Text = phantrangController.GetTongSoTrang();
-            //==============================================================================
-            //--..........................................................................--
-            //------------------.      Khởi tạo thao tác datagridview       .---------------
-            //--.................            sản phẩm giỏ hàng            ..................
-            //==============================================================================
-            //khởi tạo banhang sanPhamController điều khiển luồng dữ liệu trên form bán hàng
-            banhangController = new PBanHangHoaDonChiTietAdapter(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham);
-            banhangController.ChangeHeaderNameDanhThongTinHoaDon();
-            banhangController.ChangeHeaderNameDanhSachSanPham();
-            banhangController.CreateButtonClickHoaDonSanPham();
-            //==============================================================================
-            //--..........................................................................--
-            //------------------.      Khởi tạo dữ liệu combobox danh mục       .-----------
-            //--.................                loại sản phẩm            ..................
-            //==============================================================================
-            // thêm dữ liệu vào combobox loại sản phẩm 
-            cboLoaiSanPham.DataSource = danhMucController.sp_cbo_danhmuc_select_all();
-            cboLoaiSanPham.ValueMember = "MALOAI";
-            cboLoaiSanPham.DisplayMember = "TENLOAI";
-            // thêm dữ liệu vào combobox nhà cung cấp
-            cboNhaCungCap.DataSource = nhaCungCapController.sp_cbo_nhacungcap_select_all();
-            cboNhaCungCap.ValueMember = "MANCC";
-            cboNhaCungCap.DisplayMember = "TENNCC";
+                sanphamAdapter = new AdapterSanPhamSearch(cboRecordPerPage, txtTenSanPham, cboNhaCungCap, cboLoaiSanPham, dgvDanhSachSanPham, lblTongSoTrang, 8);
+                sanphamAdapter.SetRecordPerPageCombobox(8, 4);
+                cboRecordPerPage.SelectedIndex = 1;
 
-            lblTongTien.Text = "0";
-            txtSoLuongMua.Text = "0";
+                recordsPerPage = int.Parse(cboRecordPerPage.SelectedItem.ToString());
+                PhanTrangController phanTrangController = new PhanTrangController(recordsPerPage);
+
+
+                dgvDanhSachSanPham.DataSource = sanphamAdapter.GetData(recordsPerPage);
+
+
+                totalRecords = sanphamAdapter.GetRowCount();//-- bi lỗi
+
+                phanTrangController.SetTotalRecords(totalRecords);
+
+                lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();
+                //==============================================================================
+                //--..........................................................................--
+                //------------------.      Khởi tạo thao tác datagridview       .---------------
+                //--.................            sản phẩm hóa đơn             ..................
+                //==============================================================================
+                //khởi tạo banhang sanPhamController điều khiển luồng dữ liệu trên form bán hàng
+                banhangController = new AdapterHoaDon(txtSDTKhachHang, txtTenKhachHang, txtMaHoaDon, txtSoLuongMua, lblTongTien, dgvThongTinHoaDon, dgvDanhSachSanPham);
+                banhangController.ChangeHeaderNameDanhThongTinHoaDon();
+                banhangController.ChangeHeaderNameDanhSachSanPham();
+                banhangController.CreateButtonClickHoaDonSanPham();
+
+
+                lblTongTien.Text = "0";
+                txtSoLuongMua.Text = "0";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -105,14 +130,16 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void cboRecordPerPage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboLoaiSanPham.SelectedItem.ToString() == "0")
+            // Lấy giá trị được chọn từ ComboBox
+            recordsPerPage = (int)cboRecordPerPage.SelectedItem;
+            if (recordsPerPage <= 0 && cboRecordPerPage.SelectedIndex <= 0)
             {
                 // Thực hiện hành động khi người dùng chọn "Tất cả"
-                cboRecordPerPage.SelectedValue = null;
+                cboRecordPerPage.SelectedIndex = 1;
             }
             else
             {
-                phantrangController.RecordsPerPage = int.Parse(cboRecordPerPage.SelectedItem.ToString());
+                dgvDanhSachSanPham.DataSource = sanphamAdapter.GetData(recordsPerPage);
             }
         }
         //==============================================================================
@@ -122,7 +149,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            phantrangController.btnTimKiem_Click(sender, e);
+            sanphamAdapter.btnTimKiem_Click(sender, e);
         }
 
         //==============================================================================
@@ -172,11 +199,11 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void btnNext_Click(object sender, EventArgs e)
         {
-            phantrangController.btnNext_Click(sender, e);
+            sanphamAdapter.btnNext_Click(sender, e);
         }
         private void btnPrevious_Click(object sender, EventArgs e)
         {
-            phantrangController.btnPrevious_Click(sender, e);
+            sanphamAdapter.btnPrevious_Click(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -239,7 +266,7 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            phantrangController.btnRefresh_Click(sender, e);
+            sanphamAdapter.btnRefresh_Click(sender, e);
         }
 
     }

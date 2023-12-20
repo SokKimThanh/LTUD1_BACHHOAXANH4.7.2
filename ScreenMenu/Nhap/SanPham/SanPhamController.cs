@@ -283,7 +283,12 @@ namespace LTUD1_BACHHOAXANH472
                 SqlCommand cmd = new SqlCommand("sp_sanpham_phantrang_count", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                //
+                // Thêm các tham số vào Stored Procedure
+                tenSanpham = tenSanpham ?? null;
+                loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
+                nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+
+                // Thêm các tham số vào Stored Procedure
                 Sql.Parameters.Add("@tenSanpham", SqlDbType.NVarChar).Value = tenSanpham ?? (object)DBNull.Value;
                 Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
                 Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
@@ -292,6 +297,7 @@ namespace LTUD1_BACHHOAXANH472
                 //tenSanpham = tenSanpham ?? null;
                 //loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
                 //nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+
                 Sql.Parameters.AddWithValue("@tenSanpham", tenSanpham);
                 Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
                 Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);

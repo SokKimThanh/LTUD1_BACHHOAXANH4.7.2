@@ -612,7 +612,7 @@ namespace LTUD1_BACHHOAXANH472
             this.lblTieuDeHoaDon.Name = "lblTieuDeHoaDon";
             this.lblTieuDeHoaDon.Size = new System.Drawing.Size(642, 64);
             this.lblTieuDeHoaDon.TabIndex = 4;
-            this.lblTieuDeHoaDon.Text = "Giỏ Hàng";
+            this.lblTieuDeHoaDon.Text = "Hóa đơn chi tiết";
             this.lblTieuDeHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvThongTinHoaDon

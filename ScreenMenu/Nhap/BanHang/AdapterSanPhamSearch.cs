@@ -1,15 +1,12 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
-using LTUD1_BACHHOAXANH472.uploads;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
-    public class PBanHangSanPhamAdapter
+    public class AdapterSanPhamSearch
     {
         //==============================================================================
         //--..........................................................................--
@@ -33,11 +30,11 @@ namespace LTUD1_BACHHOAXANH472
         //------------------.               constructor           .---------------------
         //--..........................................................................--
         //==============================================================================
-        public PBanHangSanPhamAdapter(int recordsPerPage)
+        public AdapterSanPhamSearch(int recordsPerPage)
         {
             this.recordsPerPage = recordsPerPage;
         }
-        public PBanHangSanPhamAdapter(ComboBox cboRecordPerPage, TextBox txtTenSanPham, ComboBox cboNhaCungCap, ComboBox cboLoaiSanPham, DataGridView dgvDanhSachSanPham, Label lblTongSoTrang, int recordsPerPage)
+        public AdapterSanPhamSearch(ComboBox cboRecordPerPage, TextBox txtTenSanPham, ComboBox cboNhaCungCap, ComboBox cboLoaiSanPham, DataGridView dgvDanhSachSanPham, Label lblTongSoTrang, int recordsPerPage)
         {
             this.cboRecordPerPage = cboRecordPerPage;
             this.txtTenSanPham = txtTenSanPham;
@@ -62,16 +59,18 @@ namespace LTUD1_BACHHOAXANH472
         public int RecordsPerPage { get => recordsPerPage; set => recordsPerPage = value; }
 
 
-        ///// <summary>
-        ///// Phân trang danh sách sản phẩm
-        ///// </summary>
-        ///// <returns></returns>
-        ///// <exception cref="Exception"></exception>
-        public DataTable GetData(string loaisanpham = null, string nhacungcap = null, string tensanpham = null)
+        /// <summary>
+        /// Phân trang danh sách sản phẩm
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
+        public DataTable GetData(int recordsPerPage, string tensanpham = null, string loaisanpham = null, string nhacungcap = null)
         {
             try
             {
                 bindingSource1.DataSource = sanPhamController.PhanTrang(currentPage, recordsPerPage, tensanpham, loaisanpham, nhacungcap);
+                totalRecords = sanPhamController.GetRowCount(tensanpham, nhacungcap, loaisanpham) / recordsPerPage;
+                lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();
             }
             catch (SqlException ex)
             {
@@ -79,52 +78,65 @@ namespace LTUD1_BACHHOAXANH472
             }
             return (DataTable)bindingSource1.DataSource;
         }
+        /// <summary>
+        /// Nút next sang trang kế tiếp
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnNext_Click(object sender, EventArgs e)
         {
             if (currentPage < totalRecords)
             {
                 currentPage++;
-                lblTongSoTrang.Text = currentPage.ToString();
-                dgvDanhSachSanPham.DataSource = GetData();
-                lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();
+                recordsPerPage = (int)cboRecordPerPage.SelectedItem;
+                dgvDanhSachSanPham.DataSource = GetData(recordsPerPage);
             }
         }
-
+        /// <summary>
+        /// Nút back quay lại trang cũ
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnPrevious_Click(object sender, EventArgs e)
         {
+            // khởi tạo dữ liệu mới khi lùi trang
+            if (totalRecords == 1)
+            {
+                currentPage = 1;
+            }
+            if (totalRecords < currentPage)
+            {
+                currentPage = 1;
+            }
             if (currentPage > 1)
             {
                 currentPage--;
-                lblTongSoTrang.Text = currentPage.ToString();
-                dgvDanhSachSanPham.DataSource = GetData();
-                lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();
             }
+            recordsPerPage = (int)cboRecordPerPage.SelectedItem;
+            dgvDanhSachSanPham.DataSource = GetData(recordsPerPage);
         }
         public void btnTimKiem_Click(object sender, EventArgs e)
         {
+            string tensanpham = txtTenSanPham.Text;
             string loaisanpham = cboLoaiSanPham.SelectedValue.ToString();
             string nhacungcap = cboNhaCungCap.SelectedValue.ToString();
-            string tensanpham = txtTenSanPham.Text;
-            dgvDanhSachSanPham.DataSource = GetData(loaisanpham, nhacungcap, tensanpham);
 
-            totalRecords = sanPhamController.GetRowCount(null, null, null) / recordsPerPage;
+            // khởi tạo dữ liệu mới khi tìm kiếm theo tiêu chí
+            recordsPerPage = (int)cboRecordPerPage.SelectedItem;
+            dgvDanhSachSanPham.DataSource = GetData(recordsPerPage, tensanpham, loaisanpham, nhacungcap);
+
             currentPage = 1;
+            totalRecords = sanPhamController.GetRowCount(null, null, null) / recordsPerPage;
             lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();
 
             // làm mới danh sách 
             dgvDanhSachSanPham.Refresh();
         }
-
-        public void cboRecordPerPage_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cboRecordPerPage = sender as ComboBox;
-            // Lấy giá trị được chọn từ ComboBox
-            recordsPerPage = (int)cboRecordPerPage.SelectedItem;
-        }
-        ////==============================================================================
-        ////--..........................................................................--
-        ////------------.  Sự kiện là mới tìm kiếm danh sách sản phẩm        .------------
-        ////--..........................................................................--
+         
+        //==============================================================================
+        //--..........................................................................--
+        //------------.  Sự kiện làm mới tìm kiếm danh sách sản phẩm        .-----------
+        //--..........................................................................--
         //==============================================================================
         public void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -134,11 +146,16 @@ namespace LTUD1_BACHHOAXANH472
             cboLoaiSanPham.SelectedIndex = 0;
             cboRecordPerPage.SelectedIndex = 1;
 
-            // thực hiện câu truy vấn phân trang 
-            // lấy dữ liệu phân trang hiện tại
-            // gán lại giá trị cho sanPhamController thông qua các sự kiện
-            dgvDanhSachSanPham.DataSource = GetData();
-            // thông tin trang hiển thị 
+            // Quay về trang số 1
+            currentPage = 1;
+
+            // Tạo mới tổng số record
+            totalRecords = sanPhamController.GetRowCount(null, null, null) / recordsPerPage;
+
+            // Tạo mới phân trang theo tổng số record
+            dgvDanhSachSanPham.DataSource = GetData(totalRecords);
+
+            // Tạo mới tổng số trang
             lblTongSoTrang.Text = currentPage + "/" + totalRecords.ToString();
 
             // làm mới danh sách 
@@ -168,6 +185,11 @@ namespace LTUD1_BACHHOAXANH472
                 // Thêm mảng số vào ComboBox
                 cboRecordPerPage.Items.AddRange(array.Cast<object>().ToArray());
             }
+        }
+        public int GetRowCount()
+        {
+            totalRecords = sanPhamController.GetRowCount(null, null, null) / recordsPerPage;
+            return totalRecords;
         }
     }
 }
