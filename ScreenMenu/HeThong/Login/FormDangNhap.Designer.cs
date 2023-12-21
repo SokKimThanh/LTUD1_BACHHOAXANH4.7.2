@@ -173,7 +173,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
+            this.pictureBox1.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
             this.pictureBox1.Location = new System.Drawing.Point(54, 36);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
@@ -299,7 +299,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // ptbShowHidePassword
             // 
-            this.ptbShowHidePassword.Image = LTUD1_BACHHOAXANH472.Properties.Resources.showpassword;
+            this.ptbShowHidePassword.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.showpassword;
             this.ptbShowHidePassword.Location = new System.Drawing.Point(306, 7);
             this.ptbShowHidePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ptbShowHidePassword.Name = "ptbShowHidePassword";
@@ -322,10 +322,11 @@ namespace LTUD1_BACHHOAXANH472
             this.txtPassword.TabIndex = 15;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.Enter += new System.EventHandler(this.btnLogin_Click);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = LTUD1_BACHHOAXANH472.Properties.Resources.green_password;
+            this.pictureBox3.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.green_password;
             this.pictureBox3.Location = new System.Drawing.Point(12, 7);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
@@ -361,7 +362,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = LTUD1_BACHHOAXANH472.Properties.Resources.green_user;
+            this.pictureBox2.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.green_user;
             this.pictureBox2.Location = new System.Drawing.Point(12, 7);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";

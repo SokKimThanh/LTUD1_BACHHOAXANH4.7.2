@@ -335,11 +335,11 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tabInputQuyenTruyCap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
             this.tabInputQuyenTruyCap.Controls.Add(this.groupBox3);
-            this.tabInputQuyenTruyCap.Location = new System.Drawing.Point(4, 38);
+            this.tabInputQuyenTruyCap.Location = new System.Drawing.Point(4, 41);
             this.tabInputQuyenTruyCap.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.tabInputQuyenTruyCap.Name = "tabInputQuyenTruyCap";
             this.tabInputQuyenTruyCap.Padding = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.tabInputQuyenTruyCap.Size = new System.Drawing.Size(455, 738);
+            this.tabInputQuyenTruyCap.Size = new System.Drawing.Size(455, 735);
             this.tabInputQuyenTruyCap.TabIndex = 1;
             this.tabInputQuyenTruyCap.Text = "2";
             // 
@@ -354,7 +354,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox3.Size = new System.Drawing.Size(443, 722);
+            this.groupBox3.Size = new System.Drawing.Size(443, 719);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Nhập thông tin quyền truy cập";
@@ -377,7 +377,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(433, 689);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(433, 686);
             this.tableLayoutPanel6.TabIndex = 28;
             // 
             // label12
@@ -496,11 +496,11 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
             this.tabPage2.Controls.Add(this.groupBox6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 38);
+            this.tabPage2.Location = new System.Drawing.Point(4, 41);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.tabPage2.Size = new System.Drawing.Size(676, 510);
+            this.tabPage2.Size = new System.Drawing.Size(677, 507);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "2";
             // 
@@ -512,7 +512,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox6.ForeColor = System.Drawing.Color.White;
             this.groupBox6.Location = new System.Drawing.Point(6, 8);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(664, 494);
+            this.groupBox6.Size = new System.Drawing.Size(665, 491);
             this.groupBox6.TabIndex = 1;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Danh sách quyền truy cập";
@@ -526,7 +526,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvQTC.Name = "dgvQTC";
             this.dgvQTC.RowHeadersWidth = 51;
             this.dgvQTC.RowTemplate.Height = 28;
-            this.dgvQTC.Size = new System.Drawing.Size(658, 466);
+            this.dgvQTC.Size = new System.Drawing.Size(659, 463);
             this.dgvQTC.TabIndex = 2;
             this.dgvQTC.Click += new System.EventHandler(this.dgvQTC_Click);
             // 
@@ -676,10 +676,10 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tpButtonThemThongTinQuyenTruyCap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
             this.tpButtonThemThongTinQuyenTruyCap.Controls.Add(this.groupBox4);
-            this.tpButtonThemThongTinQuyenTruyCap.Location = new System.Drawing.Point(4, 38);
+            this.tpButtonThemThongTinQuyenTruyCap.Location = new System.Drawing.Point(4, 41);
             this.tpButtonThemThongTinQuyenTruyCap.Name = "tpButtonThemThongTinQuyenTruyCap";
             this.tpButtonThemThongTinQuyenTruyCap.Padding = new System.Windows.Forms.Padding(3);
-            this.tpButtonThemThongTinQuyenTruyCap.Size = new System.Drawing.Size(684, 180);
+            this.tpButtonThemThongTinQuyenTruyCap.Size = new System.Drawing.Size(683, 177);
             this.tpButtonThemThongTinQuyenTruyCap.TabIndex = 1;
             this.tpButtonThemThongTinQuyenTruyCap.Text = "2";
             // 
@@ -694,7 +694,7 @@ namespace LTUD1_BACHHOAXANH472
             this.groupBox4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox4.Size = new System.Drawing.Size(678, 174);
+            this.groupBox4.Size = new System.Drawing.Size(677, 171);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thao tác dữ liệu quyền truy cập";
@@ -716,7 +716,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(668, 144);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(667, 141);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // btnRefreshQuyenTruyCap
@@ -731,10 +731,10 @@ namespace LTUD1_BACHHOAXANH472
             this.btnRefreshQuyenTruyCap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefreshQuyenTruyCap.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.btnRefreshQuyenTruyCap.ForeColor = System.Drawing.Color.White;
-            this.btnRefreshQuyenTruyCap.Location = new System.Drawing.Point(172, 4);
+            this.btnRefreshQuyenTruyCap.Location = new System.Drawing.Point(171, 4);
             this.btnRefreshQuyenTruyCap.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnRefreshQuyenTruyCap.Name = "btnRefreshQuyenTruyCap";
-            this.btnRefreshQuyenTruyCap.Size = new System.Drawing.Size(157, 136);
+            this.btnRefreshQuyenTruyCap.Size = new System.Drawing.Size(156, 133);
             this.btnRefreshQuyenTruyCap.TabIndex = 39;
             this.btnRefreshQuyenTruyCap.Text = "Làm mới";
             this.btnRefreshQuyenTruyCap.UseVisualStyleBackColor = false;
@@ -752,10 +752,10 @@ namespace LTUD1_BACHHOAXANH472
             this.btnEditQuyenTruyCap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditQuyenTruyCap.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.btnEditQuyenTruyCap.ForeColor = System.Drawing.Color.White;
-            this.btnEditQuyenTruyCap.Location = new System.Drawing.Point(506, 4);
+            this.btnEditQuyenTruyCap.Location = new System.Drawing.Point(503, 4);
             this.btnEditQuyenTruyCap.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnEditQuyenTruyCap.Name = "btnEditQuyenTruyCap";
-            this.btnEditQuyenTruyCap.Size = new System.Drawing.Size(157, 136);
+            this.btnEditQuyenTruyCap.Size = new System.Drawing.Size(159, 133);
             this.btnEditQuyenTruyCap.TabIndex = 36;
             this.btnEditQuyenTruyCap.Text = "Sửa";
             this.btnEditQuyenTruyCap.UseVisualStyleBackColor = false;
@@ -776,7 +776,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnAddQuyenTruyCap.Location = new System.Drawing.Point(5, 4);
             this.btnAddQuyenTruyCap.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnAddQuyenTruyCap.Name = "btnAddQuyenTruyCap";
-            this.btnAddQuyenTruyCap.Size = new System.Drawing.Size(157, 136);
+            this.btnAddQuyenTruyCap.Size = new System.Drawing.Size(156, 133);
             this.btnAddQuyenTruyCap.TabIndex = 34;
             this.btnAddQuyenTruyCap.Text = "Thêm";
             this.btnAddQuyenTruyCap.UseVisualStyleBackColor = false;
@@ -794,10 +794,10 @@ namespace LTUD1_BACHHOAXANH472
             this.btnDeleteQuyenTruycap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteQuyenTruycap.Font = new System.Drawing.Font("Segoe UI", 18F);
             this.btnDeleteQuyenTruycap.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteQuyenTruycap.Location = new System.Drawing.Point(339, 4);
+            this.btnDeleteQuyenTruycap.Location = new System.Drawing.Point(337, 4);
             this.btnDeleteQuyenTruycap.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnDeleteQuyenTruycap.Name = "btnDeleteQuyenTruycap";
-            this.btnDeleteQuyenTruycap.Size = new System.Drawing.Size(157, 136);
+            this.btnDeleteQuyenTruycap.Size = new System.Drawing.Size(156, 133);
             this.btnDeleteQuyenTruycap.TabIndex = 35;
             this.btnDeleteQuyenTruycap.Text = "Xóa";
             this.btnDeleteQuyenTruycap.UseVisualStyleBackColor = false;

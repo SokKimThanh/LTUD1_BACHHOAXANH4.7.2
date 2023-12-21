@@ -148,10 +148,8 @@ namespace LTUD1_BACHHOAXANH472
                     // tắt form đăng nhập
                     this.Hide();
                     // tạo mới form chính
-                    FormMain main = new FormMain
-                    {
-                        Session = session
-                    };
+                    FormMain main = new FormMain(session);
+                    
                     // hiển thị form  chính nhưng khi nào xử lý xong thì mới quay lại đây làm tiếp
                     main.ShowDialog();
                     //btn out kiểm tra coi là bấm thoát luôn hay là bấm đăng xuất
