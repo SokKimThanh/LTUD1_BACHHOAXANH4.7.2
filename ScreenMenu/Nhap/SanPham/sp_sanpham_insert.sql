@@ -1,5 +1,5 @@
--- Create Procedure sp_sanpham_insert.sql
--- S?n ph?m insert
+﻿-- Create Procedure sp_sanpham_insert.sql
+-- Sản phẩm insert
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_sanpham_insert

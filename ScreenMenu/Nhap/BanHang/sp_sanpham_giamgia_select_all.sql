@@ -1,8 +1,8 @@
 ﻿-- Create Procedure sp_sanpham_select_all.SQL
--- S?n ph?m gi?m giá
+-- Sản phẩm giảm giá
 -- Author:		<Sok Kim Thanh>
 -- Create date: <17/12/2023>
--- Description:	<S?n ph?m gi?m giá>
+-- Description:	<Sản phẩm giảm giá>
 drop procedure if exists sp_sanpham_giamgia_select_all
 go
 CREATE PROCEDURE sp_sanpham_giamgia_select_all

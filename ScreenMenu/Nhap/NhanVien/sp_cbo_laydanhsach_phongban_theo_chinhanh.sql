@@ -1,7 +1,7 @@
--- =============================================
+ï»¿-- =============================================
 -- Author:		<Thanh sok>
 -- Create date: <12/12/2023>
--- Description:	<l?y danh sách phòng ban theo mã chi nhánh>
+-- Description:	<láº¥y danh sÃ¡ch phÃ²ng ban theo mÃ£ chi nhÃ¡nh>
 go
 drop procedure if exists sp_cbo_laydanhsach_phongban_theo_chinhanh
 go
