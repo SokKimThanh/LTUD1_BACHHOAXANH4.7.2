@@ -183,9 +183,9 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_chinhanh {
+        internal static System.Drawing.Bitmap icon_diadiem {
             get {
-                object obj = ResourceManager.GetObject("icon_chinhanh", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_diadiem", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

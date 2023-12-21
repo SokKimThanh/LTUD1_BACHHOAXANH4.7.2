@@ -299,7 +299,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnChiNhanh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnChiNhanh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChiNhanh.ForeColor = System.Drawing.Color.White;
-            this.btnChiNhanh.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_chinhanh;
+            this.btnChiNhanh.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_diadiem;
             this.btnChiNhanh.Name = "btnChiNhanh";
             this.btnChiNhanh.UseVisualStyleBackColor = true;
             this.btnChiNhanh.Click += new System.EventHandler(this.btnChiNhanh_Click);
