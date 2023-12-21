@@ -117,6 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="btnSetting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnSetting.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnSetting.Name" xml:space="preserve">
+    <value>btnSetting</value>
+  </data>
+  <data name="&gt;&gt;btnSetting.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSetting.Parent" xml:space="preserve">
+    <value>panelSetting</value>
+  </data>
+  <data name="&gt;&gt;btnSetting.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panelSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panelSetting.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panelSetting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panelSetting.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="panelSetting.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="panelSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="panelSetting.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
   <data name="&gt;&gt;panelSetting.Name" xml:space="preserve">
     <value>panelSetting</value>
   </data>
@@ -129,11 +180,9 @@
   <data name="&gt;&gt;panelSetting.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="flpSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="flpSetting.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 646</value>
   </data>
@@ -143,7 +192,6 @@
   <data name="flpSetting.Size" type="System.Drawing.Size, System.Drawing">
     <value>320, 80</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="flpSetting.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -195,6 +243,42 @@
   <data name="tlpNavigationBar.ColumnCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="btnBanHang.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnBanHang.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnBanHang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnBanHang.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnBanHang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnBanHang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="btnBanHang.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnBanHang.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnBanHang.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnBanHang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnBanHang.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="btnBanHang.Text" xml:space="preserve">
+    <value>BÁN HÀNG</value>
+  </data>
   <data name="&gt;&gt;btnBanHang.Name" xml:space="preserve">
     <value>btnBanHang</value>
   </data>
@@ -206,6 +290,43 @@
   </data>
   <data name="&gt;&gt;btnBanHang.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btnNhanVien.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnNhanVien.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnNhanVien.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnNhanVien.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnNhanVien.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnNhanVien.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnNhanVien.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnNhanVien.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnNhanVien.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnNhanVien.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnNhanVien.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnNhanVien.Text" xml:space="preserve">
+    <value>NHÂN VIÊN
+</value>
   </data>
   <data name="&gt;&gt;btnNhanVien.Name" xml:space="preserve">
     <value>btnNhanVien</value>
@@ -219,6 +340,42 @@
   <data name="&gt;&gt;btnNhanVien.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnHinhThucKM.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnHinhThucKM.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnHinhThucKM.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnHinhThucKM.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnHinhThucKM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnHinhThucKM.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 720</value>
+  </data>
+  <data name="btnHinhThucKM.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnHinhThucKM.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnHinhThucKM.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnHinhThucKM.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnHinhThucKM.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnHinhThucKM.Text" xml:space="preserve">
+    <value>HÌNH THỨC KM</value>
+  </data>
   <data name="&gt;&gt;btnHinhThucKM.Name" xml:space="preserve">
     <value>btnHinhThucKM</value>
   </data>
@@ -230,6 +387,42 @@
   </data>
   <data name="&gt;&gt;btnHinhThucKM.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="btnDanhMucSP.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnDanhMucSP.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDanhMucSP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnDanhMucSP.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnDanhMucSP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDanhMucSP.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 640</value>
+  </data>
+  <data name="btnDanhMucSP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnDanhMucSP.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnDanhMucSP.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnDanhMucSP.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnDanhMucSP.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnDanhMucSP.Text" xml:space="preserve">
+    <value>DANH MỤC SP</value>
   </data>
   <data name="&gt;&gt;btnDanhMucSP.Name" xml:space="preserve">
     <value>btnDanhMucSP</value>
@@ -243,6 +436,42 @@
   <data name="&gt;&gt;btnDanhMucSP.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnChiTietHD.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnChiTietHD.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnChiTietHD.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnChiTietHD.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnChiTietHD.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnChiTietHD.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 560</value>
+  </data>
+  <data name="btnChiTietHD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnChiTietHD.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnChiTietHD.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnChiTietHD.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnChiTietHD.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnChiTietHD.Text" xml:space="preserve">
+    <value>CHI TIẾT HĐ</value>
+  </data>
   <data name="&gt;&gt;btnChiTietHD.Name" xml:space="preserve">
     <value>btnChiTietHD</value>
   </data>
@@ -254,6 +483,42 @@
   </data>
   <data name="&gt;&gt;btnChiTietHD.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="btnKhachHang.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnKhachHang.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnKhachHang.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnKhachHang.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnKhachHang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnKhachHang.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 480</value>
+  </data>
+  <data name="btnKhachHang.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnKhachHang.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnKhachHang.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnKhachHang.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnKhachHang.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnKhachHang.Text" xml:space="preserve">
+    <value>KHÁCH HÀNG</value>
   </data>
   <data name="&gt;&gt;btnKhachHang.Name" xml:space="preserve">
     <value>btnKhachHang</value>
@@ -267,6 +532,42 @@
   <data name="&gt;&gt;btnKhachHang.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="btnNhaCungCap.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnNhaCungCap.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnNhaCungCap.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnNhaCungCap.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnNhaCungCap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnNhaCungCap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 400</value>
+  </data>
+  <data name="btnNhaCungCap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnNhaCungCap.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnNhaCungCap.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnNhaCungCap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnNhaCungCap.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnNhaCungCap.Text" xml:space="preserve">
+    <value>NHÀ CUNG CẤP</value>
+  </data>
   <data name="&gt;&gt;btnNhaCungCap.Name" xml:space="preserve">
     <value>btnNhaCungCap</value>
   </data>
@@ -278,6 +579,42 @@
   </data>
   <data name="&gt;&gt;btnNhaCungCap.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="btnNhaCCCT.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnNhaCCCT.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnNhaCCCT.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnNhaCCCT.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnNhaCCCT.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnNhaCCCT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 880</value>
+  </data>
+  <data name="btnNhaCCCT.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnNhaCCCT.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnNhaCCCT.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnNhaCCCT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnNhaCCCT.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="btnNhaCCCT.Text" xml:space="preserve">
+    <value>NHÀ CCCT</value>
   </data>
   <data name="&gt;&gt;btnNhaCCCT.Name" xml:space="preserve">
     <value>btnNhaCCCT</value>
@@ -291,6 +628,42 @@
   <data name="&gt;&gt;btnNhaCCCT.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="btnKhuyenMai.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnKhuyenMai.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnKhuyenMai.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnKhuyenMai.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnKhuyenMai.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnKhuyenMai.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 320</value>
+  </data>
+  <data name="btnKhuyenMai.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnKhuyenMai.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnKhuyenMai.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnKhuyenMai.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnKhuyenMai.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnKhuyenMai.Text" xml:space="preserve">
+    <value>KHUYẾN MÃI</value>
+  </data>
   <data name="&gt;&gt;btnKhuyenMai.Name" xml:space="preserve">
     <value>btnKhuyenMai</value>
   </data>
@@ -302,6 +675,42 @@
   </data>
   <data name="&gt;&gt;btnKhuyenMai.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="btnHoaDon.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnHoaDon.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnHoaDon.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnHoaDon.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnHoaDon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnHoaDon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 240</value>
+  </data>
+  <data name="btnHoaDon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnHoaDon.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnHoaDon.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnHoaDon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnHoaDon.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnHoaDon.Text" xml:space="preserve">
+    <value>HÓA ĐƠN</value>
   </data>
   <data name="&gt;&gt;btnHoaDon.Name" xml:space="preserve">
     <value>btnHoaDon</value>
@@ -315,6 +724,42 @@
   <data name="&gt;&gt;btnHoaDon.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="btnSanPham.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnSanPham.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnSanPham.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnSanPham.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnSanPham.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSanPham.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 160</value>
+  </data>
+  <data name="btnSanPham.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnSanPham.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnSanPham.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnSanPham.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnSanPham.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btnSanPham.Text" xml:space="preserve">
+    <value>SẢN PHẨM</value>
+  </data>
   <data name="&gt;&gt;btnSanPham.Name" xml:space="preserve">
     <value>btnSanPham</value>
   </data>
@@ -327,6 +772,42 @@
   <data name="&gt;&gt;btnSanPham.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="btnChiNhanh.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnChiNhanh.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnChiNhanh.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnChiNhanh.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnChiNhanh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnChiNhanh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 960</value>
+  </data>
+  <data name="btnChiNhanh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnChiNhanh.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnChiNhanh.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnChiNhanh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnChiNhanh.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="btnChiNhanh.Text" xml:space="preserve">
+    <value>CHI NHÁNH</value>
+  </data>
   <data name="&gt;&gt;btnChiNhanh.Name" xml:space="preserve">
     <value>btnChiNhanh</value>
   </data>
@@ -338,6 +819,42 @@
   </data>
   <data name="&gt;&gt;btnChiNhanh.ZOrder" xml:space="preserve">
     <value>11</value>
+  </data>
+  <data name="btnPhongBan.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnPhongBan.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnPhongBan.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 18pt</value>
+  </data>
+  <data name="btnPhongBan.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnPhongBan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnPhongBan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 800</value>
+  </data>
+  <data name="btnPhongBan.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnPhongBan.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 80</value>
+  </data>
+  <data name="btnPhongBan.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="btnPhongBan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="btnPhongBan.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnPhongBan.Text" xml:space="preserve">
+    <value>PHÒNG BAN</value>
   </data>
   <data name="&gt;&gt;btnPhongBan.Name" xml:space="preserve">
     <value>btnPhongBan</value>
@@ -384,6 +901,210 @@
   <data name="tlpNavigationBar.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnBanHang" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnNhanVien" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnHinhThucKM" Row="9" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnDanhMucSP" Row="8" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnChiTietHD" Row="7" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnKhachHang" Row="6" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnNhaCungCap" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnNhaCCCT" Row="11" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnKhuyenMai" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnHoaDon" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnSanPham" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnChiNhanh" Row="12" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnPhongBan" Row="10" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,320" /&gt;&lt;Rows Styles="Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80,Absolute,80" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
+  <data name="tlpHeader.ColumnCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <metadata name="cmsLogOut.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="đăngXuấtToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 18pt, style=Bold</value>
+  </data>
+  <data name="đăngXuấtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 36</value>
+  </data>
+  <data name="đăngXuấtToolStripMenuItem.Text" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="cmsLogOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>197, 40</value>
+  </data>
+  <data name="&gt;&gt;cmsLogOut.Name" xml:space="preserve">
+    <value>cmsLogOut</value>
+  </data>
+  <data name="&gt;&gt;cmsLogOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnDangNhap.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnDangNhap.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDangNhap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDangNhap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>892, 0</value>
+  </data>
+  <data name="btnDangNhap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="btnDangNhap.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
+  </data>
+  <data name="btnDangNhap.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
+  </data>
+  <data name="btnDangNhap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
+  </data>
+  <data name="btnDangNhap.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;btnDangNhap.Name" xml:space="preserve">
+    <value>btnDangNhap</value>
+  </data>
+  <data name="&gt;&gt;btnDangNhap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDangNhap.Parent" xml:space="preserve">
+    <value>tlpHeader</value>
+  </data>
+  <data name="&gt;&gt;btnDangNhap.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="currentChangeButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="currentChangeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="currentChangeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="currentChangeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="currentChangeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="currentChangeButton.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
+  </data>
+  <data name="currentChangeButton.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
+  </data>
+  <data name="currentChangeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 80</value>
+  </data>
+  <data name="currentChangeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;currentChangeButton.Name" xml:space="preserve">
+    <value>currentChangeButton</value>
+  </data>
+  <data name="&gt;&gt;currentChangeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentChangeButton.Parent" xml:space="preserve">
+    <value>tlpHeader</value>
+  </data>
+  <data name="&gt;&gt;currentChangeButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblAccountName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblAccountName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 20.25pt</value>
+  </data>
+  <data name="lblAccountName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblAccountName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>486, 0</value>
+  </data>
+  <data name="lblAccountName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="lblAccountName.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 0, 0</value>
+  </data>
+  <data name="lblAccountName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 80</value>
+  </data>
+  <data name="lblAccountName.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="lblAccountName.Text" xml:space="preserve">
+    <value>ADMIN</value>
+  </data>
+  <data name="lblAccountName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;lblAccountName.Name" xml:space="preserve">
+    <value>lblAccountName</value>
+  </data>
+  <data name="&gt;&gt;lblAccountName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblAccountName.Parent" xml:space="preserve">
+    <value>tlpHeader</value>
+  </data>
+  <data name="&gt;&gt;lblAccountName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="currentChangeTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="currentChangeTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 20.25pt</value>
+  </data>
+  <data name="currentChangeTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="currentChangeTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 0</value>
+  </data>
+  <data name="currentChangeTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="currentChangeTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 0, 0</value>
+  </data>
+  <data name="currentChangeTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>406, 80</value>
+  </data>
+  <data name="currentChangeTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="currentChangeTitle.Text" xml:space="preserve">
+    <value>TRANG CHỦ</value>
+  </data>
+  <data name="currentChangeTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;currentChangeTitle.Name" xml:space="preserve">
+    <value>currentChangeTitle</value>
+  </data>
+  <data name="&gt;&gt;currentChangeTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentChangeTitle.Parent" xml:space="preserve">
+    <value>tlpHeader</value>
+  </data>
+  <data name="&gt;&gt;currentChangeTitle.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tlpHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlpHeader.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tlpHeader.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>980, 80</value>
+  </data>
+  <data name="tlpHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;tlpHeader.Name" xml:space="preserve">
     <value>tlpHeader</value>
   </data>
@@ -397,7 +1118,7 @@
     <value>0</value>
   </data>
   <data name="tlpHeader.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnDangNhap" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblAccountName" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeTitle" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,50,Percent,50,Absolute,87" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnDangNhap" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblAccountName" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeTitle" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,50,Percent,50,Absolute,88" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -532,7 +1253,7 @@
     <value>0</value>
   </data>
   <data name="tlpMenu.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnTrangChu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnMenu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,73" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnTrangChu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnMenu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,74" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -561,6 +1282,24 @@
   <data name="tlpExit.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="btnExit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnExit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>897, 3</value>
+  </data>
+  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 68</value>
+  </data>
+  <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
   <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
     <value>btnExit</value>
   </data>
@@ -572,6 +1311,30 @@
   </data>
   <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lblExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="lblExit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semilight, 20.25pt</value>
+  </data>
+  <data name="lblExit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblExit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="lblExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>888, 74</value>
+  </data>
+  <data name="lblExit.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblExit.Text" xml:space="preserve">
+    <value>THOÁT</value>
+  </data>
+  <data name="lblExit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="&gt;&gt;lblExit.Name" xml:space="preserve">
     <value>lblExit</value>
@@ -648,1066 +1411,6 @@
   <data name="tlpBHX.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="flpSetting" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelDesktop" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tlpNavigationBar" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panelHeader" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panelMenu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tlpExit" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,320,Percent,100" /&gt;&lt;Rows Styles="Absolute,80,Percent,100,Absolute,80,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="&gt;&gt;btnSetting.Name" xml:space="preserve">
-    <value>btnSetting</value>
-  </data>
-  <data name="&gt;&gt;btnSetting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSetting.Parent" xml:space="preserve">
-    <value>panelSetting</value>
-  </data>
-  <data name="&gt;&gt;btnSetting.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panelSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panelSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panelSetting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="panelSetting.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
-  </data>
-  <data name="panelSetting.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
-  </data>
-  <data name="panelSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
-  </data>
-  <data name="panelSetting.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="&gt;&gt;panelSetting.Name" xml:space="preserve">
-    <value>panelSetting</value>
-  </data>
-  <data name="&gt;&gt;panelSetting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelSetting.Parent" xml:space="preserve">
-    <value>flpSetting</value>
-  </data>
-  <data name="&gt;&gt;panelSetting.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="btnSetting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 80</value>
-  </data>
-  <data name="btnSetting.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnSetting.Name" xml:space="preserve">
-    <value>btnSetting</value>
-  </data>
-  <data name="&gt;&gt;btnSetting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSetting.Parent" xml:space="preserve">
-    <value>panelSetting</value>
-  </data>
-  <data name="&gt;&gt;btnSetting.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnBanHang.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnBanHang.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnBanHang.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnBanHang.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnBanHang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnBanHang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="btnBanHang.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnBanHang.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnBanHang.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnBanHang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnBanHang.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="btnBanHang.Text" xml:space="preserve">
-    <value>BÁN HÀNG</value>
-  </data>
-  <data name="&gt;&gt;btnBanHang.Name" xml:space="preserve">
-    <value>btnBanHang</value>
-  </data>
-  <data name="&gt;&gt;btnBanHang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnBanHang.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnBanHang.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnNhanVien.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnNhanVien.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnNhanVien.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnNhanVien.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnNhanVien.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnNhanVien.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnNhanVien.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnNhanVien.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnNhanVien.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnNhanVien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnNhanVien.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnNhanVien.Text" xml:space="preserve">
-    <value>NHÂN VIÊN
-</value>
-  </data>
-  <data name="&gt;&gt;btnNhanVien.Name" xml:space="preserve">
-    <value>btnNhanVien</value>
-  </data>
-  <data name="&gt;&gt;btnNhanVien.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnNhanVien.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnNhanVien.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnHinhThucKM.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnHinhThucKM.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnHinhThucKM.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnHinhThucKM.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnHinhThucKM.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnHinhThucKM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 720</value>
-  </data>
-  <data name="btnHinhThucKM.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnHinhThucKM.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnHinhThucKM.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnHinhThucKM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnHinhThucKM.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="btnHinhThucKM.Text" xml:space="preserve">
-    <value>HÌNH THỨC KM</value>
-  </data>
-  <data name="&gt;&gt;btnHinhThucKM.Name" xml:space="preserve">
-    <value>btnHinhThucKM</value>
-  </data>
-  <data name="&gt;&gt;btnHinhThucKM.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnHinhThucKM.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnHinhThucKM.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btnDanhMucSP.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnDanhMucSP.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnDanhMucSP.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnDanhMucSP.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnDanhMucSP.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDanhMucSP.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 640</value>
-  </data>
-  <data name="btnDanhMucSP.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnDanhMucSP.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnDanhMucSP.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnDanhMucSP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnDanhMucSP.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="btnDanhMucSP.Text" xml:space="preserve">
-    <value>DANH MỤC SP</value>
-  </data>
-  <data name="&gt;&gt;btnDanhMucSP.Name" xml:space="preserve">
-    <value>btnDanhMucSP</value>
-  </data>
-  <data name="&gt;&gt;btnDanhMucSP.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDanhMucSP.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnDanhMucSP.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnChiTietHD.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnChiTietHD.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnChiTietHD.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnChiTietHD.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnChiTietHD.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnChiTietHD.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 560</value>
-  </data>
-  <data name="btnChiTietHD.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnChiTietHD.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnChiTietHD.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnChiTietHD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnChiTietHD.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnChiTietHD.Text" xml:space="preserve">
-    <value>CHI TIẾT HĐ</value>
-  </data>
-  <data name="&gt;&gt;btnChiTietHD.Name" xml:space="preserve">
-    <value>btnChiTietHD</value>
-  </data>
-  <data name="&gt;&gt;btnChiTietHD.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnChiTietHD.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnChiTietHD.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btnKhachHang.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnKhachHang.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnKhachHang.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnKhachHang.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnKhachHang.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnKhachHang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 480</value>
-  </data>
-  <data name="btnKhachHang.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnKhachHang.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnKhachHang.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnKhachHang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnKhachHang.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btnKhachHang.Text" xml:space="preserve">
-    <value>KHÁCH HÀNG</value>
-  </data>
-  <data name="&gt;&gt;btnKhachHang.Name" xml:space="preserve">
-    <value>btnKhachHang</value>
-  </data>
-  <data name="&gt;&gt;btnKhachHang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnKhachHang.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnKhachHang.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnNhaCungCap.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnNhaCungCap.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnNhaCungCap.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnNhaCungCap.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnNhaCungCap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnNhaCungCap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 400</value>
-  </data>
-  <data name="btnNhaCungCap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnNhaCungCap.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnNhaCungCap.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnNhaCungCap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnNhaCungCap.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="btnNhaCungCap.Text" xml:space="preserve">
-    <value>NHÀ CUNG CẤP</value>
-  </data>
-  <data name="&gt;&gt;btnNhaCungCap.Name" xml:space="preserve">
-    <value>btnNhaCungCap</value>
-  </data>
-  <data name="&gt;&gt;btnNhaCungCap.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnNhaCungCap.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnNhaCungCap.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnNhaCCCT.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnNhaCCCT.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnNhaCCCT.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnNhaCCCT.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnNhaCCCT.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnNhaCCCT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 880</value>
-  </data>
-  <data name="btnNhaCCCT.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnNhaCCCT.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnNhaCCCT.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnNhaCCCT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnNhaCCCT.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="btnNhaCCCT.Text" xml:space="preserve">
-    <value>NHÀ CCCT</value>
-  </data>
-  <data name="&gt;&gt;btnNhaCCCT.Name" xml:space="preserve">
-    <value>btnNhaCCCT</value>
-  </data>
-  <data name="&gt;&gt;btnNhaCCCT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnNhaCCCT.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnNhaCCCT.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btnKhuyenMai.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnKhuyenMai.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnKhuyenMai.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnKhuyenMai.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnKhuyenMai.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnKhuyenMai.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 320</value>
-  </data>
-  <data name="btnKhuyenMai.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnKhuyenMai.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnKhuyenMai.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnKhuyenMai.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnKhuyenMai.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btnKhuyenMai.Text" xml:space="preserve">
-    <value>KHUYẾN MÃI</value>
-  </data>
-  <data name="&gt;&gt;btnKhuyenMai.Name" xml:space="preserve">
-    <value>btnKhuyenMai</value>
-  </data>
-  <data name="&gt;&gt;btnKhuyenMai.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnKhuyenMai.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnKhuyenMai.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btnHoaDon.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnHoaDon.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnHoaDon.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnHoaDon.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnHoaDon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnHoaDon.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 240</value>
-  </data>
-  <data name="btnHoaDon.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnHoaDon.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnHoaDon.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnHoaDon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnHoaDon.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnHoaDon.Text" xml:space="preserve">
-    <value>HÓA ĐƠN</value>
-  </data>
-  <data name="&gt;&gt;btnHoaDon.Name" xml:space="preserve">
-    <value>btnHoaDon</value>
-  </data>
-  <data name="&gt;&gt;btnHoaDon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnHoaDon.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnHoaDon.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="btnSanPham.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnSanPham.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnSanPham.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnSanPham.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnSanPham.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnSanPham.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 160</value>
-  </data>
-  <data name="btnSanPham.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnSanPham.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnSanPham.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnSanPham.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnSanPham.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnSanPham.Text" xml:space="preserve">
-    <value>SẢN PHẨM</value>
-  </data>
-  <data name="&gt;&gt;btnSanPham.Name" xml:space="preserve">
-    <value>btnSanPham</value>
-  </data>
-  <data name="&gt;&gt;btnSanPham.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSanPham.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnSanPham.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="btnChiNhanh.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnChiNhanh.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnChiNhanh.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnChiNhanh.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnChiNhanh.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnChiNhanh.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 960</value>
-  </data>
-  <data name="btnChiNhanh.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnChiNhanh.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnChiNhanh.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnChiNhanh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnChiNhanh.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="btnChiNhanh.Text" xml:space="preserve">
-    <value>CHI NHÁNH</value>
-  </data>
-  <data name="&gt;&gt;btnChiNhanh.Name" xml:space="preserve">
-    <value>btnChiNhanh</value>
-  </data>
-  <data name="&gt;&gt;btnChiNhanh.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnChiNhanh.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnChiNhanh.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="btnPhongBan.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnPhongBan.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnPhongBan.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 18pt</value>
-  </data>
-  <data name="btnPhongBan.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btnPhongBan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnPhongBan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 800</value>
-  </data>
-  <data name="btnPhongBan.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnPhongBan.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 80</value>
-  </data>
-  <data name="btnPhongBan.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="btnPhongBan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>378, 80</value>
-  </data>
-  <data name="btnPhongBan.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="btnPhongBan.Text" xml:space="preserve">
-    <value>PHÒNG BAN</value>
-  </data>
-  <data name="&gt;&gt;btnPhongBan.Name" xml:space="preserve">
-    <value>btnPhongBan</value>
-  </data>
-  <data name="&gt;&gt;btnPhongBan.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnPhongBan.Parent" xml:space="preserve">
-    <value>tlpNavigationBar</value>
-  </data>
-  <data name="&gt;&gt;btnPhongBan.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="tlpHeader.ColumnCount" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;btnDangNhap.Name" xml:space="preserve">
-    <value>btnDangNhap</value>
-  </data>
-  <data name="&gt;&gt;btnDangNhap.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDangNhap.Parent" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;btnDangNhap.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;currentChangeButton.Name" xml:space="preserve">
-    <value>currentChangeButton</value>
-  </data>
-  <data name="&gt;&gt;currentChangeButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;currentChangeButton.Parent" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;currentChangeButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lblAccountName.Name" xml:space="preserve">
-    <value>lblAccountName</value>
-  </data>
-  <data name="&gt;&gt;lblAccountName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAccountName.Parent" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;lblAccountName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;currentChangeTitle.Name" xml:space="preserve">
-    <value>currentChangeTitle</value>
-  </data>
-  <data name="&gt;&gt;currentChangeTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;currentChangeTitle.Parent" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;currentChangeTitle.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tlpHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tlpHeader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tlpHeader.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tlpHeader.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="tlpHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 80</value>
-  </data>
-  <data name="tlpHeader.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tlpHeader.Name" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;tlpHeader.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tlpHeader.Parent" xml:space="preserve">
-    <value>panelHeader</value>
-  </data>
-  <data name="&gt;&gt;tlpHeader.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tlpHeader.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnDangNhap" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblAccountName" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeTitle" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,50,Percent,50,Absolute,87" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <metadata name="cmsLogOut.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="cmsLogOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 40</value>
-  </data>
-  <data name="&gt;&gt;cmsLogOut.Name" xml:space="preserve">
-    <value>cmsLogOut</value>
-  </data>
-  <data name="&gt;&gt;cmsLogOut.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnDangNhap.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="btnDangNhap.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnDangNhap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnDangNhap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>892, 0</value>
-  </data>
-  <data name="btnDangNhap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="btnDangNhap.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 80</value>
-  </data>
-  <data name="btnDangNhap.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 80</value>
-  </data>
-  <data name="btnDangNhap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 80</value>
-  </data>
-  <data name="btnDangNhap.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="&gt;&gt;btnDangNhap.Name" xml:space="preserve">
-    <value>btnDangNhap</value>
-  </data>
-  <data name="&gt;&gt;btnDangNhap.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnDangNhap.Parent" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;btnDangNhap.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="đăngXuấtToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 18pt, style=Bold</value>
-  </data>
-  <data name="đăngXuấtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 36</value>
-  </data>
-  <data name="đăngXuấtToolStripMenuItem.Text" xml:space="preserve">
-    <value>Đăng xuất</value>
-  </data>
-  <data name="currentChangeButton.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="currentChangeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="currentChangeButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="currentChangeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="currentChangeButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="currentChangeButton.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 80</value>
-  </data>
-  <data name="currentChangeButton.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>80, 80</value>
-  </data>
-  <data name="currentChangeButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 80</value>
-  </data>
-  <data name="currentChangeButton.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="&gt;&gt;currentChangeButton.Name" xml:space="preserve">
-    <value>currentChangeButton</value>
-  </data>
-  <data name="&gt;&gt;currentChangeButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;currentChangeButton.Parent" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;currentChangeButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lblAccountName.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lblAccountName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 20.25pt</value>
-  </data>
-  <data name="lblAccountName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAccountName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 0</value>
-  </data>
-  <data name="lblAccountName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="lblAccountName.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 0, 0</value>
-  </data>
-  <data name="lblAccountName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 80</value>
-  </data>
-  <data name="lblAccountName.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="lblAccountName.Text" xml:space="preserve">
-    <value>ADMIN</value>
-  </data>
-  <data name="lblAccountName.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblAccountName.Name" xml:space="preserve">
-    <value>lblAccountName</value>
-  </data>
-  <data name="&gt;&gt;lblAccountName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAccountName.Parent" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;lblAccountName.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="currentChangeTitle.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="currentChangeTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 20.25pt</value>
-  </data>
-  <data name="currentChangeTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="currentChangeTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 0</value>
-  </data>
-  <data name="currentChangeTitle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="currentChangeTitle.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 0, 0</value>
-  </data>
-  <data name="currentChangeTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 80</value>
-  </data>
-  <data name="currentChangeTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="currentChangeTitle.Text" xml:space="preserve">
-    <value>TRANG CHỦ</value>
-  </data>
-  <data name="currentChangeTitle.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;currentChangeTitle.Name" xml:space="preserve">
-    <value>currentChangeTitle</value>
-  </data>
-  <data name="&gt;&gt;currentChangeTitle.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;currentChangeTitle.Parent" xml:space="preserve">
-    <value>tlpHeader</value>
-  </data>
-  <data name="&gt;&gt;currentChangeTitle.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="btnExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="btnExit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btnExit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>897, 3</value>
-  </data>
-  <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 68</value>
-  </data>
-  <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
-    <value>btnExit</value>
-  </data>
-  <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnExit.Parent" xml:space="preserve">
-    <value>tlpExit</value>
-  </data>
-  <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lblExit.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="lblExit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semilight, 20.25pt</value>
-  </data>
-  <data name="lblExit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 0</value>
-  </data>
-  <data name="lblExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 74</value>
-  </data>
-  <data name="lblExit.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="lblExit.Text" xml:space="preserve">
-    <value>THOÁT</value>
-  </data>
-  <data name="lblExit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;lblExit.Name" xml:space="preserve">
-    <value>lblExit</value>
-  </data>
-  <data name="&gt;&gt;lblExit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblExit.Parent" xml:space="preserve">
-    <value>tlpExit</value>
-  </data>
-  <data name="&gt;&gt;lblExit.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;iconChildForm.Name" xml:space="preserve">
-    <value>iconChildForm</value>
-  </data>
-  <data name="&gt;&gt;iconChildForm.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;iconChildForm.Parent" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;iconChildForm.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 64</value>
-  </data>
-  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
-    <value>panel4</value>
-  </data>
-  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="iconChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1738,37 +1441,22 @@
   <data name="&gt;&gt;iconChildForm.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
+  <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>panel2</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>523, 0</value>
-  </data>
-  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>459, 64</value>
+  <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 64</value>
   </data>
-  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="panel4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
-    <value>panel2</value>
+  <data name="&gt;&gt;panel4.Name" xml:space="preserve">
+    <value>panel4</value>
   </data>
-  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1813,37 +1501,25 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel5</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>982, 0</value>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>523, 0</value>
   </data>
-  <data name="panel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
-  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 64</value>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>459, 64</value>
   </data>
-  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
-    <value>panel5</value>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
   </data>
-  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -1888,6 +1564,27 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="panel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>982, 0</value>
+  </data>
+  <data name="panel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 64</value>
+  </data>
+  <data name="panel5.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;panel5.Name" xml:space="preserve">
+    <value>panel5</value>
+  </data>
+  <data name="&gt;&gt;panel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="panel6.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -1914,7 +1611,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAa
-        0QAAAk1TRnQBSQFMAgEBDgEAAdABCQHQAQkBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        0QAAAk1TRnQBSQFMAgEBDgEAAfgBCQH4AQkBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AwABAQIAAQEBAAEgBwABBH0AAyoBQCD/AyEBMHgAAx4BKgNYAbgBXwJmAeUBWwJjAeQBXwJmAeUBXwJm
         AeUBWwJjAeQBXwJmAeUBXwJmAeUBXwJmAeUBXwJmAeUBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBXwJm
         AeUBWwJjAeQBWwJjAeQBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBXwJm
@@ -2817,7 +2514,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADw
-        EwAAAk1TRnQBSQFMAgEBDQEAAagBCQGoAQkBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        EwAAAk1TRnQBSQFMAgEBDQEAAdABCQHQAQkBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABQAMAAQEBAAEgBgABQC4AAwkBCwMMAQ8DBgEI7AADEwEZAxMBGQMLAQ4DBwEJAw8BFAMTARkDEwEZ
         3AADAgEDAxMBGRgAAwUBBgMTARnYAAMTARkgAAQBAxMBGdAAAxMBGQMFAQYkAAMTARkDAgEDzAADEwEZ
         LAADEwEZzAADEwEZLAADEwEZzAADEwEZFAADEwEZFAADEwEZzAADEwEZFAADEwEZFAADEwEZzAADEQEW

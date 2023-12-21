@@ -108,6 +108,24 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.HeThong
                 }
             }
         }
+        public DataTable getDanhSachKhachHang()
+        {
+            using(SqlConnection connection = new SqlConnection(Utils.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand("getDanhSachKhachHang", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
 
+                    connection.Open();
+
+                    using(SqlDataReader reader = command.ExecuteReader())
+                    {
+                        DataTable result = new DataTable();
+                        result.Load(reader);
+                        return result;
+                    }
+                }
+            }
+        }
     }
 }

@@ -356,6 +356,7 @@ namespace LTUD1_BACHHOAXANH472
             resources.ApplyResources(this.đăngXuấtToolStripMenuItem, "đăngXuấtToolStripMenuItem");
             this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.Green;
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.tsmDangXuat_Click);
             // 
             // currentChangeButton
             // 

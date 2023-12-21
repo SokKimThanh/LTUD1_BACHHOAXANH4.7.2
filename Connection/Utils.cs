@@ -1,6 +1,7 @@
 ﻿using System.Data.SqlClient;
 public class Utils
 {
+    public static string TenQuyenTruyCap { get; internal set; }
     private static string connectionString = "Data Source=.;Initial Catalog = BACHHOAXANH; Integrated Security = True";
     private static string uploadString = @"uploads";
     public static string ConnectionString
@@ -10,6 +11,7 @@ public class Utils
     }
 
     public static string UploadString { get => uploadString; set => uploadString = value; }
+    
 
     private static bool IsServerConnected(string connectionString)
     {

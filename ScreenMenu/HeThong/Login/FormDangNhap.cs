@@ -1,14 +1,18 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Button = System.Windows.Forms.Button;
 namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormDangNhap : Form
     {
+        private BackgroundWorker bw;
         SettingImageList loginImage;//cai dat hinh
         bool setSystemCharPassword = true;//an mat khau
         bool logonSuccessful = false;
-
+        LoginController loginController = new LoginController();
         Session session = new Session();
 
         public bool LogonSuccessful { get => logonSuccessful; set => logonSuccessful = value; }
@@ -17,6 +21,15 @@ namespace LTUD1_BACHHOAXANH472
         {
             InitializeComponent();
             loginImage = new SettingImageList(imageListLogin);
+
+            bw = new BackgroundWorker
+            {
+                WorkerReportsProgress = true,
+                WorkerSupportsCancellation = true
+            };
+            bw.DoWork += bw_DoWork;
+            bw.ProgressChanged += bw_ProgressChanged;
+            bw.RunWorkerCompleted += bw_RunWorkerCompleted;
         }
 
         private void FormDangNhap_Load(object sender, EventArgs e)
@@ -26,6 +39,8 @@ namespace LTUD1_BACHHOAXANH472
             txtPassword.UseSystemPasswordChar = true;// bật ẩn ký tự mật khẩu
             ptbShowHidePassword.Image = loginImage.getIcon("hidepassword", "png");//set hình con mắt đóng
             txtUserName.Text = session.Username != "" ? session.Username : "";
+            lblKetQuaDangNhap.Visible = false;
+            progressBar1.Visible = false;
         }
 
         private void btnLoginClose_Click(object sender, EventArgs e)
@@ -53,6 +68,8 @@ namespace LTUD1_BACHHOAXANH472
         private void OtherEvent(object sender, EventArgs e)
         {
             txtUserName_Click(sender, e);
+            progressBar1.Visible = false;
+            lblKetQuaDangNhap.Visible = false;
         }
 
 
@@ -101,29 +118,18 @@ namespace LTUD1_BACHHOAXANH472
         }
         public bool VerifyAccount(string enteredUserName, string enteredPassword)
         {
-            string[] username = { "a", "admin", "NgoQuy234", "VoTu232", "ThanhSok231" };
-            string[] password = { "a", "admin123", "ngoquytdc123", "votutdc123", "thanhsoktdc123" };
-
-            //int enteredUserName = 123144;
-            //string enteredPassword = "NewYork";
-
-            // Tìm chỉ mục từ mảng tên người dùng
-            var indexResult = Array.FindIndex(username, u => u == enteredUserName);
-
-            if (indexResult == -1)
+            lblKetQuaDangNhap.Visible = true;// hiển thị label và kết quả đăng nhập
+            if (loginController.DangNhap(enteredUserName, enteredPassword) == 1)
             {
-                return false;
-            }
-
-            // So sánh mật khẩu từ chỉ mục đó.
-            if (password[indexResult] == enteredPassword)
-            {
-                return true;
+                Utils.TenQuyenTruyCap = loginController.CapQuyen(enteredUserName, enteredPassword);
+                return true;// dang nhap thanh cong
             }
             else
             {
-                return false;
+                lblKetQuaDangNhap.Text = "Đăng nhập thất bại";
+                return false;// dang nhap that bai
             }
+
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -134,43 +140,22 @@ namespace LTUD1_BACHHOAXANH472
             else if (txtPassword.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập mật khẩu");
-
             }
             else
             {
-
                 if (VerifyAccount(txtUserName.Text, txtPassword.Text))
                 {
-                    session.Username = txtUserName.Text;
-                    DialogResult = DialogResult.OK;
-                    LogonSuccessful = true;
+                    // Hiển thị ProgressBar
+                    progressBar1.Visible = true;
 
-                    // tắt form đăng nhập
-                    this.Hide();
-                    // tạo mới form chính
-                    FormMain main = new FormMain(session);
-                    
-                    // hiển thị form  chính nhưng khi nào xử lý xong thì mới quay lại đây làm tiếp
-                    main.ShowDialog();
-                    //btn out kiểm tra coi là bấm thoát luôn hay là bấm đăng xuất
-                    //Nếu vẫn chưa thoát thì đăng nhập
-                    if (!main.btn_out)
+                    // Khởi chạy BackgroundWorker
+                    if (!bw.IsBusy)
                     {
-                        // hiển thị form đăng nhập
-                        this.Show();
-                        txtUserName.Text = string.Empty;
-                        txtPassword.Text = string.Empty;
-                        txtUserName.Focus();
-                        OtherEvent(sender, e);
+                        bw.RunWorkerAsync();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Đăng nhập thất bại");
                 }
             }
         }
-
         /// <summary>
         /// Sau khi đăng xuất thì xóa trống tất cả
         /// </summary>
@@ -183,15 +168,53 @@ namespace LTUD1_BACHHOAXANH472
             txtUserName.Focus();
             OtherEvent(sender, e);
         }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
+        private void bw_DoWork(object sender, DoWorkEventArgs e)
         {
+            for (int i = 0; i <= 100; i++)
+            {
+                // Chờ 10 mili giây
+                System.Threading.Thread.Sleep(10);
 
+                // Báo cáo tiến trình
+                bw.ReportProgress(i);
+            }
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        private void bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            // Cập nhật giá trị của ProgressBar
+            progressBar1.Value = e.ProgressPercentage;
+        }
 
+
+        private void bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            // Ẩn ProgressBar
+            progressBar1.Visible = false;
+
+            session.Username = txtUserName.Text;
+            DialogResult = DialogResult.OK;
+            LogonSuccessful = true;
+            lblKetQuaDangNhap.Text = "Đăng nhập thành công";
+
+            // tắt form đăng nhập
+            this.Hide();
+            // tạo mới form chính
+            FormMain main = new FormMain(session);
+
+            // hiển thị form chính nhưng khi nào xử lý xong thì mới quay lại đây làm tiếp
+            main.ShowDialog();
+            //btn out kiểm tra coi là bấm thoát luôn hay là bấm đăng xuất
+            //Nếu vẫn chưa thoát thì đăng nhập
+            if (!main.btn_out)
+            {
+                // hiển thị form đăng nhập
+                this.Show();
+                txtUserName.Text = string.Empty;
+                txtPassword.Text = string.Empty;
+                txtUserName.Focus();
+                OtherEvent(sender, e);
+            }
         }
     }
 }

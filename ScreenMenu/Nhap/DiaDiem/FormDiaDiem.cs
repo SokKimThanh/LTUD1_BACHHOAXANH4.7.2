@@ -136,12 +136,12 @@ namespace LTUD1_BACHHOAXANH472
 
         private void txtTenCN_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_TenChiNhanh(sender);
+            TextboxHelper.HandleTextChange_TenChiNhanh(sender);
         }
 
         private void txtDC_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_DiaChi(sender);
+            TextboxHelper.HandleTextChange_DiaChi(sender);
         }
     }
 }

@@ -210,7 +210,7 @@
     <Compile Include="BatLoiControl\ErrColors.cs" />
     <Compile Include="BatLoiControl\ErrForm.cs" />
     <Compile Include="BatLoiControl\ErrTextbox.cs" />
-    <Compile Include="BatLoiControl\SettingImageList.cs" />
+    <Compile Include="Model\SettingImageList.cs" />
     <Compile Include="Connection\DatabaseConnection.cs" />
     <Compile Include="Connection\DBController.cs" />
     <Compile Include="Connection\MyController.cs" />
@@ -223,7 +223,13 @@
     </Compile>
     <Compile Include="Model\ComboBoxHelper.cs" />
     <Compile Include="Model\ReportHelper.cs" />
-    <Compile Include="Model\TextHelper.cs" />
+    <Compile Include="Model\TextboxHelper.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenMenu\HeThong\Login\LoginController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="Model\PhanTrangController.cs" />
@@ -235,6 +241,7 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterBanHang.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterPhanTrang.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\BanHangController.cs" />
     <Compile Include="uploads\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -459,14 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="ScreenMenu\HeThong\Login\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,6 +555,7 @@
     <None Include="Resources\icon_big_phantrangright.png" />
     <None Include="Resources\icon_big_phantrangleft.png" />
     <None Include="Resources\icon_small_phantrangleft.png" />
+    <Content Include="ScreenMenu\HeThong\Login\sp_login_controller.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />

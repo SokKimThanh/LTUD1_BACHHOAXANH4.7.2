@@ -20,16 +20,18 @@ namespace LTUD1_BACHHOAXANH472
         private Form currentChildForm = new Form();
         public SettingImageList navigationBar;
         public ErrForm errform;
+        private Session session;
         public Session Session { get; set; }
 
         public bool btn_out = false;
 
-        public FormMain()
+        public FormMain(Session session)
         {
             InitializeComponent();
             navigationBar = new SettingImageList(listIcon_navigation_bar);
             errform = new ErrForm(this);
-            Session = new Session();
+            this.session = session;
+            lblAccountName.Text = this.session.Username.ToUpper();
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -40,7 +42,7 @@ namespace LTUD1_BACHHOAXANH472
             this.Text = string.Empty;// xóa tiêu đề
             this.ControlBox = false;// tắt nút thoát 
             this.DoubleBuffered = true;// giảm nháy màn hình 
-            lblAccountName.Text = Session.Username;
+            
 
             this.IsMdiContainer = true; // Đặt form này là MdiContainer 
         }

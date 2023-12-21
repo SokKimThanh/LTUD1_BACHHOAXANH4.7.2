@@ -13,14 +13,14 @@ namespace LTUD1_BACHHOAXANH472
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                //FormDangNhap logon = new FormDangNhap();
+                FormDangNhap logon = new FormDangNhap();
                 //FormMain logon = new FormMain();
                 //ViDuPhanTrang logon = new ViDuPhanTrang();
                 //FormUploadFilesReport logon = new FormUploadFilesReport();
                 //FormHoaDon logon =  new FormHoaDon();
                 //FormKhachHang logon = new FormKhachHang(); 
                 //FormNhanVienAddEdit logon = new FormNhanVienAddEdit();
-                TaoBieuDoDonGian logon = new TaoBieuDoDonGian();
+                //TaoBieuDoDonGian logon = new TaoBieuDoDonGian();
                 Application.Run(logon);
             }
             catch (Exception)
