@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_chitietcc_update.sql
--- Tài kho?n update
+-- chitietcc update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go

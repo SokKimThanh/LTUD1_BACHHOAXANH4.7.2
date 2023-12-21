@@ -5,7 +5,7 @@ GO
 set dateformat dmy
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
--- Description:	<Tài kho?n delete>
+-- Description:	<chitietcc delete>
 DROP PROCEDURE IF EXISTS sp_chitietcc_delete
 GO
 CREATE PROCEDURE sp_chitietcc_delete

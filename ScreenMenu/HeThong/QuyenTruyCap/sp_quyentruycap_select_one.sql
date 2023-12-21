@@ -1,5 +1,5 @@
 -- Create Procedure sp_quyentruycap_select_one.sql
--- Tài kho?n select one
+-- quyentruycap select one
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go

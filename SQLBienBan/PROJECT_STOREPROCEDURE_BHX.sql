@@ -42,7 +42,7 @@ BEGIN
 END
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
--- Description:	<T�i kho?n delete>
+-- Description:	<quyentruycap delete>
 DROP PROCEDURE IF EXISTS sp_quyentruycap_delete
 GO
 CREATE PROCEDURE sp_quyentruycap_delete
@@ -53,7 +53,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_quyentruycap_insert.sql
--- T�i kho?n insert
+-- quyentruycap insert
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 drop procedure if exists sp_quyentruycap_insert
@@ -67,7 +67,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_quyentruycap_select_all.sql
--- T�i kho?n select all
+-- quyentruycap select all
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 drop procedure if exists sp_quyentruycap_select_all
@@ -79,7 +79,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_quyentruycap_select_one.sql
--- T�i kho?n select one
+-- quyentruycap select one
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go
@@ -93,7 +93,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_quyentruycap_update.sql
--- Tài kho?n update
+-- quyentruycap update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go
@@ -108,7 +108,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_quyentruycap_select_all.sql
--- T�i kho?n select all
+-- account select all
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 drop procedure if exists sp_cbo_quyentruycap_select_all
@@ -126,7 +126,7 @@ GO
 set dateformat dmy
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
--- Description:	<T�i kho?n delete>
+-- Description:	<account delete>
 DROP PROCEDURE IF EXISTS sp_taikhoan_cnql_dangnhap
 GO
 CREATE PROCEDURE sp_taikhoan_cnql_dangnhap
@@ -144,7 +144,7 @@ GO
 set dateformat dmy
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
--- Description:	<T�i kho?n delete>
+-- Description:	<account delete>
 DROP PROCEDURE IF EXISTS sp_taikhoan_delete
 GO
 CREATE PROCEDURE sp_taikhoan_delete
@@ -155,7 +155,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_taikhoan_insert.sql
--- T�i kho?n insert
+-- sp_taikhoan_insert
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023> 
 drop procedure if exists sp_taikhoan_insert
@@ -171,7 +171,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_taikhoan_select_all.sql
--- T�i kho?n select all
+-- account select all
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
 drop procedure if exists sp_taikhoan_select_all
@@ -183,7 +183,7 @@ SELECT * from TAIKHOAN
 END
 GO
 -- Create Procedure sp_taikhoan_select_one.sql
--- T�i kho?n select one
+-- account select one
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
 go
@@ -197,7 +197,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_taikhoan_update.sql
--- Tài kho?n update
+-- account update
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
 go
@@ -1288,7 +1288,7 @@ GO
 set dateformat dmy
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
--- Description:	<T�i kho?n delete>
+-- Description:	<chitietcc delete>
 DROP PROCEDURE IF EXISTS sp_chitietcc_delete
 GO
 CREATE PROCEDURE sp_chitietcc_delete
@@ -1306,7 +1306,7 @@ GO
 --select * from sanpham
 --select * from chitietcc
 -- Create Procedure sp_chitietcc_insert.sql
--- T�i kho?n insert
+-- chitietcc insert
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 drop procedure if exists sp_chitietcc_insert
@@ -1326,7 +1326,7 @@ GO
 --execute sp_chitietcc_insert 'ncc01', 'sp02', 123 
 --select count(*) from CHITIETCC
 ﻿-- Create Procedure sp_chitietcc_select_all.sql
--- Tài kho?n select all
+-- chitietcc select all
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 drop procedure if exists sp_chitietcc_select_all
@@ -1342,7 +1342,7 @@ GO
 execute sp_chitietcc_select_all
 select * from CHITIETCC
 -- Create Procedure sp_chitietcc_select_one.sql
--- T�i kho?n select one
+-- chitietcc select one
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go
@@ -1358,7 +1358,7 @@ END
 GO
 execute sp_chitietcc_select_one  'ncc01' , 'sp01'
 ﻿-- Create Procedure sp_chitietcc_update.sql
--- Tài kho?n update
+-- chitietcc update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go

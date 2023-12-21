@@ -1,5 +1,5 @@
 -- Create Procedure sp_chitietcc_select_one.sql
--- Tài kho?n select one
+-- chitietcc select one
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go

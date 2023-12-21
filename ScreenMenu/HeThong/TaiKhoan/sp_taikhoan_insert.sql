@@ -1,5 +1,5 @@
 -- Create Procedure sp_taikhoan_insert.sql
--- Tài kho?n insert
+-- sp_taikhoan_insert
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023> 
 drop procedure if exists sp_taikhoan_insert

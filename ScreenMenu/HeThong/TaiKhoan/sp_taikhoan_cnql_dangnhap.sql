@@ -5,7 +5,7 @@ GO
 set dateformat dmy
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
--- Description:	<Tài kho?n delete>
+-- Description:	<account delete>
 DROP PROCEDURE IF EXISTS sp_taikhoan_cnql_dangnhap
 GO
 CREATE PROCEDURE sp_taikhoan_cnql_dangnhap
