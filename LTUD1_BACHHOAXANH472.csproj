@@ -227,10 +227,10 @@
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="Model\PhanTrangController.cs" />
-    <Compile Include="ScreenMenu\HeThong\TaoBieuDoDonGian.cs">
+    <Compile Include="ScreenMenu\HeThong\BieuDo\TaoBieuDoDonGian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\TaoBieuDoDonGian.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\BieuDo\TaoBieuDoDonGian.Designer.cs">
       <DependentUpon>TaoBieuDoDonGian.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterBanHang.cs" />
@@ -277,25 +277,25 @@
     <Compile Include="Model\ReportManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenMenu\HeThong\FormDangNhap.cs">
+    <Compile Include="ScreenMenu\HeThong\Login\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\FormDangNhap.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\Login\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Session.cs" />
-    <Compile Include="ScreenMenu\HeThong\FormUploadFilesReport.cs">
+    <Compile Include="ScreenMenu\HeThong\UploadFileReport\FormUploadFilesReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\FormUploadFilesReport.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\UploadFileReport\FormUploadFilesReport.Designer.cs">
       <DependentUpon>FormUploadFilesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\HeThong\TaiKhoan\Account.cs" />
     <Compile Include="ScreenMenu\HeThong\TaiKhoan\AccountController.cs" />
-    <Compile Include="ScreenMenu\HeThong\FormTaiKhoan.cs">
+    <Compile Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\FormTaiKhoan.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.Designer.cs">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\ChiTietHoaDon.cs" />
@@ -436,7 +436,7 @@
     <EmbeddedResource Include="FormMain.vi.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\HeThong\TaoBieuDoDonGian.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\BieuDo\TaoBieuDoDonGian.resx">
       <DependentUpon>TaoBieuDoDonGian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.resx">
@@ -467,13 +467,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ScreenMenu\HeThong\FormDangNhap.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\Login\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\HeThong\FormUploadFilesReport.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\UploadFileReport\FormUploadFilesReport.resx">
       <DependentUpon>FormUploadFilesReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\HeThong\FormTaiKhoan.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\ChiTietHoaDonThongKe.resx">
