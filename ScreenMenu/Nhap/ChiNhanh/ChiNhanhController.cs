@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
-    internal class DiaDiemController : MyController
+    internal class ChiNhanhController : MyController
     {
-        public DiaDiemController(string connectionString) : base(connectionString)
+        public ChiNhanhController(string connectionString) : base(connectionString)
         {
         }
 
@@ -18,7 +18,7 @@ namespace LTUD1_BACHHOAXANH472
                 SqlConnection conn = OpenConnection();
 
                 // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_diadiem_delete", conn);
+                Sql = new SqlCommand("sp_chinhanh_delete", conn);
                 Sql.CommandType = CommandType.StoredProcedure;
 
                 // Thêm tham số vào SqlCommand
@@ -52,12 +52,12 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                DiaDiem user = (DiaDiem)sender;
+                ChiNhanh user = (ChiNhanh)sender;
                 // Mở kết nối
                 SqlConnection conn = OpenConnection();
 
                 // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_diadiem_insert", conn);
+                Sql = new SqlCommand("sp_chinhanh_insert", conn);
                 Sql.CommandType = CommandType.StoredProcedure;
                 // Thêm tham số vào SqlCommand
                 Sql.Parameters.AddWithValue("@maCN", user.MaCN);
@@ -90,7 +90,7 @@ namespace LTUD1_BACHHOAXANH472
                 SqlConnection conn = OpenConnection();
 
                 // thực hiện các thao tác trên cơ sở dữ liệu
-                Sql = new SqlCommand("sp_diadiem_select_all", conn);
+                Sql = new SqlCommand("sp_chinhanh_select_all", conn);
                 Sql.CommandType = CommandType.StoredProcedure;
 
                 // Tạo đối tượng SqlDataAdapter
@@ -158,12 +158,12 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                DiaDiem user = (DiaDiem)sender;
+                ChiNhanh user = (ChiNhanh)sender;
                 // Mở kết nối
                 SqlConnection conn = OpenConnection();
 
                 // Tạo một đối tượng SqlCommand
-                Sql = new SqlCommand("sp_diadiem_update", conn);
+                Sql = new SqlCommand("sp_chinhanh_update", conn);
                 Sql.CommandType = CommandType.StoredProcedure;
 
                 // Thêm tham số vào SqlCommand

@@ -13,7 +13,7 @@ BEGIN
 	select   @TT   +=  sp.dongia * (100-km.phantramgiamgia)/100 * ct.SLMUA
 	from CHITIETHD ct,HOADON hd,SANPHAM sp,KHUYENMAI km
 	where ct.MAHD = hd.MAHD and sp.MASP = ct.MASP and ct.MAHD = @mahd and sp.MAKM = km.MAKM
-	--select @TT as 'Tổng thành tiền'
+	--select @TT as N'Tổng thành tiền'
 	Update HOADON
 	set TONGTHANHTIEN = @TT
 	where MAHD = @mahd; 

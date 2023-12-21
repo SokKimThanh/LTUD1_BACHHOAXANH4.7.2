@@ -299,7 +299,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnChiNhanh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
             this.btnChiNhanh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChiNhanh.ForeColor = System.Drawing.Color.White;
-            this.btnChiNhanh.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_diadiem;
+            this.btnChiNhanh.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_chinhanh;
             this.btnChiNhanh.Name = "btnChiNhanh";
             this.btnChiNhanh.UseVisualStyleBackColor = true;
             this.btnChiNhanh.Click += new System.EventHandler(this.btnChiNhanh_Click);
@@ -501,7 +501,7 @@ namespace LTUD1_BACHHOAXANH472
             this.listIcon_navigation_bar.Images.SetKeyName(1, "icon_menu.png");
             this.listIcon_navigation_bar.Images.SetKeyName(2, "icon_exit.png");
             this.listIcon_navigation_bar.Images.SetKeyName(3, "icon_user_login.png");
-            this.listIcon_navigation_bar.Images.SetKeyName(4, "icon_diadiem.png");
+            this.listIcon_navigation_bar.Images.SetKeyName(4, "icon_chinhanh.png");
             this.listIcon_navigation_bar.Images.SetKeyName(5, "icon_hoadon.png");
             this.listIcon_navigation_bar.Images.SetKeyName(6, "icon_khachhang.png");
             this.listIcon_navigation_bar.Images.SetKeyName(7, "icon_khuyenmai.png");
@@ -518,7 +518,7 @@ namespace LTUD1_BACHHOAXANH472
             this.lisIcon_navigation_bar_transparent10.TransparentColor = System.Drawing.Color.Transparent;
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(0, "user.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(1, "aChangeIcon.png");
-            this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(2, "diadiem.png");
+            this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(2, "chinhanh.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(3, "hoadon.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(4, "khachhang.png");
             this.lisIcon_navigation_bar_transparent10.Images.SetKeyName(5, "khuyenmai.png");

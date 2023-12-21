@@ -11,7 +11,7 @@ CREATE PROCEDURE sp_chitiethoadon_Kiemtratonkho
 	@slmua int
 AS
 BEGIN
-	Select  sp.SLTONKHO - @slmua as 'Tồn kho'
+	Select  sp.SLTONKHO - @slmua as N'Tồn kho'
 	from SANPHAM sp,HOADON hd
 	 where  sp.MaSP = @makm 
 END

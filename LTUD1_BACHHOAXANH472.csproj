@@ -327,13 +327,13 @@
     <Compile Include="ScreenMenu\Nhap\DanhMuc\FormLoaiSP.Designer.cs">
       <DependentUpon>FormLoaiSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\DiaDiem\DiaDiem.cs" />
-    <Compile Include="ScreenMenu\Nhap\DiaDiem\DiaDiemController.cs" />
-    <Compile Include="ScreenMenu\Nhap\DiaDiem\FormDiaDiem.cs">
+    <Compile Include="ScreenMenu\Nhap\ChiNhanh\ChiNhanh.cs" />
+    <Compile Include="ScreenMenu\Nhap\ChiNhanh\ChiNhanhController.cs" />
+    <Compile Include="ScreenMenu\Nhap\ChiNhanh\FormChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\DiaDiem\FormDiaDiem.Designer.cs">
-      <DependentUpon>FormDiaDiem.cs</DependentUpon>
+    <Compile Include="ScreenMenu\Nhap\ChiNhanh\FormChiNhanh.Designer.cs">
+      <DependentUpon>FormChiNhanh.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HinhThucKhuyenMai\FormHinhThucKhuyenMai.cs">
       <SubType>Form</SubType>
@@ -484,8 +484,8 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\DanhMuc\FormLoaiSP.resx">
       <DependentUpon>FormLoaiSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\DiaDiem\FormDiaDiem.resx">
-      <DependentUpon>FormDiaDiem.cs</DependentUpon>
+    <EmbeddedResource Include="ScreenMenu\Nhap\ChiNhanh\FormChiNhanh.resx">
+      <DependentUpon>FormChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HinhThucKhuyenMai\FormHinhThucKhuyenMai.resx">
       <DependentUpon>FormHinhThucKhuyenMai.cs</DependentUpon>
@@ -647,10 +647,10 @@
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_update.sql" />
-    <Content Include="ScreenMenu\Nhap\DiaDiem\sp_DiaDiem_delete.sql" />
-    <Content Include="ScreenMenu\Nhap\DiaDiem\sp_DiaDiem_insert.sql" />
-    <Content Include="ScreenMenu\Nhap\DiaDiem\sp_DiaDiem_select_all.sql" />
-    <Content Include="ScreenMenu\Nhap\DiaDiem\sp_DiaDiem_update.sql" />
+    <Content Include="ScreenMenu\Nhap\ChiNhanh\sp_chinhanh_delete.sql" />
+    <Content Include="ScreenMenu\Nhap\ChiNhanh\sp_chinhanh_insert.sql" />
+    <Content Include="ScreenMenu\Nhap\ChiNhanh\sp_chinhanh_select_all.sql" />
+    <Content Include="ScreenMenu\Nhap\ChiNhanh\sp_chinhanh_update.sql" />
     <Content Include="ScreenMenu\Nhap\HinhThucKhuyenMai\sp_htkhuyenmai_delete.sql" />
     <Content Include="ScreenMenu\Nhap\HinhThucKhuyenMai\sp_htkhuyenmai_insert.sql" />
     <Content Include="ScreenMenu\Nhap\HinhThucKhuyenMai\sp_htkhuyenmai_select_all.sql" />

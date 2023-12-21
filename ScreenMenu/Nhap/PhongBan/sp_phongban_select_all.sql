@@ -8,7 +8,7 @@ go
 CREATE PROCEDURE sp_phongban_select_all
 AS
 BEGIN
-	SELECT pb.MAPB, pb.TENPHG as 'Tên phòng ban' , cn.TENCN as 'Tên chi nhánh'  from PHONGBAN pb, CHINHANH cn
-END
+	SELECT pb.MAPB, pb.TENPHG as N'Tên Phòng Ban' , cn.TENCN as N'Tên Chi Nhánh'  from PHONGBAN pb, CHINHANH cn where pb.MACN = cn.MACN
+END;
 GO
 exec sp_phongban_select_all

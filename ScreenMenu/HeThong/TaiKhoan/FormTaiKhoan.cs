@@ -21,7 +21,8 @@ namespace LTUD1_BACHHOAXANH472
             DataGridViewHelper.ConfigureDataGridView(dgvTaiKhoan);
 
             DataGridViewHelper.ConfigureDataGridView(dgvQTC);
-            //DataGridViewHelper.ConfigureDataGridView(dgvQuyenTruyCap);
+            ComboBoxHelper.ConfigureComboBox(cboNV);
+            ComboBoxHelper.ConfigureComboBox(cboQTC);
         }
 
 

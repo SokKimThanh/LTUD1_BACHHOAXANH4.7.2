@@ -24,7 +24,7 @@ Date(dd/MM/yyyy)		Author				Comments
 14/12/2023	09:24 CH	Sok Kim Thanh		Thêm dữ liệu cho ứng dụng
 17/12/2023	10/42 SA	Sok Kim Thanh		Thêm cột phantramgiamgia int cho khuyến mãi 
 19/12/2023	05:04 SA	Sok Kim Thanh		Sửa đoạn code tạo database, thêm dữ liệu cho bảng chi nhánh, nhân viên, khách hàng ,sản phẩm
-21/12/2023  02:10 SA    Sok Kim Thanh       Tạo bảng truy cập, gắn thêm getdate cho mỗi thời điểm đăng nhập, lưu kết quả đăng nhập thành công/thất bại
+21/12/2023  02:10 SA    Sok Kim Thanh       Tạo bảng TruyCap, gắn thêm getdate cho mỗi thời điểm đăng nhập, lưu kết quả đăng nhập thành công/thất bại
 ****************************************************************************************************************************************************************/
 ------------------------------------------------------------
 --Tạo database mới										   -
@@ -53,17 +53,17 @@ use BACHHOAXANH
 ---------------------Tạo bảng CHINHANH----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE CHINHANH (MACN CHAR(4) NOT NULL ,TENCN NVARCHAR(255) NOT NULL,DIACHICN NVARCHAR(100));
+CREATE TABLE CHINHANH (MACN CHAR(11) NOT NULL ,TENCN NVARCHAR(255) NOT NULL,DIACHICN NVARCHAR(100));
 ------------------------------------------------------------
 ---------------------Tạo bảng PHONGBAN----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE PHONGBAN (MAPB CHAR(4) NOT NULL ,TENPHG NVARCHAR(255) NOT NULL,	MACN CHAR(4));
+CREATE TABLE PHONGBAN (MAPB CHAR(11) NOT NULL ,TENPHG NVARCHAR(255) NOT NULL, MACN CHAR(11));
 ------------------------------------------------------------
 ---------------------Tạo bảng NHANVIEN----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE NHANVIEN (	MANV CHAR(11)NOT NULL, HOTENNV NVARCHAR(255) NOT NULL,DIACHINV NVARCHAR(100),LUONG int NOT NULL,SDTNV INT NULL,NGAYSINH DATE NOT NULL,MAPB CHAR(4), GIOITINH nvarchar(10) NOT NULL, CREATED_DATE_NV datetime not null);
+CREATE TABLE NHANVIEN (	MANV CHAR(11)NOT NULL, HOTENNV NVARCHAR(255) NOT NULL,DIACHINV NVARCHAR(100),LUONG int NOT NULL,SDTNV INT NULL,NGAYSINH DATE NOT NULL,MAPB CHAR(11), GIOITINH nvarchar(10) NOT NULL, CREATED_DATE_NV datetime not null);
 ------------------------------------------------------------
 ---------------------Tạo bảng KHACHHANG---------------------
 ------------------------------------------------------------

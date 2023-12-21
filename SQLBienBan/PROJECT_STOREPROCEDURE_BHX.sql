@@ -279,7 +279,7 @@ BEGIN
 	select   @TT   +=  sp.dongia * (100-km.phantramgiamgia)/100 * ct.SLMUA
 	from CHITIETHD ct,HOADON hd,SANPHAM sp,KHUYENMAI km
 	where ct.MAHD = hd.MAHD and sp.MASP = ct.MASP and ct.MAHD = @mahd and sp.MAKM = km.MAKM
-	--select @TT as 'Tổng thành tiền'
+	--select @TT as N'Tổng thành tiền'
 	Update HOADON
 	set TONGTHANHTIEN = @TT
 	where MAHD = @mahd; 
@@ -363,6 +363,66 @@ BEGIN
 END;
 GO
 EXECUTE SP_SANPHAM_PHANTRANG_COUNT NULL,NULL,'F'
+-- Author:		Vo Tu
+-- Create date: <13/11/2023>
+DROP PROCEDURE IF EXISTS sp_chinhanh_delete
+GO
+CREATE PROCEDURE sp_chinhanh_delete
+	@maCN CHAR(11) = ''
+AS
+BEGIN
+	DELETE FROM CHINHANH WHERE MACN = @maCN
+END
+GO
+﻿-- Create Procedure sp_chinhanh_insert.sql
+-- Nhà cung c?p insert
+-- Author:		Vo Tu
+-- Create date: <13/11/2023>
+set dateformat dmy
+drop procedure if exists sp_chinhanh_insert
+go
+CREATE PROCEDURE sp_chinhanh_insert
+	@maCN CHAR(11) = '',
+	@tenCN NVARCHAR(255),
+	@diaChi nvarchar(100)
+AS
+BEGIN
+	INSERT INTO CHINHANH VALUES (@maCN,@tenCN,@diaChi)
+END
+GO
+exec sp_chinhanh_insert 'CN05', N'Chi nhánh Đà Nẵng', N'Số 3 Nguyễn Văn Linh, Hải Châu, Đà Nẵng';
+select * from CHINHANH
+﻿-- Create Procedure sp_chinhanh_select_all.sql
+-- hoadon select all
+GO
+GO
+-- Author:		Vo Tu
+-- Create date: <13/11/2023>
+-- Description:	<dia diem select all>
+drop procedure if exists sp_chinhanh_select_all
+go
+CREATE PROCEDURE sp_chinhanh_select_all
+AS
+BEGIN
+	SELECT MACN,tencn as N'Tên chi nhánh', diachicn as N'Địa chỉ' from CHINHANH
+END;
+GO
+exec sp_chinhanh_select_all
+﻿-- Author:		Vo Tu
+-- Create date: <13/11/2023>
+drop procedure if exists sp_chinhanh_update
+go
+CREATE PROCEDURE sp_chinhanh_update
+	@maCN CHAR(11) = '',
+	@tenCN NVARCHAR(255),
+	@diaChi nvarchar(100)
+AS
+BEGIN
+	update CHINHANH set TENCN = @tenCN, DIACHICN = @diaChi  where MACN = @maCN -- chuẩn sql
+END
+GO
+--exec sp_chinhanh_update 'CN05', N'Chi nhánh Bình Phu?c', N'Số 3 Nguyễn Văn Linh, Hải Châu, Đà Nẵng';
+select * from CHINHANH
 -- Create Procedure sp_danhmuc_delete.sql
 -- Danh m?c delete
 -- Author:		Sok Kim Thanh
@@ -431,67 +491,6 @@ BEGIN
 	update LOAISP set TENLOAI = @TENLOAI, GHICHU = @GHICHU where MALOAI = @MALOAI -- chuẩn sql
 END
 GO
--- Author:		Vo Tu
--- Create date: <13/11/2023>
-DROP PROCEDURE IF EXISTS sp_diadiem_delete
-GO
-CREATE PROCEDURE sp_diadiem_delete
-	@maCN char(4) = ''
-AS
-BEGIN
-	DELETE FROM CHINHANH WHERE MACN = @maCN
-END
-GO
-﻿-- Create Procedure sp_diadiem_insert.sql
--- Nhà cung c?p insert
--- Author:		Vo Tu
--- Create date: <13/11/2023>
-set dateformat dmy
-drop procedure if exists sp_diadiem_insert
-go
-CREATE PROCEDURE sp_diadiem_insert
-	@maCN char(4) = '',
-	@tenCN NVARCHAR(255),
-	@diaChi nvarchar(100)
-AS
-BEGIN
-	INSERT INTO CHINHANH VALUES (@maCN,@tenCN,@diaChi)
-END
-GO
-exec sp_diadiem_insert 'CN05', N'Chi nhánh Đà Nẵng', N'Số 3 Nguyễn Văn Linh, Hải Châu, Đà Nẵng';
-select * from CHINHANH
-set dateformat dmy
--- Create Procedure sp_diadiem_select_all.sql
--- hoadon select all
-GO
-GO
--- Author:		Vo Tu
--- Create date: <13/11/2023>
--- Description:	<dia diem select all>
-drop procedure if exists sp_diadiem_select_all
-go
-CREATE PROCEDURE sp_diadiem_select_all
-AS
-BEGIN
-	SELECT * from CHINHANH
-END
-GO
-exec sp_diadiem_select_all
-﻿-- Author:		Vo Tu
--- Create date: <13/11/2023>
-drop procedure if exists sp_diaiem_update
-go
-CREATE PROCEDURE sp_diadiem_update
-	@maCN char(4) = '',
-	@tenCN NVARCHAR(255),
-	@diaChi nvarchar(100)
-AS
-BEGIN
-	update CHINHANH set TENCN = @tenCN, DIACHICN = @diaChi  where MACN = @maCN -- chuẩn sql
-END
-GO
---exec sp_diadiem_update 'CN05', N'Chi nhánh Bình Phu?c', N'Số 3 Nguyễn Văn Linh, Hải Châu, Đà Nẵng';
-select * from CHINHANH
 -- Create Procedure sp_hinhthuckm_delete.sql
 -- Danh m?c delete
 -- Author:		Sok Kim Thanh
@@ -872,7 +871,7 @@ CREATE PROCEDURE sp_chitiethoadon_Kiemtratonkho
 	@slmua int
 AS
 BEGIN
-	Select  sp.SLTONKHO - @slmua as 'Tồn kho'
+	Select  sp.SLTONKHO - @slmua as N'Tồn kho'
 	from SANPHAM sp,HOADON hd
 	 where  sp.MaSP = @makm 
 END
@@ -921,7 +920,7 @@ CREATE PROCEDURE sp_chitiethoadon_TimKiem
 	@tensp nvarchar(50)
 AS
 BEGIN
-	Select cthd.MAHD,sp.TENSP,cthd.SLMUA,sp.DONGIA*cthd.SLMUA as 'Thành tiền'
+	Select cthd.MAHD,sp.TENSP,cthd.SLMUA,sp.DONGIA*cthd.SLMUA as N'Thành tiền'
 	from CHITIETHD cthd
 	INNER Join SANPHAM sp on sp.MASP = cthd.MASP
 	where cthd.MAHD = @ma and sp.TENSP like N'%'+@tensp+'%'
@@ -942,11 +941,11 @@ BEGIN
 	select   @TT   += ct.SLMUA * sp.DONGIA 
 	from CHITIETHD ct,HOADON hd,SANPHAM sp
 	where ct.MAHD = hd.MAHD and sp.MASP = ct.MASP and ct.MAHD = @mahd
-	--select @TT as 'Tổng thành tiền'
+	--select @TT as N'Tổng thành tiền'
 	Update HOADON
 	set TONGTHANHTIEN = @TT
 	where MAHD = @mahd;
-	select @TT as 'Thành tiền'
+	select @TT as N'Thành tiền'
 END
 GO
 exec sp_chitiethoadon_TongTien 'HD01'
@@ -1308,8 +1307,8 @@ GO
 --select count(*) from CHITIETCC
 --execute sp_chitietcc_insert 'ncc01', 'sp02', 123 
 --select count(*) from CHITIETCC
--- Create Procedure sp_chitietcc_select_all.sql
--- T�i kho?n select all
+﻿-- Create Procedure sp_chitietcc_select_all.sql
+-- Tài kho?n select all
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 drop procedure if exists sp_chitietcc_select_all
@@ -1317,11 +1316,13 @@ go
 CREATE PROCEDURE sp_chitietcc_select_all
 AS
 BEGIN
-	select ncc.TENNCC,sp.TENSP,ct.SLCUNGCCAP  from chitietcc ct, nhacungcap ncc, sanpham sp
+	select ncc.MANCC, ncc.TENNCC as N'Nhà cung cấp' ,sp.TENSP as N'Tên sản phẩm', sp.DONGIA as N'Giá sản phẩm',  ct.SLCUNGCCAP as N'Số lượng', sp.DONVI as N'Đơn vị tính'
+	from chitietcc ct, nhacungcap ncc, sanpham sp
 	where ct.MANCC = ncc.MANCC and ct.MASP = sp.MASP
-END
+END;
 GO
 execute sp_chitietcc_select_all
+select * from CHITIETCC
 -- Create Procedure sp_chitietcc_select_one.sql
 -- T�i kho?n select one
 -- Author:		Sok Kim Thanh
@@ -1367,7 +1368,7 @@ drop procedure if exists sp_cbo_laydanhsach_phongban_theo_chinhanh
 go
 CREATE PROCEDURE sp_cbo_laydanhsach_phongban_theo_chinhanh
 	-- Add the parameters for the stored procedure here
-	@macn char(4)
+	@macn CHAR(11)
 AS
 BEGIN
 	select pb.MAPB, pb.TENPHG from phongban pb, chinhanh cn WHERE cn.MACN = pb.MACN and cn.macn = @macn
@@ -1393,13 +1394,13 @@ go
 drop procedure if exists sp_nhanvien_danhsach_theophongban_chinhanh
 go
 CREATE PROCEDURE sp_nhanvien_danhsach_theophongban_chinhanh
-		@MaChiNhanh char(4), 
-		@MaPhongBan char(4)
+		@MaChiNhanh CHAR(11), 
+		@MaPhongBan CHAR(11)
 AS
 BEGIN 
-	SELECT cn.TENCN as 'Tên Chi Nhánh', pb.TENPHG as 'Phòng ban', STUFF((SELECT ', ' + nv.HOTENNV 
+	SELECT cn.TENCN as N'Tên Chi Nhánh', pb.TENPHG as N'Phòng ban', STUFF((SELECT ', ' + nv.HOTENNV 
 	FROM nhanvien nv 
-	WHERE pb.MAPB = nv.MAPB AND cn.MACN = pb.MACN FOR XML PATH('')), 1, 2, '') as 'Danh sách nhân viên' 
+	WHERE pb.MAPB = nv.MAPB AND cn.MACN = pb.MACN FOR XML PATH('')), 1, 2, '') as N'Danh sách nhân viên' 
 	FROM PHONGBAN pb, CHINHANH cn 
 	WHERE cn.MACN  =  @MaChiNhanh or  pb.MAPB = @MaPhongBan  
 	--GROUP BY pb.TENPHG, cn.TENCN, pb.MAPB, cn.MACN, pb.MACN;
@@ -1433,8 +1434,8 @@ CREATE PROCEDURE sp_nhanvien_insert
 	@luong float,
 	@sdtnv int,
 	@ngaysinh date,
-	@mapb char(4),
-	@gioitinh char(4)
+	@mapb CHAR(11),
+	@gioitinh CHAR(11)
 AS
 BEGIN 
 	-- �?i 50 milliseconds
@@ -1468,7 +1469,7 @@ CREATE PROCEDURE sp_nhanvien_select_nhanvien_phongban
 	@tennhanvien nvarchar(255)
 AS
 BEGIN
-    SELECT nv.MANV as NhanVienID, pb.MAPB as PhongBanID, nv.HOTENNV as 'Họ và tên', pb.TENPHG as 'Tên phòng ban'
+    SELECT nv.MANV as NhanVienID, pb.MAPB as PhongBanID, nv.HOTENNV as N'Họ và tên', pb.TENPHG as N'Tên phòng ban'
 	FROM NHANVIEN nv, PHONGBAN pb
     where nv.MAPB = PB.MAPB and nv.hotennv like N'%' + @tennhanvien + '%'
 	order by nv.created_date_nv desc 
@@ -1499,7 +1500,7 @@ CREATE PROCEDURE sp_nhanvien_update
 	@luong float,
 	@sdtnv int,
 	@ngaysinh date,
-	@mapb char(4),
+	@mapb CHAR(11),
 	@gioitinh nvarchar(10)
 AS
 BEGIN 
@@ -1558,8 +1559,8 @@ go
 CREATE PROCEDURE sp_phongban_select_all
 AS
 BEGIN
-	SELECT pb.MAPB, pb.TENPHG as 'T�n ph�ng ban' , cn.TENCN as 'T�n chi nh�nh'  from PHONGBAN pb, CHINHANH cn
-END
+	SELECT pb.MAPB, pb.TENPHG as N'T�n ph�ng ban' , cn.TENCN as N'T�n chi nh�nh'  from PHONGBAN pb, CHINHANH cn where pb.MACN = cn.MACN
+END;
 GO
 exec sp_phongban_select_all
 -- Author:		Sok Kim Thanh

@@ -197,14 +197,12 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 6;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(433, 686);
             this.tableLayoutPanel5.TabIndex = 28;
             // 
@@ -214,10 +212,10 @@ namespace LTUD1_BACHHOAXANH472
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.label4.Location = new System.Drawing.Point(5, 213);
+            this.label4.Location = new System.Drawing.Point(5, 150);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(161, 71);
+            this.label4.Size = new System.Drawing.Size(161, 50);
             this.label4.TabIndex = 34;
             this.label4.Text = "Mã QTC";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -228,13 +226,13 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.Controls.Add(this.txtMK, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(174, 74);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(174, 53);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 3;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.tableLayoutPanel8.RowCount = 1;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(256, 65);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(256, 44);
             this.tableLayoutPanel8.TabIndex = 33;
             // 
             // txtMK
@@ -242,8 +240,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtMK.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMK.Location = new System.Drawing.Point(5, 4);
             this.txtMK.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.txtMK.Multiline = true;
             this.txtMK.Name = "txtMK";
-            this.txtMK.Size = new System.Drawing.Size(246, 32);
+            this.txtMK.Size = new System.Drawing.Size(246, 36);
             this.txtMK.TabIndex = 22;
             // 
             // label2
@@ -252,10 +251,10 @@ namespace LTUD1_BACHHOAXANH472
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.label2.Location = new System.Drawing.Point(5, 71);
+            this.label2.Location = new System.Drawing.Point(5, 50);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 71);
+            this.label2.Size = new System.Drawing.Size(161, 50);
             this.label2.TabIndex = 29;
             this.label2.Text = "Mật Khẩu";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,7 +268,7 @@ namespace LTUD1_BACHHOAXANH472
             this.label1.Location = new System.Drawing.Point(5, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 71);
+            this.label1.Size = new System.Drawing.Size(161, 50);
             this.label1.TabIndex = 29;
             this.label1.Text = "Tên tài khoản";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,10 +279,10 @@ namespace LTUD1_BACHHOAXANH472
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 16F);
-            this.label3.Location = new System.Drawing.Point(5, 142);
+            this.label3.Location = new System.Drawing.Point(5, 100);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 71);
+            this.label3.Size = new System.Drawing.Size(161, 50);
             this.label3.TabIndex = 29;
             this.label3.Text = "Mã NV";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,11 +295,11 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(174, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 3;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 1F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(256, 65);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(256, 44);
             this.tableLayoutPanel7.TabIndex = 32;
             // 
             // txtTenTK
@@ -310,14 +309,14 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenTK.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtTenTK.Multiline = true;
             this.txtTenTK.Name = "txtTenTK";
-            this.txtTenTK.Size = new System.Drawing.Size(246, 46);
+            this.txtTenTK.Size = new System.Drawing.Size(246, 47);
             this.txtTenTK.TabIndex = 22;
             // 
             // cboQTC
             // 
             this.cboQTC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboQTC.FormattingEnabled = true;
-            this.cboQTC.Location = new System.Drawing.Point(174, 216);
+            this.cboQTC.Location = new System.Drawing.Point(174, 153);
             this.cboQTC.Name = "cboQTC";
             this.cboQTC.Size = new System.Drawing.Size(256, 33);
             this.cboQTC.TabIndex = 35;
@@ -326,7 +325,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.cboNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboNV.FormattingEnabled = true;
-            this.cboNV.Location = new System.Drawing.Point(174, 145);
+            this.cboNV.Location = new System.Drawing.Point(174, 103);
             this.cboNV.Name = "cboNV";
             this.cboNV.Size = new System.Drawing.Size(256, 33);
             this.cboNV.TabIndex = 36;

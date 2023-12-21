@@ -13,7 +13,7 @@ namespace LTUD1_BACHHOAXANH472
     {
         // khởi tạo kết nối
         NhanVienController nvController = new NhanVienController(Utils.ConnectionString);
-        DiaDiemController chinhanhController = new DiaDiemController(Utils.ConnectionString);
+        ChiNhanhController chinhanhController = new ChiNhanhController(Utils.ConnectionString);
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
         // Hàm hỗ trợ kiểm tra lỗi nhập
