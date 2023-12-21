@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_chitiethoadon_update.sql
--- Danh m?c update
+-- Danh mục update
 -- Author:		Quy Ngo
 -- Create date: <10/12/2023>
 drop procedure if exists sp_chitiethoadon_TongTien

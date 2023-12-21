@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_chitiethoadon_select_all.sql
--- Danh m?c select all
+-- Danh mục select all
 GO
 GO
 -- Author:		Quy Ngo

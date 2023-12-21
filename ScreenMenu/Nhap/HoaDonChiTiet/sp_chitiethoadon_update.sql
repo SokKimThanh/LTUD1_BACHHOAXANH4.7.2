@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_hinhthuckm_update.sql
--- Danh m?c update
+-- Danh mục update
 GO
 GO
 -- Author:		Quy Ngo

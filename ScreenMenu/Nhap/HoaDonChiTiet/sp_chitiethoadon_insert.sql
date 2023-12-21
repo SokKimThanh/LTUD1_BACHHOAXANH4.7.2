@@ -1,5 +1,5 @@
--- Create Procedure sp_chitiethoadon_insert.sql
--- Danh m?c insert
+﻿-- Create Procedure sp_chitiethoadon_insert.sql
+-- Danh mục insert
 GO
 GO
 -- Author:		Quy Ngo

@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_khuyenmai_update.sql
--- Danh m?c update
+-- Danh mục update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_khuyenmai_update

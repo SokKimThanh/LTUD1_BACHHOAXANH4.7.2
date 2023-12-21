@@ -258,7 +258,7 @@ END;
 GO
 EXECUTE GetRevenueByProduct 
 -- Create Procedure sp_danhmuc_select_all.sql
--- Danh m?c select all
+-- Danh mục select all
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_cbo_danhmuc_select_all
@@ -442,7 +442,7 @@ GO
 --exec sp_chinhanh_update 'CN05', N'Chi nhánh Bình Phu?c', N'Số 3 Nguyễn Văn Linh, Hải Châu, Đà Nẵng';
 select * from CHINHANH
 -- Create Procedure sp_danhmuc_delete.sql
--- Danh m?c delete
+-- Danh mục delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 DROP PROCEDURE IF EXISTS sp_danhmuc_delete
@@ -455,7 +455,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_danhmuc_insert.sql
--- Danh m?c insert
+-- Danh mục insert
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_danhmuc_insert
@@ -470,7 +470,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_danhmuc_select_all.sql
--- Danh m?c select all
+-- Danh mục select all
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_danhmuc_select_all
@@ -482,7 +482,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_danhmuc_select_one.sql
--- Danh m?c select one
+-- Danh mục select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_danhmuc_select_one
@@ -495,7 +495,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_danhmuc_update.sql
--- Danh m?c update
+-- Danh mục update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_danhmuc_update
@@ -510,7 +510,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_hinhthuckm_delete.sql
--- Danh m?c delete
+-- hinhthuckm delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 DROP PROCEDURE IF EXISTS sp_hinhthuckm_delete
@@ -523,7 +523,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_hinhthuckm_insert.sql
--- Danh m?c insert
+-- hinhthuckm insert
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_insert
@@ -538,7 +538,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_hinhthuckm_select_all.sql
--- Danh m?c select all
+-- hinhthuckm select all
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_select_all
@@ -550,7 +550,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_hinhthuckm_select_one.sql
--- Danh m?c select one
+-- hinhthuckm select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_select_one
@@ -565,7 +565,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_hinhthuckm_update.sql
--- Danh m?c update
+-- hinhthuckm update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_update
@@ -814,7 +814,7 @@ END
 GO
 exec sp_hoadon_update'HD03','15/01/2022', 90000,'NV02', 'KH02'
 -- Create Procedure sp_chitiethoadon_delete.sql
--- Danh m?c delete
+-- chitiethoadon delete
 GO
 GO
 -- Author:		Quy Ngo
@@ -836,7 +836,7 @@ Select count (*) from CHITIETHD
 Exec sp_chitiethoadon_delete 'HD01','SP01'
 Select count (*) from CHITIETHD 
 -- Create Procedure sp_chitiethoadon_insert.sql
--- Danh m?c insert
+-- chitiethoadon insert
 GO
 GO
 -- Author:		Quy Ngo
@@ -858,7 +858,7 @@ exec sp_chitiethoadon_insert 'hd03', 'sp02', 40
 exec sp_chitiethoadon_select_one 'hd03'
 select count (*) from chitiethd;
 ﻿-- Create Procedure sp_chitiethoadon_update.sql
--- Danh m?c update
+-- chitiethoadon update
 GO
 GO
 -- Author:		Quy Ngo
@@ -877,7 +877,7 @@ END
 GO
 EXEC sp_chitiethoadon_TimMaSP 'SP03'
 ﻿-- Create Procedure sp_chitiethoadon_delete.sql
--- Danh m?c delete
+-- chitiethoadon delete
 GO
 GO
 -- Author:		Quy Ngo
@@ -898,7 +898,7 @@ exec sp_chitiethoadon_Kiemtratonkho 'SP33', 36
 select *
 from SANPHAM
 ﻿-- Create Procedure sp_chitiethoadon_select_all.sql
--- Danh m?c select all
+-- chitiethoadon select all
 GO
 GO
 -- Author:		Quy Ngo
@@ -918,7 +918,7 @@ exec sp_chitiethoadon_select_all 'HD02'
 -- Author:		Quy Ngo
 -- Create date: <10/12/2023
 -- Create Procedure sp_chitiethoadon_select_one.sql
--- Danh m?c select one
+-- chitiethoadon select one
 drop procedure if exists sp_chitiethoadon_select_one
 go
 CREATE PROCEDURE sp_chitiethoadon_select_one
@@ -946,7 +946,7 @@ END
 GO
 exec sp_chitiethoadon_TimKiem 'HD01','B'
 ﻿-- Create Procedure sp_chitiethoadon_update.sql
--- Danh m?c update
+-- chitiethoadon update
 -- Author:		Quy Ngo
 -- Create date: <10/12/2023>
 drop procedure if exists sp_chitiethoadon_TongTien
@@ -968,7 +968,7 @@ END
 GO
 exec sp_chitiethoadon_TongTien 'HD01'
 ﻿-- Create Procedure sp_hinhthuckm_update.sql
--- Danh m?c update
+-- hinhthuckm update
 GO
 GO
 -- Author:		Quy Ngo
@@ -1080,7 +1080,7 @@ GO
 select * from KHACHHANG
 exec sp_khachhang_TimKiem 'L�'
 ﻿-- Create Procedure sp_khuyenmai_update.sql
--- Danh m?c update
+-- hinhthuckm update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_cbo_hinhthuckm
@@ -1095,7 +1095,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_khuyenmai_delete.sql
--- Danh m?c delete
+-- khuyenmai delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 DROP PROCEDURE IF EXISTS sp_khuyenmai_delete
@@ -1127,7 +1127,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_khuyenmai_select_all.sql
--- Danh m?c select all
+-- khuyenmai select all
 -- Author:		NgoQuy
 -- Create date: <07/11/2023>
 drop procedure if exists sp_khuyenmai_select_all
@@ -1142,7 +1142,7 @@ GO
 exec sp_khuyenmai_select_all
 exec sp_sanpham_select_all
 -- Create Procedure sp_khuyenmai_select_one.sql
--- Danh m?c select one
+-- khuyenmai select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_khuyenmai_select_one
@@ -1155,7 +1155,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_khuyenmai_update.sql
--- Danh m?c update
+-- khuyenmai update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_khuyenmai_update
