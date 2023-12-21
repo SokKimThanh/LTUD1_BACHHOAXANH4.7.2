@@ -89,7 +89,7 @@ CREATE PROCEDURE sp_quyentruycap_select_one
 	@MAQTC CHAR(30)
 AS
 BEGIN
-	SELECT * from quyentruycap where MAQTC = @MAQTC --  chính xác mã 100%
+	SELECT * from quyentruycap where MAQTC = @MAQTC --  ch�nh x�c m� 100%
 END
 GO
 ﻿-- Create Procedure sp_quyentruycap_update.sql
@@ -193,7 +193,7 @@ CREATE PROCEDURE sp_taikhoan_select_one
 	@TENTK CHAR(30)
 AS
 BEGIN
-	SELECT * from taikhoan where TENTK = @TENTK --  chính xác mã 100%
+	SELECT * from taikhoan where TENTK = @TENTK --  ch�nh x�c m� 100%
 END
 GO
 ﻿-- Create Procedure sp_taikhoan_update.sql
@@ -257,7 +257,7 @@ BEGIN
 END;
 GO
 EXECUTE GetRevenueByProduct 
--- Create Procedure sp_danhmuc_select_all.sql
+﻿-- Create Procedure sp_danhmuc_select_all.sql
 -- Danh mục select all
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -441,7 +441,7 @@ END
 GO
 --exec sp_chinhanh_update 'CN05', N'Chi nhánh Bình Phu?c', N'Số 3 Nguyễn Văn Linh, Hải Châu, Đà Nẵng';
 select * from CHINHANH
--- Create Procedure sp_danhmuc_delete.sql
+﻿-- Create Procedure sp_danhmuc_delete.sql
 -- Danh mục delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -454,7 +454,7 @@ BEGIN
 	DELETE FROM LOAISP WHERE MALOAI = @MALOAI
 END
 GO
--- Create Procedure sp_danhmuc_insert.sql
+﻿-- Create Procedure sp_danhmuc_insert.sql
 -- Danh mục insert
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -469,7 +469,7 @@ BEGIN
 	INSERT INTO LOAISP VALUES (@MALOAI, @TENLOAI, @GHICHU)
 END
 GO
--- Create Procedure sp_danhmuc_select_all.sql
+﻿-- Create Procedure sp_danhmuc_select_all.sql
 -- Danh mục select all
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -481,7 +481,7 @@ BEGIN
 	SELECT * from LOAISP
 END
 GO
--- Create Procedure sp_danhmuc_select_one.sql
+﻿-- Create Procedure sp_danhmuc_select_one.sql
 -- Danh mục select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -509,8 +509,8 @@ BEGIN
 	update LOAISP set TENLOAI = @TENLOAI, GHICHU = @GHICHU where MALOAI = @MALOAI -- chuẩn sql
 END
 GO
--- Create Procedure sp_hinhthuckm_delete.sql
--- hinhthuckm delete
+﻿-- Create Procedure sp_hinhthuckm_delete.sql
+-- Danh mục delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 DROP PROCEDURE IF EXISTS sp_hinhthuckm_delete
@@ -522,8 +522,8 @@ BEGIN
 	DELETE FROM hinhthuckm WHERE MAHT = @makm
 END
 GO
--- Create Procedure sp_hinhthuckm_insert.sql
--- hinhthuckm insert
+﻿-- Create Procedure sp_hinhthuckm_insert.sql
+-- Danh mục insert
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_insert
@@ -537,8 +537,8 @@ BEGIN
 	INSERT INTO hinhthuckm VALUES (@makm, @hinhthuc, @ghichu)
 END
 GO
--- Create Procedure sp_hinhthuckm_select_all.sql
--- hinhthuckm select all
+﻿-- Create Procedure sp_hinhthuckm_select_all.sql
+-- Danh mục select all
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_select_all
@@ -549,8 +549,8 @@ BEGIN
 	SELECT * from hinhthuckm
 END
 GO
--- Create Procedure sp_hinhthuckm_select_one.sql
--- hinhthuckm select one
+﻿-- Create Procedure sp_hinhthuckm_select_one.sql
+-- Danh mục select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_select_one
@@ -565,7 +565,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_hinhthuckm_update.sql
--- hinhthuckm update
+-- Danh mục update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_update
@@ -598,10 +598,10 @@ GO
 exec rp_hoadon_theongay '1-01-2022'
 select * from HOADON
 ﻿-- Create Procedure sp_nhacungcap_select_all.sql
--- nhacungcap select all
+-- cbb_khachhang select all
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
--- Description:	<nhacungcap select all>
+-- Description:	<cbb_khachhang select all>
 drop procedure if exists sp_cbb_khachhang_select_all
 go
 CREATE PROCEDURE sp_cbb_khachhang_select_all
@@ -671,8 +671,8 @@ BEGIN
 END
 GO
 exec sp_nhanvien_select_all
--- Create Procedure sp_nhacungcap_update.sql
--- nhacungcap update
+-- Create Procedure sp_hoadon_update.sql
+-- hoadon update
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_hoadon_update
@@ -690,7 +690,7 @@ END
 GO
 --exec sp_hoadon_update'HD03','15/01/2022', 90000,'NV02', 'KH02'
 -- Create Procedure sp_nhacungcap_insert.sql
--- nhacungcap insert
+-- hoadon insert
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_hoadon_insert
@@ -708,7 +708,7 @@ END
 GO
 --exec sp_hoadon_insert 'HD03','15/01/2022', 90000,'NV02', 'KH02'
 -- Create Procedure sp_nhacungcap_delete.sql
--- nhacungcap delete
+-- hoadon delete
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 DROP PROCEDURE IF EXISTS sp_hoadon_delete
@@ -777,7 +777,7 @@ CREATE PROCEDURE sp_hoadon_select_one
 	@maHD char(11) = ''
 AS
 BEGIN
-	SELECT * from HOADON where MAHD  = @maHD --like chính xác mã 100%
+	SELECT * from HOADON where MAHD  = @maHD --like ch�nh x�c m� 100%
 END
 GO
 exec sp_hoadon_select_one '12'
@@ -813,8 +813,8 @@ BEGIN
 END
 GO
 exec sp_hoadon_update'HD03','15/01/2022', 90000,'NV02', 'KH02'
--- Create Procedure sp_chitiethoadon_delete.sql
--- chitiethoadon delete
+﻿-- Create Procedure sp_chitiethoadon_delete.sql
+-- Danh mục delete
 GO
 GO
 -- Author:		Quy Ngo
@@ -835,8 +835,8 @@ GO
 Select count (*) from CHITIETHD 
 Exec sp_chitiethoadon_delete 'HD01','SP01'
 Select count (*) from CHITIETHD 
--- Create Procedure sp_chitiethoadon_insert.sql
--- chitiethoadon insert
+﻿-- Create Procedure sp_chitiethoadon_insert.sql
+-- Danh mục insert
 GO
 GO
 -- Author:		Quy Ngo
@@ -858,7 +858,7 @@ exec sp_chitiethoadon_insert 'hd03', 'sp02', 40
 exec sp_chitiethoadon_select_one 'hd03'
 select count (*) from chitiethd;
 ﻿-- Create Procedure sp_chitiethoadon_update.sql
--- chitiethoadon update
+-- Danh mục update
 GO
 GO
 -- Author:		Quy Ngo
@@ -877,7 +877,7 @@ END
 GO
 EXEC sp_chitiethoadon_TimMaSP 'SP03'
 ﻿-- Create Procedure sp_chitiethoadon_delete.sql
--- chitiethoadon delete
+-- Danh mục delete
 GO
 GO
 -- Author:		Quy Ngo
@@ -898,7 +898,7 @@ exec sp_chitiethoadon_Kiemtratonkho 'SP33', 36
 select *
 from SANPHAM
 ﻿-- Create Procedure sp_chitiethoadon_select_all.sql
--- chitiethoadon select all
+-- Danh mục select all
 GO
 GO
 -- Author:		Quy Ngo
@@ -915,10 +915,10 @@ BEGIN
 END
 GO
 exec sp_chitiethoadon_select_all 'HD02'
--- Author:		Quy Ngo
+﻿-- Author:		Quy Ngo
 -- Create date: <10/12/2023
 -- Create Procedure sp_chitiethoadon_select_one.sql
--- chitiethoadon select one
+-- Danh mục select one
 drop procedure if exists sp_chitiethoadon_select_one
 go
 CREATE PROCEDURE sp_chitiethoadon_select_one
@@ -946,7 +946,7 @@ END
 GO
 exec sp_chitiethoadon_TimKiem 'HD01','B'
 ﻿-- Create Procedure sp_chitiethoadon_update.sql
--- chitiethoadon update
+-- Danh mục update
 -- Author:		Quy Ngo
 -- Create date: <10/12/2023>
 drop procedure if exists sp_chitiethoadon_TongTien
@@ -968,7 +968,7 @@ END
 GO
 exec sp_chitiethoadon_TongTien 'HD01'
 ﻿-- Create Procedure sp_hinhthuckm_update.sql
--- hinhthuckm update
+-- Danh mục update
 GO
 GO
 -- Author:		Quy Ngo
@@ -1044,7 +1044,7 @@ CREATE PROCEDURE sp_khachhang_select_one
 	@maKH char(11)
 AS
 BEGIN
-	SELECT * from KHACHHANG where  MAKH = @maKH --like chính xác mã 100%
+	SELECT * from KHACHHANG where  MAKH = @maKH --like ch�nh x�c m� 100%
 END
 GO
 ﻿-- Create Procedure sp_khachhang_update.sql
@@ -1080,7 +1080,7 @@ GO
 select * from KHACHHANG
 exec sp_khachhang_TimKiem 'L�'
 ﻿-- Create Procedure sp_khuyenmai_update.sql
--- hinhthuckm update
+-- Danh mục update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_cbo_hinhthuckm
@@ -1094,8 +1094,8 @@ BEGIN
 	SELECT MAHT from hinhthuckm-- chuẩn sql
 END
 GO
--- Create Procedure sp_khuyenmai_delete.sql
--- khuyenmai delete
+﻿-- Create Procedure sp_khuyenmai_delete.sql
+-- Danh mục delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 DROP PROCEDURE IF EXISTS sp_khuyenmai_delete
@@ -1126,8 +1126,8 @@ BEGIN
 	INSERT INTO khuyenmai VALUES (@makm, @ngaybd, @ngaykt,@maht, @phantramgiamgia)
 END
 GO
--- Create Procedure sp_khuyenmai_select_all.sql
--- khuyenmai select all
+﻿-- Create Procedure sp_khuyenmai_select_all.sql
+-- Danh mục select all
 -- Author:		NgoQuy
 -- Create date: <07/11/2023>
 drop procedure if exists sp_khuyenmai_select_all
@@ -1141,8 +1141,8 @@ END
 GO
 exec sp_khuyenmai_select_all
 exec sp_sanpham_select_all
--- Create Procedure sp_khuyenmai_select_one.sql
--- khuyenmai select one
+﻿-- Create Procedure sp_khuyenmai_select_one.sql
+-- Danh mục select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_khuyenmai_select_one
@@ -1155,7 +1155,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_khuyenmai_update.sql
--- khuyenmai update
+-- Danh mục update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_khuyenmai_update
@@ -1261,7 +1261,7 @@ CREATE PROCEDURE sp_nhacungcap_select_one
 	@MANCC CHAR(11)
 AS
 BEGIN
-	SELECT * from nhacungcap where MANCC = @MANCC --like chính xác mã 100%
+	SELECT * from nhacungcap where MANCC = @MANCC --like ch�nh x�c m� 100%
 END
 GO
 ﻿-- Create Procedure sp_nhacungcap_update.sql
@@ -1353,7 +1353,7 @@ CREATE PROCEDURE sp_chitietcc_select_one
 	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from chitietcc  --  chính xác mã 100%
+	SELECT * from chitietcc  --  ch�nh x�c m� 100%
 END
 GO
 execute sp_chitietcc_select_one  'ncc01' , 'sp01'
@@ -1377,10 +1377,10 @@ GO
 --execute sp_chitietcc_select_one 'ncc01', 'sp01'
 --execute sp_chitietcc_update 'ncc01', 'sp01', 100
 --execute sp_chitietcc_select_one 'ncc01', 'sp01'
--- =============================================
+﻿-- =============================================
 -- Author:		<Thanh sok>
 -- Create date: <12/12/2023>
--- Description:	<lấy danh sách phòng ban theo mã chi nh�nh>
+-- Description:	<lấy danh sách phòng ban theo mã chi nhánh>
 go
 drop procedure if exists sp_cbo_laydanhsach_phongban_theo_chinhanh
 go
@@ -1473,7 +1473,7 @@ CREATE PROCEDURE sp_nhanvien_search
 	@keyword nvarchar(100)
 AS
 BEGIN 
-	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like chính xác mã 100%
+	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like ch�nh x�c m� 100%
 END;
 go
 select * from nhanvien
@@ -1503,7 +1503,7 @@ CREATE PROCEDURE sp_nhanvien_select_one
 	@manv char(11)
 AS
 BEGIN 
-	SELECT * from nhanvien where MANV = isnull(@manv,manv) --like chính xác mã 100%
+	SELECT * from nhanvien where MANV = isnull(@manv,manv) --like ch�nh x�c m� 100%
 END;
 go
 ﻿-- Author:		Sok Kim Thanh
@@ -1590,7 +1590,7 @@ CREATE PROCEDURE sp_phongban_select_one
 	@mapb char(11)
 AS
 BEGIN 
-	SELECT * from phongban where mapb = @mapb --like chính xác mã 100%
+	SELECT * from phongban where mapb = @mapb --like ch�nh x�c m� 100%
 END;
 go
 --execute sp_phongban_select_one 'pb01'
@@ -1608,7 +1608,7 @@ AS
 BEGIN
 	update PHONGBAN set TENPHG = @tenPB, MACN = @maCN where MACN = @maCN -- chuẩn sql
 END
-GO-- Create Procedure sp_sanpham_delete.sql
+GO﻿-- Create Procedure sp_sanpham_delete.sql
 -- Sản phẩm delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -1621,7 +1621,7 @@ BEGIN
 	DELETE FROM sanpham WHERE MASP = @MASP
 END
 GO
--- Create Procedure sp_sanpham_insert.sql
+﻿-- Create Procedure sp_sanpham_insert.sql
 -- Sản phẩm insert
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -1644,7 +1644,7 @@ BEGIN
 	VALUES (@MASP,@TENSP,@DONVI ,@NSX  ,@HSD  ,@DONGIA  ,@SLTONKHO , @MALOAI , @MANCC, @MAKM )
 END
 GO
--- Create Procedure sp_sanpham_select_all.SQL
+﻿-- Create Procedure sp_sanpham_select_all.SQL
 -- Sản phẩm select all
 -- Author:		<Sok Kim Thanh>
 -- Create date: <07/11/2023>
@@ -1673,9 +1673,9 @@ BEGIN
 END
 GO
 exec sp_sanpham_select_all
--- Create Procedure sp_sanpham_select_one.sql
+﻿-- Create Procedure sp_sanpham_select_one.sql
 -- Sản phẩm select one
--- Author:		Ng� C�ng Qu�
+-- Author:		Ngô Công Quý
 -- Create date: <07/11/2023>
 set dateformat ymd
 drop procedure if exists sp_sanpham_select_ngay
@@ -1689,7 +1689,7 @@ END
 GO
 select * From SANPHAM
 exec sp_sanpham_select_ngay
--- Create Procedure sp_sanpham_select_one.sql
+﻿-- Create Procedure sp_sanpham_select_one.sql
 -- Sản phẩm select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
@@ -1702,9 +1702,9 @@ BEGIN
 	SELECT * from sanpham where MASP = @MASP --like chính xác mã 100%
 END
 GO
--- Create Procedure sp_sanpham_select_one.sql
+﻿-- Create Procedure sp_sanpham_select_one.sql
 -- Sản phẩm select one
--- Author:		Ng� C�ng Qu�
+-- Author:		Ngô Công Quý
 -- Create date: <07/11/2023>
 drop procedure if exists sp_sanpham_select_ten
 go
@@ -1716,7 +1716,7 @@ BEGIN
 END
 GO
 select * from sanpham
-exec sp_sanpham_select_ten 'C�'
+exec sp_sanpham_select_ten 'CÁ'
 ﻿-- Create Procedure sp_sanpham_update.sql
 -- Sản phẩm update
 -- Author:		Sok Kim Thanh
