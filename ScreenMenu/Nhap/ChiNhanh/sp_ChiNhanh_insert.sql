@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_chinhanh_insert.sql
--- Nhà cung c?p insert
+-- nhacungcap insert
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 set dateformat dmy

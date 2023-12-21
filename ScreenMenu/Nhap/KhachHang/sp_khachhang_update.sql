@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_khachhang_update.sql
--- Nhà cung c?p update
+-- nhacungcap update
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_khachhang_update

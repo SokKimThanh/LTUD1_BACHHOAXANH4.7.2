@@ -1,6 +1,6 @@
 set dateformat dmy
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nhà cung c?p insert 
+-- nhacungcap insert 
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_hoadon_insert

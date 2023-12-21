@@ -393,7 +393,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_chinhanh_insert.sql
--- Nhà cung c?p insert
+-- nhacungcap insert
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 set dateformat dmy
@@ -598,10 +598,10 @@ GO
 exec rp_hoadon_theongay '1-01-2022'
 select * from HOADON
 ﻿-- Create Procedure sp_nhacungcap_select_all.sql
--- Nhà cung c?p select all
+-- nhacungcap select all
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
--- Description:	<Nhà cung c?p select all>
+-- Description:	<nhacungcap select all>
 drop procedure if exists sp_cbb_khachhang_select_all
 go
 CREATE PROCEDURE sp_cbb_khachhang_select_all
@@ -612,7 +612,7 @@ END
 GO
 exec sp_cbb_khachhang_select_all
 -- Create Procedure sp_nhacungcap_update.sql
--- Nhà cung c?p update
+-- nhacungcap update
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_khachhang_update
@@ -628,7 +628,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nhà cung c?p insert
+-- nhacungcap insert
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_nhacungcap_insert
@@ -644,7 +644,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_nhacungcap_delete.sql
--- Nhà cung c?p delete
+-- nhacungcap delete
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 DROP PROCEDURE IF EXISTS sp_khachhang_delete
@@ -672,7 +672,7 @@ END
 GO
 exec sp_nhanvien_select_all
 -- Create Procedure sp_nhacungcap_update.sql
--- Nhà cung c?p update
+-- nhacungcap update
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_hoadon_update
@@ -690,7 +690,7 @@ END
 GO
 --exec sp_hoadon_update'HD03','15/01/2022', 90000,'NV02', 'KH02'
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nhà cung c?p insert
+-- nhacungcap insert
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_hoadon_insert
@@ -708,7 +708,7 @@ END
 GO
 --exec sp_hoadon_insert 'HD03','15/01/2022', 90000,'NV02', 'KH02'
 -- Create Procedure sp_nhacungcap_delete.sql
--- Nhà cung c?p delete
+-- nhacungcap delete
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 DROP PROCEDURE IF EXISTS sp_hoadon_delete
@@ -733,7 +733,7 @@ BEGIN
 end
 set dateformat dmy
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nh� cung c?p insert 
+-- nhacungcap insert 
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_hoadon_insert
@@ -770,7 +770,7 @@ exec sp_hoadon_select_all
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_nhacungcap_select_one.sql
--- Nh� cung c?p select one
+-- nhacungcap select one
 drop procedure if exists sp_hoadon_select_one
 go
 CREATE PROCEDURE sp_hoadon_select_one
@@ -995,7 +995,7 @@ where MAHD = 'HD01' and MASP = 'SP02'
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_khachhang_delete.sql
--- Nh� cung c?p delete
+-- nhacungcap delete
 DROP PROCEDURE IF EXISTS sp_khachhang_delete
 GO
 CREATE PROCEDURE sp_khachhang_delete
@@ -1008,7 +1008,7 @@ GO
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_khachhang_insert.sql
--- Nh� cung c?p insert
+-- nhacungcap insert
 drop procedure if exists sp_khachhang_insert
 go
 CREATE PROCEDURE sp_khachhang_insert
@@ -1024,7 +1024,7 @@ GO
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_nhacungcap_select_all.sql
--- Description:	<Nh� cung c?p select all>
+-- Description:	<nhacungcap select all>
 drop procedure if exists sp_khachhang_select_all
 go
 CREATE PROCEDURE sp_khachhang_select_all
@@ -1037,7 +1037,7 @@ exec sp_khachhang_select_all
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_khachhang_select_one.sql
--- Nh� cung c?p select one
+-- nhacungcap select one
 drop procedure if exists sp_khachhang_select_one
 go
 CREATE PROCEDURE sp_khachhang_select_one
@@ -1048,7 +1048,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_khachhang_update.sql
--- Nhà cung c?p update
+-- nhacungcap update
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_khachhang_update
@@ -1173,7 +1173,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_nhacungcap_delete.sql
--- Nh� cung c?p delete
+-- nhacungcap delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 -- update date: 10-12-2023
@@ -1192,7 +1192,7 @@ GO
 -- Create date: <07/11/2023>
 -- update date: 10-12-2023
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nh� cung c?p insert 
+-- nhacungcap insert 
 drop procedure if exists sp_nhacungcap_insert
 go
 CREATE PROCEDURE sp_nhacungcap_insert
@@ -1251,7 +1251,7 @@ GO
 --exec sp_nhacungcap_cu_select_all
 --exec sp_nhacungcap_select_all
 -- Create Procedure sp_nhacungcap_select_one.sql
--- Nh� cung c?p select one
+-- nhacungcap select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 -- update date: 10-12-2023
@@ -1265,7 +1265,7 @@ BEGIN
 END
 GO
 ﻿-- Create Procedure sp_nhacungcap_update.sql
--- Nhà cung c?p update
+-- nhacungcap update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 -- update date: 10-12-2023
