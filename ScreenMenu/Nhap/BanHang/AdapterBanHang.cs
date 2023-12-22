@@ -277,9 +277,14 @@ namespace LTUD1_BACHHOAXANH472
 
             if (DialogResult.Yes == MessageBox.Show("Xác nhận thanh toán", "Thanh toán", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
             {
-                if (string.IsNullOrEmpty(txtTenKhachHang.Text) && string.IsNullOrEmpty(txtSDTKhachHang.Text))
+                if (string.IsNullOrEmpty(txtTenKhachHang.Text))
                 {
-                    MessageBox.Show("Vui lòng không để trống thông tin khách hàng", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Vui lòng không để trống Tên khách hàng", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrEmpty(txtSDTKhachHang.Text))
+                {
+                    MessageBox.Show("Vui lòng không để trống Số điện thoại khách hàng", "Thanh toán", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 //==============================================================================

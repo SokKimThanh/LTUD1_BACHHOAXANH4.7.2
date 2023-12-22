@@ -275,19 +275,19 @@ namespace LTUD1_BACHHOAXANH472
                 //==============================================================================
 
 
-                //if (!string.IsNullOrEmpty(banhangController.Hoadon.MaHD))
-                //{
-                //    ReportHelper rh = new ReportHelper(
-                //        reportManager,
-                //        "PhieuInHoaDon",
-                //        new Dictionary<string, string> { { "@mahd", banhangController.Hoadon.MaHD } },
-                //        this.crystalReportViewer1);
-                //    rh.LoadReport();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Không tìm thấy mã hd");
-                //}
+                if (!string.IsNullOrEmpty(banhangController.Hoadon.MaHD))
+                {
+                    ReportHelper rh = new ReportHelper(
+                        reportManager,
+                        "PhieuInHoaDon",
+                        new Dictionary<string, string> { { "@mahd", banhangController.Hoadon.MaHD } },
+                        this.crystalReportViewer1);
+                    rh.LoadReport();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy mã hd");
+                }
             }
         }
 
