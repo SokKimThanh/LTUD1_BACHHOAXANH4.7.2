@@ -12,7 +12,7 @@ namespace LTUD1_BACHHOAXANH472
         QuyenTruyCapController quyenTruyCapController;
         //AccountController sanPhamController;
         //ButtonStateManager state;
-        ReportManager reportManager
+        ReportManager reportManager;
         public FormTaiKhoan(ReportManager reportManager)
         {
             InitializeComponent();
