@@ -15,5 +15,10 @@ BEGIN
 		AND lsp.MALOAI=sp.MALOAI)
 END
 GO
+<<<<<<< Updated upstream
 
 p_sanpham_select_ngay '2023-04-03'
+=======
+select * From SANPHAM
+--exec sp_sanpham_select_ngay
+>>>>>>> Stashed changes

@@ -213,6 +213,8 @@ namespace LTUD1_BACHHOAXANH472
 
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
+                    ReportDocument reportDocument = new ReportDocument();
+                    reportDocument.Load("D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamTheoNgay.rpt");
                     // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
                     ParameterValues param = new ParameterValues();
 
@@ -220,7 +222,7 @@ namespace LTUD1_BACHHOAXANH472
                     ParameterDiscreteValue pdv = new ParameterDiscreteValue();
 
                     // Đặt giá trị của pdv bằng giá trị trong textBox
-                    pdv.Value = dtpTKNgay.Value;
+                    pdv.Value = dtpTKNgay.Text;
 
                     // Thêm pdv vào danh sách các giá trị tham số
                     param.Add(pdv);

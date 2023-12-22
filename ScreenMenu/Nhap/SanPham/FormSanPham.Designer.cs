@@ -433,16 +433,16 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // cboTheLoaiTimKiem
             // 
+            this.cboTheLoaiTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cboTheLoaiTimKiem.FormattingEnabled = true;
             this.cboTheLoaiTimKiem.Items.AddRange(new object[] {
-            "Theo hạn sử dụng",
-            "Theo tên"});
-            this.cboTheLoaiTimKiem.Location = new System.Drawing.Point(3, 4);
+            "Theo tên",
+            "Theo hạn sử dụng"});
+            this.cboTheLoaiTimKiem.Location = new System.Drawing.Point(0, 0);
             this.cboTheLoaiTimKiem.Name = "cboTheLoaiTimKiem";
-            this.cboTheLoaiTimKiem.Size = new System.Drawing.Size(373, 49);
-            this.cboTheLoaiTimKiem.TabIndex = 1;
+            this.cboTheLoaiTimKiem.Size = new System.Drawing.Size(379, 49);
+            this.cboTheLoaiTimKiem.TabIndex = 0;
             this.cboTheLoaiTimKiem.Text = "Theo hạn sử dụng";
-            this.cboTheLoaiTimKiem.TextChanged += new System.EventHandler(this.cboTheLoaiTimKiem_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -502,7 +502,7 @@ namespace LTUD1_BACHHOAXANH472
             this.rptSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rptSanPham.Location = new System.Drawing.Point(3, 74);
             this.rptSanPham.Name = "rptSanPham";
-            //this.rptSanPham.ReportSource = "D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamTheoNgay.rpt";
+            this.rptSanPham.ReportSource = "D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamTheoNgay.rpt";
             this.rptSanPham.Size = new System.Drawing.Size(921, 297);
             this.rptSanPham.TabIndex = 1;
             // 
