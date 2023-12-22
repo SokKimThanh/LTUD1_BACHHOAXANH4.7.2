@@ -183,80 +183,80 @@ namespace LTUD1_BACHHOAXANH472
         private void btnDiaDiem_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormChiNhanh());
+            OpenChildForm(new FormChiNhanh(reportManager));
 
         }
         //3
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormSanPham());
+            OpenChildForm(new FormSanPham(reportManager));
         }
         //4
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormHoaDon());
+            OpenChildForm(new FormHoaDon(reportManager));
         }
         //5
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormKhuyenMai());
+            OpenChildForm(new FormKhuyenMai(reportManager));
         }
         //6
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormNhaCungCap());
+            OpenChildForm(new FormNhaCungCap(reportManager));
 
         }
         //7
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormKhachHang());
+            OpenChildForm(new FormKhachHang(reportManager));
         }
         //8
         private void btnChiTietHD_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormChiTietHoaDon());
+            OpenChildForm(new FormChiTietHoaDon(reportManager));
         }
         //9
         private void btnDanhMucSP_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormLoaiSP());
+            OpenChildForm(new FormLoaiSP(reportManager));
         }
         //10
         private void btnHinhThucKM_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormHinhThucKhuyenMai());
+            OpenChildForm(new FormHinhThucKhuyenMai(reportManager));
         }
         //11
         private void btnPhongBan_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormPhongBan());
+            OpenChildForm(new FormPhongBan(reportManager));
         }
         //12
         private void btnNhaCCCT_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormChiTietNhaCungCap());
+            OpenChildForm(new FormChiTietNhaCungCap(reportManager));
         }
         //13
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormBanHang());
+            OpenChildForm(new FormBanHang(reportManager));
         }
         private void btnChiNhanh_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormChiNhanh());
+            OpenChildForm(new FormChiNhanh(reportManager));
         }
 
         /**
@@ -350,7 +350,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnSetting_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormTaiKhoan());
+            OpenChildForm(new FormTaiKhoan(reportManager));
         }
 
         private void tsmDangXuat_Click(object sender, EventArgs e)
@@ -384,7 +384,8 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnReportManagement_Click(object sender, EventArgs e)
         {
-            if (!ErrForm.DialogConfirm("Bạn muốn tải lại các báo cáo không?")){
+            if (!ErrForm.DialogConfirm("Bạn muốn tải lại các báo cáo không?"))
+            {
                 reportManager.RefreshAllReports();
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using System;
 using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
@@ -7,7 +8,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
     {
         PhongBanController pbController;
         ButtonStateManager buttonStateManager = new ButtonStateManager();
-        public FormPhongBan()
+        ReportManager reportManager;// chia se report
+        public FormPhongBan(ReportManager reportManager)
         {
             InitializeComponent();
             pbController = new PhongBanController(Utils.ConnectionString);
@@ -17,6 +19,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            this.reportManager = reportManager;// chia se report
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

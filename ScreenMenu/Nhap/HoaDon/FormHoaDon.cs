@@ -1,4 +1,5 @@
 ﻿using CrystalDecisions.Shared;
+using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Data;
@@ -11,7 +12,8 @@ namespace LTUD1_BACHHOAXANH472
         HoaDonController HoaDonController;
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
-        public FormHoaDon()
+        ReportManager reportManager;// chia se report
+        public FormHoaDon(ReportManager reportManager)
         {
             InitializeComponent();
             HoaDonController = new HoaDonController(Utils.ConnectionString);
@@ -24,6 +26,7 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnEdit = this.btnXoa;
             buttonStateManager.BtnDelete = this.btnSua;
             buttonStateManager.BtnRefresh = this.btnLamMoi;
+            this.reportManager = reportManager;// chia se report
         }
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
@@ -45,6 +48,7 @@ namespace LTUD1_BACHHOAXANH472
                 cbbMaKH.ValueMember = "MAKH";
                 // setting datagridview
                 DataGridViewHelper.ConfigureDataGridView(dgvHD);
+              
             }
             catch (Exception ex)
             {

@@ -1,18 +1,21 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using System;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.ScreenDetail
 {
     public partial class FormHinhThucKhuyenMai : Form
     {
         HinhThucKhuyenMaiControler htkmConn;
+        ReportManager reportManager;// chia se report
 
-        public FormHinhThucKhuyenMai()
+        public FormHinhThucKhuyenMai(ReportManager reportManager)
         {
             InitializeComponent();
             htkmConn = new HinhThucKhuyenMaiControler(Utils.ConnectionString);
             DataGridViewHelper.ConfigureDataGridView(dgvHTKM);
             clean();
             txtMaHTKM.Enabled = false;
+            this.reportManager = reportManager;// chia se report
         }
 
         private void FormChiTietKhuyenMai_Load(object sender, EventArgs e)

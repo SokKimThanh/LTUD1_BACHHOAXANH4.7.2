@@ -523,7 +523,6 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSearchSanPham.Text = "Tìm sản phẩm";
             this.btnSearchSanPham.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSearchSanPham.UseVisualStyleBackColor = false;
-            //this.btnSearchSanPham.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // lblNhaCungCap
             // 
@@ -778,7 +777,6 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvDanhSachSanPham.Size = new System.Drawing.Size(637, 426);
             this.dgvDanhSachSanPham.TabIndex = 9;
             this.dgvDanhSachSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSanPham_CellClick);
-            //this.dgvDanhSachSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSanPham_CellContentClick);
             // 
             // btnNameThemHDCT
             // 
@@ -1211,7 +1209,7 @@ namespace LTUD1_BACHHOAXANH472
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(1286, 732);
             this.crystalReportViewer1.TabIndex = 0;
-            //this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
+            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
             // 
             // FormBanHang
             // 

@@ -1,4 +1,5 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -11,8 +12,8 @@ namespace LTUD1_BACHHOAXANH472
         QuyenTruyCapController quyenTruyCapController;
         //AccountController sanPhamController;
         //ButtonStateManager state;
-
-        public FormTaiKhoan()
+        ReportManager reportManager
+        public FormTaiKhoan(ReportManager reportManager)
         {
             InitializeComponent();
             AcountController = new AccountController(Utils.ConnectionString);
@@ -23,6 +24,7 @@ namespace LTUD1_BACHHOAXANH472
             DataGridViewHelper.ConfigureDataGridView(dgvQTC);
             ComboBoxHelper.ConfigureComboBox(cboNV);
             ComboBoxHelper.ConfigureComboBox(cboQTC);
+            this.reportManager = reportManager;
         }
 
 

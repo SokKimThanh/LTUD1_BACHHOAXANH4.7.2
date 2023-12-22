@@ -8,7 +8,8 @@ namespace LTUD1_BACHHOAXANH472
         ChiNhanhController DiaDiemController;
         ButtonStateManager buttonStateManager = new ButtonStateManager();
         RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
-        public FormChiNhanh()
+        ReportManager reportManager;// chia sẽ report 
+        public FormChiNhanh(ReportManager reportManager)
         {
             InitializeComponent();
             DiaDiemController = new ChiNhanhController(Utils.ConnectionString);
@@ -21,6 +22,7 @@ namespace LTUD1_BACHHOAXANH472
             txtMaCN.Text = randomStringGenerator.GenerateRandomAlphanumericString(4);
             //txtMaCN.ReadOnly = false;
             txtMaCN.Enabled = false;
+            this.reportManager = reportManager;
         }
 
         private void FormDiaDiem_Load(object sender, EventArgs e)

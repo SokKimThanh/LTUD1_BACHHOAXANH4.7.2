@@ -1,16 +1,19 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using System;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
 {
     public partial class FormLoaiSP : Form
     {
         DanhMucController dmConn;
-        public FormLoaiSP()
+        ReportManager reportManager;// chia se report
+        public FormLoaiSP(ReportManager reportManager)
         {
             InitializeComponent();
             dmConn = new DanhMucController(Utils.ConnectionString);
             // setting datagridview
             DataGridViewHelper.ConfigureDataGridView(dgvDS);
+            this.reportManager = reportManager;// chia se report
         }
         private void FormLoaisp_Load(object sender, EventArgs e)
         {
