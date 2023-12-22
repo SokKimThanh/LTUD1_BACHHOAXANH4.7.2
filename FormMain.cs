@@ -72,7 +72,7 @@ namespace LTUD1_BACHHOAXANH472
             //--..........................................................................--
             //==============================================================================
             // Tạo một ReportManager mới với đường dẫn đến thư mục chứa các báo cáo
-            reportManager = new ReportManager(Utils.UploadString);//lazyloading
+            reportManager = new ReportManager();//lazyloading
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -384,7 +384,9 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnReportManagement_Click(object sender, EventArgs e)
         {
-            reportManager.RefreshAllReports();
+            if (!ErrForm.DialogConfirm("Bạn muốn tải lại các báo cáo không?")){
+                reportManager.RefreshAllReports();
+            }
         }
     }
 }

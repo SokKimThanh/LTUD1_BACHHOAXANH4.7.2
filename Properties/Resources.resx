@@ -316,4 +316,46 @@
   <data name="icon_quanlyreport" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_quanlyreport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="khachhangreport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\khachhangreport.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="khachhangreport1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\khachhangreport.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PhieuInHoaDon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\PhieuInHoaDon.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PhieuInHoaDon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\PhieuInHoaDon1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="reportHD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\reportHD.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reportHD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\reportHD.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rp_hoadon_theongay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\rp_hoadon_theongay.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rp_hoadon_theongay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\rp_hoadon_theongay.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rp_nhanvien_select_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\rp_nhanvien_select_all.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rp_nhanvien_select_all1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\rp_nhanvien_select_all.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SanPhamrpt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\SanPhamrpt.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SanPhamrpt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\SanPhamrpt1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SanPhamTheoNgay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\SanPhamTheoNgay.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SanPhamTheoNgay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\SanPhamTheoNgay1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>

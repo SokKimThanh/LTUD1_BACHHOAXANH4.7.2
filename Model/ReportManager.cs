@@ -2,9 +2,12 @@
 using CrystalDecisions.Shared;
 using CrystalDecisions.Windows.Forms;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 namespace LTUD1_BACHHOAXANH472.Model
 {
     public class ReportManager
@@ -13,19 +16,29 @@ namespace LTUD1_BACHHOAXANH472.Model
         private Dictionary<string, Lazy<ReportDocument>> reports = new Dictionary<string, Lazy<ReportDocument>>();
 
         private string reportDirectory;// thư mục chứa report
+
         /// <summary>
-        /// Đi tới thư mục gốc chứa report để tải lên các report
+        /// Đi tới thư mục resource chứa report để tải lên các report
+        /// </summary>
+        public ReportManager()
+        {
+            GetReportFromResources();
+        }
+
+
+        /// <summary>
+        /// Đi tới thư mục uploads chứa report để tải lên các report
         /// </summary>
         /// <param name="reportDirectory">Thư mục gốc chứa report</param>
         public ReportManager(string reportDirectory)
         {
             this.reportDirectory = reportDirectory;
-            LoadReportNames();
+            GetReportFromFolder();
         }
         /// <summary>
-        /// Hàm load tất cả report có trong thư mục chỉ định
+        /// Lấy tất cả report trong thư mục uploads
         /// </summary>
-        private void LoadReportNames()
+        private void GetReportFromFolder()
         {
             foreach (string reportPath in Directory.GetFiles(reportDirectory, "*.rpt"))
             {
@@ -40,6 +53,38 @@ namespace LTUD1_BACHHOAXANH472.Model
                         return reportDocument;
                     }));
                 }
+            }
+        }
+        /// <summary>
+        /// Lấy tất cả report trong thư mục resources
+        /// </summary>
+        public void GetReportFromResources()
+        {
+            foreach (string reportName in Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true).OfType<DictionaryEntry>().Where(entry => entry.Value is byte[] && entry.Key.ToString().EndsWith(".rpt")).Select(entry => entry.Key.ToString()))
+            {
+                reports.Add(reportName, new Lazy<ReportDocument>(() =>
+                {
+                    ReportDocument reportDocument;
+
+                    using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(this.GetType().Namespace + "." + reportName))
+                    {
+                        reportDocument = new ReportDocument();
+                        // Tạo một tệp tạm thời
+                        string tempPath = Path.GetTempFileName();
+                        using (FileStream fileStream = File.Create(tempPath))
+                        {
+                            stream.CopyTo(fileStream);
+                        }
+
+                        // Tải ReportDocument từ tệp tạm thời
+                        reportDocument.Load(tempPath);
+
+                        // Xóa tệp tạm thời
+                        File.Delete(tempPath);
+                    }
+
+                    return reportDocument;
+                }));
             }
         }
         /// <summary>
@@ -75,7 +120,7 @@ namespace LTUD1_BACHHOAXANH472.Model
         }
 
         /// <summary>
-        /// tải lại tất cả report
+        /// Tải lại tất cả report
         /// </summary>
         public void RefreshAllReports()
         {
@@ -84,5 +129,12 @@ namespace LTUD1_BACHHOAXANH472.Model
                 RefreshReport(reportTitle);
             }
         }
+
+        public bool ReportExists(string reportName)
+        {
+            var resourceSet = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true);
+            return resourceSet.OfType<DictionaryEntry>().Any(entry => entry.Key.ToString() == reportName);
+        }
+
     }
 }

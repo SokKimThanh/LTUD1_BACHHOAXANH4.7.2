@@ -290,7 +290,8 @@ namespace LTUD1_BACHHOAXANH472
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, string> { { "@tennhanvien", txtHoTenNV.Text } }, this.crystalReportViewer1);
+
+            ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, string> { { "@tennhanvien", string.IsNullOrEmpty(txtHoTenNV.Text) ? null : txtHoTenNV.Text } }, this.crystalReportViewer1);
             rh.LoadReport();
         }
         public void TaiLaiBaoCao(string reportTitle)
@@ -301,6 +302,5 @@ namespace LTUD1_BACHHOAXANH472
             // Bây giờ, chúng ta cần làm mới báo cáo trong ReportManager để nó biết về các thay đổi
             reportManager.RefreshReport(reportTitle);
         }
-
     }
 }

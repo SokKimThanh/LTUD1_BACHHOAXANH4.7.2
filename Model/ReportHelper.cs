@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472.Model
 {
@@ -32,10 +33,33 @@ namespace LTUD1_BACHHOAXANH472.Model
         {
             if (parameters.Count > 0)
             {
-                reportManager.RefreshReport(fileReportName);//được sử dụng để làm mới (hoặc tải lại) báo cáo mỗi khi chỉnh sửa báo cáo
-                ReportDocument reportDocument = reportManager.GetReport(fileReportName);// tải một báo cáo mới
-                crystalReportViewer1.ReportSource = reportDocument;// gán kết quả vào crytal report
+                // Kiểm tra xem tên báo cáo có tồn tại trong tài nguyên hay không
+                if (reportManager.ReportExists(fileReportName))
+                {
+                    // Nếu có, tải báo cáo và gán nó vào CrystalReportViewer
+                    ReportDocument reportDocument = reportManager.GetReport(fileReportName);
+
+                    // Đặt giá trị cho các tham số
+                    foreach (var parameter in parameters)
+                    {
+                        reportDocument.SetParameterValue(parameter.Key, parameter.Value);
+                    }
+
+                    crystalReportViewer1.ReportSource = reportDocument;
+                }
+                else
+                {
+                    // Nếu không, thông báo cho người dùng
+                    MessageBox.Show("Báo cáo '" + fileReportName + "' không tồn tại trong tài nguyên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                // Nếu không có tham số, thông báo cho người dùng
+                MessageBox.Show("Không có tham số nào được cung cấp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

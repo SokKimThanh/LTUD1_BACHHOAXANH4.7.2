@@ -9,7 +9,7 @@ AS
 BEGIN
     SELECT nv.MANV as NhanVienID, pb.MAPB as PhongBanID, nv.HOTENNV as N'Họ và tên', pb.TENPHG as N'Tên phòng ban'
 	FROM NHANVIEN nv, PHONGBAN pb
-    where nv.MAPB = PB.MAPB and nv.hotennv like N'%' + @tennhanvien + '%'
+    where nv.MAPB = PB.MAPB and nv.hotennv like N'%' + isnull(@tennhanvien,nv.hotennv) + '%'
 	order by nv.created_date_nv desc 
 END;
 go
