@@ -556,7 +556,8 @@
     <None Include="Resources\icon_big_phantrangleft.png" />
     <None Include="Resources\icon_small_phantrangleft.png" />
     <Content Include="ScreenMenu\HeThong\Login\sp_login_controller.sql" />
-    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_cnql_dangnhap.sql" />
+    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cnql_quyentruycap.sql" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_banhang_baocaodanhthu.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />

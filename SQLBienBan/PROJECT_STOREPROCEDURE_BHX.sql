@@ -1608,7 +1608,8 @@ AS
 BEGIN
 	update PHONGBAN set TENPHG = @tenPB, MACN = @maCN where MACN = @maCN -- chuẩn sql
 END
-GO﻿-- Create Procedure sp_sanpham_delete.sql
+GO
+-- Create Procedure sp_sanpham_delete.sql
 -- Sản phẩm delete
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
