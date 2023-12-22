@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_quyentruycap_update.sql
--- Tài kho?n update
+-- quyentruycap update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 go

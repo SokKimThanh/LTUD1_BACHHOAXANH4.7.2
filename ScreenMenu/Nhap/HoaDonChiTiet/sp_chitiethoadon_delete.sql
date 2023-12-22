@@ -1,5 +1,5 @@
--- Create Procedure sp_chitiethoadon_delete.sql
--- Danh m?c delete
+﻿-- Create Procedure sp_chitiethoadon_delete.sql
+-- Danh mục delete
 GO
 GO
 -- Author:		Quy Ngo

@@ -1,7 +1,7 @@
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_khachhang_insert.sql
--- Nhà cung c?p insert
+-- nhacungcap insert
 drop procedure if exists sp_khachhang_insert
 go
 CREATE PROCEDURE sp_khachhang_insert

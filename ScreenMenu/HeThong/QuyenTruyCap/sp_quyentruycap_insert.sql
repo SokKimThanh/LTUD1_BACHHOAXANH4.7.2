@@ -1,5 +1,5 @@
 -- Create Procedure sp_quyentruycap_insert.sql
--- Tài kho?n insert
+-- quyentruycap insert
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 drop procedure if exists sp_quyentruycap_insert

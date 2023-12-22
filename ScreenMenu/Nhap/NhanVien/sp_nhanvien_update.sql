@@ -10,7 +10,7 @@ CREATE PROCEDURE sp_nhanvien_update
 	@luong float,
 	@sdtnv int,
 	@ngaysinh date,
-	@mapb char(4),
+	@mapb CHAR(11),
 	@gioitinh nvarchar(10)
 AS
 BEGIN 

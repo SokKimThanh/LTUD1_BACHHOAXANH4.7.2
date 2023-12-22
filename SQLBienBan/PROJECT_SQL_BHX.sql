@@ -7,10 +7,10 @@
 Create Date:7/5/2023
 Author: SOK KIM THANH
 Description:lược đồ csdl quan hệ từ mô hình thực thế kết hợp
-****************************************************************************************************
+****************************************************************************************************************************************************************
 Tổng kết thay đổi
 Date(dd/MM/yyyy)		Author				Comments
-------------------- ------------------- ------------------------------------------------------------
+------------------- ------------------- ------------------------------------------------------------------------------------------------------------------------
 7/5/2023 	05:00		Sok Kim Thanh		Viết mã sql dựng lược đồ quan hệ
 7/5/2023 	11:43  		Sok Kim Thanh		Viết mã nhập liệu
 7/5/2023 	05:58  		Sok Kim Thanh   	Viêt mã sql tác ra 3 phần, tạo bảng, thêm khóa chính, thêm khóa ngoại.
@@ -24,7 +24,8 @@ Date(dd/MM/yyyy)		Author				Comments
 14/12/2023	09:24 CH	Sok Kim Thanh		Thêm dữ liệu cho ứng dụng
 17/12/2023	10/42 SA	Sok Kim Thanh		Thêm cột phantramgiamgia int cho khuyến mãi 
 19/12/2023	05:04 SA	Sok Kim Thanh		Sửa đoạn code tạo database, thêm dữ liệu cho bảng chi nhánh, nhân viên, khách hàng ,sản phẩm
-***************************************************************************************************/
+21/12/2023  02:10 SA    Sok Kim Thanh       Tạo bảng TruyCap, gắn thêm getdate cho mỗi thời điểm đăng nhập, lưu kết quả đăng nhập thành công/thất bại
+****************************************************************************************************************************************************************/
 ------------------------------------------------------------
 --Tạo database mới										   -
 ------------------------------------------------------------
@@ -52,17 +53,17 @@ use BACHHOAXANH
 ---------------------Tạo bảng CHINHANH----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE CHINHANH (MACN CHAR(4) NOT NULL ,TENCN NVARCHAR(255) NOT NULL,DIACHICN NVARCHAR(100));
+CREATE TABLE CHINHANH (MACN CHAR(11) NOT NULL ,TENCN NVARCHAR(255) NOT NULL,DIACHICN NVARCHAR(100));
 ------------------------------------------------------------
 ---------------------Tạo bảng PHONGBAN----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE PHONGBAN (MAPB CHAR(4) NOT NULL ,TENPHG NVARCHAR(255) NOT NULL,	MACN CHAR(4));
+CREATE TABLE PHONGBAN (MAPB CHAR(11) NOT NULL ,TENPHG NVARCHAR(255) NOT NULL, MACN CHAR(11));
 ------------------------------------------------------------
 ---------------------Tạo bảng NHANVIEN----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE NHANVIEN (	MANV CHAR(11)NOT NULL, HOTENNV NVARCHAR(255) NOT NULL,DIACHINV NVARCHAR(100),LUONG int NOT NULL,SDTNV INT NULL,NGAYSINH DATE NOT NULL,MAPB CHAR(4), GIOITINH nvarchar(10) NOT NULL, CREATED_DATE_NV datetime not null);
+CREATE TABLE NHANVIEN (	MANV CHAR(11)NOT NULL, HOTENNV NVARCHAR(255) NOT NULL,DIACHINV NVARCHAR(100),LUONG int NOT NULL,SDTNV INT NULL,NGAYSINH DATE NOT NULL,MAPB CHAR(11), GIOITINH nvarchar(10) NOT NULL, CREATED_DATE_NV datetime not null);
 ------------------------------------------------------------
 ---------------------Tạo bảng KHACHHANG---------------------
 ------------------------------------------------------------
@@ -115,7 +116,11 @@ create table TAIKHOAN(TENTK char(30) not null, MATKHAU char(30) not null, MANV c
 ------------------------------------------------------------
 go 
 create table QUYENTRUYCAP(MAQTC char(11) not null,TENQTC NVARCHAR(255) not null)
-
+------------------------------------------------------------
+----------------------Tạo bảng QUYENTRUYCAP-----------------------
+------------------------------------------------------------
+go 
+CREATE TABLE TRUYCAP (TENTK CHAR(30) NOT NULL, THOIDIEM DATETIME NOT NULL, KETQUA NVARCHAR(255) NOT NULL)
 /***********************************************************
 ------------------------------------------------------------
 ----Tạo khóa chính------------------------------------------
@@ -159,7 +164,6 @@ alter table TAIKHOAN add constraint FK_TAIKHOAN_QUYENTRUYCAP foreign key (MAQTC)
 ------------------------------------------------------------
 ************************************************************/
 alter table khuyenmai add phantramgiamgia int null;
- 
 
 
 
@@ -210,7 +214,9 @@ go
 alter table KHUYENMAI
 add constraint d_phantramgiamgia default 0 for phantramgiamgia
 
-
+go
+alter table TRUYCAP
+add constraint d_thoidiemtruycap default getdate() for thoidiem
 /***********************************************************
 ------------------------------------------------------------
 ---------------------Tạo check value------------------------

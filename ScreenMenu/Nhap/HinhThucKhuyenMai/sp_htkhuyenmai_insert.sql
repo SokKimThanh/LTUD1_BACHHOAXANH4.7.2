@@ -1,5 +1,5 @@
--- Create Procedure sp_hinhthuckm_insert.sql
--- Danh m?c insert
+﻿-- Create Procedure sp_hinhthuckm_insert.sql
+-- Danh mục insert
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 drop procedure if exists sp_hinhthuckm_insert

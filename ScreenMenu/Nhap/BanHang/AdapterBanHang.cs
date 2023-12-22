@@ -46,7 +46,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvThongTinHoaDon = dgvThongTinHoaDon;
             this.dgvDanhSachSanPham = dgvDanhSachSanPham;
             this.hoadon = hoadon;
-            tcManHinhBanHang = tcManHinhBanHang;
+            this.tcManHinhBanHang = tcManHinhBanHang;
         }
 
         public TextBox TxtSDTKhachHang { get => txtSDTKhachHang; set => txtSDTKhachHang = value; }

@@ -13,7 +13,7 @@ namespace LTUD1_BACHHOAXANH472
     {
         // khởi tạo kết nối
         NhanVienController nvController = new NhanVienController(Utils.ConnectionString);
-        DiaDiemController chinhanhController = new DiaDiemController(Utils.ConnectionString);
+        ChiNhanhController chinhanhController = new ChiNhanhController(Utils.ConnectionString);
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
         // Hàm hỗ trợ kiểm tra lỗi nhập
@@ -254,23 +254,23 @@ namespace LTUD1_BACHHOAXANH472
 
         private void txtLuong_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_Salary(sender);
+            TextboxHelper.HandleTextChange_Salary(sender);
         }
 
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandlePhoneNumber(sender, e);
+            TextboxHelper.HandlePhoneNumber(sender, e);
         }
 
         private void txtHoTenNV_TextChanged(object sender, EventArgs e)
         {
             // kiểm tra 1 trong 3 cái nào dính thì chặn luôn 
-            TextHelper.HandleTextChange_FullName(sender);
+            TextboxHelper.HandleTextChange_FullName(sender);
         }
 
         private void rtbDiaChi_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_DiaChi(sender);
+            TextboxHelper.HandleTextChange_DiaChi(sender);
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)

@@ -20,16 +20,36 @@ namespace LTUD1_BACHHOAXANH472
         private Form currentChildForm = new Form();
         public SettingImageList navigationBar;
         public ErrForm errform;
+        private Session session;
         public Session Session { get; set; }
 
         public bool btn_out = false;
-
+        /// <summary>
+        /// CHẠY TỪ FILE PROGRAM.CS 
+        /// </summary>
         public FormMain()
         {
             InitializeComponent();
+
             navigationBar = new SettingImageList(listIcon_navigation_bar);
             errform = new ErrForm(this);
-            Session = new Session();
+            //lblAccountName = new Label();
+            // dành cho test lỗi chạy từ file program.cs
+            //lblAccountName.Text = "ADMIN TEST";
+        }
+        /// <summary>
+        /// CHẠY TỪ FILE FORMDANGNHAP.CS
+        /// </summary>
+        /// <param name="session"></param>
+        public FormMain(Session session)
+        {
+
+            InitializeComponent();
+            navigationBar = new SettingImageList(listIcon_navigation_bar);
+            errform = new ErrForm(this);
+            this.session = session;
+            // dành cho chạy từ đăng nhập sẽ có tên đăng nhập đầy đủ và cấp quyền
+            lblAccountName.Text = this.session.Username.ToUpper();
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -40,12 +60,9 @@ namespace LTUD1_BACHHOAXANH472
             this.Text = string.Empty;// xóa tiêu đề
             this.ControlBox = false;// tắt nút thoát 
             this.DoubleBuffered = true;// giảm nháy màn hình 
-            lblAccountName.Text = Session.Username;
 
 
-            // 
-            this.IsMdiContainer = true; // Đặt form này là MdiContainer
-
+            this.IsMdiContainer = true; // Đặt form này là MdiContainer 
         }
 
         /**
@@ -143,7 +160,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnDiaDiem_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormDiaDiem());
+            OpenChildForm(new FormChiNhanh());
 
         }
         //3
@@ -216,7 +233,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnChiNhanh_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormDiaDiem());
+            OpenChildForm(new FormChiNhanh());
         }
 
         /**
@@ -266,14 +283,6 @@ namespace LTUD1_BACHHOAXANH472
                 if (tlpBHX.ColumnStyles[0].Width <= minWidthMenu)
                 //if (panelSidebar.Width == panelSidebar.MaximumSize.Width)
                 {
-                    // xóa chữ đi
-                    //this.btnDiaDiem.Text = "";
-                    //this.btnNhanVien.Text = "";
-                    //this.btnNhaCungCap.Text = "";
-                    //this.btnSanPham.Text = "";
-                    //this.btnHoaDon.Text = "";
-                    //this.btnKhuyenMai.Text = "";
-                    //this.btnKhachHang.Text = "";
                     // khong thu hep nua
                     sidebarExpand = false;
                     sidebarTimer.Stop();

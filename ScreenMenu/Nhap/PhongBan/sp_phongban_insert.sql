@@ -1,5 +1,5 @@
 -- Create Procedure sp_nhanvien_insert.sql
--- Nhân viên insert
+-- phongban insert
 -- Author:		Sok Kim Thanh
 -- Create date: <10/11/2023>
 drop procedure if exists sp_phongban_insert

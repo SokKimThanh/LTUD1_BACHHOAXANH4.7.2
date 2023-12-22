@@ -2,7 +2,7 @@
 -- Create date: <07/11/2023>
 -- update date: 10-12-2023
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nhà cung c?p insert 
+-- nhacungcap insert 
 drop procedure if exists sp_nhacungcap_insert
 go
 CREATE PROCEDURE sp_nhacungcap_insert

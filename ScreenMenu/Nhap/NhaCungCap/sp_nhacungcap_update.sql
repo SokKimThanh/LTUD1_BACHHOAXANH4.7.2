@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_nhacungcap_update.sql
--- Nhà cung c?p update
+-- nhacungcap update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
 -- update date: 10-12-2023

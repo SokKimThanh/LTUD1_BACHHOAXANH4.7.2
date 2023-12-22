@@ -16,7 +16,7 @@ namespace LTUD1_BACHHOAXANH472.HeThong
         Dictionary<string, ReportDocument> reports = new Dictionary<string, ReportDocument>();
         // khởi tạo kết nối
         NhanVienController nvController = new NhanVienController(Utils.ConnectionString);
-        DiaDiemController chinhanhController = new DiaDiemController(Utils.ConnectionString);
+        ChiNhanhController chinhanhController = new ChiNhanhController(Utils.ConnectionString);
         private TreeNode selectedNode;
         // Hàm hỗ trợ kiểm tra lỗi nhập
         //ErrTxt errtxt;

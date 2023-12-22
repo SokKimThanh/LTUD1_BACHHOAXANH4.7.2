@@ -1,8 +1,8 @@
 ﻿-- Create Procedure sp_nhacungcap_select_all.sql
--- Nhà cung c?p select all
+-- cbb_khachhang select all
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
--- Description:	<Nhà cung c?p select all>
+-- Description:	<cbb_khachhang select all>
 drop procedure if exists sp_cbb_khachhang_select_all
 go
 CREATE PROCEDURE sp_cbb_khachhang_select_all
@@ -13,7 +13,7 @@ END
 GO
 exec sp_cbb_khachhang_select_all
 -- Create Procedure sp_nhacungcap_update.sql
--- Nhà cung c?p update
+-- nhacungcap update
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_khachhang_update
@@ -29,7 +29,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_nhacungcap_insert.sql
--- Nhà cung c?p insert
+-- nhacungcap insert
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 drop procedure if exists sp_nhacungcap_insert
@@ -45,7 +45,7 @@ BEGIN
 END
 GO
 -- Create Procedure sp_nhacungcap_delete.sql
--- Nhà cung c?p delete
+-- nhacungcap delete
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 DROP PROCEDURE IF EXISTS sp_khachhang_delete

@@ -1,5 +1,5 @@
 ﻿-- Create Procedure sp_taikhoan_update.sql
--- Tài kho?n update
+-- account update
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
 go

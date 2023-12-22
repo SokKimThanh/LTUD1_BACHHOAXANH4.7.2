@@ -1,5 +1,4 @@
 ﻿using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -133,11 +132,7 @@ namespace LTUD1_BACHHOAXANH472
         //------------------.       Sự kiện tìm kiếm sản phẩm     .---------------------
         //--..........................................................................--
         //==============================================================================
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         //==============================================================================
         //--..........................................................................--
         //------------------Giao diện hình mũi tên nhỏ chuyển trang---------------------
@@ -198,7 +193,7 @@ namespace LTUD1_BACHHOAXANH472
         //==============================================================================
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            TextHelper.HandlePhoneNumber(sender, e);
+            TextboxHelper.HandlePhoneNumber(sender, e);
         }
         //==============================================================================
         //--..........................................................................--
@@ -250,9 +245,6 @@ namespace LTUD1_BACHHOAXANH472
             lblTongTien.Text = banhangController.Lblthanhtien.Text;
             txtSoLuongMua.Text = banhangController.TxtSoLuongMua.Text;
         }
-
-
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             phantrangAdapter.btnRefresh_Click(sender, e);
@@ -260,27 +252,12 @@ namespace LTUD1_BACHHOAXANH472
 
         private void txtTenKhachHang_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_FullName(sender);
+            TextboxHelper.HandleTextChange_FullName(sender);
         }
 
         private void txtTenSanPham_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_FullName(sender);
-        }
-
-        private void dgvDanhSachSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void crvInPhieuThanhToan_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void crystalReportViewer1_Load(object sender, EventArgs e)
-        {
-
+            TextboxHelper.HandleTextChange_FullName(sender);
         }
 
         private void tcManHinhBanHang_SelectedIndexChanged(object sender, EventArgs e)

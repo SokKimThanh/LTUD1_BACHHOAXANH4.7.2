@@ -1,8 +1,8 @@
 ﻿-- Create Procedure sp_sanpham_select_all.SQL
--- S?n ph?m gi?m giá
+-- Sản phẩm giảm giá
 -- Author:		<Sok Kim Thanh>
 -- Create date: <17/12/2023>
--- Description:	<S?n ph?m gi?m giá>
+-- Description:	<Sản phẩm giảm giá>
 drop procedure if exists sp_sanpham_giamgia_select_all
 go
 CREATE PROCEDURE sp_sanpham_giamgia_select_all
@@ -13,7 +13,7 @@ BEGIN
 	select   @TT   +=  sp.dongia * (100-km.phantramgiamgia)/100 * ct.SLMUA
 	from CHITIETHD ct,HOADON hd,SANPHAM sp,KHUYENMAI km
 	where ct.MAHD = hd.MAHD and sp.MASP = ct.MASP and ct.MAHD = @mahd and sp.MAKM = km.MAKM
-	--select @TT as 'Tổng thành tiền'
+	--select @TT as N'Tổng thành tiền'
 	Update HOADON
 	set TONGTHANHTIEN = @TT
 	where MAHD = @mahd; 

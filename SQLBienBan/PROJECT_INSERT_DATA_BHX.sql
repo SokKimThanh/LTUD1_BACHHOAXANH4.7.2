@@ -11,60 +11,60 @@ set dateformat dmy
 -- Thêm dữ liệu vào bảng LOAISP
 INSERT INTO LOAISP (MALOAI,TENLOAI,GHICHU)
 VALUES 
-('L01', N'Gạo', 'Các sản phẩm từ gạo'),
-('L02', N'Đậu nành', 'Các sản phẩm từ đậu nành'),
-('L03', N'Ngô', 'Các sản phẩm từ ngô'),
-('L04', N'Lúa mì', 'Các sản phẩm từ lúa mì'),
-('L05', N'Khoai tây', 'Các sản phẩm từ khoai tây'),
-('L06', N'Bột', 'Các sản phẩm từ bột'),
-('L07', N'Đường', 'Các sản phẩm từ đường'),
-('L08', N'Nước', 'Các sản phẩm từ nước'),
-('L09', N'Giấm', 'Các sản phẩm từ giấm'),
-('L10', N'Dầu', 'Các sản phẩm từ dầu'),
-('L11', N'Mì', 'Các sản phẩm từ mì'),
-('L12', N'Phô mai', 'Các sản phẩm từ phô mai'),
-('L13', N'Nước mắm', 'Các sản phẩm từ nước mắm'),
-('L14', N'Tương', 'Các sản phẩm từ tương'),
-('L15', N'Kẹo', 'Các sản phẩm từ kẹo'),
-('L16', N'Bánh', 'Các sản phẩm từ bánh'),
-('L17', N'Cháo', 'Các sản phẩm từ cháo'),
-('L18', N'Canh', 'Các sản phẩm từ canh'),
-('L19', N'Xôi', 'Các sản phẩm từ xôi'),
-('L20', N'Phở', 'Các sản phẩm từ phở'),
-('L21', N'Bún', 'Các sản phẩm từ bún'),
-('L22', N'Hủ tiếu', 'Các sản phẩm từ hủ tiếu'),
-('L23', N'Mì', 'Các sản phẩm từ mì'),
-('L24', N'Cơm', 'Các sản phẩm từ cơm'),
-('L25', N'Chè', 'Các sản phẩm từ chè'),
-('L26', N'Sinh tố', 'Các sản phẩm từ sinh tố'),
-('L27', N'Nước ép', 'Các sản phẩm từ nước ép'),
-('L28', N'Thức ăn nhanh', 'Các sản phẩm từ thức ăn nhanh'),
-('L29', N'Đồ hấp', 'Các sản phẩm từ đồ hấp'),
-('L30', N'Đồ nướng', 'Các sản phẩm từ đồ nướng'),
-('L31', N'Đồ chiên', 'Các sản phẩm từ đồ chiên'),
-('L32', N'Đồ xào', 'Các sản phẩm từ đồ xào'),
-('L33', N'Đồ luộc', 'Các sản phẩm từ đồ luộc'),
-('L34', N'Đồ hầm', 'Các sản phẩm từ đồ hầm'),
-('L35', N'Đồ uống', 'Các sản phẩm từ nước trái cây'),
-('L36', N'Đồ ăn vặt', 'Các sản phẩm từ khoai tây chiên'),
-('L37', N'Đồ chay', 'Các sản phẩm từ rau củ'),
-('L38', N'Đồ hải sản', 'Các sản phẩm từ tôm, cua, mực'),
-('L39', N'Đồ ngọt', 'Các sản phẩm từ bánh ngọt'),
-('L40', N'Đồ mặn', 'Các sản phẩm từ thịt mặn'),
-('L41', N'Đồ chua', 'Các sản phẩm từ dưa chua'),
-('L42', N'Đồ cay', 'Các sản phẩm từ ớt'),
-('L43', N'Đồ lạnh', 'Các sản phẩm từ kem'),
-('L44', N'Đồ nóng', 'Các sản phẩm từ cà phê nóng'),
-('L45', N'Đồ khô', 'Các sản phẩm từ thịt bò khô'),
-('L46', N'Đồ tươi', 'Các sản phẩm từ rau củ tươi'),
-('L47', N'Đồ đông lạnh', 'Các sản phẩm từ thực phẩm đông lạnh'),
-('L48', N'Đồ hấp', 'Các sản phẩm từ bánh bao'),
-('L49', N'Đồ nướng', 'Các sản phẩm từ thịt nướng'),
-('L50', N'Đồ chiên', 'Các sản phẩm từ gà chiên'),
-('L51', N'Đồ xào', 'Các sản phẩm từ mì xào'),
-('L52', N'Đồ luộc', 'Các sản phẩm từ trứng luộc'),
-('L53', N'Đồ hầm', 'Các sản phẩm từ thịt hầm'),
-('L54', N'Đồ rang', 'Các sản phẩm từ hạt điều rang');
+('L01', N'Gạo', N'Các sản phẩm từ gạo'),
+('L02', N'Đậu nành', N'Các sản phẩm từ đậu nành'),
+('L03', N'Ngô', N'Các sản phẩm từ ngô'),
+('L04', N'Lúa mì', N'Các sản phẩm từ lúa mì'),
+('L05', N'Khoai tây', N'Các sản phẩm từ khoai tây'),
+('L06', N'Bột', N'Các sản phẩm từ bột'),
+('L07', N'Đường', N'Các sản phẩm từ đường'),
+('L08', N'Nước', N'Các sản phẩm từ nước'),
+('L09', N'Giấm', N'Các sản phẩm từ giấm'),
+('L10', N'Dầu', N'Các sản phẩm từ dầu'),
+('L11', N'Mì', N'Các sản phẩm từ mì'),
+('L12', N'Phô mai', N'Các sản phẩm từ phô mai'),
+('L13', N'Nước mắm', N'Các sản phẩm từ nước mắm'),
+('L14', N'Tương', N'Các sản phẩm từ tương'),
+('L15', N'Kẹo', N'Các sản phẩm từ kẹo'),
+('L16', N'Bánh', N'Các sản phẩm từ bánh'),
+('L17', N'Cháo', N'Các sản phẩm từ cháo'),
+('L18', N'Canh', N'Các sản phẩm từ canh'),
+('L19', N'Xôi', N'Các sản phẩm từ xôi'),
+('L20', N'Phở', N'Các sản phẩm từ phở'),
+('L21', N'Bún', N'Các sản phẩm từ bún'),
+('L22', N'Hủ tiếu', N'Các sản phẩm từ hủ tiếu'),
+('L23', N'Mì', N'Các sản phẩm từ mì'),
+('L24', N'Cơm', N'Các sản phẩm từ cơm'),
+('L25', N'Chè', N'Các sản phẩm từ chè'),
+('L26', N'Sinh tố', N'Các sản phẩm từ sinh tố'),
+('L27', N'Nước ép', N'Các sản phẩm từ nước ép'),
+('L28', N'Thức ăn nhanh', N'Các sản phẩm từ thức ăn nhanh'),
+('L29', N'Đồ hấp', N'Các sản phẩm từ đồ hấp'),
+('L30', N'Đồ nướng', N'Các sản phẩm từ đồ nướng'),
+('L31', N'Đồ chiên', N'Các sản phẩm từ đồ chiên'),
+('L32', N'Đồ xào', N'Các sản phẩm từ đồ xào'),
+('L33', N'Đồ luộc', N'Các sản phẩm từ đồ luộc'),
+('L34', N'Đồ hầm', N'Các sản phẩm từ đồ hầm'),
+('L35', N'Đồ uống', N'Các sản phẩm từ nước trái cây'),
+('L36', N'Đồ ăn vặt', N'Các sản phẩm từ khoai tây chiên'),
+('L37', N'Đồ chay', N'Các sản phẩm từ rau củ'),
+('L38', N'Đồ hải sản', N'Các sản phẩm từ tôm, cua, mực'),
+('L39', N'Đồ ngọt', N'Các sản phẩm từ bánh ngọt'),
+('L40', N'Đồ mặn', N'Các sản phẩm từ thịt mặn'),
+('L41', N'Đồ chua', N'Các sản phẩm từ dưa chua'),
+('L42', N'Đồ cay', N'Các sản phẩm từ ớt'),
+('L43', N'Đồ lạnh', N'Các sản phẩm từ kem'),
+('L44', N'Đồ nóng', N'Các sản phẩm từ cà phê nóng'),
+('L45', N'Đồ khô', N'Các sản phẩm từ thịt bò khô'),
+('L46', N'Đồ tươi', N'Các sản phẩm từ rau củ tươi'),
+('L47', N'Đồ đông lạnh', N'Các sản phẩm từ thực phẩm đông lạnh'),
+('L48', N'Đồ hấp', N'Các sản phẩm từ bánh bao'),
+('L49', N'Đồ nướng', N'Các sản phẩm từ thịt nướng'),
+('L50', N'Đồ chiên', N'Các sản phẩm từ gà chiên'),
+('L51', N'Đồ xào', N'Các sản phẩm từ mì xào'),
+('L52', N'Đồ luộc', N'Các sản phẩm từ trứng luộc'),
+('L53', N'Đồ hầm', N'Các sản phẩm từ thịt hầm'),
+('L54', N'Đồ rang', N'Các sản phẩm từ hạt điều rang');
 
 
 --select * from CHINHANH
@@ -410,21 +410,21 @@ INSERT INTO CHITIETHD (MAHD, MASP, SLMUA) VALUES
 ('HD01', 'SP29', 29)										   
 
 --Thêm dữ liệu cho bảng quyền truy cập
-INSERT INTO quyentruycap VALUES ('QTC01', 'Quyền đọc');
-INSERT INTO quyentruycap VALUES ('QTC02', 'Quyền ghi');
-INSERT INTO quyentruycap VALUES ('QTC03', 'Quyền cập nhật');
-INSERT INTO quyentruycap VALUES ('QTC04', 'Quyền xóa');
-INSERT INTO quyentruycap VALUES ('QTC05', 'Quyền xem chi tiết sản phẩm');
-INSERT INTO quyentruycap VALUES ('QTC06', 'Quyền thêm sản phẩm vào giỏ hàng');
-INSERT INTO quyentruycap VALUES ('QTC07', 'Quyền xóa sản phẩm khỏi giỏ hàng');
-INSERT INTO quyentruycap VALUES ('QTC08', 'Quyền thực hiện thanh toán');
-INSERT INTO quyentruycap VALUES ('QTC09', 'Quyền xem lịch sử mua hàng');
-INSERT INTO quyentruycap VALUES ('QTC10', 'Quyền đánh giá sản phẩm');
-INSERT INTO quyentruycap VALUES ('QTC11', 'Quyền xem thông tin cá nhân');
-INSERT INTO quyentruycap VALUES ('QTC12', 'Quyền cập nhật thông tin cá nhân');
-INSERT INTO quyentruycap VALUES ('QTC13', 'Quyền thay đổi mật khẩu');
-INSERT INTO quyentruycap VALUES ('QTC14', 'Quyền quản lý danh sách yêu thích');
-INSERT INTO quyentruycap VALUES ('maqtc_full', 'Đầy đủ Quyền');
+INSERT INTO quyentruycap VALUES ('QTC01', N'Quyền đọc');
+INSERT INTO quyentruycap VALUES ('QTC02', N'Quyền ghi');
+INSERT INTO quyentruycap VALUES ('QTC03', N'Quyền cập nhật');
+INSERT INTO quyentruycap VALUES ('QTC04', N'Quyền xóa');
+INSERT INTO quyentruycap VALUES ('QTC05', N'Quyền xem chi tiết sản phẩm');
+INSERT INTO quyentruycap VALUES ('QTC06', N'Quyền thêm sản phẩm vào giỏ hàng');
+INSERT INTO quyentruycap VALUES ('QTC07', N'Quyền xóa sản phẩm khỏi giỏ hàng');
+INSERT INTO quyentruycap VALUES ('QTC08', N'Quyền thực hiện thanh toán');
+INSERT INTO quyentruycap VALUES ('QTC09', N'Quyền xem lịch sử mua hàng');
+INSERT INTO quyentruycap VALUES ('QTC10', N'Quyền đánh giá sản phẩm');
+INSERT INTO quyentruycap VALUES ('QTC11', N'Quyền xem thông tin cá nhân');
+INSERT INTO quyentruycap VALUES ('QTC12', N'Quyền cập nhật thông tin cá nhân');
+INSERT INTO quyentruycap VALUES ('QTC13', N'Quyền thay đổi mật khẩu');
+INSERT INTO quyentruycap VALUES ('QTC14', N'Quyền quản lý danh sách yêu thích');
+INSERT INTO quyentruycap VALUES ('maqtc_full', N'Đầy đủ Quyền');
 
 --Thêm dữ liệu cho bảng tài khoản
 INSERT INTO taikhoan VALUES ('tentaikhoan1', 'matkhau1', 'nv01', 'QTC01');

@@ -1,18 +1,18 @@
 ﻿using System;
 namespace LTUD1_BACHHOAXANH472
 {
-    internal class DiaDiem
+    internal class ChiNhanh
     {
         string maCN, tenCN, diaChi;
 
-        public DiaDiem()
+        public ChiNhanh()
         {
 
             maCN = string.Empty;
             tenCN = string.Empty;
             diaChi = string.Empty;
         }
-        public DiaDiem(string maCN, string tenCN, string diaChi)
+        public ChiNhanh(string maCN, string tenCN, string diaChi)
         {
             if (string.IsNullOrEmpty(tenCN))
             {

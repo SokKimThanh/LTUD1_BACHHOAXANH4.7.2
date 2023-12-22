@@ -3,15 +3,15 @@ using System;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
-    public partial class FormDiaDiem : Form
+    public partial class FormChiNhanh : Form
     {
-        DiaDiemController DiaDiemController;
+        ChiNhanhController DiaDiemController;
         ButtonStateManager buttonStateManager = new ButtonStateManager();
         RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
-        public FormDiaDiem()
+        public FormChiNhanh()
         {
             InitializeComponent();
-            DiaDiemController = new DiaDiemController(Utils.ConnectionString);
+            DiaDiemController = new ChiNhanhController(Utils.ConnectionString);
             DataGridViewHelper.ConfigureDataGridView(dgvDD);
             buttonStateManager.BtnEdit = btnSua;
             buttonStateManager.BtnDelete = btnXoa;
@@ -46,7 +46,7 @@ namespace LTUD1_BACHHOAXANH472
                 }
 
                 string macn = randomStringGenerator.GenerateRandomAlphanumericString(4);
-                DiaDiem diaDiem = new DiaDiem(macn, txtTenCN.Text, txtDC.Text);
+                ChiNhanh diaDiem = new ChiNhanh(macn, txtTenCN.Text, txtDC.Text);
                 DiaDiemController.Insert(diaDiem);
                 DiaDiemController.SelectAll();
                 dgvDD.DataSource = DiaDiemController.DataSource;
@@ -78,7 +78,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                DiaDiem diaDiem = new DiaDiem();
+                ChiNhanh diaDiem = new ChiNhanh();
                 diaDiem.MaCN = txtMaCN.Text;
                 diaDiem.TenCN = txtTenCN.Text;
                 diaDiem.DiaChi = txtDC.Text;
@@ -100,7 +100,7 @@ namespace LTUD1_BACHHOAXANH472
             {
                 if (!ErrForm.DialogConfirm("Bạn có chắc chắn muốn xóa?"))
                 {
-                    DiaDiem diaDiem = new DiaDiem();
+                    ChiNhanh diaDiem = new ChiNhanh();
                     diaDiem.MaCN = txtMaCN.Text;
                     DiaDiemController.Delete(diaDiem.MaCN);
                     DiaDiemController.SelectAll();
@@ -136,12 +136,12 @@ namespace LTUD1_BACHHOAXANH472
 
         private void txtTenCN_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_TenChiNhanh(sender);
+            TextboxHelper.HandleTextChange_TenChiNhanh(sender);
         }
 
         private void txtDC_TextChanged(object sender, EventArgs e)
         {
-            TextHelper.HandleTextChange_DiaChi(sender);
+            TextboxHelper.HandleTextChange_DiaChi(sender);
         }
     }
 }

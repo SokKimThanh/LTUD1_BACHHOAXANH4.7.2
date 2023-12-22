@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Control = System.Windows.Forms.Control;
 namespace LTUD1_BACHHOAXANH472.Model
 {
-    public static class TextHelper
+    public static class TextboxHelper
     {
         /// <summary>
         /// Chặn nhập dữ liệu

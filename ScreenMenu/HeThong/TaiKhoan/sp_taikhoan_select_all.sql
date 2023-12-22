@@ -1,5 +1,5 @@
 -- Create Procedure sp_taikhoan_select_all.sql
--- Tài kho?n select all
+-- account select all
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
 drop procedure if exists sp_taikhoan_select_all

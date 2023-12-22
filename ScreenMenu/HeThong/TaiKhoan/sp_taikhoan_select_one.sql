@@ -1,5 +1,5 @@
 -- Create Procedure sp_taikhoan_select_one.sql
--- Tài kho?n select one
+-- account select one
 -- Author:		Sok Kim Thanh
 -- Create date: <16/11/2023>
 go

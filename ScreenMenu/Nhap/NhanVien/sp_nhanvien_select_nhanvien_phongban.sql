@@ -7,7 +7,7 @@ CREATE PROCEDURE sp_nhanvien_select_nhanvien_phongban
 	@tennhanvien nvarchar(255)
 AS
 BEGIN
-    SELECT nv.MANV as NhanVienID, pb.MAPB as PhongBanID, nv.HOTENNV as 'Họ và tên', pb.TENPHG as 'Tên phòng ban'
+    SELECT nv.MANV as NhanVienID, pb.MAPB as PhongBanID, nv.HOTENNV as N'Họ và tên', pb.TENPHG as N'Tên phòng ban'
 	FROM NHANVIEN nv, PHONGBAN pb
     where nv.MAPB = PB.MAPB and nv.hotennv like N'%' + @tennhanvien + '%'
 	order by nv.created_date_nv desc 

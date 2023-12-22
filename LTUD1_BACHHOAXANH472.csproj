@@ -195,6 +195,7 @@
     <Reference Include="System.Web.Services.Description, Version=4.9.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Web.Services.Description.4.9.0\lib\net461\System.Web.Services.Description.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -209,7 +210,7 @@
     <Compile Include="BatLoiControl\ErrColors.cs" />
     <Compile Include="BatLoiControl\ErrForm.cs" />
     <Compile Include="BatLoiControl\ErrTextbox.cs" />
-    <Compile Include="BatLoiControl\SettingImageList.cs" />
+    <Compile Include="Model\SettingImageList.cs" />
     <Compile Include="Connection\DatabaseConnection.cs" />
     <Compile Include="Connection\DBController.cs" />
     <Compile Include="Connection\MyController.cs" />
@@ -222,12 +223,25 @@
     </Compile>
     <Compile Include="Model\ComboBoxHelper.cs" />
     <Compile Include="Model\ReportHelper.cs" />
-    <Compile Include="Model\TextHelper.cs" />
+    <Compile Include="Model\TextboxHelper.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScreenMenu\HeThong\Login\LoginController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="Model\PhanTrangController.cs" />
+    <Compile Include="ScreenMenu\HeThong\BieuDo\TaoBieuDoDonGian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreenMenu\HeThong\BieuDo\TaoBieuDoDonGian.Designer.cs">
+      <DependentUpon>TaoBieuDoDonGian.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterBanHang.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterPhanTrang.cs" />
+    <Compile Include="ScreenMenu\Nhap\BanHang\BanHangController.cs" />
     <Compile Include="uploads\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -248,12 +262,6 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\chitietcc.cs" />
     <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\ChiTietNCCController.cs" />
-    <Compile Include="uploads\rp_baocaodoanhthu.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rp_baocaodoanhthu.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="uploads\rp_nhanvien_select_all.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -276,25 +284,25 @@
     <Compile Include="Model\ReportManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenMenu\HeThong\FormDangNhap.cs">
+    <Compile Include="ScreenMenu\HeThong\Login\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\FormDangNhap.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\Login\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Session.cs" />
-    <Compile Include="ScreenMenu\HeThong\FormUploadFilesReport.cs">
+    <Compile Include="ScreenMenu\HeThong\UploadFileReport\FormUploadFilesReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\FormUploadFilesReport.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\UploadFileReport\FormUploadFilesReport.Designer.cs">
       <DependentUpon>FormUploadFilesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\HeThong\TaiKhoan\Account.cs" />
     <Compile Include="ScreenMenu\HeThong\TaiKhoan\AccountController.cs" />
-    <Compile Include="ScreenMenu\HeThong\FormTaiKhoan.cs">
+    <Compile Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\FormTaiKhoan.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.Designer.cs">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDonChiTiet\ChiTietHoaDon.cs" />
@@ -319,13 +327,13 @@
     <Compile Include="ScreenMenu\Nhap\DanhMuc\FormLoaiSP.Designer.cs">
       <DependentUpon>FormLoaiSP.cs</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\DiaDiem\DiaDiem.cs" />
-    <Compile Include="ScreenMenu\Nhap\DiaDiem\DiaDiemController.cs" />
-    <Compile Include="ScreenMenu\Nhap\DiaDiem\FormDiaDiem.cs">
+    <Compile Include="ScreenMenu\Nhap\ChiNhanh\ChiNhanh.cs" />
+    <Compile Include="ScreenMenu\Nhap\ChiNhanh\ChiNhanhController.cs" />
+    <Compile Include="ScreenMenu\Nhap\ChiNhanh\FormChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\Nhap\DiaDiem\FormDiaDiem.Designer.cs">
-      <DependentUpon>FormDiaDiem.cs</DependentUpon>
+    <Compile Include="ScreenMenu\Nhap\ChiNhanh\FormChiNhanh.Designer.cs">
+      <DependentUpon>FormChiNhanh.cs</DependentUpon>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HinhThucKhuyenMai\FormHinhThucKhuyenMai.cs">
       <SubType>Form</SubType>
@@ -435,6 +443,9 @@
     <EmbeddedResource Include="FormMain.vi.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ScreenMenu\HeThong\BieuDo\TaoBieuDoDonGian.resx">
+      <DependentUpon>TaoBieuDoDonGian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -444,10 +455,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.resx">
       <DependentUpon>FViDuPhanTrang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uploads\rp_baocaodoanhthu.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rp_baocaodoanhthu.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="uploads\rp_nhanvien_select_all.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -459,21 +466,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="ScreenMenu\HeThong\FormDangNhap.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\Login\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\HeThong\FormUploadFilesReport.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\UploadFileReport\FormUploadFilesReport.resx">
       <DependentUpon>FormUploadFilesReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\HeThong\FormTaiKhoan.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\TaiKhoan\FormTaiKhoan.resx">
       <DependentUpon>FormTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDonChiTiet\ChiTietHoaDonThongKe.resx">
@@ -482,8 +484,8 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\DanhMuc\FormLoaiSP.resx">
       <DependentUpon>FormLoaiSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\Nhap\DiaDiem\FormDiaDiem.resx">
-      <DependentUpon>FormDiaDiem.cs</DependentUpon>
+    <EmbeddedResource Include="ScreenMenu\Nhap\ChiNhanh\FormChiNhanh.resx">
+      <DependentUpon>FormChiNhanh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\HinhThucKhuyenMai\FormHinhThucKhuyenMai.resx">
       <DependentUpon>FormHinhThucKhuyenMai.cs</DependentUpon>
@@ -553,8 +555,10 @@
     <None Include="Resources\icon_big_phantrangright.png" />
     <None Include="Resources\icon_big_phantrangleft.png" />
     <None Include="Resources\icon_small_phantrangleft.png" />
-    <Content Include="ScreenMenu\Nhap\BanHang\sp_banhang_baocaodoanhthu.sql" />
+    <Content Include="ScreenMenu\HeThong\Login\sp_login_controller.sql" />
+    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_cnql_dangnhap.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_SanPham_TimTenSanPham.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
@@ -644,10 +648,10 @@
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\DanhMuc\sp_danhmuc_update.sql" />
-    <Content Include="ScreenMenu\Nhap\DiaDiem\sp_DiaDiem_delete.sql" />
-    <Content Include="ScreenMenu\Nhap\DiaDiem\sp_DiaDiem_insert.sql" />
-    <Content Include="ScreenMenu\Nhap\DiaDiem\sp_DiaDiem_select_all.sql" />
-    <Content Include="ScreenMenu\Nhap\DiaDiem\sp_DiaDiem_update.sql" />
+    <Content Include="ScreenMenu\Nhap\ChiNhanh\sp_chinhanh_delete.sql" />
+    <Content Include="ScreenMenu\Nhap\ChiNhanh\sp_chinhanh_insert.sql" />
+    <Content Include="ScreenMenu\Nhap\ChiNhanh\sp_chinhanh_select_all.sql" />
+    <Content Include="ScreenMenu\Nhap\ChiNhanh\sp_chinhanh_update.sql" />
     <Content Include="ScreenMenu\Nhap\HinhThucKhuyenMai\sp_htkhuyenmai_delete.sql" />
     <Content Include="ScreenMenu\Nhap\HinhThucKhuyenMai\sp_htkhuyenmai_insert.sql" />
     <Content Include="ScreenMenu\Nhap\HinhThucKhuyenMai\sp_htkhuyenmai_select_all.sql" />

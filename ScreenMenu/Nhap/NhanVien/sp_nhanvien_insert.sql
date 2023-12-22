@@ -10,8 +10,8 @@ CREATE PROCEDURE sp_nhanvien_insert
 	@luong float,
 	@sdtnv int,
 	@ngaysinh date,
-	@mapb char(4),
-	@gioitinh char(4)
+	@mapb CHAR(11),
+	@gioitinh CHAR(11)
 AS
 BEGIN 
 	-- Ð?i 50 milliseconds

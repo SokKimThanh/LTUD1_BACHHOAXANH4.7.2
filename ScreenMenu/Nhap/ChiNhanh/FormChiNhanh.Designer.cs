@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472 
 {
-    partial class FormDiaDiem
+    partial class FormChiNhanh
     {
         /// <summary>
         /// Required designer variable.
