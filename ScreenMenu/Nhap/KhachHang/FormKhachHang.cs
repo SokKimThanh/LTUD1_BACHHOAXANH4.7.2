@@ -3,6 +3,7 @@ using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
@@ -13,6 +14,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
         ReportManager reportManager;// chia se report
+
 
         public FormKhachHang(ReportManager reportManager)
         {
@@ -239,7 +241,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-
+            ReportHelper rh = new ReportHelper(reportManager, "khachhangreport", new Dictionary<string, string> { { "@ma", string.IsNullOrEmpty(txtMa.Text) ? null : txtMa.Text } }, this.crystalReportViewer1);
+            rh.LoadReport();
         }
 
         private void crystalReportViewer1_Load_1(object sender, EventArgs e)
