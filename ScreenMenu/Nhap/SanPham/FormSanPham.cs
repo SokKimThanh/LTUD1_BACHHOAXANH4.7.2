@@ -3,6 +3,7 @@ using CrystalDecisions.Shared;
 using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
@@ -291,13 +292,13 @@ namespace LTUD1_BACHHOAXANH472
             {
                 if (cboTheLoaiTimKiem.Text == "Theo tên")
                 {
-                    ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load(@"D:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
+                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamrpt", new Dictionary<string, string> { { "@TenSP", string.IsNullOrEmpty(txtTimKiem.Text) ? null : txtTimKiem.Text } }, this.rptSanPham);
+                    rh.LoadReport();
                 }
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
-                    ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load(@"D:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH472\uploads\SanPhamTheoNgay.rpt");
+                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamTheoNgay", new Dictionary<string, string> { { "@NgayHT", string.IsNullOrEmpty(dtpTKNgay.Text) ? null : dtpTKNgay.Text } }, this.rptSanPham);
+                    rh.LoadReport();
                 }
 
             }
