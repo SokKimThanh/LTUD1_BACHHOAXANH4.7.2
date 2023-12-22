@@ -1,87 +1,88 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 namespace LTUD1_BACHHOAXANH472.Model
 {
     public class ReportManager
     {
-        // Tạo một từ điển để lưu trữ các báo cáo
-        private Dictionary<string, ReportDocument> reports = new Dictionary<string, ReportDocument>();
+        // Kỹ thuật lazy load danh sách các report
+        private Dictionary<string, Lazy<ReportDocument>> reports = new Dictionary<string, Lazy<ReportDocument>>();
 
-        // Đường dẫn đến thư mục chứa các báo cáo
-        private string reportDirectory;
-
+        private string reportDirectory;// thư mục chứa report
+        /// <summary>
+        /// Đi tới thư mục gốc chứa report để tải lên các report
+        /// </summary>
+        /// <param name="reportDirectory">Thư mục gốc chứa report</param>
         public ReportManager(string reportDirectory)
         {
             this.reportDirectory = reportDirectory;
+            LoadReportNames();
         }
-
-        public void LoadReports()
+        /// <summary>
+        /// Hàm load tất cả report có trong thư mục chỉ định
+        /// </summary>
+        private void LoadReportNames()
         {
-            // Duyệt qua tất cả các tệp .rpt trong thư mục
             foreach (string reportPath in Directory.GetFiles(reportDirectory, "*.rpt"))
             {
-                // Tải báo cáo từ tệp
-                ReportDocument reportDocument = new ReportDocument();
-                reportDocument.Load(reportPath);
-
-                // Lấy tên của báo cáo từ tên tệp
                 string reportTitle = Path.GetFileNameWithoutExtension(reportPath);
 
-                // Kiểm tra xem khóa đã tồn tại chưa
                 if (!reports.ContainsKey(reportTitle))
                 {
-                    // Nếu khóa chưa tồn tại, thêm báo cáo vào từ điển
-                    reports.Add(reportTitle, reportDocument);
+                    reports.Add(reportTitle, new Lazy<ReportDocument>(() =>
+                    {
+                        ReportDocument reportDocument = new ReportDocument();
+                        reportDocument.Load(reportPath);
+                        return reportDocument;
+                    }));
                 }
             }
         }
-
-
+        /// <summary>
+        /// Nhập vào tên report muốn lấy ra 
+        /// </summary>
+        /// <param name="reportTitle">Nhập tên report</param>
+        /// <returns></returns>
         public ReportDocument GetReport(string reportTitle)
         {
-            // Tìm báo cáo tương ứng trong từ điển
-            if (reports.TryGetValue(reportTitle, out ReportDocument reportDocument))
+            if (reports.TryGetValue(reportTitle, out Lazy<ReportDocument> lazyReportDocument))
             {
-                return reportDocument;
+                return lazyReportDocument.Value;
             }
             else
             {
                 return null;
             }
         }
-
-        public List<string> GetReportTitles()
+        /// <summary>
+        /// Tải lại một report cụ thể
+        /// </summary>
+        /// <param name="reportTitle">Nhập vào tên report</param>
+        public void RefreshReport(string reportTitle)
         {
-            // Trả về danh sách tiêu đề của tất cả các báo cáo
-            return new List<string>(reports.Keys);
+            string reportPath = Path.Combine(reportDirectory, reportTitle + ".rpt");
+
+            reports[reportTitle] = new Lazy<ReportDocument>(() =>
+            {
+                ReportDocument reportDocument = new ReportDocument();
+                reportDocument.Load(reportPath);
+                return reportDocument;
+            });
         }
 
-        public void ApplyParametersToReport(string reportTitle, Dictionary<string, string> parameters)
+        /// <summary>
+        /// tải lại tất cả report
+        /// </summary>
+        public void RefreshAllReports()
         {
-            // Tìm báo cáo tương ứng trong từ điển
-            if (reports.TryGetValue(reportTitle, out ReportDocument reportDocument))
+            foreach (string reportTitle in reports.Keys.ToList())
             {
-                // Duyệt qua từ điển các tham số và áp dụng chúng cho báo cáo
-                foreach (var param in parameters)
-                {
-                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-                    pdv.Value = param.Value;
-                    ParameterValues paramValues = new ParameterValues();
-                    paramValues.Add(pdv);
-
-                    // Áp dụng các giá trị tham số hiện tại cho tham số tương ứng trong định nghĩa dữ liệu của báo cáo
-                    reportDocument.DataDefinition.ParameterFields[param.Key].ApplyCurrentValues(paramValues);
-                }
-            }
-            else
-            {
-                throw new ArgumentException("Report title not found in the report manager.");
+                RefreshReport(reportTitle);
             }
         }
-
     }
-
 }

@@ -117,23 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tlpSettingControl.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnReportManagement.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="btnReportManagement.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnReportManagement.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnReportManagement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 3</value>
+  </data>
+  <data name="btnReportManagement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 74</value>
+  </data>
+  <data name="btnReportManagement.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnReportManagement.Name" xml:space="preserve">
+    <value>btnReportManagement</value>
+  </data>
+  <data name="&gt;&gt;btnReportManagement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnReportManagement.Parent" xml:space="preserve">
+    <value>tlpSettingControl</value>
+  </data>
+  <data name="&gt;&gt;btnReportManagement.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
+    <value>Fill</value>
   </data>
   <data name="btnSetting.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnSetting.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btnSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>3, 3</value>
   </data>
   <data name="btnSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 80</value>
+    <value>74, 74</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnSetting.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;btnSetting.Name" xml:space="preserve">
     <value>btnSetting</value>
@@ -142,10 +178,40 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnSetting.Parent" xml:space="preserve">
-    <value>panelSetting</value>
+    <value>tlpSettingControl</value>
   </data>
   <data name="&gt;&gt;btnSetting.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tlpSettingControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tlpSettingControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tlpSettingControl.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tlpSettingControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 80</value>
+  </data>
+  <data name="tlpSettingControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;tlpSettingControl.Name" xml:space="preserve">
+    <value>tlpSettingControl</value>
+  </data>
+  <data name="&gt;&gt;tlpSettingControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tlpSettingControl.Parent" xml:space="preserve">
+    <value>panelSetting</value>
+  </data>
+  <data name="&gt;&gt;tlpSettingControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tlpSettingControl.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnReportManagement" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnSetting" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Absolute,80,Absolute,160" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelSetting.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1611,7 +1677,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAa
-        0QAAAk1TRnQBSQFMAgEBDgEAAfgBCQH4AQkBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        0QAAAk1TRnQBSQFMAgEBDgEAARABCgEQAQoBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AwABAQIAAQEBAAEgBwABBH0AAyoBQCD/AyEBMHgAAx4BKgNYAbgBXwJmAeUBWwJjAeQBXwJmAeUBXwJm
         AeUBWwJjAeQBXwJmAeUBXwJmAeUBXwJmAeUBXwJmAeUBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBXwJm
         AeUBWwJjAeQBWwJjAeQBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBXwJm
@@ -2514,7 +2580,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADw
-        EwAAAk1TRnQBSQFMAgEBDQEAAdABCQHQAQkBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        EwAAAk1TRnQBSQFMAgEBDQEAAegBCQHoAQkBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABQAMAAQEBAAEgBgABQC4AAwkBCwMMAQ8DBgEI7AADEwEZAxMBGQMLAQ4DBwEJAw8BFAMTARkDEwEZ
         3AADAgEDAxMBGRgAAwUBBgMTARnYAAMTARkgAAQBAxMBGdAAAxMBGQMFAQYkAAMTARkDAgEDzAADEwEZ
         LAADEwEZzAADEwEZLAADEwEZzAADEwEZFAADEwEZFAADEwEZzAADEwEZFAADEwEZFAADEwEZzAADEQEW

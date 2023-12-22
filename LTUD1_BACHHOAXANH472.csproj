@@ -555,6 +555,11 @@
     <None Include="Resources\icon_big_phantrangright.png" />
     <None Include="Resources\icon_big_phantrangleft.png" />
     <None Include="Resources\icon_small_phantrangleft.png" />
+    <None Include="Resources\icon_quanlyreport_small_green.png" />
+    <None Include="Resources\icon_quanlyreport_small.png" />
+    <None Include="Resources\icon_quanlyreport_green.png" />
+    <None Include="Resources\icon_quanlyreport_transparent.png" />
+    <None Include="Resources\icon_quanlyreport.png" />
     <Content Include="ScreenMenu\HeThong\Login\sp_login_controller.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_cnql_dangnhap.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />

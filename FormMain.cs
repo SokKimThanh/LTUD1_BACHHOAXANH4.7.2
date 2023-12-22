@@ -1,4 +1,5 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenDetail;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenDetail;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan;
@@ -24,6 +25,11 @@ namespace LTUD1_BACHHOAXANH472
         public Session Session { get; set; }
 
         public bool btn_out = false;
+
+        // Khởi tạo ReportManager ở đây
+        private ReportManager reportManager;
+
+
         /// <summary>
         /// CHẠY TỪ FILE PROGRAM.CS 
         /// </summary>
@@ -36,6 +42,15 @@ namespace LTUD1_BACHHOAXANH472
             //lblAccountName = new Label();
             // dành cho test lỗi chạy từ file program.cs
             //lblAccountName.Text = "ADMIN TEST";
+
+
+            //==============================================================================
+            //--..........................................................................--
+            //---------------.     Cài đặt lazy load report management       .--------------
+            //--..........................................................................--
+            //==============================================================================
+            // Tạo một ReportManager mới với đường dẫn đến thư mục chứa các báo cáo
+            reportManager = new ReportManager(Utils.UploadString);//lazyloading
         }
         /// <summary>
         /// CHẠY TỪ FILE FORMDANGNHAP.CS
@@ -50,6 +65,14 @@ namespace LTUD1_BACHHOAXANH472
             this.session = session;
             // dành cho chạy từ đăng nhập sẽ có tên đăng nhập đầy đủ và cấp quyền
             lblAccountName.Text = this.session.Username.ToUpper();
+
+            //==============================================================================
+            //--..........................................................................--
+            //---------------.     Cài đặt lazy load report management       .--------------
+            //--..........................................................................--
+            //==============================================================================
+            // Tạo một ReportManager mới với đường dẫn đến thư mục chứa các báo cáo
+            reportManager = new ReportManager(Utils.UploadString);//lazyloading
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -154,7 +177,7 @@ namespace LTUD1_BACHHOAXANH472
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormNhanVien());
+            OpenChildForm(new FormNhanVien(reportManager));
         }
         //2
         private void btnDiaDiem_Click(object sender, EventArgs e)
@@ -330,11 +353,6 @@ namespace LTUD1_BACHHOAXANH472
             OpenChildForm(new FormTaiKhoan());
         }
 
-        private void tlpHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void tsmDangXuat_Click(object sender, EventArgs e)
         {
             // Thực hiện các tác vụ đăng xuất ở đây
@@ -364,6 +382,9 @@ namespace LTUD1_BACHHOAXANH472
             OpenChildForm(new FormDangNhap());
         }
 
-
+        private void btnReportManagement_Click(object sender, EventArgs e)
+        {
+            reportManager.RefreshAllReports();
+        }
     }
 }

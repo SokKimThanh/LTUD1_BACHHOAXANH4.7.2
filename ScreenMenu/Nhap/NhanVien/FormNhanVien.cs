@@ -19,7 +19,14 @@ namespace LTUD1_BACHHOAXANH472
         // Hàm hỗ trợ kiểm tra lỗi nhập
         ErrTextbox errtxt;
         ErrColors color;
-        public FormNhanVien()
+        //==============================================================================
+        //--..........................................................................--
+        //---------------.     Chia sẽ lazy load report management       .--------------
+        //--..........................................................................--
+        //==============================================================================
+        private ReportManager reportManager;
+
+        public FormNhanVien(ReportManager reportManager)
         {
             InitializeComponent();
 
@@ -47,6 +54,14 @@ namespace LTUD1_BACHHOAXANH472
 
             // khởi tạo tô màu
             color = new ErrColors();
+
+            //==============================================================================
+            //--..........................................................................--
+            //---------------.     Chia sẽ lazy load report management       .--------------
+            //--..........................................................................--
+            //==============================================================================
+            // Sử dụng ReportManager được chia sẻ từ MainForm
+            this.reportManager = reportManager;
         }
 
         private void FormNhanVien_Load(object sender, EventArgs e)
@@ -130,7 +145,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             else
             {
-                //TaiLaiDanhSachBaoCao();
+                TaiLaiDanhSachBaoCao();
             }
         }
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -275,11 +290,17 @@ namespace LTUD1_BACHHOAXANH472
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ReportHelper rh = new ReportHelper();
-            rh.CrystalReportViewer1 = this.crystalReportViewer1;
-            rh.FileReportName = @"rp_nhanvien_select_all";
-            rh.Parameters = new Dictionary<string, string> { { "@tennhanvien", txtHoTenNV.Text } };
+            ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, string> { { "@tennhanvien", txtHoTenNV.Text } }, this.crystalReportViewer1);
             rh.LoadReport();
         }
+        public void TaiLaiBaoCao(string reportTitle)
+        {
+            // Người dùng vừa chỉnh sửa báo cáo có tiêu đề là reportTitle
+            // Các thay đổi đã được lưu vào tệp .rpt tương ứng
+
+            // Bây giờ, chúng ta cần làm mới báo cáo trong ReportManager để nó biết về các thay đổi
+            reportManager.RefreshReport(reportTitle);
+        }
+
     }
 }
