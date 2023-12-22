@@ -184,7 +184,7 @@
     <value>Fill</value>
   </data>
   <data name="flpSetting.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 646</value>
+    <value>0, 505</value>
   </data>
   <data name="flpSetting.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -217,7 +217,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panelDesktop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 566</value>
+    <value>839, 425</value>
   </data>
   <data name="panelDesktop.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -271,7 +271,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnBanHang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnBanHang.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -319,7 +319,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnNhanVien.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnNhanVien.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -368,7 +368,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnHinhThucKM.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnHinhThucKM.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -416,7 +416,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnDanhMucSP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnDanhMucSP.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -464,7 +464,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnChiTietHD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnChiTietHD.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -512,7 +512,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnKhachHang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnKhachHang.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -560,7 +560,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnNhaCungCap.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnNhaCungCap.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -608,7 +608,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnNhaCCCT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnNhaCCCT.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -656,7 +656,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnKhuyenMai.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnKhuyenMai.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -704,7 +704,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnHoaDon.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnHoaDon.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -752,7 +752,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnSanPham.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnSanPham.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -800,7 +800,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnChiNhanh.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnChiNhanh.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -848,7 +848,7 @@
     <value>80, 0</value>
   </data>
   <data name="btnPhongBan.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 80</value>
+    <value>378, 80</value>
   </data>
   <data name="btnPhongBan.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -881,7 +881,7 @@
     <value>13</value>
   </data>
   <data name="tlpNavigationBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 566</value>
+    <value>320, 425</value>
   </data>
   <data name="tlpNavigationBar.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -911,13 +911,13 @@
     <value>Segoe UI Semibold, 18pt, style=Bold</value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 36</value>
+    <value>194, 36</value>
   </data>
   <data name="đăngXuấtToolStripMenuItem.Text" xml:space="preserve">
     <value>Đăng xuất</value>
   </data>
   <data name="cmsLogOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>197, 40</value>
+    <value>195, 40</value>
   </data>
   <data name="&gt;&gt;cmsLogOut.Name" xml:space="preserve">
     <value>cmsLogOut</value>
@@ -935,7 +935,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnDangNhap.Location" type="System.Drawing.Point, System.Drawing">
-    <value>892, 0</value>
+    <value>752, 0</value>
   </data>
   <data name="btnDangNhap.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1013,7 +1013,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblAccountName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>486, 0</value>
+    <value>416, 0</value>
   </data>
   <data name="lblAccountName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -1022,7 +1022,7 @@
     <value>2, 0, 0, 0</value>
   </data>
   <data name="lblAccountName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 80</value>
+    <value>336, 80</value>
   </data>
   <data name="lblAccountName.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -1064,7 +1064,7 @@
     <value>2, 0, 0, 0</value>
   </data>
   <data name="currentChangeTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>406, 80</value>
+    <value>336, 80</value>
   </data>
   <data name="currentChangeTitle.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1100,7 +1100,7 @@
     <value>1</value>
   </data>
   <data name="tlpHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 80</value>
+    <value>839, 80</value>
   </data>
   <data name="tlpHeader.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1118,7 +1118,7 @@
     <value>0</value>
   </data>
   <data name="tlpHeader.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnDangNhap" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblAccountName" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeTitle" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,50,Percent,50,Absolute,88" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnDangNhap" Row="0" RowSpan="1" Column="3" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeButton" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lblAccountName" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="currentChangeTitle" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,50,Percent,50,Absolute,87" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelHeader.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1130,7 +1130,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panelHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>980, 80</value>
+    <value>839, 80</value>
   </data>
   <data name="panelHeader.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -1253,7 +1253,7 @@
     <value>0</value>
   </data>
   <data name="tlpMenu.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnTrangChu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnMenu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,74" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="btnTrangChu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="btnMenu" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Absolute,80,Percent,100" /&gt;&lt;Rows Styles="Percent,100,Absolute,73" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1292,7 +1292,7 @@
     <value>NoControl</value>
   </data>
   <data name="btnExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>897, 3</value>
+    <value>756, 3</value>
   </data>
   <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 68</value>
@@ -1325,7 +1325,7 @@
     <value>3, 0</value>
   </data>
   <data name="lblExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 74</value>
+    <value>747, 74</value>
   </data>
   <data name="lblExit.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1352,13 +1352,13 @@
     <value>Fill</value>
   </data>
   <data name="tlpExit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 649</value>
+    <value>323, 508</value>
   </data>
   <data name="tlpExit.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="tlpExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>974, 74</value>
+    <value>833, 74</value>
   </data>
   <data name="tlpExit.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -1391,7 +1391,7 @@
     <value>3</value>
   </data>
   <data name="tlpBHX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1300, 726</value>
+    <value>1159, 585</value>
   </data>
   <data name="tlpBHX.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1611,7 +1611,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAa
-        0QAAAk1TRnQBSQFMAgEBDgEAAfgBCQH4AQkBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        0QAAAk1TRnQBSQFMAgEBDgEAAdABCQHQAQkBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AwABAQIAAQEBAAEgBwABBH0AAyoBQCD/AyEBMHgAAx4BKgNYAbgBXwJmAeUBWwJjAeQBXwJmAeUBXwJm
         AeUBWwJjAeQBXwJmAeUBXwJmAeUBXwJmAeUBXwJmAeUBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBXwJm
         AeUBWwJjAeQBWwJjAeQBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBWwJjAeQBWwJjAeQBXwJmAeUBXwJm
@@ -2514,7 +2514,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADw
-        EwAAAk1TRnQBSQFMAgEBDQEAAdABCQHQAQkBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        EwAAAk1TRnQBSQFMAgEBDQEAAagBCQGoAQkBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABQAMAAQEBAAEgBgABQC4AAwkBCwMMAQ8DBgEI7AADEwEZAxMBGQMLAQ4DBwEJAw8BFAMTARkDEwEZ
         3AADAgEDAxMBGRgAAwUBBgMTARnYAAMTARkgAAQBAxMBGdAAAxMBGQMFAQYkAAMTARkDAgEDzAADEwEZ
         LAADEwEZzAADEwEZLAADEwEZzAADEwEZFAADEwEZFAADEwEZzAADEwEZFAADEwEZFAADEwEZzAADEQEW
@@ -2612,7 +2612,7 @@
     <value>11, 25</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1300, 726</value>
+    <value>1159, 585</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 14.25pt</value>
@@ -5786,7 +5786,7 @@
     <value>1920, 1080</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1259, 726</value>
+    <value>1154, 567</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
