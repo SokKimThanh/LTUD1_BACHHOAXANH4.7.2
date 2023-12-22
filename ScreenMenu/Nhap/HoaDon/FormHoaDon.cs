@@ -2,6 +2,7 @@
 using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -224,6 +225,18 @@ namespace LTUD1_BACHHOAXANH472
 
             // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
             crystalReportViewer2.ReportSource = rpt;
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            ReportHelper rh = new ReportHelper(reportManager, "reportHD", new Dictionary<string, string> { { "@ma", string.IsNullOrEmpty(txtMaHD.Text) ? null : txtMaHD.Text } }, this.crystalReportViewer1);
+            rh.LoadReport();
+        }
+
+        private void crystalReportViewer2_Load(object sender, EventArgs e)
+        {
+            ReportHelper rh = new ReportHelper(reportManager, "rp_hoadon_theongay", new Dictionary<string, string> { { "@ngay", string.IsNullOrEmpty(dtpkNgay.Text) ? null : dtpkNgay.Text } }, this.crystalReportViewer2);
+            rh.LoadReport();
         }
     }
 }
