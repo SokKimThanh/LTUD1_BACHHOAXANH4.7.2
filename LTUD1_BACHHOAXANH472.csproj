@@ -248,6 +248,12 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\chitietcc.cs" />
     <Compile Include="ScreenMenu\Nhap\NhaCungCapCT\ChiTietNCCController.cs" />
+    <Compile Include="uploads\rp_baocaodoanhthu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_baocaodoanhthu.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uploads\rp_nhanvien_select_all.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -439,6 +445,10 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\BanHang\FViDuPhanTrang.resx">
       <DependentUpon>FViDuPhanTrang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="uploads\rp_baocaodoanhthu.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_baocaodoanhthu.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="uploads\rp_nhanvien_select_all.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rp_nhanvien_select_all.cs</LastGenOutput>
@@ -543,6 +553,7 @@
     <None Include="Resources\icon_big_phantrangright.png" />
     <None Include="Resources\icon_big_phantrangleft.png" />
     <None Include="Resources\icon_small_phantrangleft.png" />
+    <Content Include="ScreenMenu\Nhap\BanHang\sp_banhang_baocaodoanhthu.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_SanPham_TimTenSanPham.sql" />

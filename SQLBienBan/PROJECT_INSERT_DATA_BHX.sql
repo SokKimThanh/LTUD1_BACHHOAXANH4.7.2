@@ -67,12 +67,9 @@ VALUES
 ('L54', N'Đồ rang', 'Các sản phẩm từ hạt điều rang');
 
 
-
-
+--select * from CHINHANH
 -- Thêm dữ liệu vào bảng CHINHANH
-INSERT INTO CHINHANH (MACN, TENCN, DIACHICN)
-VALUES 
-('CN01', N'Chi nhánh Hà Nội', N'Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội'),
+INSERT INTO CHINHANH (MACN, TENCN, DIACHICN) VALUES ('CN01', N'Chi nhánh Hà Nội', N'Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội'),
 ('CN02', N'Chi nhánh TP. Hồ Chí Minh', N'Số 2 Lê Duẩn, Quận 1, TP. Hồ Chí Minh'),
 ('CN03', N'Chi nhánh Đà Nẵng', N'Số 3 Nguyễn Văn Linh, Hải Châu, Đà Nẵng'),
 ('CN04', N'Chi nhánh Cần Thơ', N'Địa chỉ 4, Cần Thơ'),
@@ -162,7 +159,7 @@ VALUES
 ('PB33', N'Phòng Quản lý Chăm sóc khách hàng', 'CN01'),
 ('PB34', N'Phòng Quản lý Thanh toán', 'CN02');
 
-
+select * from PHONGBAN
 --Thêm dữ liệu vào bảng NHANVIEN
 INSERT INTO NHANVIEN (MANV, HOTENNV, DIACHINV, LUONG, SDTNV, NGAYSINH, MAPB, GIOITINH /*created_date auto import*/)
 VALUES	
