@@ -271,18 +271,18 @@ namespace LTUD1_BACHHOAXANH472
                 //------------------        Tạo report in hóa đơn       ---------------------------
                 //--..........................................................................--
                 //==============================================================================
-                ReportHelper rh = new ReportHelper();
-                rh.CrystalReportViewer1 = this.crystalReportViewer1;
-                rh.FileReportName = "PhieuInHoaDon";
-                if (!string.IsNullOrEmpty(banhangController.Hoadon.MaHD))
-                {
-                    rh.Parameters = new Dictionary<string, string> { { "@mahd", banhangController.Hoadon.MaHD } };
-                    rh.LoadReport();
-                }
-                else
-                {
-                    MessageBox.Show("Không tìm thấy mã hd");
-                }
+                //ReportHelper rh = new ReportHelper();
+                //rh.CrystalReportViewer1 = this.crystalReportViewer1;
+                //rh.FileReportName = "PhieuInHoaDon";
+                //if (!string.IsNullOrEmpty(banhangController.Hoadon.MaHD))
+                //{
+                //    rh.Parameters = new Dictionary<string, string> { { "@mahd", banhangController.Hoadon.MaHD } };
+                //    rh.LoadReport();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Không tìm thấy mã hd");
+                //}
             }
         }
 

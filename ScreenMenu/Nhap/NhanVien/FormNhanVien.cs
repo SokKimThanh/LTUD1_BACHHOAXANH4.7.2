@@ -145,7 +145,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             else
             {
-                TaiLaiDanhSachBaoCao();
+                TaiLaiBaoCao("rp_nhanvien_select_all");
             }
         }
         private void btnRefresh_Click(object sender, EventArgs e)

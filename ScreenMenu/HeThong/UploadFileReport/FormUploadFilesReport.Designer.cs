@@ -296,7 +296,7 @@ namespace LTUD1_BACHHOAXANH472.HeThong
             this.Controls.Add(this.tabControl1);
             this.Name = "FormUploadFilesReport";
             this.Text = "FormUploadFilesReport";
-            this.Load += new System.EventHandler(this.FormUploadFilesReport_Load);
+            //this.Load += new System.EventHandler(this.FormUploadFilesReport_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
