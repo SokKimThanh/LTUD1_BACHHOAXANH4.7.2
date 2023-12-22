@@ -225,6 +225,16 @@ namespace LTUD1_BACHHOAXANH472
                 {
                     dgvNhanVien.DataSource = nvController.Search(txtHoTenNV.Text);
                 }
+                else
+                {
+                    //In tất cả nhân viên
+                    //In nhân viên theo tên
+                    //In nhân viên theo phòng ban
+                    //In ra số lượng nhân viên theo chi nhánh
+
+                    ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, string> { { "@tennhanvien", string.IsNullOrEmpty(txtHoTenNV.Text) ? null : txtHoTenNV.Text } }, this.crystalReportViewer1);
+                    rh.LoadReport();
+                }
             }
             catch (Exception ex)
             {

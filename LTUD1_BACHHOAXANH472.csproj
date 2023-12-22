@@ -13,6 +13,9 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,11 +28,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -564,6 +564,7 @@
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_cnql_dangnhap.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_report_nv_combobox.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_SanPham_TimTenSanPham.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
@@ -688,7 +689,7 @@
     <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_chitietcc_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_chitietcc_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCapCT\sp_chitietcc_update.sql" />
-    <Content Include="ScreenMenu\Nhap\NhanVien\sp_cbo_laydanhsach_phongban_theo_chinhanh.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_cbo_phongban_theo_chinhanh.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_delete.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_insert.sql" />
     <Content Include="ScreenMenu\Nhap\NhaCungCap\sp_nhacungcap_select_all.sql" />
@@ -698,8 +699,8 @@
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_delete.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_insert.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_search.sql" />
-    <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_danhsach_theophongban_chinhanh.sql" />
-    <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_select_nhanvien_phongban.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_report_nv_theo_chinhanh_phongban.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_report_nv_theo_phongban.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_select_one.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_nhanvien_update.sql" />
     <Content Include="ScreenMenu\Nhap\PhongBan\sp_cbb_chinhanh_select.sql" />

@@ -3,9 +3,9 @@
 -- update date: <12/12/2023 10:57 ch>
 -- Description:	<Hiển thị report nhân viên theo chi nhánh theo phòng ban>
 go
-drop procedure if exists sp_nhanvien_danhsach_theophongban_chinhanh
+drop procedure if exists sp_report_nv_theo_chinhanh_phongban
 go
-CREATE PROCEDURE sp_nhanvien_danhsach_theophongban_chinhanh
+CREATE PROCEDURE sp_report_nv_theo_chinhanh_phongban
 		@MaChiNhanh CHAR(11), 
 		@MaPhongBan CHAR(11)
 AS
@@ -21,4 +21,4 @@ go
 --select * from chinhanh
 --select * from phongban 
 --select * from nhanvien
---exec sp_nhanvien_danhsach_theophongban_chinhanh 'cn01','pb01'
+exec sp_report_nv_theo_chinhanh_phongban 'cn01','pb01'
