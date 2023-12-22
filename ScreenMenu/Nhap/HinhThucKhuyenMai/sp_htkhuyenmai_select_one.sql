@@ -1,9 +1,7 @@
-﻿
--- Create Procedure sp_hinhthuckm_select_one.sql
+﻿-- Create Procedure sp_hinhthuckm_select_one.sql
 -- Danh mục select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
-
 drop procedure if exists sp_hinhthuckm_select_one
 go
 CREATE PROCEDURE sp_hinhthuckm_select_one

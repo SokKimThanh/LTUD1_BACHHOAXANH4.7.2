@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.ScreenMenu.HeThong;
+using System;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
@@ -19,6 +20,7 @@ namespace LTUD1_BACHHOAXANH472
                 //FormHoaDon logon =  new FormHoaDon();
                 //FormKhachHang logon = new FormKhachHang(); 
                 //FormNhanVienAddEdit logon = new FormNhanVienAddEdit();
+                //TaoBieuDoDonGian logon = new TaoBieuDoDonGian();
                 Application.Run(logon);
             }
             catch (Exception)

@@ -1,5 +1,4 @@
-﻿
-using LTUD1_BACHHOAXANH472.Screen;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.ScreenDetail;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap;
 using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc;
@@ -21,17 +20,59 @@ namespace LTUD1_BACHHOAXANH472
         private Button currentButton = new Button();
         private Form currentChildForm = new Form();
         public SettingImageList navigationBar;
-        public ErrFrm errform;
+        public ErrForm errform;
+        private Session session;
         public Session Session { get; set; }
 
         public bool btn_out = false;
 
+        // Khởi tạo ReportManager ở đây
+        private ReportManager reportManager;
+
+
+        /// <summary>
+        /// CHẠY TỪ FILE PROGRAM.CS 
+        /// </summary>
         public FormMain()
         {
             InitializeComponent();
+
             navigationBar = new SettingImageList(listIcon_navigation_bar);
-            errform = new ErrFrm(this);
-            Session = new Session();
+            errform = new ErrForm(this);
+            //lblAccountName = new Label();
+            // dành cho test lỗi chạy từ file program.cs
+            //lblAccountName.Text = "ADMIN TEST";
+
+
+            //==============================================================================
+            //--..........................................................................--
+            //---------------.     Cài đặt lazy load report management       .--------------
+            //--..........................................................................--
+            //==============================================================================
+            // Tạo một ReportManager mới với đường dẫn đến thư mục chứa các báo cáo
+            reportManager = new ReportManager(Utils.UploadString);//lazyloading
+        }
+        /// <summary>
+        /// CHẠY TỪ FILE FORMDANGNHAP.CS
+        /// </summary>
+        /// <param name="session"></param>
+        public FormMain(Session session)
+        {
+
+            InitializeComponent();
+            navigationBar = new SettingImageList(listIcon_navigation_bar);
+            errform = new ErrForm(this);
+            this.session = session;
+            // dành cho chạy từ đăng nhập sẽ có tên đăng nhập đầy đủ và cấp quyền
+            lblAccountName.Text = this.session.Username.ToUpper();
+
+            //==============================================================================
+            //--..........................................................................--
+            //---------------.     Cài đặt lazy load report management       .--------------
+            //--..........................................................................--
+            //==============================================================================
+            // Tạo một ReportManager mới với đường dẫn đến thư mục chứa các báo cáo
+            reportManager = new ReportManager();//lazyloading
         }
         private void FormMain_Load(object sender, EventArgs e)
         {
@@ -42,12 +83,9 @@ namespace LTUD1_BACHHOAXANH472
             this.Text = string.Empty;// xóa tiêu đề
             this.ControlBox = false;// tắt nút thoát 
             this.DoubleBuffered = true;// giảm nháy màn hình 
-            lblAccountName.Text = Session.Username;
 
 
-            // 
-            this.IsMdiContainer = true; // Đặt form này là MdiContainer
-
+            this.IsMdiContainer = true; // Đặt form này là MdiContainer 
         }
 
         /**
@@ -139,82 +177,88 @@ namespace LTUD1_BACHHOAXANH472
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormNhanVien());
+            OpenChildForm(new FormNhanVien(reportManager));
         }
         //2
         private void btnDiaDiem_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormDiaDiem());
+            OpenChildForm(new FormChiNhanh(reportManager));
 
         }
         //3
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormSanPham());
+            OpenChildForm(new FormSanPham(reportManager));
         }
         //4
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormHoaDon());
+            OpenChildForm(new FormHoaDon(reportManager));
         }
         //5
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormKhuyenMai());
+            OpenChildForm(new FormKhuyenMai(reportManager));
         }
         //6
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormNhaCungCap());
+            OpenChildForm(new FormNhaCungCap(reportManager));
 
         }
         //7
         private void btnKhachHang_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormKhachHang());
+            OpenChildForm(new FormKhachHang(reportManager));
         }
         //8
         private void btnChiTietHD_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormChiTietHoaDon());
+            OpenChildForm(new FormChiTietHoaDon(reportManager));
         }
         //9
         private void btnDanhMucSP_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormLoaiSP());
+            OpenChildForm(new FormLoaiSP(reportManager));
         }
         //10
         private void btnHinhThucKM_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormHinhThucKhuyenMai());
+            OpenChildForm(new FormHinhThucKhuyenMai(reportManager));
         }
         //11
         private void btnPhongBan_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormPhongBan());
+            OpenChildForm(new FormPhongBan(reportManager));
         }
         //12
         private void btnNhaCCCT_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormChiTietNhaCungCap());
+            OpenChildForm(new FormChiTietNhaCungCap(reportManager));
         }
         //13
         private void btnBanHang_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            /*            OpenChildForm(new FormBanHang());*/
+            OpenChildForm(new FormBanHang(reportManager));
         }
+        private void btnChiNhanh_Click(object sender, EventArgs e)
+        {
+            ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
+            OpenChildForm(new FormChiNhanh(reportManager));
+        }
+
         /**
        * reset click all button
        */
@@ -262,14 +306,6 @@ namespace LTUD1_BACHHOAXANH472
                 if (tlpBHX.ColumnStyles[0].Width <= minWidthMenu)
                 //if (panelSidebar.Width == panelSidebar.MaximumSize.Width)
                 {
-                    // xóa chữ đi
-                    //this.btnDiaDiem.Text = "";
-                    //this.btnNhanVien.Text = "";
-                    //this.btnNhaCungCap.Text = "";
-                    //this.btnSanPham.Text = "";
-                    //this.btnHoaDon.Text = "";
-                    //this.btnKhuyenMai.Text = "";
-                    //this.btnKhachHang.Text = "";
                     // khong thu hep nua
                     sidebarExpand = false;
                     sidebarTimer.Stop();
@@ -314,15 +350,10 @@ namespace LTUD1_BACHHOAXANH472
         private void btnSetting_Click(object sender, EventArgs e)
         {
             ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormTaiKhoan());
+            OpenChildForm(new FormTaiKhoan(reportManager));
         }
 
-        private void tlpHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmDangXuat_Click(object sender, EventArgs e)
         {
             // Thực hiện các tác vụ đăng xuất ở đây
             try
@@ -351,6 +382,12 @@ namespace LTUD1_BACHHOAXANH472
             OpenChildForm(new FormDangNhap());
         }
 
-
+        private void btnReportManagement_Click(object sender, EventArgs e)
+        {
+            if (!ErrForm.DialogConfirm("Bạn muốn tải lại các báo cáo không?"))
+            {
+                reportManager.RefreshAllReports();
+            }
+        }
     }
 }

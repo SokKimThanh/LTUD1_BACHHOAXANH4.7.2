@@ -1,4 +1,5 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -9,13 +10,13 @@ namespace LTUD1_BACHHOAXANH472
         NhaCungCapController nccCon;
         SanPhamController spCon;
         ChiTietNCCController ctnccCon;
-
+        ReportManager reportManager;// chia se report
 
 
 
         ButtonStateManager buttonStateManager;
 
-        public FormChiTietNhaCungCap()
+        public FormChiTietNhaCungCap(ReportManager reportManager)
         {
             InitializeComponent();
             DataGridViewHelper.ConfigureDataGridView(dgvNCCCT);
@@ -30,6 +31,7 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            this.reportManager = reportManager;// chia se report
         }
 
         private void Refresh2()
@@ -37,7 +39,7 @@ namespace LTUD1_BACHHOAXANH472
             cboNCC.SelectedIndex = 0;
             txtSoLuong.Text = "0";
             cboSanPham.SelectedIndex = 0;
-
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             ctnccCon.SelectAll();
             dgvNCCCT.DataSource = ctnccCon.DataSource;
         }
@@ -61,7 +63,7 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (ErrTxt.NoText_TextChange(txtSoLuong))
+            if (ErrTextbox.NoText_TextChange(txtSoLuong))
             {
                 MessageBox.Show("Nhập số");
                 txtSoLuong.Text = string.Empty;
@@ -72,7 +74,7 @@ namespace LTUD1_BACHHOAXANH472
                 NhaCCCT o = new NhaCCCT();
                 o.MaNCC = cboNCC.SelectedValue.ToString();
                 o.MaSP = cboSanPham.SelectedValue.ToString();
-
+                o.SoLuong = int.Parse(txtSoLuong.Text);
                 ctnccCon.Insert(o);
                 Refresh2();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);

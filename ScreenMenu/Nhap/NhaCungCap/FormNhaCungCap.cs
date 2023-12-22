@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using System;
 using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
@@ -7,7 +8,9 @@ namespace LTUD1_BACHHOAXANH472
     {
         NhaCungCapController nccController;
         ButtonStateManager buttonStateManager;
-        public FormNhaCungCap()
+        ReportManager reportManager;// chia se report
+
+        public FormNhaCungCap(ReportManager reportManager)
         {
             InitializeComponent();
             nccController = new NhaCungCapController(Utils.ConnectionString);
@@ -16,6 +19,8 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnDelete = this.btnDelete;
             buttonStateManager.BtnEdit = this.btnEdit;
             buttonStateManager.BtnRefresh = this.btnRefresh;
+            this.reportManager = reportManager;// chia se report
+
         }
 
         private void FormNhaCungCap_Load(object sender, EventArgs e)
@@ -51,18 +56,18 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 //Kiem tra nhap thong tin
-                if (ErrTxt.CheckControlValue(txtTenNhaCC))
+                if (ErrTextbox.CheckControlValue(txtTenNhaCC))
                 {
                     MessageBox.Show("txtTenNhaCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtSDTNCC))
+                if (ErrTextbox.CheckControlValue(txtSDTNCC))
                 {
                     MessageBox.Show("txtSDTNCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtDiaChi))
+                if (ErrTextbox.CheckControlValue(txtDiaChi))
                 {
                     MessageBox.Show("txtDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -148,18 +153,18 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 //Kiem tra nhap thong tin
-                if (ErrTxt.CheckControlValue(txtTenNhaCC))
+                if (ErrTextbox.CheckControlValue(txtTenNhaCC))
                 {
                     MessageBox.Show("txtTenNhaCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtSDTNCC))
+                if (ErrTextbox.CheckControlValue(txtSDTNCC))
                 {
                     MessageBox.Show("txtSDTNCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtDiaChi))
+                if (ErrTextbox.CheckControlValue(txtDiaChi))
                 {
                     MessageBox.Show("txtDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 

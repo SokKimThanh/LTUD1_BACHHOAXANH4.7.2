@@ -1,8 +1,7 @@
 ﻿-- Create Procedure sp_quyentruycap_update.sql
--- Tài khoản update
+-- quyentruycap update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
-
 go
 drop procedure if exists sp_quyentruycap_update
 go

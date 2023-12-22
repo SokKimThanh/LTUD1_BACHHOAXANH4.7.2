@@ -2,7 +2,6 @@
 -- Danh mục update
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
-
 drop procedure if exists sp_hinhthuckm_update
 go
 CREATE PROCEDURE sp_hinhthuckm_update

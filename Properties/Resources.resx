@@ -124,11 +124,14 @@
   <data name="icon_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="hidepassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\hidepassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_big_phantrangleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_big_phantrangleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_small_green_cancle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_small_green_cancle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_pagesize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_pagesize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_small_green_hotenkhachhang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_small_green_hotenkhachhang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -141,9 +144,6 @@
   </data>
   <data name="icon_search_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_search_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_small_phantrangleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_small_phantrangleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_nhanvien" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_nhanvien.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,6 +166,9 @@
   <data name="icon_small_green_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_small_green_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_user_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_user_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_small_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_small_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,6 +181,9 @@
   <data name="icon_small_lammoi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_small_lammoi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_small_phantrangright" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_small_phantrangright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BXHLOGO2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BXHLOGO2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -187,11 +193,11 @@
   <data name="icon_search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_check_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_check_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_welcome" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_welcome.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icon_smartphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_smartphone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_ngaylaphoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_ngaylaphoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +205,8 @@
   <data name="phongban" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phongban.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_green_hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_green_hoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_small_phantrangleft" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_small_phantrangleft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="showpassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\showpassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,6 +229,9 @@
   <data name="transparent_khachhang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transparent_khachhang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_big_phantrangright" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_big_phantrangright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_small_tenkhachhang" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_small_tenkhachhang.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,11 +244,14 @@
   <data name="transparent_sanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transparent_sanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_diadiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_diadiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_check_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_check_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_smartphone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_smartphone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="transparent_timkiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transparent_timkiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,8 +286,8 @@
   <data name="icon_sanpham" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_sanpham.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_user_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_user_login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_green_hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_green_hoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="green_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,13 +295,67 @@
   <data name="icon_small_hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_small_hoadon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_diadiem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_diadiem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="hidepassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hidepassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_small_huy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_small_huy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_small_phantrangright" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_small_phantrangright.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon_quanlyreport_small_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_quanlyreport_small_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_quanlyreport_small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_quanlyreport_small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_quanlyreport_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_quanlyreport_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_quanlyreport_transparent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_quanlyreport_transparent.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_quanlyreport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_quanlyreport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="khachhangreport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\khachhangreport.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="khachhangreport1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\khachhangreport.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="PhieuInHoaDon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\PhieuInHoaDon.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PhieuInHoaDon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\PhieuInHoaDon1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="reportHD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\reportHD.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reportHD1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\reportHD.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rp_hoadon_theongay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\rp_hoadon_theongay.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rp_hoadon_theongay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\rp_hoadon_theongay.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rp_nhanvien_select_all" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\rp_nhanvien_select_all.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="rp_nhanvien_select_all1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\rp_nhanvien_select_all.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SanPhamrpt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\SanPhamrpt.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SanPhamrpt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\SanPhamrpt1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="SanPhamTheoNgay" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\SanPhamTheoNgay.rpt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SanPhamTheoNgay1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\uploads\SanPhamTheoNgay1.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

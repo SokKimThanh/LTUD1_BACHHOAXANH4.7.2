@@ -1,7 +1,7 @@
-﻿-- Author:		Vo Tu
+-- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_nhacungcap_select_all.sql
--- Description:	<Nhà cung cấp select all>
+-- Description:	<nhacungcap select all>
 drop procedure if exists sp_khachhang_select_all
 go
 CREATE PROCEDURE sp_khachhang_select_all
@@ -11,6 +11,3 @@ BEGIN
 END
 GO
 exec sp_khachhang_select_all
-
-
-

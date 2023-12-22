@@ -3,7 +3,6 @@
 -- Author:		<Sok Kim Thanh>
 -- Create date: <07/11/2023>
 -- Description:	<Sản phẩm select all>
-
 drop procedure if exists sp_sanpham_select_all
 go
 CREATE PROCEDURE sp_sanpham_select_all

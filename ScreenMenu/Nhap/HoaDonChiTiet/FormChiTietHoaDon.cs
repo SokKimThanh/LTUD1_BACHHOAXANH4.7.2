@@ -1,4 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -10,19 +10,19 @@ namespace LTUD1_BACHHOAXANH472
         HoaDonController hdConn;
         SanPhamController spConn;
         ChiTietHoaDonController ctConn;
+        ReportManager reportManager;// chia se report
 
-        public FormChiTietHoaDon()
+        public FormChiTietHoaDon(ReportManager reportManager)
         {
             InitializeComponent();
             hdConn = new HoaDonController(Utils.ConnectionString);
             spConn = new SanPhamController(Utils.ConnectionString);
             ctConn = new ChiTietHoaDonController(Utils.ConnectionString);
             DataGridViewHelper.ConfigureDataGridView(dgvCTHoaDon);
+            this.reportManager = reportManager;// chia se report
         }
         private void FormChiTietHoaDon_Load(object sender, EventArgs e)
         {
-
-
             try
             {
                 hdConn.SelectAll();

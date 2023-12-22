@@ -1,10 +1,7 @@
-﻿
 -- Create Procedure sp_quyentruycap_insert.sql
--- Tài khoản insert
+-- quyentruycap insert
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
-
-
 drop procedure if exists sp_quyentruycap_insert
 go
 CREATE PROCEDURE sp_quyentruycap_insert
@@ -15,4 +12,3 @@ BEGIN
 	INSERT INTO quyentruycap VALUES (@MAQTC, @TENQTC)
 END
 GO
-

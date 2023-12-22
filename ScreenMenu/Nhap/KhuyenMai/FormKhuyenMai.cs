@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,7 +10,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         KhuyenMaiController kmConn;
         ButtonStateManager buttonStateManager = new ButtonStateManager();
         HinhThucKhuyenMaiControler htkmConn;
-        public FormKhuyenMai()
+        ReportManager reportManager;// chia se report
+
+        public FormKhuyenMai(ReportManager reportManager)
         {
             InitializeComponent();
             kmConn = new KhuyenMaiController(Utils.ConnectionString);
@@ -20,7 +23,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             buttonStateManager.BtnDelete = btnXoa;
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnThem;
-            buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+            this.reportManager = reportManager;// chia se report
 
         }
         private void FormKhuyenMai_Load(object sender, EventArgs e)
@@ -132,6 +136,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             dtpNBD.Value = DateTime.Now;
             dtpNKT.Value = DateTime.Now;
             cboMaHT.SelectedIndex = 0;
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

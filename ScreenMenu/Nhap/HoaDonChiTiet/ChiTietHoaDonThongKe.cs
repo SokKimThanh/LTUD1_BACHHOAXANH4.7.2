@@ -1,5 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
-using System;
+﻿using System;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.ChiTietHoaDon
 {

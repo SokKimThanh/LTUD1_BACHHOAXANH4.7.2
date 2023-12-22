@@ -19,27 +19,27 @@ namespace LTUD1_BACHHOAXANH472.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
-    [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
         
-        private static System.Resources.ResourceManager resourceMan;
+        private static global::System.Resources.ResourceManager resourceMan;
         
-        private static System.Globalization.CultureInfo resourceCulture;
+        private static global::System.Globalization.CultureInfo resourceCulture;
         
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Resources.ResourceManager ResourceManager {
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    System.Resources.ResourceManager temp = new System.Resources.ResourceManager("LTUD1_BACHHOAXANH472.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("LTUD1_BACHHOAXANH472.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -50,8 +50,8 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static System.Globalization.CultureInfo Culture {
+        [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -146,6 +146,26 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         internal static System.Drawing.Bitmap icon_banhang {
             get {
                 object obj = ResourceManager.GetObject("icon_banhang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_big_phantrangleft {
+            get {
+                object obj = ResourceManager.GetObject("icon_big_phantrangleft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_big_phantrangright {
+            get {
+                object obj = ResourceManager.GetObject("icon_big_phantrangright", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +303,69 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_pagesize {
+            get {
+                object obj = ResourceManager.GetObject("icon_pagesize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_pasword {
             get {
                 object obj = ResourceManager.GetObject("icon_pasword", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_quanlyreport {
+            get {
+                object obj = ResourceManager.GetObject("icon_quanlyreport", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_quanlyreport_green {
+            get {
+                object obj = ResourceManager.GetObject("icon_quanlyreport_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_quanlyreport_small {
+            get {
+                object obj = ResourceManager.GetObject("icon_quanlyreport_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_quanlyreport_small_green {
+            get {
+                object obj = ResourceManager.GetObject("icon_quanlyreport_small_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_quanlyreport_transparent {
+            get {
+                object obj = ResourceManager.GetObject("icon_quanlyreport_transparent", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -551,6 +631,38 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] khachhangreport {
+            get {
+                object obj = ResourceManager.GetObject("khachhangreport", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //------------------------------------------------------------------------------
+        ///// &lt;auto-generated&gt;
+        /////     This code was generated by a tool.
+        /////     Runtime Version:4.0.30319.42000
+        /////
+        /////     Changes to this file may cause incorrect behavior and will be lost if
+        /////     the code is regenerated.
+        ///// &lt;/auto-generated&gt;
+        /////------------------------------------------------------------------------------
+        ///
+        ///namespace LTUD1_BACHHOAXANH472.uploads {
+        ///    using System;
+        ///    using System.ComponentModel;
+        ///    using  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string khachhangreport1 {
+            get {
+                return ResourceManager.GetString("khachhangreport1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap nhacungcapct {
@@ -561,12 +673,204 @@ namespace LTUD1_BACHHOAXANH472.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PhieuInHoaDon {
+            get {
+                object obj = ResourceManager.GetObject("PhieuInHoaDon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //------------------------------------------------------------------------------
+        ///// &lt;auto-generated&gt;
+        /////     This code was generated by a tool.
+        /////     Runtime Version:4.0.30319.42000
+        /////
+        /////     Changes to this file may cause incorrect behavior and will be lost if
+        /////     the code is regenerated.
+        ///// &lt;/auto-generated&gt;
+        /////------------------------------------------------------------------------------
+        ///
+        ///namespace LTUD1_BACHHOAXANH472.uploads {
+        ///    using System;
+        ///    using System.ComponentModel;
+        ///    using  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string PhieuInHoaDon1 {
+            get {
+                return ResourceManager.GetString("PhieuInHoaDon1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap phongban {
             get {
                 object obj = ResourceManager.GetObject("phongban", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reportHD {
+            get {
+                object obj = ResourceManager.GetObject("reportHD", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //------------------------------------------------------------------------------
+        ///// &lt;auto-generated&gt;
+        /////     This code was generated by a tool.
+        /////     Runtime Version:4.0.30319.42000
+        /////
+        /////     Changes to this file may cause incorrect behavior and will be lost if
+        /////     the code is regenerated.
+        ///// &lt;/auto-generated&gt;
+        /////------------------------------------------------------------------------------
+        ///
+        ///namespace LTUD1_BACHHOAXANH472.uploads {
+        ///    using System;
+        ///    using System.ComponentModel;
+        ///    using  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string reportHD1 {
+            get {
+                return ResourceManager.GetString("reportHD1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] rp_hoadon_theongay {
+            get {
+                object obj = ResourceManager.GetObject("rp_hoadon_theongay", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //------------------------------------------------------------------------------
+        ///// &lt;auto-generated&gt;
+        /////     This code was generated by a tool.
+        /////     Runtime Version:4.0.30319.42000
+        /////
+        /////     Changes to this file may cause incorrect behavior and will be lost if
+        /////     the code is regenerated.
+        ///// &lt;/auto-generated&gt;
+        /////------------------------------------------------------------------------------
+        ///
+        ///namespace LTUD1_BACHHOAXANH472.uploads {
+        ///    using System;
+        ///    using System.ComponentModel;
+        ///    using  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string rp_hoadon_theongay1 {
+            get {
+                return ResourceManager.GetString("rp_hoadon_theongay1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] rp_nhanvien_select_all {
+            get {
+                object obj = ResourceManager.GetObject("rp_nhanvien_select_all", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //------------------------------------------------------------------------------
+        ///// &lt;auto-generated&gt;
+        /////     This code was generated by a tool.
+        /////     Runtime Version:4.0.30319.42000
+        /////
+        /////     Changes to this file may cause incorrect behavior and will be lost if
+        /////     the code is regenerated.
+        ///// &lt;/auto-generated&gt;
+        /////------------------------------------------------------------------------------
+        ///
+        ///namespace LTUD1_BACHHOAXANH472.uploads {
+        ///    using System;
+        ///    using System.ComponentModel;
+        ///    using  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string rp_nhanvien_select_all1 {
+            get {
+                return ResourceManager.GetString("rp_nhanvien_select_all1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SanPhamrpt {
+            get {
+                object obj = ResourceManager.GetObject("SanPhamrpt", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //------------------------------------------------------------------------------
+        ///// &lt;auto-generated&gt;
+        /////     This code was generated by a tool.
+        /////     Runtime Version:4.0.30319.42000
+        /////
+        /////     Changes to this file may cause incorrect behavior and will be lost if
+        /////     the code is regenerated.
+        ///// &lt;/auto-generated&gt;
+        /////------------------------------------------------------------------------------
+        ///
+        ///namespace LTUD1_BACHHOAXANH472.uploads {
+        ///    using System;
+        ///    using System.ComponentModel;
+        ///    using  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SanPhamrpt1 {
+            get {
+                return ResourceManager.GetString("SanPhamrpt1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] SanPhamTheoNgay {
+            get {
+                object obj = ResourceManager.GetObject("SanPhamTheoNgay", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to //------------------------------------------------------------------------------
+        ///// &lt;auto-generated&gt;
+        /////     This code was generated by a tool.
+        /////     Runtime Version:4.0.30319.42000
+        /////
+        /////     Changes to this file may cause incorrect behavior and will be lost if
+        /////     the code is regenerated.
+        ///// &lt;/auto-generated&gt;
+        /////------------------------------------------------------------------------------
+        ///
+        ///namespace LTUD1_BACHHOAXANH472.uploads {
+        ///    using System;
+        ///    using System.ComponentModel;
+        ///    using  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SanPhamTheoNgay1 {
+            get {
+                return ResourceManager.GetString("SanPhamTheoNgay1", resourceCulture);
             }
         }
         

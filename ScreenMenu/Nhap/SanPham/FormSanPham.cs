@@ -1,5 +1,6 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Data;
@@ -13,7 +14,8 @@ namespace LTUD1_BACHHOAXANH472
         DanhMucController loaiConn;
         NhaCungCapController nCCConn;
         ButtonStateManager buttonStateManager = new ButtonStateManager();
-        public FormSanPham()
+        ReportManager reportManager;// chia se report
+        public FormSanPham(ReportManager reportManager)
         {
             InitializeComponent();
             spConn = new SanPhamController(Utils.ConnectionString);
@@ -29,7 +31,8 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnDelete = btnXoa;
             buttonStateManager.BtnRefresh = btnLamMoi;
             buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
-            LamMoi();
+            Refresh();
+            this.reportManager = reportManager;// chia se report
         }
         private void FormSanPham_Load(object sender, EventArgs e)
         {
@@ -51,7 +54,7 @@ namespace LTUD1_BACHHOAXANH472
                 cboNCC.DisplayMember = "TENNCC";
                 cboNCC.ValueMember = "Mancc";
 
-                LamMoi();
+                Refresh();
             }
             catch (Exception ex)
             {
@@ -72,13 +75,13 @@ namespace LTUD1_BACHHOAXANH472
                     MessageBox.Show("Ngày sản xuất nhỏ hơn hạn sử dụng ");
                     return;
                 }
-                if (ErrTxt.NoText_TextChange(txtDonGia) || txtDonGia.Text == string.Empty)
+                if (ErrTextbox.NoText_TextChange(txtDonGia) || txtDonGia.Text == string.Empty)
                 {
                     MessageBox.Show("Giá nhập số!");
                     txtDonGia.Text = string.Empty;
                     return;
                 }
-                if (ErrTxt.NoText_TextChange(rtbSL) || rtbSL.Text == string.Empty)
+                if (ErrTextbox.NoText_TextChange(rtbSL) || rtbSL.Text == string.Empty)
                 {
                     MessageBox.Show("Số lượng tồn kho nhập số!");
                     rtbSL.Text = string.Empty;
@@ -98,7 +101,7 @@ namespace LTUD1_BACHHOAXANH472
                 sp.Mancc = cboNCC.SelectedValue.ToString();
                 sp.KhuyenMai = cboKM.SelectedValue.ToString();
                 spConn.Insert(sp);
-                LamMoi();
+                Refresh();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
@@ -106,7 +109,7 @@ namespace LTUD1_BACHHOAXANH472
                 MessageBox.Show(ex.Message);
             }
         }
-        private void LamMoi()
+        private void Refresh()
         {
             txtMaSP.Text = string.Empty;
             txtTenSP.Text = string.Empty;
@@ -125,7 +128,7 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 spConn.Delete(txtMaSP.Text);
-                LamMoi();
+                Refresh();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
@@ -139,7 +142,7 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            LamMoi();
+            Refresh();
 
             buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
@@ -152,13 +155,13 @@ namespace LTUD1_BACHHOAXANH472
                     MessageBox.Show("Ngày sản xuất nhỏ hơn hạn sử dụng ");
                     return;
                 }
-                if (ErrTxt.NoText_TextChange(txtDonGia))
+                if (ErrTextbox.NoText_TextChange(txtDonGia))
                 {
                     MessageBox.Show("Giá nhập số!");
                     txtDonGia.Text = string.Empty;
                     return;
                 }
-                if (ErrTxt.NoText_TextChange(rtbSL))
+                if (ErrTextbox.NoText_TextChange(rtbSL))
                 {
                     MessageBox.Show("Số lượng tồn kho nhập số!");
                     rtbSL.Text = string.Empty;
@@ -176,7 +179,7 @@ namespace LTUD1_BACHHOAXANH472
                 sp.Mancc = cboNCC.SelectedValue.ToString();
                 sp.KhuyenMai = cboKM.SelectedValue.ToString();
                 spConn.Update(sp);
-                LamMoi();
+                Refresh();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
@@ -219,10 +222,11 @@ namespace LTUD1_BACHHOAXANH472
                     ParameterValues param = new ParameterValues();
 
                     // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-
-                    // Đặt giá trị của pdv bằng giá trị trong textBox
-                    pdv.Value = dtpTKNgay.Text;
+                    ParameterDiscreteValue pdv = new ParameterDiscreteValue
+                    {
+                        // Đặt giá trị của pdv bằng giá trị trong textBox
+                        Value = dtpTKNgay.Value
+                    };
 
                     // Thêm pdv vào danh sách các giá trị tham số
                     param.Add(pdv);
@@ -288,12 +292,12 @@ namespace LTUD1_BACHHOAXANH472
                 if (cboTheLoaiTimKiem.Text == "Theo tên")
                 {
                     ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load("D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
+                    reportDocument.Load(@"D:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
                 }
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
                     ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load("D:\\Hoc_Tap\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamTheoNgay.rpt");
+                    reportDocument.Load(@"D:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH472\uploads\SanPhamTheoNgay.rpt");
                 }
 
             }

@@ -1,18 +1,19 @@
 ﻿using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.HoaDon;
+using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-namespace LTUD1_BACHHOAXANH472.Screen
+namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormHoaDon : Form
     {
         HoaDonController HoaDonController;
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
-        public FormHoaDon()
+        ReportManager reportManager;// chia se report
+        public FormHoaDon(ReportManager reportManager)
         {
             InitializeComponent();
             HoaDonController = new HoaDonController(Utils.ConnectionString);
@@ -25,6 +26,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
             buttonStateManager.BtnEdit = this.btnXoa;
             buttonStateManager.BtnDelete = this.btnSua;
             buttonStateManager.BtnRefresh = this.btnLamMoi;
+            this.reportManager = reportManager;// chia se report
         }
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
@@ -46,6 +48,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
                 cbbMaKH.ValueMember = "MAKH";
                 // setting datagridview
                 DataGridViewHelper.ConfigureDataGridView(dgvHD);
+              
             }
             catch (Exception ex)
             {
@@ -57,7 +60,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
         {
             try
             {
-                if (ErrTxt.CheckControlValue(txtMaHD))
+                if (ErrTextbox.CheckControlValue(txtMaHD))
                 {
                     MessageBox.Show("txtMaHD", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -109,7 +112,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (ErrTxt.CheckControlValue(txtMaHD))
+            if (ErrTextbox.CheckControlValue(txtMaHD))
             {
                 MessageBox.Show("phai chon thông tin để xóa", "Bắt buộc!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -178,7 +181,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
         private void txtMaHD_TextChanged(object sender, EventArgs e)
         {
 
-            if (ErrTxt.NoSymbol_TextChanged(sender))
+            if (ErrTextbox.isText(sender))
             {
                 MessageBox.Show("txtHoMaHD", "chỉ được nhập chữ hoặc số!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -202,7 +205,7 @@ namespace LTUD1_BACHHOAXANH472.Screen
         {
 
             // Khởi tạo một đối tượng mới từ lớp CrystalReport1
-            //rp_hoadon_theongay rpt = new rp_hoadon_theongay();
+            rp_hoadon_theongay rpt = new rp_hoadon_theongay();
 
             // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
             ParameterValues param = new ParameterValues();
@@ -217,10 +220,10 @@ namespace LTUD1_BACHHOAXANH472.Screen
             param.Add(pdv);
 
             // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-            //rpt.DataDefinition.ParameterFields["@ngay"].ApplyCurrentValues(param);
+            rpt.DataDefinition.ParameterFields["@ngay"].ApplyCurrentValues(param);
 
             // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            //crystalReportViewer2.ReportSource = rpt;
+            crystalReportViewer2.ReportSource = rpt;
         }
     }
 }

@@ -134,7 +134,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                if (!ErrFrm.DialogConfirm("Xác nhận cập nhật mới"))
+                if (!ErrForm.DialogConfirm("Xác nhận cập nhật mới"))
                 {
                     // Mở kết nối
                     SanPham sanpham = (SanPham)sender;
@@ -178,7 +178,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                if (!ErrFrm.DialogConfirm("Xác nhận xóa"))
+                if (!ErrForm.DialogConfirm("Xác nhận xóa"))
                 {
                     // Mở kết nối
                     SqlConnection conn = OpenConnection();
@@ -224,7 +224,7 @@ namespace LTUD1_BACHHOAXANH472
             return o;
         }
 
-        internal DataTable PhanTrang(int currentPage, int pageSize, string searchTerm, string loaiSanPham, string nhaCungCap)
+        internal DataTable PhanTrang(int currentPage, int recordPerPage, string tenSanPham, string loaiSanPham, string nhaCungCap)
         {
             try
             {
@@ -240,18 +240,17 @@ namespace LTUD1_BACHHOAXANH472
 
 
                 // Thêm tham số vào SqlCommand
-                //Sql.Parameters.Add("@searchTerm", SqlDbType.NVarChar).Value = searchTerm ?? (object)DBNull.Value;
+                //Sql.Parameters.Add("@tenSanpham", SqlDbType.NVarChar).Value = tenSanpham ?? (object)DBNull.Value;
                 //Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
                 //Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
-                searchTerm = searchTerm ?? null;
-                loaiSanPham = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+                tenSanPham = tenSanPham ?? null;
+                loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
                 nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
-                Sql.Parameters.AddWithValue("@searchTerm", searchTerm);
+                Sql.Parameters.AddWithValue("@tenSanpham", tenSanPham);
                 Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
                 Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
-
                 Sql.Parameters.AddWithValue("@currPage", currentPage);
-                Sql.Parameters.AddWithValue("@recodperpage", pageSize);
+                Sql.Parameters.AddWithValue("@recodperpage", recordPerPage);
 
                 // Tạo một đối tượng SqlDataAdapter
                 Adapter = new SqlDataAdapter(Sql);
@@ -267,7 +266,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             catch (Exception ex)
             {
-                throw new Exception("PhanTrang" + ex.Message);
+                throw new Exception("GetData" + ex.Message);
             }
             finally
             {
@@ -275,13 +274,36 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        public int GetRowCount()
+        public int GetRowCount(string tenSanpham, string loaiSanPham, string nhaCungCap)
         {
             int count = 0;
             try
             {
                 SqlConnection conn = OpenConnection();
-                SqlCommand cmd = new SqlCommand($"SELECT COUNT(*) FROM sanpham", conn);
+                SqlCommand cmd = new SqlCommand("sp_sanpham_phantrang_count", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số vào Stored Procedure
+                tenSanpham = tenSanpham ?? null;
+                loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
+                nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+
+                // Thêm các tham số vào Stored Procedure
+                Sql.Parameters.Add("@tenSanpham", SqlDbType.NVarChar).Value = tenSanpham ?? (object)DBNull.Value;
+                Sql.Parameters.Add("@loaiSanPham", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(loaiSanPham) ? (object)DBNull.Value : loaiSanPham;
+                Sql.Parameters.Add("@nhaCungCap", SqlDbType.NVarChar).Value = string.IsNullOrEmpty(nhaCungCap) ? (object)DBNull.Value : nhaCungCap;
+
+                // Thêm các tham số vào Stored Procedure
+                //tenSanpham = tenSanpham ?? null;
+                //loaiSanPham = string.IsNullOrEmpty(loaiSanPham) ? null : loaiSanPham;
+                //nhaCungCap = string.IsNullOrEmpty(nhaCungCap) ? null : nhaCungCap;
+
+                Sql.Parameters.AddWithValue("@tenSanpham", tenSanpham);
+                Sql.Parameters.AddWithValue("@loaiSanPham", loaiSanPham);
+                Sql.Parameters.AddWithValue("@nhaCungCap", nhaCungCap);
+
+
+                // Sử dụng ExecuteScalar để lấy giá trị đầu tiên của hàng đầu tiên
                 count = (int)cmd.ExecuteScalar();
 
                 //đóng kết nối

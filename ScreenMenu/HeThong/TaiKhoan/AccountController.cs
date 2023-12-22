@@ -20,8 +20,7 @@ public class AccountController : MyController
         Sql.CommandType = CommandType.StoredProcedure;
 
         // Thêm tham số vào SqlCommand
-        Sql.Parameters.AddWithValue("@matk", id);
-
+        Sql.Parameters.AddWithValue("@tentk", id);
         // Thực thi SqlCommand
         Sql.ExecuteNonQuery();
 
@@ -31,16 +30,12 @@ public class AccountController : MyController
 
     public override object FromDataRow(DataRow row)
     {
-        return new Account()
-        {
-            MaTaiKhoan = row.Field<string>("matk"),
-            TenTaiKhoan = row.Field<string>("tentk"),
-            MatKhau = row.Field<string>("matkhau"),
-            CreatedDate = row.Field<DateTime>("createdate"),
-            Phone = row.Field<string>("phone"),
-            Cccd = row.Field<string>("cccd"),
-            Email = row.Field<string>("email")
-        };
+        Account o = new Account();
+        o.Tentk = row.Field<string>("TENTK");
+        o.Matkhau = row.Field<string>("MATKHAU");
+        o.Manv = row.Field<string>("MANV");
+        o.Maqtc = row.Field<string>("MAQTC");
+        return o;
     }
 
     public override void Insert(object sender)
@@ -56,14 +51,10 @@ public class AccountController : MyController
             Sql.CommandType = CommandType.StoredProcedure;
 
             // Thêm tham số vào SqlCommand
-            Sql.Parameters.AddWithValue("@matk", o.MaTaiKhoan);
-            Sql.Parameters.AddWithValue("@tentk", o.TenTaiKhoan);
-            Sql.Parameters.AddWithValue("@matkhau", o.MatKhau);
-            Sql.Parameters.AddWithValue("@createdate", o.CreatedDate);
-            Sql.Parameters.AddWithValue("@phone", o.Phone);
-            Sql.Parameters.AddWithValue("@cccd", o.Cccd);
-            Sql.Parameters.AddWithValue("@email", o.Email);
-
+            Sql.Parameters.AddWithValue("@tentk", o.Tentk);
+            Sql.Parameters.AddWithValue("@matkhau", o.Matkhau);
+            Sql.Parameters.AddWithValue("@manv", o.Manv);
+            Sql.Parameters.AddWithValue("@maqtc", o.Maqtc);
             // Thực thi SqlCommand
             Sql.ExecuteNonQuery();
 
@@ -114,6 +105,70 @@ public class AccountController : MyController
             CloseConnection();
         }
     }
+    public void select_cbo_quyentruycap()
+    {
+        try
+        {
+            // Mở kết nối
+            SqlConnection conn = OpenConnection();
+
+            // Tạo một đối tượng SqlCommand
+            Sql = new SqlCommand("sp_cbo_quyentruycap_select_all", conn);
+            Sql.CommandType = CommandType.StoredProcedure;
+
+            // Tạo một đối tượng SqlDataAdapter
+            Adapter = new SqlDataAdapter(Sql);
+
+            // Tạo một đối tượng DataTable để lưu trữ dữ liệu
+            DataSource = new DataTable();
+
+            // Đổ dữ liệu vào DataTable
+            Adapter.Fill(DataSource);
+
+            // Đóng kết nối
+            CloseConnection();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        finally
+        {
+            // Đóng kết nối
+            CloseConnection();
+        }
+    }
+    public void select_cbo_nhanvien()
+    {
+        try
+        {
+            // Mở kết nối
+            SqlConnection conn = OpenConnection();
+
+            // thực hiện các thao tác trên cơ sở dữ liệu
+            Sql = new SqlCommand("sp_nhanvien_select_all", conn);
+            Sql.CommandType = CommandType.StoredProcedure;
+
+            // Tạo đối tượng SqlDataAdapter
+            Adapter = new SqlDataAdapter(Sql);
+
+            // Tạo một đối tượng Database để lưu trữ dữ liệu
+            DataSource = new DataTable();
+
+            // đổ dữ liệu vào DataTable
+            Adapter.Fill(DataSource);
+            //đóng kết nối
+            CloseConnection();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception(ex.Message);
+        }
+        finally
+        {
+            CloseConnection();
+        }
+    }
 
     public override DataTable SelectByID(object id)
     {
@@ -127,7 +182,7 @@ public class AccountController : MyController
             Sql.CommandType = CommandType.StoredProcedure;
 
             // Thêm tham số vào SqlCommand
-            Sql.Parameters.AddWithValue("@matk", id);
+            Sql.Parameters.AddWithValue("@tentk", id);
 
             // Tạo một đối tượng SqlDataAdapter
             Adapter = new SqlDataAdapter(Sql);
@@ -158,27 +213,37 @@ public class AccountController : MyController
     {
         try
         {
-            Account o = (Account)sender;
-            // Mở kết nối
-            SqlConnection conn = OpenConnection();
 
-            // Tạo một đối tượng SqlCommand
-            Sql = new SqlCommand("sp_taikhoan_update", conn);
-            Sql.CommandType = CommandType.StoredProcedure;
+            try
+            {
+                Account o = (Account)sender;
+                // Mở kết nối
+                SqlConnection conn = OpenConnection();
 
-            // Thêm tham số vào SqlCommand
-            Sql.Parameters.AddWithValue("@MATK", o.MaTaiKhoan);
-            Sql.Parameters.AddWithValue("@TENTK", o.TenTaiKhoan);
-            Sql.Parameters.AddWithValue("@MATKHAU", o.MatKhau);
-            Sql.Parameters.AddWithValue("@PHONE", o.Phone);
-            Sql.Parameters.AddWithValue("@CCCD", o.Cccd);
-            Sql.Parameters.AddWithValue("@EMAIL", o.Email);
+                // Tạo một đối tượng SqlCommand
+                Sql = new SqlCommand("sp_taikhoan_update", conn);
+                Sql.CommandType = CommandType.StoredProcedure;
 
-            // Thực thi SqlCommand
-            Sql.ExecuteNonQuery();
+                // Thêm tham số vào SqlCommand
+                Sql.Parameters.AddWithValue("@tentk", o.Tentk);
+                Sql.Parameters.AddWithValue("@matkhau", o.Matkhau);
+                Sql.Parameters.AddWithValue("@manv", o.Manv);
+                Sql.Parameters.AddWithValue("@maqtc", o.Maqtc);
+                // Thực thi SqlCommand
+                Sql.ExecuteNonQuery();
 
-            // Đóng kết nối
-            CloseConnection();
+                // Đóng kết nối
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                // Đóng kết nối
+                CloseConnection();
+            }
         }
         catch (Exception ex)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using System;
 using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
@@ -7,7 +8,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
     {
         PhongBanController pbController;
         ButtonStateManager buttonStateManager = new ButtonStateManager();
-        public FormPhongBan()
+        ReportManager reportManager;// chia se report
+        public FormPhongBan(ReportManager reportManager)
         {
             InitializeComponent();
             pbController = new PhongBanController(Utils.ConnectionString);
@@ -17,6 +19,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            this.reportManager = reportManager;// chia se report
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -105,13 +108,23 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
         {
             try
             {
-                PhongBan phongBan = new PhongBan();
-                phongBan.MaPB = txtMaPB.Text;
-                pbController.Delete(phongBan.MaPB);
-                pbController.SelectAll();
-                dgvPB.DataSource = pbController.DataSource;
-                Refresh2();
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                if (ErrTextbox.CheckControlValue(txtMaPB))
+                {
+                    MessageBox.Show("txtMaPB", "Bắt buộc!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                DialogResult r = MessageBox.Show("Bạn có muốn xoa khong?", "xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    PhongBan phongBan = new PhongBan();
+                    phongBan.MaPB = txtMaPB.Text;
+                    pbController.Delete(phongBan.MaPB);
+                    pbController.SelectAll();
+                    dgvPB.DataSource = pbController.DataSource;
+                    Refresh2();
+                    buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                }
+
             }
             catch (Exception ex)
             {

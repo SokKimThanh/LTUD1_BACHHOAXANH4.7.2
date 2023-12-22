@@ -12,7 +12,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         KhachHangController khachHangController;
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
-        public FormKhachHang()
+        ReportManager reportManager;// chia se report
+
+        public FormKhachHang(ReportManager reportManager)
         {
 
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             buttonStateManager.BtnEdit = this.btnXoa;
             buttonStateManager.BtnDelete = this.btnSua;
             buttonStateManager.BtnRefresh = this.btnLamMoi;
+            this.reportManager = reportManager;// chia se report
         }
 
         private void FormKhachHang_Load(object sender, EventArgs e)
@@ -45,22 +48,22 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
             try
             {
-                if (ErrTxt.CheckControlValue(txtMa))
+                if (ErrTextbox.CheckControlValue(txtMa))
                 {
                     MessageBox.Show("txtMaKH", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtxHoTen))
+                if (ErrTextbox.CheckControlValue(txtxHoTen))
                 {
                     MessageBox.Show("txtHoTen", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtSDT))
+                if (ErrTextbox.CheckControlValue(txtSDT))
                 {
                     MessageBox.Show("txtSDT", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                if (ErrTxt.CheckControlValue(txtDTL))
+                if (ErrTextbox.CheckControlValue(txtDTL))
                 {
                     MessageBox.Show("txtDRL", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -113,7 +116,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         {
             try
             {
-                if (ErrTxt.CheckControlValue(txtMa))
+                if (ErrTextbox.CheckControlValue(txtMa))
                 {
                     MessageBox.Show("txtMaKH", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -139,7 +142,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
         private void txtMa_TextChanged(object sender, EventArgs e)
         {
-            if (ErrTxt.NoSymbol_TextChanged(sender))
+            if (ErrTextbox.isText(sender))
             {
                 MessageBox.Show("txtHoMaKH", "chỉ được nhập chữ hoặc số!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -148,7 +151,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
         private void txtxHoTen_TextChanged(object sender, EventArgs e)
         {
-            if (ErrTxt.NoSymbol_TextChanged(sender))
+            if (ErrTextbox.isText(sender))
             {
                 MessageBox.Show("txtHoTenKH", "chỉ được nhập chữ hoặc số!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -158,7 +161,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private void txtSDT_TextChanged(object sender, EventArgs e)
         {
 
-            if (ErrTxt.NoSymbol_TextChanged(sender) || ErrTxt.NoText_TextChange(sender))
+            if (ErrTextbox.isText(sender) || ErrTextbox.NoText_TextChange(sender))
             {
                 MessageBox.Show("txtSDT", "chỉ được nhập số!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -167,7 +170,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
         private void txtDTL_TextChanged(object sender, EventArgs e)
         {
-            if (ErrTxt.NoSymbol_TextChanged(sender) || ErrTxt.NoText_TextChange(sender))
+            if (ErrTextbox.isText(sender) || ErrTextbox.NoText_TextChange(sender))
             {
                 MessageBox.Show("txtDRL", "chỉ được nhập số!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -232,6 +235,16 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             khachHangController.SelectAll();
             dgvKH.DataSource = khachHangController.DataSource;
             buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+        }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void crystalReportViewer1_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

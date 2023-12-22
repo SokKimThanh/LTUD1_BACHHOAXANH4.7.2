@@ -2,7 +2,6 @@
 -- Sản phẩm select one
 -- Author:		Sok Kim Thanh
 -- Create date: <07/11/2023>
-
 drop procedure if exists sp_sanpham_select_one
 go
 CREATE PROCEDURE sp_sanpham_select_one

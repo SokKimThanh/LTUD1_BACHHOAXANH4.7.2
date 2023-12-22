@@ -8,3 +8,9 @@
 - 16/12/2023 12:33 CH Viết ví dụ phân trang
 - 16/12/2023 04:03 Ch thực hiện phân trang 
 - 17/12/2023 01:56 SA Merge conflict đồ án
+- 17/12/2023 03:01 CH thêm cột phần trăm giảm giá và cột giá sau giảm giá trong datagridview dgvdanhsachsanpham
+- 20/12/2023 07:30 SA Tách sự kiện phan trang ra khỏi form thành adapter
+- 20/12/2023 08:51 SA hoàn thành phân trang tìm kiếm, record per page phân trang
+- 20/12/2023 08:50 CH Hoàn thành chức năng hiển thị thông tin report phiếu hóa đơn lên tabcontrol 
+- 21/12/2023 06:56 CH Hoàn thành chức năng đăng nhập bằng cơ sở dữ liệu (chưa hiển thị quyền )
+- 21/12/2023 07:57 CH Làm chức năng quản lý đăng nhập

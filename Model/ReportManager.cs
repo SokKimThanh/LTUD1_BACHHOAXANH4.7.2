@@ -1,61 +1,140 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using CrystalDecisions.Windows.Forms;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 namespace LTUD1_BACHHOAXANH472.Model
 {
     public class ReportManager
     {
-        // Tạo một từ điển để lưu trữ các báo cáo
-        private Dictionary<string, ReportDocument> reports = new Dictionary<string, ReportDocument>();
+        // Kỹ thuật lazy load danh sách các report
+        private Dictionary<string, Lazy<ReportDocument>> reports = new Dictionary<string, Lazy<ReportDocument>>();
 
-        // Đường dẫn đến thư mục chứa các báo cáo
-        private string reportDirectory;
+        private string reportDirectory;// thư mục chứa report
 
+        /// <summary>
+        /// Đi tới thư mục resource chứa report để tải lên các report
+        /// </summary>
+        public ReportManager()
+        {
+            GetReportFromResources();
+        }
+
+
+        /// <summary>
+        /// Đi tới thư mục uploads chứa report để tải lên các report
+        /// </summary>
+        /// <param name="reportDirectory">Thư mục gốc chứa report</param>
         public ReportManager(string reportDirectory)
         {
             this.reportDirectory = reportDirectory;
+            GetReportFromFolder();
         }
-
-        public void LoadReports()
+        /// <summary>
+        /// Lấy tất cả report trong thư mục uploads
+        /// </summary>
+        private void GetReportFromFolder()
         {
-            // Duyệt qua tất cả các tệp .rpt trong thư mục
             foreach (string reportPath in Directory.GetFiles(reportDirectory, "*.rpt"))
             {
-                // Tải báo cáo từ tệp
-                ReportDocument reportDocument = new ReportDocument();
-                reportDocument.Load(reportPath);
-
-                // Lấy tên của báo cáo từ tên tệp
                 string reportTitle = Path.GetFileNameWithoutExtension(reportPath);
 
-                // Kiểm tra xem khóa đã tồn tại chưa
                 if (!reports.ContainsKey(reportTitle))
                 {
-                    // Nếu khóa chưa tồn tại, thêm báo cáo vào từ điển
-                    reports.Add(reportTitle, reportDocument);
+                    reports.Add(reportTitle, new Lazy<ReportDocument>(() =>
+                    {
+                        ReportDocument reportDocument = new ReportDocument();
+                        reportDocument.Load(reportPath);
+                        return reportDocument;
+                    }));
                 }
             }
         }
+        /// <summary>
+        /// Lấy tất cả report trong thư mục resources
+        /// </summary>
+        public void GetReportFromResources()
+        {
+            foreach (string reportName in Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true).OfType<DictionaryEntry>().Where(entry => entry.Value is byte[] && entry.Key.ToString().EndsWith(".rpt")).Select(entry => entry.Key.ToString()))
+            {
+                reports.Add(reportName, new Lazy<ReportDocument>(() =>
+                {
+                    ReportDocument reportDocument;
 
+                    using (Stream stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(this.GetType().Namespace + "." + reportName))
+                    {
+                        reportDocument = new ReportDocument();
+                        // Tạo một tệp tạm thời
+                        string tempPath = Path.GetTempFileName();
+                        using (FileStream fileStream = File.Create(tempPath))
+                        {
+                            stream.CopyTo(fileStream);
+                        }
 
+                        // Tải ReportDocument từ tệp tạm thời
+                        reportDocument.Load(tempPath);
+
+                        // Xóa tệp tạm thời
+                        File.Delete(tempPath);
+                    }
+
+                    return reportDocument;
+                }));
+            }
+        }
+        /// <summary>
+        /// Nhập vào tên report muốn lấy ra 
+        /// </summary>
+        /// <param name="reportTitle">Nhập tên report</param>
+        /// <returns></returns>
         public ReportDocument GetReport(string reportTitle)
         {
-            // Tìm báo cáo tương ứng trong từ điển
-            if (reports.TryGetValue(reportTitle, out ReportDocument reportDocument))
+            if (reports.TryGetValue(reportTitle, out Lazy<ReportDocument> lazyReportDocument))
             {
-                return reportDocument;
+                return lazyReportDocument.Value;
             }
             else
             {
                 return null;
             }
         }
-
-        public List<string> GetReportTitles()
+        /// <summary>
+        /// Tải lại một report cụ thể
+        /// </summary>
+        /// <param name="reportTitle">Nhập vào tên report</param>
+        public void RefreshReport(string reportTitle)
         {
-            // Trả về danh sách tiêu đề của tất cả các báo cáo
-            return new List<string>(reports.Keys);
-        }
-    }
+            string reportPath = Path.Combine(reportDirectory, reportTitle + ".rpt");
 
+            reports[reportTitle] = new Lazy<ReportDocument>(() =>
+            {
+                ReportDocument reportDocument = new ReportDocument();
+                reportDocument.Load(reportPath);
+                return reportDocument;
+            });
+        }
+
+        /// <summary>
+        /// Tải lại tất cả report
+        /// </summary>
+        public void RefreshAllReports()
+        {
+            foreach (string reportTitle in reports.Keys.ToList())
+            {
+                RefreshReport(reportTitle);
+            }
+        }
+
+        public bool ReportExists(string reportName)
+        {
+            var resourceSet = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true);
+            return resourceSet.OfType<DictionaryEntry>().Any(entry => entry.Key.ToString() == reportName);
+        }
+
+    }
 }
