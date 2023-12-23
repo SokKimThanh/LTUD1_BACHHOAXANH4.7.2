@@ -1,4 +1,5 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT;
+﻿using LTUD1_BACHHOAXANH472.Model;
+using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -9,13 +10,13 @@ namespace LTUD1_BACHHOAXANH472
         NhaCungCapController nccCon;
         SanPhamController spCon;
         ChiTietNCCController ctnccCon;
-
+        ReportManager reportManager;// chia se report
 
 
 
         ButtonStateManager buttonStateManager;
 
-        public FormChiTietNhaCungCap()
+        public FormChiTietNhaCungCap(ReportManager reportManager)
         {
             InitializeComponent();
             DataGridViewHelper.ConfigureDataGridView(dgvNCCCT);
@@ -30,6 +31,7 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            this.reportManager = reportManager;// chia se report
         }
 
         private void Refresh2()

@@ -498,7 +498,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // rptSanPham
             // 
-            this.rptSanPham.ActiveViewIndex = 0;
+            this.rptSanPham.ActiveViewIndex = -1;
             this.rptSanPham.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rptSanPham.Cursor = System.Windows.Forms.Cursors.Default;
             this.rptSanPham.Dock = System.Windows.Forms.DockStyle.Fill;

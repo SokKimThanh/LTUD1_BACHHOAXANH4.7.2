@@ -12,7 +12,9 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         KhachHangController khachHangController;
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
-        public FormKhachHang()
+        ReportManager reportManager;// chia se report
+
+        public FormKhachHang(ReportManager reportManager)
         {
 
             InitializeComponent();
@@ -27,6 +29,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             buttonStateManager.BtnEdit = this.btnXoa;
             buttonStateManager.BtnDelete = this.btnSua;
             buttonStateManager.BtnRefresh = this.btnLamMoi;
+            this.reportManager = reportManager;// chia se report
         }
 
         private void FormKhachHang_Load(object sender, EventArgs e)

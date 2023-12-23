@@ -4,6 +4,7 @@
 -- Cập nhật stored procedure
 -- đăng nhập vào thành công thì trả về 1
 -- đăng nhập vào thất bại thì trả về 0
+select * from taikhoan
 go
 CREATE PROCEDURE sp_DangNhap
     @TENTK CHAR(30),

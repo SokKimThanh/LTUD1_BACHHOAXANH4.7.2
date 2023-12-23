@@ -37,6 +37,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpBHX = new System.Windows.Forms.TableLayoutPanel();
             this.flpSetting = new System.Windows.Forms.FlowLayoutPanel();
             this.panelSetting = new System.Windows.Forms.Panel();
+            this.tlpSettingControl = new System.Windows.Forms.TableLayoutPanel();
+            this.btnReportManagement = new System.Windows.Forms.Button();
             this.btnSetting = new System.Windows.Forms.Button();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.tlpNavigationBar = new System.Windows.Forms.TableLayoutPanel();
@@ -81,6 +83,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpBHX.SuspendLayout();
             this.flpSetting.SuspendLayout();
             this.panelSetting.SuspendLayout();
+            this.tlpSettingControl.SuspendLayout();
             this.tlpNavigationBar.SuspendLayout();
             this.panelHeader.SuspendLayout();
             this.tlpHeader.SuspendLayout();
@@ -117,9 +120,31 @@ namespace LTUD1_BACHHOAXANH472
             // panelSetting
             // 
             this.panelSetting.BackColor = System.Drawing.Color.Transparent;
-            this.panelSetting.Controls.Add(this.btnSetting);
+            this.panelSetting.Controls.Add(this.tlpSettingControl);
             resources.ApplyResources(this.panelSetting, "panelSetting");
             this.panelSetting.Name = "panelSetting";
+            // 
+            // tlpSettingControl
+            // 
+            resources.ApplyResources(this.tlpSettingControl, "tlpSettingControl");
+            this.tlpSettingControl.Controls.Add(this.btnReportManagement, 0, 0);
+            this.tlpSettingControl.Controls.Add(this.btnSetting, 0, 0);
+            this.tlpSettingControl.ForeColor = System.Drawing.Color.Transparent;
+            this.tlpSettingControl.Name = "tlpSettingControl";
+            // 
+            // btnReportManagement
+            // 
+            this.btnReportManagement.BackColor = System.Drawing.Color.Transparent;
+            this.btnReportManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.btnReportManagement, "btnReportManagement");
+            this.btnReportManagement.FlatAppearance.BorderSize = 0;
+            this.btnReportManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(149)))), ((int)(((byte)(149)))));
+            this.btnReportManagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReportManagement.ForeColor = System.Drawing.Color.Transparent;
+            this.btnReportManagement.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_quanlyreport;
+            this.btnReportManagement.Name = "btnReportManagement";
+            this.btnReportManagement.UseVisualStyleBackColor = false;
+            this.btnReportManagement.Click += new System.EventHandler(this.btnReportManagement_Click);
             // 
             // btnSetting
             // 
@@ -133,7 +158,6 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSetting.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_setting;
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.UseVisualStyleBackColor = false;
-            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // panelDesktop
             // 
@@ -544,6 +568,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpBHX.PerformLayout();
             this.flpSetting.ResumeLayout(false);
             this.panelSetting.ResumeLayout(false);
+            this.tlpSettingControl.ResumeLayout(false);
             this.tlpNavigationBar.ResumeLayout(false);
             this.panelHeader.ResumeLayout(false);
             this.tlpHeader.ResumeLayout(false);
@@ -566,8 +591,6 @@ namespace LTUD1_BACHHOAXANH472
         private FlowLayoutPanel flpSetting;
         //private Panel panelSidebar;
         private System.Windows.Forms.Timer sidebarTimer;
-        private Panel panelSetting;
-        private Button btnSetting;
         private Panel panelDesktop;
         public ImageList listIcon_navigation_bar;
         private ImageList lisIcon_navigation_bar_transparent10;
@@ -607,5 +630,9 @@ namespace LTUD1_BACHHOAXANH472
         private Button btnChiNhanh;
         private Button btnNhaCCCT;
         private Button btnBanHang;
+        private Panel panelSetting;
+        private TableLayoutPanel tlpSettingControl;
+        private Button btnSetting;
+        private Button btnReportManagement;
     }
 }

@@ -122,6 +122,8 @@ namespace LTUD1_BACHHOAXANH472
             if (loginController.DangNhap(enteredUserName, enteredPassword) == 1)
             {
                 Utils.TenQuyenTruyCap = loginController.CapQuyen(enteredUserName, enteredPassword);
+                // lưu thêm cái id cho anh 
+                //Utils.MaNhanVien = loginController.XacMinhNhanVien(enteredUserName, enteredPassword);
                 return true;// dang nhap thanh cong
             }
             else

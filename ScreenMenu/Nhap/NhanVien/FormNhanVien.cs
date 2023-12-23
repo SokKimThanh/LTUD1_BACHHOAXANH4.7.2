@@ -19,7 +19,14 @@ namespace LTUD1_BACHHOAXANH472
         // Hàm hỗ trợ kiểm tra lỗi nhập
         ErrTextbox errtxt;
         ErrColors color;
-        public FormNhanVien()
+        //==============================================================================
+        //--..........................................................................--
+        //---------------.     Chia sẽ lazy load report management       .--------------
+        //--..........................................................................--
+        //==============================================================================
+        private ReportManager reportManager;
+
+        public FormNhanVien(ReportManager reportManager)
         {
             InitializeComponent();
 
@@ -47,6 +54,18 @@ namespace LTUD1_BACHHOAXANH472
 
             // khởi tạo tô màu
             color = new ErrColors();
+
+            //==============================================================================
+            //--..........................................................................--
+            //---------------.     Chia sẽ lazy load report management       .--------------
+            //--..........................................................................--
+            //==============================================================================
+            // Sử dụng ReportManager được chia sẻ từ MainForm
+            this.reportManager = reportManager;
+
+            // style chung combobox
+            ComboBoxHelper.ConfigureComboBox(cboLoaiBaoCao);
+            ComboBoxHelper.ConfigureComboBox(cboNhanVien);
         }
 
         private void FormNhanVien_Load(object sender, EventArgs e)
@@ -57,7 +76,10 @@ namespace LTUD1_BACHHOAXANH472
                 nvController.SelectAll();
 
                 // hiển thị danh sach phòng ban
-                dgvNhanVien.DataSource = nvController.DataSource;
+                dgvNhanVien.DataSource = nvController.GetNhanVienCombobox();
+                cboPhongBan.ValueMember = "manv";
+                cboPhongBan.DisplayMember = "hotennv";
+
                 DataTable dtpb = nvController.GetDanhSachPhongBan();
                 cboPhongBan.DataSource = dtpb;
                 cboPhongBan.ValueMember = "MAPB";
@@ -130,7 +152,7 @@ namespace LTUD1_BACHHOAXANH472
             }
             else
             {
-                //TaiLaiDanhSachBaoCao();
+                TaiLaiBaoCao("rp_nhanvien_select_all");
             }
         }
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -210,6 +232,16 @@ namespace LTUD1_BACHHOAXANH472
                 {
                     dgvNhanVien.DataSource = nvController.Search(txtHoTenNV.Text);
                 }
+                else
+                {
+                    //In tất cả nhân viên
+                    //In nhân viên theo tên
+                    //In nhân viên theo phòng ban
+                    //In ra số lượng nhân viên theo chi nhánh
+
+                    ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, string> { { "@tennhanvien", string.IsNullOrEmpty(txtHoTenNV.Text) ? null : txtHoTenNV.Text } }, this.crystalReportViewer1);
+                    rh.LoadReport();
+                }
             }
             catch (Exception ex)
             {
@@ -275,11 +307,29 @@ namespace LTUD1_BACHHOAXANH472
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ReportHelper rh = new ReportHelper();
-            rh.CrystalReportViewer1 = this.crystalReportViewer1;
-            rh.FileReportName = @"rp_nhanvien_select_all";
-            rh.Parameters = new Dictionary<string, string> { { "@tennhanvien", txtHoTenNV.Text } };
+            ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, string> { { "@tennhanvien", string.IsNullOrEmpty(txtHoTenNV.Text) ? null : txtHoTenNV.Text } }, this.crystalReportViewer1);
+
+
             rh.LoadReport();
+        }
+        public void TaiLaiBaoCao(string reportTitle)
+        {
+            // Người dùng vừa chỉnh sửa báo cáo có tiêu đề là reportTitle
+            // Các thay đổi đã được lưu vào tệp .rpt tương ứng
+
+            // Bây giờ, chúng ta cần làm mới báo cáo trong ReportManager để nó biết về các thay đổi
+            reportManager.RefreshReport(reportTitle);
+        }
+
+        private void cboLoaiBaoCao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox loaibaocao = sender as ComboBox;
+            string selectedOptions = loaibaocao.SelectedItem.ToString();
+            //ReportHelper rh = new ReportHelper();
+            if (NhanVienOptions.TatCaNhanVien.ToFriendlyString().Equals(selectedOptions))
+            {
+                //lấy ra danh sách tất cả nhân viên
+            }
         }
     }
 }

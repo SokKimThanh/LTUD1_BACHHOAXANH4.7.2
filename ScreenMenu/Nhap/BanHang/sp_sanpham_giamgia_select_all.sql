@@ -3,6 +3,7 @@
 -- Author:		<Sok Kim Thanh>
 -- Create date: <17/12/2023>
 -- Description:	<Sản phẩm giảm giá>
+go
 drop procedure if exists sp_sanpham_giamgia_select_all
 go
 CREATE PROCEDURE sp_sanpham_giamgia_select_all
@@ -17,19 +18,21 @@ BEGIN
 	Update HOADON
 	set TONGTHANHTIEN = @TT
 	where MAHD = @mahd; 
-	select hd.MAHD,hd.NGAYHOADON,hd.MANV, sp.masp,sp.tensp,cthd.SLMUA 
+	select hd.MAHD,hd.NGAYHOADON, nv.HOTENNV, sp.masp,sp.tensp,cthd.SLMUA 
 	,sp.dongia N'Giá Gốc'
-	, sp.donvi N'Đơn vị tính'
+	,sp.donvi N'Đơn vị tính'
 	,km.phantramgiamgia N'Phần trăm giảm giá'
 	,sp.dongia * (100-km.phantramgiamgia)/100 N'Giá sau giảm giá'
 	,sp.sltonkho N'Tồn kho',
 	cthd.SLMUA
 	,sp.dongia * (100-km.phantramgiamgia)/100 * cthd.SLMUA N'Thành tiền'
 	,hd.TONGTHANHTIEN N'Tổng thành tiền'
-	from SanPham sp,KHUYENMAI km, HOADON hd, CHITIETHD cthd
-	where sp.MAKM = km.MAKM and hd.MAHD = @MAHD and cthd.MAHD = hd.MAHD and cthd.MASP = sp.MASP
-	select TONGTHANHTIEN  from HoaDon where HOADON.MAHD =@MAHD
+	from SanPham sp,KHUYENMAI km, HOADON hd, CHITIETHD cthd, NHANVIEN nv
+	where sp.MAKM = km.MAKM and hd.MAHD = @MAHD and cthd.MAHD = hd.MAHD and cthd.MASP = sp.MASP and hd.MANV = nv.MANV
+	--select TONGTHANHTIEN  from HoaDon where HOADON.MAHD =@MAHD
+	
 END;
 GO
 --select * from SANPHAM
 exec sp_sanpham_giamgia_select_all 'HD01'
+

@@ -112,8 +112,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 2;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.104259F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.89574F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.Size = new System.Drawing.Size(1285, 681);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
@@ -132,7 +132,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel8.RowCount = 1;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1279, 56);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1279, 334);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // btnTiemKiemTheoNgay
@@ -140,7 +140,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnTiemKiemTheoNgay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTiemKiemTheoNgay.Location = new System.Drawing.Point(1112, 3);
             this.btnTiemKiemTheoNgay.Name = "btnTiemKiemTheoNgay";
-            this.btnTiemKiemTheoNgay.Size = new System.Drawing.Size(164, 50);
+            this.btnTiemKiemTheoNgay.Size = new System.Drawing.Size(164, 328);
             this.btnTiemKiemTheoNgay.TabIndex = 5;
             this.btnTiemKiemTheoNgay.Text = "Tìm Kiếm";
             this.btnTiemKiemTheoNgay.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@ namespace LTUD1_BACHHOAXANH472
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(361, 56);
+            this.label2.Size = new System.Drawing.Size(361, 334);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nhập Thông Tin";
             // 
@@ -172,10 +172,10 @@ namespace LTUD1_BACHHOAXANH472
             this.cryRPTheoNgay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cryRPTheoNgay.Cursor = System.Windows.Forms.Cursors.Default;
             this.cryRPTheoNgay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cryRPTheoNgay.Location = new System.Drawing.Point(3, 65);
+            this.cryRPTheoNgay.Location = new System.Drawing.Point(3, 343);
             this.cryRPTheoNgay.Name = "cryRPTheoNgay";
             this.cryRPTheoNgay.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH472\\uploads\\rp_hoadon_theongay.rpt";
-            this.cryRPTheoNgay.Size = new System.Drawing.Size(1279, 613);
+            this.cryRPTheoNgay.Size = new System.Drawing.Size(1279, 335);
             this.cryRPTheoNgay.TabIndex = 1;
             this.cryRPTheoNgay.Load += new System.EventHandler(this.cryRPTheoNgay_Load);
             // 
@@ -193,15 +193,15 @@ namespace LTUD1_BACHHOAXANH472
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.Controls.Add(this.CryPThongKe, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 2;
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 602F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.35484F));
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.64516F));
             this.tableLayoutPanel9.Size = new System.Drawing.Size(1279, 675);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
@@ -213,10 +213,10 @@ namespace LTUD1_BACHHOAXANH472
             this.CryPThongKe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CryPThongKe.Cursor = System.Windows.Forms.Cursors.Default;
             this.CryPThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CryPThongKe.Location = new System.Drawing.Point(3, 76);
+            this.CryPThongKe.Location = new System.Drawing.Point(3, 133);
             this.CryPThongKe.Name = "CryPThongKe";
             this.CryPThongKe.ReportSource = "D:\\moi 3\\LTUD1_BACHHOAXANH472\\uploads\\reportHD.rpt";
-            this.CryPThongKe.Size = new System.Drawing.Size(1273, 596);
+            this.CryPThongKe.Size = new System.Drawing.Size(1273, 539);
             this.CryPThongKe.TabIndex = 2;
             this.CryPThongKe.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.CryPThongKe.Load += new System.EventHandler(this.CryPThongKe_Load);
@@ -235,7 +235,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1273, 67);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1273, 124);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // btnTimKiem
@@ -243,7 +243,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTimKiem.Location = new System.Drawing.Point(757, 3);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(513, 61);
+            this.btnTimKiem.Size = new System.Drawing.Size(513, 118);
             this.btnTimKiem.TabIndex = 5;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -263,7 +263,7 @@ namespace LTUD1_BACHHOAXANH472
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 67);
+            this.label1.Size = new System.Drawing.Size(371, 124);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nhập Thông Tin";
             // 
