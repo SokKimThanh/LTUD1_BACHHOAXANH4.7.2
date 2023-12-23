@@ -39,6 +39,7 @@ namespace LTUD1_BACHHOAXANH472
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblKetQuaDangNhap = new System.Windows.Forms.Label();
@@ -49,26 +50,25 @@ namespace LTUD1_BACHHOAXANH472
             this.btnForgotPassword = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pnPassword = new System.Windows.Forms.Panel();
+            this.ptbShowHidePassword = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pnUsername = new System.Windows.Forms.Panel();
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnLoginClose = new System.Windows.Forms.Button();
             this.imageListLogin = new System.Windows.Forms.ImageList(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.ptbShowHidePassword = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.pnPassword.SuspendLayout();
-            this.pnUsername.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowHidePassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pnUsername.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -173,6 +173,17 @@ namespace LTUD1_BACHHOAXANH472
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 32);
             this.label2.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
+            this.pictureBox1.Location = new System.Drawing.Point(39, 36);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(165, 64);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -309,6 +320,18 @@ namespace LTUD1_BACHHOAXANH472
             this.pnPassword.Size = new System.Drawing.Size(338, 31);
             this.pnPassword.TabIndex = 12;
             // 
+            // ptbShowHidePassword
+            // 
+            this.ptbShowHidePassword.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.showpassword;
+            this.ptbShowHidePassword.Location = new System.Drawing.Point(306, 7);
+            this.ptbShowHidePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ptbShowHidePassword.Name = "ptbShowHidePassword";
+            this.ptbShowHidePassword.Size = new System.Drawing.Size(18, 18);
+            this.ptbShowHidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbShowHidePassword.TabIndex = 15;
+            this.ptbShowHidePassword.TabStop = false;
+            this.ptbShowHidePassword.Click += new System.EventHandler(this.ptbShowHidePassword_Click);
+            // 
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.Color.Snow;
@@ -321,6 +344,17 @@ namespace LTUD1_BACHHOAXANH472
             this.txtPassword.Size = new System.Drawing.Size(251, 26);
             this.txtPassword.TabIndex = 15;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.green_password;
+            this.pictureBox3.Location = new System.Drawing.Point(12, 7);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
             // 
             // pnUsername
             // 
@@ -345,6 +379,17 @@ namespace LTUD1_BACHHOAXANH472
             this.txtUserName.Size = new System.Drawing.Size(251, 26);
             this.txtUserName.TabIndex = 14;
             this.txtUserName.Click += new System.EventHandler(this.txtUserName_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.green_user;
+            this.pictureBox2.Location = new System.Drawing.Point(12, 7);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
             // 
             // label4
             // 
@@ -386,51 +431,6 @@ namespace LTUD1_BACHHOAXANH472
             this.imageListLogin.Images.SetKeyName(2, "green_password.png");
             this.imageListLogin.Images.SetKeyName(3, "green_user.png");
             // 
-            // ptbShowHidePassword
-            // 
-            this.ptbShowHidePassword.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.showpassword;
-            this.ptbShowHidePassword.Location = new System.Drawing.Point(306, 7);
-            this.ptbShowHidePassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ptbShowHidePassword.Name = "ptbShowHidePassword";
-            this.ptbShowHidePassword.Size = new System.Drawing.Size(18, 18);
-            this.ptbShowHidePassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbShowHidePassword.TabIndex = 15;
-            this.ptbShowHidePassword.TabStop = false;
-            this.ptbShowHidePassword.Click += new System.EventHandler(this.ptbShowHidePassword_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.green_password;
-            this.pictureBox3.Location = new System.Drawing.Point(12, 7);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.green_user;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 7);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(18, 18);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.BXHLOGO2;
-            this.pictureBox1.Location = new System.Drawing.Point(39, 36);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,6 +441,7 @@ namespace LTUD1_BACHHOAXANH472
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -451,16 +452,16 @@ namespace LTUD1_BACHHOAXANH472
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnPassword.ResumeLayout(false);
             this.pnPassword.PerformLayout();
-            this.pnUsername.ResumeLayout(false);
-            this.pnUsername.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbShowHidePassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.pnUsername.ResumeLayout(false);
+            this.pnUsername.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

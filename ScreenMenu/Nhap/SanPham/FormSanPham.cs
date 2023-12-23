@@ -1,7 +1,4 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.uploads;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -15,6 +12,8 @@ namespace LTUD1_BACHHOAXANH472
         NhaCungCapController nCCConn;
         ButtonStateManager buttonStateManager = new ButtonStateManager();
         ReportManager reportManager;// chia se report
+        CustomButtonHelper buttonHelper = new CustomButtonHelper();
+
         public FormSanPham(ReportManager reportManager)
         {
             InitializeComponent();
@@ -33,6 +32,11 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
             Refreshs();
             this.reportManager = reportManager;// chia se report
+            buttonHelper.SetProperties(btnThongKe);
+            ComboBoxHelper.ConfigureComboBox(cboKM);
+            ComboBoxHelper.ConfigureComboBox(cboLoaiSP);
+            ComboBoxHelper.ConfigureComboBox(cboNCC);
+            ComboBoxHelper.ConfigureComboBox(cboTheLoaiTimKiem);
         }
         private void FormSanPham_Load(object sender, EventArgs e)
         {
@@ -194,47 +198,51 @@ namespace LTUD1_BACHHOAXANH472
             {
                 if (cboTheLoaiTimKiem.Text == "Theo tên")
                 {
-                    SanPhamrpt rptSP = new SanPhamrpt();
-                    // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                    ParameterValues param = new ParameterValues();
+                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamrpt", new System.Collections.Generic.Dictionary<string, object> { { "@TENSP", txtTimKiem.Text } }, rptSanPham);
+                    rh.LoadReport();
+                    //SanPhamrpt rptSP = new SanPhamrpt();
+                    //// Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+                    //ParameterValues param = new ParameterValues();
 
-                    // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                    //// Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+                    //ParameterDiscreteValue pdv = new ParameterDiscreteValue();
 
-                    // Đặt giá trị của pdv bằng giá trị trong textBox1
-                    pdv.Value = txtTimKiem.Text;
+                    //// Đặt giá trị của pdv bằng giá trị trong textBox1
+                    //pdv.Value = txtTimKiem.Text;
 
-                    // Thêm pdv vào danh sách các giá trị tham số
-                    param.Add(pdv);
+                    //// Thêm pdv vào danh sách các giá trị tham số
+                    //param.Add(pdv);
 
-                    // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                    rptSP.DataDefinition.ParameterFields["@TENSP"].ApplyCurrentValues(param);
+                    //// Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+                    //rptSP.DataDefinition.ParameterFields["@TENSP"].ApplyCurrentValues(param);
 
-                    // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-                    rptSanPham.ReportSource = rptSP;
+                    //// Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+                    //rptSanPham.ReportSource = rptSP;
                 }
 
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
-                    // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                    ParameterValues param = new ParameterValues();
+                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamTheoNgay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", dtpTKNgay.Value } }, rptSanPham);
+                    rh.LoadReport();
+                    //// Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+                    //ParameterValues param = new ParameterValues();
 
-                    // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    ParameterDiscreteValue pdv = new ParameterDiscreteValue
-                    {
-                        // Đặt giá trị của pdv bằng giá trị trong textBox
-                        Value = dtpTKNgay.Value
-                    };
+                    //// Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+                    //ParameterDiscreteValue pdv = new ParameterDiscreteValue
+                    //{
+                    //    // Đặt giá trị của pdv bằng giá trị trong textBox
+                    //    Value = dtpTKNgay.Value
+                    //};
 
-                    // Thêm pdv vào danh sách các giá trị tham số
-                    param.Add(pdv);
+                    //// Thêm pdv vào danh sách các giá trị tham số
+                    //param.Add(pdv);
 
-                    SanPhamTheoNgay rptSP = new SanPhamTheoNgay();
-                    // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                    rptSP.DataDefinition.ParameterFields["@NgayHT"].ApplyCurrentValues(param);
+                    //SanPhamTheoNgay rptSP = new SanPhamTheoNgay();
+                    //// Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+                    //rptSP.DataDefinition.ParameterFields["@NgayHT"].ApplyCurrentValues(param);
 
-                    // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-                    rptSanPham.ReportSource = rptSP;
+                    //// Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+                    //rptSanPham.ReportSource = rptSP;
                 }
             }
             catch (Exception ex)
@@ -277,25 +285,23 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        private void cboLoaiTimKiem_TextChanged(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void cboTheLoaiTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 if (cboTheLoaiTimKiem.Text == "Theo tên")
                 {
-                    ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load(@"D:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
+                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamrpt", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", dtpTKNgay.Value } }, rptSanPham);
+                    rh.LoadReport();
+                    //ReportDocument reportDocument = new ReportDocument();
+                    //reportDocument.Load(@"D:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
                 }
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
-                    ReportDocument reportDocument = new ReportDocument();
-                    reportDocument.Load(@"D:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH472\uploads\SanPhamTheoNgay.rpt");
+                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamTheoNgay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", dtpTKNgay.Value } }, rptSanPham);
+                    rh.LoadReport();
+                    //ReportDocument reportDocument = new ReportDocument();
+                    //reportDocument.Load(@"D:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH472\uploads\SanPhamTheoNgay.rpt");
                 }
 
             }

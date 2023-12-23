@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rp_nhanvien_select_all : ReportClass {
+    public class rp_banhang_phieuin : ReportClass {
         
-        public rp_nhanvien_select_all() {
+        public rp_banhang_phieuin() {
         }
         
         public override string ResourceName {
             get {
-                return "rp_nhanvien_select_all.rpt";
+                return "rp_banhang_phieuin.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_select_all.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_banhang_phieuin.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_tennhanvien {
+        public CrystalDecisions.Shared.IParameterField Parameter_MAHD {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,49 +98,17 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MACN {
+        public CrystalDecisions.Shared.IParameterField Parameter_tennhanvien {
             get {
                 return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MaChiNhanh {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MaPhongBan {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MAPB {
-            get {
-                return this.DataDefinition.ParameterFields[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_HOTENNV {
-            get {
-                return this.DataDefinition.ParameterFields[5];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrp_nhanvien_select_all : Component, ICachedReport {
+    public class Cachedrp_banhang_phieuin : Component, ICachedReport {
         
-        public Cachedrp_nhanvien_select_all() {
+        public Cachedrp_banhang_phieuin() {
         }
         
         [Browsable(false)]
@@ -177,7 +145,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rp_nhanvien_select_all rpt = new rp_nhanvien_select_all();
+            rp_banhang_phieuin rpt = new rp_banhang_phieuin();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class SanPhamTheoNgay : ReportClass {
+    public class rp_nhanvien_get_hoadon_by_nhanvien : ReportClass {
         
-        public SanPhamTheoNgay() {
+        public rp_nhanvien_get_hoadon_by_nhanvien() {
         }
         
         public override string ResourceName {
             get {
-                return "SanPhamTheoNgay.rpt";
+                return "rp_nhanvien_get_hoadon_by_nhanvien.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.SanPhamTheoNgay.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_get_hoadon_by_nhanvien.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_NgayHT {
+        public CrystalDecisions.Shared.IParameterField Parameter_tennhanvien {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +98,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ngay {
+        public CrystalDecisions.Shared.IParameterField Parameter_MANV {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,9 +106,9 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedSanPhamTheoNgay : Component, ICachedReport {
+    public class Cachedrp_nhanvien_get_hoadon_by_nhanvien : Component, ICachedReport {
         
-        public CachedSanPhamTheoNgay() {
+        public Cachedrp_nhanvien_get_hoadon_by_nhanvien() {
         }
         
         [Browsable(false)]
@@ -145,7 +145,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            SanPhamTheoNgay rpt = new SanPhamTheoNgay();
+            rp_nhanvien_get_hoadon_by_nhanvien rpt = new rp_nhanvien_get_hoadon_by_nhanvien();
             rpt.Site = this.Site;
             return rpt;
         }

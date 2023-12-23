@@ -1,4 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.HeThong;
+﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
 using System;
 using System.Windows.Forms;
 
@@ -13,9 +13,10 @@ namespace LTUD1_BACHHOAXANH472
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                FormDangNhap logon = new FormDangNhap();
-                //FormMain logon = new FormMain();
+                //FormDangNhap logon = new FormDangNhap();
+                FormMain logon = new FormMain();
                 //ViDuPhanTrang logon = new ViDuPhanTrang();
+                //ViDuPhanTrangRuntime logon = new ViDuPhanTrangRuntime();
                 //FormUploadFilesReport logon = new FormUploadFilesReport();
                 //FormHoaDon logon =  new FormHoaDon();
                 //FormKhachHang logon = new FormKhachHang(); 

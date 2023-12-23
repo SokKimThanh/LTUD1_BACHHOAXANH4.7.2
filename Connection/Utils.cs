@@ -10,8 +10,10 @@ public class Utils
         get { return connectionString; }
         set { connectionString = value; }
     }
-
-    public static string UploadString { get => uploadString; set => uploadString = value; }
+    /// <summary>
+    /// Thư mục chứa các report
+    /// </summary>
+    public static string ReportsString { get => uploadString; set => uploadString = value; }
 
 
     private static bool IsServerConnected(string connectionString)

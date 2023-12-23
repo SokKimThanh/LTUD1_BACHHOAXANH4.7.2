@@ -1,11 +1,7 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.uploads;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
@@ -66,6 +62,9 @@ namespace LTUD1_BACHHOAXANH472
             // style chung combobox
             ComboBoxHelper.ConfigureComboBox(cboLoaiBaoCao);
             ComboBoxHelper.ConfigureComboBox(cboNhanVien);
+
+
+
         }
 
         private void FormNhanVien_Load(object sender, EventArgs e)
@@ -74,12 +73,9 @@ namespace LTUD1_BACHHOAXANH472
             {
                 // hiển thị danh sach nhân viên
                 nvController.SelectAll();
+                dgvNhanVien.DataSource = nvController.DataSource;
 
-                // hiển thị danh sach phòng ban
-                dgvNhanVien.DataSource = nvController.GetNhanVienCombobox();
-                cboPhongBan.ValueMember = "manv";
-                cboPhongBan.DisplayMember = "hotennv";
-
+                // hiển thị danh sach phòng ban 
                 DataTable dtpb = nvController.GetDanhSachPhongBan();
                 cboPhongBan.DataSource = dtpb;
                 cboPhongBan.ValueMember = "MAPB";
@@ -87,6 +83,18 @@ namespace LTUD1_BACHHOAXANH472
 
                 // crud button setting state
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+
+                // chỉnh item của loại báo cáo
+                cboLoaiBaoCao.Items.Add(NhanVienOptions.TatCaNhanVien.ToFriendlyString());
+                cboLoaiBaoCao.Items.Add(NhanVienOptions.SoLuongNhanVienTheoChiNhanh.ToFriendlyString());
+                cboLoaiBaoCao.Items.Add(NhanVienOptions.DanhSachHoaDonCuaNhanVien.ToFriendlyString());
+
+                // hiển thị danh sách nhân viên lên combobox
+                cboNhanVien.DataSource = nvController.GetNhanVienCombobox();
+                cboNhanVien.ValueMember = "manv";
+                cboNhanVien.DisplayMember = "hotennv";
+
+                cboLoaiBaoCao.SelectedIndex = 0;
             }
             catch (Exception ex)
             {
@@ -239,7 +247,7 @@ namespace LTUD1_BACHHOAXANH472
                     //In nhân viên theo phòng ban
                     //In ra số lượng nhân viên theo chi nhánh
 
-                    ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, string> { { "@tennhanvien", string.IsNullOrEmpty(txtHoTenNV.Text) ? null : txtHoTenNV.Text } }, this.crystalReportViewer1);
+                    ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, object> { { "@tennhanvien", string.IsNullOrEmpty(txtHoTenNV.Text) ? null : txtHoTenNV.Text } }, this.crystalReportViewer1);
                     rh.LoadReport();
                 }
             }
@@ -307,28 +315,38 @@ namespace LTUD1_BACHHOAXANH472
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, string> { { "@tennhanvien", string.IsNullOrEmpty(txtHoTenNV.Text) ? null : txtHoTenNV.Text } }, this.crystalReportViewer1);
-
-
+            ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, object> { }, this.crystalReportViewer1);
             rh.LoadReport();
         }
         public void TaiLaiBaoCao(string reportTitle)
         {
-            // Người dùng vừa chỉnh sửa báo cáo có tiêu đề là reportTitle
-            // Các thay đổi đã được lưu vào tệp .rpt tương ứng
-
-            // Bây giờ, chúng ta cần làm mới báo cáo trong ReportManager để nó biết về các thay đổi
+            // làm mới báo cáo trong ReportManager cập nhật các thay đổi
             reportManager.RefreshReport(reportTitle);
         }
-
+        /// <summary>
+        /// Tải các báo cáo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboLoaiBaoCao_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox loaibaocao = sender as ComboBox;
             string selectedOptions = loaibaocao.SelectedItem.ToString();
-            //ReportHelper rh = new ReportHelper();
             if (NhanVienOptions.TatCaNhanVien.ToFriendlyString().Equals(selectedOptions))
             {
                 //lấy ra danh sách tất cả nhân viên
+                ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_select_all", new Dictionary<string, object> { }, this.crystalReportViewer1);
+                rh.LoadReport();
+            }
+            else if (NhanVienOptions.SoLuongNhanVienTheoChiNhanh.ToFriendlyString().Equals(selectedOptions))
+            {
+                ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_count_by_all_chinhanh", new Dictionary<string, object> { { "@tennhanvien", "Sok Kim Thanh" } }, this.crystalReportViewer1);
+                rh.LoadReport();
+            }
+            else if (NhanVienOptions.DanhSachHoaDonCuaNhanVien.ToFriendlyString().Equals(selectedOptions))
+            {
+                ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_get_hoadon_by_nhanvien", new Dictionary<string, object> { { "@manv", cboNhanVien.SelectedValue.ToString() } }, this.crystalReportViewer1);
+                rh.LoadReport();
             }
         }
     }

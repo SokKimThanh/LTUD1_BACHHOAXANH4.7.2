@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rp_banhang_doanhthu : ReportClass {
+    public class rp_khachhang : ReportClass {
         
-        public rp_banhang_doanhthu() {
+        public rp_khachhang() {
         }
         
         public override string ResourceName {
             get {
-                return "rp_banhang_doanhthu.rpt";
+                return "rp_khachhang.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.rp_banhang_doanhthu.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_khachhang.rpt";
             }
             set {
                 // Do nothing
@@ -90,25 +90,17 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_thang {
+        public CrystalDecisions.Shared.IParameterField Parameter_ma {
             get {
                 return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nam {
-            get {
-                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrp_banhang_doanhthu : Component, ICachedReport {
+    public class Cachedrp_khachhang : Component, ICachedReport {
         
-        public Cachedrp_banhang_doanhthu() {
+        public Cachedrp_khachhang() {
         }
         
         [Browsable(false)]
@@ -145,7 +137,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rp_banhang_doanhthu rpt = new rp_banhang_doanhthu();
+            rp_khachhang rpt = new rp_khachhang();
             rpt.Site = this.Site;
             return rpt;
         }

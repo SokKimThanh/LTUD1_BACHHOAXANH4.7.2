@@ -2,9 +2,9 @@
 -- Sản phẩm select one
 -- Author:		Ngô Công Quý
 -- Create date: <07/11/2023>
-drop procedure if exists sp_sanpham_select_ten
+drop procedure if exists rp_sanpham_timtensp
 go
-CREATE PROCEDURE sp_sanpham_select_ten
+CREATE PROCEDURE rp_sanpham_timtensp
 	@TenSP nvarchar(50)
 AS
 BEGIN
@@ -12,4 +12,4 @@ BEGIN
 END
 GO
 select * from sanpham
-exec sp_sanpham_select_ten 'CÁ'
+exec rp_sanpham_timtensp 'CÁ'

@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class SanPhamrpt : ReportClass {
+    public class rp_nhanvien_count_by_all_chinhanh : ReportClass {
         
-        public SanPhamrpt() {
+        public rp_nhanvien_count_by_all_chinhanh() {
         }
         
         public override string ResourceName {
             get {
-                return "SanPhamrpt.rpt";
+                return "rp_nhanvien_count_by_all_chinhanh.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.SanPhamrpt.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_nhanvien_count_by_all_chinhanh.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_TenSP {
+        public CrystalDecisions.Shared.IParameterField Parameter_tennhanvien {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedSanPhamrpt : Component, ICachedReport {
+    public class Cachedrp_nhanvien_count_by_all_chinhanh : Component, ICachedReport {
         
-        public CachedSanPhamrpt() {
+        public Cachedrp_nhanvien_count_by_all_chinhanh() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            SanPhamrpt rpt = new SanPhamrpt();
+            rp_nhanvien_count_by_all_chinhanh rpt = new rp_nhanvien_count_by_all_chinhanh();
             rpt.Site = this.Site;
             return rpt;
         }

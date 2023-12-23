@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class reportHD : ReportClass {
+    public class rp_hoadon : ReportClass {
         
-        public reportHD() {
+        public rp_hoadon() {
         }
         
         public override string ResourceName {
             get {
-                return "reportHD.rpt";
+                return "rp_hoadon.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.reportHD.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_hoadon.rpt";
             }
             set {
                 // Do nothing
@@ -98,9 +98,9 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedreportHD : Component, ICachedReport {
+    public class Cachedrp_hoadon : Component, ICachedReport {
         
-        public CachedreportHD() {
+        public Cachedrp_hoadon() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            reportHD rpt = new reportHD();
+            rp_hoadon rpt = new rp_hoadon();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -1,7 +1,5 @@
-﻿using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.controller;
+﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.uploads;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -20,7 +18,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             InitializeComponent();
 
             khachHangController = new KhachHangController(Utils.ConnectionString);
-            DataGridViewHelper.ConfigureDataGridView(dgvKH);
+            DataGridViewHelper.ConfigureDataGridView(dgvKhachHang);
             CustomButtonHelper customButtonHelper = new CustomButtonHelper();
             customButtonHelper.SetProperties(btnTimKiem);
             buttonStateManager = new ButtonStateManager();
@@ -35,7 +33,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private void FormKhachHang_Load(object sender, EventArgs e)
         {
             khachHangController.SelectAll();
-            dgvKH.DataSource = khachHangController.DataSource;
+            dgvKhachHang.DataSource = khachHangController.DataSource;
             //mã tự động
             RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
             txtMa.Text = randomStringGenerator.GenerateRandomAlphanumericString(10);
@@ -75,7 +73,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 kh.Diem = int.Parse(txtDTL.Text);
                 khachHangController.Insert(kh);
                 khachHangController.SelectAll();
-                dgvKH.DataSource = khachHangController.DataSource;
+                dgvKhachHang.DataSource = khachHangController.DataSource;
             }
             catch (Exception ex)
             {
@@ -83,14 +81,14 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             }
 
         }
-        private void dgvKH_Click(object sender, EventArgs e)
+        private void dgvKhachHang_Click(object sender, EventArgs e)
         {
             try
             {
                 // Khởi tạo số dòng đang chọn
-                int dong = dgvKH.CurrentCell.RowIndex;
+                int dong = dgvKhachHang.CurrentCell.RowIndex;
                 // lấy ra mã
-                string id = dgvKH.Rows[dong].Cells[0].Value.ToString();
+                string id = dgvKhachHang.Rows[dong].Cells[0].Value.ToString();
                 // khởi tạo đối tượng bằng mã
                 DataTable dt = khachHangController.SelectByID(id);
                 DataRow dr = dt.Rows[0];
@@ -128,7 +126,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                     kh.Ma = txtMa.Text;
                     khachHangController.Delete(kh.Ma);
                     khachHangController.SelectAll();
-                    dgvKH.DataSource = khachHangController.DataSource;
+                    dgvKhachHang.DataSource = khachHangController.DataSource;
                     Refresh();
                 }
                 return;
@@ -189,7 +187,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 kh.Diem = int.Parse(txtDTL.Text);
                 khachHangController.Update(kh);
                 khachHangController.SelectAll();
-                dgvKH.DataSource = khachHangController.DataSource;
+                dgvKhachHang.DataSource = khachHangController.DataSource;
                 Refresh();
             }
             return;
@@ -198,25 +196,25 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             // Khởi tạo một đối tượng mới từ lớp CrystalReport1
-            khachhangreport rpt = new khachhangreport();
+            //khachhangreport rpt = new khachhangreport();
 
-            // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-            ParameterValues param = new ParameterValues();
+            //// Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+            //ParameterValues param = new ParameterValues();
 
-            // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-            ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+            //// Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+            //ParameterDiscreteValue pdv = new ParameterDiscreteValue();
 
-            // Đặt giá trị của pdv bằng giá trị trong textBox1
-            pdv.Value = txtTimKiem.Text;
+            //// Đặt giá trị của pdv bằng giá trị trong textBox1
+            //pdv.Value = txtTimKiem.Text;
 
-            // Thêm pdv vào danh sách các giá trị tham số
-            param.Add(pdv);
+            //// Thêm pdv vào danh sách các giá trị tham số
+            //param.Add(pdv);
 
-            // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-            rpt.DataDefinition.ParameterFields["@ma"].ApplyCurrentValues(param);
+            //// Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+            //rpt.DataDefinition.ParameterFields["@ma"].ApplyCurrentValues(param);
 
-            // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            crystalReportViewer1.ReportSource = rpt;
+            //// Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+            //crystalReportViewer1.ReportSource = rpt;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
@@ -233,7 +231,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             txtSDT.Text = string.Empty;
             txtDTL.Text = string.Empty;
             khachHangController.SelectAll();
-            dgvKH.DataSource = khachHangController.DataSource;
+            dgvKhachHang.DataSource = khachHangController.DataSource;
             buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
 

@@ -1,4 +1,4 @@
-﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+﻿namespace LTUD1_BACHHOAXANH472
 {
     partial class ViDuPhanTrang
     {

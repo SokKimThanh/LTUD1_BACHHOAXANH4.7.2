@@ -1,6 +1,4 @@
-﻿using CrystalDecisions.Shared;
-using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.uploads;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,7 +18,7 @@ namespace LTUD1_BACHHOAXANH472
             HoaDonController = new HoaDonController(Utils.ConnectionString);
             dgvHD.DefaultCellStyle.ForeColor = Color.Black;
             CustomButtonHelper customButtonHelper = new CustomButtonHelper();
-            customButtonHelper.SetProperties(btnTimKiem);
+            customButtonHelper.SetProperties(btnThongKe);
             buttonStateManager = new ButtonStateManager();
             // khai báo trạng thái khóa nút 
             buttonStateManager.BtnAdd = this.btnThem;
@@ -49,7 +47,7 @@ namespace LTUD1_BACHHOAXANH472
                 cbbMaKH.ValueMember = "MAKH";
                 // setting datagridview
                 DataGridViewHelper.ConfigureDataGridView(dgvHD);
-              
+
             }
             catch (Exception ex)
             {
@@ -156,32 +154,32 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-/*             reportHelper = new ReportHelper();
-            reportHelper.CrystalReportViewer1 = this.CryPThongKe;
-            reportHelper.FileReportName = @"sp_HoaDon_TimKiem";
-            reportHelper.Parameters = new Dictionary<string, string> { { "@ma", txtTimKiem.Text } };
-            reportHelper.LoadReport();
-*/
-            // Khởi tạo một đối tượng mới từ lớp CrystalReport1
-            reportHD rpt = new reportHD();
+            /*             reportHelper = new ReportHelper();
+                        reportHelper.CrystalReportViewer1 = this.CryPThongKe;
+                        reportHelper.FileReportName = @"sp_HoaDon_TimKiem";
+                        reportHelper.Parameters = new Dictionary<string, object> { { "@ma", txtTimKiem.Text } };
+                        reportHelper.LoadReport();
+            */
+            //// Khởi tạo một đối tượng mới từ lớp CrystalReport1
+            //reportHD rpt = new reportHD();
 
-            // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-            ParameterValues param = new ParameterValues();
+            //// Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
+            //ParameterValues param = new ParameterValues();
 
-            // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-            ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+            //// Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
+            //ParameterDiscreteValue pdv = new ParameterDiscreteValue();
 
-            // Đặt giá trị của pdv bằng giá trị trong textBox1
-            pdv.Value = txtTimKiem.Text;
+            //// Đặt giá trị của pdv bằng giá trị trong textBox1
+            //pdv.Value = txtTimKiem.Text;
 
-            // Thêm pdv vào danh sách các giá trị tham số
-            param.Add(pdv);
+            //// Thêm pdv vào danh sách các giá trị tham số
+            //param.Add(pdv);
 
-            // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-            rpt.DataDefinition.ParameterFields["@ma"].ApplyCurrentValues(param);
+            //// Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
+            //rpt.DataDefinition.ParameterFields["@ma"].ApplyCurrentValues(param);
 
-            // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            CryPThongKe.ReportSource = rpt;
+            //// Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
+            //CryPThongKe.ReportSource = rpt;
         }
 
         private void txtMaHD_TextChanged(object sender, EventArgs e)
@@ -209,50 +207,20 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void btnTiemKiemTheoNgay_Click(object sender, EventArgs e)
         {
-            reportHelper = new ReportHelper();
-            reportHelper.CrystalReportViewer1 = this.cryRPTheoNgay;
-            reportHelper.FileReportName = @"rp_hoadon_theongay";
-            reportHelper.Parameters = new Dictionary<string, string> { { "@ngay", dtpkNgay.Text } };
-            reportHelper.LoadReport();
-/*
-            // Khởi tạo một đối tượng mới từ lớp CrystalReport1
-            rp_hoadon_theongay rpt = new rp_hoadon_theongay();
-
-            // Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-            ParameterValues param = new ParameterValues();
-
-            // Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-            ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-
-            // Đặt giá trị của pdv bằng giá trị trong textBox1
-            pdv.Value = dtpkNgay.Text;
-
-            // Thêm pdv vào danh sách các giá trị tham số
-            param.Add(pdv);
-
-            // Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-            rpt.DataDefinition.ParameterFields["@ngay"].ApplyCurrentValues(param);
-
-            // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            cryRPTheoNgay.ReportSource = rpt;*/
+            ReportHelper rh = new ReportHelper(reportManager, "rp_hoadon_theongay", new Dictionary<string, object> { { "@ngay", string.IsNullOrEmpty(dtpkNgay.Text) ? null : dtpkNgay.Text } }, this.cryRPTheoNgay);
+            rh.LoadReport();
         }
 
         private void cryRPTheoNgay_Load(object sender, EventArgs e)
         {
-            reportHelper = new ReportHelper();
-            reportHelper.CrystalReportViewer1 = this.cryRPTheoNgay;
-            reportHelper.FileReportName = @"rp_hoadon_theongay";
-            reportHelper.Parameters = new Dictionary<string, string> { { "@ngay", "1/1/2022" } };
-            reportHelper.LoadReport();
+            ReportHelper rh = new ReportHelper(reportManager, "rp_hoadon_theongay", new Dictionary<string, object> { { "@ngay", "1/1/2022" } }, this.cryRPTheoNgay);
+            rh.LoadReport();
         }
 
         private void CryPThongKe_Load(object sender, EventArgs e)
         {
-          /*  reportHelper = new ReportHelper();
-            reportHelper.CrystalReportViewer1 = this.CryPThongKe;
-            reportHelper.FileReportName = @"sp_HoaDon_TimKiem";
-            reportHelper.Parameters = new Dictionary<string, string> { { "@ma", txtTimKiem.Text } };
-            reportHelper.LoadReport();*/
+            ReportHelper rh = new ReportHelper(reportManager, "sp_HoaDon_TimKiem", new Dictionary<string, object> { { "@ma", string.IsNullOrEmpty(txtTimKiem.Text) ? null : dtpkNgay.Text } }, this.CryPThongKe);
+            rh.LoadReport();
         }
     }
 }

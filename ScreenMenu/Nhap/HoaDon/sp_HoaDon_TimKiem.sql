@@ -13,4 +13,4 @@ BEGIN
 	where hd.MAHD like N'%'+@ma+'%' or kh.HOTENKH like N'%'+@ma+'%' or nv.HOTENNV like N'%'+@ma+'%'
 END
 GO
-exec sp_hoadon_TimKiem HD01
+exec sp_hoadon_TimKiem 'HD01'

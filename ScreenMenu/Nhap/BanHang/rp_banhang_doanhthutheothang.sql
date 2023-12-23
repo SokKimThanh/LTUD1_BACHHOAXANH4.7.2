@@ -1,9 +1,9 @@
 ﻿-- Author:		Sok Kim Thanh
 -- Create date: <16/12/2023>
--- Create Procedure sp_banhang_baocaodanhthu
-drop procedure if exists sp_banhang_baocaodanhthu
+-- Create Procedure rp_banhang_doanhthutheothang
+drop procedure if exists rp_banhang_doanhthutheothang
 go
-CREATE PROCEDURE sp_banhang_baocaodanhthu
+CREATE PROCEDURE rp_banhang_doanhthutheothang
 @thang int = 12,
 @nam int = 2023
 AS
@@ -16,4 +16,4 @@ BEGIN
 END;
 GO
  select * from HOADON
-execute sp_banhang_baocaodanhthu 1,2022
+execute rp_banhang_doanhthutheothang 1,2022

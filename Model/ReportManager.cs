@@ -1,6 +1,4 @@
 ﻿using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using CrystalDecisions.Windows.Forms;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -129,12 +127,27 @@ namespace LTUD1_BACHHOAXANH472.Model
                 RefreshReport(reportTitle);
             }
         }
-
+        /// <summary>
+        /// Kiểm tra tồn tại của report trong resource
+        /// </summary>
+        /// <param name="reportName"></param>
+        /// <returns></returns>
         public bool ReportExists(string reportName)
         {
             var resourceSet = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, true, true);
             return resourceSet.OfType<DictionaryEntry>().Any(entry => entry.Key.ToString() == reportName);
         }
 
+        /// <summary>
+        /// Kiểm tra tồn tại của report trong thư mục chỉ định
+        /// </summary>
+        /// <param name="reportName"></param>
+        /// <param name="reportDirectory"></param>
+        /// <returns></returns>
+        public bool ReportExists(string reportName, string reportDirectory)
+        {
+            string reportPath = Path.Combine(reportDirectory, reportName + ".rpt");
+            return File.Exists(reportPath);
+        }
     }
 }

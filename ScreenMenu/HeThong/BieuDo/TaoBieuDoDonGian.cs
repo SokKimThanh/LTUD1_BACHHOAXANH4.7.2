@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.HeThong
@@ -110,7 +104,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.HeThong
         }
         public DataTable getDanhSachKhachHang()
         {
-            using(SqlConnection connection = new SqlConnection(Utils.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(Utils.ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand("getDanhSachKhachHang", connection))
                 {
@@ -118,7 +112,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.HeThong
 
                     connection.Open();
 
-                    using(SqlDataReader reader = command.ExecuteReader())
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
                         DataTable result = new DataTable();
                         result.Load(reader);

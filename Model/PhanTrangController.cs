@@ -1,4 +1,4 @@
-﻿namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang
+﻿namespace LTUD1_BACHHOAXANH472
 {
     public class PhanTrangController
     {
@@ -47,6 +47,11 @@
         {
             this.totalRecords = totalRecords;
         }
+        public int GetRecordsPerPage()
+        {
+            return this.recordsPerPage;
+        }
+
     }
 
 }

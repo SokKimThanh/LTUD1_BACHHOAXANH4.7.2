@@ -17,7 +17,7 @@ public static class DataGridViewHelper
         dgv.Dock = DockStyle.Fill;
         dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         dgv.AllowUserToAddRows = false;
-        dgv.ScrollBars = ScrollBars.Both;        
+        dgv.ScrollBars = ScrollBars.Both;
     }
 }
 

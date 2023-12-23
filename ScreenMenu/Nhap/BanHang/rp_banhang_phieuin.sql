@@ -4,9 +4,9 @@
 -- Create date: <17/12/2023>
 -- Description:	<Sản phẩm giảm giá>
 go
-drop procedure if exists sp_sanpham_giamgia_select_all
+drop procedure if exists rp_banhang_phieuin
 go
-CREATE PROCEDURE sp_sanpham_giamgia_select_all
+CREATE PROCEDURE rp_banhang_phieuin
 @MAHD CHAR(11)
 AS
 BEGIN
@@ -34,5 +34,5 @@ BEGIN
 END;
 GO
 --select * from SANPHAM
-exec sp_sanpham_giamgia_select_all 'HD01'
+--exec rp_banhang_phieuin 'HD01'
 

@@ -3,9 +3,9 @@
 -- Author:		Ngô Công Quý
 -- Create date: <07/11/2023>
 set dateformat ymd
-drop procedure if exists sp_sanpham_select_ngay
+drop procedure if exists rp_sanpham_thongke_theongay
 go
-CREATE PROCEDURE sp_sanpham_select_ngay
+CREATE PROCEDURE rp_sanpham_thongke_theongay
 	@NgayHT date = null
 AS
 BEGIN
@@ -13,4 +13,4 @@ BEGIN
 END
 GO
 select * From SANPHAM
-exec sp_sanpham_select_ngay
+exec rp_sanpham_thongke_theongay

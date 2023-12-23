@@ -7,7 +7,7 @@ namespace LTUD1_BACHHOAXANH472
         private int dongia;
         private int sltonkho;
         private DateTime ngaySX, hanSD;
-
+        private double giamgia, giaban;
         public SanPham()
         {
 
@@ -32,6 +32,7 @@ namespace LTUD1_BACHHOAXANH472
             this.HanSD = hanSD;
         }
 
+         
 
         public string MaSP { get => masp; set => masp = value; }
         public string TenSP { get => tensp; set => tensp = value; }
@@ -43,5 +44,7 @@ namespace LTUD1_BACHHOAXANH472
         public int SLTonKho { get => sltonkho; set => sltonkho = value; }
         public DateTime NgaySX { get => ngaySX; set => ngaySX = value; }
         public DateTime HanSD { get => hanSD; set => hanSD = value; }
+        public double Giamgia { get => giamgia; set => giamgia = value; }
+        public double Giaban { get => giaban; set => giaban = value; }
     }
 }

@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class khachhangreport : ReportClass {
+    public class rp_banhang_doanhthutheothang : ReportClass {
         
-        public khachhangreport() {
+        public rp_banhang_doanhthutheothang() {
         }
         
         public override string ResourceName {
             get {
-                return "khachhangreport.rpt";
+                return "rp_banhang_doanhthutheothang.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.khachhangreport.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_banhang_doanhthutheothang.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,33 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ma {
+        public CrystalDecisions.Shared.IParameterField Parameter_tennhanvien {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_thang {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_nam {
+            get {
+                return this.DataDefinition.ParameterFields[2];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedkhachhangreport : Component, ICachedReport {
+    public class Cachedrp_banhang_doanhthutheothang : Component, ICachedReport {
         
-        public Cachedkhachhangreport() {
+        public Cachedrp_banhang_doanhthutheothang() {
         }
         
         [Browsable(false)]
@@ -137,7 +153,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            khachhangreport rpt = new khachhangreport();
+            rp_banhang_doanhthutheothang rpt = new rp_banhang_doanhthutheothang();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -25,6 +25,7 @@ Date(dd/MM/yyyy)		Author				Comments
 17/12/2023	10/42 SA	Sok Kim Thanh		Thêm cột phantramgiamgia int cho khuyến mãi 
 19/12/2023	05:04 SA	Sok Kim Thanh		Sửa đoạn code tạo database, thêm dữ liệu cho bảng chi nhánh, nhân viên, khách hàng ,sản phẩm
 21/12/2023  02:10 SA    Sok Kim Thanh       Tạo bảng TruyCap, gắn thêm getdate cho mỗi thời điểm đăng nhập, lưu kết quả đăng nhập thành công/thất bại
+23/12/2023  04:59 SA	Sok Kim Thanh		Đổi char11 thành char 15
 ****************************************************************************************************************************************************************/
 ------------------------------------------------------------
 --Tạo database mới										   -
@@ -53,69 +54,70 @@ use BACHHOAXANH
 ---------------------Tạo bảng CHINHANH----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE CHINHANH (MACN CHAR(11) NOT NULL ,TENCN NVARCHAR(255) NOT NULL,DIACHICN NVARCHAR(100));
+CREATE TABLE CHINHANH (MACN CHAR(15) NOT NULL ,TENCN NVARCHAR(255) NOT NULL,DIACHICN NVARCHAR(100));
 ------------------------------------------------------------
 ---------------------Tạo bảng PHONGBAN----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE PHONGBAN (MAPB CHAR(11) NOT NULL ,TENPHG NVARCHAR(255) NOT NULL, MACN CHAR(11));
+CREATE TABLE PHONGBAN (MAPB CHAR(15) NOT NULL ,TENPHG NVARCHAR(255) NOT NULL, MACN CHAR(15));
 ------------------------------------------------------------
 ---------------------Tạo bảng NHANVIEN----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE NHANVIEN (	MANV CHAR(11)NOT NULL, HOTENNV NVARCHAR(255) NOT NULL,DIACHINV NVARCHAR(100),LUONG int NOT NULL,SDTNV INT NULL,NGAYSINH DATE NOT NULL,MAPB CHAR(11), GIOITINH nvarchar(10) NOT NULL, CREATED_DATE_NV datetime not null);
+CREATE TABLE NHANVIEN (	MANV CHAR(15)NOT NULL, HOTENNV NVARCHAR(255) NOT NULL,DIACHINV NVARCHAR(100),LUONG int NOT NULL,SDTNV INT NULL,NGAYSINH DATE NOT NULL,MAPB CHAR(15), GIOITINH nvarchar(10) NOT NULL, CREATED_DATE_NV datetime not null);
 ------------------------------------------------------------
 ---------------------Tạo bảng KHACHHANG---------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE KHACHHANG (MAKH CHAR(11) NOT NULL ,HOTENKH NVARCHAR(255) NOT NULL,SDTKH INT   NULL,	DIEMTL INT NULL);
+CREATE TABLE KHACHHANG (MAKH CHAR(15) NOT NULL ,HOTENKH NVARCHAR(255) NOT NULL,SDTKH INT   NULL,	DIEMTL INT NULL);
 ------------------------------------------------------------
 ---------------------Tạo bảng NHACUNGCAP--------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE NHACUNGCAP (MANCC CHAR(11)NOT NULL  ,TENNCC NVARCHAR(255) NOT NULL,DIACHINCC NVARCHAR(100),SDTNCC INT   NULL, CREATED_DATE_NCC datetime not null);
+CREATE TABLE NHACUNGCAP (MANCC CHAR(15)NOT NULL  ,TENNCC NVARCHAR(255) NOT NULL,DIACHINCC NVARCHAR(100),SDTNCC INT   NULL, CREATED_DATE_NCC datetime not null);
 ------------------------------------------------------------
 ---------------------Tạo bảng SANPHAM-----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE SANPHAM (MASP CHAR(11) NOT NULL ,TENSP NVARCHAR(255) NOT NULL,DONVI NVARCHAR(255),NSX DATE NOT NULL,HSD DATE NOT NULL,DONGIA INT NOT NULL,SLTONKHO INT, MALOAI CHAR(11), MANCC CHAR(11), MAKM char(11));
+CREATE TABLE SANPHAM (MASP CHAR(15) NOT NULL ,TENSP NVARCHAR(255) NOT NULL,DONVI NVARCHAR(255),NSX DATE NOT NULL,HSD DATE NOT NULL,DONGIA INT NOT NULL,SLTONKHO INT, MALOAI CHAR(15), MANCC CHAR(15), MAKM CHAR(15));
 ------------------------------------------------------------
 ---------------------Tạo bảng KHUYENMAI---------------------
 ------------------------------------------------------------
-CREATE TABLE KHUYENMAI (MAKM CHAR(11) NOT NULL,NGAYBD DATE NOT NULL,NGAYKT DATE NOT NULL, MAHT char(11));
+CREATE TABLE KHUYENMAI (MAKM CHAR(15) NOT NULL,NGAYBD DATE NOT NULL,NGAYKT DATE NOT NULL, MAHT CHAR(15));
 ------------------------------------------------------------
 ---------------------Tạo bảng HINHTHUCKM--------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE HINHTHUCKM (MAHT CHAR(11)NOT NULL, TENHINHTHUC NVARCHAR(50) NOT NULL, GHICHU NVARCHAR(100));
+CREATE TABLE HINHTHUCKM (MAHT CHAR(15)NOT NULL, TENHINHTHUC NVARCHAR(50) NOT NULL, GHICHU NVARCHAR(100));
 ------------------------------------------------------------
 ---------------------Tạo bảng HOADON------------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE HOADON (MAHD CHAR(11) NOT NULL, NGAYHOADON DATE NOT NULL,TONGTHANHTIEN DECIMAL(18,2) NOT NULL,MANV CHAR(11),MAKH CHAR(11));------------------------------------------------------------
+CREATE TABLE HOADON (MAHD CHAR(15) NOT NULL, NGAYHOADON DATE NOT NULL,TONGTHANHTIEN DECIMAL(18,2) NOT NULL,MANV CHAR(15),MAKH CHAR(15));
+------------------------------------------------------------
 ---------------------Tạo bảng CHITIETHD---------------------
 ------------------------------------------------------------
-CREATE TABLE CHITIETHD (MAHD CHAR(11) NOT NULL,MASP CHAR(11) NOT NULL, SLMUA INT NOT NULL);
+CREATE TABLE CHITIETHD (MAHD CHAR(15) NOT NULL,MASP CHAR(15) NOT NULL, SLMUA INT NOT NULL);
 ------------------------------------------------------------
 ---------------------Tạo bảng CHITIETCC---------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE CHITIETCC (MANCC CHAR(11) NOT NULL,MASP CHAR(11) NOT NULL,SLCUNGCCAP INT NOT NULL);
+CREATE TABLE CHITIETCC (MANCC CHAR(15) NOT NULL,MASP CHAR(15) NOT NULL,SLCUNGCCAP INT NOT NULL);
 ------------------------------------------------------------
 ----------------------Tạo bảng LOAISP-----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE LOAISP (MALOAI CHAR(11) NOT NULL, TENLOAI NVARCHAR(255) NOT NULL, GHICHU NVARCHAR(100));
+CREATE TABLE LOAISP (MALOAI CHAR(15) NOT NULL, TENLOAI NVARCHAR(255) NOT NULL, GHICHU NVARCHAR(100));
 ------------------------------------------------------------
 ----------------------Tạo bảng TAIKHOAN-----------------------
 ------------------------------------------------------------
 go 
-create table TAIKHOAN(TENTK char(30) not null, MATKHAU char(30) not null, MANV char(11), MAQTC char(11))
+create table TAIKHOAN(TENTK char(30) not null, MATKHAU char(30) not null, MANV CHAR(15), MAQTC CHAR(15))
 ------------------------------------------------------------
 ----------------------Tạo bảng QUYENTRUYCAP-----------------------
 ------------------------------------------------------------
 go 
-create table QUYENTRUYCAP(MAQTC char(11) not null,TENQTC NVARCHAR(255) not null)
+create table QUYENTRUYCAP(MAQTC CHAR(15) not null,TENQTC NVARCHAR(255) not null)
 ------------------------------------------------------------
 ----------------------Tạo bảng QUYENTRUYCAP-----------------------
 ------------------------------------------------------------

@@ -1,9 +1,9 @@
 ﻿-- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 10:57 CH>
 go
-drop procedure if exists sp_report_nv_theo_phongban
+drop procedure if exists rp_nhanvien_theo_phongban
 go
-CREATE PROCEDURE sp_report_nv_theo_phongban
+CREATE PROCEDURE rp_nhanvien_theo_phongban
 	@tennhanvien nvarchar(255)= N'a'
 AS
 BEGIN
@@ -14,4 +14,4 @@ BEGIN
 	order by nv.created_date_nv desc 
 END;
 go
-exec sp_report_nv_theo_phongban null
+exec rp_nhanvien_theo_phongban null

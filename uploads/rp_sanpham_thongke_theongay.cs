@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class PhieuInHoaDon : ReportClass {
+    public class rp_sanpham_thongke_theongay : ReportClass {
         
-        public PhieuInHoaDon() {
+        public rp_sanpham_thongke_theongay() {
         }
         
         public override string ResourceName {
             get {
-                return "PhieuInHoaDon.rpt";
+                return "rp_sanpham_thongke_theongay.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.PhieuInHoaDon.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_sanpham_thongke_theongay.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MAHD {
+        public CrystalDecisions.Shared.IParameterField Parameter_NgayHT {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedPhieuInHoaDon : Component, ICachedReport {
+    public class Cachedrp_sanpham_thongke_theongay : Component, ICachedReport {
         
-        public CachedPhieuInHoaDon() {
+        public Cachedrp_sanpham_thongke_theongay() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            PhieuInHoaDon rpt = new PhieuInHoaDon();
+            rp_sanpham_thongke_theongay rpt = new rp_sanpham_thongke_theongay();
             rpt.Site = this.Site;
             return rpt;
         }

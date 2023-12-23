@@ -137,7 +137,8 @@ public class AccountController : MyController
             // Đóng kết nối
             CloseConnection();
         }
-    } public void select_cnql_quyentruycap()
+    }
+    public void select_cnql_quyentruycap()
     {
         try
         {

@@ -50,7 +50,7 @@ namespace LTUD1_BACHHOAXANH472
             //--..........................................................................--
             //==============================================================================
             // Tạo một ReportManager mới với đường dẫn đến thư mục chứa các báo cáo
-            reportManager = new ReportManager(Utils.UploadString);//lazyloading
+            reportManager = new ReportManager(Utils.ReportsString);//lazyloading
         }
         /// <summary>
         /// CHẠY TỪ FILE FORMDANGNHAP.CS
@@ -72,7 +72,7 @@ namespace LTUD1_BACHHOAXANH472
             //--..........................................................................--
             //==============================================================================
             // Tạo một ReportManager mới với đường dẫn đến thư mục chứa các báo cáo
-            reportManager = new ReportManager();//lazyloading
+            reportManager = new ReportManager(Utils.ReportsString);//lazyloading
         }
         private void FormMain_Load(object sender, EventArgs e)
         {

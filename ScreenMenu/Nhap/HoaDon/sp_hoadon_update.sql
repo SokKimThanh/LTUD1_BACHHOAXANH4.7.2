@@ -13,4 +13,4 @@ BEGIN
 	update HOADON set NGAYHOADON = @ngayHD, TONGTHANHTIEN = @tongTien, MANV = @maNV, MAKH =@maKH where MAHD = @maHD -- chuẩn sql
 END
 GO
-exec sp_hoadon_update'HD03','15/01/2022', 90000,'NV02', 'KH02'
+--exec sp_hoadon_update'HD03','15/01/2022', 90000,'NV02', 'KH02'
