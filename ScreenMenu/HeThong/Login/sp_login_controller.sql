@@ -40,3 +40,5 @@ BEGIN
     INNER JOIN QUYENTRUYCAP Q ON TK.MAQTC = Q.MAQTC
     WHERE TK.TENTK = @TENTK AND TK.MATKHAU = @MATKHAU
 END
+
+-- hien thi ten nhan vien va quyen truy cap 

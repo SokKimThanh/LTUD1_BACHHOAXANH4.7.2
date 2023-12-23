@@ -242,6 +242,7 @@
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterBanHang.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\AdapterPhanTrang.cs" />
     <Compile Include="ScreenMenu\Nhap\BanHang\BanHangController.cs" />
+    <Compile Include="ScreenMenu\Nhap\NhanVien\NhanVienOptions.cs" />
     <Compile Include="uploads\PhieuInHoaDon1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -564,7 +565,9 @@
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_cnql_dangnhap.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
-    <Content Include="ScreenMenu\Nhap\NhanVien\sp_report_nv_combobox.sql" />
+    <Content Include="ScreenMenu\Nhap\HoaDon\sp_report_hoadon.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_cbo_nhanvien.sql" />
+    <Content Include="ScreenMenu\Nhap\NhanVien\sp_report_nv.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_sanpham_select_ngay.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\sp_SanPham_TimTenSanPham.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
@@ -669,7 +672,6 @@
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_giamgia_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_select_one.sql" />
-    <Content Include="ScreenMenu\Nhap\HoaDon\rp_hoadon_theongay.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_HoaDon_TimKiem.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_update.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khahchhang_TimKiem.sql" />

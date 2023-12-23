@@ -280,7 +280,42 @@ namespace LTUD1_BACHHOAXANH472
             }
             return dt;
         }
+        public DataTable GetNhanVienCombobox()
+        {
 
+            DataTable dt;
+
+            try
+            {
+                // Mở kết nối
+                SqlConnection conn = OpenConnection();
+
+                // Tạo một đối tượng SqlCommand
+                Sql = new SqlCommand("sp_cbo_nhanvien", conn);
+                Sql.CommandType = CommandType.StoredProcedure;
+
+                // Tạo một đối tượng SqlDataAdapter
+                Adapter = new SqlDataAdapter(Sql);
+
+                // Tạo một đối tượng DataTable để lưu trữ dữ liệu
+                dt = new DataTable();
+
+                // Đổ dữ liệu vào DataTable
+                Adapter.Fill(dt);
+
+                // Đóng kết nối
+                CloseConnection();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("sp_cbo_nhanvien" + ex.Message);
+            }
+            finally
+            {
+                CloseConnection();
+            }
+            return dt;
+        }
         public DataTable Search(string keyword)
         {
             DataTable dt;

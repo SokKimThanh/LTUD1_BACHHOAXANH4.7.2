@@ -59,7 +59,5 @@ namespace LTUD1_BACHHOAXANH472.Model
                 MessageBox.Show("Không có tham số nào được cung cấp.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }

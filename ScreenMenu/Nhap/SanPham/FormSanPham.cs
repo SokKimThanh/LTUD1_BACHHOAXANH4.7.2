@@ -31,7 +31,7 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnDelete = btnXoa;
             buttonStateManager.BtnRefresh = btnLamMoi;
             buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
-            Refresh();
+            Refreshs();
             this.reportManager = reportManager;// chia se report
         }
         private void FormSanPham_Load(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace LTUD1_BACHHOAXANH472
                 cboNCC.DisplayMember = "TENNCC";
                 cboNCC.ValueMember = "Mancc";
 
-                Refresh();
+                Refreshs();
             }
             catch (Exception ex)
             {
@@ -101,7 +101,7 @@ namespace LTUD1_BACHHOAXANH472
                 sp.Mancc = cboNCC.SelectedValue.ToString();
                 sp.KhuyenMai = cboKM.SelectedValue.ToString();
                 spConn.Insert(sp);
-                Refresh();
+                Refreshs();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
@@ -109,7 +109,7 @@ namespace LTUD1_BACHHOAXANH472
                 MessageBox.Show(ex.Message);
             }
         }
-        private void Refresh()
+        private void Refreshs()
         {
             txtMaSP.Text = string.Empty;
             txtTenSP.Text = string.Empty;
@@ -128,7 +128,7 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 spConn.Delete(txtMaSP.Text);
-                Refresh();
+                Refreshs();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
@@ -142,7 +142,7 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            Refresh();
+            Refreshs();
 
             buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
@@ -179,7 +179,7 @@ namespace LTUD1_BACHHOAXANH472
                 sp.Mancc = cboNCC.SelectedValue.ToString();
                 sp.KhuyenMai = cboKM.SelectedValue.ToString();
                 spConn.Update(sp);
-                Refresh();
+                Refreshs();
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
