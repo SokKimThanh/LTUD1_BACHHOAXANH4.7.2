@@ -1,11 +1,13 @@
 ﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormBanHang : Form
     {
+        ReportHelper rh;
         private int currentPage = 1;
         private int recordsPerPage = 8;
         private int totalRecords = 0;
@@ -44,6 +46,20 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
+                int thang = 12;
+                for(int i = 1; i <= thang; i++)
+                {
+                    cboThang.Items.Add(i);
+                }
+                cboThang.Text = DateTime.Now.Month.ToString();
+                string nam = DateTime.Now.Year.ToString();
+                int year = int.Parse(nam);
+                int cboyear = 0;
+                for(int i = 0;i <= 4;i++)
+                {
+                    cboNam.Items.Add(year - i);
+                }
+                cboNam.Text = DateTime.Now.Year.ToString();
                 // tạo mã random cho mã hóa đơn
                 txtMaHoaDon.Text = rnd.GenerateRandomAlphanumericString(11);
                 //==============================================================================
@@ -311,6 +327,23 @@ namespace LTUD1_BACHHOAXANH472
             {
                 MessageBox.Show("Không tìm thấy mã hd");
             }
+        }
+        private void btnTiemKiemTheoThang_Click(object sender, EventArgs e)
+        {
+            rh = new ReportHelper();
+            rh.CrystalReportViewer1 = this.cryDoanhThuTheoThan;
+            rh.FileReportName = @"sp_banhang_baocaodanhthu";
+            rh.Parameters = new Dictionary<string, string> { { "@thang", cboThang.Text }, { "@nam", cboNam.Text } };
+            rh.LoadReport();
+        }
+
+        private void cryDoanhThuTheoThan_Load(object sender, EventArgs e)
+        {
+            rh = new ReportHelper();
+            rh.CrystalReportViewer1 = this.cryDoanhThuTheoThan;
+            rh.FileReportName = @"sp_banhang_baocaodanhthu";
+            rh.Parameters = new Dictionary<string, string> { { "@thang", "1" }, { "@nam", "2022" } };
+            rh.LoadReport();
         }
     }
 }

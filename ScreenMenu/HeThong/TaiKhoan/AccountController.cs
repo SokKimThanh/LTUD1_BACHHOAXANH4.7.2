@@ -137,6 +137,38 @@ public class AccountController : MyController
             // Đóng kết nối
             CloseConnection();
         }
+    } public void select_cnql_quyentruycap()
+    {
+        try
+        {
+            // Mở kết nối
+            SqlConnection conn = OpenConnection();
+
+            // Tạo một đối tượng SqlCommand
+            Sql = new SqlCommand("sp_cnql_quyentruycap", conn);
+            Sql.CommandType = CommandType.StoredProcedure;
+
+            // Tạo một đối tượng SqlDataAdapter
+            Adapter = new SqlDataAdapter(Sql);
+
+            // Tạo một đối tượng DataTable để lưu trữ dữ liệu
+            DataSource = new DataTable();
+
+            // Đổ dữ liệu vào DataTable
+            Adapter.Fill(DataSource);
+
+            // Đóng kết nối
+            CloseConnection();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        finally
+        {
+            // Đóng kết nối
+            CloseConnection();
+        }
     }
     public void select_cbo_nhanvien()
     {

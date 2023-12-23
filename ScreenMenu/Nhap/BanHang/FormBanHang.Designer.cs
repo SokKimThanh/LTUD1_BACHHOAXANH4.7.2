@@ -37,10 +37,10 @@ namespace LTUD1_BACHHOAXANH472
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBanHang));
             this.tcManHinhBanHang = new System.Windows.Forms.TabControl();
             this.tpManHinhBanHang = new System.Windows.Forms.TabPage();
@@ -106,6 +106,15 @@ namespace LTUD1_BACHHOAXANH472
             this.btnNext = new System.Windows.Forms.PictureBox();
             this.tbInPhieu = new System.Windows.Forms.TabPage();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.cboNam = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboThang = new System.Windows.Forms.ComboBox();
+            this.btnTiemKiemTheoThang = new System.Windows.Forms.Button();
+            this.cryDoanhThuTheoThan = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tcManHinhBanHang.SuspendLayout();
             this.tpManHinhBanHang.SuspendLayout();
             this.tlpManHinhBanHang.SuspendLayout();
@@ -126,12 +135,16 @@ namespace LTUD1_BACHHOAXANH472
             ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
             this.tbInPhieu.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcManHinhBanHang
             // 
             this.tcManHinhBanHang.Controls.Add(this.tpManHinhBanHang);
             this.tcManHinhBanHang.Controls.Add(this.tbInPhieu);
+            this.tcManHinhBanHang.Controls.Add(this.tabPage1);
             this.tcManHinhBanHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tcManHinhBanHang.Location = new System.Drawing.Point(0, 0);
             this.tcManHinhBanHang.Margin = new System.Windows.Forms.Padding(0);
@@ -145,11 +158,11 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tpManHinhBanHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(40)))), ((int)(((byte)(10)))));
             this.tpManHinhBanHang.Controls.Add(this.tlpManHinhBanHang);
-            this.tpManHinhBanHang.Location = new System.Drawing.Point(4, 26);
+            this.tpManHinhBanHang.Location = new System.Drawing.Point(4, 32);
             this.tpManHinhBanHang.Margin = new System.Windows.Forms.Padding(0);
             this.tpManHinhBanHang.Name = "tpManHinhBanHang";
             this.tpManHinhBanHang.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tpManHinhBanHang.Size = new System.Drawing.Size(1292, 738);
+            this.tpManHinhBanHang.Size = new System.Drawing.Size(1292, 732);
             this.tpManHinhBanHang.TabIndex = 0;
             this.tpManHinhBanHang.Text = "Màn hình bán hàng";
             // 
@@ -186,7 +199,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpManHinhBanHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpManHinhBanHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpManHinhBanHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpManHinhBanHang.Size = new System.Drawing.Size(1286, 734);
+            this.tlpManHinhBanHang.Size = new System.Drawing.Size(1286, 728);
             this.tlpManHinhBanHang.TabIndex = 1;
             // 
             // tlpThongTinDangNhap
@@ -451,7 +464,7 @@ namespace LTUD1_BACHHOAXANH472
             this.cboRecordPerPage.Location = new System.Drawing.Point(135, 1);
             this.cboRecordPerPage.Margin = new System.Windows.Forms.Padding(1);
             this.cboRecordPerPage.Name = "cboRecordPerPage";
-            this.cboRecordPerPage.Size = new System.Drawing.Size(67, 40);
+            this.cboRecordPerPage.Size = new System.Drawing.Size(67, 49);
             this.cboRecordPerPage.TabIndex = 7;
             this.cboRecordPerPage.SelectedIndexChanged += new System.EventHandler(this.cboRecordPerPage_SelectedIndexChanged);
             // 
@@ -497,7 +510,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenSanPham.Location = new System.Drawing.Point(0, 34);
             this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.txtTenSanPham.Name = "txtTenSanPham";
-            this.txtTenSanPham.Size = new System.Drawing.Size(239, 34);
+            this.txtTenSanPham.Size = new System.Drawing.Size(239, 41);
             this.txtTenSanPham.TabIndex = 3;
             this.txtTenSanPham.TextChanged += new System.EventHandler(this.txtTenSanPham_TextChanged);
             // 
@@ -563,7 +576,7 @@ namespace LTUD1_BACHHOAXANH472
             this.cboLoaiSanPham.Location = new System.Drawing.Point(241, 35);
             this.cboLoaiSanPham.Margin = new System.Windows.Forms.Padding(1);
             this.cboLoaiSanPham.Name = "cboLoaiSanPham";
-            this.cboLoaiSanPham.Size = new System.Drawing.Size(198, 33);
+            this.cboLoaiSanPham.Size = new System.Drawing.Size(198, 39);
             this.cboLoaiSanPham.TabIndex = 7;
             this.cboLoaiSanPham.SelectedIndexChanged += new System.EventHandler(this.cboLoaiSanPham_SelectedIndexChanged);
             // 
@@ -576,7 +589,7 @@ namespace LTUD1_BACHHOAXANH472
             this.cboNhaCungCap.Location = new System.Drawing.Point(440, 34);
             this.cboNhaCungCap.Margin = new System.Windows.Forms.Padding(0);
             this.cboNhaCungCap.Name = "cboNhaCungCap";
-            this.cboNhaCungCap.Size = new System.Drawing.Size(203, 33);
+            this.cboNhaCungCap.Size = new System.Drawing.Size(203, 39);
             this.cboNhaCungCap.TabIndex = 8;
             this.cboNhaCungCap.SelectedIndexChanged += new System.EventHandler(this.cboNhaCungCap_SelectedIndexChanged);
             // 
@@ -644,7 +657,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvThongTinHoaDon.Name = "dgvThongTinHoaDon";
             this.dgvThongTinHoaDon.RowHeadersVisible = false;
             this.dgvThongTinHoaDon.RowHeadersWidth = 62;
-            this.dgvThongTinHoaDon.Size = new System.Drawing.Size(639, 264);
+            this.dgvThongTinHoaDon.Size = new System.Drawing.Size(639, 258);
             this.dgvThongTinHoaDon.TabIndex = 8;
             this.dgvThongTinHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThongTinHoaDon_CellContentClick);
             // 
@@ -694,16 +707,16 @@ namespace LTUD1_BACHHOAXANH472
             // BtnTangSL
             // 
             this.BtnTangSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.NullValue = "+";
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BtnTangSL.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle21.NullValue = "+";
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BtnTangSL.DefaultCellStyle = dataGridViewCellStyle21;
             this.BtnTangSL.FillWeight = 87.73023F;
             this.BtnTangSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTangSL.HeaderText = "Tăng SL";
@@ -717,16 +730,16 @@ namespace LTUD1_BACHHOAXANH472
             // btnGiamSL
             // 
             this.btnGiamSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.NullValue = "-";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnGiamSL.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle22.NullValue = "-";
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnGiamSL.DefaultCellStyle = dataGridViewCellStyle22;
             this.btnGiamSL.FillWeight = 85.27919F;
             this.btnGiamSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiamSL.HeaderText = "Giảm SL";
@@ -747,7 +760,7 @@ namespace LTUD1_BACHHOAXANH472
             this.pnDanhSachSanPham.Margin = new System.Windows.Forms.Padding(4, 0, 0, 4);
             this.pnDanhSachSanPham.Name = "pnDanhSachSanPham";
             this.tlpManHinhBanHang.SetRowSpan(this.pnDanhSachSanPham, 2);
-            this.pnDanhSachSanPham.Size = new System.Drawing.Size(639, 428);
+            this.pnDanhSachSanPham.Size = new System.Drawing.Size(639, 422);
             this.pnDanhSachSanPham.TabIndex = 9;
             // 
             // dgvDanhSachSanPham
@@ -759,14 +772,14 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvDanhSachSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnNameThemHDCT});
             this.dgvDanhSachSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgvDanhSachSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.Green;
             this.dgvDanhSachSanPham.Location = new System.Drawing.Point(0, 0);
@@ -774,22 +787,23 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvDanhSachSanPham.Name = "dgvDanhSachSanPham";
             this.dgvDanhSachSanPham.RowHeadersVisible = false;
             this.dgvDanhSachSanPham.RowHeadersWidth = 62;
-            this.dgvDanhSachSanPham.Size = new System.Drawing.Size(637, 426);
+            this.dgvDanhSachSanPham.Size = new System.Drawing.Size(637, 420);
             this.dgvDanhSachSanPham.TabIndex = 9;
             this.dgvDanhSachSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSanPham_CellClick);
             // 
             // btnNameThemHDCT
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.NullValue = "+";
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNameThemHDCT.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle23.NullValue = "+";
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNameThemHDCT.DefaultCellStyle = dataGridViewCellStyle23;
             this.btnNameThemHDCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNameThemHDCT.HeaderText = "Thêm HDCT";
+            this.btnNameThemHDCT.MinimumWidth = 6;
             this.btnNameThemHDCT.Name = "btnNameThemHDCT";
             this.btnNameThemHDCT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.btnNameThemHDCT.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -830,7 +844,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenKhachHang.Location = new System.Drawing.Point(167, 0);
             this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(0);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(476, 61);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(476, 74);
             this.txtTenKhachHang.TabIndex = 3;
             this.txtTenKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTenKhachHang.TextChanged += new System.EventHandler(this.txtTenKhachHang_TextChanged);
@@ -882,7 +896,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtSDTKhachHang.Location = new System.Drawing.Point(167, 50);
             this.txtSDTKhachHang.Margin = new System.Windows.Forms.Padding(0);
             this.txtSDTKhachHang.Name = "txtSDTKhachHang";
-            this.txtSDTKhachHang.Size = new System.Drawing.Size(476, 61);
+            this.txtSDTKhachHang.Size = new System.Drawing.Size(476, 74);
             this.txtSDTKhachHang.TabIndex = 3;
             this.txtSDTKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSDTKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
@@ -905,7 +919,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpNhapTTHD.Controls.Add(this.btnThanhToan, 1, 3);
             this.tlpNhapTTHD.Controls.Add(this.btnHuyThanhToan, 2, 3);
             this.tlpNhapTTHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNhapTTHD.Location = new System.Drawing.Point(0, 570);
+            this.tlpNhapTTHD.Location = new System.Drawing.Point(0, 564);
             this.tlpNhapTTHD.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.tlpNhapTTHD.Name = "tlpNhapTTHD";
             this.tlpNhapTTHD.RowCount = 4;
@@ -1192,10 +1206,10 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tbInPhieu.BackColor = System.Drawing.Color.Green;
             this.tbInPhieu.Controls.Add(this.crystalReportViewer1);
-            this.tbInPhieu.Location = new System.Drawing.Point(4, 26);
+            this.tbInPhieu.Location = new System.Drawing.Point(4, 32);
             this.tbInPhieu.Name = "tbInPhieu";
             this.tbInPhieu.Padding = new System.Windows.Forms.Padding(3);
-            this.tbInPhieu.Size = new System.Drawing.Size(1292, 738);
+            this.tbInPhieu.Size = new System.Drawing.Size(1292, 732);
             this.tbInPhieu.TabIndex = 1;
             this.tbInPhieu.Text = "In Phiếu thanh toán";
             // 
@@ -1207,13 +1221,126 @@ namespace LTUD1_BACHHOAXANH472
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1286, 732);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1286, 726);
             this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
+            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 32);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(1292, 732);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Thống kê Doanh Thu";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cryDoanhThuTheoThan, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.830601F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.1694F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1292, 732);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.44168F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.79471F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.34215F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.62675F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.79471F));
+            this.tableLayoutPanel3.Controls.Add(this.cboNam, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.cboThang, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnTiemKiemTheoThang, 4, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1286, 44);
+            this.tableLayoutPanel3.TabIndex = 0;
+            // 
+            // cboNam
+            // 
+            this.cboNam.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboNam.FormattingEnabled = true;
+            this.cboNam.Location = new System.Drawing.Point(601, 3);
+            this.cboNam.Name = "cboNam";
+            this.cboNam.Size = new System.Drawing.Size(375, 31);
+            this.cboNam.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label3.Location = new System.Drawing.Point(468, 0);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(40, 10, 40, 10);
+            this.label3.Size = new System.Drawing.Size(127, 44);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Năm";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(40, 10, 40, 10);
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(154, 44);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Tháng";
+            // 
+            // cboThang
+            // 
+            this.cboThang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cboThang.FormattingEnabled = true;
+            this.cboThang.Location = new System.Drawing.Point(163, 3);
+            this.cboThang.Name = "cboThang";
+            this.cboThang.Size = new System.Drawing.Size(299, 31);
+            this.cboThang.TabIndex = 3;
+            // 
+            // btnTiemKiemTheoThang
+            // 
+            this.btnTiemKiemTheoThang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTiemKiemTheoThang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTiemKiemTheoThang.Location = new System.Drawing.Point(982, 3);
+            this.btnTiemKiemTheoThang.Name = "btnTiemKiemTheoThang";
+            this.btnTiemKiemTheoThang.Size = new System.Drawing.Size(301, 38);
+            this.btnTiemKiemTheoThang.TabIndex = 5;
+            this.btnTiemKiemTheoThang.Text = "Tìm Kiếm";
+            this.btnTiemKiemTheoThang.UseVisualStyleBackColor = false;
+            this.btnTiemKiemTheoThang.Click += new System.EventHandler(this.btnTiemKiemTheoThang_Click);
+            // 
+            // cryDoanhThuTheoThan
+            // 
+            this.cryDoanhThuTheoThan.ActiveViewIndex = -1;
+            this.cryDoanhThuTheoThan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cryDoanhThuTheoThan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cryDoanhThuTheoThan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cryDoanhThuTheoThan.Location = new System.Drawing.Point(3, 53);
+            this.cryDoanhThuTheoThan.Name = "cryDoanhThuTheoThan";
+            this.cryDoanhThuTheoThan.Size = new System.Drawing.Size(1286, 676);
+            this.cryDoanhThuTheoThan.TabIndex = 1;
+            this.cryDoanhThuTheoThan.Load += new System.EventHandler(this.cryDoanhThuTheoThan_Load);
             // 
             // FormBanHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
@@ -1261,6 +1388,10 @@ namespace LTUD1_BACHHOAXANH472
             ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
             this.tbInPhieu.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1331,5 +1462,14 @@ namespace LTUD1_BACHHOAXANH472
         private DataGridViewButtonColumn btnNameThemHDCT;
         private TabPage tbInPhieu;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private TabPage tabPage1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label2;
+        private ComboBox cboNam;
+        private Label label3;
+        private ComboBox cboThang;
+        private Button btnTiemKiemTheoThang;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer cryDoanhThuTheoThan;
     }
 }

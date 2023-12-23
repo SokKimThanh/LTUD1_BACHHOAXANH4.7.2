@@ -44,6 +44,9 @@ namespace LTUD1_BACHHOAXANH472
                 // load dữ liệu quyền truy cập
                 quyenTruyCapController.SelectAll();
                 dgvQTC.DataSource = quyenTruyCapController.DataSource;
+                // load dữ liệu chức năng quản lí quyền truy cập
+                AcountController.select_cnql_quyentruycap();
+                dgvQuanLyDangNhap.DataSource = AcountController.DataSource;
                 // load dữ liệu combobox nhân viên
                 AcountController.select_cbo_nhanvien();
                 cboNV.DataSource = AcountController.DataSource;

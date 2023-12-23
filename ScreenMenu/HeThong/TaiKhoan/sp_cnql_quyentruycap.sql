@@ -15,4 +15,3 @@ AS
 BEGIN
 	Select * FROM taikhoan tk, nhanvien nv, truycap tc  WHERE tk.manv = nv.manv and tk.tentk = tc.tentk
 END
-GO

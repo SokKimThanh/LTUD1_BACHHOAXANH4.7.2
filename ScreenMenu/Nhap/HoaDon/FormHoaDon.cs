@@ -2,6 +2,7 @@
 using LTUD1_BACHHOAXANH472.Model;
 using LTUD1_BACHHOAXANH472.uploads;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -12,8 +13,8 @@ namespace LTUD1_BACHHOAXANH472
         HoaDonController HoaDonController;
         // khởi tạo trạng thái cho nút 
         ButtonStateManager buttonStateManager;
-        ReportManager reportManager;// chia se report
-        public FormHoaDon(ReportManager reportManager)
+        ReportHelper reportHelper;
+        public FormHoaDon()
         {
             InitializeComponent();
             HoaDonController = new HoaDonController(Utils.ConnectionString);
@@ -26,7 +27,6 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnEdit = this.btnXoa;
             buttonStateManager.BtnDelete = this.btnSua;
             buttonStateManager.BtnRefresh = this.btnLamMoi;
-            this.reportManager = reportManager;// chia se report
         }
         private void FormHoaDon_Load(object sender, EventArgs e)
         {
@@ -48,7 +48,6 @@ namespace LTUD1_BACHHOAXANH472
                 cbbMaKH.ValueMember = "MAKH";
                 // setting datagridview
                 DataGridViewHelper.ConfigureDataGridView(dgvHD);
-              
             }
             catch (Exception ex)
             {
@@ -155,7 +154,12 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-
+/*             reportHelper = new ReportHelper();
+            reportHelper.CrystalReportViewer1 = this.CryPThongKe;
+            reportHelper.FileReportName = @"sp_HoaDon_TimKiem";
+            reportHelper.Parameters = new Dictionary<string, string> { { "@ma", txtTimKiem.Text } };
+            reportHelper.LoadReport();
+*/
             // Khởi tạo một đối tượng mới từ lớp CrystalReport1
             reportHD rpt = new reportHD();
 
@@ -175,7 +179,7 @@ namespace LTUD1_BACHHOAXANH472
             rpt.DataDefinition.ParameterFields["@ma"].ApplyCurrentValues(param);
 
             // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            crystalReportViewer1.ReportSource = rpt;
+            CryPThongKe.ReportSource = rpt;
         }
 
         private void txtMaHD_TextChanged(object sender, EventArgs e)
@@ -203,7 +207,12 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void btnTiemKiemTheoNgay_Click(object sender, EventArgs e)
         {
-
+            reportHelper = new ReportHelper();
+            reportHelper.CrystalReportViewer1 = this.cryRPTheoNgay;
+            reportHelper.FileReportName = @"rp_hoadon_theongay";
+            reportHelper.Parameters = new Dictionary<string, string> { { "@ngay", dtpkNgay.Text } };
+            reportHelper.LoadReport();
+/*
             // Khởi tạo một đối tượng mới từ lớp CrystalReport1
             rp_hoadon_theongay rpt = new rp_hoadon_theongay();
 
@@ -223,7 +232,25 @@ namespace LTUD1_BACHHOAXANH472
             rpt.DataDefinition.ParameterFields["@ngay"].ApplyCurrentValues(param);
 
             // Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            crystalReportViewer2.ReportSource = rpt;
+            cryRPTheoNgay.ReportSource = rpt;*/
+        }
+
+        private void cryRPTheoNgay_Load(object sender, EventArgs e)
+        {
+            reportHelper = new ReportHelper();
+            reportHelper.CrystalReportViewer1 = this.cryRPTheoNgay;
+            reportHelper.FileReportName = @"rp_hoadon_theongay";
+            reportHelper.Parameters = new Dictionary<string, string> { { "@ngay", "1/1/2022" } };
+            reportHelper.LoadReport();
+        }
+
+        private void CryPThongKe_Load(object sender, EventArgs e)
+        {
+          /*  reportHelper = new ReportHelper();
+            reportHelper.CrystalReportViewer1 = this.CryPThongKe;
+            reportHelper.FileReportName = @"sp_HoaDon_TimKiem";
+            reportHelper.Parameters = new Dictionary<string, string> { { "@ma", txtTimKiem.Text } };
+            reportHelper.LoadReport();*/
         }
     }
 }
