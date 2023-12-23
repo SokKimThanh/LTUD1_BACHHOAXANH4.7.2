@@ -90,7 +90,7 @@ CREATE PROCEDURE sp_quyentruycap_select_one
 	@MAQTC CHAR(30)
 AS
 BEGIN
-	SELECT * from quyentruycap where MAQTC = @MAQTC --  chÔøΩnh xÔøΩc mÔøΩ 100%
+	SELECT * from quyentruycap where MAQTC = @MAQTC --  chÌnh x·c m„ 100%
 END
 GO
 Ôªø-- Create Procedure sp_quyentruycap_update.sql
@@ -193,7 +193,7 @@ CREATE PROCEDURE sp_taikhoan_select_one
 	@TENTK CHAR(30)
 AS
 BEGIN
-	SELECT * from taikhoan where TENTK = @TENTK --  chÔøΩnh xÔøΩc mÔøΩ 100%
+	SELECT * from taikhoan where TENTK = @TENTK --  chÌnh x·c m„ 100%
 END
 GO
 Ôªø-- Create Procedure sp_taikhoan_update.sql
@@ -403,7 +403,7 @@ CREATE PROCEDURE sp_sanpham_phantrang_count
     @tenSanPham NVARCHAR(100) = NULL
 AS
 BEGIN 
-    -- L?Y D? LI?U VÔøΩ CH? S? DÔøΩNG (ROW) C?A NÔøΩ
+    -- L?Y D? LI?U V¿ CH? S? D“NG (ROW) C?A N”
     WITH PHANTRANG AS (
         SELECT ROW_NUMBER() OVER (ORDER BY SP.MASP) AS STT
             ,SP.MASP, SP.TENSP, SP.DONVI, SP.DONGIA
@@ -416,7 +416,7 @@ BEGIN
         AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
         AND MANCC = ISNULL(@NHACUNGCAP, MANCC) AND SLTONKHO > 0
     )
-    -- ÔøΩ?M S? DÔøΩNG
+    -- –?M S? D“NG
     SELECT COUNT(*) AS TOTALROWS
     FROM PHANTRANG;
 END;
@@ -620,6 +620,42 @@ BEGIN
 	update hinhthuckm set TENHINHTHUC = @hinhthuc, ghichu = @ghichu  where MAHT = @makm -- chu·∫©n sql
 END
 GO
+-- Author:		Vo Tu
+-- Create date: <13/11/2023>
+set dateformat dmy
+DROP PROCEDURE IF EXISTS rp_hoadon_theongay
+GO
+CREATE PROCEDURE rp_hoadon_theongay
+	@ngay date
+AS
+BEGIN
+	Select hd.MAHD,hd.NGAYHOADON,hd.TONGTHANHTIEN,nv.HOTENNV,kh.HOTENKH
+	from HOADON hd
+	INNER Join NHANVIEN nv on hd.MANV = nv.MANV
+	INNER Join KHACHHANG kh on hd.MAKH = kh.MAKH
+	where hd.NGAYHOADON = @ngay
+END
+GO
+exec rp_hoadon_theongay '1-01-2022'
+select * from HOADON
+-- Author:		Vo Tu
+-- Create date: <13/11/2023>
+DROP PROCEDURE IF EXISTS rp_hoadon_timkiem
+GO
+CREATE PROCEDURE rp_hoadon_timkiem
+	@ma nvarchar(50)
+AS
+BEGIN
+	Select hd.MAHD,hd.NGAYHOADON,hd.TONGTHANHTIEN,nv.HOTENNV,kh.HOTENKH
+	from HOADON hd
+	INNER Join NHANVIEN nv on hd.MANV = nv.MANV
+	INNER Join KHACHHANG kh on hd.MAKH = kh.MAKH
+	where hd.MAHD like N'%'+@ma+'%' 
+	or kh.HOTENKH like N'%'+@ma+'%' 
+	or nv.HOTENNV like N'%'+@ma+'%'
+END
+GO
+exec rp_hoadon_timkiem 'a'
 Ôªø-- Create Procedure sp_nhacungcap_select_all.sql
 -- cbb_khachhang select all
 -- Author:		Vo Tu
@@ -778,7 +814,7 @@ select * from NHANVIEN
 -- hoadon select all 
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
--- Description:	<HÔøΩa don select all>
+-- Description:	<HÛa don select all>
 set dateformat dmy
 drop procedure if exists sp_hoadon_select_all
 go
@@ -805,22 +841,6 @@ BEGIN
 END
 GO
 exec sp_hoadon_select_one '12'
--- Author:		Vo Tu
--- Create date: <13/11/2023>
-DROP PROCEDURE IF EXISTS rp_hoadon_timkiem
-GO
-CREATE PROCEDURE rp_hoadon_timkiem
-	@ma nvarchar(50)
-AS
-BEGIN
-	Select hd.MAHD,hd.NGAYHOADON,hd.TONGTHANHTIEN,nv.HOTENNV,kh.HOTENKH
-	from HOADON hd
-	INNER Join NHANVIEN nv on hd.MANV = nv.MANV
-	INNER Join KHACHHANG kh on hd.MAKH = kh.MAKH
-	where hd.MAHD like N'%'+@ma+'%' or kh.HOTENKH like N'%'+@ma+'%' or nv.HOTENNV like N'%'+@ma+'%'
-END
-GO
-exec rp_hoadon_timkiem 'HD01'
 Ôªø-- Author:		Vo Tu
 -- Create date: <13/11/2023> 
 drop procedure if exists sp_hoadon_update
@@ -837,24 +857,6 @@ BEGIN
 END
 GO
 --exec sp_hoadon_update'HD03','15/01/2022', 90000,'NV02', 'KH02'
--- Author:		Vo Tu
--- Create date: <13/11/2023>
-set dateformat dmy
-DROP PROCEDURE IF EXISTS rp_hoadon_theongay
-GO
-CREATE PROCEDURE rp_hoadon_theongay
-	@ngay date
-AS
-BEGIN
-	Select hd.MAHD,hd.NGAYHOADON,hd.TONGTHANHTIEN,nv.HOTENNV,kh.HOTENKH
-	from HOADON hd
-	INNER Join NHANVIEN nv on hd.MANV = nv.MANV
-	INNER Join KHACHHANG kh on hd.MAKH = kh.MAKH
-	where hd.NGAYHOADON = @ngay
-END
-GO
-exec rp_hoadon_theongay '1-01-2022'
-select * from HOADON
 Ôªø-- Create Procedure sp_chitiethoadon_delete.sql
 -- Danh m·ª•c delete
 GO
@@ -1036,6 +1038,22 @@ from CHITIETHD
 where MAHD = 'HD01' and MASP = 'SP02'
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
+DROP PROCEDURE IF EXISTS rp_khachhang_timkiem
+GO
+CREATE PROCEDURE rp_khachhang_timkiem
+	@ma nvarchar(50)
+AS
+BEGIN
+    -- Delete statements for procedure here
+	Select *
+	from KHACHHANG
+	where MAKH like N'%'+@ma+'%' or HOTENKH like N'%'+@ma+'%' or SDTKH like N'%'+@ma+'%'
+END
+GO
+select * from KHACHHANG
+exec rp_khachhang_timkiem 'LÍ'
+-- Author:		Vo Tu
+-- Create date: <13/11/2023>
 -- Create Procedure sp_khachhang_delete.sql
 -- nhacungcap delete
 DROP PROCEDURE IF EXISTS sp_khachhang_delete
@@ -1086,7 +1104,7 @@ CREATE PROCEDURE sp_khachhang_select_one
 	@maKH char(11)
 AS
 BEGIN
-	SELECT * from KHACHHANG where  MAKH = @maKH --like chÔøΩnh xÔøΩc mÔøΩ 100%
+	SELECT * from KHACHHANG where  MAKH = @maKH --like chÌnh x·c m„ 100%
 END
 GO
 Ôªø-- Create Procedure sp_khachhang_update.sql
@@ -1105,22 +1123,6 @@ BEGIN
 	update KHACHHANG set HOTENKH = @tenKH,SDTKH = @sdtKH, DIEMTL = @diemTL where MAKH = @maKH -- chu·∫©n sql
 END
 GO
--- Author:		Vo Tu
--- Create date: <13/11/2023>
-DROP PROCEDURE IF EXISTS rp_khachhang_timkiem
-GO
-CREATE PROCEDURE rp_khachhang_timkiem
-	@ma nvarchar(50)
-AS
-BEGIN
-    -- Delete statements for procedure here
-	Select *
-	from KHACHHANG
-	where MAKH like N'%'+@ma+'%' or HOTENKH like N'%'+@ma+'%' or SDTKH like N'%'+@ma+'%'
-END
-GO
-select * from KHACHHANG
-exec rp_khachhang_timkiem 'LÔøΩ'
 Ôªø-- Create Procedure sp_khuyenmai_update.sql
 -- Danh m·ª•c update
 -- Author:		Sok Kim Thanh
@@ -1303,7 +1305,7 @@ CREATE PROCEDURE sp_nhacungcap_select_one
 	@MANCC CHAR(11)
 AS
 BEGIN
-	SELECT * from nhacungcap where MANCC = @MANCC --like chÔøΩnh xÔøΩc mÔøΩ 100%
+	SELECT * from nhacungcap where MANCC = @MANCC --like chÌnh x·c m„ 100%
 END
 GO
 Ôªø-- Create Procedure sp_nhacungcap_update.sql
@@ -1395,7 +1397,7 @@ CREATE PROCEDURE sp_chitietcc_select_one
 	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from chitietcc  --  chÔøΩnh xÔøΩc mÔøΩ 100%
+	SELECT * from chitietcc  --  chÌnh x·c m„ 100%
 END
 GO
 execute sp_chitietcc_select_one  'ncc01' , 'sp01'
@@ -1621,7 +1623,7 @@ CREATE PROCEDURE sp_nhanvien_insert
 	@gioitinh CHAR(11)
 AS
 BEGIN 
-	-- ÔøΩ?i 50 milliseconds
+	-- –?i 50 milliseconds
 	WAITFOR DELAY '00:00:00.050';
 	INSERT INTO nhanvien(manv, hotennv, diachinv, luong, sdtnv, ngaysinh,mapb, gioitinh) 
 	VALUES (@manv, @hotennv, @diachinv, @luong, @sdtnv, @ngaysinh,@mapb, @gioitinh);
@@ -1638,7 +1640,7 @@ CREATE PROCEDURE sp_nhanvien_search
 	@keyword nvarchar(100) = N''
 AS
 BEGIN 
-	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like chÔøΩnh xÔøΩc mÔøΩ 100%
+	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like chÌnh x·c m„ 100%
 END;
 go
 select * from nhanvien
@@ -1652,7 +1654,7 @@ CREATE PROCEDURE sp_nhanvien_select_one
 	@manv char(11)
 AS
 BEGIN 
-	SELECT * from nhanvien where MANV = isnull(@manv,manv) --like chÔøΩnh xÔøΩc mÔøΩ 100%
+	SELECT * from nhanvien where MANV = isnull(@manv,manv) --like chÌnh x·c m„ 100%
 END;
 go
 Ôªø-- Author:		Sok Kim Thanh
@@ -1726,7 +1728,7 @@ go
 CREATE PROCEDURE sp_phongban_select_all
 AS
 BEGIN
-	SELECT pb.MAPB, pb.TENPHG as N'TÔøΩn PhÔøΩng Ban' , cn.TENCN as N'TÔøΩn Chi NhÔøΩnh'  from PHONGBAN pb, CHINHANH cn where pb.MACN = cn.MACN
+	SELECT pb.MAPB, pb.TENPHG as N'TÍn PhÚng Ban' , cn.TENCN as N'TÍn Chi Nh·nh'  from PHONGBAN pb, CHINHANH cn where pb.MACN = cn.MACN
 END;
 GO
 exec sp_phongban_select_all
@@ -1739,7 +1741,7 @@ CREATE PROCEDURE sp_phongban_select_one
 	@mapb char(11)
 AS
 BEGIN 
-	SELECT * from phongban where mapb = @mapb --like chÔøΩnh xÔøΩc mÔøΩ 100%
+	SELECT * from phongban where mapb = @mapb --like chÌnh x·c m„ 100%
 END;
 go
 --execute sp_phongban_select_one 'pb01'
@@ -1772,10 +1774,10 @@ END
 GO
 select * from sanpham
 exec rp_sanpham_timtensp N'C√Å'
-Ôªø-- Create Procedure sp_sanpham_select_one.sql
--- S·∫£n ph·∫©m select one
+Ôªø--tim san pham het han su dung
 -- Author:		Ng√¥ C√¥ng Qu√Ω
 -- Create date: <07/11/2023>
+-- update date sok kim thanh 23/12/2023
 set dateformat ymd
 drop procedure if exists rp_sanpham_timtheongay
 go
@@ -1783,11 +1785,15 @@ CREATE PROCEDURE rp_sanpham_timtheongay
 	@NgayHT date = null
 AS
 BEGIN
-	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = isnull(@NgayHT,sp.hsd)--like ch√≠nh x√°c m√£ 100%
+	IF @NgayHT IS NULL
+		SET @NgayHT = CAST(GETDATE() AS date);
+
+	SELECT sp.*, ncc.TENNCC, ncc.SDTNCC  from sanpham sp, NHACUNGCAP ncc, LOAISP lsp where sp.HSD < @NgayHT;
 END
 GO
-select * From SANPHAM
-exec rp_sanpham_timtheongay
+
+select * from SANPHAM
+exec rp_sanpham_timtheongay 
 Ôªø-- Create Procedure sp_sanpham_delete.sql
 -- S·∫£n ph·∫©m delete
 -- Author:		Sok Kim Thanh

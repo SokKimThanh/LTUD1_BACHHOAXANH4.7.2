@@ -14,3 +14,4 @@
 - 20/12/2023 08:50 CH Hoàn thành chức năng hiển thị thông tin report phiếu hóa đơn lên tabcontrol 
 - 21/12/2023 06:56 CH Hoàn thành chức năng đăng nhập bằng cơ sở dữ liệu (chưa hiển thị quyền )
 - 21/12/2023 07:57 CH Làm chức năng quản lý đăng nhập
+- 23/12/2023 11:42 CH Hoàn thành chức năng nhận tên báo cáo và tham số trong thư mục chỉ định
