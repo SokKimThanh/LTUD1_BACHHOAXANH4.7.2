@@ -198,10 +198,10 @@
       <DependentUpon>rp_nhanvien_select_all.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="uploads\rp_khachhang.cs">
+    <Compile Include="uploads\rp_khachhang_timkiem.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rp_khachhang.rpt</DependentUpon>
+      <DependentUpon>rp_khachhang_timkiem.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Model\ArrayList.cs" />
@@ -287,10 +287,10 @@
     </Compile>
     <Compile Include="ScreenMenu\Nhap\HoaDon\HoaDon.cs" />
     <Compile Include="ScreenMenu\Nhap\HoaDon\HoaDonController.cs" />
-    <Compile Include="uploads\rp_hoadon.cs">
+    <Compile Include="uploads\rp_hoadon_timkiem.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rp_hoadon.rpt</DependentUpon>
+      <DependentUpon>rp_hoadon_timkiem.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ScreenMenu\Nhap\KhachHang\FormKhachHang.cs">
@@ -353,16 +353,16 @@
       <DependentUpon>rp_hoadon_theongay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="uploads\rp_sanpham_thongke.cs">
+    <Compile Include="uploads\rp_sanpham_timtensp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rp_sanpham_thongke.rpt</DependentUpon>
+      <DependentUpon>rp_sanpham_timtensp.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="uploads\rp_sanpham_thongke_theongay.cs">
+    <Compile Include="uploads\rp_sanpham_timtheongay.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rp_sanpham_thongke_theongay.rpt</DependentUpon>
+      <DependentUpon>rp_sanpham_timtheongay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="FormMain.resx">
@@ -404,9 +404,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rp_nhanvien_select_all.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="uploads\rp_khachhang.rpt">
+    <EmbeddedResource Include="uploads\rp_khachhang_timkiem.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rp_khachhang.cs</LastGenOutput>
+      <LastGenOutput>rp_khachhang_timkiem.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -443,9 +443,9 @@
     <EmbeddedResource Include="ScreenMenu\Nhap\HoaDon\FormHoaDonThongKe.resx">
       <DependentUpon>FormHoaDonThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="uploads\rp_hoadon.rpt">
+    <EmbeddedResource Include="uploads\rp_hoadon_timkiem.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rp_hoadon.cs</LastGenOutput>
+      <LastGenOutput>rp_hoadon_timkiem.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\Nhap\KhachHang\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
@@ -472,13 +472,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rp_hoadon_theongay.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="uploads\rp_sanpham_thongke.rpt">
+    <EmbeddedResource Include="uploads\rp_sanpham_timtensp.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rp_sanpham_thongke.cs</LastGenOutput>
+      <LastGenOutput>rp_sanpham_timtensp.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="uploads\rp_sanpham_thongke_theongay.rpt">
+    <EmbeddedResource Include="uploads\rp_sanpham_timtheongay.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rp_sanpham_thongke_theongay.cs</LastGenOutput>
+      <LastGenOutput>rp_sanpham_timtheongay.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -509,10 +509,10 @@
     <Content Include="ScreenMenu\Nhap\BanHang\rp_banhang_doanhthutheothang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
-    <Content Include="ScreenMenu\Nhap\HoaDon\sp_report_hoadon.sql" />
+    <Content Include="ScreenMenu\Nhap\HoaDon\rp_hoadon_theongay.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\sp_cbo_nhanvien.sql" />
     <Content Include="ScreenMenu\Nhap\NhanVien\rp_nhanvien.sql" />
-    <Content Include="ScreenMenu\Nhap\SanPham\rp_sanpham_thongke_theongay.sql" />
+    <Content Include="ScreenMenu\Nhap\SanPham\rp_sanpham_timtheongay.sql" />
     <Content Include="ScreenMenu\Nhap\SanPham\rp_sanpham_timtensp.sql" />
     <Content Include="SQLBienBan\PROJECT_STOREPROCEDURE_BHX.sql" />
     <None Include="Resources\showpassword.png" />
@@ -616,9 +616,9 @@
     <Content Include="ScreenMenu\Nhap\BanHang\rp_banhang_phieuin.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_select_one.sql" />
-    <Content Include="ScreenMenu\Nhap\HoaDon\sp_HoaDon_TimKiem.sql" />
+    <Content Include="ScreenMenu\Nhap\HoaDon\rp_hoadon_timkiem.sql" />
     <Content Include="ScreenMenu\Nhap\HoaDon\sp_hoadon_update.sql" />
-    <Content Include="ScreenMenu\Nhap\KhachHang\sp_khahchhang_TimKiem.sql" />
+    <Content Include="ScreenMenu\Nhap\KhachHang\rp_khachhang_timkiem.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_delete.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_insert.sql" />
     <Content Include="ScreenMenu\Nhap\KhachHang\sp_khachhang_select_all.sql" />

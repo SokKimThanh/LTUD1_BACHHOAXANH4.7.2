@@ -1,8 +1,8 @@
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
-DROP PROCEDURE IF EXISTS sp_khachhang_TimKiem
+DROP PROCEDURE IF EXISTS rp_khachhang_timkiem
 GO
-CREATE PROCEDURE sp_khachhang_TimKiem
+CREATE PROCEDURE rp_khachhang_timkiem
 	@ma nvarchar(50)
 AS
 BEGIN
@@ -13,4 +13,4 @@ BEGIN
 END
 GO
 select * from KHACHHANG
-exec sp_khachhang_TimKiem 'Lê'
+exec rp_khachhang_timkiem 'Lê'

@@ -1,4 +1,5 @@
-﻿using LTUD1_BACHHOAXANH472.Model;
+﻿using CrystalDecisions.CrystalReports.Engine;
+using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -13,7 +14,8 @@ namespace LTUD1_BACHHOAXANH472
         ButtonStateManager buttonStateManager = new ButtonStateManager();
         ReportManager reportManager;// chia se report
         CustomButtonHelper buttonHelper = new CustomButtonHelper();
-
+        ReportHelper rp_sanpham_tim_sp_hethan;
+        string ngayhientai;
         public FormSanPham(ReportManager reportManager)
         {
             InitializeComponent();
@@ -21,7 +23,6 @@ namespace LTUD1_BACHHOAXANH472
             kmConn = new KhuyenMaiController(Utils.ConnectionString);
             loaiConn = new DanhMucController(Utils.ConnectionString);
             nCCConn = new NhaCungCapController(Utils.ConnectionString);
-
 
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSP);
@@ -37,6 +38,8 @@ namespace LTUD1_BACHHOAXANH472
             ComboBoxHelper.ConfigureComboBox(cboLoaiSP);
             ComboBoxHelper.ConfigureComboBox(cboNCC);
             ComboBoxHelper.ConfigureComboBox(cboTheLoaiTimKiem);
+
+            cboTheLoaiTimKiem.SelectedIndex = 0;//tim theo ten
         }
         private void FormSanPham_Load(object sender, EventArgs e)
         {
@@ -142,7 +145,35 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void dgvDanhSachSP_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                // Khởi tạo số dòng đang chọn
+                int dong = dgvDanhSachSP.CurrentCell.RowIndex;
+                // lấy ra mã
+                string id = dgvDanhSachSP.Rows[dong].Cells[0].Value.ToString();
+                // khởi tạo đối tượng bằng mã
+                DataTable dt = spConn.SelectByID(id);
+                DataRow dr = dt.Rows[0];
+                // chuyển thành class đối tượng
+                SanPham o = (SanPham)spConn.FromDataRow(dr);
+                // thiết lập dữ liệu ngược lại mỗi lần click
+                txtMaSP.Text = o.MaSP;
+                txtTenSP.Text = o.TenSP;
+                dtpNSX.Value = o.NgaySX;
+                dtpHSD.Value = o.HanSD;
+                txtDonGia.Text = o.Dongia.ToString();
+                rtbSL.Text = o.SLTonKho.ToString();
+                rtbDonVi.Text = o.DonVi.ToString();
+                cboKM.SelectedValue = object.Equals(o.KhuyenMai, null) ? "" : o.KhuyenMai;
+                cboLoaiSP.SelectedValue = o.MaLoai;
+                cboNCC.Text = o.Mancc;
+                // cập nhật lại trang thái các nút
+                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
@@ -198,51 +229,14 @@ namespace LTUD1_BACHHOAXANH472
             {
                 if (cboTheLoaiTimKiem.Text == "Theo tên")
                 {
-                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamrpt", new System.Collections.Generic.Dictionary<string, object> { { "@TENSP", txtTimKiem.Text } }, rptSanPham);
+                    ReportHelper rh = new ReportHelper(reportManager, "rp_sanpham_timtensp", new System.Collections.Generic.Dictionary<string, object> { { "@TENSP", txtTimKiem.Text }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
                     rh.LoadReport();
-                    //SanPhamrpt rptSP = new SanPhamrpt();
-                    //// Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                    //ParameterValues param = new ParameterValues();
-
-                    //// Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    //ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-
-                    //// Đặt giá trị của pdv bằng giá trị trong textBox1
-                    //pdv.Value = txtTimKiem.Text;
-
-                    //// Thêm pdv vào danh sách các giá trị tham số
-                    //param.Add(pdv);
-
-                    //// Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                    //rptSP.DataDefinition.ParameterFields["@TENSP"].ApplyCurrentValues(param);
-
-                    //// Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-                    //rptSanPham.ReportSource = rptSP;
                 }
 
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
-                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamTheoNgay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", dtpTKNgay.Value } }, rptSanPham);
-                    rh.LoadReport();
-                    //// Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-                    //ParameterValues param = new ParameterValues();
-
-                    //// Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-                    //ParameterDiscreteValue pdv = new ParameterDiscreteValue
-                    //{
-                    //    // Đặt giá trị của pdv bằng giá trị trong textBox
-                    //    Value = dtpTKNgay.Value
-                    //};
-
-                    //// Thêm pdv vào danh sách các giá trị tham số
-                    //param.Add(pdv);
-
-                    //SanPhamTheoNgay rptSP = new SanPhamTheoNgay();
-                    //// Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-                    //rptSP.DataDefinition.ParameterFields["@NgayHT"].ApplyCurrentValues(param);
-
-                    //// Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-                    //rptSanPham.ReportSource = rptSP;
+                    rp_sanpham_tim_sp_hethan = new ReportHelper(reportManager, "rp_sanpham_timtheongay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", ngayhientai }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
+                    rp_sanpham_tim_sp_hethan.LoadReport();
                 }
             }
             catch (Exception ex)
@@ -250,39 +244,6 @@ namespace LTUD1_BACHHOAXANH472
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        private void dgvDanhSachSP_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                // Khởi tạo số dòng đang chọn
-                int dong = dgvDanhSachSP.CurrentCell.RowIndex;
-                // lấy ra mã
-                string id = dgvDanhSachSP.Rows[dong].Cells[0].Value.ToString();
-                // khởi tạo đối tượng bằng mã
-                DataTable dt = spConn.SelectByID(id);
-                DataRow dr = dt.Rows[0];
-                // chuyển thành class đối tượng
-                SanPham o = (SanPham)spConn.FromDataRow(dr);
-                // thiết lập dữ liệu ngược lại mỗi lần click
-                txtMaSP.Text = o.MaSP;
-                txtTenSP.Text = o.TenSP;
-                dtpNSX.Value = o.NgaySX;
-                dtpHSD.Value = o.HanSD;
-                txtDonGia.Text = o.Dongia.ToString();
-                rtbSL.Text = o.SLTonKho.ToString();
-                rtbDonVi.Text = o.DonVi.ToString();
-                cboKM.SelectedValue = object.Equals(o.KhuyenMai, null) ? "" : o.KhuyenMai;
-                cboLoaiSP.SelectedValue = o.MaLoai;
-                cboNCC.Text = o.Mancc;
-                // cập nhật lại trang thái các nút
-                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void cboTheLoaiTimKiem_SelectedIndexChanged(object sender, EventArgs e)
@@ -291,21 +252,47 @@ namespace LTUD1_BACHHOAXANH472
             {
                 if (cboTheLoaiTimKiem.Text == "Theo tên")
                 {
-                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamrpt", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", dtpTKNgay.Value } }, rptSanPham);
+                    dtpTKNgay.Enabled = false;
+                    txtTimKiem.Enabled = true;
+                    ReportHelper rh = new ReportHelper(reportManager, "rp_sanpham_timtensp", new System.Collections.Generic.Dictionary<string, object> { { "@TENSP", txtTimKiem.Text }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
                     rh.LoadReport();
-                    //ReportDocument reportDocument = new ReportDocument();
-                    //reportDocument.Load(@"D:\\TDC_HK3\\LTUD1_LETHO\\LTUD1_BACHHOAXANH472\\uploads\\SanPhamrpt.rpt");
                 }
+
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
-                    ReportHelper rh = new ReportHelper(reportManager, "SanPhamTheoNgay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", dtpTKNgay.Value } }, rptSanPham);
-                    rh.LoadReport();
-                    //ReportDocument reportDocument = new ReportDocument();
-                    //reportDocument.Load(@"D:\TDC_HK3\LTUD1_LETHO\LTUD1_BACHHOAXANH472\uploads\SanPhamTheoNgay.rpt");
+                    dtpTKNgay.Enabled = true;
+                    txtTimKiem.Enabled = false;
+                    rp_sanpham_tim_sp_hethan = new ReportHelper(reportManager, "rp_sanpham_timtheongay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", ngayhientai }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
+                    rp_sanpham_tim_sp_hethan.LoadReport();
                 }
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void rptSanPham_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cboTheLoaiTimKiem.Text == "Theo tên")
+                {
+                    ReportHelper rh = new ReportHelper(reportManager, "rp_sanpham_timtensp", new System.Collections.Generic.Dictionary<string, object> { { "@TENSP", txtTimKiem.Text }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
+                    rh.LoadReport();
+                }
+
+                else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
+                {
+                    rp_sanpham_tim_sp_hethan = new ReportHelper(reportManager, "rp_sanpham_timtheongay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", ngayhientai }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
+                    rp_sanpham_tim_sp_hethan.LoadReport();
+                }
+
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void dtpTKNgay_ValueChanged(object sender, EventArgs e)
+        {
+            ngayhientai = dtpTKNgay.Value.ToString("dd/MM/yyyy");
         }
     }
 

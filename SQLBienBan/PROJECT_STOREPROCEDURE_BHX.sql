@@ -807,9 +807,9 @@ GO
 exec sp_hoadon_select_one '12'
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
-DROP PROCEDURE IF EXISTS sp_hoadon_TimKiem
+DROP PROCEDURE IF EXISTS rp_hoadon_timkiem
 GO
-CREATE PROCEDURE sp_hoadon_TimKiem
+CREATE PROCEDURE rp_hoadon_timkiem
 	@ma nvarchar(50)
 AS
 BEGIN
@@ -820,7 +820,7 @@ BEGIN
 	where hd.MAHD like N'%'+@ma+'%' or kh.HOTENKH like N'%'+@ma+'%' or nv.HOTENNV like N'%'+@ma+'%'
 END
 GO
-exec sp_hoadon_TimKiem 'HD01'
+exec rp_hoadon_timkiem 'HD01'
 ﻿-- Author:		Vo Tu
 -- Create date: <13/11/2023> 
 drop procedure if exists sp_hoadon_update
@@ -1107,9 +1107,9 @@ END
 GO
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
-DROP PROCEDURE IF EXISTS sp_khachhang_TimKiem
+DROP PROCEDURE IF EXISTS rp_khachhang_timkiem
 GO
-CREATE PROCEDURE sp_khachhang_TimKiem
+CREATE PROCEDURE rp_khachhang_timkiem
 	@ma nvarchar(50)
 AS
 BEGIN
@@ -1120,7 +1120,7 @@ BEGIN
 END
 GO
 select * from KHACHHANG
-exec sp_khachhang_TimKiem 'L�'
+exec rp_khachhang_timkiem 'L�'
 ﻿-- Create Procedure sp_khuyenmai_update.sql
 -- Danh mục update
 -- Author:		Sok Kim Thanh
@@ -1635,14 +1635,14 @@ go
 drop procedure if exists sp_nhanvien_search
 go
 CREATE PROCEDURE sp_nhanvien_search
-	@keyword nvarchar(100)
+	@keyword nvarchar(100) = N''
 AS
 BEGIN 
 	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like ch�nh x�c m� 100%
 END;
 go
 select * from nhanvien
-exec sp_nhanvien_search 'b' --test ok
+exec sp_nhanvien_search '' --test ok
 -- Author:		Sok Kim Thanh
 -- Create date: <06/12/2023 9:39 CH>
 go
@@ -1761,22 +1761,6 @@ GO﻿-- Create Procedure sp_sanpham_select_one.sql
 -- Sản phẩm select one
 -- Author:		Ngô Công Quý
 -- Create date: <07/11/2023>
-set dateformat ymd
-drop procedure if exists rp_sanpham_thongke_theongay
-go
-CREATE PROCEDURE rp_sanpham_thongke_theongay
-	@NgayHT date = null
-AS
-BEGIN
-	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = isnull(@NgayHT,sp.hsd)--like chính xác mã 100%
-END
-GO
-select * From SANPHAM
-exec rp_sanpham_thongke_theongay
-﻿-- Create Procedure sp_sanpham_select_one.sql
--- Sản phẩm select one
--- Author:		Ngô Công Quý
--- Create date: <07/11/2023>
 drop procedure if exists rp_sanpham_timtensp
 go
 CREATE PROCEDURE rp_sanpham_timtensp
@@ -1787,7 +1771,23 @@ BEGIN
 END
 GO
 select * from sanpham
-exec rp_sanpham_timtensp 'CÁ'
+exec rp_sanpham_timtensp N'CÁ'
+﻿-- Create Procedure sp_sanpham_select_one.sql
+-- Sản phẩm select one
+-- Author:		Ngô Công Quý
+-- Create date: <07/11/2023>
+set dateformat ymd
+drop procedure if exists rp_sanpham_timtheongay
+go
+CREATE PROCEDURE rp_sanpham_timtheongay
+	@NgayHT date = null
+AS
+BEGIN
+	SELECT * from sanpham sp,NHACUNGCAP ncc,LOAISP lsp where sp.HSD = isnull(@NgayHT,sp.hsd)--like chính xác mã 100%
+END
+GO
+select * From SANPHAM
+exec rp_sanpham_timtheongay
 ﻿-- Create Procedure sp_sanpham_delete.sql
 -- Sản phẩm delete
 -- Author:		Sok Kim Thanh

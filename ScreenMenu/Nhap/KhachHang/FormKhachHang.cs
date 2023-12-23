@@ -1,6 +1,7 @@
 ﻿using LTUD1_BACHHOAXANH472.controller;
 using LTUD1_BACHHOAXANH472.Model;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
@@ -19,8 +20,6 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
             khachHangController = new KhachHangController(Utils.ConnectionString);
             DataGridViewHelper.ConfigureDataGridView(dgvKhachHang);
-            CustomButtonHelper customButtonHelper = new CustomButtonHelper();
-            customButtonHelper.SetProperties(btnTimKiem);
             buttonStateManager = new ButtonStateManager();
             // khai báo trạng thái khóa nút 
             buttonStateManager.BtnAdd = this.btnThem;
@@ -193,29 +192,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             return;
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            // Khởi tạo một đối tượng mới từ lớp CrystalReport1
-            //khachhangreport rpt = new khachhangreport();
 
-            //// Khởi tạo một đối tượng mới từ lớp ParameterValues để chứa các giá trị tham số
-            //ParameterValues param = new ParameterValues();
-
-            //// Khởi tạo một đối tượng mới từ lớp ParameterDiscreteValue để chứa một giá trị tham số rời rạc
-            //ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-
-            //// Đặt giá trị của pdv bằng giá trị trong textBox1
-            //pdv.Value = txtTimKiem.Text;
-
-            //// Thêm pdv vào danh sách các giá trị tham số
-            //param.Add(pdv);
-
-            //// Áp dụng các giá trị tham số hiện tại cho tham số "@masv" trong định nghĩa dữ liệu của báo cáo
-            //rpt.DataDefinition.ParameterFields["@ma"].ApplyCurrentValues(param);
-
-            //// Đặt nguồn báo cáo cho crystalReportViewer1 là báo cáo rpt
-            //crystalReportViewer1.ReportSource = rpt;
-        }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
@@ -237,12 +214,15 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-
+            ReportHelper rh = new ReportHelper(reportManager, "rp_khachhang_timkiem",
+                new Dictionary<string, object> { { "@ma", string.IsNullOrEmpty(txtTimKiem.Text) ? "a" : txtTimKiem.Text }, { "@tennhanvien", "Sok Kim Thanh" } }, this.cryKhachHang);
+            rh.LoadReport();
         }
 
-        private void crystalReportViewer1_Load_1(object sender, EventArgs e)
+        private void btnReportSearch_Click(object sender, EventArgs e)
         {
-
+            ReportHelper rh = new ReportHelper(reportManager, "rp_khachhang_timkiem", new Dictionary<string, object> { { "@ma", string.IsNullOrEmpty(txtTimKiem.Text) ? "a" : txtTimKiem.Text } }, this.cryKhachHang);
+            rh.LoadReport();
         }
     }
 }

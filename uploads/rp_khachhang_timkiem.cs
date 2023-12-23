@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rp_sanpham_thongke_theongay : ReportClass {
+    public class rp_khachhang_timkiem : ReportClass {
         
-        public rp_sanpham_thongke_theongay() {
+        public rp_khachhang_timkiem() {
         }
         
         public override string ResourceName {
             get {
-                return "rp_sanpham_thongke_theongay.rpt";
+                return "rp_khachhang_timkiem.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.rp_sanpham_thongke_theongay.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_khachhang_timkiem.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_NgayHT {
+        public CrystalDecisions.Shared.IParameterField Parameter_ma {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrp_sanpham_thongke_theongay : Component, ICachedReport {
+    public class Cachedrp_khachhang_timkiem : Component, ICachedReport {
         
-        public Cachedrp_sanpham_thongke_theongay() {
+        public Cachedrp_khachhang_timkiem() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rp_sanpham_thongke_theongay rpt = new rp_sanpham_thongke_theongay();
+            rp_khachhang_timkiem rpt = new rp_khachhang_timkiem();
             rpt.Site = this.Site;
             return rpt;
         }

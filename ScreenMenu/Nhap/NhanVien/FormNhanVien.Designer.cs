@@ -845,7 +845,7 @@ namespace LTUD1_BACHHOAXANH472
             this.cboNhanVien.Size = new System.Drawing.Size(373, 33);
             this.cboNhanVien.TabIndex = 0;
             // 
-            // crystalReportViewer1
+            // cryKhachHang
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -853,7 +853,7 @@ namespace LTUD1_BACHHOAXANH472
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 40);
             this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Name = "cryKhachHang";
             this.crystalReportViewer1.Size = new System.Drawing.Size(1270, 649);
             this.crystalReportViewer1.TabIndex = 3;
             this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);

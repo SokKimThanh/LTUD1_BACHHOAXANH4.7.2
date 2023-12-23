@@ -12,4 +12,4 @@ BEGIN
 END
 GO
 select * from sanpham
-exec rp_sanpham_timtensp 'CÁ'
+exec rp_sanpham_timtensp N'CÁ'

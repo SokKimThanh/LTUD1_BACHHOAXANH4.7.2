@@ -50,7 +50,7 @@ namespace LTUD1_BACHHOAXANH472.Model
                         // Đặt giá trị cho các tham số
                         foreach (var parameter in parameters)
                         {
-                            reportDocument.SetParameterValue(parameter.Key, parameter.Value.ToString());
+                            reportDocument.SetParameterValue(parameter.Key, parameter.Value);
                         }
                     }
                     crystalReportViewer1.ReportSource = reportDocument;

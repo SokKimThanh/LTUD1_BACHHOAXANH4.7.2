@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rp_khachhang : ReportClass {
+    public class rp_sanpham_timtensp : ReportClass {
         
-        public rp_khachhang() {
+        public rp_sanpham_timtensp() {
         }
         
         public override string ResourceName {
             get {
-                return "rp_khachhang.rpt";
+                return "rp_sanpham_timtensp.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.rp_khachhang.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_sanpham_timtensp.rpt";
             }
             set {
                 // Do nothing
@@ -90,17 +90,25 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ma {
+        public CrystalDecisions.Shared.IParameterField Parameter_TenSP {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_tennhanvien {
+            get {
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrp_khachhang : Component, ICachedReport {
+    public class Cachedrp_sanpham_timtensp : Component, ICachedReport {
         
-        public Cachedrp_khachhang() {
+        public Cachedrp_sanpham_timtensp() {
         }
         
         [Browsable(false)]
@@ -137,7 +145,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rp_khachhang rpt = new rp_khachhang();
+            rp_sanpham_timtensp rpt = new rp_sanpham_timtensp();
             rpt.Site = this.Site;
             return rpt;
         }

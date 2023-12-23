@@ -40,7 +40,7 @@ namespace LTUD1_BACHHOAXANH472
             this.cryRPTheoNgay = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
-            this.CryPThongKe = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.cryTimTheoten = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
@@ -125,7 +125,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 321F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 324F));
             this.tableLayoutPanel8.Controls.Add(this.btnTiemKiemTheoNgay, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.dtpkNgay, 1, 0);
@@ -151,10 +151,10 @@ namespace LTUD1_BACHHOAXANH472
             this.btnTiemKiemTheoNgay.ForeColor = System.Drawing.Color.White;
             this.btnTiemKiemTheoNgay.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_search;
             this.btnTiemKiemTheoNgay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTiemKiemTheoNgay.Location = new System.Drawing.Point(1031, 2);
+            this.btnTiemKiemTheoNgay.Location = new System.Drawing.Point(1028, 2);
             this.btnTiemKiemTheoNgay.Margin = new System.Windows.Forms.Padding(2);
             this.btnTiemKiemTheoNgay.Name = "btnTiemKiemTheoNgay";
-            this.btnTiemKiemTheoNgay.Size = new System.Drawing.Size(318, 46);
+            this.btnTiemKiemTheoNgay.Size = new System.Drawing.Size(321, 46);
             this.btnTiemKiemTheoNgay.TabIndex = 5;
             this.btnTiemKiemTheoNgay.Text = "Tìm kiếm";
             this.btnTiemKiemTheoNgay.UseVisualStyleBackColor = false;
@@ -182,7 +182,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dtpkNgay.Location = new System.Drawing.Point(275, 8);
             this.dtpkNgay.Margin = new System.Windows.Forms.Padding(8);
             this.dtpkNgay.Name = "dtpkNgay";
-            this.dtpkNgay.Size = new System.Drawing.Size(746, 39);
+            this.dtpkNgay.Size = new System.Drawing.Size(743, 39);
             this.dtpkNgay.TabIndex = 4;
             // 
             // cryRPTheoNgay
@@ -215,7 +215,7 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.tableLayoutPanel9.ColumnCount = 1;
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel9.Controls.Add(this.CryPThongKe, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.cryTimTheoten, 0, 1);
             this.tableLayoutPanel9.Controls.Add(this.tableLayoutPanel10, 0, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 2);
@@ -227,28 +227,28 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel9.Size = new System.Drawing.Size(1351, 733);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
-            // CryPThongKe
+            // cryTimTheoten
             // 
-            this.CryPThongKe.ActiveViewIndex = -1;
-            this.CryPThongKe.AutoSize = true;
-            this.CryPThongKe.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CryPThongKe.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CryPThongKe.Cursor = System.Windows.Forms.Cursors.Default;
-            this.CryPThongKe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CryPThongKe.Location = new System.Drawing.Point(2, 66);
-            this.CryPThongKe.Margin = new System.Windows.Forms.Padding(2);
-            this.CryPThongKe.Name = "CryPThongKe";
-            this.CryPThongKe.Size = new System.Drawing.Size(1347, 665);
-            this.CryPThongKe.TabIndex = 2;
-            this.CryPThongKe.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            this.CryPThongKe.Load += new System.EventHandler(this.CryPThongKe_Load);
+            this.cryTimTheoten.ActiveViewIndex = -1;
+            this.cryTimTheoten.AutoSize = true;
+            this.cryTimTheoten.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.cryTimTheoten.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.cryTimTheoten.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cryTimTheoten.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cryTimTheoten.Location = new System.Drawing.Point(2, 66);
+            this.cryTimTheoten.Margin = new System.Windows.Forms.Padding(2);
+            this.cryTimTheoten.Name = "cryTimTheoten";
+            this.cryTimTheoten.Size = new System.Drawing.Size(1347, 665);
+            this.cryTimTheoten.TabIndex = 2;
+            this.cryTimTheoten.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.cryTimTheoten.Load += new System.EventHandler(this.CryPThongKe_Load);
             // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 3;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 321F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 324F));
             this.tableLayoutPanel10.Controls.Add(this.btnThongKe, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.txtTimKiem, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.label1, 0, 0);
@@ -274,10 +274,10 @@ namespace LTUD1_BACHHOAXANH472
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_small_search;
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(1027, 2);
+            this.btnThongKe.Location = new System.Drawing.Point(1024, 2);
             this.btnThongKe.Margin = new System.Windows.Forms.Padding(2);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(318, 56);
+            this.btnThongKe.Size = new System.Drawing.Size(321, 56);
             this.btnThongKe.TabIndex = 6;
             this.btnThongKe.Text = "Tìm kiếm";
             this.btnThongKe.UseVisualStyleBackColor = false;
@@ -287,11 +287,11 @@ namespace LTUD1_BACHHOAXANH472
             // 
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI Light", 16F);
-            this.txtTimKiem.Location = new System.Drawing.Point(268, 2);
+            this.txtTimKiem.Location = new System.Drawing.Point(267, 2);
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(755, 56);
+            this.txtTimKiem.Size = new System.Drawing.Size(753, 56);
             this.txtTimKiem.TabIndex = 4;
             this.txtTimKiem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -304,7 +304,7 @@ namespace LTUD1_BACHHOAXANH472
             this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 60);
+            this.label1.Size = new System.Drawing.Size(261, 60);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nhập Thông Tin";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -746,7 +746,7 @@ namespace LTUD1_BACHHOAXANH472
         private Label label2;
         private DateTimePicker dtpkNgay;
         private TableLayoutPanel tableLayoutPanel9;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer CryPThongKe;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer cryTimTheoten;
         private TableLayoutPanel tableLayoutPanel10;
         private TextBox txtTimKiem;
         private Label label1;

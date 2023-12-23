@@ -16,14 +16,14 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rp_sanpham_thongke : ReportClass {
+    public class rp_hoadon_timkiem : ReportClass {
         
-        public rp_sanpham_thongke() {
+        public rp_hoadon_timkiem() {
         }
         
         public override string ResourceName {
             get {
-                return "rp_sanpham_thongke.rpt";
+                return "rp_hoadon_timkiem.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         public override string FullResourceName {
             get {
-                return "LTUD1_BACHHOAXANH472.uploads.rp_sanpham_thongke.rpt";
+                return "LTUD1_BACHHOAXANH472.uploads.rp_hoadon_timkiem.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_TenSP {
+        public CrystalDecisions.Shared.IParameterField Parameter_ma {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,9 +98,9 @@ namespace LTUD1_BACHHOAXANH472.uploads {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedrp_sanpham_thongke : Component, ICachedReport {
+    public class Cachedrp_hoadon_timkiem : Component, ICachedReport {
         
-        public Cachedrp_sanpham_thongke() {
+        public Cachedrp_hoadon_timkiem() {
         }
         
         [Browsable(false)]
@@ -137,7 +137,7 @@ namespace LTUD1_BACHHOAXANH472.uploads {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rp_sanpham_thongke rpt = new rp_sanpham_thongke();
+            rp_hoadon_timkiem rpt = new rp_hoadon_timkiem();
             rpt.Site = this.Site;
             return rpt;
         }
