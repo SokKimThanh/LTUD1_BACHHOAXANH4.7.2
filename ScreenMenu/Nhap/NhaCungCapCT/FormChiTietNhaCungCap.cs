@@ -29,6 +29,8 @@ namespace LTUD1_BACHHOAXANH472
            
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
+            buttonStateManager.BtnEdit = btnEdit;
+            buttonStateManager.BtnDelete = btnDelete;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
             this.reportManager = reportManager;// chia se report
         }
@@ -81,34 +83,7 @@ namespace LTUD1_BACHHOAXANH472
             }
 
         }
-
-        private void dgvNCCCT_CellContentClick(object sender, EventArgs e)
-        {
-            try
-            {
-                // Khởi tạo số dòng đang chọn
-                int dong = dgvNCCCT.CurrentCell.RowIndex;
-                // lấy ra mã
-                string mancc = dgvNCCCT.Rows[dong].Cells[0].Value.ToString();
-                string masp = dgvNCCCT.Rows[dong].Cells[1].Value.ToString();
-                NhaCCCT ob = new NhaCCCT();
-                ob.MaNCC = mancc;
-                ob.MaSP = masp;
-                // khởi tạo đối tượng bằng mã
-                DataTable dt = ctnccCon.SelectByID(ob);
-                DataRow dr = dt.Rows[0];
-                NhaCCCT o = (NhaCCCT)ctnccCon.FromDataRow(dr);
-                txtSoLuong.Text = o.SoLuong.ToString();
-                cboNCC.SelectedValue = o.MaNCC;
-                cboSanPham.SelectedValue = o.MaSP;
-                // cập nhật lại trang thái các nút
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\t1");
-            }
-        }
-
+ 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             try
@@ -143,6 +118,33 @@ namespace LTUD1_BACHHOAXANH472
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvNCCCT_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Khởi tạo số dòng đang chọn
+                int dong = dgvNCCCT.CurrentCell.RowIndex;
+                // lấy ra mã
+                string mancc = dgvNCCCT.Rows[dong].Cells[0].Value.ToString();
+                string masp = dgvNCCCT.Rows[dong].Cells[1].Value.ToString();
+                NhaCCCT ob = new NhaCCCT();
+                ob.MaNCC = mancc;
+                ob.MaSP = masp;
+                // khởi tạo đối tượng bằng mã
+                DataTable dt = ctnccCon.SelectByID(ob);
+                DataRow dr = dt.Rows[0];
+                NhaCCCT o = (NhaCCCT)ctnccCon.FromDataRow(dr);
+                txtSoLuong.Text = o.SoLuong.ToString();
+                cboNCC.SelectedValue = o.MaNCC;
+                cboSanPham.SelectedValue = o.MaSP;
+                // cập nhật lại trang thái các nút
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\t1");
+            }
         }
     }
 }

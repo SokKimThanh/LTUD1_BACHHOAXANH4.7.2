@@ -278,7 +278,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 118F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(889, 118);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -299,6 +299,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             this.btnLamMoi.TabIndex = 4;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
@@ -317,6 +318,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -335,6 +337,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -352,6 +355,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -396,6 +400,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             this.dgvDS.RowTemplate.Height = 29;
             this.dgvDS.Size = new System.Drawing.Size(885, 542);
             this.dgvDS.TabIndex = 0;
+            this.dgvDS.Click += new System.EventHandler(this.dgvDS_Click);
             // 
             // FormLoaiSP
             // 
@@ -405,7 +410,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             this.ClientSize = new System.Drawing.Size(1300, 768);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLoaiSP";
             this.Text = "Loại_sp";
             this.Load += new System.EventHandler(this.FormLoaisp_Load);
