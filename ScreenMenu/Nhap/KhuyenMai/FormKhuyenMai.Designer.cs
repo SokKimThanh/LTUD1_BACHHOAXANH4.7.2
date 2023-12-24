@@ -179,6 +179,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -196,6 +197,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -213,6 +215,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnRefresh
             // 
@@ -230,6 +233,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // groupBox4
             // 
@@ -256,6 +260,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.dgvDSKM.RowTemplate.Height = 29;
             this.dgvDSKM.Size = new System.Drawing.Size(877, 517);
             this.dgvDSKM.TabIndex = 0;
+            this.dgvDSKM.Click += new System.EventHandler(this.dgvDSKM_Click);
             // 
             // groupBox1
             // 
@@ -300,6 +305,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.txtPhanTram);
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox7.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox7.ForeColor = System.Drawing.Color.Snow;
             this.groupBox7.Location = new System.Drawing.Point(3, 263);
@@ -389,6 +395,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.cboMaHT);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 14.25F);
             this.groupBox5.ForeColor = System.Drawing.Color.Snow;
             this.groupBox5.Location = new System.Drawing.Point(3, 198);

@@ -178,6 +178,11 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /* private void dgvCTHoaDon_Click(object sender, EventArgs e)
          {
              try

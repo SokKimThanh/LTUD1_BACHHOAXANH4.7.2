@@ -26,11 +26,9 @@ namespace LTUD1_BACHHOAXANH472
 
             buttonStateManager = new ButtonStateManager();
 
-
+           
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
-            buttonStateManager.BtnDelete = btnDelete;
-            buttonStateManager.BtnEdit = btnEdit;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
             this.reportManager = reportManager;// chia se report
         }
@@ -40,7 +38,6 @@ namespace LTUD1_BACHHOAXANH472
             cboNCC.SelectedIndex = 0;
             txtSoLuong.Text = "0";
             cboSanPham.SelectedIndex = 0;
-            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             ctnccCon.SelectAll();
             dgvNCCCT.DataSource = ctnccCon.DataSource;
         }
@@ -58,7 +55,6 @@ namespace LTUD1_BACHHOAXANH472
 
 
             Refresh2();
-            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
         }
 
@@ -78,7 +74,6 @@ namespace LTUD1_BACHHOAXANH472
                 o.SoLuong = int.Parse(txtSoLuong.Text);
                 ctnccCon.Insert(o);
                 Refresh2();
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
             {
@@ -86,45 +81,8 @@ namespace LTUD1_BACHHOAXANH472
             }
 
         }
- 
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (ErrTextbox.NoText_TextChange(txtSoLuong))
-                {
-                    MessageBox.Show("Nhập số!");
-                    return;
-                }
 
-                NhaCCCT nha = new NhaCCCT();
-                nha.MaSP = cboSanPham.SelectedValue.ToString();
-                nha.SoLuong = int.Parse(txtSoLuong.Text);
-                nha.MaNCC = cboNCC.SelectedValue.ToString();
-                ctnccCon.Update(nha);
-
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            cboNCC.SelectedIndex = 0;
-            cboSanPham.SelectedIndex = 0;
-            txtSoLuong.Text = string.Empty;
-            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvNCCCT_Click(object sender, EventArgs e)
+        private void dgvNCCCT_CellContentClick(object sender, EventArgs e)
         {
             try
             {
@@ -144,12 +102,47 @@ namespace LTUD1_BACHHOAXANH472
                 cboNCC.SelectedValue = o.MaNCC;
                 cboSanPham.SelectedValue = o.MaSP;
                 // cập nhật lại trang thái các nút
-                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + "\t1");
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ErrTextbox.NoText_TextChange(txtSoLuong))
+                {
+                    MessageBox.Show("Nhập số!");
+                    return;
+                }
+
+                NhaCCCT nha = new NhaCCCT();
+                nha.MaSP = cboSanPham.SelectedValue.ToString();
+                nha.SoLuong = int.Parse(txtSoLuong.Text);
+                nha.MaNCC = cboNCC.SelectedValue.ToString();
+                ctnccCon.Update(nha);
+                
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            cboNCC.SelectedIndex = 0;
+            cboSanPham.SelectedIndex = 0;
+            txtSoLuong.Text = string.Empty;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
