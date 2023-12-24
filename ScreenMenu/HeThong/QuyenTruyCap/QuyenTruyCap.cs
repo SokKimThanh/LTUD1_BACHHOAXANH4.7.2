@@ -11,7 +11,7 @@ namespace LTUD1_BACHHOAXANH472
         }
         public QuyenTruyCap(string maqtc, string tenqtc)
         {
-            if (string.IsNullOrEmpty(maqtc) || maqtc.Length > 11)
+            if (string.IsNullOrEmpty(maqtc))
             {
                 throw new ArgumentException("Mã quyền truy cập phải không được để trống và không dài hơn 11 ký tự.");
             }

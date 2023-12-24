@@ -118,7 +118,7 @@ namespace LTUD1_BACHHOAXANH472
             if (loginController.DangNhap(enteredUserName, enteredPassword) == 1)
             {
                 // xác minh nhân vien dăng nhập và quyền đăng nhập
-                //loginController.CapQuyen(enteredUserName, enteredPassword);
+                loginController.CapQuyen(enteredUserName, enteredPassword);
                 return true;// dang nhap thanh cong
             }
             else
@@ -191,7 +191,7 @@ namespace LTUD1_BACHHOAXANH472
 
             session.Username = txtUserName.Text;
             DialogResult = DialogResult.OK;
-            loginController.LogonSuccessful = true;
+           
             lblKetQuaDangNhap.Text = "Đăng nhập thành công";
             // tắt form đăng nhập
             this.Hide();

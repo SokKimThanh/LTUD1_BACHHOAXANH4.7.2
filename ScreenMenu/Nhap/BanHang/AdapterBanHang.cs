@@ -299,7 +299,7 @@ namespace LTUD1_BACHHOAXANH472
 
                 khachHangController.Insert(khachHang);
 
-                Hoadon = new HoaDon(txtMaHoaDon.Text, "NV14", khachHang.Ma, DateTime.Now, Convert.ToDecimal(lblthanhtien.Text));
+                Hoadon = new HoaDon(txtMaHoaDon.Text, Utils.NhanVienLapBaoCao.Manv, khachHang.Ma, DateTime.Now, Convert.ToDecimal(lblthanhtien.Text));
 
                 hoadonController.Insert(Hoadon);
                 foreach (DataGridViewRow row in dgvThongTinHoaDon.Rows)

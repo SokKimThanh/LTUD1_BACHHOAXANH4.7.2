@@ -31,8 +31,7 @@ public class Utils
     /// Quyền truy cập của nhân viên đăng nhập
     /// </summary>
     public static QuyenTruyCap QuyenTruyCapNhanVien { get; internal set; }
-
-
+     
     private static bool IsServerConnected(string connectionString)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))

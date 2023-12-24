@@ -42,6 +42,7 @@ namespace LTUD1_BACHHOAXANH472
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
 
             this.reportManager = reportManager;// chia sẽ report (lazayloading)
+
         }
         /// <summary>
         /// Hàm load dữ liệu
@@ -115,7 +116,7 @@ namespace LTUD1_BACHHOAXANH472
                 //--.................                                         ..................
                 //==============================================================================
                 //Kiểm tra đăng nhập hay chưa rồi mới gán giá trị
-                if (loginController.LogonSuccessful)
+                if (Utils.NhanVienLapBaoCao != null && Utils.QuyenTruyCapNhanVien != null)
                 {
                     nvlapbaocao = Utils.NhanVienLapBaoCao;
                     quyentruycapnv = Utils.QuyenTruyCapNhanVien;

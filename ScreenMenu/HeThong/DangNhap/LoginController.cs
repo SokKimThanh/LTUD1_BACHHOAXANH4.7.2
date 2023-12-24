@@ -9,8 +9,6 @@ namespace LTUD1_BACHHOAXANH472
         // cài đặt quyền truy cập và xác minh nhân viên lập báo cáo
         NhanVienController nvController = new NhanVienController(Utils.ConnectionString);
         QuyenTruyCapController qtcController = new QuyenTruyCapController(Utils.ConnectionString);
-        private bool logonSuccessful = false;// xác nhận đăng nhập thành công
-        public bool LogonSuccessful { get => logonSuccessful; set => logonSuccessful = value; }
         /// <summary>
         /// Cấp quyền sau khi đăng nhập thành công
         /// </summary>
@@ -50,13 +48,16 @@ namespace LTUD1_BACHHOAXANH472
                                     DataRow drQTC = dtQTC.Rows[0];
                                     QuyenTruyCap quyentruycap = (QuyenTruyCap)qtcController.FromDataRow(drQTC);
                                     Utils.QuyenTruyCapNhanVien = quyentruycap;//Xác minh Quyền truy cập hệ thống
+
                                     // NhanVien
                                     DataRow drNV = dtNV.Rows[0];
-                                    NhanVien nhanvien = (NhanVien)qtcController.FromDataRow(drNV);
+                                    NhanVien nhanvien = (NhanVien)nvController.FromDataRow(drNV);
                                     Utils.NhanVienLapBaoCao = nhanvien;// Xác minh nhân viên truy cập hệ thống
+
                                 }
                                 else
                                 {
+
                                     throw new Exception("CapQuyen: Không tìm thấy dữ liệu nào!");
                                 }
                             }
