@@ -518,7 +518,7 @@
     <Content Include="ScreenMenu\HeThong\DangNhap\sp_login_controller.sql" />
     <Content Include="ScreenMenu\HeThong\DangNhap\rp_dangnhap_tungaydenngay.sql" />
     <Content Include="ScreenMenu\HeThong\DangNhap\sp_dangnhap_tungaydenngay.sql" />
-    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cbo_quyentruycap_select_all - Copy.sql" />
+    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cbo_quyentruycap_select_all.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\rp_banhang_doanhthutheothang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
