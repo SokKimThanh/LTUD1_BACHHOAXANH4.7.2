@@ -27,9 +27,7 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager = new ButtonStateManager();
 
            
-            buttonStateManager.BtnRefresh = btnRefresh;
-            buttonStateManager.BtnAdd = btnAdd;
-            buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            
             this.reportManager = reportManager;// chia se report
         }
 
@@ -38,7 +36,6 @@ namespace LTUD1_BACHHOAXANH472
             cboNCC.SelectedIndex = 0;
             txtSoLuong.Text = "0";
             cboSanPham.SelectedIndex = 0;
-            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             ctnccCon.SelectAll();
             dgvNCCCT.DataSource = ctnccCon.DataSource;
         }
@@ -56,7 +53,6 @@ namespace LTUD1_BACHHOAXANH472
 
 
             Refresh2();
-            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
         }
 
@@ -76,7 +72,6 @@ namespace LTUD1_BACHHOAXANH472
                 o.SoLuong = int.Parse(txtSoLuong.Text);
                 ctnccCon.Insert(o);
                 Refresh2();
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
             {
@@ -105,7 +100,6 @@ namespace LTUD1_BACHHOAXANH472
                 cboNCC.SelectedValue = o.MaNCC;
                 cboSanPham.SelectedValue = o.MaSP;
                 // cập nhật lại trang thái các nút
-                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
             }
             catch (Exception ex)
             {
@@ -129,7 +123,6 @@ namespace LTUD1_BACHHOAXANH472
                 nha.MaNCC = cboNCC.SelectedValue.ToString();
                 ctnccCon.Update(nha);
                 
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
             {
@@ -142,7 +135,6 @@ namespace LTUD1_BACHHOAXANH472
             cboNCC.SelectedIndex = 0;
             cboSanPham.SelectedIndex = 0;
             txtSoLuong.Text = string.Empty;
-            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
