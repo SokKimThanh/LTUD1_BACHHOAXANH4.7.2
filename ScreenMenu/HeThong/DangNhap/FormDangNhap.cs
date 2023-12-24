@@ -49,16 +49,16 @@ namespace LTUD1_BACHHOAXANH472
         private void txtPassword_Click(object sender, EventArgs e)
         {
             txtUserName.BackColor = SystemColors.Control;
-            pnUsername.BackColor = SystemColors.Control;
+            tlpUsername.BackColor = SystemColors.Control;
             txtPassword.BackColor = RGB_COLORS.PrimaryPink;
-            pnPassword.BackColor = RGB_COLORS.PrimaryPink;
+            tlpPassword.BackColor = RGB_COLORS.PrimaryPink;
         }
 
         private void txtUserName_Click(object sender, EventArgs e)
         {
             txtUserName.BackColor = RGB_COLORS.PrimaryPink;
-            pnUsername.BackColor = RGB_COLORS.PrimaryPink;
-            pnPassword.BackColor = SystemColors.Control;
+            tlpUsername.BackColor = RGB_COLORS.PrimaryPink;
+            tlpPassword.BackColor = SystemColors.Control;
             txtPassword.BackColor = SystemColors.Control;
         }
         private void OtherEvent(object sender, EventArgs e)
@@ -193,7 +193,6 @@ namespace LTUD1_BACHHOAXANH472
             DialogResult = DialogResult.OK;
             loginController.LogonSuccessful = true;
             lblKetQuaDangNhap.Text = "Đăng nhập thành công";
-
             // tắt form đăng nhập
             this.Hide();
             // tạo mới form chính
@@ -212,6 +211,16 @@ namespace LTUD1_BACHHOAXANH472
                 txtUserName.Focus();
                 OtherEvent(sender, e);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
