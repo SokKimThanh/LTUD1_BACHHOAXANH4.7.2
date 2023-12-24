@@ -23,9 +23,9 @@ namespace LTUD1_BACHHOAXANH472
                 splashForm.Close();
 
                 // Tạo và hiển thị FormDangNhap
-                FormDangNhap logon = new FormDangNhap();
+                //FormDangNhap logon = new FormDangNhap();
 
-                //FormMain logon = new FormMain();
+                FormMain logon = new FormMain();
                 Application.Run(logon);
 
             }

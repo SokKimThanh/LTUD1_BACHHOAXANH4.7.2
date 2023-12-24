@@ -147,7 +147,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             // Chuyển đến tabReport 
             // chọn tab danh sách để tìm kiếm thì
-            if (tcNhanVien.SelectedTab.Name.Equals("tbDanhSachNhanVien"))
+            if (tabControl2.SelectedTab.Name.Equals("tbDanhSachNhanVien"))
             {
                 txtHoTenNV.Text = string.Empty;
                 rptNgaySinh.Text = string.Empty;
@@ -236,7 +236,7 @@ namespace LTUD1_BACHHOAXANH472
             {
                 // Chuyển đến tabReport 
                 // chọn tab danh sách để tìm kiếm thì
-                if (tcNhanVien.SelectedTab.Name.Equals("tbDanhSachNhanVien"))
+                if (tabControl2.SelectedTab.Name.Equals("tbDanhSachNhanVien"))
                 {
                     dgvNhanVien.DataSource = nvController.Search(txtHoTenNV.Text);
                 }
@@ -348,6 +348,6 @@ namespace LTUD1_BACHHOAXANH472
                 ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_get_hoadon_by_nhanvien", new Dictionary<string, object> { { "@manv", cboNhanVien.SelectedValue.ToString() } }, this.crystalReportViewer1);
                 rh.LoadReport();
             }
-        }
+        } 
     }
 }
