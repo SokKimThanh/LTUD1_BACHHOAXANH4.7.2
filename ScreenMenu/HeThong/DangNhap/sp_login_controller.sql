@@ -4,6 +4,7 @@
 -- Cập nhật stored procedure
 -- đăng nhập vào thành công thì trả về 1
 -- đăng nhập vào thất bại thì trả về 0
+drop proc if exists sp_DangNhap
 go
 CREATE PROCEDURE sp_DangNhap
     @TENTK CHAR(30),
@@ -26,19 +27,27 @@ BEGIN
         SET @KETQUA = 0--N'Tên tài khoản hoặc mật khẩu không đúng'
     END
 END;
+go
+ 
 
--- hiển thị kết quả quyền truy cập nếu truy cập thành công thì lúc đó sẽ gọi câu store cấp quyền truy cập
+-- câu store cấp quyền truy cập 
+drop proc if exists sp_CapQuyen
 go
 CREATE PROCEDURE sp_CapQuyen
     @TENTK CHAR(30),
-    @MATKHAU CHAR(30),
-    @QUYEN NVARCHAR(255) OUTPUT
+    @MATKHAU CHAR(30)
 AS
 BEGIN
-    SELECT @QUYEN = Q.TENQTC
+    SELECT Q.MAQTC, tk.MANV
     FROM TAIKHOAN TK
     INNER JOIN QUYENTRUYCAP Q ON TK.MAQTC = Q.MAQTC
     WHERE TK.TENTK = @TENTK AND TK.MATKHAU = @MATKHAU
-END
+END;
+go
+
 
 -- hien thi ten nhan vien va quyen truy cap 
+ 
+EXEC sp_CapQuyen 'admin', 'admin123' 
+go
+exec sp_quyentruycap_select_one 'maqtc_full'

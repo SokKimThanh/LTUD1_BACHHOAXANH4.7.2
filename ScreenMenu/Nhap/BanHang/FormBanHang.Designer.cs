@@ -37,23 +37,23 @@ namespace LTUD1_BACHHOAXANH472
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBanHang));
             this.tcManHinhBanHang = new System.Windows.Forms.TabControl();
             this.tpManHinhBanHang = new System.Windows.Forms.TabPage();
             this.tlpManHinhBanHang = new System.Windows.Forms.TableLayoutPanel();
             this.tlpThongTinDangNhap = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTenNhanVien = new System.Windows.Forms.Label();
+            this.lblTenQuyenTruyCap = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblQTC = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblNgayHienTai = new System.Windows.Forms.Label();
             this.lblTieuDeKhachHang = new System.Windows.Forms.Label();
             this.lblTieuDeSanPham = new System.Windows.Forms.Label();
             this.tlpThongTinKhachHangTimKiemSanPham = new System.Windows.Forms.TableLayoutPanel();
@@ -232,8 +232,8 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.51505F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.48495F));
-            this.tableLayoutPanel4.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.lblTenNhanVien, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblTenQuyenTruyCap, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.lblWelcome, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.lblQTC, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -247,33 +247,33 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel4.Size = new System.Drawing.Size(643, 58);
             this.tableLayoutPanel4.TabIndex = 10;
             // 
-            // label4
+            // lblTenNhanVien
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label4.Location = new System.Drawing.Point(164, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(479, 29);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Sok Kim Thanh";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTenNhanVien.AutoSize = true;
+            this.lblTenNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.lblTenNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTenNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
+            this.lblTenNhanVien.Location = new System.Drawing.Point(164, 0);
+            this.lblTenNhanVien.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTenNhanVien.Name = "lblTenNhanVien";
+            this.lblTenNhanVien.Size = new System.Drawing.Size(479, 29);
+            this.lblTenNhanVien.TabIndex = 2;
+            this.lblTenNhanVien.Text = "Sok Kim Thanh";
+            this.lblTenNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblTenQuyenTruyCap
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label1.Location = new System.Drawing.Point(164, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(479, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Quản trị viên";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTenQuyenTruyCap.AutoSize = true;
+            this.lblTenQuyenTruyCap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
+            this.lblTenQuyenTruyCap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTenQuyenTruyCap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
+            this.lblTenQuyenTruyCap.Location = new System.Drawing.Point(164, 29);
+            this.lblTenQuyenTruyCap.Margin = new System.Windows.Forms.Padding(0);
+            this.lblTenQuyenTruyCap.Name = "lblTenQuyenTruyCap";
+            this.lblTenQuyenTruyCap.Size = new System.Drawing.Size(479, 29);
+            this.lblTenQuyenTruyCap.TabIndex = 3;
+            this.lblTenQuyenTruyCap.Text = "Quản trị viên";
+            this.lblTenQuyenTruyCap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWelcome
             // 
@@ -328,7 +328,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label5, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.lblNgayHienTai, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
@@ -339,19 +339,19 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel5.Size = new System.Drawing.Size(643, 58);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // label5
+            // lblNgayHienTai
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(643, 58);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "15/12/2023 11:11 AM ";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNgayHienTai.AutoSize = true;
+            this.lblNgayHienTai.BackColor = System.Drawing.Color.Transparent;
+            this.lblNgayHienTai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNgayHienTai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
+            this.lblNgayHienTai.Location = new System.Drawing.Point(0, 0);
+            this.lblNgayHienTai.Margin = new System.Windows.Forms.Padding(0);
+            this.lblNgayHienTai.Name = "lblNgayHienTai";
+            this.lblNgayHienTai.Size = new System.Drawing.Size(643, 58);
+            this.lblNgayHienTai.TabIndex = 2;
+            this.lblNgayHienTai.Text = "15/12/2023 11:11 AM ";
+            this.lblNgayHienTai.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblTieuDeKhachHang
             // 
@@ -509,6 +509,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenSanPham.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
             this.txtTenSanPham.Location = new System.Drawing.Point(0, 34);
             this.txtTenSanPham.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            this.txtTenSanPham.Multiline = true;
             this.txtTenSanPham.Name = "txtTenSanPham";
             this.txtTenSanPham.Size = new System.Drawing.Size(239, 34);
             this.txtTenSanPham.TabIndex = 3;
@@ -707,16 +708,16 @@ namespace LTUD1_BACHHOAXANH472
             // BtnTangSL
             // 
             this.BtnTangSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.NullValue = "+";
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.BtnTangSL.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.NullValue = "+";
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.BtnTangSL.DefaultCellStyle = dataGridViewCellStyle1;
             this.BtnTangSL.FillWeight = 87.73023F;
             this.BtnTangSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTangSL.HeaderText = "Tăng SL";
@@ -730,16 +731,16 @@ namespace LTUD1_BACHHOAXANH472
             // btnGiamSL
             // 
             this.btnGiamSL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.NullValue = "-";
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnGiamSL.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.NullValue = "-";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnGiamSL.DefaultCellStyle = dataGridViewCellStyle2;
             this.btnGiamSL.FillWeight = 85.27919F;
             this.btnGiamSL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGiamSL.HeaderText = "Giảm SL";
@@ -772,14 +773,14 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvDanhSachSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnNameThemHDCT});
             this.dgvDanhSachSanPham.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachSanPham.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDanhSachSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSachSanPham.GridColor = System.Drawing.Color.Green;
             this.dgvDanhSachSanPham.Location = new System.Drawing.Point(0, 0);
@@ -793,14 +794,14 @@ namespace LTUD1_BACHHOAXANH472
             // 
             // btnNameThemHDCT
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.NullValue = "+";
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnNameThemHDCT.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.NullValue = "+";
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnNameThemHDCT.DefaultCellStyle = dataGridViewCellStyle3;
             this.btnNameThemHDCT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNameThemHDCT.HeaderText = "Thêm HDCT";
             this.btnNameThemHDCT.MinimumWidth = 6;
@@ -843,8 +844,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtTenKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
             this.txtTenKhachHang.Location = new System.Drawing.Point(167, 0);
             this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTenKhachHang.Multiline = true;
             this.txtTenKhachHang.Name = "txtTenKhachHang";
-            this.txtTenKhachHang.Size = new System.Drawing.Size(476, 61);
+            this.txtTenKhachHang.Size = new System.Drawing.Size(476, 50);
             this.txtTenKhachHang.TabIndex = 3;
             this.txtTenKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTenKhachHang.TextChanged += new System.EventHandler(this.txtTenKhachHang_TextChanged);
@@ -895,8 +897,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtSDTKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(42)))), ((int)(((byte)(25)))));
             this.txtSDTKhachHang.Location = new System.Drawing.Point(167, 50);
             this.txtSDTKhachHang.Margin = new System.Windows.Forms.Padding(0);
+            this.txtSDTKhachHang.Multiline = true;
             this.txtSDTKhachHang.Name = "txtSDTKhachHang";
-            this.txtSDTKhachHang.Size = new System.Drawing.Size(476, 61);
+            this.txtSDTKhachHang.Size = new System.Drawing.Size(476, 50);
             this.txtSDTKhachHang.TabIndex = 3;
             this.txtSDTKhachHang.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSDTKhachHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
@@ -1213,14 +1216,14 @@ namespace LTUD1_BACHHOAXANH472
             this.tbInPhieu.TabIndex = 1;
             this.tbInPhieu.Text = "In Phiếu thanh toán";
             // 
-            // cryKhachHang
+            // crystalReportViewer1
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(3, 3);
-            this.crystalReportViewer1.Name = "cryKhachHang";
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(1286, 732);
             this.crystalReportViewer1.TabIndex = 0;
             // 
@@ -1419,13 +1422,13 @@ namespace LTUD1_BACHHOAXANH472
         private System.Windows.Forms.TableLayoutPanel tlpManHinhBanHang;
         private System.Windows.Forms.TableLayoutPanel tlpThongTinDangNhap;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTenNhanVien;
+        private System.Windows.Forms.Label lblTenQuyenTruyCap;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblQTC;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblNgayHienTai;
         private System.Windows.Forms.Label lblTieuDeKhachHang;
         private System.Windows.Forms.TableLayoutPanel tlpThongTinKhachHangTimKiemSanPham;
         private System.Windows.Forms.Label lblTenSanPham;

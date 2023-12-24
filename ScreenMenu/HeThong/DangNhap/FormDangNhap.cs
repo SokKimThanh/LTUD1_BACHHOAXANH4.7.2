@@ -10,11 +10,8 @@ namespace LTUD1_BACHHOAXANH472
         private BackgroundWorker bw;
         SettingImageList loginImage;//cai dat hinh
         bool setSystemCharPassword = true;//an mat khau
-        bool logonSuccessful = false;
         LoginController loginController = new LoginController();
         Session session = new Session();
-
-        public bool LogonSuccessful { get => logonSuccessful; set => logonSuccessful = value; }
 
         public FormDangNhap()
         {
@@ -120,9 +117,8 @@ namespace LTUD1_BACHHOAXANH472
             lblKetQuaDangNhap.Visible = true;// hiển thị label và kết quả đăng nhập
             if (loginController.DangNhap(enteredUserName, enteredPassword) == 1)
             {
-                Utils.TenQuyenTruyCap = loginController.CapQuyen(enteredUserName, enteredPassword);
-                // lưu thêm cái id cho anh 
-                //Utils.MaNhanVien = loginController.XacMinhNhanVien(enteredUserName, enteredPassword);
+                // xác minh nhân vien dăng nhập và quyền đăng nhập
+                //loginController.CapQuyen(enteredUserName, enteredPassword);
                 return true;// dang nhap thanh cong
             }
             else
@@ -195,7 +191,7 @@ namespace LTUD1_BACHHOAXANH472
 
             session.Username = txtUserName.Text;
             DialogResult = DialogResult.OK;
-            LogonSuccessful = true;
+            loginController.LogonSuccessful = true;
             lblKetQuaDangNhap.Text = "Đăng nhập thành công";
 
             // tắt form đăng nhập

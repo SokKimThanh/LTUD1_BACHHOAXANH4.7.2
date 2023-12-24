@@ -122,7 +122,7 @@ create table QUYENTRUYCAP(MAQTC CHAR(15) not null,TENQTC NVARCHAR(255) not null)
 ----------------------Tạo bảng QUYENTRUYCAP-----------------------
 ------------------------------------------------------------
 go 
-CREATE TABLE TRUYCAP (TENTK CHAR(30) NOT NULL, THOIDIEM DATETIME NOT NULL, KETQUA NVARCHAR(255) NOT NULL)
+CREATE TABLE TRUYCAP (MATC int IDENTITY(1,1) not null, TENTK CHAR(30) NOT NULL, THOIDIEM DATETIME NOT NULL, KETQUA NVARCHAR(255) NOT NULL, THOIDIEMDANGXUAT DATETIME NULL, KETQUADANGXUAT NVARCHAR(255) NULL)
 /***********************************************************
 ------------------------------------------------------------
 ----Tạo khóa chính------------------------------------------
@@ -139,7 +139,9 @@ ALTER TABLE KHUYENMAI ADD CONSTRAINT PK_KHUYENMAI PRIMARY KEY (MAKM);
 ALTER TABLE HINHTHUCKM ADD CONSTRAINT PK_HINHTHUCKM PRIMARY KEY (MAHT);
 ALTER TABLE HOADON ADD CONSTRAINT PK_HOADON PRIMARY KEY (MAHD);
 ALTER TABLE TAIKHOAN add constraint PK_TAIKHOAN primary key (TENTK)
-ALTER TABLE QUYENTRUYCAP add constraint PK_QUYENTRUYCAP primary key (MAQTC)
+ALTER TABLE QUYENTRUYCAP add constraint PK_QUYENTRUYCAP primary key (MAQTC);
+ALTER TABLE TRUYCAP add constraint PK_TRUYCAP primary key (MATC) ;
+
 /***********************************************************
 ------------------------------------------------------------
 ----Tạo khóa ngoại----------------------------------------
@@ -158,6 +160,7 @@ ALTER TABLE CHITIETCC ADD CONSTRAINT FK_CHITIETCC_NHACUNGCAP FOREIGN KEY (MANCC)
 ALTER TABLE CHITIETCC ADD CONSTRAINT FK_CHITIETCC_SANPHAM FOREIGN KEY (MASP) REFERENCES SANPHAM (MASP);
 alter table TAIKHOAN add constraint FK_TAIKHOAN_NHANVIEN foreign key (MANV) references NHANVIEN(MANV)
 alter table TAIKHOAN add constraint FK_TAIKHOAN_QUYENTRUYCAP foreign key (MAQTC) references QUYENTRUYCAP(MAQTC)
+ALTER TABLE TRUYCAP ADD CONSTRAINT FK_TRUYCAP_TAIKHOAN FOREIGN KEY (TENTK) REFERENCES TAIKHOAN(TENTK);
 
 
 /***********************************************************
@@ -166,8 +169,7 @@ alter table TAIKHOAN add constraint FK_TAIKHOAN_QUYENTRUYCAP foreign key (MAQTC)
 ------------------------------------------------------------
 ************************************************************/
 alter table khuyenmai add phantramgiamgia int null;
-
-
+--alter table truycap add MATC int identity(1,1) primary key not null ;
 
 
 /***********************************************************
@@ -227,6 +229,3 @@ add constraint d_thoidiemtruycap default getdate() for thoidiem
 ************************************************************/
 ALTER TABLE KHUYENMAI
 ADD CONSTRAINT check_phantramgiamgia CHECK (phantramgiamgia >= 0 AND phantramgiamgia <= 90);
-
-
-

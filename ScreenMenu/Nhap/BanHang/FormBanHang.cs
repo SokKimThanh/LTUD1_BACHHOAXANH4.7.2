@@ -6,7 +6,11 @@ namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormBanHang : Form
     {
-
+        //==============================================================================
+        //--..........................................................................--
+        //------------------.      Khởi tạo dữ liệu Biến thành viên         .-----------
+        //--.................                                         ..................
+        //==============================================================================
         private int currentPage = 1;
         private int recordsPerPage = 8;
         private int totalRecords = 0;
@@ -16,8 +20,11 @@ namespace LTUD1_BACHHOAXANH472
         DanhMucController danhMucController = new DanhMucController(Utils.ConnectionString);
         NhaCungCapController nhaCungCapController = new NhaCungCapController(Utils.ConnectionString);
         HoaDon hoadon = new HoaDon();
-        ReportManager reportManager = new ReportManager();
-        //SanPhamController sanPhamController = new SanPhamController(Utils.ConnectionString);
+        ReportManager reportManager = new ReportManager();// chia sẽ report (lazayloading)
+
+        NhanVien nvlapbaocao;
+        QuyenTruyCap quyentruycapnv;
+        LoginController loginController = new LoginController();
         /// <summary>
         /// Hàm load design
         /// </summary>
@@ -34,7 +41,7 @@ namespace LTUD1_BACHHOAXANH472
             DataGridViewHelper.ConfigureDataGridView(dgvThongTinHoaDon);
             DataGridViewHelper.ConfigureDataGridView(dgvDanhSachSanPham);
 
-            this.reportManager = reportManager;
+            this.reportManager = reportManager;// chia sẽ report (lazayloading)
         }
         /// <summary>
         /// Hàm load dữ liệu
@@ -101,6 +108,21 @@ namespace LTUD1_BACHHOAXANH472
 
                 lblTongTien.Text = "0";
                 txtSoLuongMua.Text = "0";
+
+                //==============================================================================
+                //--..........................................................................--
+                //------------------.      KIỂM TRA ĐĂNG NHẬP                   .---------------
+                //--.................                                         ..................
+                //==============================================================================
+                //Kiểm tra đăng nhập hay chưa rồi mới gán giá trị
+                if (loginController.LogonSuccessful)
+                {
+                    nvlapbaocao = Utils.NhanVienLapBaoCao;
+                    quyentruycapnv = Utils.QuyenTruyCapNhanVien;
+                    lblTenNhanVien.Text = nvlapbaocao.Hotennv;
+                    lblTenQuyenTruyCap.Text = quyentruycapnv.Tenqtc;
+                    lblNgayHienTai.Text = DateTime.Now.ToString("dd/MM/yyy hh:mm:ss tt");
+                }
             }
             catch (Exception ex)
             {

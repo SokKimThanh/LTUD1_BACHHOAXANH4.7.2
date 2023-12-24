@@ -12,3 +12,5 @@ BEGIN
 	SELECT * from quyentruycap where MAQTC = @MAQTC --  chính xác mã 100%
 END
 GO
+exec sp_quyentruycap_select_one 'maqtc_full     '
+select * from QUYENTRUYCAP

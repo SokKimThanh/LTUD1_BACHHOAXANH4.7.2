@@ -138,25 +138,26 @@ public class AccountController : MyController
             CloseConnection();
         }
     }
-    public void select_cnql_quyentruycap()
+    public DataTable select_cbo_taikhoan()
     {
+
+        // Tạo một đối tượng DataTable để lưu trữ dữ liệu
+        DataTable dt = new DataTable();
         try
         {
             // Mở kết nối
             SqlConnection conn = OpenConnection();
 
             // Tạo một đối tượng SqlCommand
-            Sql = new SqlCommand("sp_cnql_quyentruycap", conn);
+            Sql = new SqlCommand("sp_cbo_taikhoan", conn);
             Sql.CommandType = CommandType.StoredProcedure;
 
             // Tạo một đối tượng SqlDataAdapter
             Adapter = new SqlDataAdapter(Sql);
 
-            // Tạo một đối tượng DataTable để lưu trữ dữ liệu
-            DataSource = new DataTable();
 
             // Đổ dữ liệu vào DataTable
-            Adapter.Fill(DataSource);
+            Adapter.Fill(dt);
 
             // Đóng kết nối
             CloseConnection();
@@ -170,6 +171,43 @@ public class AccountController : MyController
             // Đóng kết nối
             CloseConnection();
         }
+        return dt;
+    }
+    public DataTable GetDanhSachDangNhapTuNgayDenNgay(DateTime tungay, DateTime denngay, string tentk)
+    {
+        // Tạo một đối tượng DataTable để lưu trữ dữ liệu
+        DataTable dt = new DataTable();
+        try
+        {
+            // Mở kết nối
+            SqlConnection conn = OpenConnection();
+
+            // Tạo một đối tượng SqlCommand
+            Sql = new SqlCommand("sp_dangnhap_tungaydenngay", conn);
+            Sql.CommandType = CommandType.StoredProcedure;
+            Sql.Parameters.AddWithValue("@tungay", tungay);
+            Sql.Parameters.AddWithValue("@denngay", denngay);
+            Sql.Parameters.AddWithValue("@tentk", tentk);
+
+            // Tạo một đối tượng SqlDataAdapter
+            Adapter = new SqlDataAdapter(Sql);
+
+            // Đổ dữ liệu vào DataTable
+            Adapter.Fill(dt);
+
+            // Đóng kết nối
+            CloseConnection();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }
+        finally
+        {
+            // Đóng kết nối
+            CloseConnection();
+        }
+        return dt;
     }
     public void select_cbo_nhanvien()
     {

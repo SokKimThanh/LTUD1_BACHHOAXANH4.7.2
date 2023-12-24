@@ -1,9 +1,117 @@
+﻿SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+set dateformat dmy
+-- Author:		Sok Kim Thanh
+-- Create date: <24/12/2023>
+-- Description:	<theo doi dang nhap>
+DROP PROCEDURE IF EXISTS rp_dangnhap_tungaydenngay
+GO
+CREATE PROCEDURE rp_dangnhap_tungaydenngay
+	@tungay date,
+	@denngay date 
+AS
+BEGIN
+	IF @tungay > @denngay
+	BEGIN
+		PRINT N'Ngày bắt đầu không thể lớn hơn ngày kết thúc.'
+		-- Thực hiện một số hành động khi @tungay lớn hơn @denngay
+	END
+	ELSE  
+	BEGIN
+	IF @tungay = @denngay
+	BEGIN
+		PRINT N'Ngày bắt đầu và ngày kết thúc là cùng một ngày.'
+		-- Thực hiện một số hành động khi @tungay bằng @denngay
+		Select tk.TENTK as N'Tên tài khoản'
+		,nv.HOTENNV as N'Nhân viên'
+		,tc.THOIDIEM as N'Thời gian đăng nhập'
+		,tc.KETQUA N'Kết quả'  
+		FROM taikhoan tk, nhanvien nv, truycap tc  
+		WHERE tk.manv = nv.manv and tk.tentk = tc.tentk
+		and CAST(tc.THOIDIEM AS DATE) = CAST(GETDATE() AS DATE)
+		ORDER BY tc.THOIDIEM
+	END
+	ELSE
+	BEGIN
+		PRINT N'Ngày bắt đầu và ngày kết thúc không phải là cùng một ngày.'
+		-- Thực hiện một số hành động khác khi @tungay khác @denngay
+		Select tk.TENTK as N'Tên tài khoản'
+			,nv.HOTENNV as N'Nhân viên'
+			,tc.THOIDIEM as N'Thời gian đăng nhập'
+			,tc.KETQUA N'Kết quả'  
+		FROM taikhoan tk, nhanvien nv, truycap tc  
+		WHERE tk.manv = nv.manv and tk.tentk = tc.tentk
+		and tc.THOIDIEM >= @tungay and tc.THOIDIEM <= @denngay
+		ORDER BY tc.THOIDIEM
+	END
+END;
+ 
+execute rp_dangnhap_tungaydenngay '24/12/2023','24/12/2023';
+
+-- Author:		Sok Kim Thanh
+-- Create date: <24/12/2023>
+-- Description:	<theo doi dang nhap>
+DROP PROCEDURE IF EXISTS rp_dangnhap_homnay
+GO
+CREATE PROCEDURE rp_dangnhap_homnay
+AS
+BEGIN
+	Select tk.TENTK as N'Tên tài khoản'
+		,nv.HOTENNV as N'Nhân viên'
+		,tc.THOIDIEM as N'Thời gian đăng nhập'
+		,tc.KETQUA N'Kết quả'  
+	FROM taikhoan tk, nhanvien nv, truycap tc  
+	WHERE tk.manv = nv.manv and tk.tentk = tc.tentk
+	and CAST(tc.THOIDIEM AS DATE) = CAST(GETDATE() AS DATE)
+	ORDER BY tc.THOIDIEM
+END;
+go
+EXEC rp_dangnhap_homnay
+
+﻿set dateformat dmy
+-- Author:		Sok Kim Thanh
+-- Create date: <16/11/2023>
+-- Description:	<quan ly dang nhap tu ngay den ngay>
+DROP PROCEDURE IF EXISTS sp_dangnhap_tungaydenngay
+GO
+CREATE PROCEDURE sp_dangnhap_tungaydenngay
+	@tungay datetime,
+	@denngay datetime 
+AS
+BEGIN
+	Select tk.TENTK as N'Tên tài khoản'
+		,nv.HOTENNV as N'Nhân viên'
+		,format(tc.THOIDIEM,'dd/MM/yyy HH:mm:ss tt') as N'Thời gian đăng nhập'
+		--,tc.THOIDIEM as N'Thời gian đăng nhập'
+		,tc.KETQUA N'Kết quả'  
+	FROM taikhoan tk, nhanvien nv, truycap tc  
+	WHERE tk.manv = nv.manv and tk.tentk = tc.tentk
+	and tc.THOIDIEM >= @tungay and tc.THOIDIEM <= @denngay
+	ORDER BY tc.THOIDIEM
+END;
+go
+
+DECLARE @StartDate datetime
+DECLARE @EndDate datetime
+
+SET @StartDate = '2023-01-01 08:00:00'
+SET @EndDate = '2023-01-02 20:00:00'
+
+SELECT 
+    DATEDIFF(hour, @StartDate, @EndDate) as 'Hours',
+    DATEDIFF(minute, @StartDate, @EndDate) % 60 as 'Minutes',
+    DATEDIFF(second, @StartDate, @EndDate) % 60 as 'Seconds'
+
+	
 ﻿-- Tạo store quản lý truy cập 
 -- Author:		Sok Kim Thanh
 -- Create date: <21/12/2023>
 -- Cập nhật stored procedure
 -- đăng nhập vào thành công thì trả về 1
 -- đăng nhập vào thất bại thì trả về 0
+drop proc if exists sp_DangNhap
 go
 CREATE PROCEDURE sp_DangNhap
     @TENTK CHAR(30),
@@ -26,22 +134,31 @@ BEGIN
         SET @KETQUA = 0--N'Tên tài khoản hoặc mật khẩu không đúng'
     END
 END;
+go
+ 
 
--- hiển thị kết quả quyền truy cập nếu truy cập thành công thì lúc đó sẽ gọi câu store cấp quyền truy cập
+-- câu store cấp quyền truy cập 
+drop proc if exists sp_CapQuyen
 go
 CREATE PROCEDURE sp_CapQuyen
     @TENTK CHAR(30),
-    @MATKHAU CHAR(30),
-    @QUYEN NVARCHAR(255) OUTPUT
+    @MATKHAU CHAR(30)
 AS
 BEGIN
-    SELECT @QUYEN = Q.TENQTC
+    SELECT Q.MAQTC, tk.MANV
     FROM TAIKHOAN TK
     INNER JOIN QUYENTRUYCAP Q ON TK.MAQTC = Q.MAQTC
     WHERE TK.TENTK = @TENTK AND TK.MATKHAU = @MATKHAU
-END
+END;
+go
 
--- hien thi ten nhan vien va quyen truy cap -- Author:		Sok Kim Thanh
+
+-- hien thi ten nhan vien va quyen truy cap 
+ 
+EXEC sp_CapQuyen 'admin', 'admin123' 
+go
+exec sp_quyentruycap_select_one 'maqtc_full'
+-- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
 -- Description:	<quyentruycap delete>
 DROP PROCEDURE IF EXISTS sp_quyentruycap_delete
@@ -90,10 +207,11 @@ CREATE PROCEDURE sp_quyentruycap_select_one
 	@MAQTC CHAR(30)
 AS
 BEGIN
-	SELECT * from quyentruycap where MAQTC = @MAQTC --  ch�nh x�c m� 100%
+	SELECT * from quyentruycap where MAQTC = @MAQTC --  ch�nh x�c m� 100%
 END
 GO
-﻿-- Create Procedure sp_quyentruycap_update.sql
+exec sp_quyentruycap_select_one 'maqtc_full     '
+select * from QUYENTRUYCAP﻿-- Create Procedure sp_quyentruycap_update.sql
 -- quyentruycap update
 -- Author:		Sok Kim Thanh
 -- Create date: <14/12/2023>
@@ -120,23 +238,6 @@ BEGIN
 	SELECT qtc.maqtc, qtc.TENQTC FROM quyentruycap qtc
 END
 GO
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-set dateformat dmy
--- Author:		Sok Kim Thanh
--- Create date: <16/11/2023>
--- Description:	<account delete>
-DROP PROCEDURE IF EXISTS sp_taikhoan_cnql_dangnhap
-GO
-CREATE PROCEDURE sp_taikhoan_cnql_dangnhap
-	@tungay datetime,
-	@denngay datetime 
-AS
-BEGIN
-	Select * FROM taikhoan tk, nhanvien nv, truycap tc  WHERE tk.manv = nv.manv and tk.tentk = tc.tentk
-END
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -193,7 +294,7 @@ CREATE PROCEDURE sp_taikhoan_select_one
 	@TENTK CHAR(30)
 AS
 BEGIN
-	SELECT * from taikhoan where TENTK = @TENTK --  ch�nh x�c m� 100%
+	SELECT * from taikhoan where TENTK = @TENTK --  ch�nh x�c m� 100%
 END
 GO
 ﻿-- Create Procedure sp_taikhoan_update.sql
@@ -403,7 +504,7 @@ CREATE PROCEDURE sp_sanpham_phantrang_count
     @tenSanPham NVARCHAR(100) = NULL
 AS
 BEGIN 
-    -- L?Y D? LI?U V� CH? S? D�NG (ROW) C?A N�
+    -- L?Y D? LI?U V� CH? S? D�NG (ROW) C?A N�
     WITH PHANTRANG AS (
         SELECT ROW_NUMBER() OVER (ORDER BY SP.MASP) AS STT
             ,SP.MASP, SP.TENSP, SP.DONVI, SP.DONGIA
@@ -416,7 +517,7 @@ BEGIN
         AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
         AND MANCC = ISNULL(@NHACUNGCAP, MANCC) AND SLTONKHO > 0
     )
-    -- �?M S? D�NG
+    -- �?M S? D�NG
     SELECT COUNT(*) AS TOTALROWS
     FROM PHANTRANG;
 END;
@@ -814,7 +915,7 @@ select * from NHANVIEN
 -- hoadon select all 
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
--- Description:	<H�a don select all>
+-- Description:	<H�a don select all>
 set dateformat dmy
 drop procedure if exists sp_hoadon_select_all
 go
@@ -1051,7 +1152,7 @@ BEGIN
 END
 GO
 select * from KHACHHANG
-exec rp_khachhang_timkiem 'L�'
+exec rp_khachhang_timkiem 'L�'
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_khachhang_delete.sql
@@ -1104,7 +1205,7 @@ CREATE PROCEDURE sp_khachhang_select_one
 	@maKH char(11)
 AS
 BEGIN
-	SELECT * from KHACHHANG where  MAKH = @maKH --like ch�nh x�c m� 100%
+	SELECT * from KHACHHANG where  MAKH = @maKH --like ch�nh x�c m� 100%
 END
 GO
 ﻿-- Create Procedure sp_khachhang_update.sql
@@ -1305,7 +1406,7 @@ CREATE PROCEDURE sp_nhacungcap_select_one
 	@MANCC CHAR(11)
 AS
 BEGIN
-	SELECT * from nhacungcap where MANCC = @MANCC --like ch�nh x�c m� 100%
+	SELECT * from nhacungcap where MANCC = @MANCC --like ch�nh x�c m� 100%
 END
 GO
 ﻿-- Create Procedure sp_nhacungcap_update.sql
@@ -1397,7 +1498,7 @@ CREATE PROCEDURE sp_chitietcc_select_one
 	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from chitietcc  --  ch�nh x�c m� 100%
+	SELECT * from chitietcc  --  ch�nh x�c m� 100%
 END
 GO
 execute sp_chitietcc_select_one  'ncc01' , 'sp01'
@@ -1623,7 +1724,7 @@ CREATE PROCEDURE sp_nhanvien_insert
 	@gioitinh CHAR(11)
 AS
 BEGIN 
-	-- �?i 50 milliseconds
+	-- �?i 50 milliseconds
 	WAITFOR DELAY '00:00:00.050';
 	INSERT INTO nhanvien(manv, hotennv, diachinv, luong, sdtnv, ngaysinh,mapb, gioitinh) 
 	VALUES (@manv, @hotennv, @diachinv, @luong, @sdtnv, @ngaysinh,@mapb, @gioitinh);
@@ -1640,7 +1741,7 @@ CREATE PROCEDURE sp_nhanvien_search
 	@keyword nvarchar(100) = N''
 AS
 BEGIN 
-	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like ch�nh x�c m� 100%
+	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like ch�nh x�c m� 100%
 END;
 go
 select * from nhanvien
@@ -1654,7 +1755,7 @@ CREATE PROCEDURE sp_nhanvien_select_one
 	@manv char(11)
 AS
 BEGIN 
-	SELECT * from nhanvien where MANV = isnull(@manv,manv) --like ch�nh x�c m� 100%
+	SELECT * from nhanvien where MANV = isnull(@manv,manv) --like ch�nh x�c m� 100%
 END;
 go
 ﻿-- Author:		Sok Kim Thanh
@@ -1728,7 +1829,7 @@ go
 CREATE PROCEDURE sp_phongban_select_all
 AS
 BEGIN
-	SELECT pb.MAPB, pb.TENPHG as N'T�n Ph�ng Ban' , cn.TENCN as N'T�n Chi Nh�nh'  from PHONGBAN pb, CHINHANH cn where pb.MACN = cn.MACN
+	SELECT pb.MAPB, pb.TENPHG as N'T�n Ph�ng Ban' , cn.TENCN as N'T�n Chi Nh�nh'  from PHONGBAN pb, CHINHANH cn where pb.MACN = cn.MACN
 END;
 GO
 exec sp_phongban_select_all
@@ -1741,7 +1842,7 @@ CREATE PROCEDURE sp_phongban_select_one
 	@mapb char(11)
 AS
 BEGIN 
-	SELECT * from phongban where mapb = @mapb --like ch�nh x�c m� 100%
+	SELECT * from phongban where mapb = @mapb --like ch�nh x�c m� 100%
 END;
 go
 --execute sp_phongban_select_one 'pb01'

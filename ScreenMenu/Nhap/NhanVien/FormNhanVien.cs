@@ -81,7 +81,7 @@ namespace LTUD1_BACHHOAXANH472
                 cboPhongBan.ValueMember = "MAPB";
                 cboPhongBan.DisplayMember = "TENPHG";
 
-                // crud button setting state
+                // crud button setting buttonStateManager
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
 
                 // chỉnh item của loại báo cáo

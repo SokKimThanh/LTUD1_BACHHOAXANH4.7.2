@@ -134,7 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\Login\LoginController.cs" />
+    <Compile Include="ScreenMenu\HeThong\DangNhap\LoginController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="Model\PhanTrangController.cs" />
@@ -214,10 +214,10 @@
     <Compile Include="Model\ReportManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenMenu\HeThong\Login\FormDangNhap.cs">
+    <Compile Include="ScreenMenu\HeThong\DangNhap\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\Login\FormDangNhap.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\DangNhap\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Session.cs" />
@@ -353,6 +353,12 @@
       <DependentUpon>rp_hoadon_theongay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="uploads\rp_dangnhap_tungaydenngay.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rp_dangnhap_tungaydenngay.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="uploads\rp_sanpham_timtensp.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -413,7 +419,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\HeThong\Login\FormDangNhap.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\DangNhap\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\HeThong\UploadFileReport\FormUploadFilesReport.resx">
@@ -472,6 +478,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rp_hoadon_theongay.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="uploads\rp_dangnhap_tungaydenngay.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rp_dangnhap_tungaydenngay.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="uploads\rp_sanpham_timtensp.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rp_sanpham_timtensp.cs</LastGenOutput>
@@ -504,8 +514,11 @@
     <None Include="Resources\icon_quanlyreport_green.png" />
     <None Include="Resources\icon_quanlyreport_transparent.png" />
     <None Include="Resources\icon_quanlyreport.png" />
-    <Content Include="ScreenMenu\HeThong\Login\sp_login_controller.sql" />
-    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cnql_quyentruycap.sql" />
+    <Content Include="ScreenMenu\HeThong\DangNhap\rp_dangnhap_homnay.sql" />
+    <Content Include="ScreenMenu\HeThong\DangNhap\sp_login_controller.sql" />
+    <Content Include="ScreenMenu\HeThong\DangNhap\rp_dangnhap_tungaydenngay.sql" />
+    <Content Include="ScreenMenu\HeThong\DangNhap\sp_dangnhap_tungaydenngay.sql" />
+    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cbo_quyentruycap_select_all - Copy.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\rp_banhang_doanhthutheothang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
@@ -577,7 +590,7 @@
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_all.sql" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_select_one.sql" />
     <Content Include="ScreenMenu\HeThong\QuyenTruyCap\sp_quyentruycap_update.sql" />
-    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cbo_quyentruycap_select_all.sql" />
+    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cbo_taikhoan.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_delete.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_insert.sql" />
     <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_taikhoan_select_all.sql" />

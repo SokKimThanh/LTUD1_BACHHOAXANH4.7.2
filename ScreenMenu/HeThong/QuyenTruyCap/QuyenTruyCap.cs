@@ -1,7 +1,7 @@
 ﻿using System;
-namespace LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan
+namespace LTUD1_BACHHOAXANH472
 {
-    internal class QuyenTruyCap
+    public class QuyenTruyCap
     {
         string maqtc;
         string tenqtc;

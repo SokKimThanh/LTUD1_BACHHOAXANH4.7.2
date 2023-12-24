@@ -545,3 +545,34 @@ INSERT INTO taikhoan VALUES ('tentaikhoan9', 'matkhau3', 'nv03', 'QTC02');
 INSERT INTO taikhoan VALUES ('tentaikhoan10', 'matkhau4', 'nv04', 'QTC01');
 
 INSERT INTO taikhoan VALUES ('admin', 'admin123', 'NV40', 'maqtc_full');
+
+
+-- them du lieu vao bang truycap  
+INSERT INTO TRUYCAP(TENTK, THOIDIEM, KETQUA, THOIDIEMDANGXUAT, KETQUADANGXUAT) 
+VALUES
+('admin', CONVERT(datetime, '24-12-2023 11:06:23.347', 103), N'Thành công', NULL, NULL),
+('tentaikhoan1', CONVERT(datetime, '24-12-2023 12:57:07.653', 103), N'Thất bại', NULL, NULL),
+('tentaikhoan1', CONVERT(datetime, '24-12-2023 12:57:09.857', 103), N'Thất bại', NULL, NULL),
+('tentaikhoan1', CONVERT(datetime, '24-12-2023 12:57:10.397', 103), N'Thất bại', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 16:43:39.830', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:30:16.870', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:31:11.330', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:41:30.710', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:47:04.650', 103), N'Thành công', NULL, NULL),
+('tentaikhoan1', CONVERT(datetime, '24-12-2023 12:57:10.780', 103), N'Thất bại', NULL, NULL),
+('sdfsd', CONVERT(datetime, '24-12-2023 12:57:12.877', 103), N'Thất bại', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 12:57:19.323', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 15:32:35.137', 103), N'Thất bại', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 16:55:25.253', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 16:56:02.413', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 16:56:29.803', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 16:57:34.123', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:08:07.050', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:48:46.253', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:54:22.107', 103), N'Thành công', NULL, NULL),
+('tentaikhoan7', CONVERT(datetime, '24-12-2023 18:03:53.060', 103), N'Thành công', NULL, NULL),
+('tentaikhoan7', CONVERT(datetime, '24-12-2023 13:01:11.100', 103), N'Thành công', NULL, NULL),
+('tentaikhoan7', CONVERT(datetime, '24-12-2023 17:10:39.727', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:23:33.427', 103), N'Thành công', NULL, NULL),
+('admin', CONVERT(datetime, '24-12-2023 17:24:21.233', 103), N'Thành công', NULL, NULL);
+ 

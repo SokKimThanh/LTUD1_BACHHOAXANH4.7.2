@@ -32,7 +32,7 @@ namespace LTUD1_BACHHOAXANH472
 
                 nccController.SelectAll();
                 dgvNhaCungCap.DataSource = nccController.DataSource;
-                // crud button setting state
+                // crud button setting buttonStateManager
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
             }
             catch (Exception ex)

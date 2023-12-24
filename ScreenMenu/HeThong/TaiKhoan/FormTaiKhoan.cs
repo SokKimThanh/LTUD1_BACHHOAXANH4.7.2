@@ -1,57 +1,69 @@
 ﻿using LTUD1_BACHHOAXANH472.Model;
-using LTUD1_BACHHOAXANH472.ScreenMenu.HeThong.TaiKhoan;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 namespace LTUD1_BACHHOAXANH472
 {
     public partial class FormTaiKhoan : Form
     {
-        AccountController AcountController;
+        AccountController acountController;
         //ButtonStateManager buttonStateManager;
         QuyenTruyCapController quyenTruyCapController;
         //AccountController sanPhamController;
-        //ButtonStateManager state;
+        ButtonStateManager buttonStateManager;
         ReportManager reportManager;
         public FormTaiKhoan(ReportManager reportManager)
         {
             InitializeComponent();
-            AcountController = new AccountController(Utils.ConnectionString);
+            acountController = new AccountController(Utils.ConnectionString);
             quyenTruyCapController = new QuyenTruyCapController(Utils.ConnectionString);
             // data grid view setting
             DataGridViewHelper.ConfigureDataGridView(dgvTaiKhoan);
 
             DataGridViewHelper.ConfigureDataGridView(dgvQTC);
+            DataGridViewHelper.ConfigureDataGridView(dgvQuanLyDangNhap);
+
             ComboBoxHelper.ConfigureComboBox(cboNV);
             ComboBoxHelper.ConfigureComboBox(cboQTC);
+            ComboBoxHelper.ConfigureComboBox(cbotaikhoan);
+             
             this.reportManager = reportManager;
         }
-
-
 
         private void FormTaiKhoan_Load(object sender, EventArgs e)
         {
             try
             {
                 // load dữ liệu tài khoản
-                AcountController.SelectAll();
-                dgvTaiKhoan.DataSource = AcountController.DataSource;
+                acountController.SelectAll();
+                dgvTaiKhoan.DataSource = acountController.DataSource;
+
                 // load dữ liệu combobox quyền truy cập
-                AcountController.select_cbo_quyentruycap();
-                cboQTC.DataSource = AcountController.DataSource;
+                acountController.select_cbo_quyentruycap();
+                cboQTC.DataSource = acountController.DataSource;
                 cboQTC.DisplayMember = "TENQTC";
                 cboQTC.ValueMember = "MAQTC";
+
                 // load dữ liệu quyền truy cập
                 quyenTruyCapController.SelectAll();
                 dgvQTC.DataSource = quyenTruyCapController.DataSource;
-                // load dữ liệu chức năng quản lí quyền truy cập
-                AcountController.select_cnql_quyentruycap();
-                dgvQuanLyDangNhap.DataSource = AcountController.DataSource;
+
+               
                 // load dữ liệu combobox nhân viên
-                AcountController.select_cbo_nhanvien();
-                cboNV.DataSource = AcountController.DataSource;
+                acountController.select_cbo_nhanvien();
+                cboNV.DataSource = acountController.DataSource;
                 cboNV.DisplayMember = "HOTENNV";
                 cboNV.ValueMember = "MANV";
+
+                // load dữ liệu combobox tài khoản
+                cbotaikhoan.DataSource = acountController.select_cbo_taikhoan();
+                cbotaikhoan.DisplayMember = "TENTK";
+                cbotaikhoan.ValueMember = "MATK";
+
+                // load dữ liệu chức năng quản lí quyền truy cập
+                dgvQuanLyDangNhap.DataSource = acountController.GetDanhSachDangNhapTuNgayDenNgay(dtpTuNgay.Value, dtpDenNgay.Value, cbotaikhoan.SelectedValue.ToString()); ;
+
 
             }
             catch (Exception ex)
@@ -67,11 +79,11 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 // load dữ liệu tài khoản
-                AcountController.SelectAll();
-                dgvTaiKhoan.DataSource = AcountController.DataSource;
+                acountController.SelectAll();
+                dgvTaiKhoan.DataSource = acountController.DataSource;
                 // load dữ liệu combobox quyền truy cập
-                AcountController.select_cbo_quyentruycap();
-                cboQTC.DataSource = AcountController.DataSource;
+                acountController.select_cbo_quyentruycap();
+                cboQTC.DataSource = acountController.DataSource;
                 cboQTC.DisplayMember = "TENQTC";
                 cboQTC.ValueMember = "MAQTC";
             }
@@ -155,7 +167,7 @@ namespace LTUD1_BACHHOAXANH472
                 txtMaQTC.Text = o.Maqtc;
                 txtTenQTC.Text = o.Tenqtc;
                 // cập nhật lại trang thái các nút
-                /*      state.UpdateButtonStates(ButtonState.DataGridViewSelected);*/
+                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
             }
             catch (Exception ex)
             {
@@ -172,11 +184,11 @@ namespace LTUD1_BACHHOAXANH472
                 // lấy ra mã
                 string id = dgvTaiKhoan.Rows[dong].Cells[0].Value.ToString();
                 // khởi tạo đối tượng bằng mã
-                DataTable dt = AcountController.SelectByID(id);
+                DataTable dt = acountController.SelectByID(id);
                 DataRow dr = dt.Rows[0];
 
                 // chuyển thành class đối tượng
-                Account o = (Account)AcountController.FromDataRow(dr);
+                Account o = (Account)acountController.FromDataRow(dr);
 
                 // thiết lập dữ liệu ngược lại mỗi lần click
                 txtTenTK.Text = o.Tentk;
@@ -200,9 +212,9 @@ namespace LTUD1_BACHHOAXANH472
                 account.Matkhau = txtMK.Text;
                 account.Manv = cboNV.SelectedValue.ToString();
                 account.Maqtc = cboQTC.SelectedValue.ToString();
-                AcountController.Insert(account);
-                AcountController.SelectAll();
-                dgvTaiKhoan.DataSource = AcountController.DataSource;
+                acountController.Insert(account);
+                acountController.SelectAll();
+                dgvTaiKhoan.DataSource = acountController.DataSource;
             }
             catch (Exception ex)
             {
@@ -234,9 +246,9 @@ namespace LTUD1_BACHHOAXANH472
             {
                 Account account = new Account();
                 account.Tentk = txtTenTK.Text;
-                AcountController.Delete(account.Tentk);
-                AcountController.SelectAll();
-                dgvTaiKhoan.DataSource = AcountController.DataSource;
+                acountController.Delete(account.Tentk);
+                acountController.SelectAll();
+                dgvTaiKhoan.DataSource = acountController.DataSource;
             }
             catch (Exception ex)
             {
@@ -253,9 +265,9 @@ namespace LTUD1_BACHHOAXANH472
                 account.Matkhau = txtMK.Text;
                 account.Manv = cboNV.SelectedValue.ToString();
                 account.Maqtc = cboQTC.SelectedValue.ToString();
-                AcountController.Update(account);
-                AcountController.SelectAll();
-                dgvTaiKhoan.DataSource = AcountController.DataSource;
+                acountController.Update(account);
+                acountController.SelectAll();
+                dgvTaiKhoan.DataSource = acountController.DataSource;
             }
             catch (Exception ex)
             {
@@ -271,7 +283,7 @@ namespace LTUD1_BACHHOAXANH472
                 txtMK.Text = string.Empty;
                 cboNV.SelectedIndex = 0;
                 cboQTC.SelectedIndex = 0;
-                /*  state.UpdateButtonStates(ButtonState.RefreshClicked);*/
+                /*  buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);*/
             }
             catch (Exception ex)
             {
@@ -286,11 +298,28 @@ namespace LTUD1_BACHHOAXANH472
             {
                 txtMK.Text = string.Empty;
                 txtMaQTC.Text = string.Empty;
-                /*                state.UpdateButtonStates(ButtonState.RefreshClicked);*/
+                /*                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);*/
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-
         }
 
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+            ReportHelper rh = new ReportHelper(reportManager, "rp_dangnhap_tungaydenngay", new Dictionary<string, object> { { "@tungay", dtpTuNgay.Value }, { "@denngay", dtpDenNgay.Value }, { "@tentk", cbotaikhoan.SelectedValue.ToString() } }, crystalReportViewer1);
+            rh.LoadReport();
+        }
+
+        private void btnReportSearch_Click(object sender, EventArgs e)
+        {
+            if (dtpTuNgay.Value.ToString().CompareTo(dtpDenNgay.Value.ToString()) > 0)
+            {
+                MessageBox.Show("Ngày bắt đầu không thể lớn hơn ngày kết thúc!");
+                return;
+            }
+            else
+            {
+                dgvQuanLyDangNhap.DataSource = acountController.GetDanhSachDangNhapTuNgayDenNgay(dtpTuNgay.Value, dtpDenNgay.Value, cbotaikhoan.SelectedValue.ToString());
+            }
+        }
     }
 }

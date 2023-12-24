@@ -358,7 +358,7 @@ namespace LTUD1_BACHHOAXANH472
             // Thực hiện các tác vụ đăng xuất ở đây
             try
             {
-                //
+                //Đăng xuất
                 Close();
 
             }

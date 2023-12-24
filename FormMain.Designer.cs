@@ -158,6 +158,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnSetting.Image = global::LTUD1_BACHHOAXANH472.Properties.Resources.icon_setting;
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.UseVisualStyleBackColor = false;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // panelDesktop
             // 
