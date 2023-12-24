@@ -11,7 +11,7 @@ namespace LTUD1_BACHHOAXANH472
         //ButtonStateManager buttonStateManager;
         QuyenTruyCapController quyenTruyCapController;
         //AccountController sanPhamController;
-        ButtonStateManager buttonStateManager;
+        ButtonStateManager buttonStateManager = new ButtonStateManager();
         ReportManager reportManager;
         public FormTaiKhoan(ReportManager reportManager)
         {
@@ -27,7 +27,7 @@ namespace LTUD1_BACHHOAXANH472
             ComboBoxHelper.ConfigureComboBox(cboNV);
             ComboBoxHelper.ConfigureComboBox(cboQTC);
             ComboBoxHelper.ConfigureComboBox(cbotaikhoan);
-             
+
             this.reportManager = reportManager;
         }
 
@@ -49,7 +49,7 @@ namespace LTUD1_BACHHOAXANH472
                 quyenTruyCapController.SelectAll();
                 dgvQTC.DataSource = quyenTruyCapController.DataSource;
 
-               
+
                 // load dữ liệu combobox nhân viên
                 acountController.select_cbo_nhanvien();
                 cboNV.DataSource = acountController.DataSource;

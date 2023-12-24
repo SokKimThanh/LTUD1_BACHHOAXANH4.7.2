@@ -20,19 +20,19 @@ public class ButtonStateManager : CustomButtonHelper
         {
             case ButtonState.DataGridViewSelected:
                 BtnAdd.Enabled = false;
-                
-           
+
+
                 BtnRefresh.Enabled = true;
                 break;
             case ButtonState.RefreshClicked:
             case ButtonState.FormLoaded:
                 BtnAdd.Enabled = true;
-                
+
                 BtnRefresh.Enabled = true;
                 break;
             default:
                 BtnAdd.Enabled = false;
-                
+
                 BtnRefresh.Enabled = false;
                 break;
         }

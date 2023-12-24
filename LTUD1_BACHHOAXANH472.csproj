@@ -134,7 +134,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\Login\LoginController.cs" />
+    <Compile Include="ScreenMenu\HeThong\DangNhap\LoginController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCapController.cs" />
     <Compile Include="ScreenMenu\HeThong\QuyenTruyCap\QuyenTruyCap.cs" />
     <Compile Include="Model\PhanTrangController.cs" />
@@ -220,10 +220,10 @@
     <Compile Include="Model\ReportManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenMenu\HeThong\Login\FormDangNhap.cs">
+    <Compile Include="ScreenMenu\HeThong\DangNhap\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ScreenMenu\HeThong\Login\FormDangNhap.Designer.cs">
+    <Compile Include="ScreenMenu\HeThong\DangNhap\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Session.cs" />
@@ -422,7 +422,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ScreenMenu\HeThong\Login\FormDangNhap.resx">
+    <EmbeddedResource Include="ScreenMenu\HeThong\DangNhap\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\HeThong\UploadFileReport\FormUploadFilesReport.resx">
@@ -516,7 +516,7 @@
     <None Include="Resources\bg-slashinggreen.jpg" />
     <None Include="Resources\bgshlasinggreen2.png" />
     <None Include="Resources\banner.png" />
-    <Content Include="ScreenMenu\HeThong\Login\sp_login_controller.sql" />
+    <Content Include="ScreenMenu\HeThong\DangNhap\sp_login_controller.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\rp_banhang_doanhthutheothang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />

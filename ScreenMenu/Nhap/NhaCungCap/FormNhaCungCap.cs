@@ -134,7 +134,7 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-           if(MessageBox.Show("Bạn có muốn xóa không?", "Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
                 {
@@ -154,7 +154,8 @@ namespace LTUD1_BACHHOAXANH472
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn sửa  không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+            if (MessageBox.Show("Bạn có muốn sửa  không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
                 try
                 {
                     //Kiem tra nhap thong tin
@@ -195,8 +196,8 @@ namespace LTUD1_BACHHOAXANH472
                     txtDiaChi.Text = ex.Message;
                 }
             }
-                
-       
+
+
         }
 
         private void tsmNhaCCOld_Click(object sender, EventArgs e)

@@ -39,7 +39,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 cboMaHT.DisplayMember = "TENHINHTHUC";
                 cboMaHT.ValueMember = "MAHT";
                 // setting datagridview
-                DataGridViewHelper.ConfigureDataGridView(dgvDSKM); 
+                DataGridViewHelper.ConfigureDataGridView(dgvDSKM);
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
 
                 Refresh2();

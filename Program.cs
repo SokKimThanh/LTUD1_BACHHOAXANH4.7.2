@@ -1,5 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.BanHang;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
@@ -24,15 +23,11 @@ namespace LTUD1_BACHHOAXANH472
                 splashForm.Close();
 
                 // Tạo và hiển thị FormDangNhap
-                FormDangNhap loginForm = new FormDangNhap();
-                loginForm.ShowDialog();
+                FormDangNhap logon = new FormDangNhap();
 
-                // Nếu đăng nhập thành công, hiển thị FormMain
-                if (loginForm.LogonSuccessful)
-                {
-                    FormMain mainForm = new FormMain();
-                    Application.Run(mainForm);
-                }
+                //FormMain logon = new FormMain();
+                Application.Run(logon);
+
             }
             catch (Exception)
             {

@@ -1,5 +1,4 @@
-﻿using LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.NhaCungCapCT;
-using System;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
 

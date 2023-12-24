@@ -1,5 +1,4 @@
 ﻿using LTUD1_BACHHOAXANH472;
-using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 public class Utils

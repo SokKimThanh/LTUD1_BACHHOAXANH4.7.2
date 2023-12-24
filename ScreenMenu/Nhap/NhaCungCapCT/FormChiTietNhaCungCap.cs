@@ -26,7 +26,7 @@ namespace LTUD1_BACHHOAXANH472
 
             buttonStateManager = new ButtonStateManager();
 
-           
+
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
@@ -122,13 +122,13 @@ namespace LTUD1_BACHHOAXANH472
                     MessageBox.Show("Nhập số!");
                     return;
                 }
-               
+
                 NhaCCCT nha = new NhaCCCT();
                 nha.MaSP = cboSanPham.SelectedValue.ToString();
                 nha.SoLuong = int.Parse(txtSoLuong.Text);
                 nha.MaNCC = cboNCC.SelectedValue.ToString();
                 ctnccCon.Update(nha);
-                
+
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)

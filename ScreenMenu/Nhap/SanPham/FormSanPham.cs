@@ -1,5 +1,4 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using LTUD1_BACHHOAXANH472.Model;
+﻿using LTUD1_BACHHOAXANH472.Model;
 using System;
 using System.Data;
 using System.Windows.Forms;

@@ -17,7 +17,7 @@ namespace LTUD1_BACHHOAXANH472
             maht = string.Empty;
             PhantramKM = 0;
         }
-        public KhuyenMai(string makm, DateTime ngaybd, DateTime ngaykt, string maht,int phantramkm)
+        public KhuyenMai(string makm, DateTime ngaybd, DateTime ngaykt, string maht, int phantramkm)
         {
             this.makm = makm;
             this.ngaybd = ngaybd;

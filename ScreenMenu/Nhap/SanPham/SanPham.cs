@@ -32,7 +32,7 @@ namespace LTUD1_BACHHOAXANH472
             this.HanSD = hanSD;
         }
 
-         
+
 
         public string MaSP { get => masp; set => masp = value; }
         public string TenSP { get => tensp; set => tensp = value; }
