@@ -95,7 +95,7 @@ namespace LTUD1_BACHHOAXANH472
                 HoaDon o = (HoaDon)HoaDonController.FromDataRow(dr);
 
                 // thiết lập dữ liệu ngược lại mỗi lần click
-                txtMaHD.Text = o.MaKH.ToString();
+                txtMaHD.Text = o.MaHD.ToString();
                 dtpkNgayLap.Value = o.NgayHD;
                 txtTongTien.Text = o.TongTien.ToString();
                 cbbMaNV.SelectedValue = o.MaNV;
@@ -197,6 +197,11 @@ namespace LTUD1_BACHHOAXANH472
         {
             ReportHelper rh = new ReportHelper(reportManager, "rp_hoadon_timkiem", new Dictionary<string, object> { { "@ma", string.IsNullOrEmpty(txtTimKiem.Text) ? "a" : txtTimKiem.Text } }, this.cryTimTheoten);
             rh.LoadReport();
+        }
+
+        private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

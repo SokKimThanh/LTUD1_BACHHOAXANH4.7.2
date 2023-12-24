@@ -90,7 +90,7 @@ CREATE PROCEDURE sp_quyentruycap_select_one
 	@MAQTC CHAR(30)
 AS
 BEGIN
-	SELECT * from quyentruycap where MAQTC = @MAQTC --  chính xác mã 100%
+	SELECT * from quyentruycap where MAQTC = @MAQTC --  chï¿½nh xï¿½c mï¿½ 100%
 END
 GO
 ï»¿-- Create Procedure sp_quyentruycap_update.sql
@@ -193,7 +193,7 @@ CREATE PROCEDURE sp_taikhoan_select_one
 	@TENTK CHAR(30)
 AS
 BEGIN
-	SELECT * from taikhoan where TENTK = @TENTK --  chính xác mã 100%
+	SELECT * from taikhoan where TENTK = @TENTK --  chï¿½nh xï¿½c mï¿½ 100%
 END
 GO
 ï»¿-- Create Procedure sp_taikhoan_update.sql
@@ -403,7 +403,7 @@ CREATE PROCEDURE sp_sanpham_phantrang_count
     @tenSanPham NVARCHAR(100) = NULL
 AS
 BEGIN 
-    -- L?Y D? LI?U VÀ CH? S? DÒNG (ROW) C?A NÓ
+    -- L?Y D? LI?U Vï¿½ CH? S? Dï¿½NG (ROW) C?A Nï¿½
     WITH PHANTRANG AS (
         SELECT ROW_NUMBER() OVER (ORDER BY SP.MASP) AS STT
             ,SP.MASP, SP.TENSP, SP.DONVI, SP.DONGIA
@@ -416,7 +416,7 @@ BEGIN
         AND MALOAI = ISNULL(@LOAISANPHAM, MALOAI)
         AND MANCC = ISNULL(@NHACUNGCAP, MANCC) AND SLTONKHO > 0
     )
-    -- Ð?M S? DÒNG
+    -- ï¿½?M S? Dï¿½NG
     SELECT COUNT(*) AS TOTALROWS
     FROM PHANTRANG;
 END;
@@ -814,7 +814,7 @@ select * from NHANVIEN
 -- hoadon select all 
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
--- Description:	<Hóa don select all>
+-- Description:	<Hï¿½a don select all>
 set dateformat dmy
 drop procedure if exists sp_hoadon_select_all
 go
@@ -1051,7 +1051,7 @@ BEGIN
 END
 GO
 select * from KHACHHANG
-exec rp_khachhang_timkiem 'Lê'
+exec rp_khachhang_timkiem 'Lï¿½'
 -- Author:		Vo Tu
 -- Create date: <13/11/2023>
 -- Create Procedure sp_khachhang_delete.sql
@@ -1104,7 +1104,7 @@ CREATE PROCEDURE sp_khachhang_select_one
 	@maKH char(11)
 AS
 BEGIN
-	SELECT * from KHACHHANG where  MAKH = @maKH --like chính xác mã 100%
+	SELECT * from KHACHHANG where  MAKH = @maKH --like chï¿½nh xï¿½c mï¿½ 100%
 END
 GO
 ï»¿-- Create Procedure sp_khachhang_update.sql
@@ -1305,7 +1305,7 @@ CREATE PROCEDURE sp_nhacungcap_select_one
 	@MANCC CHAR(11)
 AS
 BEGIN
-	SELECT * from nhacungcap where MANCC = @MANCC --like chính xác mã 100%
+	SELECT * from nhacungcap where MANCC = @MANCC --like chï¿½nh xï¿½c mï¿½ 100%
 END
 GO
 ï»¿-- Create Procedure sp_nhacungcap_update.sql
@@ -1397,7 +1397,7 @@ CREATE PROCEDURE sp_chitietcc_select_one
 	@MASP CHAR(11)
 AS
 BEGIN
-	SELECT * from chitietcc  --  chính xác mã 100%
+	SELECT * from chitietcc  --  chï¿½nh xï¿½c mï¿½ 100%
 END
 GO
 execute sp_chitietcc_select_one  'ncc01' , 'sp01'
@@ -1623,7 +1623,7 @@ CREATE PROCEDURE sp_nhanvien_insert
 	@gioitinh CHAR(11)
 AS
 BEGIN 
-	-- Ð?i 50 milliseconds
+	-- ï¿½?i 50 milliseconds
 	WAITFOR DELAY '00:00:00.050';
 	INSERT INTO nhanvien(manv, hotennv, diachinv, luong, sdtnv, ngaysinh,mapb, gioitinh) 
 	VALUES (@manv, @hotennv, @diachinv, @luong, @sdtnv, @ngaysinh,@mapb, @gioitinh);
@@ -1640,7 +1640,7 @@ CREATE PROCEDURE sp_nhanvien_search
 	@keyword nvarchar(100) = N''
 AS
 BEGIN 
-	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like chính xác mã 100%
+	SELECT MANV, Hotennv, ngaysinh, gioitinh, luong, sdtnv from nhanvien where HOTENNV like '%' + isnull(@keyword,HOTENNV) + '%'--like chï¿½nh xï¿½c mï¿½ 100%
 END;
 go
 select * from nhanvien
@@ -1654,7 +1654,7 @@ CREATE PROCEDURE sp_nhanvien_select_one
 	@manv char(11)
 AS
 BEGIN 
-	SELECT * from nhanvien where MANV = isnull(@manv,manv) --like chính xác mã 100%
+	SELECT * from nhanvien where MANV = isnull(@manv,manv) --like chï¿½nh xï¿½c mï¿½ 100%
 END;
 go
 ï»¿-- Author:		Sok Kim Thanh
@@ -1728,7 +1728,7 @@ go
 CREATE PROCEDURE sp_phongban_select_all
 AS
 BEGIN
-	SELECT pb.MAPB, pb.TENPHG as N'Tên Phòng Ban' , cn.TENCN as N'Tên Chi Nhánh'  from PHONGBAN pb, CHINHANH cn where pb.MACN = cn.MACN
+	SELECT pb.MAPB, pb.TENPHG as N'Tï¿½n Phï¿½ng Ban' , cn.TENCN as N'Tï¿½n Chi Nhï¿½nh'  from PHONGBAN pb, CHINHANH cn where pb.MACN = cn.MACN
 END;
 GO
 exec sp_phongban_select_all
@@ -1741,7 +1741,7 @@ CREATE PROCEDURE sp_phongban_select_one
 	@mapb char(11)
 AS
 BEGIN 
-	SELECT * from phongban where mapb = @mapb --like chính xác mã 100%
+	SELECT * from phongban where mapb = @mapb --like chï¿½nh xï¿½c mï¿½ 100%
 END;
 go
 --execute sp_phongban_select_one 'pb01'

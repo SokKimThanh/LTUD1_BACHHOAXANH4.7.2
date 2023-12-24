@@ -26,8 +26,7 @@ namespace LTUD1_BACHHOAXANH472
 
             buttonStateManager = new ButtonStateManager();
 
-            buttonStateManager.BtnEdit = btnEdit;
-            buttonStateManager.BtnDelete = btnEdit;
+           
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
             buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
@@ -114,6 +113,41 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ErrTextbox.NoText_TextChange(txtSoLuong))
+                {
+                    MessageBox.Show("Nhập số!");
+                    return;
+                }
+               
+                NhaCCCT nha = new NhaCCCT();
+                nha.MaSP = cboSanPham.SelectedValue.ToString();
+                nha.SoLuong = int.Parse(txtSoLuong.Text);
+                nha.MaNCC = cboNCC.SelectedValue.ToString();
+                ctnccCon.Update(nha);
+                
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            cboNCC.SelectedIndex = 0;
+            cboSanPham.SelectedIndex = 0;
+            txtSoLuong.Text = string.Empty;
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

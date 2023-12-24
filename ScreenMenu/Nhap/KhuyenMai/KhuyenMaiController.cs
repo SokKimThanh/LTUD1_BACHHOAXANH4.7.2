@@ -36,7 +36,8 @@ namespace LTUD1_BACHHOAXANH472
             {
                 Makm = row.Field<string>("makm"),
                 Ngaybd = row.Field<DateTime>("ngaybd"),
-                Ngaykt = row.Field<DateTime>("ngaykt")
+                Ngaykt = row.Field<DateTime>("ngaykt"),
+                PhantramKM = row.Field<int>("phantramgiamgia"),
             };
         }
 
@@ -55,6 +56,7 @@ namespace LTUD1_BACHHOAXANH472
             Sql.Parameters.AddWithValue("@ngaybd", o.Ngaybd);
             Sql.Parameters.AddWithValue("@ngaykt", o.Ngaykt);
             Sql.Parameters.AddWithValue("@maht", o.Maht);
+            Sql.Parameters.AddWithValue("@phantramgiamgia", o.PhantramKM);
             // Thực thi SqlCommand
             Sql.ExecuteNonQuery();
 
@@ -148,7 +150,7 @@ namespace LTUD1_BACHHOAXANH472
             Sql.Parameters.AddWithValue("@ngaybd", o.Ngaybd);
             Sql.Parameters.AddWithValue("@ngaykt", o.Ngaykt);
             Sql.Parameters.AddWithValue("@maht", o.Maht);
-
+            Sql.Parameters.AddWithValue("@phantramgiamgia", o.PhantramKM);
             // Thực thi SqlCommand
             Sql.ExecuteNonQuery();
 

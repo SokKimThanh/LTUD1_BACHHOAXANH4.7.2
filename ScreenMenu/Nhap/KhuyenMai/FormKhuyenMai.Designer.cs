@@ -38,6 +38,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvDSKM = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -50,7 +51,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.txtMaKM = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.cboMaHT = new System.Windows.Forms.ComboBox();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtPhanTram = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -63,6 +65,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -188,6 +191,24 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRefresh.FlatAppearance.BorderSize = 3;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnRefresh.Location = new System.Drawing.Point(152, 5);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(5);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(137, 84);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Làm mới";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dgvDSKM);
@@ -230,6 +251,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.groupBox7, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.txtNBD, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.groupBox6, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.groupBox2, 0, 0);
@@ -344,23 +366,25 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.cboMaHT.Size = new System.Drawing.Size(361, 40);
             this.cboMaHT.TabIndex = 10;
             // 
-            // btnRefresh
+            // groupBox7
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRefresh.FlatAppearance.BorderSize = 3;
-            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnRefresh.Location = new System.Drawing.Point(152, 5);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(5);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(137, 84);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Làm mới";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.groupBox7.Controls.Add(this.txtPhanTram);
+            this.groupBox7.Font = new System.Drawing.Font("Segoe UI", 14.25F);
+            this.groupBox7.ForeColor = System.Drawing.Color.Snow;
+            this.groupBox7.Location = new System.Drawing.Point(3, 271);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(367, 61);
+            this.groupBox7.TabIndex = 8;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Mã hình thức khuyến mãi";
+            // 
+            // txtPhanTram
+            // 
+            this.txtPhanTram.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPhanTram.Location = new System.Drawing.Point(3, 35);
+            this.txtPhanTram.Name = "txtPhanTram";
+            this.txtPhanTram.Size = new System.Drawing.Size(361, 39);
+            this.txtPhanTram.TabIndex = 0;
             // 
             // FormKhuyenMai
             // 
@@ -388,6 +412,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -414,5 +440,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private ComboBox cboMaHT;
         private TextBox txtMaKM;
         private Button btnRefresh;
+        private GroupBox groupBox7;
+        private TextBox txtPhanTram;
     }
 }

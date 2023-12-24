@@ -91,6 +91,7 @@ namespace LTUD1_BACHHOAXANH472
                 nccController.SelectAll();
                 dgvNhaCungCap.DataSource = nccController.DataSource;
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                MessageBox.Show("Thêm thành công!", "Thông náo");
                 refresh();
             }
             catch (Exception ex)
@@ -133,62 +134,69 @@ namespace LTUD1_BACHHOAXANH472
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            try
+           if(MessageBox.Show("Bạn có muốn xóa không?", "Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                int dong = dgvNhaCungCap.CurrentCell.RowIndex;
-                string id = dgvNhaCungCap.Rows[dong].Cells[0].Value.ToString();
-                nccController.Delete(id);
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-                refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                txtDiaChi.Text = ex.Message;
+                try
+                {
+                    int dong = dgvNhaCungCap.CurrentCell.RowIndex;
+                    string id = dgvNhaCungCap.Rows[dong].Cells[0].Value.ToString();
+                    nccController.Delete(id);
+                    buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                    refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    txtDiaChi.Text = ex.Message;
+                }
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                //Kiem tra nhap thong tin
-                if (ErrTextbox.CheckControlValue(txtTenNhaCC))
+            if (MessageBox.Show("Bạn có muốn sửa  không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
+                try
                 {
-                    MessageBox.Show("txtTenNhaCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    //Kiem tra nhap thong tin
+                    if (ErrTextbox.CheckControlValue(txtTenNhaCC))
+                    {
+                        MessageBox.Show("txtTenNhaCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (ErrTextbox.CheckControlValue(txtSDTNCC))
+                    {
+                        MessageBox.Show("txtSDTNCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        return;
+                    }
+                    if (ErrTextbox.CheckControlValue(txtDiaChi))
+                    {
+                        MessageBox.Show("txtDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        return;
+                    }
+
+                    int dong = dgvNhaCungCap.CurrentCell.RowIndex;
+                    string id = dgvNhaCungCap.Rows[dong].Cells[0].Value.ToString();
+
+                    string name = txtTenNhaCC.Text;
+                    int phone = int.Parse(txtSDTNCC.Text);
+                    string address = txtDiaChi.Text;
+
+                    NhaCungCap o = new NhaCungCap(id, name, address, phone);
+                    nccController.Update(o);
+
+                    buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
+                    refresh();
                 }
-                if (ErrTextbox.CheckControlValue(txtSDTNCC))
+                catch (Exception ex)
                 {
-                    MessageBox.Show("txtSDTNCC", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
+                    MessageBox.Show(ex.Message);
+                    txtDiaChi.Text = ex.Message;
                 }
-                if (ErrTextbox.CheckControlValue(txtDiaChi))
-                {
-                    MessageBox.Show("txtDiaChi", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    return;
-                }
-
-                int dong = dgvNhaCungCap.CurrentCell.RowIndex;
-                string id = dgvNhaCungCap.Rows[dong].Cells[0].Value.ToString();
-
-                string name = txtTenNhaCC.Text;
-                int phone = int.Parse(txtSDTNCC.Text);
-                string address = txtDiaChi.Text;
-
-                NhaCungCap o = new NhaCungCap(id, name, address, phone);
-                nccController.Update(o);
-
-                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
-                refresh();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                txtDiaChi.Text = ex.Message;
-            }
+                
+       
         }
 
         private void tsmNhaCCOld_Click(object sender, EventArgs e)

@@ -21,7 +21,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             {
                 dmConn.SelectAll();
                 dgvDS.DataSource = dmConn.DataSource;
-
+                clean();
             }
             catch (Exception ex)
             {
@@ -39,6 +39,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.DanhMuc
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnThem.Enabled = false;
+            btnLamMoi.Enabled = true;
         }
         private void clean()
         {
