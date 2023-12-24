@@ -106,7 +106,7 @@ namespace LTUD1_BACHHOAXANH472
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Calibri", 18F);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
-            this.label4.Location = new System.Drawing.Point(0, 57);
+            this.label4.Location = new System.Drawing.Point(0, 55);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(343, 32);
@@ -124,11 +124,11 @@ namespace LTUD1_BACHHOAXANH472
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Calibri", 15.75F);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(8, 185);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(8, 16, 8, 16);
+            this.btnLogin.Location = new System.Drawing.Point(8, 209);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(8, 32, 8, 16);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(139, 66);
-            this.btnLogin.TabIndex = 13;
+            this.btnLogin.Size = new System.Drawing.Size(139, 42);
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "ĐĂNG NHẬP";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -145,10 +145,10 @@ namespace LTUD1_BACHHOAXANH472
             this.btnForgotPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgotPassword.Font = new System.Drawing.Font("Calibri", 14F);
             this.btnForgotPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
-            this.btnForgotPassword.Location = new System.Drawing.Point(158, 185);
-            this.btnForgotPassword.Margin = new System.Windows.Forms.Padding(3, 16, 3, 16);
+            this.btnForgotPassword.Location = new System.Drawing.Point(158, 209);
+            this.btnForgotPassword.Margin = new System.Windows.Forms.Padding(3, 32, 3, 16);
             this.btnForgotPassword.Name = "btnForgotPassword";
-            this.btnForgotPassword.Size = new System.Drawing.Size(149, 66);
+            this.btnForgotPassword.Size = new System.Drawing.Size(149, 42);
             this.btnForgotPassword.TabIndex = 13;
             this.btnForgotPassword.Text = "Quên mật khẩu?";
             this.btnForgotPassword.UseVisualStyleBackColor = false;
@@ -219,9 +219,10 @@ namespace LTUD1_BACHHOAXANH472
             this.lblKetQuaDangNhap.AutoSize = true;
             this.lblKetQuaDangNhap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblKetQuaDangNhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
-            this.lblKetQuaDangNhap.Location = new System.Drawing.Point(158, 153);
+            this.lblKetQuaDangNhap.Location = new System.Drawing.Point(158, 159);
+            this.lblKetQuaDangNhap.Margin = new System.Windows.Forms.Padding(3, 8, 3, 0);
             this.lblKetQuaDangNhap.Name = "lblKetQuaDangNhap";
-            this.lblKetQuaDangNhap.Size = new System.Drawing.Size(149, 16);
+            this.lblKetQuaDangNhap.Size = new System.Drawing.Size(149, 18);
             this.lblKetQuaDangNhap.TabIndex = 16;
             this.lblKetQuaDangNhap.Text = "Đăng nhập thành công!!!";
             this.lblKetQuaDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -230,9 +231,10 @@ namespace LTUD1_BACHHOAXANH472
             // progressBar1
             // 
             this.progressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.progressBar1.Location = new System.Drawing.Point(3, 156);
+            this.progressBar1.Location = new System.Drawing.Point(3, 159);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(149, 10);
+            this.progressBar1.Size = new System.Drawing.Size(149, 15);
             this.progressBar1.TabIndex = 17;
             // 
             // goldenratio
@@ -357,7 +359,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.36508F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 24F));
@@ -375,7 +377,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpUsername.Controls.Add(this.txtUserName, 0, 0);
             this.tlpUsername.Controls.Add(this.pictureBox4, 0, 0);
             this.tlpUsername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpUsername.Location = new System.Drawing.Point(0, 89);
+            this.tlpUsername.Location = new System.Drawing.Point(0, 87);
             this.tlpUsername.Margin = new System.Windows.Forms.Padding(0);
             this.tlpUsername.Name = "tlpUsername";
             this.tlpUsername.RowCount = 1;
@@ -392,10 +394,9 @@ namespace LTUD1_BACHHOAXANH472
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(88)))), ((int)(((byte)(52)))));
             this.txtUserName.Location = new System.Drawing.Point(37, 0);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(0);
-            this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(269, 32);
-            this.txtUserName.TabIndex = 17;
+            this.txtUserName.Size = new System.Drawing.Size(269, 26);
+            this.txtUserName.TabIndex = 0;
             this.txtUserName.Click += new System.EventHandler(this.txtUserName_Click);
             // 
             // pictureBox4
@@ -422,7 +423,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tlpPassword.Controls.Add(this.txtPassword, 0, 0);
             this.tlpPassword.Controls.Add(this.pictureBox3, 0, 0);
             this.tlpPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpPassword.Location = new System.Drawing.Point(0, 121);
+            this.tlpPassword.Location = new System.Drawing.Point(0, 119);
             this.tlpPassword.Margin = new System.Windows.Forms.Padding(0);
             this.tlpPassword.Name = "tlpPassword";
             this.tlpPassword.RowCount = 1;
@@ -455,7 +456,7 @@ namespace LTUD1_BACHHOAXANH472
             this.txtPassword.Margin = new System.Windows.Forms.Padding(0);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(269, 26);
-            this.txtPassword.TabIndex = 17;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // pictureBox3
