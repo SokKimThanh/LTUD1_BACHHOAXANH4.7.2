@@ -13,16 +13,26 @@ namespace LTUD1_BACHHOAXANH472
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                //FormDangNhap logon = new FormDangNhap();
-                FormMain logon = new FormMain();
-                //ViDuPhanTrang logon = new ViDuPhanTrang();
-                //ViDuPhanTrangRuntime logon = new ViDuPhanTrangRuntime();
-                //FormUploadFilesReport logon = new FormUploadFilesReport();
-                //FormHoaDon logon =  new FormHoaDon();
-                //FormKhachHang logon = new FormKhachHang(); 
-                //FormNhanVienAddEdit logon = new FormNhanVienAddEdit();
-                //TaoBieuDoDonGian logon = new TaoBieuDoDonGian();
-                Application.Run(logon);
+                // Tạo và hiển thị SplashForm
+                FormSplash splashForm = new FormSplash();
+                splashForm.Show();
+
+                // Đợi một thời gian (ví dụ: 3 giây)
+                System.Threading.Thread.Sleep(1000);
+
+                // Đóng SplashForm
+                splashForm.Close();
+
+                // Tạo và hiển thị FormDangNhap
+                FormDangNhap loginForm = new FormDangNhap();
+                loginForm.ShowDialog();
+
+                // Nếu đăng nhập thành công, hiển thị FormMain
+                if (loginForm.LogonSuccessful)
+                {
+                    FormMain mainForm = new FormMain();
+                    Application.Run(mainForm);
+                }
             }
             catch (Exception)
             {

@@ -358,7 +358,8 @@ namespace LTUD1_BACHHOAXANH472
             // Thực hiện các tác vụ đăng xuất ở đây
             try
             {
-                //
+                //LogonSuccessful = false
+                
                 Close();
 
             }
@@ -376,11 +377,11 @@ namespace LTUD1_BACHHOAXANH472
             formDangNhap?.Hide();
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        {
-            ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
-            OpenChildForm(new FormDangNhap());
-        }
+        //private void btnDangNhap_Click(object sender, EventArgs e)
+        //{
+        //    ActiveButton(sender, RGB_COLORS.PrimaryGreen, RGB_COLORS.PrimaryPink);
+        //    OpenChildForm(new FormDangNhap());
+        //}
 
         private void btnReportManagement_Click(object sender, EventArgs e)
         {
