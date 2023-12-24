@@ -560,7 +560,7 @@ VALUES
 ('admin', CONVERT(datetime, '24-12-2023 17:41:30.710', 103), N'Thành công', NULL, NULL),
 ('admin', CONVERT(datetime, '24-12-2023 17:47:04.650', 103), N'Thành công', NULL, NULL),
 ('tentaikhoan1', CONVERT(datetime, '24-12-2023 12:57:10.780', 103), N'Thất bại', NULL, NULL),
-('sdfsd', CONVERT(datetime, '24-12-2023 12:57:12.877', 103), N'Thất bại', NULL, NULL),
+('tentaikhoan1', CONVERT(datetime, '24-12-2023 12:57:12.877', 103), N'Thất bại', NULL, NULL),
 ('admin', CONVERT(datetime, '24-12-2023 12:57:19.323', 103), N'Thành công', NULL, NULL),
 ('admin', CONVERT(datetime, '24-12-2023 15:32:35.137', 103), N'Thất bại', NULL, NULL),
 ('admin', CONVERT(datetime, '24-12-2023 16:55:25.253', 103), N'Thành công', NULL, NULL),
