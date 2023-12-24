@@ -183,30 +183,30 @@ namespace LTUD1_BACHHOAXANH472
 
         }
 
-        /* private void dgvCTHoaDon_Click(object sender, EventArgs e)
-         {
-             try
-             {
-                 // Khởi tạo số dòng đang chọn
-                 int dong = dgvCTHoaDon.CurrentCell.RowIndex;
-                 // lấy ra mã
-                 string id = dgvCTHoaDon.Rows[dong].Cells[0].Value.ToString();
-                 string id = dgvCTHoaDon.Rows[dong].Cells[1].Value.ToString();
-                 // khởi tạo đối tượng bằng mã
-                 DataTable dt = ctConn.SelectOne(id);
-                 DataRow dr = dt.Rows[0];
-                 // chuyển thành class đối tượng
-                 ChiTietHoaDon o = (ChiTietHoaDon)ChiTietHoaDonController.FromDataRow(dr);
 
-                 // thiết lập dữ liệu ngược lại mỗi lần click
-                 txtSoLuong.Text = o.SoLuong.ToString();
-                 // cập nhật lại trang thái các nút
-                 buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show(ex.Message);
-             }
-         }*/
+        private void dgvCTHoaDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Khởi tạo số dòng đang chọn
+                int dong = dgvCTHoaDon.CurrentCell.RowIndex;
+                // lấy ra mã
+                string id = dgvCTHoaDon.Rows[dong].Cells[0].Value.ToString();
+                // khởi tạo đối tượng bằng mã
+                DataTable dt = ctConn.SelectOne(id);
+                DataRow dr = dt.Rows[0];
+                // chuyển thành class đối tượng
+                ChiTietHoaDon o = (ChiTietHoaDon)ctConn.FromDataRow(dr);
+
+                // thiết lập dữ liệu ngược lại mỗi lần click
+                txtSoLuong.Text = o.SoLuong.ToString();
+                // cập nhật lại trang thái các nút
+                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

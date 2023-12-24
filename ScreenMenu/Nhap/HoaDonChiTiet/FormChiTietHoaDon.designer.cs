@@ -195,6 +195,7 @@ namespace LTUD1_BACHHOAXANH472
             this.cboHoaDon.Name = "cboHoaDon";
             this.cboHoaDon.Size = new System.Drawing.Size(357, 33);
             this.cboHoaDon.TabIndex = 1;
+            this.cboHoaDon.SelectedIndexChanged += new System.EventHandler(this.cboHoaDon_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -369,7 +370,7 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(871, 71);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
@@ -433,6 +434,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvCTHoaDon.RowTemplate.Height = 29;
             this.dgvCTHoaDon.Size = new System.Drawing.Size(878, 385);
             this.dgvCTHoaDon.TabIndex = 0;
+            this.dgvCTHoaDon.Click += new System.EventHandler(this.dgvCTHoaDon_Click);
             // 
             // FormChiTietHoaDon
             // 
@@ -442,6 +444,7 @@ namespace LTUD1_BACHHOAXANH472
             this.ClientSize = new System.Drawing.Size(1284, 701);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Segoe UI Light", 18F);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormChiTietHoaDon";
             this.Text = "Xử lý đơn hàng(Hóa đơn chi tiết)";

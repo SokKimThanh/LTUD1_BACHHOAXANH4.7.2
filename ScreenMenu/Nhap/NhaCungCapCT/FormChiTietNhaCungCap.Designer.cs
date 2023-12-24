@@ -187,7 +187,7 @@ namespace LTUD1_BACHHOAXANH472
             this.dgvNCCCT.RowTemplate.Height = 29;
             this.dgvNCCCT.Size = new System.Drawing.Size(875, 526);
             this.dgvNCCCT.TabIndex = 0;
-            this.dgvNCCCT.Click += new System.EventHandler(this.dgvNCCCT_Click);
+            
             // 
             // groupBox1
             // 

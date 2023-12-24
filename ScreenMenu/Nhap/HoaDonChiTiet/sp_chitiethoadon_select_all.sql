@@ -13,6 +13,6 @@ BEGIN
 	SELECT hd.MAHD,sp.TENSP,ct.SLMUA,sp.DONGIA*ct.SLMUA as "Thành tiền"
 	from CHITIETHD ct, HOADON hd, SANPHAM sp
 	where ct.MAHD = hd.MAHD and sp.MASP = ct.MASP and ct.MAHD = @mahd;
-END
+END;
 GO
 exec sp_chitiethoadon_select_all 'HD02'
