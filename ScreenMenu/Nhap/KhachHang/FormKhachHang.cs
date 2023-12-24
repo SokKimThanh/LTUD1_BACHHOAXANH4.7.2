@@ -36,6 +36,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             //mã tự động
             RandomStringGenerator randomStringGenerator = new RandomStringGenerator();
             txtMa.Text = randomStringGenerator.GenerateRandomAlphanumericString(10);
+            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
         }
 
 

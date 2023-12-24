@@ -10,6 +10,7 @@ namespace LTUD1_BACHHOAXANH472
         HoaDonController hdConn;
         SanPhamController spConn;
         ChiTietHoaDonController ctConn;
+        ButtonStateManager buttonStateManager;
         ReportManager reportManager;// chia se report
 
         public FormChiTietHoaDon(ReportManager reportManager)
@@ -19,6 +20,10 @@ namespace LTUD1_BACHHOAXANH472
             spConn = new SanPhamController(Utils.ConnectionString);
             ctConn = new ChiTietHoaDonController(Utils.ConnectionString);
             DataGridViewHelper.ConfigureDataGridView(dgvCTHoaDon);
+            buttonStateManager.BtnAdd = this.btnAddSP;
+            buttonStateManager.BtnEdit = this.btnEditSanPham;
+            buttonStateManager.BtnDelete = this.btnDeleteSP;
+            buttonStateManager.BtnRefresh = null;
             this.reportManager = reportManager;// chia se report
         }
         private void FormChiTietHoaDon_Load(object sender, EventArgs e)
@@ -31,15 +36,17 @@ namespace LTUD1_BACHHOAXANH472
                 cboHoaDon.ValueMember = "MAHD";
 
                 spConn.SelectAll();
-                cboLoaiSanPham.DataSource = spConn.DataSource;
-                cboLoaiSanPham.DisplayMember = "TENSP";
-                cboLoaiSanPham.ValueMember = "MASP";
+                cboSanPham.DataSource = spConn.DataSource;
+                cboSanPham.DisplayMember = "TENSP";
+                cboSanPham.ValueMember = "MASP";
 
                 ctConn.SelectByID(cboHoaDon.SelectedValue.ToString());
                 dgvCTHoaDon.DataSource = ctConn.DataSource;
 
                 /* txtThanhTien =  cthdController.TongTien(cboHoaDon.SelectedValue.ToString());*/
                 txtThanhTien.Text = ctConn.TongTien(cboHoaDon.SelectedValue.ToString());
+
+                buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
             }
             catch (Exception ex)
             {
@@ -52,7 +59,7 @@ namespace LTUD1_BACHHOAXANH472
         {
             try
             {
-                ctConn.KTTonKho(cboLoaiSanPham.SelectedValue.ToString(), int.Parse(txtSoLuong.Text));
+                ctConn.KTTonKho(cboSanPham.SelectedValue.ToString(), int.Parse(txtSoLuong.Text));
             }
             catch (Exception ex)
             {
@@ -69,7 +76,7 @@ namespace LTUD1_BACHHOAXANH472
 
                 ChiTietHoaDon cthd = new ChiTietHoaDon();
                 cthd.MaHD = cboHoaDon.SelectedValue.ToString();
-                cthd.MaSP = cboLoaiSanPham.SelectedValue.ToString();
+                cthd.MaSP = cboSanPham.SelectedValue.ToString();
                 cthd.SoLuong = int.Parse(txtSoLuong.Text);
 
                 ctConn.Insert(cthd);
@@ -78,6 +85,8 @@ namespace LTUD1_BACHHOAXANH472
                 if (ctConn.KTMASP(cthd.MaSP) == false)
                 {
                     MessageBox.Show("Thêm sản phẩm thành công!");
+                    txtThanhTien.Text = ctConn.TongTien(cboHoaDon.SelectedValue.ToString());
+                    buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                 }
                 else
                 {
@@ -97,14 +106,15 @@ namespace LTUD1_BACHHOAXANH472
             {
                 ChiTietHoaDon cthd = new ChiTietHoaDon();
                 cthd.MaHD = cboHoaDon.SelectedValue.ToString();
-                cthd.MaSP = cboLoaiSanPham.SelectedValue.ToString();
+                cthd.MaSP = cboSanPham.SelectedValue.ToString();
                 cthd.SoLuong = int.Parse(txtSoLuong.Text);
-                if (ctConn.KTTonKho(cboLoaiSanPham.SelectedValue.ToString(), int.Parse(txtSoLuong.Text)) >= 0)
+                if (ctConn.KTTonKho(cboSanPham.SelectedValue.ToString(), int.Parse(txtSoLuong.Text)) >= 0)
                 {
                     ctConn.Update(cthd);
                     FormChiTietHoaDon_Load(sender, e);
-
+                    txtThanhTien.Text = ctConn.TongTien(cboHoaDon.SelectedValue.ToString());
                     MessageBox.Show("Sửa sản phẩm thành công!");
+                    buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
                 }
                 else
                 {
@@ -125,11 +135,12 @@ namespace LTUD1_BACHHOAXANH472
             {
                 ChiTietHoaDon cthd = new ChiTietHoaDon();
                 cthd.MaHD = cboHoaDon.SelectedValue.ToString();
-                cthd.MaSP = cboLoaiSanPham.SelectedValue.ToString();
+                cthd.MaSP = cboSanPham.SelectedValue.ToString();
                 ctConn.Delete(cthd);
                 FormChiTietHoaDon_Load(sender, e);
-
+                txtThanhTien.Text = ctConn.TongTien(cboHoaDon.SelectedValue.ToString());
                 MessageBox.Show("Xoa sản phẩm thành công!");
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
 
             }
             catch (Exception ex)
@@ -153,9 +164,43 @@ namespace LTUD1_BACHHOAXANH472
             }
         }
 
-        private void FormChiTietHoaDon_Load_1(object sender, EventArgs e)
+        private void cboHoaDon_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
+            try
+            {
+                ctConn.SelectByID(cboHoaDon.SelectedValue.ToString());
+                dgvCTHoaDon.DataSource = ctConn.DataSource;
+                txtThanhTien.Text = ctConn.TongTien(cboHoaDon.SelectedValue.ToString());
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
+       /* private void dgvCTHoaDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Khởi tạo số dòng đang chọn
+                int dong = dgvCTHoaDon.CurrentCell.RowIndex;
+                // lấy ra mã
+                string id = dgvCTHoaDon.Rows[dong].Cells[0].Value.ToString();
+                string id = dgvCTHoaDon.Rows[dong].Cells[1].Value.ToString();
+                // khởi tạo đối tượng bằng mã
+                DataTable dt = ctConn.SelectOne(id);
+                DataRow dr = dt.Rows[0];
+                // chuyển thành class đối tượng
+                ChiTietHoaDon o = (ChiTietHoaDon)ChiTietHoaDonController.FromDataRow(dr);
+
+                // thiết lập dữ liệu ngược lại mỗi lần click
+                txtSoLuong.Text = o.SoLuong.ToString();
+                // cập nhật lại trang thái các nút
+                buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }*/
     }
 }

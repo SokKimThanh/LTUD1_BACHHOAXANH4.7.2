@@ -143,7 +143,11 @@ namespace LTUD1_BACHHOAXANH472
         }
         public override object FromDataRow(DataRow row)
         {
-            throw new NotImplementedException();
+            ChiTietHoaDon o = new ChiTietHoaDon();
+            o.MaHD = row.Field<string>("mahd");
+            o.MaSP = row.Field<string>("masp");
+            o.SoLuong = row.Field<int>("soluong");
+            return o;
         }
 
         public override void Insert(object sender)
@@ -164,7 +168,7 @@ namespace LTUD1_BACHHOAXANH472
 
                 // Thêm tham số vào SqlCommand
                 Sql.Parameters.AddWithValue("@mahd", user.MaHD);
-                Sql.Parameters.AddWithValue("masp", user.MaSP);
+                Sql.Parameters.AddWithValue("@masp", user.MaSP);
                 Sql.Parameters.AddWithValue("@sl", user.SoLuong);
                 // Thực thi SqlCommand
                 Sql.ExecuteNonQuery();
@@ -186,15 +190,21 @@ namespace LTUD1_BACHHOAXANH472
 
         public override void SelectAll()
         {
+            
+        }
+        public DataTable SelectOne(object id)
+        {
             try
-            {/*
+            {
+                ChiTietHoaDon cthd = (ChiTietHoaDon)id;
                 // Mở kết nối
                 SqlConnection conn = OpenConnection();
 
                 // thực hiện các thao tác trên cơ sở dữ liệu
                 Sql = new SqlCommand("sp_chitiethoadon_select_one", conn);
                 Sql.CommandType = CommandType.StoredProcedure;
-                Sql.Parameters.AddWithValue("@maHD", user.MaHD);
+                Sql.Parameters.AddWithValue("@maHD", cthd.MaHD);
+                Sql.Parameters.AddWithValue("@maHD", cthd.MaSP);
                 // Tạo đối tượng SqlDataAdapter
                 Adapter = new SqlDataAdapter(Sql);
 
@@ -205,7 +215,7 @@ namespace LTUD1_BACHHOAXANH472
                 Adapter.Fill(DataSource);
 
                 //đóng kết nối
-                CloseConnection();*/
+                CloseConnection();
             }
             catch (Exception ex)
             {
@@ -215,6 +225,7 @@ namespace LTUD1_BACHHOAXANH472
             {
                 CloseConnection();
             }
+            return DataSource;
         }
 
         public override DataTable SelectByID(object id)
@@ -310,7 +321,7 @@ namespace LTUD1_BACHHOAXANH472
 
                 // Thêm tham số vào SqlCommand
                 Sql.Parameters.AddWithValue("@maHD", user.MaHD);
-                Sql.Parameters.AddWithValue("masp", user.MaSP);
+                Sql.Parameters.AddWithValue("@masp", user.MaSP);
                 Sql.Parameters.AddWithValue("@SL", user.SoLuong);
                 // Thực thi SqlCommand
                 Sql.ExecuteNonQuery();

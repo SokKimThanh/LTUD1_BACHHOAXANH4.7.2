@@ -47,7 +47,7 @@ namespace LTUD1_BACHHOAXANH472
                 cbbMaKH.ValueMember = "MAKH";
                 // setting datagridview
                 DataGridViewHelper.ConfigureDataGridView(dgvHD);
-
+                buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
             }
             catch (Exception ex)
             {
@@ -73,6 +73,7 @@ namespace LTUD1_BACHHOAXANH472
                 HoaDonController.Insert(hoaDon);
                 HoaDonController.SelectAll();
                 dgvHD.DataSource = HoaDonController.DataSource;
+                Refresh();
             }
             catch (Exception ex)
             {
@@ -175,6 +176,8 @@ namespace LTUD1_BACHHOAXANH472
             cbbMaKH.SelectedIndex = 0;
             cbbMaNV.SelectedIndex = 0;
             txtTongTien.Text = "0";
+
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
         private void btnLamMoi_Click(object sender, EventArgs e)
         {

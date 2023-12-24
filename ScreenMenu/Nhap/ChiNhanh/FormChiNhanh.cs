@@ -18,7 +18,7 @@ namespace LTUD1_BACHHOAXANH472
             buttonStateManager.BtnDelete = btnXoa;
             buttonStateManager.BtnAdd = btnThem;
             buttonStateManager.BtnRefresh = btnRefresh;
-            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             txtMaCN.Text = randomStringGenerator.GenerateRandomAlphanumericString(4);
             //txtMaCN.ReadOnly = false;
             txtMaCN.Enabled = false;
