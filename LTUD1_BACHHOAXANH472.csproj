@@ -517,7 +517,6 @@
     <None Include="Resources\bgshlasinggreen2.png" />
     <None Include="Resources\banner.png" />
     <Content Include="ScreenMenu\HeThong\Login\sp_login_controller.sql" />
-    <Content Include="ScreenMenu\HeThong\TaiKhoan\sp_cnql_quyentruycap.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\rp_banhang_doanhthutheothang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_bieudo_doanhthu_theoquy.sql" />
