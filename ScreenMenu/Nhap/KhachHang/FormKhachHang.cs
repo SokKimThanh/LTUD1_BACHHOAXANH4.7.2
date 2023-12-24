@@ -65,6 +65,16 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                     MessageBox.Show("txtDRL", "Bắt buộc nhập!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+                /*if (ErrTextbox.NoText_TextChange(txtSDT))
+                {
+                    MessageBox.Show("txtSDT", "Nhập số điện thoại ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (ErrTextbox.NoText_TextChange(txtDTL))
+                {
+                    MessageBox.Show("txtDTL", "Nhập số  ", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }*/
                 KhachHang kh = new KhachHang();
                 kh.Ma = txtMa.Text;
                 kh.Ten = txtxHoTen.Text;
@@ -73,6 +83,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 khachHangController.Insert(kh);
                 khachHangController.SelectAll();
                 dgvKhachHang.DataSource = khachHangController.DataSource;
+                MessageBox.Show("Thêm thành công!");
             }
             catch (Exception ex)
             {
@@ -127,6 +138,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                     khachHangController.SelectAll();
                     dgvKhachHang.DataSource = khachHangController.DataSource;
                     Refresh();
+                    
                 }
                 return;
             }
@@ -188,6 +200,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 khachHangController.SelectAll();
                 dgvKhachHang.DataSource = khachHangController.DataSource;
                 Refresh();
+               
             }
             return;
         }

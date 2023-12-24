@@ -41,6 +41,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap.PhongBan
                 cbbMaCN.DataSource = pbController.DataSource;
                 cbbMaCN.DisplayMember = "TENCN";
                 cbbMaCN.ValueMember = "MACN";
+                TaoMa();
                 buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
             }
             catch (Exception ex)

@@ -5,10 +5,7 @@
 DROP PROCEDURE IF EXISTS sp_khuyenmai_delete
 GO
 CREATE PROCEDURE sp_khuyenmai_delete
-	@makm char(11) = '', 
-	@ngaybd date,
-	@ngaykt date,
-	@masp char(11) = N''
+	@makm char(11) 
 AS
 BEGIN
 	DELETE FROM khuyenmai WHERE makm = @makm

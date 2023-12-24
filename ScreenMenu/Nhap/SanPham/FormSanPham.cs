@@ -235,7 +235,7 @@ namespace LTUD1_BACHHOAXANH472
 
                 else if (cboTheLoaiTimKiem.Text == "Theo hạn sử dụng")
                 {
-                    rp_sanpham_tim_sp_hethan = new ReportHelper(reportManager, "rp_sanpham_timtheongay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", ngayhientai }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
+                    rp_sanpham_tim_sp_hethan = new ReportHelper(reportManager, "rp_sanpham_timtheongay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", dtpTKNgay.Text }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
                     rp_sanpham_tim_sp_hethan.LoadReport();
                 }
             }
@@ -262,7 +262,7 @@ namespace LTUD1_BACHHOAXANH472
                 {
                     dtpTKNgay.Enabled = true;
                     txtTimKiem.Enabled = false;
-                    rp_sanpham_tim_sp_hethan = new ReportHelper(reportManager, "rp_sanpham_timtheongay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", ngayhientai }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
+                    rp_sanpham_tim_sp_hethan = new ReportHelper(reportManager, "rp_sanpham_timtheongay", new System.Collections.Generic.Dictionary<string, object> { { "@NgayHT", dtpTKNgay.Text }, { "@tennhanvien", "Sok Kim Thanh" } }, rptThongKe);
                     rp_sanpham_tim_sp_hethan.LoadReport();
                 }
 

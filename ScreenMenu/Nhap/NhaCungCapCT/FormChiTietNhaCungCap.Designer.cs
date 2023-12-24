@@ -37,8 +37,6 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgvNCCCT = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -117,8 +115,6 @@ namespace LTUD1_BACHHOAXANH472
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnRefresh, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnEdit, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnDelete, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 43);
@@ -139,7 +135,7 @@ namespace LTUD1_BACHHOAXANH472
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnAdd.Location = new System.Drawing.Point(297, 5);
+            this.btnAdd.Location = new System.Drawing.Point(151, 5);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(136, 83);
@@ -157,47 +153,14 @@ namespace LTUD1_BACHHOAXANH472
             this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefresh.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnRefresh.Location = new System.Drawing.Point(443, 5);
+            this.btnRefresh.Location = new System.Drawing.Point(5, 5);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(5);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(136, 83);
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "Làm mới";
             this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEdit.FlatAppearance.BorderSize = 3;
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnEdit.Location = new System.Drawing.Point(5, 5);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(136, 83);
-            this.btnEdit.TabIndex = 2;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDelete.FlatAppearance.BorderSize = 3;
-            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnDelete.Location = new System.Drawing.Point(151, 5);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(136, 83);
-            this.btnDelete.TabIndex = 1;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // groupBox4
             // 
@@ -362,8 +325,6 @@ namespace LTUD1_BACHHOAXANH472
         private TableLayoutPanel tableLayoutPanel4;
         private GroupBox groupBox3;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button btnEdit;
-        private Button btnDelete;
         private GroupBox groupBox4;
         private GroupBox groupBox1;
         private TableLayoutPanel tableLayoutPanel3;

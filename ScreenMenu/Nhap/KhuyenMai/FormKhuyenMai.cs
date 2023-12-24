@@ -39,8 +39,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 cboMaHT.DisplayMember = "TENHINHTHUC";
                 cboMaHT.ValueMember = "MAHT";
                 // setting datagridview
-                DataGridViewHelper.ConfigureDataGridView(dgvDSKM);
-                buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+                DataGridViewHelper.ConfigureDataGridView(dgvDSKM); 
+                buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
 
                 Refresh2();
             }
@@ -54,7 +54,16 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
         private void btnThem_Click(object sender, EventArgs e)
         {
 
-
+            if (dtpNBD.Value > dtpNKT.Value)
+            {
+                MessageBox.Show("Ngày bắt đầu nhỏ hơn ngày kết thúc");
+                return;
+            }
+            if (ErrTextbox.NoText_TextChange(txtPhanTram))
+            {
+                MessageBox.Show("Nhập số");
+                return;
+            }
             try
             {
                 KhuyenMai km = new KhuyenMai();
@@ -62,6 +71,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 km.Ngaybd = DateTime.Parse(dtpNBD.Text);
                 km.Ngaykt = DateTime.Parse(dtpNKT.Text);
                 km.Maht = cboMaHT.SelectedValue.ToString();
+                km.PhantramKM = int.Parse(txtPhanTram.Text);
                 kmConn.Insert(km);
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Thêm khuyến mãi thành công!");
@@ -89,6 +99,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 FormKhuyenMai_Load(sender, e);
                 MessageBox.Show("Xoá khuyến mãi thành công!");
                 Refresh2();
+
             }
             catch (Exception ex)
             {
@@ -104,6 +115,11 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 MessageBox.Show("Ngày bắt đầu nhỏ hơn ngày kết thúc");
                 return;
             }
+            if (ErrTextbox.NoText_TextChange(txtPhanTram))
+            {
+                MessageBox.Show("Nhập số");
+                return;
+            }
             try
             {
                 KhuyenMai km = new KhuyenMai();
@@ -111,6 +127,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 km.Ngaybd = DateTime.Parse(dtpNBD.Text);
                 km.Ngaykt = DateTime.Parse(dtpNKT.Text);
                 km.Maht = cboMaHT.SelectedValue.ToString();
+                km.PhantramKM = int.Parse(txtPhanTram.Text);
 
                 kmConn.Update(km);
                 FormKhuyenMai_Load(sender, e);
@@ -136,7 +153,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
             dtpNBD.Value = DateTime.Now;
             dtpNKT.Value = DateTime.Now;
             cboMaHT.SelectedIndex = 0;
-            buttonStateManager.UpdateButtonStates(ButtonState.FormLoaded);
+            txtPhanTram.Text = string.Empty;
+            buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -163,6 +181,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenMenu.Nhap
                 txtMaKM.Text = o.Makm;
                 dtpNBD.Text = o.Ngaybd.ToString();
                 dtpNKT.Text = o.Ngaykt.ToString();
+                txtPhanTram.Text = o.PhantramKM.ToString();
                 // cập nhật lại trang thái các nút
                 buttonStateManager.UpdateButtonStates(ButtonState.DataGridViewSelected);
             }
