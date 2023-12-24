@@ -19,4 +19,5 @@ END
 GO
 Select count (*) from CHITIETHD 
 Exec sp_chitiethoadon_delete 'HD01','SP01'
-Select count (*) from CHITIETHD 
+Select count (*) from CHITIETHD
+select * from CHITIETHD where MAHD = 'HD01'
