@@ -348,6 +348,6 @@ namespace LTUD1_BACHHOAXANH472
                 ReportHelper rh = new ReportHelper(reportManager, "rp_nhanvien_get_hoadon_by_nhanvien", new Dictionary<string, object> { { "@manv", cboNhanVien.SelectedValue.ToString() } }, this.crystalReportViewer1);
                 rh.LoadReport();
             }
-        } 
+        }
     }
 }

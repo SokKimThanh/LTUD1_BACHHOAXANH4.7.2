@@ -190,7 +190,7 @@ namespace LTUD1_BACHHOAXANH472
 
         public override void SelectAll()
         {
-            
+
         }
         public DataTable SelectOne(object id)
         {

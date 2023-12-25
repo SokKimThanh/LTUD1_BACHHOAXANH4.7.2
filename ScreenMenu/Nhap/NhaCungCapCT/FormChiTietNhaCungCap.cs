@@ -26,7 +26,7 @@ namespace LTUD1_BACHHOAXANH472
 
             buttonStateManager = new ButtonStateManager();
 
-           
+
             buttonStateManager.BtnRefresh = btnRefresh;
             buttonStateManager.BtnAdd = btnAdd;
             buttonStateManager.BtnEdit = btnEdit;
@@ -83,7 +83,7 @@ namespace LTUD1_BACHHOAXANH472
             }
 
         }
- 
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             try
@@ -99,7 +99,7 @@ namespace LTUD1_BACHHOAXANH472
                 nha.SoLuong = int.Parse(txtSoLuong.Text);
                 nha.MaNCC = cboNCC.SelectedValue.ToString();
                 ctnccCon.Update(nha);
-                
+
                 buttonStateManager.UpdateButtonStates(ButtonState.RefreshClicked);
             }
             catch (Exception ex)
