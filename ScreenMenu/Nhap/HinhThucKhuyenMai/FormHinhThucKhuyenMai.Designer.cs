@@ -263,7 +263,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(871, 103);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -284,6 +284,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             this.btnLamMoi.TabIndex = 4;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = false;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnXoa
             // 
@@ -302,6 +303,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             this.btnXoa.TabIndex = 3;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -320,6 +322,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -337,6 +340,7 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             this.btnThem.TabIndex = 1;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -377,6 +381,8 @@ namespace LTUD1_BACHHOAXANH472.ScreenDetail
             this.dgvHTKM.RowTemplate.Height = 29;
             this.dgvHTKM.Size = new System.Drawing.Size(865, 502);
             this.dgvHTKM.TabIndex = 0;
+            this.dgvHTKM.Click += new System.EventHandler(this.dgvHTKM_Click);
+            this.dgvHTKM.DoubleClick += new System.EventHandler(this.dgvHTKM_DoubleClick);
             // 
             // FormHinhThucKhuyenMai
             // 
