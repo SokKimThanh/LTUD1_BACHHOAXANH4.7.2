@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.ServiceModel.Channels;
+using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
 {
@@ -76,26 +78,31 @@ namespace LTUD1_BACHHOAXANH472
         public int DangNhap(string tentk, string matkhau)
         {
             int ketqua = 0;// gia su chưa đăng nhập thành công
-
-            using (SqlConnection conn = new SqlConnection(Utils.ConnectionString))
+            try
             {
-                conn.Open();
-
-                using (SqlCommand cmd = new SqlCommand("sp_DangNhap", conn))
+                using (SqlConnection conn = new SqlConnection(Utils.ConnectionString))
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    conn.Open();
 
-                    cmd.Parameters.Add("@TENTK", SqlDbType.Char, 30).Value = tentk;
-                    cmd.Parameters.Add("@MATKHAU", SqlDbType.Char, 30).Value = matkhau;
-                    cmd.Parameters.Add("@KETQUA", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output;
+                    using (SqlCommand cmd = new SqlCommand("sp_DangNhap", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.ExecuteNonQuery();
-                    //-- đăng nhập vào thành công thì trả về 1
-                    //--đăng nhập vào thất bại thì trả về 0
-                    ketqua = Convert.ToInt32(cmd.Parameters["@KETQUA"].Value);
+                        cmd.Parameters.Add("@TENTK", SqlDbType.Char, 30).Value = tentk;
+                        cmd.Parameters.Add("@MATKHAU", SqlDbType.Char, 30).Value = matkhau;
+                        cmd.Parameters.Add("@KETQUA", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output;
+
+                        cmd.ExecuteNonQuery();
+                        //-- đăng nhập vào thành công thì trả về 1
+                        //--đăng nhập vào thất bại thì trả về 0
+                        ketqua = Convert.ToInt32(cmd.Parameters["@KETQUA"].Value);
+                    }
                 }
             }
-
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
             return ketqua;
         }
 

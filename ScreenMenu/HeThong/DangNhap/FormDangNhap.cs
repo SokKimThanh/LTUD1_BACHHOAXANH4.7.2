@@ -114,43 +114,50 @@ namespace LTUD1_BACHHOAXANH472
         }
         public bool VerifyAccount(string enteredUserName, string enteredPassword)
         {
-            lblKetQuaDangNhap.Visible = true;// hiển thị label và kết quả đăng nhập
+            bool ketquadangnhap = false;// gia su that bai
             if (loginController.DangNhap(enteredUserName, enteredPassword) == 1)
             {
                 // xác minh nhân vien dăng nhập và quyền đăng nhập
                 loginController.CapQuyen(enteredUserName, enteredPassword);
-                return true;// dang nhap thanh cong
+                ketquadangnhap = true;// dang nhap thanh cong
             }
             else
             {
                 lblKetQuaDangNhap.Text = "Đăng nhập thất bại";
-                return false;// dang nhap that bai
             }
-
+            lblKetQuaDangNhap.Visible = true;// hiển thị label và kết quả đăng nhập
+            return ketquadangnhap;// dang nhap that bai
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUserName.Text == "")
+            try
             {
-                MessageBox.Show("Vui lòng gõ tên đăng nhập");
-            }
-            else if (txtPassword.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập mật khẩu");
-            }
-            else
-            {
-                if (VerifyAccount(txtUserName.Text, txtPassword.Text))
+                if (txtUserName.Text == "")
                 {
-                    // Hiển thị ProgressBar
-                    progressBar1.Visible = true;
-
-                    // Khởi chạy BackgroundWorker
-                    if (!bw.IsBusy)
+                    MessageBox.Show("Vui lòng gõ tên đăng nhập");
+                }
+                else if (txtPassword.Text == "")
+                {
+                    MessageBox.Show("Vui lòng nhập mật khẩu");
+                }
+                else
+                {
+                    if (VerifyAccount(txtUserName.Text, txtPassword.Text))
                     {
-                        bw.RunWorkerAsync();
+                        // Hiển thị ProgressBar
+                        progressBar1.Visible = true;
+
+                        // Khởi chạy BackgroundWorker
+                        if (!bw.IsBusy)
+                        {
+                            bw.RunWorkerAsync();
+                        }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("btnLogin_Click: " + ex.Message);
             }
         }
         /// <summary>
