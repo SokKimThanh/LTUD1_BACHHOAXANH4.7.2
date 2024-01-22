@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LTUD1_BACHHOAXANH472.CardList;
+using System;
 using System.Windows.Forms;
 
 namespace LTUD1_BACHHOAXANH472
@@ -13,20 +14,20 @@ namespace LTUD1_BACHHOAXANH472
             try
             {
                 // Tạo và hiển thị SplashForm
-                FormSplash splashForm = new FormSplash();
-                splashForm.Show();
+                //FormSplash splashForm = new FormSplash();
+                //splashForm.Show();
 
                 // Đợi một thời gian (ví dụ: 3 giây)
-                System.Threading.Thread.Sleep(3000);
+                //System.Threading.Thread.Sleep(3000);
 
                 // Đóng SplashForm
-                splashForm.Close();
+                //splashForm.Close();
 
                 // Tạo và hiển thị FormDangNhap
-                FormDangNhap logon = new FormDangNhap();
+                //FormDangNhap logon = new FormDangNhap();
 
                 //FormMain logon = new FormMain();
-                Application.Run(logon);
+                Application.Run(new BuildingCardPanel());
 
             }
             catch (Exception)

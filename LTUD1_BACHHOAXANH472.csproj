@@ -114,6 +114,20 @@
     <Compile Include="BatLoiControl\ErrColors.cs" />
     <Compile Include="BatLoiControl\ErrForm.cs" />
     <Compile Include="BatLoiControl\ErrTextbox.cs" />
+    <Compile Include="CardList\BuildingCardDatagridview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardList\BuildingCardDatagridview.Designer.cs">
+      <DependentUpon>BuildingCardDatagridview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardList\BuildingCardPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardList\BuildingCardPanel.Designer.cs">
+      <DependentUpon>BuildingCardPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardList\CardItem.cs" />
+    <Compile Include="CardList\CardList.cs" />
     <Compile Include="Model\PhanTrangDataGridView.cs" />
     <Compile Include="Model\SettingImageList.cs" />
     <Compile Include="Connection\DatabaseConnection.cs" />
@@ -129,6 +143,18 @@
     <Compile Include="Model\ComboBoxHelper.cs" />
     <Compile Include="Model\ReportHelper.cs" />
     <Compile Include="Model\TextboxHelper.cs" />
+    <Compile Include="CardList\CardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CardList\CardControl.Designer.cs">
+      <DependentUpon>CardControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CardList\BuildingCardList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardList\BuildingCardList.Designer.cs">
+      <DependentUpon>BuildingCardList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -371,12 +397,24 @@
       <DependentUpon>rp_sanpham_timtheongay.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="CardList\BuildingCardDatagridview.resx">
+      <DependentUpon>BuildingCardDatagridview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardList\BuildingCardPanel.resx">
+      <DependentUpon>BuildingCardPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.vi.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardList\CardControl.resx">
+      <DependentUpon>CardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CardList\BuildingCardList.resx">
+      <DependentUpon>BuildingCardList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenMenu\HeThong\BieuDo\TaoBieuDoDonGian.resx">
       <DependentUpon>TaoBieuDoDonGian.cs</DependentUpon>
@@ -516,6 +554,14 @@
     <None Include="Resources\bg-slashinggreen.jpg" />
     <None Include="Resources\bgshlasinggreen2.png" />
     <None Include="Resources\banner.png" />
+    <None Include="Resources\rr1.png" />
+    <None Include="Resources\r5.jpg" />
+    <None Include="Resources\rrr1.jpeg" />
+    <None Include="Resources\r4.jpg" />
+    <None Include="Resources\r3.jpg" />
+    <None Include="Resources\r2.jpg" />
+    <None Include="Resources\r1.jpg" />
+    <None Include="Resources\r0.jpg" />
     <Content Include="ScreenMenu\HeThong\DangNhap\sp_login_controller.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\rp_banhang_doanhthutheothang.sql" />
     <Content Include="ScreenMenu\Nhap\BanHang\sp_sanpham_phantrang.sql" />
