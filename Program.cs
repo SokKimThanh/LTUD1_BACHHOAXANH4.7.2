@@ -17,7 +17,7 @@ namespace LTUD1_BACHHOAXANH472
                 splashForm.Show();
 
                 // Đợi một thời gian (ví dụ: 3 giây)
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(3000);
 
                 // Đóng SplashForm
                 splashForm.Close();
